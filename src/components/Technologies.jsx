@@ -1,4 +1,42 @@
+import { useState, useEffect, useRef } from 'react';
+
 const Technologies = () => {
+  const [activeCategory, setActiveCategory] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const navRef = useRef(null);
+  const categoryRefs = useRef([]);
+  const scrollTimeout = useRef(null);
+
+  // Handle category change with smooth scroll
+  const handleCategoryClick = (index) => {
+    setActiveCategory(index);
+    if (categoryRefs.current[index]) {
+      setIsScrolling(true);
+      categoryRefs.current[index].scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      
+      // Clear any existing timeout
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+      
+      // Set a timeout to reset scrolling state after scroll completes
+      scrollTimeout.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    }
+  };
+
+  // Clean up timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+    };
+  }, []);
   const techCategories = [
     {
       category: "Frontend Development",
@@ -94,7 +132,7 @@ const Technologies = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
@@ -117,12 +155,34 @@ const Technologies = () => {
           </p>
         </div>
 
+        {/* Category Navigation */}
+        <div className="mb-8 sm:mb-12 px-2 sm:px-4 overflow-x-scroll no-scrollbar pb-1 -mx-2 sm:-mx-4 px-2 sm:px-4">
+          <div className="flex space-x-2 sm:space-x-3 md:space-x-4 pb-1 min-w-max">
+            {techCategories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => handleCategoryClick(index)}
+                className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
+                  activeCategory === index
+                    ? `bg-gradient-to-r ${category.color} text-white shadow-md`
+                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                }`}
+              >
+                {category.category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Technology Categories */}
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {techCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="animate-fade-in-up"
+              ref={el => categoryRefs.current[categoryIndex] = el}
+              className={`animate-fade-in-up transition-opacity duration-300 ${
+                activeCategory !== categoryIndex && !isScrolling ? 'hidden' : 'block'
+              }`}
             >
               {/* Category Header */}
               <div className="text-center mb-6 sm:mb-8 px-4">
@@ -133,11 +193,11 @@ const Technologies = () => {
               </div>
 
               {/* Technology Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-4 md:gap-6 px-2 sm:px-0 responsive-grid-md responsive-grid-lg">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 md:gap-5 px-2 sm:px-0">
                 {category.technologies.map((tech, techIndex) => (
                   <div
                     key={techIndex}
-                    className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-4 md:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 border border-gray-100 hover:border-gray-200 min-h-[120px] sm:min-h-[140px] flex flex-col justify-center mobile-no-hover"
+                    className="group relative bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 border border-gray-100 hover:border-gray-200 min-h-[100px] sm:min-h-[120px] flex flex-col justify-center mobile-no-hover"
                   >
                     {/* Tech Logo */}
                     <div className="flex justify-center mb-3 sm:mb-4">
@@ -186,11 +246,30 @@ const Technologies = () => {
           ))}
         </div>
 
-
         
       </div>
-
-
+      
+      {/* Hide scrollbar but keep functionality */}
+      <style jsx>{`
+        /* Hide scrollbar for Chrome, Safari and newer versions of Opera */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none; /* Hide scrollbar */
+          width: 0;  /* Remove scrollbar space */
+          height: 0;  /* Remove scrollbar space */
+          background: transparent;  /* Optional: just make scrollbar invisible */
+        }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+        
+        /* Optional: Add some padding to prevent content from being cut off */
+        .no-scrollbar {
+          -ms-overflow-style: -ms-autohiding-scrollbar;  /* For IE/Edge */
+        }
+      `}</style>
     </section>
   );
 };

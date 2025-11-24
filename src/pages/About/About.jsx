@@ -50,6 +50,130 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+
+       {/* Who We Are Section */}
+      <section className="py-12 bg-white relative">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div 
+              className={`transform transition-all duration-1000 delay-500 ${
+                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+              }`}
+              id="whoWeAre"
+              data-animate
+            >
+              <div className="inline-block mb-3">
+                <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+                  Our Story
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                Who We
+                <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
+                  Are
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                At Ascentia Labs, we excel in fostering collaboration and innovation, leveraging cutting-edge 
+                technologies to craft tailored, industry-specific solutions. With a steadfast commitment to 
+                redefining industry standards, we empower our clients to achieve unparalleled business 
+                growth and success.
+              </p>
+              
+              {/* Image Slider Controls */}
+              {/* <div className="flex items-center space-x-4 mb-6">
+                <button 
+                  onClick={prevSlide}
+                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <polyline points="15,18 9,12 15,6"/>
+                  </svg>
+                </button>
+                <div className="flex space-x-2">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        currentSlide === index 
+                          ? 'bg-gradient-to-r from-blue-600 to-black scale-125' 
+                          : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <button 
+                  onClick={nextSlide}
+                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <polyline points="9,18 15,12 9,6"/>
+                  </svg>
+                </button>
+              </div> */}
+            </div>
+            
+            {/* Enhanced Image Slider */}
+            <div 
+              className={`relative group transform transition-all duration-1000 delay-700 ${
+                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+              }`}
+            >
+              <div className="relative">
+                {/* Background decoration */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-black rounded-[3rem] opacity-20 blur-xl"></div>
+                
+                {/* Main slider container */}
+                <div className="relative bg-white rounded-[2rem] p-1 shadow-xl max-w-sm mx-auto">
+                  <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+                    <div 
+                      className="flex transition-transform duration-500 ease-in-out h-full"
+                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index} className="w-full h-full flex-shrink-0 relative">
+                          <img
+                            src={image}
+                            alt={`Office environment ${index + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Navigation arrows on image */}
+                  <button 
+                    onClick={prevSlide}
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                  </button>
+                  <button 
+                    onClick={nextSlide}
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <polyline points="9,18 15,12 9,6"/>
+                    </svg>
+                  </button>
+                </div>
+                
+                {/* Enhanced Image counter */}
+                <div className="absolute bottom-3 right-3 bg-gradient-to-r from-blue-600 to-black text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg">
+                  {currentSlide + 1} / {images.length}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Hero Section */}
       <section className="pt-24 pb-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
@@ -286,128 +410,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="py-12 bg-white relative">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div 
-              className={`transform transition-all duration-1000 delay-500 ${
-                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
-              }`}
-              id="whoWeAre"
-              data-animate
-            >
-              <div className="inline-block mb-3">
-                <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
-                  Our Story
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Who We
-                <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                  Are
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                At Ascentia Labs, we excel in fostering collaboration and innovation, leveraging cutting-edge 
-                technologies to craft tailored, industry-specific solutions. With a steadfast commitment to 
-                redefining industry standards, we empower our clients to achieve unparalleled business 
-                growth and success.
-              </p>
-              
-              {/* Image Slider Controls */}
-              {/* <div className="flex items-center space-x-4 mb-6">
-                <button 
-                  onClick={prevSlide}
-                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <polyline points="15,18 9,12 15,6"/>
-                  </svg>
-                </button>
-                <div className="flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === index 
-                          ? 'bg-gradient-to-r from-blue-600 to-black scale-125' 
-                          : 'bg-gray-300 hover:bg-gray-400'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <button 
-                  onClick={nextSlide}
-                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <polyline points="9,18 15,12 9,6"/>
-                  </svg>
-                </button>
-              </div> */}
-            </div>
-            
-            {/* Enhanced Image Slider */}
-            <div 
-              className={`relative group transform transition-all duration-1000 delay-700 ${
-                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-              }`}
-            >
-              <div className="relative">
-                {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-black rounded-[3rem] opacity-20 blur-xl"></div>
-                
-                {/* Main slider container */}
-                <div className="relative bg-white rounded-[2rem] p-1 shadow-xl max-w-sm mx-auto">
-                  <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem]">
-                    <div 
-                      className="flex transition-transform duration-500 ease-in-out h-full"
-                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                      {images.map((image, index) => (
-                        <div key={index} className="w-full h-full flex-shrink-0 relative">
-                          <img
-                            src={image}
-                            alt={`Office environment ${index + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Navigation arrows on image */}
-                  <button 
-                    onClick={prevSlide}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <polyline points="15,18 9,12 15,6"/>
-                    </svg>
-                  </button>
-                  <button 
-                    onClick={nextSlide}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <polyline points="9,18 15,12 9,6"/>
-                    </svg>
-                  </button>
-                </div>
-                
-                {/* Enhanced Image counter */}
-                <div className="absolute bottom-3 right-3 bg-gradient-to-r from-blue-600 to-black text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg">
-                  {currentSlide + 1} / {images.length}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
      
     </div>
