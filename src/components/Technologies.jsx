@@ -7,26 +7,46 @@ const Technologies = () => {
   const categoryRefs = useRef([]);
   const scrollTimeout = useRef(null);
 
-  // Handle category change with smooth scroll
+  // Handle category change with instant switch and smooth scroll
   const handleCategoryClick = (index) => {
+    // Update active category immediately
     setActiveCategory(index);
-    if (categoryRefs.current[index]) {
-      setIsScrolling(true);
-      categoryRefs.current[index].scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-      
-      // Clear any existing timeout
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
+    
+    // Use requestAnimationFrame for smoother visual updates
+    requestAnimationFrame(() => {
+      if (categoryRefs.current[index]) {
+        // First, instantly show the content
+        setIsScrolling(true);
+        
+        // Then, handle smooth scrolling in the next frame
+        requestAnimationFrame(() => {
+          // Get the container element
+          const container = document.querySelector('.tech-categories-container');
+          const targetElement = categoryRefs.current[index];
+          
+          // Calculate the scroll position
+          const containerRect = container.getBoundingClientRect();
+          const targetRect = targetElement.getBoundingClientRect();
+          const scrollLeft = targetRect.left - containerRect.left + container.scrollLeft;
+          
+          // Smooth scroll the container
+          container.scrollTo({
+            left: scrollLeft,
+            behavior: 'smooth'
+          });
+          
+          // Clear any existing timeout
+          if (scrollTimeout.current) {
+            clearTimeout(scrollTimeout.current);
+          }
+          
+          // Set a shorter timeout for resetting scrolling state
+          scrollTimeout.current = setTimeout(() => {
+            setIsScrolling(false);
+          }, 300);
+        });
       }
-      
-      // Set a timeout to reset scrolling state after scroll completes
-      scrollTimeout.current = setTimeout(() => {
-        setIsScrolling(false);
-      }, 1000);
-    }
+    });
   };
 
   // Clean up timeout on unmount
@@ -37,6 +57,7 @@ const Technologies = () => {
       }
     };
   }, []);
+
   const techCategories = [
     {
       category: "Frontend Development",
@@ -175,13 +196,13 @@ const Technologies = () => {
         </div>
 
         {/* Technology Categories */}
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-12 sm:space-y-16 tech-categories-container" style={{ scrollBehavior: 'smooth' }}>
           {techCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
               ref={el => categoryRefs.current[categoryIndex] = el}
-              className={`animate-fade-in-up transition-opacity duration-300 ${
-                activeCategory !== categoryIndex && !isScrolling ? 'hidden' : 'block'
+              className={`transition-all duration-200 ${
+                activeCategory === categoryIndex ? 'opacity-100 block' : 'opacity-0 hidden'
               }`}
             >
               {/* Category Header */}
