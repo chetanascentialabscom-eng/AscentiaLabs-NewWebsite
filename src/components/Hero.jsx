@@ -2,7 +2,14 @@ import { ArrowRight, Image, ChevronDown, MapPin, Clock, BarChart3 } from 'lucide
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 overflow-hidden flex items-center min-h-screen">
+    <section id="home" className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 overflow-hidden flex items-center min-h-screen">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300/10 rounded-full blur-xl animate-pulse delay-500"></div>
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10 w-full max-w-7xl">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 lg:items-center relative">
           {/* Left Section */}
