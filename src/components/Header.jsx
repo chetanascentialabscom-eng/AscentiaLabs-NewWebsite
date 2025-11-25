@@ -180,10 +180,11 @@ const Header = () => {
                       <div className="font-medium text-sm">Custom CRM</div>
                     </Link>
                     
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <Building className="w-5 h-5 mr-3 text-blue-600" />
                       <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
-                    </div>
+                    </Link>
+
                     
                     <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Home className="w-5 h-5 mr-2 text-blue-600" />
@@ -227,11 +228,11 @@ const Header = () => {
                       <Heart className="w-4 h-4 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">Health Care</div>
                     </div>
-                    
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+
+                    <Link to="logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <Truck className="w-4 h-4 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">Logistics</div>
-                    </div>
+                    </Link>
                     
                     <div></div> {/* Empty cell for alignment */}
                   </div>
@@ -353,10 +354,10 @@ const Header = () => {
                       <Heart className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
                     </div>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Building className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Interior & Architecture</span>
-                    </div>
+                    </Link>
                     <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Star className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Kindergarten</span>
@@ -365,10 +366,10 @@ const Header = () => {
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Library</span>
                     </div>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Truck className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Logistics</span>
-                    </div>
+                    </Link>  
                     <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Wrench className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Manufacturing</span>
