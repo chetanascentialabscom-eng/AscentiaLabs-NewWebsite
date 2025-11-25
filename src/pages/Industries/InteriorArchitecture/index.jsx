@@ -5,6 +5,21 @@ const InteriorArchitecture = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
 
+  // Custom scrollbar styles - hidden scrollbar
+  const scrollbarStyles = `
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .custom-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  `;
+
   const features = [
     {
       id: 'space-planning-tools',
@@ -163,6 +178,7 @@ const InteriorArchitecture = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-16">
         {/* Background Pattern */}
@@ -177,7 +193,7 @@ const InteriorArchitecture = () => {
             {/* Left Content */}
             <div className="text-white space-y-6">
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-                Admin Panel For Interior Design App Development
+                Professional Interior Design App Development Solutions
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Explore the functionality of our state-of-the-art interior design system, or if you want to add some personalized features for your interior design system, don't worry, we'll do it for you.
@@ -226,27 +242,29 @@ const InteriorArchitecture = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-300">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Feature List */}
-                <div className="bg-gray-900 p-4 space-y-2">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                        activeFeature === index 
-                          ? 'bg-blue-600 text-white' 
-                          : 'text-gray-300 hover:bg-gray-800'
-                      }`}
-                      onClick={() => setActiveFeature(index)}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <span className={`text-xs font-bold px-2 py-1 rounded ${
-                          activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
-                        }`}>
-                        {index < 9 ? `0${index + 1}` : index + 1}
-                        </span>
-                        <span className="font-medium text-sm">{feature.title}</span>
+                <div className="bg-gray-900 p-4">
+                  <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
+                          activeFeature === index 
+                            ? 'bg-blue-600 text-white' 
+                            : 'text-gray-300 hover:bg-gray-800'
+                        }`}
+                        onClick={() => setActiveFeature(index)}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <span className={`text-xs font-bold px-2 py-1 rounded ${
+                            activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
+                          }`}>
+                          {index < 9 ? `0${index + 1}` : index + 1}
+                          </span>
+                          <span className="font-medium text-sm">{feature.title}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
                 {/* Right Side - Feature Details */}

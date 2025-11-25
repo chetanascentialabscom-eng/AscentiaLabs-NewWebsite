@@ -1,136 +1,210 @@
 import { useState } from 'react';
-import { Shield, Monitor, Bell, BarChart3, ChevronDown, ChevronUp } from 'lucide-react';
+import { Truck, MapPin, Package, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LogisticsPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
 
+  // Custom scrollbar styles - hidden scrollbar
+  const scrollbarStyles = `
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .custom-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  `;
+
   const features = [
     {
-      id: 'complaint-submission',
-      title: 'Complaint Submission',
-      description: 'Multiple Channels for Submission: Customers can easily log complaints through online forms, emails, or the mobile app.',
+      id: 'logistics-order-management',
+      title: 'Logistics Order Management',
+      description: 'Comprehensive order management system for efficient logistics operations.',
       details: [
-        'Multiple Channels for Submission: Customers can easily log complaints through online forms, emails, or the mobile app.',
-        'Guided Complaint Process: Step-by-step prompts help users define their issue clearly, including selecting relevant complaint categories.',
-        'Attachment Support: Users can attach files, images, or videos to provide additional context for their complaint.'
+        'Shipping Label Generation: Create carrier-specific labels with AIDC codes for efficient package tracking and order integration.',
+        'Batch Processing: Process multiple shipments at once, saving time and reducing manual handling of bulk orders.',
+        'Return Shipment Management: Easily manage return shipments by generating return labels to distinguish them from regular orders.'
       ]
     },
     {
-      id: 'complaint-status-tracking',
-      title: 'Complaint Status Tracking',
-      description: 'Real-Time Tracking: Users can input their complaint reference number to view the status in real-time.',
+      id: 'inventory-management-solution',
+      title: 'Inventory Management Solution',
+      description: 'Advanced inventory tracking and management solutions.',
       details: [
-        'Real-Time Tracking: Users can input their complaint reference number to view the status in real-time.',
-        'Complaint Lifecycle: The module provides a clear and concise timeline, detailing each stage of the complaint\'s progress.',
-        'File a Note for Action: If users feel their complaint hasn\'t progressed, they can file a note, which will be reviewed by the Complaint Handling Team for further action.'
+        'Real-time Inventory Tracking: Monitor stock levels across multiple locations with instant updates and complete visibility.',
+        'Automated Stock Monitoring: Set up intelligent alerts and automated reorder points to prevent stockouts.',
+        'Advanced Scanning Integration: Use barcode and RFID technology for accurate item tracking and reduced errors.',
+        'Batch and Serial Management: Track products by batch numbers for complete traceability and quality control.'
       ]
     },
     {
-      id: 'priority-complaint-management',
-      title: 'Priority Complaint Management Integration',
-      description: 'Priority Assignment Based on Criteria: The complaint-handling team can prioritize complaints based on severity, impact, and urgency.',
+      id: 'shipment-management-solution',
+      title: 'Shipment Management Solution',
+      description: 'End-to-end shipment tracking and management capabilities.',
       details: [
-        'Priority Assignment Based on Criteria: The complaint-handling team can prioritize complaints based on severity, impact, and urgency.',
-        'AI-Powered Priority Levels: AI automatically assigns priority levels (High, Medium, or Low) to complaints upon submission, ensuring efficient handling.'
+        'Real-time Shipment Tracking: Complete visibility into shipment status from pickup to delivery with GPS tracking.',
+        'Automated Shipping Notifications: Send automatic status updates to customers at key delivery milestones.',
+        'Multi-carrier Integration: Connect with multiple carriers to compare rates and manage all shipments from one platform.',
+        'Proof of Delivery Documentation: Capture electronic signatures and photos for comprehensive delivery confirmation.'
       ]
     },
     {
-      id: 'triaging-initiation',
-      title: 'Triaging & Initiation',
-      description: 'Automatic Prioritization and Categorization: The system automatically categorizes and prioritizes complaints based on predefined criteria.',
+      id: 'fleet-logistics-management',
+      title: 'Fleet Logistics Management Solution',
+      description: 'Complete fleet management and optimization system.',
       details: [
-        'Automatic Prioritization and Categorization: The system automatically categorizes and prioritizes complaints based on predefined criteria.',
-        'Direct Assignment to Relevant Department: Complaints are automatically routed to the appropriate business department for prompt resolution.',
-        'Complaint Queueing for Review: The system queues complaints for triaging by the relevant complaint coordinator or manager, ensuring efficient follow-up.'
+        'Real-time Vehicle Tracking: Monitor your entire fleet with GPS tracking for live location updates and route monitoring.',
+        'Intelligent Route Optimization: Use AI-powered algorithms to plan efficient routes and reduce fuel costs.',
+        'Driver Assignment and Scheduling: Optimize driver assignments based on availability and manage work schedules.',
+        'Performance Analytics: Generate detailed reports on fleet performance and operational efficiency.'
       ]
     },
     {
-      id: 'crm-integration',
-      title: 'CRM Integration',
-      description: 'Centralized Customer Data: Integration consolidates customer information, providing a unified view for more personalized and efficient complaint handling.',
+      id: 'fleet-fuel-management',
+      title: 'Fleet Logistics Fuel Management Solution',
+      description: 'Comprehensive fuel management and cost optimization.',
       details: [
-        'Centralized Customer Data: Integration consolidates customer information, providing a unified view for more personalized and efficient complaint handling.',
-        'Access to Complaint History: The system allows the complaint-handling team to quickly view past interactions and histories, improving accuracy and response speed.',
-        'Streamlined Response Process: With CRM integration, the team can address complaints faster and more effectively, ensuring a seamless customer experience.'
+        'Fuel Consumption Tracking: Monitor and analyze fuel usage patterns across your fleet with detailed reports.',
+        'Fuel Card Integration: Integrate with fuel card systems to track purchases and prevent fraud.',
+        'Cost Optimization: Implement budgeting tools to analyze fuel costs and identify cost reduction opportunities.',
+        'Fuel Efficiency Reporting: Generate reports on fuel efficiency metrics and compare performance across vehicles.'
       ]
     },
     {
-      id: 'mobile-application',
-      title: 'Dedicated Mobile Application',
-      description: 'Easy Complaint Submission: Users can quickly lodge complaints from their mobile devices, with options for detailed descriptions and categorization.',
+      id: 'vehicle-health-management',
+      title: 'Vehicle Health Management',
+      description: 'Proactive vehicle maintenance and health monitoring.',
       details: [
-        'Easy Complaint Submission: Users can quickly lodge complaints from their mobile devices, with options for detailed descriptions and categorization.',
-        'Real-Time Notifications: Get instant updates on the progress of complaints, ensuring users are always in the loop.',
-        'In-App Messaging: The messaging feature allows direct communication with the complaint-handling team for prompt feedback and issue resolution.'
+        'Real-time Vehicle Diagnostics: Monitor vehicle health through integrated systems to prevent breakdowns.',
+        'Predictive Maintenance: Use analytics to predict maintenance needs based on usage patterns and mileage.',
+        'Health Alerts: Receive instant notifications about potential issues and maintenance due dates.',
+        'Maintenance History: Maintain detailed records of all maintenance activities and repairs.'
       ]
     },
     {
-      id: 'feedback-mechanism',
-      title: 'Feedback Mechanism',
-      description: 'Customer Feedback: Users can provide valuable feedback with ratings across different parameters and detailed comments, helping businesses identify areas for improvement.',
+      id: 'agency-warehouse-logistics',
+      title: 'Agency & Warehouse Logistics Management',
+      description: 'Integrated agency and warehouse management solutions.',
       details: [
-        'Customer Feedback: Users can provide valuable feedback with ratings across different parameters and detailed comments, helping businesses identify areas for improvement.',
-        'Automated Follow-Ups: The feedback mechanism is integrated at each complaint lifecycle stage, ensuring automated follow-ups that keep customers informed and engaged throughout the process.'
+        'Multi-location Warehouse Management: Coordinate operations across multiple facilities with centralized control.',
+        'Agency Coordination: Facilitate communication between agencies and transportation partners.',
+        'Inventory Distribution: Optimize inventory placement and movement between locations.',
+        'Performance Monitoring: Track key performance indicators across all locations.'
       ]
     },
     {
-      id: 'reporting-analytics',
-      title: 'Reporting & Analytics',
-      description: 'Complaint Trends Analysis: Businesses can analyze complaint trends to identify recurring issues and track the effectiveness of their complaint resolution strategies.',
+      id: 'digital-lock-solution',
+      title: 'Digital Lock Solution',
+      description: 'Advanced security solutions for cargo and vehicle protection.',
       details: [
-        'Complaint Trends Analysis: Businesses can analyze complaint trends to identify recurring issues and track the effectiveness of their complaint resolution strategies.',
-        'Real-Time KPI Dashboards: Customizable dashboards provide stakeholders with real-time visibility into key performance indicators, helping drive proactive interventions and ongoing improvements in the complaint handling process.'
+        'Smart Lock Integration: Deploy IoT-enabled digital locks with remote monitoring and control capabilities.',
+        'Real-time Security Alerts: Receive instant notifications about unauthorized access attempts and security breaches.',
+        'Access Control: Implement role-based access control for authorized personnel only.',
+        'Tamper Detection: Advanced sensors detect tampering attempts with immediate alerts.'
+      ]
+    },
+    {
+      id: 'expense-management-system',
+      title: 'Expense Management System',
+      description: 'Comprehensive expense tracking and management platform.',
+      details: [
+        'Automated Expense Tracking: Automatically capture and categorize expenses from fuel cards and maintenance bills.',
+        'Digital Receipt Management: Digitize and store receipts with OCR technology for easy retrieval.',
+        'Approval Workflows: Implement customizable approval processes with multi-level authorization controls.',
+        'Budget Monitoring: Set up intelligent budget tracking with automated alerts for spending limits.'
+      ]
+    },
+    {
+      id: 'driver-behavior-monitoring',
+      title: 'Driver Behavior Monitoring',
+      description: 'Advanced driver performance and safety monitoring system.',
+      details: [
+        'Real-time Behavior Analysis: Monitor driving patterns including speed, acceleration, and braking to identify risky behaviors.',
+        'Safety Scoring: Generate comprehensive safety scores for each driver based on multiple behavioral factors.',
+        'Training Recommendations: Receive intelligent recommendations for driver training programs based on behavioral patterns.',
+        'Incident Reporting: Automatically detect and report driving incidents with detailed analytics.'
+      ]
+    },
+    {
+      id: 'customer-support',
+      title: 'Customer Support',
+      description: 'Comprehensive customer service and support platform.',
+      details: [
+        'Multi-Channel Query Logging: Customers can log queries via Email, WhatsApp, AI Chatbot, or Calls.',
+        'Automated Order Updates: Customers receive automated status updates on Dispatch, Transit, and Delivery.',
+        'Seamless Communication: Internal teams and customers can communicate effectively, ensuring all critical information is available and actionable.'
       ]
     }
   ];
 
   const adminFeatures = [
     {
-      icon: Shield,
-      title: 'Role Based Access',
-      description: 'Assign roles by department, location, or project. Track audit trails and user actions for compliance.'
+      icon: Truck,
+      title: 'Fleet Management',
+      description: 'Track and manage your entire fleet with real-time GPS tracking, vehicle diagnostics, and maintenance scheduling.'
+    },
+ 
+    {
+      icon: Package,
+      title: 'Inventory Management',
+      description: 'Comprehensive inventory tracking with barcode scanning, automated reorder points, and real-time stock updates.'
     },
     {
-      icon: Monitor,
-      title: 'Complaint Monitoring',
-      description: 'Monitor complaints from submission to resolution. Escalate unresolved issues to meet deadlines.'
+      icon: MapPin,
+      title: 'Last Mile Delivery',
+      description: 'Efficient last-mile solutions featuring real-time tracking, electronic proof of delivery, and customer notifications.'
     },
     {
-      icon: Bell,
-      title: 'Notifications Settings',
-      description: 'Configure notifications by urgency and relevance. Real-time updates on complaint status and escalations.'
-    },
-    {
-      icon: BarChart3,
-      title: 'Data Analytics & Reporting',
-      description: 'Track complaint trends and KPIs with analytics tools. Smart dashboard with bar and pie charts.'
+      icon: Package,
+      title: 'Supply Chain Visibility',
+      description: 'End-to-end visibility across your entire supply chain network with real-time tracking and analytics.'
     }
   ];
 
   const processSteps = [
-    { number: '1', title: 'Planning & Analysis', description: 'Witness our step by step process in making a complaint management system process.' },
-    { number: '2', title: 'Design & Architecture', description: 'Creating comprehensive design and system architecture.' },
-    { number: '3', title: 'Development & Testing', description: 'Building and testing the complete system.' },
-    { number: '4', title: 'Deployment & Maintenance', description: 'Deploying and maintaining the system.' }
+    { 
+      number: '1', 
+      title: 'Needs Assessment', 
+      description: 'Our team conducts a thorough analysis of your logistics operations to identify pain points, inefficiencies, and opportunities for improvement through digital transformation.' 
+    },
+    { 
+      number: '2', 
+      title: 'Solution Design', 
+      description: 'We create a customized logistics management blueprint that aligns with your business goals, incorporating advanced technologies like AI, IoT, and cloud computing.' 
+    },
+    { 
+      number: '3', 
+      title: 'Implementation & Integration', 
+      description: 'Our experts deploy the digital solution with minimal disruption, ensuring seamless integration with your existing systems and third-party platforms.' 
+    },
+    { 
+      number: '4', 
+      title: 'Training & Optimization', 
+      description: 'We provide comprehensive training for your team and continuously monitor system performance, making data-driven optimizations to maximize efficiency and ROI.' 
+    }
   ];
 
   const faqs = [
     {
-      question: "What features should I look for in a complaint management system?",
-      answer: "When choosing a complaint management system, key features to consider include multi-channel complaint intake, complaint tracking, ticket management, customizable workflows, analytics, and reporting tools. Ensure it integrates with other systems, is scalable, supports communication between staff and customers, includes a feedback mechanism, and offers a user-friendly interface."
+      question: "What are the key benefits of implementing a logistics management software?",
+      answer: "Implementation of a logistics management software offers many benefits such as better efficiency, lower costs, better visibility of operations, better logistics order inventory management, optimized route planning and improved customer satisfaction through on-time deliveries and better service levels."
     },
     {
-      question: "How can a complaint management system help my business?",
-      answer: "A complaint management system helps businesses efficiently handle customer concerns, boosting satisfaction and enhancing brand reputation. By streamlining communication and automating processes, it ensures timely complaint resolution, fostering customer loyalty and positive experiences."
+      question: "How does a logistics management software improve efficiency?",
+      answer: "The logistics management software automates manual processes, reduces paperwork and provides real-time insight into inventory, vehicles and delivery locations. It improves work efficiency by minimizing errors, reducing delays and optimizing the use of resources."
     },
     {
-      question: "Can a complaint management system be integrated with other systems?",
-      answer: "Yes, many complaint management systems offer integration capabilities with other business systems like CRM software, helpdesk tools, and communication platforms. When integrating, it's important to ensure data consistency throughout the process to maintain accurate and reliable information across all systems."
+      question: "What features should I look for in a logistics management software?",
+      answer: "When evaluating a logistics management software, important features include order management, inventory management, logistics automation, inbound and outbound logistics, route optimization, fleet logistics, vehicle tracking, reporting and analytics, integration features, user-friendly interface, and customer support."
     },
     {
-      question: "Is a complaint management system suitable for my business size or industry?",
-      answer: "Yes, complaint management systems are beneficial for businesses of all sizes and industries. Whether you're a small startup or a large enterprise, managing and addressing customer complaints effectively is crucial for maintaining customer satisfaction, loyalty and building your business reputation for well defined business growth."
+      question: "Is a logistics management software secure?",
+      answer: "Yes, reputable logistics management softwares implement strong security measures to protect sensitive data and ensure compliance with data protection regulations. This may include encryption, access control, regular security updates and compliance certifications."
     }
   ];
 
@@ -140,6 +214,7 @@ const LogisticsPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-16">
         {/* Background Pattern */}
@@ -154,10 +229,10 @@ const LogisticsPage = () => {
             {/* Left Content */}
             <div className="text-white space-y-6">
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-                Streamline Complaint Management with Our Comprehensive Admin Panel
+                Transform Your Logistics Operations with Our Advanced Management System
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Elevate, control, streamline operations, and unlock efficiency with our complaint management system admin panel.
+                From overseeing inventory management and tracking shipments to optimizing route planning and analyzing performance metrics, our versatile admin panel offers essential logistics tools tailored to your logistics business needs.
               </p>
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Get Free Consultation
@@ -192,11 +267,11 @@ const LogisticsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
-              Key Features In Our Complaint Management System
+              Comprehensive Logistics Management Features
             </h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">
-              Unleash your business potential with our dynamic feature of Complaint Management system, or 
-              if you want to add some of your own business features, don't worry, we'll do it for you.
+              Our logistics management system is packed with powerful features to streamline your supply chain, 
+              optimize routes, and provide real-time visibility across your entire operation.
             </p>
           </div>
 
@@ -204,27 +279,29 @@ const LogisticsPage = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-300">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Feature List */}
-                <div className="bg-gray-900 p-4 space-y-2">
-                  {features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                        activeFeature === index 
-                          ? 'bg-blue-600 text-white' 
-                          : 'text-gray-300 hover:bg-gray-800'
-                      }`}
-                      onClick={() => setActiveFeature(index)}
-                    >
-                      <div className="flex items-center space-x-2">
-                        <span className={`text-xs font-bold px-2 py-1 rounded ${
-                          activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
-                        }`}>
-                          0{index + 1}
-                        </span>
-                        <span className="font-medium text-sm">{feature.title}</span>
+                <div className="bg-gray-900 p-4">
+                  <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar">
+                    {features.map((feature, index) => (
+                      <div
+                        key={index}
+                        className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
+                          activeFeature === index 
+                            ? 'bg-blue-600 text-white' 
+                            : 'text-gray-300 hover:bg-gray-800'
+                        }`}
+                        onClick={() => setActiveFeature(index)}
+                      >
+                        <div className="flex items-center space-x-2">
+                          <span className={`text-xs font-bold px-2 py-1 rounded ${
+                            activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
+                          }`}>
+                            {index < 9 ? `0${index + 1}` : index + 1}
+                          </span>
+                          <span className="font-medium text-sm">{feature.title}</span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
                 {/* Right Side - Feature Details */}
@@ -263,10 +340,10 @@ const LogisticsPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
-              Our Stage Wise Complaint Management System Process
+              Our Logistics Management Implementation Process
             </h2>
             <p className="text-lg text-gray-600">
-              Witness our step by step process in making a complaint management system process.
+              A streamlined approach to deploying your logistics management solution efficiently and effectively.
             </p>
           </div>
 
@@ -325,10 +402,10 @@ const LogisticsPage = () => {
               <div className="text-white space-y-8">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                    Lead The Future Of Complaint Management With Ascentia Labs
+                    Revolutionize Your Supply Chain with Our Logistics Expertise
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
-                    Here's Why You Can't Afford to Miss Us Out!
+                    Why Leading Logistics Companies Choose Our Solutions
                   </p>
                 </div>
 
@@ -417,13 +494,13 @@ const LogisticsPage = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Ready to Transform Your Business?
+                      Ready to Optimize Your Supply Chain?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join hundreds of satisfied clients who trust Ascentia Labs for their complaint management solutions.
+                      Join industry leaders who trust our logistics management solutions to streamline their operations and reduce costs.
                     </p>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
+                      Request a Demo
                     </button>
                   </div>
                 </div>
@@ -442,7 +519,7 @@ const LogisticsPage = () => {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-600">
-                Get answers to common questions about our complaint management system
+                Find answers to common questions about our logistics management solutions
               </p>
             </div>
 
