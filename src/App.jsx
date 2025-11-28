@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
-import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, RealEstatePage} from './pages'
+import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, RealEstatePage, EducationPage} from './pages'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/interior-design-app-development" element={<InteriorArchitecture />} />
           <Route path="/logistics-software-development" element={<LogisticsPage/> } />
           <Route path="/real-estate-app-development" element={<RealEstatePage/> } />
+          <Route path="/education-app-development" element={<EducationPage/> } />
         </Routes>
         <Footer />
         <WhatsAppFloat />
