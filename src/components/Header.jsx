@@ -202,10 +202,10 @@ const Header = () => {
                       <div className="font-medium text-sm">Kindergarten</div>
                     </div>
                     
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <Plane className="w-5 h-5 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">Travel & Tourism</div>
-                    </div>
+                    </Link>
 
                     {/* Column 3 */}
                     <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
@@ -378,10 +378,10 @@ const Header = () => {
                       <Home className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Real Estate</span>
                     </Link>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Plane className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Travel & Tourism</span>
-                    </div>
+                    </Link>
                   </div>
                 )}
               </div>
