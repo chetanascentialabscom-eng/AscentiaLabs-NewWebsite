@@ -64,7 +64,7 @@ const Hero = () => {
               {/* RouteMaestro Logo */}
               <div className="flex items-center justify-center mb-4 sm:mb-6">
                 <img 
-                  src="/AscentiaVercel-main/public/img/footerlogonew.png" 
+                  src="/RM.png" 
                   alt="RouteMaestro" 
                   className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 hover:scale-110 transition-transform duration-300"
                 />

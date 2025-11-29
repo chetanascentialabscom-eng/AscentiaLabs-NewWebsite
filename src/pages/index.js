@@ -4,6 +4,7 @@ export { default as CustomCRM } from './Industries/CustomCRM';
 export { default as InteriorArchitecture } from './Industries/InteriorArchitecture';
 export { default as LogisticsPage } from './Industries/LogisticsPage';
 export { default as ERPPage } from './Industries/ERP';
+export { default as HealthCarePage } from './Industries/HealthCare';
 export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';

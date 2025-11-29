@@ -28,6 +28,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const location = useLocation();
 
   // Handle body scroll lock when mobile menu is open
@@ -224,10 +226,10 @@ const Header = () => {
                     </div>
 
                     {/* Row 4 - Only 2 items */}
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <Heart className="w-4 h-4 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">Health Care</div>
-                    </div>
+                    </Link>
 
                     <Link to="logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <Truck className="w-4 h-4 mr-2 text-blue-600" />
@@ -240,7 +242,52 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <a  className="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors">
+                Products 
+                <ChevronDown className="ml-1 w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="grid grid-cols-1 gap-3">
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                      <img src="/RM.png" alt="Route Maestro" className="w-8 h-8 mr-3" />
+                      <div>
+                        <div className="font-semibold">Route Maestro</div>
+                        <div className="text-xs text-gray-500">AI-Powered B2B Travel SaaS Platform</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors">
+                Resources 
+                <ChevronDown className="ml-1 w-4 h-4" />
+              </button>
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                <div className="p-6">
+                  <div className="grid grid-cols-1 gap-3">
+                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                      <BookOpen className="w-5 h-5 mr-3 text-blue-600" />
+                      <div>
+                        <div className="font-semibold">Blogs</div>
+                        <div className="text-sm text-gray-500">Latest insights and articles</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                      <BarChart3 className="w-5 h-5 mr-3 text-blue-600" />
+                      <div>
+                        <div className="font-semibold">Case Studies</div>
+                        <div className="text-sm text-gray-500">Success stories and examples</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </nav>
 
           <button className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
@@ -255,6 +302,8 @@ const Header = () => {
               if (!isMenuOpen) {
                 setIsIndustriesOpen(false);
                 setIsServicesOpen(false);
+                setIsProductsOpen(false);
+                setIsResourcesOpen(false);
               }
             }}
           >
@@ -350,10 +399,10 @@ const Header = () => {
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">ERP</span>
                     </Link>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="healthcare-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Heart className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
-                    </div>
+                    </Link>
                     <Link to="interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Building className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Interior & Architecture</span>
@@ -386,7 +435,50 @@ const Header = () => {
                 )}
               </div>
 
-              <a className="text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded hover:bg-gray-50 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</a>
+              {/* Products Accordion */}
+              <div className="border-b border-gray-100">
+                <button 
+                  className="w-full flex items-center justify-between py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded transition-colors"
+                  onClick={() => setIsProductsOpen(!isProductsOpen)}
+                >
+                  Products
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isProductsOpen && (
+                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/RM.png" alt="Route Maestro" className="w-8 h-8 mr-3" />
+                      <span className="text-sm">Route Maestro</span>
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Resources Accordion */}
+              <div className="border-b border-gray-100">
+                <button 
+                  className="w-full flex items-center justify-between py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded transition-colors"
+                  onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                >
+                  Resources
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isResourcesOpen && (
+                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
+                    <a href="#" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Blogs</span>
+                    </a>
+                    <a href="#" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Case Studies</span>
+                    </a>
+                  </div>
+                )}
+              </div>
+
               
               <button className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300" onClick={() => setIsMenuOpen(false)}>
                 Get In Touch
