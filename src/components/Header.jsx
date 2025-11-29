@@ -208,10 +208,10 @@ const Header = () => {
                     </Link>
 
                     {/* Column 3 */}
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <BarChart3 className="w-4 h-4 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">ERP</div>
-                    </div>
+                    </Link>
                     
                     <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <BookOpen className="w-4 h-4 mr-2 text-blue-600" />
@@ -346,10 +346,10 @@ const Header = () => {
                       <GraduationCap className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Education</span>
                     </Link>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">ERP</span>
-                    </div>
+                    </Link>
                     <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Heart className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
