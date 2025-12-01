@@ -215,10 +215,10 @@ const Header = () => {
                       <div className="font-medium text-sm">ERP</div>
                     </Link>
                     
-                    <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
                       <BookOpen className="w-4 h-4 mr-2 text-blue-600" />
                       <div className="font-medium text-sm">Library</div>
-                    </div>
+                    </Link>
                     
                     <div className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Wrench className="w-4 h-4 mr-2 text-blue-600" />
@@ -411,10 +411,10 @@ const Header = () => {
                       <Star className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Kindergarten</span>
                     </div>
-                    <div className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="library-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Library</span>
-                    </div>
+                    </Link>
                     <Link to="logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Truck className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Logistics</span>
