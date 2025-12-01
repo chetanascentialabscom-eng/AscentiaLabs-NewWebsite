@@ -269,13 +269,13 @@ const Header = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-6">
                   <div className="grid grid-cols-1 gap-3">
-                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
+                    <Link to="/blogs" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
                       <BookOpen className="w-5 h-5 mr-3 text-blue-600" />
                       <div>
                         <div className="font-semibold">Blogs</div>
                         <div className="text-sm text-gray-500">Latest insights and articles</div>
                       </div>
-                    </a>
+                    </Link>
                     <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
                       <BarChart3 className="w-5 h-5 mr-3 text-blue-600" />
                       <div>
@@ -467,10 +467,10 @@ const Header = () => {
                 
                 {isResourcesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
-                    <a href="#" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <Link to="/blogs" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Blogs</span>
-                    </a>
+                    </Link>
                     <a href="#" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Case Studies</span>

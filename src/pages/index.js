@@ -9,3 +9,10 @@ export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';
 export { default as LibraryPage } from './Industries/Library';
+
+// Blog Pages
+export { default as BlogsPage } from './Blogs';
+export { default as TravelAppDevelopment } from './Blogs/TravelAppDevelopment';
+export { default as TourismReport2025 } from './Blogs/TourismReport2025';
+export { default as AIBenefitsTravel } from './Blogs/AIBenefitsTravel';
+export { default as CustomSoftwareDevelopment } from './Blogs/CustomSoftwareDevelopment';
