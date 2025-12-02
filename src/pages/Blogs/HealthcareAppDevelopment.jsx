@@ -5,7 +5,7 @@ const HealthcareAppDevelopment = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section className="relative py-12 lg:py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
@@ -39,85 +39,85 @@ const HealthcareAppDevelopment = () => {
               </div>
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
-                <span>05/06/2024</span>
+                <span>05/06/2025</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 <span>7 min read</span>
               </div>
-              <button className="flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+              {/* <button className="flex items-center text-blue-600 hover:text-blue-700 transition-colors">
                 <Share2 className="w-5 h-5 mr-2" />
                 <span>Share</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Featured Image */}
-      <section className="py-8">
+      <section className="py-6">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <img 
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              src="/blogs/blog6.jpg" 
               alt="Healthcare App Development"
-              className="w-full h-96 object-cover rounded-2xl shadow-lg"
+              className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
             />
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <article className="prose prose-lg max-w-none">
-              <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-6">
+                <p className="text-xl text-gray-700 leading-relaxed mb-4">
                   Healthcare app development is transforming the medical industry by making healthcare more accessible, efficient, and patient-centered. From telemedicine platforms to health monitoring apps, technology is revolutionizing how we approach healthcare delivery and patient care.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center">
                   <Heart className="w-8 h-8 mr-3 text-red-500" />
                   The Impact of Healthcare Apps
                 </h2>
 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div className="bg-red-50 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Improved Patient Access</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Improved Patient Access</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Healthcare apps break down geographical barriers, allowing patients to access medical consultations, prescriptions, and health monitoring from anywhere. This is particularly valuable for patients in remote areas or those with mobility limitations.
                     </p>
                   </div>
 
                   <div className="bg-blue-50 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Enhanced Patient Engagement</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Enhanced Patient Engagement</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Mobile health apps encourage patients to take an active role in their healthcare through medication reminders, symptom tracking, and educational resources. This leads to better health outcomes and improved treatment adherence.
                     </p>
                   </div>
 
                   <div className="bg-green-50 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Streamlined Healthcare Operations</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Streamlined Healthcare Operations</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Healthcare apps optimize administrative processes, reduce paperwork, and improve communication between healthcare providers. This results in more efficient operations and reduced costs for healthcare institutions.
                     </p>
                   </div>
 
                   <div className="bg-purple-50 rounded-xl p-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-4">Real-time Health Monitoring</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 mb-3">Real-time Health Monitoring</h3>
                     <p className="text-gray-700 leading-relaxed">
                       Integration with wearable devices and IoT sensors enables continuous health monitoring, allowing for early detection of health issues and proactive medical interventions.
                     </p>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12 flex items-center">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8 flex items-center">
                   <Shield className="w-8 h-8 mr-3 text-blue-600" />
                   Key Features of Modern Healthcare Apps
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
                     <h4 className="text-xl font-bold text-gray-800 mb-3">Telemedicine Integration</h4>
                     <p className="text-gray-700">Video consultations, chat support, and remote diagnosis capabilities for comprehensive virtual care.</p>
@@ -136,31 +136,79 @@ const HealthcareAppDevelopment = () => {
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 rounded-xl p-6 mb-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4">Compliance and Security</h3>
+                <div className="bg-yellow-50 rounded-xl p-6 mb-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3">Compliance and Security</h3>
                   <p className="text-gray-700 leading-relaxed">
                     Healthcare apps must comply with strict regulations like HIPAA, GDPR, and FDA guidelines. Security features include end-to-end encryption, secure authentication, and audit trails to protect sensitive patient data.
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-8 mt-12">
-                  <h3 className="text-2xl font-bold mb-4">Transform Healthcare with Technology</h3>
-                  <p className="text-lg mb-6">
-                    Ready to develop a healthcare app that improves patient outcomes and streamlines medical operations? Our team specializes in HIPAA-compliant healthcare solutions.
-                  </p>
-                  <Link 
-                    to="/healthcare-app-development" 
-                    className="inline-flex items-center bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-                  >
-                    Learn More About Our Healthcare Solutions
-                    <ArrowLeft className="w-4 h-4 ml-2 rotate-180" />
-                  </Link>
-                </div>
+             
               </div>
             </article>
           </div>
         </div>
       </section>
+
+      {/* Other Blogs Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Other Blogs</h2>
+            <p className="text-gray-600 text-lg">Explore more insights and articles</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <Link to="/blog/mobile-app-development-trends-2025" className="group">
+              <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <img 
+                  src="/blogs/blog5.jpg" 
+                  alt="Mobile App Development Trends"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Mobile Development</span>
+                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                    MOBILE APP DEVELOPMENT TRENDS FOR 2025: THE FUTURE OF DIGITAL ...
+                  </h3>
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                    <User className="w-4 h-4 mr-1" />
+                    <span className="mr-4">Mobile Team</span>
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>08/06/2025</span>
+                  </div>
+                  <p className="text-blue-600 font-semibold">Read More →</p>
+                </div>
+              </article>
+            </Link>
+
+            <Link to="/blog/benefits-ai-travel-tourism" className="group">
+              <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <img 
+                  src="/blogs/blog3.jpg" 
+                  alt="AI in Travel and Tourism"
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">AI & Technology</span>
+                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                    BENEFITS OF AI IN TRAVEL AND TOURISM INDUSTRY
+                  </h3>
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                    <User className="w-4 h-4 mr-1" />
+                    <span className="mr-4">Tech Team</span>
+                    <Calendar className="w-4 h-4 mr-1" />
+                    <span>12/06/2025</span>
+                  </div>
+                  <p className="text-blue-600 font-semibold">Read More →</p>
+                </div>
+              </article>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+     
     </div>
   );
 };

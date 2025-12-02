@@ -5,7 +5,7 @@ const TravelAppDevelopment = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section className="relative py-12 lg:py-16 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
@@ -39,30 +39,30 @@ const TravelAppDevelopment = () => {
               </div>
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
-                <span>18/06/2024</span>
+                <span>18/06/2025</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 <span>7 min read</span>
               </div>
-              <button className="flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+              {/* <button className="flex items-center text-blue-600 hover:text-blue-700 transition-colors">
                 <Share2 className="w-5 h-5 mr-2" />
                 <span>Share</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Article Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <article className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <article className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
               {/* Featured Image */}
-              <div className="mb-8">
+              <div className="mb-6">
                 <img 
-                  src="/partnerships/image-14.png" 
+                  src="/blogs/blog1.jpg" 
                   alt="Travel App Development"
                   className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
@@ -70,11 +70,11 @@ const TravelAppDevelopment = () => {
 
               {/* Article Content */}
               <div className="prose prose-lg max-w-none">
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                <p className="text-xl text-gray-600 leading-relaxed mb-6">
                   In this modern millennium, technology is everything in many aspects of our lives including travel. With the growing demand for smartphones and mobile applications, it has become a crucial step to have a mobile app to run any business successfully, and this is why Travel App Development has become a vital tool for travel companies and agencies in the travel and tourism industry.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">The Rise of Mobile Technology in Travel Industry</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">The Rise of Mobile Technology in Travel Industry</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Travel applications make it easy and efficient for travelers to organize their trips, get information on vital tourist places, and help travelers to stay organized while traveling. These travel applications have several features including flight booking, hotel bookings as well as a reservation at local tourist attractions and restaurants, with real-time updates on weather and flights.
                 </p>
@@ -83,18 +83,18 @@ const TravelAppDevelopment = () => {
                   Furthermore, the advent of mobile technology has opened new doors for travel companies and travel service providers. With the travel mobile app, travel service providers can now communicate directly with their clients and resolve their queries, provide their clients with payment portal. Additionally, this is also a way of ensuring that consumers are satisfied with the travel services while at the same time, it also helps the travel service providers to gather vital data about their customer's travel behavior as well as their travel preferences.
                 </p>
 
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
+                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 my-6 rounded-r-lg">
                   <p className="text-blue-800 font-medium">
                     As per the report by Statista, the travel application market is forecasted to increase continuously from 2021, right just after the covid. Currently, the capitalization of the travel app market is at $1.256 US Dollars and it is expected that the travel app market will reach the mark of $2 Billion US dollars by 2027.
                   </p>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">Why Are Travel Apps Preferred For Travel?</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Why Are Travel Apps Preferred For Travel?</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   With the rise in modern technology, travel apps have also transformed how people book and enjoy their travel trips. Many travel mobile applications provide various benefits, such as booking flight tickets, hotels, and making a personalized travel itinerary with real-time price updates on flights and hotel reservations that traditional approaches just cannot match.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4 mt-8">1. Convenience and Personalized Experience</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">1. Convenience and Personalized Experience</h3>
                 
                 <h4 className="text-xl font-semibold text-gray-800 mb-3">Centralize Information</h4>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -102,30 +102,30 @@ const TravelAppDevelopment = () => {
                 </p>
 
                 <h4 className="text-xl font-semibold text-gray-800 mb-3">Personalized Experience</h4>
-                <p className="text-gray-700 leading-relaxed mb-8">
+                <p className="text-gray-700 leading-relaxed mb-6">
                   Many travel apps utilize AI (Artificial Intelligence) algorithms to study users travel preferences and behaviors, providing travel customers with personalized travel suggestions for the best tourist places, accommodations, activities, and dining options.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4 mt-8">2. Real-Time Updates and Notifications</h3>
-                <p className="text-gray-700 leading-relaxed mb-8">
+                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">2. Real-Time Updates and Notifications</h3>
+                <p className="text-gray-700 leading-relaxed mb-6">
                   Travel apps provide real-time updates on flight status, gate changes, delays, and cancellations. This feature helps travelers stay informed and make necessary adjustments to their travel plans promptly.
                 </p>
 
-                <div className="bg-gradient-to-r from-blue-600 to-black text-white p-8 rounded-xl my-12">
+                <div className="bg-gradient-to-r from-blue-600 to-black text-white p-6 rounded-xl my-8">
                   <h3 className="text-2xl font-bold mb-4">Benefits Of AI In Travel And Tourism Industry</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full p-2 mr-4 mt-1">
-                        <span className="text-white font-bold">01</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">01</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Personalized Travel Package Recommendations</h4>
+                        <h4 className="font-semibold mb-2">Personalized Recommendations</h4>
                         <p className="text-blue-100 text-sm">AI analyzes user preferences to suggest tailored travel packages</p>
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full p-2 mr-4 mt-1">
-                        <span className="text-white font-bold">02</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">02</span>
                       </div>
                       <div>
                         <h4 className="font-semibold mb-2">Efficient Booking Process</h4>
@@ -133,8 +133,8 @@ const TravelAppDevelopment = () => {
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full p-2 mr-4 mt-1">
-                        <span className="text-white font-bold">03</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">03</span>
                       </div>
                       <div>
                         <h4 className="font-semibold mb-2">Predictive Analysis</h4>
@@ -142,8 +142,8 @@ const TravelAppDevelopment = () => {
                       </div>
                     </div>
                     <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full p-2 mr-4 mt-1">
-                        <span className="text-white font-bold">04</span>
+                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">04</span>
                       </div>
                       <div>
                         <h4 className="font-semibold mb-2">Dynamic Pricing</h4>
@@ -153,12 +153,12 @@ const TravelAppDevelopment = () => {
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-6 mt-12">Conclusion</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Conclusion</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   To summarize, travel app development has become a crucial thing in the travel and tourism industry, as we now know how travel apps can transform travel plans and increase the overall experience of the travel customers during their travel trip. These apps provide the users with real-time access to flight bookings, hotel bookings with personalized travel recommendations to consumers. Such travel applications have also promoted sustainability in travel and tourism practices by harnessing technology, in addition to improving cost efficiency and facilitating communication. As the travel tourism sector evolves, travel applications will play an increasingly important role in driving innovation and changing the future of travel and tourism industry through improved accessibility and efficiency, with an increased awareness on eco tourism.
                 </p>
 
-                <div className="mt-12 pt-8 border-t border-gray-200">
+                <div className="mt-8 pt-6 border-t border-gray-200">
                   <Link 
                     to="/blogs" 
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
@@ -174,18 +174,18 @@ const TravelAppDevelopment = () => {
       </section>
 
       {/* Other Blogs Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Other Blogs</h2>
             <p className="text-gray-600 text-lg">Explore more insights and articles</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Link to="/blog/latest-tourism-report-2025" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
-                  src="/partnerships/centra-greens.svg" 
+                  src="/blogs/blog2.jpg" 
                   alt="Tourism Report 2025"
                   className="w-full h-48 object-cover"
                 />
@@ -198,7 +198,7 @@ const TravelAppDevelopment = () => {
                     <User className="w-4 h-4 mr-1" />
                     <span className="mr-4">Arham Jain</span>
                     <Calendar className="w-4 h-4 mr-1" />
-                    <span>15/06/2024</span>
+                    <span>15/06/2025</span>
                   </div>
                   <p className="text-blue-600 font-semibold">Read More →</p>
                 </div>
@@ -208,7 +208,7 @@ const TravelAppDevelopment = () => {
             <Link to="/blog/benefits-ai-travel-tourism" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
-                  src="/partnerships/go.svg" 
+                  src="/blogs/blog3.jpg" 
                   alt="AI in Travel"
                   className="w-full h-48 object-cover"
                 />
@@ -221,7 +221,7 @@ const TravelAppDevelopment = () => {
                     <User className="w-4 h-4 mr-1" />
                     <span className="mr-4">Tech Team</span>
                     <Calendar className="w-4 h-4 mr-1" />
-                    <span>12/06/2024</span>
+                    <span>12/06/2025</span>
                   </div>
                   <p className="text-blue-600 font-semibold">Read More →</p>
                 </div>
@@ -231,20 +231,7 @@ const TravelAppDevelopment = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-black">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Let's Transform Your Ideas Into Success Stories With Us!
-          </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            Ready to build your next travel application? Our expert team is here to help you create innovative solutions that drive results.
-          </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors text-lg">
-            Let's Discuss
-          </button>
-        </div>
-      </section>
+     
     </div>
   );
 };
