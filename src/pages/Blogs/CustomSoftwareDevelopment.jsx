@@ -115,7 +115,9 @@ const CustomSoftwareDevelopment = () => {
                   As your business grows and evolves, custom software can be easily modified and expanded to accommodate new requirements. This scalability ensures that your software investment continues to provide value as your organization develops.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">3. Competitive Advantage</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4 mt-8 flex items-center">
+                <Zap className="w-6 h-6 mr-3 text-blue-600" />
+                  3. Competitive Advantage</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Custom software gives you unique capabilities that your competitors don't have. By automating specific processes or providing innovative features, you can differentiate your business and gain a significant competitive edge in the market.
                 </p>

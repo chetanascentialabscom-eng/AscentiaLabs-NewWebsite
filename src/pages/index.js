@@ -9,6 +9,7 @@ export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';
 export { default as LibraryPage } from './Industries/Library';
+export { default as ManufacturingPage } from './Industries/Manufacturing';
 
 // Blog Pages
 export { default as BlogsPage } from './Blogs';
