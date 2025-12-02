@@ -16,3 +16,5 @@ export { default as TravelAppDevelopment } from './Blogs/TravelAppDevelopment';
 export { default as TourismReport2025 } from './Blogs/TourismReport2025';
 export { default as AIBenefitsTravel } from './Blogs/AIBenefitsTravel';
 export { default as CustomSoftwareDevelopment } from './Blogs/CustomSoftwareDevelopment';
+export { default as MobileAppTrends2025 } from './Blogs/MobileAppTrends2025';
+export { default as HealthcareAppDevelopment } from './Blogs/HealthcareAppDevelopment';
