@@ -24,11 +24,11 @@ import {
   BarChart3,
   Brain,
   Lightbulb,
-  Zap,
-  Target,
-  Palette,
+  Package,
+  Send,
+  PenTool,
+  Workflow,
   TrendingUp,
-  Rocket,
   Cpu
 } from 'lucide-react';
 
@@ -138,13 +138,13 @@ const Header = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Lightbulb className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Technology Consultation & MIS</div>
                         <div className="text-xs text-gray-500">Strategic technology guidance</div>
                       </div>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Cpu className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
@@ -160,28 +160,28 @@ const Header = () => {
                       </div>
                     </a>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Zap className="w-5 h-5 mr-2 text-blue-600" />
+                      <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Application Modernisation</div>
                         <div className="text-xs text-gray-500">Legacy system upgrades</div>
                       </div>
                     </a>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <TrendingUp className="w-5 h-5 mr-2 text-blue-600" />
+                      <Workflow className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Digital Transformation</div>
                         <div className="text-xs text-gray-500">Business digitalization</div>
                       </div>
                     </a>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Palette className="w-5 h-5 mr-2 text-blue-600" />
+                      <PenTool className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Ideation & Design Strategy</div>
                         <div className="text-xs text-gray-500">Creative design solutions</div>
                       </div>
                     </a>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Rocket className="w-5 h-5 mr-2 text-blue-600" />
+                      <Send className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Go-To-Market</div>
                         <div className="text-xs text-gray-500">Product launch strategies</div>
@@ -391,10 +391,10 @@ const Header = () => {
                 
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Lightbulb className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Technology Consultation & MIS</span>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Cpu className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Software Engineering</span>
@@ -404,19 +404,19 @@ const Header = () => {
                       <span className="text-sm">AI ML Services</span>
                     </a>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Zap className="w-4 h-4 mr-3 text-blue-600" />
+                      <Package className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Application Modernisation</span>
                     </a>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <TrendingUp className="w-4 h-4 mr-3 text-blue-600" />
+                      <Workflow className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Digital Transformation</span>
                     </a>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Palette className="w-4 h-4 mr-3 text-blue-600" />
+                      <PenTool className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Ideation & Design Strategy</span>
                     </a>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Rocket className="w-4 h-4 mr-3 text-blue-600" />
+                      <Send className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Go-To-Market</span>
                     </a>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">

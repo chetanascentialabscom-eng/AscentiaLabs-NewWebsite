@@ -14,6 +14,9 @@ export { default as TravelTourismPage } from './Industries/TravelTourism';
 export { default as LibraryPage } from './Industries/Library';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
 
+// Services Pages
+export { default as TechnologyConsultationAndMIS } from './Services/TechnologyConsultationAndMIS';
+
 // Blog Pages
 export { default as BlogsPage } from './Blogs';
 export { default as TravelAppDevelopment } from './Blogs/TravelAppDevelopment';

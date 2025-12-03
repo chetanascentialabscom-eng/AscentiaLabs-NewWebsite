@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
-import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, ERPPage, HealthCarePage, RealEstatePage, KindergartenPage, EducationPage, TravelTourismPage, LibraryPage, ManufacturingPage, BlogsPage, TravelAppDevelopment, TourismReport2025, AIBenefitsTravel, CustomSoftwareDevelopment, MobileAppTrends2025, HealthcareAppDevelopment} from './pages'
+import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, ERPPage, HealthCarePage, RealEstatePage, KindergartenPage, EducationPage, TravelTourismPage, LibraryPage, ManufacturingPage, TechnologyConsultationAndMIS, BlogsPage, TravelAppDevelopment, TourismReport2025, AIBenefitsTravel, CustomSoftwareDevelopment, MobileAppTrends2025, HealthcareAppDevelopment} from './pages'
 
 function App() {
   return (
@@ -25,6 +25,9 @@ function App() {
           <Route path="/travel-tourism-app-development" element={<TravelTourismPage/> } />
           <Route path="/library-management-system" element={<LibraryPage/> } />
           <Route path="/manufacturing-app-development" element={<ManufacturingPage/> } />
+          
+          {/* Services Routes */}
+          <Route path="/technology-consultation-mis" element={<TechnologyConsultationAndMIS/> } />
           
           {/* Blog Routes */}
           <Route path="/blogs" element={<BlogsPage />} />
