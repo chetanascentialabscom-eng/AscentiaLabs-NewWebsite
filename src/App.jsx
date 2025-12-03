@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
-import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, ERPPage, HealthCarePage, RealEstatePage, EducationPage, TravelTourismPage, LibraryPage, ManufacturingPage, BlogsPage, TravelAppDevelopment, TourismReport2025, AIBenefitsTravel, CustomSoftwareDevelopment, MobileAppTrends2025, HealthcareAppDevelopment} from './pages'
+import { Home, About, CustomCRM ,InteriorArchitecture,LogisticsPage, ERPPage, HealthCarePage, RealEstatePage, KindergartenPage, EducationPage, TravelTourismPage, LibraryPage, ManufacturingPage, BlogsPage, TravelAppDevelopment, TourismReport2025, AIBenefitsTravel, CustomSoftwareDevelopment, MobileAppTrends2025, HealthcareAppDevelopment} from './pages'
 
 function App() {
   return (
@@ -12,12 +12,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+
+          {/* Industry Routes */}
           <Route path="/complaint-management-system" element={<CustomCRM />} />
           <Route path="/interior-design-app-development" element={<InteriorArchitecture />} />
           <Route path="/logistics-software-development" element={<LogisticsPage/> } />
           <Route path="/enterprise-resource-planning" element={<ERPPage/> } />
           <Route path="/healthcare-app-development" element={<HealthCarePage/> } />
           <Route path="/real-estate-app-development" element={<RealEstatePage/> } />
+          <Route path="/kindergarten-management-system" element={<KindergartenPage/> } />
           <Route path="/education-app-development" element={<EducationPage/> } />
           <Route path="/travel-tourism-app-development" element={<TravelTourismPage/> } />
           <Route path="/library-management-system" element={<LibraryPage/> } />
