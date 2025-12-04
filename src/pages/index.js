@@ -16,6 +16,7 @@ export { default as ManufacturingPage } from './Industries/Manufacturing';
 
 // Services Pages
 export { default as TechnologyConsultationAndMIS } from './Services/TechnologyConsultationAndMIS';
+export { default as SoftwareEngineering } from './Services/SoftwareEngineering';
 
 // Blog Pages
 export { default as BlogsPage } from './Blogs';
