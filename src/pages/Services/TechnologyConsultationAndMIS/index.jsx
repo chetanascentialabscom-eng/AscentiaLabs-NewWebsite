@@ -1,30 +1,21 @@
 import { useState } from 'react';
 import { 
   Lightbulb, 
-  Target, 
-  BarChart3, 
   Shield, 
   ChevronDown, 
   ChevronUp, 
   Cpu, 
   Database, 
   Cloud, 
-  Settings,
   TrendingUp,
-  Users,
   Zap,
-  CheckCircle,
   Lock,
-  Globe,
   Layers,
   Code,
-  Server,
   Workflow,
-  LineChart,
   Award,
   ArrowRight,
-  MessageSquare,
-  FileCheck
+  MessageSquare
 } from 'lucide-react';
 
 const TechnologyConsultationAndMIS = () => {
@@ -58,9 +49,9 @@ const TechnologyConsultationAndMIS = () => {
       description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way. Expect regular updates and transparent discussions throughout your project. This fosters trust and ensures your project aligns with your vision."
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: "Competitive Pricing",
-      description: "We offer competitive pricing models to fit your budget. But our focus goes beyond cost. We deliver real value for your business: increased efficiency, reduced costs, and enhanced security- all at a price that makes sense."
+      icon: <Zap className="w-7 h-7" />,
+      title: "Cost-Effective Solutions",
+      description: "We deliver exceptional value with competitive pricing models that fit your budget, focusing on increased efficiency, reduced operational costs, and maximum ROI for your investment."
     }
   ];
 
@@ -68,34 +59,62 @@ const TechnologyConsultationAndMIS = () => {
     {
       id: 'strategic',
       name: 'Strategic Planning',
-      icon: <Lightbulb className="w-6 h-6" />,
+      icon: <Lightbulb className="w-5 h-5" />,
       title: 'Strategic Technology Planning',
       description: 'Our technology experts develop secure, transparent and efficient solutions for strategic planning, facilitating trusted roadmaps, optimizing technology infrastructure, and ensuring digital transformation, to enhance business growth and operational excellence.',
-      image: '/technology-planning.jpg'
+      techLogos: [
+        '/techLogo/figma.png',
+        '/techLogo/power bi.png',
+        '/techLogo/google analytics.png',
+        '/techLogo/Framer logo.png',
+        '/techLogo/salesforce.png',
+        '/techLogo/oracle logo.png'
+      ]
     },
     {
       id: 'mis',
       name: 'MIS Solutions',
-      icon: <Database className="w-6 h-6" />,
+      icon: <Database className="w-5 h-5" />,
       title: 'Management Information Systems',
       description: 'Our MIS experts develop secure, integrated and efficient solutions for management information systems, facilitating trusted data management, optimizing reporting processes, and ensuring performance analytics, to enhance decision-making and operational efficiency.',
-      image: '/mis-solutions.jpg'
+      techLogos: [
+        '/techLogo/mongo db.png',
+        '/techLogo/mysql.png',
+        '/techLogo/oracle logo.png',
+        '/techLogo/Cassandra.png',
+        '/techLogo/Firebase.png',
+        '/techLogo/power bi.png'
+      ]
     },
     {
       id: 'cloud',
       name: 'Cloud Strategy',
-      icon: <Cloud className="w-6 h-6" />,
+      icon: <Cloud className="w-5 h-5" />,
       title: 'Cloud Strategy & Migration',
       description: 'Our cloud experts develop secure, scalable and efficient solutions for cloud migration, facilitating trusted platform selection, optimizing cloud infrastructure, and ensuring cost optimization, to enhance business agility and operational excellence.',
-      image: '/cloud-strategy.jpg'
+      techLogos: [
+        '/techLogo/aws.png',
+        '/techLogo/microsoft azure.png',
+        '/techLogo/google cloud.png',
+        '/techLogo/oracle cloud.png',
+        '/techLogo/Firebase.png',
+        '/techLogo/salesforce.png'
+      ]
     },
     {
       id: 'security',
       name: 'IT Security',
-      icon: <Shield className="w-6 h-6" />,
+      icon: <Shield className="w-5 h-5" />,
       title: 'IT Security Consulting',
       description: 'Our security experts develop robust, compliant and efficient solutions for IT security, facilitating trusted risk assessments, optimizing security protocols, and ensuring incident response planning, to enhance protection and operational resilience.',
-      image: '/security-consulting.jpg'
+      techLogos: [
+        '/techLogo/aws.png',
+        '/techLogo/microsoft azure.png',
+        '/techLogo/google cloud.png',
+        '/techLogo/oracle cloud.png',
+        '/techLogo/Firebase.png',
+        '/techLogo/salesforce.png'
+      ]
     }
   ];
 
@@ -108,20 +127,38 @@ const TechnologyConsultationAndMIS = () => {
 
   const techStack = {
     platforms: [
-      { name: 'AWS', icon: <Cloud className="w-8 h-8" /> },
-      { name: 'Azure', icon: <Server className="w-8 h-8" /> },
-      { name: 'Google Cloud', icon: <Globe className="w-8 h-8" /> },
-      { name: 'Oracle', icon: <Database className="w-8 h-8" /> }
+      { name: 'AWS', logo: '/techLogo/aws.png' },
+      { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png' },
+      { name: 'Google Cloud', logo: '/techLogo/google cloud.png' },
+      { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png' },
+      { name: 'Firebase', logo: '/techLogo/Firebase.png' },
+      { name: 'Salesforce', logo: '/techLogo/salesforce.png' }
     ],
     technologies: [
-      { name: 'Python', icon: <Code className="w-8 h-8" /> },
-      { name: 'Node.js', icon: <Server className="w-8 h-8" /> },
-      { name: 'React', icon: <Layers className="w-8 h-8" /> },
-      { name: 'Angular', icon: <Code className="w-8 h-8" /> },
-      { name: 'Java', icon: <Code className="w-8 h-8" /> },
-      { name: 'PostgreSQL', icon: <Database className="w-8 h-8" /> },
-      { name: 'MongoDB', icon: <Database className="w-8 h-8" /> },
-      { name: 'Docker', icon: <Layers className="w-8 h-8" /> }
+      { name: 'Python', logo: '/techLogo/python.png' },
+      { name: 'Node.js', logo: '/techLogo/node js.png' },
+      { name: 'React', logo: '/techLogo/React.png' },
+      { name: 'Angular', logo: '/techLogo/Angular.png' },
+      { name: 'Java', logo: '/techLogo/Java.png' },
+      { name: 'MongoDB', logo: '/techLogo/mongo db.png' },
+      { name: 'MySQL', logo: '/techLogo/mysql.png' },
+      { name: 'TypeScript', logo: '/techLogo/typescript.png' },
+      { name: 'Next.js', logo: '/techLogo/next js.png' },
+      { name: 'Vue.js', logo: '/techLogo/Vue Js.png' },
+      { name: 'TensorFlow', logo: '/techLogo/tensor flow.png' },
+      { name: 'PyTorch', logo: '/techLogo/pytorch.png' }
+    ],
+    design: [
+      { name: 'Figma', logo: '/techLogo/figma.png' },
+      { name: 'Photoshop', logo: '/techLogo/photoshop logo.png' },
+      { name: 'Blender', logo: '/techLogo/blender.png' },
+      { name: 'SketchUp', logo: '/techLogo/sketchup.png' }
+    ],
+    ai: [
+      { name: 'OpenAI', logo: '/techLogo/open ai logo.png' },
+      { name: 'Gemini', logo: '/techLogo/gemini logo.png' },
+      { name: 'Claude AI', logo: '/techLogo/calude ai.png' },
+      { name: 'Gamma AI', logo: '/techLogo/gamma ai.png' }
     ]
   };
 
@@ -147,7 +184,7 @@ const TechnologyConsultationAndMIS = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -155,86 +192,80 @@ const TechnologyConsultationAndMIS = () => {
           <div className="absolute bottom-20 right-40 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto w-full relative z-10 py-20">
+        <div className="max-w-7xl mx-auto w-full relative z-10 py-8 sm:py-12 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+              <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm font-semibold mb-4 sm:mb-6 backdrop-blur-sm">
                 Industry's Favorite
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                 Technology Consultation & MIS Solutions
               </h1>
-              <p className="text-lg  text-blue-100 mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
                 At Ascentia Labs, we assist our clients in exploring all facets of technology consulting and developing customized solutions that provide tangible value. With our expertise in architecture, digital design, and development, we support our clients in their pursuit of innovative technology solutions that are ready for the market and effectively address real business challenges.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <button className="px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-all font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                  Get Started
-                  <ArrowRight className="inline-block ml-2 w-5 h-5" />
-                </button>
-                <button className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white/10 transition-all font-semibold">
-                  View Case Studies
+              <div className="mb-8 sm:mb-12">
+                <button className="px-10 py-4 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                  Get Consultation
+                  <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Stats - Mobile/Tablet */}
-              <div className="grid grid-cols-2 gap-6 lg:hidden">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                  <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
                     <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
-                    <div className="text-blue-200 text-sm">{stat.label}</div>
+                    <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right Visual Content */}
-            <div className="hidden lg:block">
-              <div className="relative">
-                {/* Floating Cards */}
-                <div className="relative h-[500px]">
-                  {/* Main Central Card */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl flex items-center justify-center">
-                    <div className="text-center">
-                      <Cpu className="w-24 h-24 text-white mx-auto mb-4" />
-                      <h3 className="text-2xl font-bold text-white mb-2">Technology</h3>
-                      <p className="text-blue-100">Consulting Excellence</p>
-                    </div>
+            {/* Right Visual Content - Service Cards Grid */}
+            <div className="mt-8 lg:mt-0">
+              {/* Central Feature Badge - At Top */}
+              <div className="flex justify-center mb-6 animate-fadeIn">
+                <div className="bg-white/15 backdrop-blur-lg rounded-full border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                  <div className="flex items-center gap-2.5">
+                    <Cpu className="w-7 h-7 text-white animate-pulse" />
+                    <h3 className="text-sm sm:text-base font-bold text-white">Technology Consulting Excellence</h3>
                   </div>
+                </div>
+              </div>
 
-                  {/* Floating Card 1 - Top Left */}
-                  <div className="absolute top-0 left-0 w-48 h-48 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-6 animate-float">
-                    <Database className="w-12 h-12 text-white mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-1">MIS Solutions</h4>
-                    <p className="text-sm text-blue-100">Data-driven insights</p>
-                  </div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                {/* Card 1 - MIS Solutions */}
+                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <Database className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">MIS Solutions</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data-driven insights</p>
+                </div>
 
-                  {/* Floating Card 2 - Top Right */}
-                  <div className="absolute top-10 right-0 w-44 h-44 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-6 animate-float animation-delay-1000">
-                    <Cloud className="w-12 h-12 text-white mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-1">Cloud Strategy</h4>
-                    <p className="text-sm text-blue-100">Scalable infrastructure</p>
-                  </div>
+                {/* Card 2 - Cloud Strategy */}
+                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-purple-600/0 group-hover:from-blue-400/20 group-hover:to-purple-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <Cloud className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Cloud Strategy</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Scalable infrastructure</p>
+                </div>
 
-                  {/* Floating Card 3 - Bottom Left */}
-                  <div className="absolute bottom-10 left-10 w-44 h-44 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-6 animate-float animation-delay-2000">
-                    <Shield className="w-12 h-12 text-white mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-1">Security First</h4>
-                    <p className="text-sm text-blue-100">Protected systems</p>
-                  </div>
+                {/* Card 3 - Security First */}
+                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-400/0 to-blue-600/0 group-hover:from-indigo-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Security First</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Protected systems</p>
+                </div>
 
-                  {/* Floating Card 4 - Bottom Right */}
-                  <div className="absolute bottom-0 right-10 w-48 h-48 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-6 animate-float animation-delay-3000">
-                    <Lightbulb className="w-12 h-12 text-white mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-1">Strategic Planning</h4>
-                    <p className="text-sm text-blue-100">Future-ready solutions</p>
-                  </div>
-
-                  {/* Decorative Elements */}
-                  <div className="absolute top-20 right-20 w-4 h-4 bg-white rounded-full animate-ping"></div>
-                  <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-300 rounded-full animate-pulse"></div>
-                  <div className="absolute top-40 left-20 w-2 h-2 bg-purple-300 rounded-full animate-bounce"></div>
+                {/* Card 4 - Strategic Planning */}
+                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-blue-600/0 group-hover:from-indigo-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <Lightbulb className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Strategic Planning</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Future-ready solutions</p>
                 </div>
               </div>
             </div>
@@ -243,7 +274,7 @@ const TechnologyConsultationAndMIS = () => {
           {/* Stats - Desktop */}
           <div className="hidden lg:grid grid-cols-4 gap-8 mt-20 pt-12 border-t border-blue-400/30">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
                 <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
                 <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
               </div>
@@ -261,20 +292,38 @@ const TechnologyConsultationAndMIS = () => {
             33% { transform: translate(30px, -50px) scale(1.1); }
             66% { transform: translate(-20px, 20px) scale(0.9); }
           }
+          @keyframes fadeIn {
+            from { 
+              opacity: 0; 
+              transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+              opacity: 1; 
+              transform: translateY(0) scale(1); 
+            }
+          }
+          @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+          }
           .animate-float {
             animation: float 3s ease-in-out infinite;
           }
           .animate-blob {
             animation: blob 7s infinite;
           }
+          .animate-fadeIn {
+            animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            animation-fill-mode: forwards;
+          }
           .animation-delay-1000 {
-            animation-delay: 1s;
+            animation-delay: 0.2s;
           }
           .animation-delay-2000 {
-            animation-delay: 2s;
+            animation-delay: 0.4s;
           }
           .animation-delay-3000 {
-            animation-delay: 3s;
+            animation-delay: 0.6s;
           }
           .animation-delay-4000 {
             animation-delay: 4s;
@@ -283,10 +332,10 @@ const TechnologyConsultationAndMIS = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
               Why Ascentia Labs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -294,19 +343,34 @@ const TechnologyConsultationAndMIS = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whyChooseUs.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                className="group relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-blue-500 transform hover:-translate-y-2 overflow-hidden"
               >
-                <div className="text-blue-600 mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-blue-600 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  {/* Icon and Title in one line */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
+                      {item.icon}
+                    </div>
+                    
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-gray-900 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-black transition-all duration-300 leading-tight">
+                      {item.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
+                    {item.description}
+                  </p>
+
+                  {/* Decorative element */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                </div>
               </div>
             ))}
           </div>
@@ -314,27 +378,27 @@ const TechnologyConsultationAndMIS = () => {
       </section>
 
       {/* Services Tabs Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Our Consultation Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
               Comprehensive technology solutions tailored to your business needs
             </p>
           </div>
 
-          {/* Tabs */}
+          {/* Service Tabs - Compact */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all ${
+                className={`group relative px-5 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
                   activeTab === service.id
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
                 }`}
               >
                 <span className="inline-flex items-center gap-2">
@@ -348,20 +412,36 @@ const TechnologyConsultationAndMIS = () => {
           {/* Tab Content */}
           {services.map((service) => (
             activeTab === service.id && (
-              <div key={service.id} className="grid lg:grid-cols-2 gap-12 items-center">
+              <div key={service.id} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeIn">
                 <div className="order-2 lg:order-1">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-6">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
                     {service.description}
                   </p>
+                 
                 </div>
                 <div className="order-1 lg:order-2">
-                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-100 to-blue-200 aspect-video flex items-center justify-center">
-                    <div className="text-blue-600">
-                      {service.icon && <div className="scale-[3]">{service.icon}</div>}
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
+                    {/* Tech Logos Grid */}
+                    <div className="grid grid-cols-3 gap-6">
+                      {service.techLogos.map((logo, index) => (
+                        <div 
+                          key={index}
+                          className="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-110 group"
+                        >
+                          <img 
+                            src={logo} 
+                            alt="Technology" 
+                            className="w-full h-12 object-contain transition-all duration-300"
+                          />
+                        </div>
+                      ))}
                     </div>
+                    {/* Decorative elements */}
+                    <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
                   </div>
                 </div>
               </div>
@@ -371,27 +451,34 @@ const TechnologyConsultationAndMIS = () => {
       </section>
 
       {/* Technology Stack Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Technology Stack for the
-              <span className="block text-blue-600">Transformation of Your Business</span>
+              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mt-2">Transformation of Your Business</span>
             </h2>
+            <p className="text-lg text-gray-600 mt-4">Leveraging cutting-edge technologies to deliver exceptional results</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Platforms */}
+          <div className="space-y-16">
+            {/* Cloud Platforms */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Platforms</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
+                <Cloud className="w-8 h-8 text-blue-600" />
+                Cloud Platforms
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 {techStack.platforms.map((tech, index) => (
                   <div 
                     key={index}
-                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all text-center border border-gray-100 hover:border-blue-200"
+                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="text-gray-700 mb-3 flex justify-center">{tech.icon}</div>
-                    <div className="text-sm font-medium text-gray-900">{tech.name}</div>
+                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
+                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
                   </div>
                 ))}
               </div>
@@ -399,15 +486,65 @@ const TechnologyConsultationAndMIS = () => {
 
             {/* Technologies */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Technologies</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
+                <Code className="w-8 h-8 text-blue-600" />
+                Development Technologies
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 {techStack.technologies.map((tech, index) => (
                   <div 
                     key={index}
-                    className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all text-center border border-gray-100 hover:border-blue-200"
+                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
-                    <div className="text-gray-700 mb-3 flex justify-center">{tech.icon}</div>
-                    <div className="text-sm font-medium text-gray-900">{tech.name}</div>
+                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
+                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Design Tools */}
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
+                <Layers className="w-8 h-8 text-blue-600" />
+                Design & Visualization
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {techStack.design.map((tech, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
+                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AI & Machine Learning */}
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
+                <Zap className="w-8 h-8 text-blue-600" />
+                AI & Machine Learning
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {techStack.ai.map((tech, index) => (
+                  <div 
+                    key={index}
+                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
+                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
+                    </div>
+                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
                   </div>
                 ))}
               </div>
@@ -420,7 +557,7 @@ const TechnologyConsultationAndMIS = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
@@ -430,20 +567,20 @@ const TechnologyConsultationAndMIS = () => {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+              <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
                 <button
                   className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
                   onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
                 >
                   <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
                   {expandedFAQ === index ? (
-                    <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0 transform transition-transform duration-300" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform duration-300" />
                   )}
                 </button>
                 {expandedFAQ === index && (
-                  <div className="px-6 pb-5 bg-white">
+                  <div className="px-6 pb-5 bg-white animate-fadeIn">
                     <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
@@ -453,6 +590,7 @@ const TechnologyConsultationAndMIS = () => {
         </div>
       </section>
 
+     
      
     </div>
   );
