@@ -36,22 +36,22 @@ const Clients = () => {
     {
       number: "35+",
       label: "Business Years",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-600 to-black"
     },
     {
       number: "240+",
       label: "Clients",
-      color: "from-purple-500 to-pink-500"
+      color: "from-blue-600 to-black"
     },
     {
       number: "2000+",
       label: "Projects",
-      color: "from-green-500 to-teal-500"
+      color: "from-blue-600 to-black"
     },
     {
       number: "130+",
       label: "Team Members",
-      color: "from-orange-500 to-red-500"
+      color: "from-blue-600 to-black"
     }
   ];
 
@@ -167,22 +167,17 @@ const Clients = () => {
                 className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 border border-gray-100 text-center min-h-[160px] flex flex-col justify-center mobile-no-hover"
               >
                 {/* Number */}
-                <div className={`text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300`}>
+                <div className={`relative z-10 text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300`}>
                   {stat.number}
                 </div>
 
                 {/* Label */}
-                <p className="text-gray-600 font-semibold text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
+                <p className="relative z-10 text-gray-600 font-semibold text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
                   {stat.label}
                 </p>
 
-                {/* Hover Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
-                
-                {/* Glowing Border */}
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-20 rounded-2xl blur-sm`}></div>
-                </div>
+                {/* Hover Background - Very light blue */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
               </div>
             ))}
           </div>

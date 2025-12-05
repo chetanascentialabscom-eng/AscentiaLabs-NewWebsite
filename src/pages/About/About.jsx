@@ -51,10 +51,78 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
 
-       {/* Who We Are Section */}
-      <section className="py-12 bg-white relative">
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div 
+            className={`text-center transform transition-all duration-1000 ${
+              isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+            id="hero"
+            data-animate
+          >
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+                About Ascentia Labs
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Our Numbers Define Us
+              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
+                Who We Are
+              </span>
+            </h1>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Our numbers tell the story of our dedication, expertise, unwavering pursuit of excellence, and tells 
+              why we reaffirm our position as leaders in the industry
+            </p>
+          </div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-16 h-16 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-20 h-20 bg-gray-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div 
+            className={`grid grid-cols-1 md:grid-cols-4 gap-6 transform transition-all duration-1000 delay-300 ${
+              isVisible.stats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+            id="stats"
+            data-animate
+          >
+            {[
+              { number: '35+', label: 'Business Years', color: 'from-blue-500 to-blue-600' },
+              { number: '240+', label: 'Clients', color: 'from-blue-600 to-black' },
+              { number: '2000+', label: 'Projects', color: 'from-gray-600 to-gray-800' },
+              { number: '130+', label: 'Team Members', color: 'from-blue-500 to-gray-700' }
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className={`text-center group hover:scale-105 transition-all duration-300 delay-${index * 100}`}
+              >
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                    {stat.number}
+                  </div>
+                  <div className="text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+       {/* Who We Are Section */}
+      <section className="py-16 bg-white relative">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div 
               className={`transform transition-all duration-1000 delay-500 ${
                 isVisible.whoWeAre ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
@@ -62,18 +130,17 @@ const About = () => {
               id="whoWeAre"
               data-animate
             >
-              <div className="inline-block mb-3">
+              <div className="inline-block mb-4">
                 <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
                   Our Story
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Who We
-                <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                  Are
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
+                  Who We Are
                 </span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
                 At Ascentia Labs, we excel in fostering collaboration and innovation, leveraging cutting-edge 
                 technologies to craft tailored, industry-specific solutions. With a steadfast commitment to 
                 redefining industry standards, we empower our clients to achieve unparalleled business 
@@ -173,74 +240,6 @@ const About = () => {
           </div>
         </div>
       </section>
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div 
-            className={`text-center transform transition-all duration-1000 ${
-              isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}
-            id="hero"
-            data-animate
-          >
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
-                About Ascentia Labs
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Our Numbers Define Us
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Who We Are
-              </span>
-            </h1>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Our numbers tell the story of our dedication, expertise, unwavering pursuit of excellence, and tells 
-              why we reaffirm our position as leaders in the industry
-            </p>
-          </div>
-        </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-16 h-16 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-20 h-20 bg-gray-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div 
-            className={`grid grid-cols-1 md:grid-cols-4 gap-6 transform transition-all duration-1000 delay-300 ${
-              isVisible.stats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}
-            id="stats"
-            data-animate
-          >
-            {[
-              { number: '35+', label: 'Business Years', color: 'from-blue-500 to-blue-600' },
-              { number: '240+', label: 'Clients', color: 'from-blue-600 to-black' },
-              { number: '2000+', label: 'Projects', color: 'from-gray-600 to-gray-800' },
-              { number: '130+', label: 'Team Members', color: 'from-blue-500 to-gray-700' }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className={`text-center group hover:scale-105 transition-all duration-300 delay-${index * 100}`}
-              >
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                  <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    {stat.number}
-                  </div>
-                  <div className="text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
     
 
@@ -266,10 +265,8 @@ const About = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Our Core
-              <span className="block bg-gradient-to-r from-blue-400 to-gray-400 bg-clip-text text-transparent">
-                Values
-              </span>
+              Our Core Values
+             
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
               In all our industry solutions, we strive to uphold the highest standards of integrity and foster a culture of innovation 

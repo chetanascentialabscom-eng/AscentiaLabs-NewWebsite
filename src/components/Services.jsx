@@ -1,7 +1,8 @@
 const Services = () => {
   const services = [
     {
-      title: "Software Development",
+      title: "Software Engineering",
+      description: "Custom software development",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
@@ -10,6 +11,7 @@ const Services = () => {
     },
     {
       title: "Digital Transformation",
+      description: "Business digitalization",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
@@ -17,7 +19,8 @@ const Services = () => {
       )
     },
     {
-      title: "Artificial Intelligence",
+      title: "AI ML Services",
+      description: "Artificial intelligence solutions",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -26,23 +29,18 @@ const Services = () => {
       highlighted: true
     },
     {
-      title: "Mobile App Development",
+      title: "Mobile Application",
+      description: "iOS & Android development",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
         </svg>
       )
     },
+
     {
-      title: "Cloud Services",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
-        </svg>
-      )
-    },
-    {
-      title: "Data Science & Analytics",
+      title: "Technology Consultation & MIS",
+      description: "Strategic technology guidance",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
@@ -50,23 +48,18 @@ const Services = () => {
       )
     },
     {
-      title: "IT Consulting",
+      title: "Application Modernisation",
+      description: "Legacy system upgrades",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
         </svg>
       )
     },
+
     {
-      title: "Data Security",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18,8h-1V6c0-2.76-2.24-5-5-5S7,3.24,7,6v2H6c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V10C20,8.9,19.1,8,18,8z M12,17c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S13.1,17,12,17z M15.1,8H8.9V6c0-1.71,1.39-3.1,3.1-3.1s3.1,1.39,3.1,3.1V8z"/>
-        </svg>
-      )
-    },
-    {
-      title: "Ideation & Design Strategy",
+      title: "Go-To-Market",
+      description: "Product launch strategies",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H15V1h-2v1H9V1H7v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z"/>
@@ -74,10 +67,29 @@ const Services = () => {
       )
     },
     {
-      title: "Business Intelligence",
+      title: "Ideation & Design Strategy",
+      description: "Creative design solutions",
       icon: (
         <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      )
+    },
+    {
+      title: "Cloud Services",
+      description: "Scalable cloud solutions",
+      icon: (
+        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+        </svg>
+      )
+    },
+    {
+      title: "Data Security",
+      description: "Enterprise security solutions",
+      icon: (
+        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18,8h-1V6c0-2.76-2.24-5-5-5S7,3.24,7,6v2H6c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V10C20,8.9,19.1,8,18,8z M12,17c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S13.1,17,12,17z M15.1,8H8.9V6c0-1.71,1.39-3.1,3.1-3.1s3.1,1.39,3.1,3.1V8z"/>
         </svg>
       )
     }
@@ -118,9 +130,16 @@ const Services = () => {
               </div>
 
               {/* Service Title */}
-              <h3 className="text-center text-xs sm:text-sm font-semibold leading-tight px-1">
+              <h3 className="text-center text-xs sm:text-sm font-semibold leading-tight px-1 mb-1">
                 {service.title}
               </h3>
+              
+              {/* Service Description */}
+              {service.description && (
+                <p className="text-center text-xs text-gray-300 leading-tight px-1">
+                  {service.description}
+                </p>
+              )}
 
               {/* Enhanced Hover Effect Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl"></div>

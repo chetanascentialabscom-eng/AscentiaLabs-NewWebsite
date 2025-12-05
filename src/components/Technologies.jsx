@@ -61,7 +61,7 @@ const Technologies = () => {
   const techCategories = [
     {
       category: "Frontend Development",
-      color: "from-purple-500 to-pink-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "React", logo: "/techLogo/React.png", description: "Modern UI library" },
         { name: "Angular", logo: "/techLogo/Angular.png", description: "Full-featured framework" },
@@ -75,7 +75,7 @@ const Technologies = () => {
     },
     {
       category: "Backend Development",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "Node.js", logo: "/techLogo/node js.png", description: "JavaScript runtime" },
         { name: "Python", logo: "/techLogo/python.png", description: "Versatile language" },
@@ -87,7 +87,7 @@ const Technologies = () => {
     },
     {
       category: "Mobile Development",
-      color: "from-green-500 to-teal-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "Flutter", logo: "/techLogo/flutter.png", description: "Cross-platform" },
         { name: "Android", logo: "/techLogo/android.png", description: "Native Android" },
@@ -98,7 +98,7 @@ const Technologies = () => {
     },
     {
       category: "Cloud & DevOps",
-      color: "from-orange-500 to-red-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "AWS", logo: "/techLogo/aws.png", description: "Amazon cloud" },
         { name: "Google Cloud", logo: "/techLogo/google cloud.png", description: "Google's cloud" },
@@ -109,7 +109,7 @@ const Technologies = () => {
     },
     {
       category: "Database & Analytics",
-      color: "from-indigo-500 to-purple-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "MongoDB", logo: "/techLogo/mongo db.png", description: "NoSQL database" },
         { name: "MySQL", logo: "/techLogo/mysql.png", description: "Relational database" },
@@ -121,7 +121,7 @@ const Technologies = () => {
     },
     {
       category: "AI & Machine Learning",
-      color: "from-pink-500 to-rose-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "OpenAI", logo: "/techLogo/open ai logo.png", description: "AI platform" },
         { name: "TensorFlow", logo: "/techLogo/tensor flow.png", description: "ML framework" },
@@ -133,7 +133,7 @@ const Technologies = () => {
     },
     {
       category: "Design & UI/UX",
-      color: "from-teal-500 to-green-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "Figma", logo: "/techLogo/figma.png", description: "Design tool" },
         { name: "Photoshop", logo: "/techLogo/photoshop logo.png", description: "Image editing" },
@@ -144,7 +144,7 @@ const Technologies = () => {
     },
     {
       category: "Enterprise & CRM",
-      color: "from-cyan-500 to-blue-500",
+      color: "from-blue-600 to-black",
       technologies: [
         { name: "Salesforce", logo: "/techLogo/salesforce.png", description: "CRM platform" },
         { name: "Apache NiFi", logo: "/techLogo/apache nifi.png", description: "Data integration" }
@@ -176,23 +176,58 @@ const Technologies = () => {
           </p>
         </div>
 
-        {/* Category Navigation */}
-        <div className="mb-8 sm:mb-12 px-2 sm:px-4 overflow-x-scroll no-scrollbar pb-1 -mx-2 sm:-mx-4 px-2 sm:px-4">
-          <div className="flex space-x-2 sm:space-x-3 md:space-x-4 pb-1 min-w-max">
-            {techCategories.map((category, index) => (
-              <button
-                key={index}
-                onClick={() => handleCategoryClick(index)}
-                className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
-                  activeCategory === index
-                    ? `bg-gradient-to-r ${category.color} text-white shadow-md`
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                }`}
-              >
-                {category.category}
-              </button>
-            ))}
+        {/* Category Navigation with Arrows */}
+        <div className="mb-8 sm:mb-12 relative flex items-center">
+          {/* Left Arrow */}
+          <button
+            onClick={() => {
+              const container = navRef.current;
+              if (container) {
+                container.scrollBy({ left: -200, behavior: 'smooth' });
+              }
+            }}
+            className="flex-shrink-0 z-10 bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 mr-2 sm:mr-4"
+            aria-label="Scroll left"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Navigation Container */}
+          <div ref={navRef} className="flex-1 overflow-x-scroll no-scrollbar scroll-smooth">
+            <div className="flex space-x-2 sm:space-x-3 md:space-x-4 min-w-max">
+              {techCategories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleCategoryClick(index)}
+                  className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
+                    activeCategory === index
+                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-md'
+                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  {category.category}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={() => {
+              const container = navRef.current;
+              if (container) {
+                container.scrollBy({ left: 200, behavior: 'smooth' });
+              }
+            }}
+            className="flex-shrink-0 z-10 bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ml-2 sm:ml-4"
+            aria-label="Scroll right"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Technology Categories */}
@@ -249,18 +284,10 @@ const Technologies = () => {
                       {tech.description}
                     </p>
 
-                    {/* Hover Effects */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
-                    
-                    {/* Glowing Border */}
-                    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${category.color} opacity-20 rounded-2xl blur-sm`}></div>
-                    </div>
-
-                    {/* Floating Dots */}
-                    <div className={`absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r ${category.color} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce`}></div>
-                    <div className={`absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-gradient-to-r ${category.color} rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse`}></div>
+                    {/* Hover Effects - Very subtle blue gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-blue-100/20 to-blue-200/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
                   </div>
+                  
                 ))}
               </div>
             </div>
