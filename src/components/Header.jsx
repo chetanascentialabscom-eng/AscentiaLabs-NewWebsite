@@ -152,13 +152,13 @@ const Header = () => {
                         <div className="text-xs text-gray-500">Custom software development</div>
                       </div>
                     </Link>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ai-ml-services" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Brain className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">AI ML Services</div>
                         <div className="text-xs text-gray-500">Artificial intelligence solutions</div>
                       </div>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
@@ -399,10 +399,10 @@ const Header = () => {
                       <Cpu className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Software Engineering</span>
                     </Link>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ai-ml-services" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Brain className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">AI ML Services</span>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Package className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Application Modernisation</span>
