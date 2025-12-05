@@ -128,46 +128,63 @@ const SoftwareEngineering = () => {
     { number: '80+', label: 'Countries Empowered' }
   ];
 
-  const techStack = {
-    frontend: [
-      { name: 'React', logo: '/techLogo/React.png' },
-      { name: 'Angular', logo: '/techLogo/Angular.png' },
-      { name: 'Vue.js', logo: '/techLogo/Vue Js.png' },
-      { name: 'Next.js', logo: '/techLogo/next js.png' },
-      { name: 'TypeScript', logo: '/techLogo/typescript.png' },
-      { name: 'Tailwind CSS', logo: '/techLogo/tailwind css.png' }
-    ],
-    backend: [
-      { name: 'Node.js', logo: '/techLogo/node js.png' },
-      { name: 'Python', logo: '/techLogo/python.png' },
-      { name: 'Java', logo: '/techLogo/Java.png' },
-      { name: 'PHP', logo: '/techLogo/php.png' },
-      { name: 'Go', logo: '/techLogo/go.png' },
-      { name: '.NET', logo: '/techLogo/net.png' }
-    ],
-    mobile: [
-      { name: 'React Native', logo: '/techLogo/React.png' },
-      { name: 'Flutter', logo: '/techLogo/flutter.png' },
-      { name: 'Swift', logo: '/techLogo/swift.png' },
-      { name: 'Kotlin', logo: '/techLogo/kotlin.png' }
-    ],
-    database: [
-      { name: 'MongoDB', logo: '/techLogo/mongo db.png' },
-      { name: 'MySQL', logo: '/techLogo/mysql.png' },
-      { name: 'Oracle', logo: '/techLogo/oracle logo.png' },
-      { name: 'Cassandra', logo: '/techLogo/Cassandra.png' },
-      { name: 'Firebase', logo: '/techLogo/Firebase.png' },
-      { name: 'Python', logo: '/techLogo/python.png' }
-    ],
-    cloud: [
-      { name: 'AWS', logo: '/techLogo/aws.png' },
-      { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png' },
-      { name: 'Google Cloud', logo: '/techLogo/google cloud.png' },
-      { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png' },
-      { name: 'Firebase', logo: '/techLogo/Firebase.png' },
-      { name: 'Salesforce', logo: '/techLogo/salesforce.png' }
-    ]
-  };
+  const [activeTechCategory, setActiveTechCategory] = useState(0);
+
+  const techCategories = [
+    {
+      category: "Frontend Development",
+      technologies: [
+        { name: 'React', logo: '/techLogo/React.png', description: 'UI library' },
+        { name: 'Angular', logo: '/techLogo/Angular.png', description: 'Framework' },
+        { name: 'Vue.js', logo: '/techLogo/Vue Js.png', description: 'Progressive framework' },
+        { name: 'Next.js', logo: '/techLogo/next js.png', description: 'React framework' },
+        { name: 'TypeScript', logo: '/techLogo/typescript.png', description: 'Typed JavaScript' },
+        { name: 'Tailwind CSS', logo: '/techLogo/tailwind css.png', description: 'Utility CSS' }
+      ]
+    },
+    {
+      category: "Backend Development",
+      technologies: [
+        { name: 'Node.js', logo: '/techLogo/node js.png', description: 'JavaScript runtime' },
+        { name: 'Python', logo: '/techLogo/python.png', description: 'Versatile language' },
+        { name: 'Java', logo: '/techLogo/Java.png', description: 'Enterprise language' },
+        { name: 'PHP', logo: '/techLogo/php.png', description: 'Web development' },
+        { name: 'Go', logo: '/techLogo/go.png', description: 'Google language' },
+        { name: '.NET', logo: '/techLogo/net.png', description: 'Microsoft framework' }
+      ]
+    },
+    {
+      category: "Mobile Development",
+      technologies: [
+        { name: 'React Native', logo: '/techLogo/React.png', description: 'Cross-platform' },
+        { name: 'Flutter', logo: '/techLogo/flutter.png', description: 'Google framework' },
+        { name: 'Swift', logo: '/techLogo/swift.png', description: 'iOS development' },
+        { name: 'Kotlin', logo: '/techLogo/kotlin.png', description: 'Android development' }
+      ]
+    },
+    {
+      category: "Database & Storage",
+      technologies: [
+        { name: 'MongoDB', logo: '/techLogo/mongo db.png', description: 'NoSQL database' },
+        { name: 'MySQL', logo: '/techLogo/mysql.png', description: 'SQL database' },
+        { name: 'Oracle', logo: '/techLogo/oracle logo.png', description: 'Enterprise database' },
+        { name: 'Cassandra', logo: '/techLogo/Cassandra.png', description: 'Distributed database' },
+        { name: 'Firebase', logo: '/techLogo/Firebase.png', description: 'Google platform' },
+        { name: 'PostgreSQL', logo: '/techLogo/python.png', description: 'SQL database' }
+      ]
+    },
+    {
+      category: "Cloud & DevOps",
+      technologies: [
+        { name: 'AWS', logo: '/techLogo/aws.png', description: 'Amazon cloud' },
+        { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png', description: 'Microsoft cloud' },
+        { name: 'Google Cloud', logo: '/techLogo/google cloud.png', description: 'Google cloud' },
+        { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png', description: 'Oracle cloud' },
+        { name: 'Firebase', logo: '/techLogo/Firebase.png', description: 'Google platform' },
+        { name: 'Salesforce', logo: '/techLogo/salesforce.png', description: 'CRM platform' }
+      ]
+    }
+  ];
 
   const faqs = [
     {
@@ -191,7 +208,7 @@ const SoftwareEngineering = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -213,8 +230,8 @@ const SoftwareEngineering = () => {
                 At Ascentia Labs, we deliver cutting-edge software engineering solutions that transform your business ideas into reality. Our expert team specializes in building scalable, secure, and high-performance applications using the latest technologies and best practices in software development.
               </p>
               <div className="mb-8 sm:mb-12">
-                <button className="px-10 py-4 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                  Get Started
+                <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                  Get Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -269,7 +286,7 @@ const SoftwareEngineering = () => {
 
                 {/* Card 4 - DevOps & Cloud */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-blue-600/0 group-hover:from-indigo-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 to-blue-600/0 group-hover:from-cyan-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <Cloud className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
                   <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">DevOps & Cloud</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Automated deployment</p>
@@ -460,125 +477,68 @@ const SoftwareEngineering = () => {
       {/* Technology Stack Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Technology Stack for the
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mt-2">Transformation of Your Business</span>
+              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mt-2">Transformation of Your Business</span>
             </h2>
             <p className="text-lg text-gray-600 mt-4">Leveraging cutting-edge technologies to deliver exceptional results</p>
           </div>
 
-          <div className="space-y-16">
-            {/* Frontend Technologies */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Monitor className="w-8 h-8 text-blue-600" />
-                Frontend Technologies
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.frontend.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Backend Technologies */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Code className="w-8 h-8 text-blue-600" />
-                Backend Technologies
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.backend.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Mobile Technologies */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Smartphone className="w-8 h-8 text-blue-600" />
-                Mobile Technologies
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                {techStack.mobile.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Database Technologies */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Database className="w-8 h-8 text-blue-600" />
-                Database Technologies
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.database.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Cloud & DevOps */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Cloud className="w-8 h-8 text-blue-600" />
-                Cloud & DevOps
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.cloud.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
+          {/* Category Navigation */}
+          <div className="mb-12 overflow-x-auto">
+            <div className="flex space-x-3 min-w-max justify-center">
+              {techCategories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTechCategory(index)}
+                  className={`px-6 py-3 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
+                    activeTechCategory === index
+                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  {category.category}
+                </button>
+              ))}
             </div>
           </div>
+
+          {/* Technology Grid */}
+          {techCategories.map((category, categoryIndex) => (
+            <div
+              key={categoryIndex}
+              className={`transition-all duration-300 ${
+                activeTechCategory === categoryIndex ? 'opacity-100 block' : 'opacity-0 hidden'
+              }`}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {category.technologies.map((tech, techIndex) => (
+                  <div
+                    key={techIndex}
+                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-100 hover:border-blue-300"
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-gray-100 transition-all duration-300">
+                        <img
+                          src={tech.logo}
+                          alt={tech.name}
+                          className="w-12 h-12 object-contain filter group-hover:brightness-110 transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                    <h4 className="text-center text-sm font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {tech.name}
+                    </h4>
+                    <p className="text-center text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
+                      {tech.description}
+                    </p>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-blue-100/20 to-blue-200/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

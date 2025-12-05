@@ -131,38 +131,52 @@ const AI_ML = () => {
     { number: '80+', label: 'Countries Empowered' }
   ];
 
-  const techStack = {
-    frameworks: [
-      { name: 'TensorFlow', logo: '/techLogo/tensorflow.png' },
-      { name: 'PyTorch', logo: '/techLogo/pytorch.png' },
-      { name: 'Keras', logo: '/techLogo/keras.png' },
-      { name: 'Scikit-learn', logo: '/techLogo/scikit-learn.png' },
-      { name: 'XGBoost', logo: '/techLogo/xgboost.png' },
-      { name: 'LightGBM', logo: '/techLogo/lightgbm.png' }
-    ],
-    languages: [
-      { name: 'Python', logo: '/techLogo/python.png' },
-      { name: 'R', logo: '/techLogo/r.png' },
-      { name: 'Julia', logo: '/techLogo/julia.png' },
-      { name: 'Scala', logo: '/techLogo/scala.png' },
-      { name: 'Java', logo: '/techLogo/Java.png' },
-      { name: 'C++', logo: '/techLogo/cpp.png' }
-    ],
-    tools: [
-      { name: 'Jupyter', logo: '/techLogo/jupyter.png' },
-      { name: 'Pandas', logo: '/techLogo/pandas.png' },
-      { name: 'NumPy', logo: '/techLogo/numpy.png' },
-      { name: 'Matplotlib', logo: '/techLogo/matplotlib.png' }
-    ],
-    cloud: [
-      { name: 'AWS', logo: '/techLogo/aws.png' },
-      { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png' },
-      { name: 'Google Cloud', logo: '/techLogo/google cloud.png' },
-      { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png' },
-      { name: 'IBM Watson', logo: '/techLogo/ibm-watson.png' },
-      { name: 'Databricks', logo: '/techLogo/databricks.png' }
-    ]
-  };
+  const [activeTechCategory, setActiveTechCategory] = useState(0);
+
+  const techCategories = [
+    {
+      category: "AI/ML Frameworks",
+      technologies: [
+        { name: 'TensorFlow', logo: '/techLogo/tensorflow.png', description: 'ML framework' },
+        { name: 'PyTorch', logo: '/techLogo/pytorch.png', description: 'Deep learning' },
+        { name: 'Keras', logo: '/techLogo/keras.png', description: 'Neural networks' },
+        { name: 'Scikit-learn', logo: '/techLogo/scikit-learn.png', description: 'ML library' },
+        { name: 'XGBoost', logo: '/techLogo/xgboost.png', description: 'Gradient boosting' },
+        { name: 'LightGBM', logo: '/techLogo/lightgbm.png', description: 'Fast ML' }
+      ]
+    },
+    {
+      category: "Programming Languages",
+      technologies: [
+        { name: 'Python', logo: '/techLogo/python.png', description: 'Versatile language' },
+        { name: 'R', logo: '/techLogo/r.png', description: 'Statistical computing' },
+        { name: 'Julia', logo: '/techLogo/julia.png', description: 'High performance' },
+        { name: 'Scala', logo: '/techLogo/scala.png', description: 'JVM language' },
+        { name: 'Java', logo: '/techLogo/Java.png', description: 'Enterprise language' },
+        { name: 'C++', logo: '/techLogo/cpp.png', description: 'Performance' }
+      ]
+    },
+    {
+      category: "Data Science Tools",
+      technologies: [
+        { name: 'Jupyter', logo: '/techLogo/jupyter.png', description: 'Interactive notebooks' },
+        { name: 'Pandas', logo: '/techLogo/pandas.png', description: 'Data analysis' },
+        { name: 'NumPy', logo: '/techLogo/numpy.png', description: 'Numerical computing' },
+        { name: 'Matplotlib', logo: '/techLogo/matplotlib.png', description: 'Visualization' }
+      ]
+    },
+    {
+      category: "Cloud & MLOps",
+      technologies: [
+        { name: 'AWS', logo: '/techLogo/aws.png', description: 'Amazon cloud' },
+        { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png', description: 'Microsoft cloud' },
+        { name: 'Google Cloud', logo: '/techLogo/google cloud.png', description: 'Google cloud' },
+        { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png', description: 'Oracle cloud' },
+        { name: 'IBM Watson', logo: '/techLogo/ibm-watson.png', description: 'AI platform' },
+        { name: 'Databricks', logo: '/techLogo/databricks.png', description: 'Data platform' }
+      ]
+    }
+  ];
 
   const faqs = [
     {
@@ -186,7 +200,7 @@ const AI_ML = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -208,8 +222,8 @@ const AI_ML = () => {
                 At Ascentia Labs, we deliver cutting-edge AI and machine learning solutions that transform your business with intelligent automation. Our expert team specializes in building scalable, secure, and high-performance AI models using the latest technologies and best practices in artificial intelligence.
               </p>
               <div className="mb-8 sm:mb-12">
-                <button className="px-10 py-4 bg-white text-blue-600 rounded-full hover:bg-blue-50 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                  Get Started
+                <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                  Get Consultation
                   <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -264,7 +278,7 @@ const AI_ML = () => {
 
                 {/* Card 4 - Predictive Analytics */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-blue-600/0 group-hover:from-indigo-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/0 to-blue-600/0 group-hover:from-cyan-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <BarChart3 className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
                   <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Predictive Analytics</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data insights</p>
@@ -455,103 +469,68 @@ const AI_ML = () => {
       {/* Technology Stack Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Technology Stack for the
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mt-2">Transformation of Your Business</span>
+              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mt-2">Transformation of Your Business</span>
             </h2>
             <p className="text-lg text-gray-600 mt-4">Leveraging cutting-edge AI/ML technologies to deliver exceptional results</p>
           </div>
 
-          <div className="space-y-16">
-            {/* AI/ML Frameworks */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Brain className="w-8 h-8 text-blue-600" />
-                AI/ML Frameworks
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.frameworks.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Programming Languages */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Cpu className="w-8 h-8 text-blue-600" />
-                Programming Languages
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.languages.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Data Science Tools */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Database className="w-8 h-8 text-blue-600" />
-                Data Science Tools
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                {techStack.tools.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Cloud & MLOps */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center flex items-center justify-center gap-3">
-                <Cloud className="w-8 h-8 text-blue-600" />
-                Cloud & MLOps
-              </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                {techStack.cloud.map((tech, index) => (
-                  <div 
-                    key={index}
-                    className="bg-white p-6 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 text-center border border-gray-100 hover:border-blue-300 transform hover:-translate-y-2 group"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    <div className="mb-4 flex justify-center items-center h-16 transform group-hover:scale-110 transition-transform duration-300">
-                      <img src={tech.logo} alt={tech.name} className="max-h-full max-w-full object-contain" />
-                    </div>
-                    <div className="text-xs font-semibold text-gray-700">{tech.name}</div>
-                  </div>
-                ))}
-              </div>
+          {/* Category Navigation */}
+          <div className="mb-12 overflow-x-auto">
+            <div className="flex space-x-3 min-w-max justify-center">
+              {techCategories.map((category, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveTechCategory(index)}
+                  className={`px-6 py-3 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
+                    activeTechCategory === index
+                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  }`}
+                >
+                  {category.category}
+                </button>
+              ))}
             </div>
           </div>
+
+          {/* Technology Grid */}
+          {techCategories.map((category, categoryIndex) => (
+            <div
+              key={categoryIndex}
+              className={`transition-all duration-300 ${
+                activeTechCategory === categoryIndex ? 'opacity-100 block' : 'opacity-0 hidden'
+              }`}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {category.technologies.map((tech, techIndex) => (
+                  <div
+                    key={techIndex}
+                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-100 hover:border-blue-300"
+                  >
+                    <div className="flex justify-center mb-4">
+                      <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-gray-100 transition-all duration-300">
+                        <img
+                          src={tech.logo}
+                          alt={tech.name}
+                          className="w-12 h-12 object-contain filter group-hover:brightness-110 transition-all duration-300"
+                        />
+                      </div>
+                    </div>
+                    <h4 className="text-center text-sm font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                      {tech.name}
+                    </h4>
+                    <p className="text-center text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
+                      {tech.description}
+                    </p>
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-blue-100/20 to-blue-200/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

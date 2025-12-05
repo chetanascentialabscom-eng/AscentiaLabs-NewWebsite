@@ -312,7 +312,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-2 gap-4">
                     <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                      <img src="/RM.png" alt="RouteMaestro" className="w-12 h-12 mr-6 flex-shrink-0 object-contain" />
                       <div>
                         <div className="font-medium text-sm">RouteMaestro</div>
                         <div className="text-xs text-gray-500">AI Powered Travel Planning And Booking Software</div>
@@ -546,7 +546,7 @@ const Header = () => {
                 {isProductsOpen && (
                   <div className="pb-2 space-y-2 max-h-80 overflow-y-auto px-2">
                     <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
-                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                      <img src="/RM.png" alt="RouteMaestro" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
                       <div>
                         <div className="text-sm font-medium text-gray-800">RouteMaestro</div>
                         <div className="text-xs text-gray-500">Travel Planning Software</div>
