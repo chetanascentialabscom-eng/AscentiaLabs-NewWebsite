@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import NewsTicker from './components/NewsTicker'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
+import ScrollToTop from './components/ScrollToTop'
 import {
   Home,
   About, 
@@ -30,8 +32,12 @@ import {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen">
         <Header />
+        <div className="fixed top-[70px] md:top-[110px] left-0 right-0 z-[9998] w-full">
+          <NewsTicker />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

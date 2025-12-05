@@ -157,7 +157,7 @@ const CustomCRM = () => {
     <div className="min-h-screen bg-white">
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-16">
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>

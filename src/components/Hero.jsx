@@ -1,6 +1,29 @@
+import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, Image, ChevronDown, MapPin, Clock, BarChart3 } from 'lucide-react';
 
 const Hero = () => {
+  const [titleNumber, setTitleNumber] = useState(0);
+  const titles = useMemo(() => ["Innovative", "Scalable", "Powerful", "Modern", "Intelligent"], []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (titleNumber === titles.length - 1) {
+        setTitleNumber(0);
+      } else {
+        setTitleNumber(titleNumber + 1);
+      }
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [titleNumber, titles]);
+
+  const scrollToIndustries = () => {
+    const industriesSection = document.getElementById('industries');
+    if (industriesSection) {
+      industriesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="home" className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 overflow-hidden flex items-center min-h-screen">
       {/* Background decorative elements */}
@@ -14,10 +37,32 @@ const Hero = () => {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 lg:items-center relative">
           {/* Left Section */}
           <div className="text-center lg:text-left animate-fade-in-up w-full">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-blue-600">
-              <span className="block">Building Tomorrow's</span>
-              <span className="block text-gray-800">Digital Solutions</span>
-              <span className="block text-gray-800">Today</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+              <span className="block text-blue-600">Building Tomorrow's</span>
+              <span className="relative flex justify-center lg:justify-start overflow-hidden text-gray-800 min-h-[1.2em]">
+                {titles.map((title, index) => (
+                  <motion.span
+                    key={index}
+                    className="absolute font-bold"
+                    initial={{ opacity: 0, y: "-100" }}
+                    transition={{ type: "spring", stiffness: 50 }}
+                    animate={
+                      titleNumber === index
+                        ? {
+                            y: 0,
+                            opacity: 1,
+                          }
+                        : {
+                            y: titleNumber > index ? -150 : 150,
+                            opacity: 0,
+                          }
+                    }
+                  >
+                    {title}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="block text-gray-800">Digital Solutions Today</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
@@ -25,13 +70,16 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start max-w-lg mx-auto lg:mx-0">
-              <button className="bg-gradient-to-r from-blue-600 to-black text-white px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation">
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
-                <span className="whitespace-nowrap">Start Your Project</span>
+              <button className="bg-gradient-to-r from-blue-600 to-black gap-1 text-white px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation">
+                <span className="whitespace-nowrap">Get Free Consulation</span>
+                <ArrowRight className="w-4 h-4 sm:w-5  sm:h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
               </button>
-              <button className="border-2 border-gray-800 text-gray-800 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation">
-                <Image className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+              <button 
+                onClick={scrollToIndustries}
+                className="border-2 border-gray-800 text-gray-800 px-5  gap-1 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation"
+              >
                 <span className="whitespace-nowrap">View Our Work</span>
+                <Image className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
               </button>
             </div>
           </div>

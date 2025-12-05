@@ -209,72 +209,97 @@ const Header = () => {
                 Industries 
                 <ChevronDown className="ml-1 w-4 h-4" />
               </Link>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-gradient-to-br from-blue-50 via-white to-blue-100 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-blue-100">
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    {/* Column 1 */}
-                    <Link to="complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
+                    <Link to="complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Custom CRM</div>
+                      <div>
+                        <div className="font-medium text-sm">Custom CRM</div>
+                        <div className="text-xs text-gray-500">Customer relationship management</div>
+                      </div>
                     </Link>
                     
-                    <Link to="interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <Building className="w-5 h-5 mr-3 text-blue-600" />
-                      <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
+                    <Link to="interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <Building className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
+                        <div className="text-xs text-gray-500">Design & planning solutions</div>
+                      </div>
                     </Link>
 
-                    
-                    <Link to="real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
+                    <Link to="real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Home className="w-5 h-5 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Real Estate</div>
+                      <div>
+                        <div className="font-medium text-sm">Real Estate</div>
+                        <div className="text-xs text-gray-500">Property management systems</div>
+                      </div>
                     </Link>
 
-                    {/* Column 2 */}
-                    <Link to="education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
+                    <Link to="education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Education</div>
+                      <div>
+                        <div className="font-medium text-sm">Education</div>
+                        <div className="text-xs text-gray-500">Learning management platforms</div>
+                      </div>
                     </Link>
                     
-                    <Link to="kindergarten-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
+                    <Link to="kindergarten-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Star className="w-5 h-5 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Kindergarten</div>
+                      <div>
+                        <div className="font-medium text-sm">Kindergarten</div>
+                        <div className="text-xs text-gray-500">Early education systems</div>
+                      </div>
                     </Link>
                     
-                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
+                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Plane className="w-5 h-5 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Travel & Tourism</div>
+                      <div>
+                        <div className="font-medium text-sm">Travel & Tourism</div>
+                        <div className="text-xs text-gray-500">Booking & travel solutions</div>
+                      </div>
                     </Link>
 
-                    {/* Column 3 */}
-                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <BarChart3 className="w-4 h-4 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">ERP</div>
+                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">ERP</div>
+                        <div className="text-xs text-gray-500">Enterprise resource planning</div>
+                      </div>
                     </Link>
                     
-                    <Link to="library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <BookOpen className="w-4 h-4 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Library</div>
+                    <Link to="library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Library</div>
+                        <div className="text-xs text-gray-500">Library management systems</div>
+                      </div>
                     </Link>
                     
-                    <Link to="manufacturing-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <Wrench className="w-4 h-4 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Manufacturing</div>
+                    <Link to="manufacturing-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <Wrench className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Manufacturing</div>
+                        <div className="text-xs text-gray-500">Production management tools</div>
+                      </div>
                     </Link>
 
-                    {/* Row 4 - Only 2 items */}
-                    <Link to="healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <Heart className="w-4 h-4 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Health Care</div>
+                    <Link to="healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <Heart className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Health Care</div>
+                        <div className="text-xs text-gray-500">Medical & healthcare solutions</div>
+                      </div>
                     </Link>
 
-                    <Link to="logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-white/60 rounded transition-all cursor-pointer">
-                      <Truck className="w-4 h-4 mr-2 text-blue-600" />
-                      <div className="font-medium text-sm">Logistics</div>
+                    <Link to="logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                      <Truck className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Logistics</div>
+                        <div className="text-xs text-gray-500">Supply chain management</div>
+                      </div>
                     </Link>
-                    
-                    <div></div> {/* Empty cell for alignment */}
                   </div>
-                
                 </div>
               </div>
             </div>
@@ -283,14 +308,35 @@ const Header = () => {
                 Products 
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
-                <div className="p-6">
-                  <div className="grid grid-cols-1 gap-3">
-                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-                      <img src="/RM.png" alt="Route Maestro" className="w-8 h-8 mr-3" />
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+                <div className="p-5">
+                  <div className="grid grid-cols-2 gap-4">
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
                       <div>
-                        <div className="font-semibold">Route Maestro</div>
-                        <div className="text-xs text-gray-500">AI-Powered B2B Travel SaaS Platform</div>
+                        <div className="font-medium text-sm">RouteMaestro</div>
+                        <div className="text-xs text-gray-500">AI Powered Travel Planning And Booking Software</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                      <div>
+                        <div className="font-medium text-sm">InsuranceSafe</div>
+                        <div className="text-xs text-gray-500">Insurance Management Software</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                      <div>
+                        <div className="font-medium text-sm">KinderConnect</div>
+                        <div className="text-xs text-gray-500">Kindergarten Management Software</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                      <div>
+                        <div className="font-medium text-sm">JusDoIt</div>
+                        <div className="text-xs text-gray-500">Task Management Software</div>
                       </div>
                     </a>
                   </div>
@@ -303,20 +349,20 @@ const Header = () => {
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
-                <div className="p-6">
+                <div className="p-5">
                   <div className="grid grid-cols-1 gap-3">
-                    <Link to="/blogs" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-                      <BookOpen className="w-5 h-5 mr-3 text-blue-600" />
+                    <Link to="/blogs" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-semibold">Blogs</div>
-                        <div className="text-sm text-gray-500">Latest insights and articles</div>
+                        <div className="font-medium text-sm">Blogs</div>
+                        <div className="text-xs text-gray-500">Latest insights and articles</div>
                       </div>
                     </Link>
-                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all">
-                      <BarChart3 className="w-5 h-5 mr-3 text-blue-600" />
+                    <a href="#" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-semibold">Case Studies</div>
-                        <div className="text-sm text-gray-500">Success stories and examples</div>
+                        <div className="font-medium text-sm">Case Studies</div>
+                        <div className="text-xs text-gray-500">Success stories and examples</div>
                       </div>
                     </a>
                   </div>
@@ -498,10 +544,34 @@ const Header = () => {
                 </button>
                 
                 {isProductsOpen && (
-                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
-                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/RM.png" alt="Route Maestro" className="w-8 h-8 mr-3" />
-                      <span className="text-sm">Route Maestro</span>
+                  <div className="pb-2 space-y-2 max-h-80 overflow-y-auto px-2">
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                      <div>
+                        <div className="text-sm font-medium text-gray-800">RouteMaestro</div>
+                        <div className="text-xs text-gray-500">Travel Planning Software</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                      <div>
+                        <div className="text-sm font-medium text-gray-800">InsuranceSafe</div>
+                        <div className="text-xs text-gray-500">Insurance Management</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                      <div>
+                        <div className="text-sm font-medium text-gray-800">KinderConnect</div>
+                        <div className="text-xs text-gray-500">Kindergarten Management</div>
+                      </div>
+                    </a>
+                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                      <div>
+                        <div className="text-sm font-medium text-gray-800">JusDoIt</div>
+                        <div className="text-xs text-gray-500">Task Management</div>
+                      </div>
                     </a>
                   </div>
                 )}

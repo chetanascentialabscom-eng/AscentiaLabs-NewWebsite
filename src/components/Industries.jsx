@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 const Industries = () => {
+  const navigate = useNavigate();
+
   const industries = [
     {
       title: "Education",
@@ -122,8 +126,40 @@ const Industries = () => {
     }
   ];
 
+  const handleIndustryClick = (industryTitle) => {
+    // Map industry titles to their corresponding routes
+    const industryRoutes = {
+      'Education': '/education-app-development',
+      'Healthcare': '/healthcare-app-development',
+      'Travel & Tourism': '/travel-tourism-app-development',
+      'Petcare': '/',
+      'E-Commerce': '/',
+      'Manufacturing': '/manufacturing-app-development',
+      'Logistics': '/logistics-software-development',
+      'Parking': '/',
+      'Wellness & Health': '/',
+      'Real Estate': '/real-estate-app-development',
+      'Accounting': '/',
+      'Restaurants': '/',
+      'Agriculture': '/',
+      'Architecture': '/interior-design-app-development',
+      'After Sale Service': '/'
+    };
+
+    const route = industryRoutes[industryTitle];
+    
+    // Navigate and then scroll will be handled by ScrollToTop component
+    if (route) {
+      navigate(route);
+    } else {
+      // Fallback: convert to slug format
+      const industrySlug = industryTitle.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+      navigate(`/industries/${industrySlug}`);
+    }
+  };
+
   return (
-    <section className="py-12 sm:py-16 overflow-hidden" style={{ background: '#000000' }}>
+    <section id="industries" className="py-12 sm:py-16 overflow-hidden" style={{ background: '#000000' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
@@ -139,6 +175,7 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div
               key={index}
+              onClick={() => handleIndustryClick(industry.title)}
               className="group relative flex flex-col items-center p-4 sm:p-6 bg-slate-800/80 backdrop-blur-md rounded-2xl border border-slate-700/50 hover:bg-slate-600 transition-all duration-500 hover:scale-105 cursor-pointer transform hover:-translate-y-3 shadow-lg hover:shadow-2xl hover:shadow-slate-500/50 mobile-no-hover"
             >
               {/* Icon Container with Better Styling */}
