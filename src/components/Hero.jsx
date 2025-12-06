@@ -25,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-[600px]  :max-h-[800px] h-screen pt-10 ">
+    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen lg:h-screen pt-16 pb-8 lg:pt-10">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       
@@ -114,8 +114,8 @@ const Hero = () => {
         </motion.div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10  max-w-[1400px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-8 md:py-12 lg:py-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10 max-w-[1400px]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 py-4 md:py-8 lg:py-16">
           
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left w-full lg:max-w-2xl lg:pr-8">
@@ -125,11 +125,11 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-5 md:mb-6 leading-tight">
-                <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-3 md:mb-5 leading-tight">
+                <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-1">
                   Building Tomorrow's
                 </span>
-                <span className="relative flex justify-center lg:justify-start w-full min-h-[1.5em] my-4 overflow-visible">
+                <span className="relative flex justify-center lg:justify-start w-full min-h-[1.5em] my-2 md:my-4 overflow-visible">
                   {titles.map((title, index) => (
                     <motion.span
                       key={index}
@@ -160,7 +160,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-7 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               We transform your ideas into powerful software solutions that drive growth, 
               enhance efficiency, and deliver exceptional user experiences.
@@ -171,7 +171,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-12 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-10 justify-center lg:justify-start"
             >
               <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
                 <span className="relative z-10 flex items-center justify-center gap-2">
@@ -211,7 +211,7 @@ const Hero = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute bottom-0 right-0 w-60 bg-gradient-to-br from-blue-500/25 to-blue-600/15 backdrop-blur-md p-5 rounded-2xl border border-blue-400/40 shadow-2xl"
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-blue-500/30 rounded-lg">
                     <TrendingUp className="w-6 h-6 text-blue-300" />
                   </div>
@@ -236,7 +236,7 @@ const Hero = () => {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 className="absolute bottom-0 left-0 w-60 bg-gradient-to-br from-blue-600/25 to-blue-700/15 backdrop-blur-md p-5 rounded-2xl border border-blue-500/40 shadow-2xl"
               >
-                <div className="flex items-center gap-3 mb-3">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-blue-600/30 rounded-lg">
                     <Shield className="w-6 h-6 text-blue-300" />
                   </div>
@@ -264,10 +264,10 @@ const Hero = () => {
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
+                className="absolute top-14 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
               >
                 <div className="text-center">
-                  <div className="inline-flex p-4 bg-blue-500/30 rounded-2xl mb-4">
+                  <div className="inline-flex p-4 bg-blue-500/30 rounded-2xl mb-3">
                     <Code2 className="w-9 h-9 text-blue-300" />
                   </div>
                   <div className="text-2xl font-bold text-white mb-2">AI-Powered</div>
@@ -302,69 +302,85 @@ const Hero = () => {
                   ease: "easeInOut",
                   times: [0, 0.5, 1]
                 }}
-                className="w-full bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-4 rounded-3xl border border-blue-400/60 shadow-2xl will-change-transform"
+                className="w-full bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-4 rounded-2xl border border-blue-400/60 shadow-2xl will-change-transform"
               >
                 {/* Header */}
-                <div className="text-center ">
+                <div className="text-center mb-3">
                   <motion.div 
-                    className="inline-flex p-4 bg-blue-500/40 rounded-2xl mb-4"
+                    className="inline-flex p-3 bg-blue-500/40 rounded-xl mb-2"
                     animate={{ rotate: [0, 5, -5, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <Code2 className="w-6 h-6 text-blue-200" />
+                    <Code2 className="w-7 h-7 text-blue-200" />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-white ">
+                  <h3 className="text-lg font-bold text-white mb-1">
                     Custom Software Development
                   </h3>
-                  <p className="text-blue-200/80 text-sm leading-relaxed">
+                  <p className="text-blue-200/80 text-xs leading-relaxed">
                     Transforming ideas into scalable digital solutions
                   </p>
                 </div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-2 gap-3 mb-5">
+                <div className="grid grid-cols-2 gap-2 mb-3">
                   <motion.div 
-                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl gap-2 flex justify-center items-center border border-blue-400/40"
+                    className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg gap-1.5 flex justify-center items-center border border-blue-400/40"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
-                    <Zap className="w-5 h-5 text-blue-300 " />
+                    <Zap className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs font-semibold">Fast Delivery</div>
                   </motion.div>
                   
                   <motion.div 
-                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1, duration: 0.6 }}
                   >
-                    <Sparkles className="w-4 h-4 text-blue-300 " />
+                    <Sparkles className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs font-semibold">AI-Powered</div>
                   </motion.div>
                   
                   <motion.div 
-                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.2, duration: 0.6 }}
                   >
-                    <Target className="w-5 h-5 text-blue-300 " />
+                    <Target className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs font-semibold">Goal-Focused</div>
                   </motion.div>
                   
                   <motion.div 
-                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1.4, duration: 0.6 }}
                   >
-                    <Cpu className="w-5 h-5 text-blue-300 " />
+                    <Cpu className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs font-semibold">Scalable</div>
                   </motion.div>
                 </div>
 
-                
+                {/* Stats - Compact */}
+                <div className="flex items-center justify-between pt-3 border-t border-blue-400/30">
+                  <div className="text-center flex-1">
+                    <div className="text-lg font-bold text-white">50+</div>
+                    <div className="text-blue-300/70 text-[10px]">Projects</div>
+                  </div>
+                  <div className="w-px h-8 bg-blue-400/30"></div>
+                  <div className="text-center flex-1">
+                    <div className="text-lg font-bold text-white">100%</div>
+                    <div className="text-blue-300/70 text-[10px]">Quality</div>
+                  </div>
+                  <div className="w-px h-8 bg-blue-400/30"></div>
+                  <div className="text-center flex-1">
+                    <div className="text-lg font-bold text-white">24/7</div>
+                    <div className="text-blue-300/70 text-[10px]">Support</div>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </motion.div>
