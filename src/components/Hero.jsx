@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Image, ChevronDown, MapPin, Clock, BarChart3 } from 'lucide-react';
+import { ArrowRight, Code2, ChevronDown, Sparkles, Zap, Target, TrendingUp, Shield, Cpu } from 'lucide-react';
 
 const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -25,145 +25,305 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 overflow-hidden flex items-center min-h-screen">
-      {/* Background decorative elements */}
+    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen">
+      {/* Animated Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
+      {/* Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300/10 rounded-full blur-xl animate-pulse delay-500"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 10}s`
+            }}
+          ></div>
+        ))}
+      </div>
+
+      {/* Decorative Geometric Shapes - Left Side */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative"
+        >
+          {/* Large Circle */}
+          <div className="absolute -left-20 top-0 w-40 h-40 border-2 border-blue-500/20 rounded-full"></div>
+          <div className="absolute -left-16 top-4 w-32 h-32 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
+          
+          {/* Floating Icons */}
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute left-8 top-20 bg-blue-500/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-400/20"
+          >
+            <Cpu className="w-8 h-8 text-blue-400" />
+          </motion.div>
+          
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute left-4 top-64 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
+          >
+            <Zap className="w-8 h-8 text-blue-300" />
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Decorative Geometric Shapes - Right Side */}
+      <div className="absolute right-0 bottom-3/4 -translate-y-1/2 hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative"
+        >
+          {/* Large Circle */}
+          <div className="absolute -right-20 top-0 w-40 h-40 border-2 border-blue-500/20 rounded-full"></div>
+          <div className="absolute -right-16 top-4 w-32 h-32 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
+          
+          {/* Floating Icons */}
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute right-8 top-2 bg-blue-500/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-400/20"
+          >
+            <Shield className="w-8 h-8 text-blue-400" />
+          </motion.div>
+          
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            className="absolute right-4 top-80 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
+          >
+            <Target className="w-8 h-8 text-blue-300" />
+          </motion.div>
+        </motion.div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 relative z-10 w-full max-w-7xl">
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 lg:items-center relative">
-          {/* Left Section */}
-          <div className="text-center lg:text-left animate-fade-in-up w-full">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
-              <span className="block text-blue-600">Building Tomorrow's</span>
-              <span className="relative flex justify-center lg:justify-start overflow-hidden text-gray-800 min-h-[1.2em]">
-                {titles.map((title, index) => (
-                  <motion.span
-                    key={index}
-                    className="absolute font-bold"
-                    initial={{ opacity: 0, y: "-100" }}
-                    transition={{ type: "spring", stiffness: 50 }}
-                    animate={
-                      titleNumber === index
-                        ? {
-                            y: 0,
-                            opacity: 1,
-                          }
-                        : {
-                            y: titleNumber > index ? -150 : 150,
-                            opacity: 0,
-                          }
-                    }
-                  >
-                    {title}
-                  </motion.span>
-                ))}
-              </span>
-              <span className="block text-gray-800">Digital Solutions Today</span>
-            </h1>
-            
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              We transform your ideas into powerful software solutions that drive growth, enhance efficiency, and deliver exceptional user experiences.
-            </p>
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10 w-full max-w-[1400px]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 py-10 sm:py-16 md:py-20">
+          
+          {/* Left Content */}
+          <div className="flex-1 text-center lg:text-left w-full lg:max-w-2xl lg:pr-8">
+           
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start max-w-lg mx-auto lg:mx-0">
-              <button className="bg-gradient-to-r from-blue-600 to-black gap-1 text-white px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation">
-                <span className="whitespace-nowrap">Get Free Consulation</span>
-                <ArrowRight className="w-4 h-4 sm:w-5  sm:h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
+            {/* Main Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-6 leading-[1.2]">
+                <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-2">
+                  Building Tomorrow's
+                </span>
+                <span className="relative inline-flex justify-center lg:justify-start w-full min-h-[1.3em] my-3">
+                  {titles.map((title, index) => (
+                    <motion.span
+                      key={index}
+                      className="absolute left-0 lg:left-0 font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap"
+                      initial={{ opacity: 0, y: "-100" }}
+                      transition={{ type: "spring", stiffness: 50 }}
+                      animate={
+                        titleNumber === index
+                          ? { y: 0, opacity: 1 }
+                          : {
+                              y: titleNumber > index ? -150 : 150,
+                              opacity: 0,
+                            }
+                      }
+                    >
+                      {title}
+                    </motion.span>
+                  ))}
+                </span>
+                <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mt-2">
+                  Digital Solutions Today
+                </span>
+              </h1>
+            </motion.div>
+            
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-base sm:text-lg md:text-xl text-blue-200/80 mb-8 leading-relaxed"
+            >
+              We transform your ideas into powerful software solutions that drive growth, 
+              enhance efficiency, and deliver exceptional user experiences.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
+            >
+              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
+              
               <button 
                 onClick={scrollToIndustries}
-                className="border-2 border-gray-800 text-gray-800 px-5  gap-1 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-full font-semibold hover:bg-gray-800 hover:text-white transition-all duration-300 flex items-center justify-center group text-sm sm:text-base min-h-[48px] active:scale-95 touch-manipulation"
+                className="group px-8 py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
-                <span className="whitespace-nowrap">View Our Work</span>
-                <Image className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                View Our Work
+                <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               </button>
-            </div>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="grid grid-cols-3 gap-6 max-w-xl mx-auto lg:mx-0"
+            >
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">500+</div>
+                <div className="text-sm text-blue-300/70">Projects Delivered</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">98%</div>
+                <div className="text-sm text-blue-300/70">Client Satisfaction</div>
+              </div>
+              <div className="text-center lg:text-left">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">15+</div>
+                <div className="text-sm text-blue-300/70">Years Experience</div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* Center Divider - Mobile and Desktop */}
-          <div className="flex lg:hidden justify-center my-4 z-20">
-            <div className="flex items-center">
-              <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-blue-600 to-blue-600 opacity-80"></div>
-              <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mx-2 animate-pulse">
-                <ChevronDown className="w-3 h-3 text-white" />
-              </div>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-blue-600 to-transparent opacity-80"></div>
-            </div>
-          </div>
-
-          {/* Center Divider - Desktop */}
-          <div className="hidden xl:flex justify-center absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
-            <div className="flex flex-col items-center">
-              <div className="w-0.5 h-24 xl:h-32 bg-gradient-to-b from-transparent via-blue-600 to-blue-600 opacity-80"></div>
-              <div className="w-6 h-6 xl:w-8 xl:h-8 bg-blue-600 rounded-full flex items-center justify-center my-2 animate-pulse">
-                <ArrowRight className="w-3 h-3 xl:w-4 xl:h-4 text-white" />
-              </div>
-              <div className="w-0.5 h-24 xl:h-32 bg-gradient-to-b from-blue-600 to-transparent opacity-80"></div>
-            </div>
-          </div>
-
-          {/* Right Section */}
-          <div className="relative mt-8 lg:mt-0 animate-fade-in-up delay-300 w-full">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 w-full max-w-md mx-auto hover:shadow-3xl transition-all duration-300">
-              {/* RouteMaestro Logo */}
-              <div className="flex items-center justify-center mb-4 sm:mb-6">
-                <img 
-                  src="/RM.png" 
-                  alt="RouteMaestro" 
-                  className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center mb-2 text-gray-800">RouteMaestro</h2>
-              <p className="text-gray-600 text-center mb-4 sm:mb-6 text-xs sm:text-sm leading-relaxed px-2">
-                Advanced route optimization and logistics management platform that streamlines delivery operations and reduces costs.
-              </p>
-
-              {/* Features */}
-              <div className="flex justify-center items-start gap-2 sm:gap-4 md:gap-6 mb-6 sm:mb-6 px-1 sm:px-2">
-                <div className="text-center flex-1 min-w-0">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 hover:bg-blue-200 transition-colors duration-300 hover:scale-110 transform relative">
-                    <MapPin className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                  </div>
-                  <span className="text-gray-700 font-medium text-xs sm:text-sm leading-tight block">Smart Route<br className="sm:hidden" /> Planning</span>
-                </div>
-                
-                <div className="text-center flex-1 min-w-0">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 hover:bg-blue-200 transition-colors duration-300 hover:scale-110 transform relative">
-                    <Clock className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                  </div>
-                  <span className="text-gray-700 font-medium text-xs sm:text-sm leading-tight block">Real-time<br className="sm:hidden" /> Tracking</span>
-                </div>
-                
-                <div className="text-center flex-1 min-w-0">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2 hover:bg-blue-200 transition-colors duration-300 hover:scale-110 transform relative">
-                    <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                  </div>
-                  <span className="text-gray-700 font-medium text-xs sm:text-sm leading-tight block">Analytics<br className="sm:hidden" /> Dashboard</span>
-                </div>
-              </div>
-
-              <a 
-                href="https://www.routemaestro.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-blue-600 to-black text-white py-3 sm:py-3.5 rounded-full font-semibold hover:shadow-xl hover:from-blue-700 hover:to-gray-900 transition-all duration-300 flex items-center justify-center text-sm sm:text-base transform hover:scale-105 group min-h-[48px] active:scale-95 touch-manipulation"
+          {/* Right Visual Element */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="flex-1 relative hidden lg:flex items-center justify-center min-w-[450px] lg:pl-8 "
+          >
+            {/* Central Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-3xl"></div>
+            
+            {/* Floating Cards Container */}
+            <div className="relative w-full max-w-[600px] h-[300px]">
+              {/* Card 1 - Top Right */}
+              <motion.div
+                animate={{ y: [0, -15, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute  bottom-0 right-0 w-60 bg-gradient-to-br from-blue-500/25 to-blue-600/15 backdrop-blur-md p-5 rounded-2xl border border-blue-400/40 shadow-2xl"
               >
-                Visit RouteMaestro
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300 flex-shrink-0" />
-              </a>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-blue-500/30 rounded-lg">
+                    <TrendingUp className="w-6 h-6 text-blue-300" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">Performance</div>
+                    <div className="text-blue-300/70 text-xs">+45% Growth</div>
+                  </div>
+                </div>
+                <div className="h-2 bg-blue-900/40 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "85%" }}
+                    transition={{ duration: 2, delay: 1 }}
+                    className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
+                  ></motion.div>
+                </div>
+              </motion.div>
+
+              {/* Card 2 - Bottom Left */}
+              <motion.div
+                animate={{ y: [0, 15, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute bottom-0 left-0 w-60 bg-gradient-to-br from-blue-600/25 to-blue-700/15 backdrop-blur-md p-5 rounded-2xl border border-blue-500/40 shadow-2xl"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 bg-blue-600/30 rounded-lg">
+                    <Shield className="w-6 h-6 text-blue-300" />
+                  </div>
+                  <div>
+                    <div className="text-white font-semibold text-sm">Security</div>
+                    <div className="text-blue-300/70 text-xs">Enterprise Grade</div>
+                  </div>
+                </div>
+                <div className="flex gap-1.5">
+                  {[...Array(5)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 1.5 + i * 0.1 }}
+                      className="w-7 h-7 bg-blue-500/30 rounded border border-blue-400/50 flex items-center justify-center"
+                    >
+                      <span className="text-blue-300 text-xs font-bold">•</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Card 3 - Center */}
+              <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
+              >
+                <div className="text-center">
+                  <div className="inline-flex p-4 bg-blue-500/30 rounded-2xl mb-4">
+                    <Code2 className="w-9 h-9 text-blue-300" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-2">AI-Powered</div>
+                  <div className="text-blue-200/80 text-sm mb-4">Next-Gen Solutions</div>
+                  <div className="flex items-center justify-center gap-2 mt-4">
+                    <Sparkles className="w-4 h-4 text-blue-400" />
+                    <div className="text-blue-300/90 text-xs font-medium">Smart Automation</div>
+                  </div>
+                  <div className="h-1.5 bg-blue-900/40 rounded-full overflow-hidden mt-3">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "92%" }}
+                      transition={{ duration: 2, delay: 1.2 }}
+                      className="h-full bg-gradient-to-r from-blue-500 to-blue-400"
+                    ></motion.div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={scrollToIndustries}>
+            <span className="text-blue-300/60 text-sm">Scroll to explore</span>
+            <ChevronDown className="w-6 h-6 text-blue-400 animate-bounce" />
+          </div>
+        </motion.div>
       </div>
-
-
-
-
     </section>
   );
 };
