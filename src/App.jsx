@@ -20,7 +20,10 @@ import {
   ManufacturingPage, 
   TechnologyConsultationAndMIS, 
   SoftwareEngineering, 
-  AI_ML, BlogsPage, 
+  AI_ML,
+  ApplicationModernisation,
+  DigitalTransformation,
+  BlogsPage, 
   TravelAppDevelopment, 
   TourismReport2025, 
   AIBenefitsTravel, 
@@ -59,6 +62,8 @@ function App() {
           <Route path="/technology-consultation-mis" element={<TechnologyConsultationAndMIS/> } />
           <Route path="/software-engineering" element={<SoftwareEngineering/> } />
           <Route path="/ai-ml-services" element={<AI_ML/> } />
+          <Route path="/application-modernisation" element={<ApplicationModernisation/> } />
+          <Route path="/digital-transformation" element={<DigitalTransformation/> } />
           
           {/* Blog Routes */}
           <Route path="/blogs" element={<BlogsPage />} />

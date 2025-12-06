@@ -159,20 +159,20 @@ const Header = () => {
                         <div className="text-xs text-gray-500">Artificial intelligence solutions</div>
                       </div>
                     </Link>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/application-modernisation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Application Modernisation</div>
                         <div className="text-xs text-gray-500">Legacy system upgrades</div>
                       </div>
-                    </a>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/digital-transformation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Workflow className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Digital Transformation</div>
                         <div className="text-xs text-gray-500">Business digitalization</div>
                       </div>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <PenTool className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
@@ -449,14 +449,14 @@ const Header = () => {
                       <Brain className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">AI ML Services</span>
                     </Link>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/application-modernisation" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Package className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Application Modernisation</span>
-                    </a>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/digital-transformation" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Workflow className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Digital Transformation</span>
-                    </a>
+                    </Link>
                     <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <PenTool className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Ideation & Design Strategy</span>

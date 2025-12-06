@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { 
-  Brain, 
+  RefreshCw, 
   Shield, 
   ChevronDown, 
   ChevronUp, 
@@ -11,48 +11,44 @@ import {
   Zap,
   Lock,
   Layers,
-  Smartphone,
+  Code,
   Workflow,
   Award,
   ArrowRight,
   MessageSquare,
-  Monitor,
-  Globe,
   Settings,
-  Eye,
-  BarChart3,
-  Target
+  Rocket
 } from 'lucide-react';
 
-const AI_ML = () => {
-  const [activeTab, setActiveTab] = useState('ml');
+const ApplicationModernisation = () => {
+  const [activeTab, setActiveTab] = useState('legacy');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
   const whyChooseUs = [
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Proven Experience in AI & ML",
-      description: "Ascentia Labs boasts a proven track record in crafting innovative, secure and scalable AI/ML solutions. With 10+ years of experience, our team of experts have helped businesses across various industries by leveraging the power of artificial intelligence and machine learning."
+      title: "Proven Modernisation Experience",
+      description: "Ascentia Labs boasts a proven track record in modernising legacy applications with innovative, secure and scalable solutions. With 10+ years of experience, our team of experts have helped businesses transform their applications for the modern era."
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Security-Focused Approach",
-      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our AI/ML solutions leverage robust encryption and adhere to top security certifications. This ensures your implementation is a reliable and trustworthy foundation."
+      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our modernisation solutions leverage robust encryption and adhere to top security certifications ensuring a reliable foundation."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Scalability & Flexibility",
-      description: "Our Experts build scalable AI/ML solutions designed to grow alongside your business. We utilize flexible and scalable platforms to tailor fit your specific needs. This ensures your solution can adapt to evolving requirements, future-proofing your investment."
+      title: "Scalability & Performance",
+      description: "Our experts build scalable solutions designed to grow alongside your business. We utilize modern architectures and cloud-native technologies to ensure your applications can handle future demands."
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "End-to-End Project Management",
-      description: "From initial concept to development, deployment, and ongoing support our experts handle everything. This ensures a smooth and efficient project lifecycle, allowing you to focus on your business while we take care of technical complexities."
+      title: "End-to-End Migration Support",
+      description: "From initial assessment to deployment and ongoing support, our experts handle everything. This ensures a smooth migration process, minimizing downtime and allowing you to focus on your business."
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "Transparency and Communication",
-      description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way. Expect regular updates and transparent discussions throughout your project. This fosters trust and ensures your project aligns with your vision."
+      description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way with regular updates and transparent discussions throughout your modernisation journey."
     },
     {
       icon: <Zap className="w-7 h-7" />,
@@ -63,90 +59,90 @@ const AI_ML = () => {
 
   const services = [
     {
-      id: 'ml',
-      name: 'Machine Learning',
-      icon: <Brain className="w-5 h-5" />,
-      title: 'Custom Machine Learning Solutions',
-      description: 'Our machine learning experts create secure, intelligent and efficient ML models, facilitating predictive analytics, pattern recognition, and automated decision-making, to enhance business operations and drive data-driven insights.',
+      id: 'legacy',
+      name: 'Legacy Modernisation',
+      icon: <RefreshCw className="w-5 h-5" />,
+      title: 'Legacy Application Modernisation',
+      description: 'Our modernisation experts transform legacy applications into modern, cloud-native solutions, facilitating improved performance, enhanced security, and reduced maintenance costs, to enhance business agility and operational efficiency.',
       techLogos: [
+        '/techLogo/React.png',
+        '/techLogo/node js.png',
         '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
         '/techLogo/aws.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png'
+        '/techLogo/microsoft azure.png',
+        '/techLogo/google cloud.png'
       ]
     },
     {
-      id: 'nlp',
-      name: 'Natural Language Processing',
-      icon: <MessageSquare className="w-5 h-5" />,
-      title: 'NLP & Text Analytics',
-      description: 'Our NLP experts build secure, intelligent and efficient natural language processing solutions, facilitating sentiment analysis, chatbots, language translation, and text understanding, to enhance customer engagement and automate communication.',
+      id: 'cloud',
+      name: 'Cloud Migration',
+      icon: <Cloud className="w-5 h-5" />,
+      title: 'Cloud Migration & Optimization',
+      description: 'Our cloud experts facilitate seamless migration to cloud platforms, optimizing infrastructure, ensuring scalability, and reducing costs, to enhance business flexibility and operational excellence.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
-        '/techLogo/open ai logo.png',
-        '/techLogo/gemini logo.png',
-        '/techLogo/calude ai.png'
-      ]
-    },
-    {
-      id: 'cv',
-      name: 'Computer Vision',
-      icon: <Eye className="w-5 h-5" />,
-      title: 'Computer Vision Solutions',
-      description: 'Our computer vision experts develop secure, accurate and efficient image recognition systems, facilitating object detection, facial recognition, and visual analytics, to enhance automation and enable intelligent visual processing.',
-      techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
         '/techLogo/aws.png',
+        '/techLogo/microsoft azure.png',
         '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png'
+        '/techLogo/oracle cloud.png',
+        '/techLogo/Firebase.png',
+        '/techLogo/salesforce.png'
       ]
     },
     {
-      id: 'analytics',
-      name: 'Predictive Analytics',
-      icon: <BarChart3 className="w-5 h-5" />,
-      title: 'Data Analytics & Insights',
-      description: 'Our analytics experts implement secure, intelligent and efficient predictive models, facilitating forecasting, trend analysis, and business intelligence, to enhance strategic planning and drive informed decision-making.',
+      id: 'architecture',
+      name: 'Architecture Redesign',
+      icon: <Layers className="w-5 h-5" />,
+      title: 'Modern Architecture Design',
+      description: 'Our architects design modern, microservices-based architectures, facilitating improved scalability, enhanced maintainability, and better performance, to enhance system reliability and development velocity.',
       techLogos: [
+        '/techLogo/React.png',
+        '/techLogo/Angular.png',
+        '/techLogo/node js.png',
         '/techLogo/python.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/oracle logo.png'
+        '/techLogo/Java.png',
+        '/techLogo/go.png'
+      ]
+    },
+    {
+      id: 'api',
+      name: 'API Modernisation',
+      icon: <Code className="w-5 h-5" />,
+      title: 'API Development & Integration',
+      description: 'Our API experts develop modern RESTful and GraphQL APIs, facilitating seamless integration, improved performance, and enhanced security, to enhance system connectivity and data exchange.',
+      techLogos: [
+        '/techLogo/node js.png',
+        '/techLogo/python.png',
+        '/techLogo/Java.png',
+        '/techLogo/go.png',
+        '/techLogo/aws.png',
+        '/techLogo/microsoft azure.png'
       ]
     }
   ];
 
   const stats = [
-    { number: '200+', label: 'AI/ML Projects Delivered' },
-    { number: '40+', label: 'Data Scientists' },
+    { number: '300+', label: 'Apps Modernised' },
+    { number: '60+', label: 'Modernisation Experts' },
     { number: '10+', label: 'Years In the Industry' },
     { number: '80+', label: 'Countries Empowered' }
   ];
 
   const faqs = [
     {
-      question: "What AI/ML methodologies do you follow?",
-      answer: "We follow industry-standard methodologies including CRISP-DM, Agile ML development, and MLOps practices. Our approach ensures iterative model development, continuous monitoring, and seamless deployment of AI/ML solutions tailored to your business needs."
+      question: "What is application modernisation?",
+      answer: "Application modernisation is the process of updating legacy applications to modern architectures, technologies, and platforms. This includes migrating to cloud, refactoring code, redesigning architecture, and implementing modern development practices to improve performance, security, and maintainability."
     },
     {
-      question: "How long does it take to develop an AI/ML solution?",
-      answer: "Development timelines vary based on complexity and data availability. Simple ML models can be delivered in 1-2 months, while complex deep learning solutions may take 4-8 months or more. We provide detailed timelines and milestones during the planning phase."
+      question: "How long does application modernisation take?",
+      answer: "Modernisation timelines vary based on application complexity and scope. Simple applications can be modernised in 2-4 months, while complex enterprise systems may take 6-18 months. We provide detailed timelines and phased approaches during the planning phase."
     },
     {
-      question: "Do you provide model maintenance and retraining?",
-      answer: "Yes, we offer comprehensive post-deployment support including model monitoring, performance tracking, periodic retraining with new data, and continuous optimization to ensure your AI/ML models maintain high accuracy and relevance."
+      question: "Will modernisation disrupt our business operations?",
+      answer: "We use phased migration strategies and parallel running approaches to minimize disruption. Our goal is to ensure business continuity throughout the modernisation process with minimal downtime and seamless transitions."
     },
     {
-      question: "Can you integrate AI/ML with our existing systems?",
-      answer: "Absolutely. We specialize in seamless integration of AI/ML models with existing platforms, databases, APIs, and business applications to ensure smooth data flow and operational continuity without disrupting your current workflows."
+      question: "Can you modernise applications built on any technology?",
+      answer: "Yes, we have experience modernising applications built on various legacy technologies including mainframes, COBOL, .NET, Java, and more. Our team assesses your current stack and recommends the best modernisation approach."
     }
   ];
 
@@ -169,10 +165,10 @@ const AI_ML = () => {
                 Industry's Favorite
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                AI & Machine Learning Solutions
+                Application Modernisation Solutions
               </h1>
               <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
-                At Ascentia Labs, we deliver cutting-edge AI and machine learning solutions that transform your business with intelligent automation. Our expert team specializes in building scalable, secure, and high-performance AI models using the latest technologies and best practices in artificial intelligence.
+                At Ascentia Labs, we transform legacy applications into modern, cloud-native solutions that drive business growth. Our expert team specializes in modernising applications using cutting-edge technologies, ensuring improved performance, enhanced security, and reduced operational costs.
               </p>
               <div className="mb-8 sm:mb-12">
                 <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
@@ -198,43 +194,43 @@ const AI_ML = () => {
               <div className="flex justify-center mb-6 animate-fadeIn">
                 <div className="bg-white/15 backdrop-blur-lg rounded-full border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-2.5">
-                    <Brain className="w-7 h-7 text-white animate-pulse" />
-                    <h3 className="text-sm sm:text-base font-bold text-white">AI & ML Excellence</h3>
+                    <RefreshCw className="w-7 h-7 text-white animate-pulse" />
+                    <h3 className="text-sm sm:text-base font-bold text-white">Modernisation Excellence</h3>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {/* Card 1 - Machine Learning */}
+                {/* Card 1 - Legacy Modernisation */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Brain className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Machine Learning</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Predictive models</p>
+                  <RefreshCw className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Legacy Modernisation</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Transform legacy apps</p>
                 </div>
 
-                {/* Card 2 - NLP */}
+                {/* Card 2 - Cloud Migration */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <MessageSquare className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">NLP</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Text analytics</p>
+                  <Cloud className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Cloud Migration</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Seamless cloud move</p>
                 </div>
 
-                {/* Card 3 - Computer Vision */}
+                {/* Card 3 - Architecture Redesign */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Eye className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Computer Vision</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Image recognition</p>
+                  <Layers className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Architecture Redesign</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Modern architecture</p>
                 </div>
 
-                {/* Card 4 - Predictive Analytics */}
+                {/* Card 4 - API Modernisation */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <BarChart3 className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Predictive Analytics</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data insights</p>
+                  <Code className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">API Modernisation</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Modern APIs</p>
                 </div>
               </div>
             </div>
@@ -271,10 +267,6 @@ const AI_ML = () => {
               transform: translateY(0) scale(1); 
             }
           }
-          @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-          }
           .animate-float {
             animation: float 3s ease-in-out infinite;
           }
@@ -285,14 +277,8 @@ const AI_ML = () => {
             animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             animation-fill-mode: forwards;
           }
-          .animation-delay-1000 {
-            animation-delay: 0.2s;
-          }
           .animation-delay-2000 {
             animation-delay: 0.4s;
-          }
-          .animation-delay-3000 {
-            animation-delay: 0.6s;
           }
           .animation-delay-4000 {
             animation-delay: 4s;
@@ -308,7 +294,7 @@ const AI_ML = () => {
               Why Ascentia Labs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the advantages of working with AI/ML experts who understand your business needs
+              Experience the advantages of working with modernisation experts who understand your business needs
             </p>
           </div>
 
@@ -318,11 +304,9 @@ const AI_ML = () => {
                 key={index} 
                 className="group relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-blue-500 transform hover:-translate-y-2 overflow-hidden"
               >
-                {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative z-10">
-                  {/* Icon and Title in one line */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                       {item.icon}
@@ -337,7 +321,6 @@ const AI_ML = () => {
                     {item.description}
                   </p>
 
-                  {/* Decorative element */}
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 </div>
               </div>
@@ -348,7 +331,6 @@ const AI_ML = () => {
 
        {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
@@ -359,85 +341,72 @@ const AI_ML = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
               <div className="text-white space-y-8">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                    Lead The AI Revolution With Ascentia Labs
+                    Modernise Your Applications With Ascentia Labs
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
-                    Here's Why Innovative Companies Choose Us For AI & ML Solutions!
+                    Here's Why Forward-Thinking Companies Choose Us For Modernisation!
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      01
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">01</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Advanced AI/ML Expertise
+                        Legacy System Expertise
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      02
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">02</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Custom Model Development
+                        Cloud-Native Architecture
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      03
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">03</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Deep Learning & Neural Networks
+                        Microservices & Containerisation
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      04
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">04</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Data Science & Analytics
+                        Zero-Downtime Migration
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      05
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">05</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        MLOps & Model Deployment
+                        Performance Optimization
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      06
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">06</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Continuous Model Optimization
+                        Continuous Support & Monitoring
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -445,7 +414,6 @@ const AI_ML = () => {
                 </div>
               </div>
 
-              {/* Right Content - Image/Visual */}
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
                   <div className="text-center text-white">
@@ -455,13 +423,13 @@ const AI_ML = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Ready to Harness AI Power?
+                      Ready to Modernise Your Apps?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join 200+ AI/ML projects and unlock intelligent automation with cutting-edge solutions from Ascentia Labs.
+                      Join 300+ modernised applications and transform your legacy systems with cutting-edge solutions from Ascentia Labs.
                     </p>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Get Your AI Consultation
+                      Start Your Modernisation Journey
                     </button>
                   </div>
                 </div>
@@ -476,10 +444,10 @@ const AI_ML = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Our AI & Machine Learning Services
+              Our Modernisation Services
             </h2>
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
-              Comprehensive AI/ML solutions tailored to your business needs
+              Comprehensive modernisation solutions tailored to your business needs
             </p>
           </div>
 
@@ -497,7 +465,7 @@ const AI_ML = () => {
               >
                 <span className="inline-flex items-center gap-1 sm:gap-2">
                   {service.icon}
-                  <span className="whitespace-nowrap">{service.name}</span>
+                  <span className="whitespace-nowrap text-[10px] sm:text-xs md:text-sm">{service.name}</span>
                 </span>
               </button>
             ))}
@@ -514,11 +482,9 @@ const AI_ML = () => {
                   <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
                     {service.description}
                   </p>
-                 
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
-                    {/* Tech Logos Grid */}
                     <div className="grid grid-cols-3 gap-6">
                       {service.techLogos.map((logo, index) => (
                         <div 
@@ -533,7 +499,6 @@ const AI_ML = () => {
                         </div>
                       ))}
                     </div>
-                    {/* Decorative elements */}
                     <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
                     <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
                   </div>
@@ -550,11 +515,11 @@ const AI_ML = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
-              Get answers to common questions about our AI & ML services
+              Get answers to common questions about our modernisation services
             </p>
           </div>
 
@@ -582,11 +547,8 @@ const AI_ML = () => {
           </div>
         </div>
       </section>
-
-     
-     
     </div>
   );
 };
 
-export default AI_ML;
+export default ApplicationModernisation;

@@ -18,6 +18,8 @@ export { default as ManufacturingPage } from './Industries/Manufacturing';
 export { default as TechnologyConsultationAndMIS } from './Services/TechnologyConsultationAndMIS';
 export { default as SoftwareEngineering } from './Services/SoftwareEngineering';
 export { default as AI_ML } from './Services/AI_ML';
+export { default as ApplicationModernisation } from './Services/ApplicationModernisation';
+export { default as DigitalTransformation } from './Services/DigitalTransformation';
 
 // Blog Pages
 export { default as BlogsPage } from './Blogs';
