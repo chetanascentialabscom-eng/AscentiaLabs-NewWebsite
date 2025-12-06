@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, ChevronDown, Sparkles, Zap, Target, TrendingUp, Shield, Cpu } from 'lucide-react';
+import { ArrowRight, Code2, Sparkles, Zap, Target, TrendingUp, Shield, Cpu } from 'lucide-react';
 
 const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -25,7 +25,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen">
+    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-[600px]  :max-h-[800px] h-screen pt-10 ">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       
@@ -68,7 +68,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-8 top-20 bg-blue-500/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-400/20"
+            className="absolute left-2 top-20 bg-blue-500/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-400/20"
           >
             <Cpu className="w-8 h-8 text-blue-400" />
           </motion.div>
@@ -76,7 +76,7 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 20, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute left-4 top-64 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
+            className="absolute left-4 top-55 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
           >
             <Zap className="w-8 h-8 text-blue-300" />
           </motion.div>
@@ -114,28 +114,26 @@ const Hero = () => {
         </motion.div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10 w-full max-w-[1400px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16 py-10 sm:py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10  max-w-[1400px]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 py-8 md:py-12 lg:py-16">
           
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left w-full lg:max-w-2xl lg:pr-8">
-           
-
             {/* Main Heading */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-6 leading-[1.2]">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-5 md:mb-6 leading-tight">
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-2">
                   Building Tomorrow's
                 </span>
-                <span className="relative inline-flex justify-center lg:justify-start w-full min-h-[1.3em] my-3">
+                <span className="relative flex justify-center lg:justify-start w-full min-h-[1.5em] my-4 overflow-visible">
                   {titles.map((title, index) => (
                     <motion.span
                       key={index}
-                      className="absolute left-0 lg:left-0 font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap"
+                      className="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap"
                       initial={{ opacity: 0, y: "-100" }}
                       transition={{ type: "spring", stiffness: 50 }}
                       animate={
@@ -162,7 +160,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-blue-200/80 mb-8 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-7 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               We transform your ideas into powerful software solutions that drive growth, 
               enhance efficiency, and deliver exceptional user experiences.
@@ -173,9 +171,9 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-4 mb-10 md:mb-12 justify-center lg:justify-start"
             >
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
+              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   Get Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -185,33 +183,14 @@ const Hero = () => {
               
               <button 
                 onClick={scrollToIndustries}
-                className="group px-8 py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 View Our Work
                 <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
               </button>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-3 gap-6 max-w-xl mx-auto lg:mx-0"
-            >
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">500+</div>
-                <div className="text-sm text-blue-300/70">Projects Delivered</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">98%</div>
-                <div className="text-sm text-blue-300/70">Client Satisfaction</div>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">15+</div>
-                <div className="text-sm text-blue-300/70">Years Experience</div>
-              </div>
-            </motion.div>
+           
           </div>
 
           {/* Right Visual Element */}
@@ -219,18 +198,18 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="flex-1 relative hidden lg:flex items-center justify-center min-w-[450px] lg:pl-8 "
+            className="flex-1 relative flex items-center justify-center w-full lg:min-w-[450px] lg:pl-8"
           >
             {/* Central Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-3xl"></div>
             
-            {/* Floating Cards Container */}
-            <div className="relative w-full max-w-[600px] h-[300px]">
+            {/* Floating Cards Container - Desktop Layout */}
+            <div className="relative w-full max-w-[600px] h-[300px] hidden lg:block">
               {/* Card 1 - Top Right */}
               <motion.div
                 animate={{ y: [0, -15, 0], rotate: [0, 2, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute  bottom-0 right-0 w-60 bg-gradient-to-br from-blue-500/25 to-blue-600/15 backdrop-blur-md p-5 rounded-2xl border border-blue-400/40 shadow-2xl"
+                className="absolute bottom-0 right-0 w-60 bg-gradient-to-br from-blue-500/25 to-blue-600/15 backdrop-blur-md p-5 rounded-2xl border border-blue-400/40 shadow-2xl"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-blue-500/30 rounded-lg">
@@ -285,7 +264,7 @@ const Hero = () => {
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-3 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
+                className="absolute top-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
               >
                 <div className="text-center">
                   <div className="inline-flex p-4 bg-blue-500/30 rounded-2xl mb-4">
@@ -308,21 +287,99 @@ const Hero = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Mobile Layout - Only 2 Floating Cards with Smooth Animation */}
+            <div className="lg:hidden w-full max-w-md space-y-5 px-4">
+              {/* Card 1 - Innovation with Smooth Floating */}
+              <motion.div
+                animate={{ 
+                  y: [0, -12, 0],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  times: [0, 0.5, 1]
+                }}
+                className="w-full bg-gradient-to-br from-blue-600/30 to-blue-700/20 backdrop-blur-md p-6 rounded-2xl border border-blue-500/50 shadow-2xl will-change-transform"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 bg-blue-600/40 rounded-xl">
+                    <Sparkles className="w-7 h-7 text-blue-300" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-base">Innovation</div>
+                    <div className="text-blue-300/80 text-xs">Cutting-Edge Tech</div>
+                  </div>
+                </div>
+                <div className="flex gap-2 justify-center">
+                  {[...Array(4)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        delay: 0.8 + i * 0.15,
+                        duration: 0.5,
+                        ease: "easeOut"
+                      }}
+                      className="w-9 h-9 bg-blue-500/40 rounded-lg border border-blue-400/60 flex items-center justify-center"
+                    >
+                      <Zap className="w-4 h-4 text-blue-300" />
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Card 2 - Reliability with Smooth Floating */}
+              <motion.div
+                animate={{ 
+                  y: [0, 12, 0],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 4.5, 
+                  repeat: Infinity, 
+                  ease: "easeInOut",
+                  delay: 0.5,
+                  times: [0, 0.5, 1]
+                }}
+                className="w-full bg-gradient-to-br from-blue-500/30 to-blue-600/20 backdrop-blur-md p-6 rounded-2xl border border-blue-400/50 shadow-2xl will-change-transform"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 bg-blue-500/40 rounded-xl">
+                    <Target className="w-7 h-7 text-blue-300" />
+                  </div>
+                  <div>
+                    <div className="text-white font-bold text-base">Reliability</div>
+                    <div className="text-blue-300/80 text-xs">99.9% Uptime</div>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-xs text-blue-200/70 mb-1">
+                    <span>System Status</span>
+                    <span>Excellent</span>
+                  </div>
+                  <div className="h-2.5 bg-blue-900/50 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      animate={{ width: "95%" }}
+                      transition={{ 
+                        duration: 2.5, 
+                        delay: 1.2,
+                        ease: "easeOut"
+                      }}
+                      className="h-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 rounded-full"
+                    ></motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={scrollToIndustries}>
-            <span className="text-blue-300/60 text-sm">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6 text-blue-400 animate-bounce" />
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
