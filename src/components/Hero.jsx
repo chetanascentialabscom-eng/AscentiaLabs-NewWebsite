@@ -288,92 +288,83 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Mobile Layout - Only 2 Floating Cards with Smooth Animation */}
-            <div className="lg:hidden w-full max-w-md space-y-5 px-4">
-              {/* Card 1 - Innovation with Smooth Floating */}
+            {/* Mobile Layout - Single Feature Card */}
+            <div className="lg:hidden w-full max-w-md px-4">
+              {/* Single Card - Custom Software Development */}
               <motion.div
                 animate={{ 
-                  y: [0, -12, 0],
-                  scale: [1, 1.02, 1]
+                  y: [0, -15, 0],
+                  scale: [1, 1.03, 1]
                 }}
                 transition={{ 
-                  duration: 4, 
+                  duration: 5, 
                   repeat: Infinity, 
                   ease: "easeInOut",
                   times: [0, 0.5, 1]
                 }}
-                className="w-full bg-gradient-to-br from-blue-600/30 to-blue-700/20 backdrop-blur-md p-6 rounded-2xl border border-blue-500/50 shadow-2xl will-change-transform"
+                className="w-full bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-4 rounded-3xl border border-blue-400/60 shadow-2xl will-change-transform"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-blue-600/40 rounded-xl">
-                    <Sparkles className="w-7 h-7 text-blue-300" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-base">Innovation</div>
-                    <div className="text-blue-300/80 text-xs">Cutting-Edge Tech</div>
-                  </div>
+                {/* Header */}
+                <div className="text-center ">
+                  <motion.div 
+                    className="inline-flex p-4 bg-blue-500/40 rounded-2xl mb-4"
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <Code2 className="w-6 h-6 text-blue-200" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold text-white ">
+                    Custom Software Development
+                  </h3>
+                  <p className="text-blue-200/80 text-sm leading-relaxed">
+                    Transforming ideas into scalable digital solutions
+                  </p>
                 </div>
-                <div className="flex gap-2 justify-center">
-                  {[...Array(4)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ 
-                        delay: 0.8 + i * 0.15,
-                        duration: 0.5,
-                        ease: "easeOut"
-                      }}
-                      className="w-9 h-9 bg-blue-500/40 rounded-lg border border-blue-400/60 flex items-center justify-center"
-                    >
-                      <Zap className="w-4 h-4 text-blue-300" />
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
 
-              {/* Card 2 - Reliability with Smooth Floating */}
-              <motion.div
-                animate={{ 
-                  y: [0, 12, 0],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{ 
-                  duration: 4.5, 
-                  repeat: Infinity, 
-                  ease: "easeInOut",
-                  delay: 0.5,
-                  times: [0, 0.5, 1]
-                }}
-                className="w-full bg-gradient-to-br from-blue-500/30 to-blue-600/20 backdrop-blur-md p-6 rounded-2xl border border-blue-400/50 shadow-2xl will-change-transform"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-blue-500/40 rounded-xl">
-                    <Target className="w-7 h-7 text-blue-300" />
-                  </div>
-                  <div>
-                    <div className="text-white font-bold text-base">Reliability</div>
-                    <div className="text-blue-300/80 text-xs">99.9% Uptime</div>
-                  </div>
+                {/* Features Grid */}
+                <div className="grid grid-cols-2 gap-3 mb-5">
+                  <motion.div 
+                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl gap-2 flex justify-center items-center border border-blue-400/40"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                  >
+                    <Zap className="w-5 h-5 text-blue-300 " />
+                    <div className="text-white text-xs font-semibold">Fast Delivery</div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1, duration: 0.6 }}
+                  >
+                    <Sparkles className="w-4 h-4 text-blue-300 " />
+                    <div className="text-white text-xs font-semibold">AI-Powered</div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.2, duration: 0.6 }}
+                  >
+                    <Target className="w-5 h-5 text-blue-300 " />
+                    <div className="text-white text-xs font-semibold">Goal-Focused</div>
+                  </motion.div>
+                  
+                  <motion.div 
+                    className="bg-blue-500/20 backdrop-blur-sm p-3 rounded-xl border border-blue-400/40 gap-2 flex justify-center items-center"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1.4, duration: 0.6 }}
+                  >
+                    <Cpu className="w-5 h-5 text-blue-300 " />
+                    <div className="text-white text-xs font-semibold">Scalable</div>
+                  </motion.div>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs text-blue-200/70 mb-1">
-                    <span>System Status</span>
-                    <span>Excellent</span>
-                  </div>
-                  <div className="h-2.5 bg-blue-900/50 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: "95%" }}
-                      transition={{ 
-                        duration: 2.5, 
-                        delay: 1.2,
-                        ease: "easeOut"
-                      }}
-                      className="h-full bg-gradient-to-r from-blue-500 via-blue-400 to-blue-300 rounded-full"
-                    ></motion.div>
-                  </div>
-                </div>
+
+                
               </motion.div>
             </div>
           </motion.div>
