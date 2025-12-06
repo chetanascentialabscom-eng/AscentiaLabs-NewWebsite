@@ -391,6 +391,131 @@ const TechnologyConsultationAndMIS = () => {
         </div>
       </section>
 
+       {/* Why Choose Us Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-white space-y-8">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                    Transform Your Technology Strategy With Ascentia Labs
+                  </h2>
+                  <p className="text-xl text-gray-300 mb-8">
+                    Here's Why Leading Businesses Choose Us For Technology Consulting!
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      01
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        10+ Years of Technology Expertise
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      02
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Strategic Planning & Implementation
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      03
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Cloud & MIS Solutions Excellence
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      04
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Security-First Architecture
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      05
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Scalable & Future-Ready Solutions
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      06
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        End-to-End Project Support
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Content - Image/Visual */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
+                  <div className="text-center text-white">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">
+                      Ready to Elevate Your Technology?
+                    </h3>
+                    <p className="text-blue-100 mb-6">
+                      Join 250+ successful projects and transform your business with cutting-edge technology consulting from Ascentia Labs.
+                    </p>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      Get Your Free Consultation
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Tabs Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
@@ -464,73 +589,7 @@ const TechnologyConsultationAndMIS = () => {
         </div>
       </section>
 
-      {/* Technology Stack Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Technology Stack for the
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mt-2">Transformation of Your Business</span>
-            </h2>
-            <p className="text-lg text-gray-600 mt-4">Leveraging cutting-edge technologies to deliver exceptional results</p>
-          </div>
-
-          {/* Category Navigation */}
-          <div className="mb-12 overflow-x-auto">
-            <div className="flex space-x-3 min-w-max justify-center">
-              {techCategories.map((category, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTechCategory(index)}
-                  className={`px-6 py-3 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
-                    activeTechCategory === index
-                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                  }`}
-                >
-                  {category.category}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Technology Grid */}
-          {techCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className={`transition-all duration-300 ${
-                activeTechCategory === categoryIndex ? 'opacity-100 block' : 'opacity-0 hidden'
-              }`}
-            >
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {category.technologies.map((tech, techIndex) => (
-                  <div
-                    key={techIndex}
-                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-100 hover:border-blue-300"
-                  >
-                    <div className="flex justify-center mb-4">
-                      <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-gray-100 transition-all duration-300">
-                        <img
-                          src={tech.logo}
-                          alt={tech.name}
-                          className="w-12 h-12 object-contain filter group-hover:brightness-110 transition-all duration-300"
-                        />
-                      </div>
-                    </div>
-                    <h4 className="text-center text-sm font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                      {tech.name}
-                    </h4>
-                    <p className="text-center text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
-                      {tech.description}
-                    </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-blue-100/20 to-blue-200/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+    
 
       {/* FAQ Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">

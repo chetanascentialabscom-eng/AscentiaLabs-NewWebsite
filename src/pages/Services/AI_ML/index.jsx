@@ -70,11 +70,11 @@ const AI_ML = () => {
       description: 'Our machine learning experts create secure, intelligent and efficient ML models, facilitating predictive analytics, pattern recognition, and automated decision-making, to enhance business operations and drive data-driven insights.',
       techLogos: [
         '/techLogo/python.png',
-        '/techLogo/tensorflow.png',
+        '/techLogo/tensor flow.png',
         '/techLogo/pytorch.png',
-        '/techLogo/scikit-learn.png',
-        '/techLogo/keras.png',
-        '/techLogo/pandas.png'
+        '/techLogo/aws.png',
+        '/techLogo/google cloud.png',
+        '/techLogo/microsoft azure.png'
       ]
     },
     {
@@ -85,11 +85,11 @@ const AI_ML = () => {
       description: 'Our NLP experts build secure, intelligent and efficient natural language processing solutions, facilitating sentiment analysis, chatbots, language translation, and text understanding, to enhance customer engagement and automate communication.',
       techLogos: [
         '/techLogo/python.png',
-        '/techLogo/tensorflow.png',
+        '/techLogo/tensor flow.png',
         '/techLogo/pytorch.png',
-        '/techLogo/spacy.png',
-        '/techLogo/nltk.png',
-        '/techLogo/huggingface.png'
+        '/techLogo/open ai logo.png',
+        '/techLogo/gemini logo.png',
+        '/techLogo/calude ai.png'
       ]
     },
     {
@@ -100,11 +100,11 @@ const AI_ML = () => {
       description: 'Our computer vision experts develop secure, accurate and efficient image recognition systems, facilitating object detection, facial recognition, and visual analytics, to enhance automation and enable intelligent visual processing.',
       techLogos: [
         '/techLogo/python.png',
-        '/techLogo/opencv.png',
-        '/techLogo/tensorflow.png',
+        '/techLogo/tensor flow.png',
         '/techLogo/pytorch.png',
-        '/techLogo/yolo.png',
-        '/techLogo/keras.png'
+        '/techLogo/aws.png',
+        '/techLogo/google cloud.png',
+        '/techLogo/microsoft azure.png'
       ]
     },
     {
@@ -115,11 +115,11 @@ const AI_ML = () => {
       description: 'Our analytics experts implement secure, intelligent and efficient predictive models, facilitating forecasting, trend analysis, and business intelligence, to enhance strategic planning and drive informed decision-making.',
       techLogos: [
         '/techLogo/python.png',
-        '/techLogo/tableau.png',
-        '/techLogo/powerbi.png',
-        '/techLogo/spark.png',
-        '/techLogo/pandas.png',
-        '/techLogo/numpy.png'
+        '/techLogo/power bi.png',
+        '/techLogo/google analytics.png',
+        '/techLogo/mongo db.png',
+        '/techLogo/mysql.png',
+        '/techLogo/oracle logo.png'
       ]
     }
   ];
@@ -129,53 +129,6 @@ const AI_ML = () => {
     { number: '40+', label: 'Data Scientists' },
     { number: '10+', label: 'Years In the Industry' },
     { number: '80+', label: 'Countries Empowered' }
-  ];
-
-  const [activeTechCategory, setActiveTechCategory] = useState(0);
-
-  const techCategories = [
-    {
-      category: "AI/ML Frameworks",
-      technologies: [
-        { name: 'TensorFlow', logo: '/techLogo/tensorflow.png', description: 'ML framework' },
-        { name: 'PyTorch', logo: '/techLogo/pytorch.png', description: 'Deep learning' },
-        { name: 'Keras', logo: '/techLogo/keras.png', description: 'Neural networks' },
-        { name: 'Scikit-learn', logo: '/techLogo/scikit-learn.png', description: 'ML library' },
-        { name: 'XGBoost', logo: '/techLogo/xgboost.png', description: 'Gradient boosting' },
-        { name: 'LightGBM', logo: '/techLogo/lightgbm.png', description: 'Fast ML' }
-      ]
-    },
-    {
-      category: "Programming Languages",
-      technologies: [
-        { name: 'Python', logo: '/techLogo/python.png', description: 'Versatile language' },
-        { name: 'R', logo: '/techLogo/r.png', description: 'Statistical computing' },
-        { name: 'Julia', logo: '/techLogo/julia.png', description: 'High performance' },
-        { name: 'Scala', logo: '/techLogo/scala.png', description: 'JVM language' },
-        { name: 'Java', logo: '/techLogo/Java.png', description: 'Enterprise language' },
-        { name: 'C++', logo: '/techLogo/cpp.png', description: 'Performance' }
-      ]
-    },
-    {
-      category: "Data Science Tools",
-      technologies: [
-        { name: 'Jupyter', logo: '/techLogo/jupyter.png', description: 'Interactive notebooks' },
-        { name: 'Pandas', logo: '/techLogo/pandas.png', description: 'Data analysis' },
-        { name: 'NumPy', logo: '/techLogo/numpy.png', description: 'Numerical computing' },
-        { name: 'Matplotlib', logo: '/techLogo/matplotlib.png', description: 'Visualization' }
-      ]
-    },
-    {
-      category: "Cloud & MLOps",
-      technologies: [
-        { name: 'AWS', logo: '/techLogo/aws.png', description: 'Amazon cloud' },
-        { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png', description: 'Microsoft cloud' },
-        { name: 'Google Cloud', logo: '/techLogo/google cloud.png', description: 'Google cloud' },
-        { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png', description: 'Oracle cloud' },
-        { name: 'IBM Watson', logo: '/techLogo/ibm-watson.png', description: 'AI platform' },
-        { name: 'Databricks', logo: '/techLogo/databricks.png', description: 'Data platform' }
-      ]
-    }
   ];
 
   const faqs = [
@@ -393,6 +346,131 @@ const AI_ML = () => {
         </div>
       </section>
 
+       {/* Why Choose Us Section */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content */}
+              <div className="text-white space-y-8">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                    Lead The AI Revolution With Ascentia Labs
+                  </h2>
+                  <p className="text-xl text-gray-300 mb-8">
+                    Here's Why Innovative Companies Choose Us For AI & ML Solutions!
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      01
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Advanced AI/ML Expertise
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      02
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Custom Model Development
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      03
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Deep Learning & Neural Networks
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      04
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Data Science & Analytics
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      05
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        MLOps & Model Deployment
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                      06
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                        Continuous Model Optimization
+                      </h3>
+                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Content - Image/Visual */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
+                  <div className="text-center text-white">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">
+                      Ready to Harness AI Power?
+                    </h3>
+                    <p className="text-blue-100 mb-6">
+                      Join 200+ AI/ML projects and unlock intelligent automation with cutting-edge solutions from Ascentia Labs.
+                    </p>
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      Get Your AI Consultation
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Tabs Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
@@ -466,73 +544,7 @@ const AI_ML = () => {
         </div>
       </section>
 
-      {/* Technology Stack Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Technology Stack for the
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mt-2">Transformation of Your Business</span>
-            </h2>
-            <p className="text-lg text-gray-600 mt-4">Leveraging cutting-edge AI/ML technologies to deliver exceptional results</p>
-          </div>
-
-          {/* Category Navigation */}
-          <div className="mb-12 overflow-x-auto">
-            <div className="flex space-x-3 min-w-max justify-center">
-              {techCategories.map((category, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveTechCategory(index)}
-                  className={`px-6 py-3 text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
-                    activeTechCategory === index
-                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
-                  }`}
-                >
-                  {category.category}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Technology Grid */}
-          {techCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className={`transition-all duration-300 ${
-                activeTechCategory === categoryIndex ? 'opacity-100 block' : 'opacity-0 hidden'
-              }`}
-            >
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                {category.technologies.map((tech, techIndex) => (
-                  <div
-                    key={techIndex}
-                    className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 border border-gray-100 hover:border-blue-300"
-                  >
-                    <div className="flex justify-center mb-4">
-                      <div className="w-16 h-16 flex items-center justify-center bg-gray-50 rounded-xl group-hover:bg-gray-100 transition-all duration-300">
-                        <img
-                          src={tech.logo}
-                          alt={tech.name}
-                          className="w-12 h-12 object-contain filter group-hover:brightness-110 transition-all duration-300"
-                        />
-                      </div>
-                    </div>
-                    <h4 className="text-center text-sm font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                      {tech.name}
-                    </h4>
-                    <p className="text-center text-xs text-gray-500 group-hover:text-gray-600 transition-colors duration-300">
-                      {tech.description}
-                    </p>
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-blue-100/20 to-blue-200/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+     
 
       {/* FAQ Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
