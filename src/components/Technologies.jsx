@@ -298,7 +298,7 @@ const Technologies = () => {
       </div>
       
       {/* Hide scrollbar but keep functionality */}
-      <style jsx>{`
+      <style>{`
         /* Hide scrollbar for Chrome, Safari and newer versions of Opera */
         .no-scrollbar::-webkit-scrollbar {
           display: none; /* Hide scrollbar */
