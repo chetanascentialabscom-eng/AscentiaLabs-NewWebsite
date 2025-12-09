@@ -173,27 +173,27 @@ const Header = () => {
                         <div className="text-xs text-gray-500">Business digitalization</div>
                       </div>
                     </Link>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ideation-design" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <PenTool className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Ideation & Design Strategy</div>
                         <div className="text-xs text-gray-500">Creative design solutions</div>
                       </div>
-                    </a>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/go-to-market" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Send className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Go-To-Market</div>
                         <div className="text-xs text-gray-500">Product launch strategies</div>
                       </div>
-                    </a>
-                    <a className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/mobile-application" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Smartphone className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Mobile Application</div>
                         <div className="text-xs text-gray-500">iOS & Android development</div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -457,18 +457,18 @@ const Header = () => {
                       <Workflow className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Digital Transformation</span>
                     </Link>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ideation-design" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <PenTool className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Ideation & Design Strategy</span>
-                    </a>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/go-to-market" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Send className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Go-To-Market</span>
-                    </a>
-                    <a className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    </Link>
+                    <Link to="/mobile-application" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Smartphone className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Mobile Application</span>
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>

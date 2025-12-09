@@ -23,6 +23,9 @@ import {
   AI_ML,
   ApplicationModernisation,
   DigitalTransformation,
+  IdeationDesign,
+  MobileApplication,
+  GoToMarket,
   BlogsPage, 
   TravelAppDevelopment, 
   TourismReport2025, 
@@ -64,6 +67,9 @@ function App() {
           <Route path="/ai-ml-services" element={<AI_ML/> } />
           <Route path="/application-modernisation" element={<ApplicationModernisation/> } />
           <Route path="/digital-transformation" element={<DigitalTransformation/> } />
+          <Route path="/ideation-design" element={<IdeationDesign/> } />
+          <Route path="/mobile-application" element={<MobileApplication/> } />
+          <Route path="/go-to-market" element={<GoToMarket/> } />
           
           {/* Blog Routes */}
           <Route path="/blogs" element={<BlogsPage />} />

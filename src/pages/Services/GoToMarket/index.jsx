@@ -1,47 +1,42 @@
 import { useState } from 'react';
 import { 
-  Lightbulb, 
-  Shield, 
   ChevronDown, 
   ChevronUp, 
-  Cpu, 
-  Database, 
-  Cloud, 
   TrendingUp,
   Zap,
   Lock,
-  Layers,
-  Code,
   Workflow,
   Award,
   ArrowRight,
+  Globe,
+  BarChart3,
   MessageSquare
 } from 'lucide-react';
 
-const TechnologyConsultationAndMIS = () => {
-  const [activeTab, setActiveTab] = useState('strategic');
+const GoToMarket = () => {
+  const [activeTab, setActiveTab] = useState('strategy');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
 
   const whyChooseUs = [
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Proven Experience in Technology Consulting",
-      description: "Ascentia Labs boasts a proven track record in crafting innovative, secure and scalable technology solutions. With 10+ years of experience, our team of experts have helped businesses across various industries by leveraging the power of modern technology."
+      title: "Proven Experience in Market Launch",
+      description: "Ascentia Labs boasts a proven track record in crafting successful, data-driven and impactful go-to-market strategies. With 10+ years of experience, our team of experts have helped businesses across various industries by leveraging the power of strategic market positioning."
     },
     {
       icon: <Lock className="w-8 h-8" />,
-      title: "Security-Focused Approach",
-      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our technology solutions leverage robust encryption and adhere to top security certifications. This ensures your implementation is a reliable and trustworthy foundation."
+      title: "Data-Driven Approach",
+      description: "We prioritize making informed decisions with comprehensive market research and analytics. Our go-to-market strategies leverage real-time data and competitive intelligence to ensure your product launch achieves maximum market penetration."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Scalability & Flexibility",
-      description: "Our Experts build scalable solutions designed to grow alongside your business. We utilize flexible and scalable platforms to tailor fit your specific needs. This ensures your solution can adapt to evolving requirements, future-proofing your investment."
+      title: "Scalability & Growth",
+      description: "Our Experts build scalable go-to-market strategies designed to grow alongside your business. We utilize proven frameworks to tailor fit your specific market needs. This ensures your strategy can adapt to market dynamics, future-proofing your investment."
     },
     {
       icon: <Workflow className="w-8 h-8" />,
       title: "End-to-End Project Management",
-      description: "From initial concept to development, deployment, and ongoing support our experts handle everything. This ensures a smooth and efficient project lifecycle, allowing you to focus on your business while we take care of technical complexities."
+      description: "From initial concept to design, prototyping, and final delivery our experts handle everything. This ensures a smooth and efficient project lifecycle, allowing you to focus on your business while we take care of design complexities."
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
@@ -57,141 +52,90 @@ const TechnologyConsultationAndMIS = () => {
 
   const services = [
     {
-      id: 'strategic',
-      name: 'Strategic Planning',
-      icon: <Lightbulb className="w-5 h-5" />,
-      title: 'Strategic Technology Planning',
-      description: 'Our technology experts develop secure, transparent and efficient solutions for strategic planning, facilitating trusted roadmaps, optimizing technology infrastructure, and ensuring digital transformation, to enhance business growth and operational excellence.',
+      id: 'strategy',
+      name: 'Market Strategy',
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: 'Go-To-Market Strategy Development',
+      description: 'Our strategy experts create comprehensive, data-driven and actionable go-to-market plans, facilitating market entry, optimizing positioning, and ensuring competitive advantage, to enhance product success and drive revenue growth.',
       techLogos: [
-        '/techLogo/figma.png',
-        '/techLogo/power bi.png',
         '/techLogo/google analytics.png',
-        '/techLogo/Framer logo.png',
         '/techLogo/salesforce.png',
-        '/techLogo/oracle logo.png'
-      ]
-    },
-    {
-      id: 'mis',
-      name: 'MIS Solutions',
-      icon: <Database className="w-5 h-5" />,
-      title: 'Management Information Systems',
-      description: 'Our MIS experts develop secure, integrated and efficient solutions for management information systems, facilitating trusted data management, optimizing reporting processes, and ensuring performance analytics, to enhance decision-making and operational efficiency.',
-      techLogos: [
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/oracle logo.png',
-        '/techLogo/Cassandra.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/power bi.png'
-      ]
-    },
-    {
-      id: 'cloud',
-      name: 'Cloud Strategy',
-      icon: <Cloud className="w-5 h-5" />,
-      title: 'Cloud Strategy & Migration',
-      description: 'Our cloud experts develop secure, scalable and efficient solutions for cloud migration, facilitating trusted platform selection, optimizing cloud infrastructure, and ensuring cost optimization, to enhance business agility and operational excellence.',
-      techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
+        '/techLogo/power bi.png',
         '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/salesforce.png'
+        '/techLogo/python.png',
+        '/techLogo/React.png'
       ]
     },
     {
-      id: 'security',
-      name: 'IT Security',
-      icon: <Shield className="w-5 h-5" />,
-      title: 'IT Security Consulting',
-      description: 'Our security experts develop robust, compliant and efficient solutions for IT security, facilitating trusted risk assessments, optimizing security protocols, and ensuring incident response planning, to enhance protection and operational resilience.',
+      id: 'marketing',
+      name: 'Digital Marketing',
+      icon: <Globe className="w-5 h-5" />,
+      title: 'Digital Marketing & Campaign Management',
+      description: 'Our marketing experts develop targeted, engaging and measurable digital campaigns, facilitating brand awareness, optimizing customer acquisition, and ensuring ROI maximization, to enhance market presence and drive conversions.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
+        '/techLogo/google analytics.png',
         '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
+        '/techLogo/salesforce.png',
+        '/techLogo/React.png',
+        '/techLogo/node js.png',
+        '/techLogo/python.png'
+      ]
+    },
+    {
+      id: 'sales',
+      name: 'Sales Enablement',
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: 'Sales Strategy & Enablement',
+      description: 'Our sales experts implement effective, scalable and results-driven sales strategies, facilitating pipeline development, optimizing conversion rates, and ensuring revenue targets, to enhance sales performance and market penetration.',
+      techLogos: [
+        '/techLogo/salesforce.png',
+        '/techLogo/google analytics.png',
+        '/techLogo/power bi.png',
+        '/techLogo/microsoft azure.png',
+        '/techLogo/aws.png',
+        '/techLogo/oracle cloud.png'
+      ]
+    },
+    {
+      id: 'analytics',
+      name: 'Market Analytics',
+      icon: <BarChart3 className="w-5 h-5" />,
+      title: 'Market Research & Analytics',
+      description: 'Our analytics experts conduct thorough, insightful and actionable market research, facilitating informed decisions, optimizing market understanding, and ensuring strategic positioning, to enhance competitive advantage and market success.',
+      techLogos: [
+        '/techLogo/google analytics.png',
+        '/techLogo/power bi.png',
+        '/techLogo/python.png',
+        '/techLogo/google cloud.png',
+        '/techLogo/aws.png',
         '/techLogo/salesforce.png'
       ]
     }
   ];
 
   const stats = [
-    { number: '250+', label: 'Projects Delivered' },
-    { number: '50+', label: 'Technology Experts' },
+    { number: '150+', label: 'Successful Product Launches' },
+    { number: '30+', label: 'Marketing Experts' },
     { number: '10+', label: 'Years In the Industry' },
     { number: '80+', label: 'Countries Empowered' }
   ];
 
-  const [activeTechCategory, setActiveTechCategory] = useState(0);
-
-  const techCategories = [
-    {
-      category: "Cloud Platforms",
-      technologies: [
-        { name: 'AWS', logo: '/techLogo/aws.png', description: 'Amazon cloud' },
-        { name: 'Microsoft Azure', logo: '/techLogo/microsoft azure.png', description: 'Microsoft cloud' },
-        { name: 'Google Cloud', logo: '/techLogo/google cloud.png', description: 'Google cloud' },
-        { name: 'Oracle Cloud', logo: '/techLogo/oracle cloud.png', description: 'Oracle cloud' },
-        { name: 'Firebase', logo: '/techLogo/Firebase.png', description: 'Google platform' },
-        { name: 'Salesforce', logo: '/techLogo/salesforce.png', description: 'CRM platform' }
-      ]
-    },
-    {
-      category: "Development Technologies",
-      technologies: [
-        { name: 'Python', logo: '/techLogo/python.png', description: 'Versatile language' },
-        { name: 'Node.js', logo: '/techLogo/node js.png', description: 'JavaScript runtime' },
-        { name: 'React', logo: '/techLogo/React.png', description: 'UI library' },
-        { name: 'Angular', logo: '/techLogo/Angular.png', description: 'Framework' },
-        { name: 'Java', logo: '/techLogo/Java.png', description: 'Enterprise language' },
-        { name: 'MongoDB', logo: '/techLogo/mongo db.png', description: 'NoSQL database' },
-        { name: 'MySQL', logo: '/techLogo/mysql.png', description: 'SQL database' },
-        { name: 'TypeScript', logo: '/techLogo/typescript.png', description: 'Typed JavaScript' },
-        { name: 'Next.js', logo: '/techLogo/next js.png', description: 'React framework' },
-        { name: 'Vue.js', logo: '/techLogo/Vue Js.png', description: 'Progressive framework' },
-        { name: 'TensorFlow', logo: '/techLogo/tensor flow.png', description: 'ML framework' },
-        { name: 'PyTorch', logo: '/techLogo/pytorch.png', description: 'Deep learning' }
-      ]
-    },
-    {
-      category: "Design Tools",
-      technologies: [
-        { name: 'Figma', logo: '/techLogo/figma.png', description: 'Design tool' },
-        { name: 'Photoshop', logo: '/techLogo/photoshop logo.png', description: 'Image editing' },
-        { name: 'Blender', logo: '/techLogo/blender.png', description: '3D creation' },
-        { name: 'SketchUp', logo: '/techLogo/sketchup.png', description: '3D modeling' }
-      ]
-    },
-    {
-      category: "AI Solutions",
-      technologies: [
-        { name: 'OpenAI', logo: '/techLogo/open ai logo.png', description: 'AI platform' },
-        { name: 'Gemini', logo: '/techLogo/gemini logo.png', description: 'Google AI' },
-        { name: 'Claude AI', logo: '/techLogo/calude ai.png', description: 'Anthropic AI' },
-        { name: 'Gamma AI', logo: '/techLogo/gamma ai.png', description: 'AI assistant' }
-      ]
-    }
-  ];
-
   const faqs = [
     {
-      question: "What is included in a technology consultation?",
-      answer: "Our technology consultation includes a comprehensive assessment of your current IT infrastructure, identification of gaps and opportunities, strategic planning for technology investments, and detailed recommendations for implementation."
+      question: "What go-to-market frameworks do you use?",
+      answer: "We follow industry-proven frameworks including Product-Market Fit analysis, TAM-SAM-SOM methodology, and Growth Hacking strategies. Our approach ensures comprehensive market analysis, strategic positioning, and measurable launch success."
     },
     {
-      question: "How long does a typical MIS implementation take?",
-      answer: "MIS implementation timelines vary based on complexity and scope. Simple systems can be deployed in 2-3 months, while comprehensive enterprise solutions may take 6-12 months. We provide detailed timelines during the planning phase."
+      question: "How long does it take to develop a go-to-market strategy?",
+      answer: "Strategy development timelines vary based on market complexity and product scope. Basic GTM strategies can be delivered in 4-6 weeks, while comprehensive enterprise market entry strategies may take 3-4 months. We provide detailed timelines during the planning phase."
     },
     {
-      question: "Do you provide ongoing support after implementation?",
-      answer: "Yes, we offer comprehensive post-implementation support including system maintenance, user training, performance monitoring, and continuous optimization to ensure your technology investments deliver maximum value."
+      question: "Do you provide post-launch support and optimization?",
+      answer: "Yes, we offer comprehensive post-launch support including performance monitoring, campaign optimization, A/B testing, market feedback analysis, and strategy refinement to ensure your product achieves sustained market success and growth."
     },
     {
-      question: "Can you work with our existing technology stack?",
-      answer: "Absolutely. We specialize in integrating with existing systems and can work with virtually any technology stack. Our approach focuses on maximizing your current investments while strategically upgrading where needed."
+      question: "Can you help with international market expansion?",
+      answer: "Absolutely. We specialize in international go-to-market strategies and can conduct market research, localization planning, competitive analysis, and develop region-specific strategies to ensure successful expansion into new geographic markets."
     }
   ];
 
@@ -214,10 +158,10 @@ const TechnologyConsultationAndMIS = () => {
                 Industry's Favorite
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
-                Technology Consultation & MIS Solutions
+                Go-To-Market Strategy Solutions
               </h1>
               <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
-                At Ascentia Labs, we assist our clients in exploring all facets of technology consulting and developing customized solutions that provide tangible value. With our expertise in architecture, digital design, and development, we support our clients in their pursuit of innovative technology solutions that are ready for the market and effectively address real business challenges.
+                At Ascentia Labs, we deliver cutting-edge go-to-market strategies that transform your product launch into market success. Our expert team specializes in creating data-driven, comprehensive, and results-oriented market strategies using the latest tools and best practices in product marketing.
               </p>
               <div className="mb-8 sm:mb-12">
                 <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
@@ -243,43 +187,43 @@ const TechnologyConsultationAndMIS = () => {
               <div className="flex justify-center mb-6 animate-fadeIn">
                 <div className="bg-white/15 backdrop-blur-lg rounded-full border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-2.5">
-                    <Cpu className="w-7 h-7 text-white animate-pulse" />
-                    <h3 className="text-sm sm:text-base font-bold text-white">Technology Consulting Excellence</h3>
+                    <TrendingUp className="w-7 h-7 text-white animate-pulse" />
+                    <h3 className="text-sm sm:text-base font-bold text-white">Market Excellence</h3>
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {/* Card 1 - MIS Solutions */}
+                {/* Card 1 - Market Strategy */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Database className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">MIS Solutions</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data-driven insights</p>
+                  <TrendingUp className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Market Strategy</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">GTM planning</p>
                 </div>
 
-                {/* Card 2 - Cloud Strategy */}
+                {/* Card 2 - Digital Marketing */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Cloud className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Cloud Strategy</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Scalable infrastructure</p>
+                  <Globe className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Digital Marketing</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Campaign management</p>
                 </div>
 
-                {/* Card 3 - Security First */}
+                {/* Card 3 - Sales Enablement */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Security First</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Protected systems</p>
+                  <TrendingUp className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Sales Enablement</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Sales strategy</p>
                 </div>
 
-                {/* Card 4 - Strategic Planning */}
+                {/* Card 4 - Market Analytics */}
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Lightbulb className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Strategic Planning</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Future-ready solutions</p>
+                  <BarChart3 className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
+                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Market Analytics</h4>
+                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Research & insights</p>
                 </div>
               </div>
             </div>
@@ -316,10 +260,6 @@ const TechnologyConsultationAndMIS = () => {
               transform: translateY(0) scale(1); 
             }
           }
-          @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-          }
           .animate-float {
             animation: float 3s ease-in-out infinite;
           }
@@ -330,14 +270,8 @@ const TechnologyConsultationAndMIS = () => {
             animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             animation-fill-mode: forwards;
           }
-          .animation-delay-1000 {
-            animation-delay: 0.2s;
-          }
           .animation-delay-2000 {
             animation-delay: 0.4s;
-          }
-          .animation-delay-3000 {
-            animation-delay: 0.6s;
           }
           .animation-delay-4000 {
             animation-delay: 4s;
@@ -353,7 +287,7 @@ const TechnologyConsultationAndMIS = () => {
               Why Ascentia Labs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the advantages of working with technology experts who understand your business needs
+              Experience the advantages of working with go-to-market experts who understand your business needs
             </p>
           </div>
 
@@ -361,13 +295,11 @@ const TechnologyConsultationAndMIS = () => {
             {whyChooseUs.map((item, index) => (
               <div 
                 key={index} 
-                className="group relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-blue-500 transform hover:-translate-y-2 overflow-hidden"
+                className="group relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-purple-500 transform hover:-translate-y-2 overflow-hidden"
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <div className="relative z-10">
-                  {/* Icon and Title in one line */}
                   <div className="flex items-center gap-4 mb-4">
                     <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                       {item.icon}
@@ -382,7 +314,6 @@ const TechnologyConsultationAndMIS = () => {
                     {item.description}
                   </p>
 
-                  {/* Decorative element */}
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 </div>
               </div>
@@ -391,9 +322,8 @@ const TechnologyConsultationAndMIS = () => {
         </div>
       </section>
 
-       {/* Why Choose Us Section */}
+      {/* Promotional Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
@@ -404,85 +334,72 @@ const TechnologyConsultationAndMIS = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
               <div className="text-white space-y-8">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                    Transform Your Technology Strategy With Ascentia Labs
+                    Launch Your Product Successfully With Ascentia Labs
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
-                    Here's Why Leading Businesses Choose Us For Technology Consulting!
+                    Here's Why Market Leaders Choose Us For Go-To-Market Excellence!
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      01
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">01</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        10+ Years of Technology Expertise
+                        Data-Driven Market Strategy
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      02
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">02</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Strategic Planning & Implementation
+                        Multi-Channel Marketing
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      03
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">03</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Cloud & MIS Solutions Excellence
+                        Sales Funnel Optimization
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      04
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">04</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Security-First Architecture
+                        Competitive Market Analysis
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      05
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">05</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Scalable & Future-Ready Solutions
+                        Performance Tracking & Analytics
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
-                      06
-                    </div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">06</div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        End-to-End Project Support
+                        Continuous Campaign Optimization
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -490,7 +407,6 @@ const TechnologyConsultationAndMIS = () => {
                 </div>
               </div>
 
-              {/* Right Content - Image/Visual */}
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
                   <div className="text-center text-white">
@@ -500,13 +416,13 @@ const TechnologyConsultationAndMIS = () => {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Ready to Elevate Your Technology?
+                      Ready to Launch Your Product?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join 250+ successful projects and transform your business with cutting-edge technology consulting from Ascentia Labs.
+                      Join 150+ successful launches and achieve market success with strategic solutions from Ascentia Labs.
                     </p>
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Get Your Free Consultation
+                      Start Your GTM Strategy
                     </button>
                   </div>
                 </div>
@@ -521,28 +437,28 @@ const TechnologyConsultationAndMIS = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Consultation Services
+              Our Go-To-Market Services
             </h2>
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
-              Comprehensive technology solutions tailored to your business needs
+              Comprehensive market launch solutions tailored to your business needs
             </p>
           </div>
 
           {/* Service Tabs - Compact */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 mb-12">
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
-                className={`group relative px-5 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
+                className={`group relative px-3 sm:px-5 py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
                   activeTab === service.id
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
                 }`}
               >
-                <span className="inline-flex items-center gap-2">
+                <span className="inline-flex items-center gap-1 sm:gap-2">
                   {service.icon}
-                  {service.name}
+                  <span className="whitespace-nowrap">{service.name}</span>
                 </span>
               </button>
             ))}
@@ -559,11 +475,9 @@ const TechnologyConsultationAndMIS = () => {
                   <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
                     {service.description}
                   </p>
-                 
                 </div>
                 <div className="order-1 lg:order-2">
                   <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
-                    {/* Tech Logos Grid */}
                     <div className="grid grid-cols-3 gap-6">
                       {service.techLogos.map((logo, index) => (
                         <div 
@@ -578,7 +492,6 @@ const TechnologyConsultationAndMIS = () => {
                         </div>
                       ))}
                     </div>
-                    {/* Decorative elements */}
                     <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
                     <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
                   </div>
@@ -589,17 +502,15 @@ const TechnologyConsultationAndMIS = () => {
         </div>
       </section>
 
-    
-
       {/* FAQ Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent  mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-600">
-              Get answers to common questions about our consultation services
+              Get answers to common questions about our go-to-market services
             </p>
           </div>
 
@@ -627,11 +538,8 @@ const TechnologyConsultationAndMIS = () => {
           </div>
         </div>
       </section>
-
-     
-     
     </div>
   );
 };
 
-export default TechnologyConsultationAndMIS;
+export default GoToMarket;

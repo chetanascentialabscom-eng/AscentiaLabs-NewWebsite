@@ -20,6 +20,9 @@ export { default as SoftwareEngineering } from './Services/SoftwareEngineering';
 export { default as AI_ML } from './Services/AI_ML';
 export { default as ApplicationModernisation } from './Services/ApplicationModernisation';
 export { default as DigitalTransformation } from './Services/DigitalTransformation';
+export { default as IdeationDesign } from './Services/IdeationDesign';
+export { default as MobileApplication } from './Services/MobileApplication';
+export { default as GoToMarket } from './Services/GoToMarket';
 
 // Blog Pages
 export { default as BlogsPage } from './Blogs';
