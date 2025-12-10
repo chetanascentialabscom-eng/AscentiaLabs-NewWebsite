@@ -32,7 +32,12 @@ import {
   AIBenefitsTravel, 
   CustomSoftwareDevelopment, 
   MobileAppTrends2025, 
-  HealthcareAppDevelopment
+  HealthcareAppDevelopment,
+  CaseStudiesPage,
+  RouteMaestroCase,
+  KinderConnectCase,
+  InsuranceSafeCase,
+  JusDoItCase
 } from './pages'
 
 function App() {
@@ -79,6 +84,13 @@ function App() {
           <Route path="/blog/custom-software-development-business" element={<CustomSoftwareDevelopment />} />
           <Route path="/blog/mobile-app-development-trends-2025" element={<MobileAppTrends2025 />} />
           <Route path="/blog/healthcare-app-development-patient-care" element={<HealthcareAppDevelopment />} />
+          
+          {/* Case Studies Routes */}
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/case-study/routemaestro-ai-travel-platform" element={<RouteMaestroCase />} />
+          <Route path="/case-study/kinderconnect-kindergarten-management" element={<KinderConnectCase />} />
+          <Route path="/case-study/insurancesafe-digital-platform" element={<InsuranceSafeCase />} />
+          <Route path="/case-study/jusdoit-task-management" element={<JusDoItCase />} />
         </Routes>
         <Footer />
         <WhatsAppFloat />
