@@ -372,9 +372,12 @@ const Header = () => {
 
           </nav>
 
-          <button className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+          <Link 
+            to="/contact"
+            className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
+          >
             Get In Touch
-          </button>
+          </Link>
 
           {/* Mobile Menu Button */}
           <button 
@@ -602,9 +605,13 @@ const Header = () => {
               </div>
 
               
-              <button className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300" onClick={() => setIsMenuOpen(false)}>
+              <Link 
+                to="/contact"
+                className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Get In Touch
-              </button>
+              </Link>
             </nav>
           </div>
         )}

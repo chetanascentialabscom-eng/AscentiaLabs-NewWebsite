@@ -11,6 +11,16 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   width: 100%;
+  /* Hide scrollbars globally */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -97,6 +107,17 @@ header {
   background-color: white !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
   width: 100% !important;
+}
+
+/* Hide scrollbars globally for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
+*::-webkit-scrollbar {
+  display: none;
 }
 
 /* Hide scrollbars for carousel */
@@ -338,8 +359,7 @@ header {
 }
 
 .animate-slide-in-right {
-  animation: slide-in-right 0.8s ease-out forwards;
-  opacity: 0;
+  animation: slide-in-right 0.4s ease-out forwards;
 }
 
 .animate-slide-in-up {
@@ -543,44 +563,6 @@ header {
   /* Mobile menu scrolling fix */
   header .md\:hidden {
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
-  }
-  
-  /* Custom scrollbar for mobile menu */
-  header .md\:hidden::-webkit-scrollbar {
-    width: 4px;
-  }
-  
-  header .md\:hidden::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  
-  header .md\:hidden::-webkit-scrollbar-thumb {
-    background-color: rgba(59, 130, 246, 0.3);
-    border-radius: 2px;
-  }
-  
-  header .md\:hidden::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(59, 130, 246, 0.5);
-  }
-  
-  /* Ensure accordion content is scrollable */
-  header .max-h-80::-webkit-scrollbar,
-  header .max-h-60::-webkit-scrollbar {
-    width: 3px;
-  }
-  
-  header .max-h-80::-webkit-scrollbar-track,
-  header .max-h-60::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 2px;
-  }
-  
-  header .max-h-80::-webkit-scrollbar-thumb,
-  header .max-h-60::-webkit-scrollbar-thumb {
-    background-color: rgba(59, 130, 246, 0.4);
-    border-radius: 2px;
   }
   
   /* Prevent body scroll when mobile menu is open */

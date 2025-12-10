@@ -6,7 +6,8 @@ import WhatsAppFloat from './components/WhatsAppFloat'
 import ScrollToTop from './components/ScrollToTop'
 import {
   Home,
-  About, 
+  About,
+  Contact,
   CustomCRM,
   InteriorArchitecture,
   LogisticsPage, 
@@ -52,6 +53,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
 
           {/* Industry Routes */}
           <Route path="/complaint-management-system" element={<CustomCRM />} />
