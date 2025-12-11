@@ -146,7 +146,7 @@ const Industries = () => {
         </div>
 
         {/* Industries Grid with Enhanced Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 responsive-grid-md responsive-grid-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto mb-12 responsive-grid-md responsive-grid-lg">
           {industries.map((industry, index) => (
             <div
               key={index}

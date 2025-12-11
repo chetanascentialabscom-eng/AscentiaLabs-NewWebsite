@@ -12,8 +12,6 @@ const Services = () => {
       "Application Modernisation": "/application-modernisation",
       "Go-To-Market": "/go-to-market",
       "Ideation & Design Strategy": "/ideation-design",
-      "Cloud Services": "/", // No specific route, redirect to contact
-      "Data Security": "/" // No specific route, redirect to contact
     };
     return routeMap[title] || "/";
   };
@@ -45,7 +43,7 @@ const Services = () => {
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
         </svg>
       ),
-      highlighted: true
+      // highlighted: true
     },
     {
       title: "Mobile Application",
@@ -127,7 +125,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid with Staggered Animations */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto responsive-grid-md responsive-grid-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto responsive-grid-md responsive-grid-lg">
           {services.map((service, index) => (
             <Link
               key={index}

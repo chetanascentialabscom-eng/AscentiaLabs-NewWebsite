@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const usefulLinks = [
-    "Web Development",
-    "SaaS Development", 
-    "Mobile App Development",
-    "E-Commerce",
-    "Software Development"
+    { name: "Software Engineering", route: "/software-engineering" },
+    { name: "AI ML Services", route: "/ai-ml-services" },
+    { name: "Mobile Application", route: "/mobile-application" },
+    { name: "Digital Transformation", route: "/digital-transformation" },
+    { name: "Technology Consultation ", route: "/technology-consultation-mis" }
   ];
 
   const aboutLinks = [
-    "About Us",
-    "Send A Message",
-    "Site Map"
+    { name: "About Us", route: "/about" },
+    { name: "Send A Message", route: "/contact" },
+    { name: "Our Blogs", route: "/blogs" }
   ];
 
   return (
@@ -101,10 +101,10 @@ const Footer = () => {
               <ul className="space-y-3">
                 {usefulLinks.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                    <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
                       <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -116,10 +116,10 @@ const Footer = () => {
               <ul className="space-y-3">
                 {aboutLinks.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                    <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
                       <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -154,16 +154,6 @@ const Footer = () => {
       <div className="relative z-10 border-t border-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-6">
           <div className="flex flex-col  sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
-            {/* <div className="flex items-center space-x-3">
-              <img 
-                src="/ascentialabslogowhite.png" 
-                alt="Ascentia Labs" 
-                className="h-8 w-auto"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-            </div> */}
             <div className="text-gray-400 text-center text-sm">
               © {new Date().getFullYear()} Ascentia Labs. All rights reserved.
             </div>
