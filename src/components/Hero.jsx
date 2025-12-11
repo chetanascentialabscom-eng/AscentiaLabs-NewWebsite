@@ -18,12 +18,7 @@ const Hero = () => {
     return () => clearTimeout(timeoutId);
   }, [titleNumber, titles]);
 
-  const scrollToIndustries = () => {
-    const industriesSection = document.getElementById('industries');
-    if (industriesSection) {
-      industriesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+
 
   return (
     <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen lg:h-screen pt-16 pb-8 lg:pt-10">
@@ -184,13 +179,12 @@ const Hero = () => {
                 </button>
               </Link>
               
-              <button 
-                onClick={scrollToIndustries}
-                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
-              >
-                View Our Work
-                <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
-              </button>
+              <Link to="/case-studies" className="w-full sm:w-auto">
+                <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                  View Our Work
+                  <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                </button>
+              </Link>
             </motion.div>
 
            
