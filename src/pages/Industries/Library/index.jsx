@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { BookOpen, Users, Database, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LibraryPage = () => {
@@ -202,9 +203,11 @@ const LibraryPage = () => {
                 Streamline operations, manage patrons, books, memberships effortlessly with enhanced 
                 security and boost efficiency with our comprehensive library management admin tools.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -467,9 +470,11 @@ const LibraryPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join libraries who trust our solutions to enhance patron experience and streamline library operations.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { GraduationCap, Users, ChevronDown, ChevronUp, Shield, UserCheck, BookOpen, Calendar } from 'lucide-react';
 
 const EducationPage = () => {
@@ -253,9 +254,11 @@ const EducationPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our school management system's admin panel streamlines operations, boosts efficiency, and enhances value education for exceptional educational experiences.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>   
          {/* Right Content - Admin Features */}
             <div className="space-y-4">
@@ -510,9 +513,11 @@ const EducationPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join educational leaders who trust our school management solutions to streamline their operations and enhance learning outcomes.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Settings, DollarSign, ChevronDown, ChevronUp, Shield, UserCheck, BarChart3, Truck } from 'lucide-react';
 
 const ManufacturingPage = () => {
@@ -225,9 +226,11 @@ const ManufacturingPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Discover the power of our state-of-the-art manufacturing management system, designed to streamline production processes, optimize workflows, and enhance operational efficiency for your manufacturing business.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -489,9 +492,11 @@ const ManufacturingPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join industry leaders who trust our manufacturing management solutions to optimize their production processes and boost efficiency.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

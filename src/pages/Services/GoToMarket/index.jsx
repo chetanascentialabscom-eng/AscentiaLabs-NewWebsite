@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -164,10 +165,12 @@ const GoToMarket = () => {
                 At Ascentia Labs, we deliver cutting-edge go-to-market strategies that transform your product launch into market success. Our expert team specializes in creating data-driven, comprehensive, and results-oriented market strategies using the latest tools and best practices in product marketing.
               </p>
               <div className="mb-8 sm:mb-12">
-                <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                  Get Consultation
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link to="/contact">
+                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                    Get Consultation
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
               </div>
 
               {/* Stats - Mobile/Tablet */}
@@ -421,9 +424,11 @@ const GoToMarket = () => {
                     <p className="text-blue-100 mb-6">
                       Join 150+ successful launches and achieve market success with strategic solutions from Ascentia Labs.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your GTM Strategy
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your GTM Strategy
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Heart, Activity, FileText, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 
 const HealthCarePage = () => {
@@ -222,9 +223,11 @@ const HealthCarePage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 From managing patient records, and tracking medical inventory to efficient appointment scheduling and performance analysis, our dynamic admin panel provides essential healthcare tools to cater according to your healthcare services.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -487,9 +490,11 @@ const HealthCarePage = () => {
                     <p className="text-blue-100 mb-6">
                       Join healthcare providers who trust our solutions to enhance patient care and streamline medical operations.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

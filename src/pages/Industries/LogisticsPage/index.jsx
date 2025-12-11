@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Truck, MapPin, Package, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LogisticsPage = () => {
@@ -234,9 +235,11 @@ const LogisticsPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 From overseeing inventory management and tracking shipments to optimizing route planning and analyzing performance metrics, our versatile admin panel offers essential logistics tools tailored to your logistics business needs.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Right Content - Admin Features */}

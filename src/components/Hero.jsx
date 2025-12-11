@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Sparkles, Zap, Target, TrendingUp, Shield, Cpu } from 'lucide-react';
 
 const Hero = () => {
@@ -173,17 +174,19 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-10 justify-center lg:justify-start"
             >
-              <button className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
-                <span className="relative z-10 flex items-center justify-center gap-2">
-                  Get Free Consultation
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
+              <Link to="/contact" className="w-full sm:w-auto">
+                <button className="group relative w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full font-semibold text-sm sm:text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 active:scale-95">
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Get Free Consultation
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+              </Link>
               
               <button 
                 onClick={scrollToIndustries}
-                className="group px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 View Our Work
                 <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />

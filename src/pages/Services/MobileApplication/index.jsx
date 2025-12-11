@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -165,10 +166,12 @@ const MobileApplication = () => {
                 At Ascentia Labs, we deliver cutting-edge mobile application solutions that transform your ideas into powerful mobile experiences. Our expert team specializes in building native and cross-platform mobile apps using the latest technologies and best practices in mobile development.
               </p>
               <div className="mb-8 sm:mb-12">
-                <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                  Get Consultation
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link to="/contact">
+                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                    Get Consultation
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
               </div>
 
               {/* Stats - Mobile/Tablet */}
@@ -422,9 +425,11 @@ const MobileApplication = () => {
                     <p className="text-blue-100 mb-6">
                       Join 280+ mobile apps and create powerful mobile experiences with cutting-edge solutions from Ascentia Labs.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Mobile Project
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Mobile Project
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

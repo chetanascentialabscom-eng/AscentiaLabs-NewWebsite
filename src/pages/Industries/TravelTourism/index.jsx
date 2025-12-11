@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Plane, Users, ChevronDown, ChevronUp, Shield, MapPin } from 'lucide-react';
 
 const TravelTourismPage = () => {
@@ -257,9 +258,11 @@ const TravelTourismPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Our travel software admin panel integrates with AI to generate real-time travel packages for clients. With its advanced features, our admin panel ensures to streamline travel operations and work according to travel technology business requirements.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>         
    {/* Right Content - Admin Features */}
             <div className="space-y-4">
@@ -622,9 +625,11 @@ const TravelTourismPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join travel industry leaders who trust our technology solutions to streamline their operations and enhance customer experiences.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

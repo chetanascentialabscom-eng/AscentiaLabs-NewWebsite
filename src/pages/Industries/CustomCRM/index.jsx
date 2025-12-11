@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Shield, Monitor, Bell, BarChart3, ChevronDown, ChevronUp } from 'lucide-react';
 
 const CustomCRM = () => {
@@ -175,9 +176,11 @@ const CustomCRM = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 Elevate, control, streamline operations, and unlock efficiency with our complaint management system admin panel.
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Get Free Consultation
-              </button>
+              <Link to="/contact">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  Get Free Consultation
+                </button>
+              </Link>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -440,9 +443,11 @@ const CustomCRM = () => {
                     <p className="text-blue-100 mb-6">
                       Join hundreds of satisfied clients who trust Ascentia Labs for their complaint management solutions.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Project Today
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Project Today
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

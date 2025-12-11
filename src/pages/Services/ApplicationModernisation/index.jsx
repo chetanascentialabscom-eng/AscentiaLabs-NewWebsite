@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   RefreshCw, 
   Shield, 
@@ -171,10 +172,12 @@ const ApplicationModernisation = () => {
                 At Ascentia Labs, we transform legacy applications into modern, cloud-native solutions that drive business growth. Our expert team specializes in modernising applications using cutting-edge technologies, ensuring improved performance, enhanced security, and reduced operational costs.
               </p>
               <div className="mb-8 sm:mb-12">
-                <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                  Get Consultation
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                <Link to="/contact">
+                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
+                    Get Consultation
+                    <ArrowRight className="w-5 h-5" />
+                  </button>
+                </Link>
               </div>
 
               {/* Stats - Mobile/Tablet */}
@@ -428,9 +431,11 @@ const ApplicationModernisation = () => {
                     <p className="text-blue-100 mb-6">
                       Join 300+ modernised applications and transform your legacy systems with cutting-edge solutions from Ascentia Labs.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Start Your Modernisation Journey
-                    </button>
+                    <Link to="/contact">
+                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Start Your Modernisation Journey
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

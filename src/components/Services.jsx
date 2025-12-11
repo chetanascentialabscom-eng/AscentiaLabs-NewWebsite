@@ -1,4 +1,23 @@
+import { Link } from 'react-router-dom';
+
 const Services = () => {
+  // Service route mapping
+  const getServiceRoute = (title) => {
+    const routeMap = {
+      "Software Engineering": "/software-engineering",
+      "Digital Transformation": "/digital-transformation",
+      "AI ML Services": "/ai-ml-services",
+      "Mobile Application": "/mobile-application",
+      "Technology Consultation & MIS": "/technology-consultation-mis",
+      "Application Modernisation": "/application-modernisation",
+      "Go-To-Market": "/go-to-market",
+      "Ideation & Design Strategy": "/ideation-design",
+      "Cloud Services": "/", // No specific route, redirect to contact
+      "Data Security": "/" // No specific route, redirect to contact
+    };
+    return routeMap[title] || "/";
+  };
+
   const services = [
     {
       title: "Software Engineering",
@@ -75,24 +94,24 @@ const Services = () => {
         </svg>
       )
     },
-    {
-      title: "Cloud Services",
-      description: "Scalable cloud solutions",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
-        </svg>
-      )
-    },
-    {
-      title: "Data Security",
-      description: "Enterprise security solutions",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18,8h-1V6c0-2.76-2.24-5-5-5S7,3.24,7,6v2H6c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V10C20,8.9,19.1,8,18,8z M12,17c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S13.1,17,12,17z M15.1,8H8.9V6c0-1.71,1.39-3.1,3.1-3.1s3.1,1.39,3.1,3.1V8z"/>
-        </svg>
-      )
-    }
+    // {
+    //   title: "Cloud Services",
+    //   description: "Scalable cloud solutions",
+    //   icon: (
+    //     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+    //       <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+    //     </svg>
+    //   )
+    // },
+    // {
+    //   title: "Data Security",
+    //   description: "Enterprise security solutions",
+    //   icon: (
+    //     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+    //       <path d="M18,8h-1V6c0-2.76-2.24-5-5-5S7,3.24,7,6v2H6c-1.1,0-2,0.9-2,2v10c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V10C20,8.9,19.1,8,18,8z M12,17c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S13.1,17,12,17z M15.1,8H8.9V6c0-1.71,1.39-3.1,3.1-3.1s3.1,1.39,3.1,3.1V8z"/>
+    //     </svg>
+    //   )
+    // }
   ];
 
   return (
@@ -110,9 +129,10 @@ const Services = () => {
         {/* Services Grid with Staggered Animations */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto responsive-grid-md responsive-grid-lg">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className={`group relative p-3 sm:p-4 rounded-xl transition-all duration-500 hover:scale-110 cursor-pointer transform hover:-translate-y-2 mobile-no-hover ${
+              to={getServiceRoute(service.title)}
+              className={`group relative p-3 sm:p-4 rounded-xl transition-all duration-500 hover:scale-110 cursor-pointer transform hover:-translate-y-2 mobile-no-hover block ${
                 service.highlighted 
                   ? 'bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-400 shadow-lg shadow-blue-500/25' 
                   : 'bg-gray-800/80 hover:bg-gray-700/90 border border-gray-600/50 hover:border-blue-500/50'
@@ -146,7 +166,7 @@ const Services = () => {
               
               {/* Glowing Border Effect */}
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-blue-500/20 via-transparent to-blue-500/20 blur-sm"></div>
-            </div>
+            </Link>
           ))}
         </div>
 
