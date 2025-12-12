@@ -149,13 +149,13 @@ const Clients = () => {
         <div>
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-xl sm:text-3xl md:text-4xl  font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Our Numbers Define Us Who We Are
+                Proven Track Record
               </span>
             </h2>
             <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
-              Our numbers tell the story of our dedication, expertise, unwavering pursuit of excellence, and tells why we reaffirm our position as leaders in the industry.
+              Our achievements speak for themselves. With years of experience and countless successful projects, we continue to deliver exceptional results for our clients.
             </p>
           </div>
 

@@ -29,7 +29,21 @@ const Footer = () => {
                 <svg className="w-16 h-16 sm:w-20 sm:h-20 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse"></div>
+                {/* Top dots */}
+                <div className="absolute -top-4 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse"></div>
+                <div className="absolute -top-6 left-2 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                
+                {/* Right side dots */}
+                <div className="absolute top-2 -right-8 w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                <div className="absolute bottom-1 -right-6 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                
+                {/* Bottom dots */}
+                <div className="absolute -bottom-4 -right-1 w-5 h-5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                <div className="absolute -bottom-6 left-3 w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+                
+                {/* Left side dots */}
+                <div className="absolute top-3 -left-8 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.8s'}}></div>
+                <div className="absolute bottom-2 -left-6 w-4 h-4 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: '1.2s'}}></div>
               </div>
             </div>
 

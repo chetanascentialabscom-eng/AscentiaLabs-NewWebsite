@@ -139,7 +139,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Lightbulb className="w-5 h-5 mr-2 text-blue-600" />
+                      <Lightbulb className="w-6 h-6 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Technology Consultation & MIS</div>
                         <div className="text-xs text-gray-500">Strategic technology guidance</div>
@@ -311,32 +311,32 @@ const Header = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-5">
                   <div className="grid grid-cols-2 gap-4">
-                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-16 h-12 mr-3 flex-shrink-0 object-contain" />
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-24 h-16 mr-4 flex-shrink-0 object-contain" />
                       <div>
-                        <div className="font-medium text-sm">RouteMaestro</div>
-                        <div className="text-xs text-gray-500">AI Powered Travel Planning And Booking Software</div>
+                        <div className="font-medium text-base">RouteMaestro</div>
+                        <div className="text-sm text-gray-500">AI Powered Travel Planning And Booking Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
-                        <div className="font-medium text-sm">InsuranceSafe</div>
-                        <div className="text-xs text-gray-500">Insurance Management Software</div>
+                        <div className="font-medium text-base">InsuranceSafe</div>
+                        <div className="text-sm text-gray-500">Insurance Management Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
-                        <div className="font-medium text-sm">KinderConnect</div>
-                        <div className="text-xs text-gray-500">Kindergarten Management Software</div>
+                        <div className="font-medium text-base">KinderConnect</div>
+                        <div className="text-sm text-gray-500">Kindergarten Management Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-3 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
-                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-16 h-16 mr-3 flex-shrink-0 object-contain" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
-                        <div className="font-medium text-sm">JusDoIt</div>
-                        <div className="text-xs text-gray-500">Task Management Software</div>
+                        <div className="font-medium text-base">JusDoIt</div>
+                        <div className="text-sm text-gray-500">Task Management Software</div>
                       </div>
                     </a>
                   </div>
@@ -441,7 +441,7 @@ const Header = () => {
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
-                      <Lightbulb className="w-4 h-4 mr-3 text-blue-600" />
+                      <Lightbulb className="w-5 h-5 mr-3 text-blue-600" />
                       <span className="text-sm">Technology Consultation & MIS</span>
                     </Link>
                     <Link to="/software-engineering" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
@@ -548,32 +548,32 @@ const Header = () => {
                 
                 {isProductsOpen && (
                   <div className="pb-2 space-y-2 max-h-80 overflow-y-auto px-2">
-                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
-                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-4 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-20 h-16 mr-4 object-contain flex-shrink-0" />
                       <div>
-                        <div className="text-sm font-medium text-gray-800">RouteMaestro</div>
-                        <div className="text-xs text-gray-500">Travel Planning Software</div>
+                        <div className="text-base font-medium text-gray-800">RouteMaestro</div>
+                        <div className="text-sm text-gray-500">Travel Planning Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
-                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-18 h-18 mr-4 object-contain flex-shrink-0" />
                       <div>
-                        <div className="text-sm font-medium text-gray-800">InsuranceSafe</div>
-                        <div className="text-xs text-gray-500">Insurance Management</div>
+                        <div className="text-base font-medium text-gray-800">InsuranceSafe</div>
+                        <div className="text-sm text-gray-500">Insurance Management</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
-                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-18 h-18 mr-4 object-contain flex-shrink-0" />
                       <div>
-                        <div className="text-sm font-medium text-gray-800">KinderConnect</div>
-                        <div className="text-xs text-gray-500">Kindergarten Management</div>
+                        <div className="text-base font-medium text-gray-800">KinderConnect</div>
+                        <div className="text-sm text-gray-500">Kindergarten Management</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-3 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
-                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-14 h-14 mr-4 object-contain flex-shrink-0" />
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
+                      <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-18 h-18 mr-4 object-contain flex-shrink-0" />
                       <div>
-                        <div className="text-sm font-medium text-gray-800">JusDoIt</div>
-                        <div className="text-xs text-gray-500">Task Management</div>
+                        <div className="text-base font-medium text-gray-800">JusDoIt</div>
+                        <div className="text-sm text-gray-500">Task Management</div>
                       </div>
                     </a>
                   </div>
