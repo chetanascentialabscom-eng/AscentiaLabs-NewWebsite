@@ -4,6 +4,7 @@ import NewsTicker from './components/NewsTicker'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import ScrollToTop from './components/ScrollToTop'
+import { useLenis } from './hooks/useLenis'
 import {
   Home,
   About,
@@ -42,6 +43,9 @@ import {
 } from './pages'
 
 function App() {
+  // Initialize Lenis smooth scrolling
+  useLenis()
+  
   return (
     <Router>
       <ScrollToTop />

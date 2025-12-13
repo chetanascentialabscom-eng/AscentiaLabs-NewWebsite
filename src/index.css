@@ -16,6 +16,35 @@ html, body {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
+/* Lenis smooth scrolling setup */
+html.lenis {
+  height: auto;
+  scroll-behavior: auto !important;
+}
+
+html.lenis body {
+  height: auto;
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Disable default smooth scrolling to let Lenis handle it */
+* {
+  scroll-behavior: auto !important;
+}
+
+/* Ensure no scroll conflicts */
+html, body {
+  overscroll-behavior: none;
+}
+
 /* Hide scrollbars for WebKit browsers (Chrome, Safari, Edge) */
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
