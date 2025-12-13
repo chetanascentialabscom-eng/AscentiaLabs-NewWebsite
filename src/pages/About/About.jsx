@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,15 +68,22 @@ const About = () => {
                 About Ascentia Labs
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Our Numbers Define Us
+            <h1 className="text-5xl md:text-6xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+              Innovating Tomorrow's Solutions
               <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Who We Are
+                Today
               </span>
             </h1>
+            <p className="text-base md:text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed mb-10 font-medium">
+              At Ascentia Labs, we transform visionary ideas into powerful technological realities. We specialize in 
+              crafting innovative solutions that bridge complex business challenges with elegant, scalable technology 
+              that drives exceptional growth and competitive advantage.
+            </p>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Our numbers tell the story of our dedication, expertise, unwavering pursuit of excellence, and tells 
-              why we reaffirm our position as leaders in the industry
+              With decades of combined expertise across software development, digital transformation, and enterprise 
+              solutions, we have established ourselves as the trusted technology partner for forward-thinking businesses. 
+              Our unwavering commitment to excellence, innovation, and client success positions us as industry leaders 
+              in delivering world-class solutions that redefine standards and create lasting value.
             </p>
           </div>
         </div>
@@ -86,7 +94,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative">
+      {/* <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative">
         <div className="container mx-auto px-4 max-w-7xl">
           <div 
             className={`grid grid-cols-1 md:grid-cols-4 gap-6 transform transition-all duration-1000 delay-300 ${
@@ -117,7 +125,7 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
        {/* Who We Are Section */}
       <section className="py-16 bg-white relative">
@@ -279,7 +287,7 @@ const About = () => {
               {
                 icon: (
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                   </svg>
                 ),
                 title: 'Our Mission',
@@ -289,8 +297,7 @@ const About = () => {
               {
                 icon: (
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                   </svg>
                 ),
                 title: 'Our Vision',
@@ -300,7 +307,7 @@ const About = () => {
               {
                 icon: (
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                   </svg>
                 ),
                 title: 'Our Values',
@@ -362,12 +369,15 @@ const About = () => {
                 </h2>
               </div>
             </div>
-            <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group">
+            <Link 
+              to="/contact" 
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
+            >
               GET IN TOUCH
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3"/>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>

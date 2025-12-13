@@ -56,7 +56,8 @@ const Clients = () => {
   ];
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <>
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
@@ -64,12 +65,12 @@ const Clients = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Testimonials Section */}
-        <div className="mb-20 sm:mb-32">
+        <div className="mb-8 sm:mb-12">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
             <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Our Clients Sharing Their Partnership
+                Client Success Stories
               </span>
               <br />
               
@@ -145,49 +146,49 @@ const Clients = () => {
           </div>
         </div>
 
-        {/* Statistics Section */}
-        <div>
-          {/* Section Header */}
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Proven Track Record
-              </span>
-            </h2>
-            <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-2">
-              Our achievements speak for themselves. With years of experience and countless successful projects, we continue to deliver exceptional results for our clients.
-            </p>
-          </div>
+      </div>
+    </section>
 
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 px-4 sm:px-0 responsive-grid-md">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-1 border border-gray-100 text-center min-h-[160px] flex flex-col justify-center mobile-no-hover"
-              >
-                {/* Number */}
-                <div className={`relative z-10 text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2 group-hover:scale-105 transition-transform duration-300`}>
-                  {stat.number}
-                </div>
-
-                {/* Label */}
-                <p className="relative z-10 text-gray-600 font-semibold text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">
-                  {stat.label}
-                </p>
-
-                {/* Hover Background - Very light blue */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
-              </div>
-            ))}
-          </div>
+    {/* Statistics Section - Full Width */}
+    <section className="py-12 bg-gradient-to-r from-blue-600 via-black to-blue-600 relative overflow-hidden">
+      {/* Background decoration for stats section */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-white leading-tight mb-4 sm:mb-6">
+            Our Impact in Numbers
+          </h2>
+          <p className="text-sm sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-2">
+            Our achievements speak for themselves. With years of experience and countless successful projects, we continue to deliver exceptional results for our clients.
+          </p>
         </div>
 
-      
+        {/* Statistics Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 px-4 sm:px-0">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="text-center group"
+            >
+              {/* Number */}
+              <div className="text-4xl sm:text-5xl lg:text-5xl font-bold text-white mb-3 group-hover:scale-105 transition-transform duration-300">
+                {stat.number}
+              </div>
+
+              {/* Label */}
+              <p className="text-gray-300 font-semibold text-sm sm:text-base lg:text-lg group-hover:text-white transition-colors duration-300">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-
-
     </section>
+    </>
   );
 };
 
