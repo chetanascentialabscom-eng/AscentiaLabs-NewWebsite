@@ -244,7 +244,7 @@ const RouteMaestroCase = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <Link to="/case-study/jusdoit-task-management" className="group">
+              <Link to="/case-study-justdoit" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/SoftwareProducts/JusDoIt.png" 
@@ -267,7 +267,7 @@ const RouteMaestroCase = () => {
               </article>
             </Link>
 
-            <Link to="/case-study/insurancesafe-digital-platform" className="group">
+            <Link to="/case-study-insurancesafe-digital-platform" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/SoftwareProducts/Insurance Safe.png" 

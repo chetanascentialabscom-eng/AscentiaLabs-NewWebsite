@@ -11,9 +11,10 @@ const Footer = () => {
   ];
 
   const aboutLinks = [
-    { name: "About Us", route: "/about" },
-    { name: "Send A Message", route: "/contact" },
-    { name: "Our Blogs", route: "/blogs" }
+    { name: "About Us", route: "/about-us" },
+    { name: "Send A Message", route: "/contact-us" },
+    { name: "Our Blogs", route: "/blog" },
+    { name: "Sitemap", route: "/sitemap.xml", external: true }
   ];
 
   return (
@@ -54,7 +55,7 @@ const Footer = () => {
               Contact with our experts today!
             </p>
             
-            <Link to="/contact">
+            <Link to="/contact-us">
               <button className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
                 <span className="relative z-10">Get In Touch</span>
                 <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
@@ -130,10 +131,22 @@ const Footer = () => {
               <ul className="space-y-3">
                 {aboutLinks.map((link, index) => (
                   <li key={index}>
-                    <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
-                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
-                      {link.name}
-                    </Link>
+                    {link.external ? (
+                      <a 
+                        href={link.route} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
+                      >
+                        <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
+                        <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

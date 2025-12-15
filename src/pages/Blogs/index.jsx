@@ -20,7 +20,7 @@ const BlogsPage = () => {
       author: "Arham Jain",
       date: "18/06/2025",
       readTime: "7 min",
-      slug: "travel-app-development-tourism-industry"
+      slug: "travel-app-development-in-tourism"
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const BlogsPage = () => {
       author: "Arham Jain",
       date: "15/06/2025",
       readTime: "5 min",
-      slug: "latest-tourism-report-2025"
+      slug: "latest-tourism-insights2025"
     },
     {
       id: 3,
@@ -225,7 +225,7 @@ const BlogsPage = () => {
               {filteredBlogs.map((blog, index) => (
                 <Link 
                   key={blog.id}
-                  to={`/blog/${blog.slug}`}
+                  to={`/${blog.slug}`}
                   className="block"
                 >
                   <article 

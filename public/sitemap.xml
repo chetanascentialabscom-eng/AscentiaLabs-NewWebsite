@@ -7,13 +7,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/about</loc>
+    <loc>https://ascentialabs.com/about-us</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blogs</loc>
+    <loc>https://ascentialabs.com/contact-us</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/blog</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -46,7 +52,25 @@
   </url>
   <url>
     <loc>https://ascentialabs.com/digital-transformation</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/ideation-design</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/mobile-application</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/go-to-market</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,7 +113,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/kindergarten-management-system</loc>
+    <loc>https://ascentialabs.com/kindergarten-school-management</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -101,7 +125,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/travel-tourism-app-development</loc>
+    <loc>https://ascentialabs.com/travel-app-development</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -113,7 +137,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/manufacturing-app-development</loc>
+    <loc>https://ascentialabs.com/manufacturing</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -121,38 +145,70 @@
   
   <!-- Blog Posts -->
   <url>
-    <loc>https://ascentialabs.com/blog/travel-app-development-tourism-industry</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/travel-app-development-in-tourism</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blog/latest-tourism-report-2025</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/latest-tourism-insights2025</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blog/benefits-ai-travel-tourism</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/benefits-ai-travel-tourism</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blog/custom-software-development-business</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/custom-software-development-business</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blog/mobile-app-development-trends-2025</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/mobile-app-development-trends-2025</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/blog/healthcare-app-development-patient-care</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/healthcare-app-development-patient-care</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Case Studies -->
+  <url>
+    <loc>https://ascentialabs.com/case-studies</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-justdoit</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-routemaestro-ai-travel-platform</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-kinderconnect-kindergarten-management</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-insurancesafe-digital-platform</loc>
+    <lastmod>2025-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

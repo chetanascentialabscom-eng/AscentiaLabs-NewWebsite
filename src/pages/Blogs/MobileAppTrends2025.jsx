@@ -14,7 +14,7 @@ const MobileAppTrends2025 = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <Link 
-              to="/blogs" 
+              to="/blog" 
               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium mb-8 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
@@ -152,7 +152,7 @@ const MobileAppTrends2025 = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Link to="/blog/custom-software-development-business" className="group">
+            <Link to="/custom-software-development-business" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/blogs/blog4.png" 
@@ -175,7 +175,7 @@ const MobileAppTrends2025 = () => {
               </article>
             </Link>
 
-            <Link to="/blog/healthcare-app-development-patient-care" className="group">
+            <Link to="/healthcare-app-development-patient-care" className="group">
               <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/blogs/blog6.jpg" 

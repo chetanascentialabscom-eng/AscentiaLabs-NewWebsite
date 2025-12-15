@@ -27,7 +27,7 @@ const CaseStudiesPage = () => {
         conversions: "+250%",
         userBase: "50K+ users"
       },
-      slug: "routemaestro-ai-travel-platform"
+      slug: "case-study-routemaestro-ai-travel-platform"
     },
     {
       id: 2,
@@ -45,7 +45,7 @@ const CaseStudiesPage = () => {
         efficiency: "+180%",
         satisfaction: "95%"
       },
-      slug: "kinderconnect-kindergarten-management"
+      slug: "case-study-kinderconnect-kindergarten-management"
     },
     {
       id: 3,
@@ -63,7 +63,7 @@ const CaseStudiesPage = () => {
         claims: "24/7 support",
         automation: "85%"
       },
-      slug: "insurancesafe-digital-platform"
+      slug: "case-study-insurancesafe-digital-platform"
     },
     {
       id: 4,
@@ -81,7 +81,7 @@ const CaseStudiesPage = () => {
         teams: "500+",
         tasks: "1M+ completed"
       },
-      slug: "jusdoit-task-management"
+      slug: "case-study-justdoit"
     },
    
   ];
@@ -231,7 +231,7 @@ const CaseStudiesPage = () => {
               {filteredCaseStudies.map((study, index) => (
                 <Link 
                   key={study.id}
-                  to={`/case-study/${study.slug}`}
+                  to={`/${study.slug}`}
                   className="block"
                 >
                   <article 

@@ -56,21 +56,21 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
 
-          {/* Industry Routes */}
+          {/* Industry Routes - Using old website URLs */}
           <Route path="/complaint-management-system" element={<CustomCRM />} />
           <Route path="/interior-design-app-development" element={<InteriorArchitecture />} />
           <Route path="/logistics-software-development" element={<LogisticsPage/> } />
           <Route path="/enterprise-resource-planning" element={<ERPPage/> } />
           <Route path="/healthcare-app-development" element={<HealthCarePage/> } />
           <Route path="/real-estate-app-development" element={<RealEstatePage/> } />
-          <Route path="/kindergarten-management-system" element={<KindergartenPage/> } />
+          <Route path="/kindergarten-school-management" element={<KindergartenPage/> } />
           <Route path="/education-app-development" element={<EducationPage/> } />
-          <Route path="/travel-tourism-app-development" element={<TravelTourismPage/> } />
+          <Route path="/travel-app-development" element={<TravelTourismPage/> } />
           <Route path="/library-management-system" element={<LibraryPage/> } />
-          <Route path="/manufacturing-app-development" element={<ManufacturingPage/> } />
+          <Route path="/manufacturing" element={<ManufacturingPage/> } />
           
           {/* Services Routes */}
           <Route path="/technology-consultation-mis" element={<TechnologyConsultationAndMIS/> } />
@@ -83,20 +83,20 @@ function App() {
           <Route path="/go-to-market" element={<GoToMarket/> } />
           
           {/* Blog Routes */}
-          <Route path="/blogs" element={<BlogsPage />} />
-          <Route path="/blog/travel-app-development-tourism-industry" element={<TravelAppDevelopment />} />
-          <Route path="/blog/latest-tourism-report-2025" element={<TourismReport2025 />} />
-          <Route path="/blog/benefits-ai-travel-tourism" element={<AIBenefitsTravel />} />
-          <Route path="/blog/custom-software-development-business" element={<CustomSoftwareDevelopment />} />
-          <Route path="/blog/mobile-app-development-trends-2025" element={<MobileAppTrends2025 />} />
-          <Route path="/blog/healthcare-app-development-patient-care" element={<HealthcareAppDevelopment />} />
+          <Route path="/blog" element={<BlogsPage />} />
+          <Route path="/travel-app-development-in-tourism" element={<TravelAppDevelopment />} />
+          <Route path="/latest-tourism-insights2025" element={<TourismReport2025 />} />
+          <Route path="/benefits-ai-travel-tourism" element={<AIBenefitsTravel />} />
+          <Route path="/custom-software-development-business" element={<CustomSoftwareDevelopment />} />
+          <Route path="/mobile-app-development-trends-2025" element={<MobileAppTrends2025 />} />
+          <Route path="/healthcare-app-development-patient-care" element={<HealthcareAppDevelopment />} />
           
           {/* Case Studies Routes */}
           <Route path="/case-studies" element={<CaseStudiesPage />} />
-          <Route path="/case-study/routemaestro-ai-travel-platform" element={<RouteMaestroCase />} />
-          <Route path="/case-study/kinderconnect-kindergarten-management" element={<KinderConnectCase />} />
-          <Route path="/case-study/insurancesafe-digital-platform" element={<InsuranceSafeCase />} />
-          <Route path="/case-study/jusdoit-task-management" element={<JusDoItCase />} />
+          <Route path="/case-study-justdoit" element={<JusDoItCase />} />
+          <Route path="/case-study-routemaestro-ai-travel-platform" element={<RouteMaestroCase />} />
+          <Route path="/case-study-kinderconnect-kindergarten-management" element={<KinderConnectCase />} />
+          <Route path="/case-study-insurancesafe-digital-platform" element={<InsuranceSafeCase />} />
         </Routes>
         <Footer />
         <WhatsAppFloat />

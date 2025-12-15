@@ -121,9 +121,9 @@ const Header = () => {
               Home
             </Link>
             <Link 
-              to="/about" 
+              to="/about-us" 
               className={`font-medium transition-colors ${
-                location.pathname === '/about' 
+                location.pathname === '/about-us' 
                   ? 'text-blue-600' 
                   : 'text-gray-700 hover:text-blue-600'
               }`}
@@ -212,7 +212,7 @@ const Header = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Custom CRM</div>
@@ -220,7 +220,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Building className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
@@ -228,7 +228,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Home className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Real Estate</div>
@@ -236,7 +236,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Education</div>
@@ -244,7 +244,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="kindergarten-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Star className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Kindergarten</div>
@@ -252,7 +252,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/travel-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Plane className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Travel & Tourism</div>
@@ -260,7 +260,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">ERP</div>
@@ -268,7 +268,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Library</div>
@@ -276,7 +276,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="manufacturing-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/manufacturing" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Wrench className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Manufacturing</div>
@@ -284,7 +284,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Heart className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Health Care</div>
@@ -292,7 +292,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
                       <Truck className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Logistics</div>
@@ -351,7 +351,7 @@ const Header = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
                 <div className="p-5">
                   <div className="grid grid-cols-1 gap-3">
-                    <Link to="/blogs" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <Link to="/blog" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
                       <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Blogs</div>
@@ -373,7 +373,7 @@ const Header = () => {
           </nav>
 
           <Link 
-            to="/contact"
+            to="/contact-us"
             className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
           >
             Get In Touch
@@ -417,9 +417,9 @@ const Header = () => {
               </Link>
               
               <Link 
-                to="/about" 
+                to="/about-us" 
                 className={`font-medium transition-colors py-2 px-4 rounded ${
-                  location.pathname === '/about' 
+                  location.pathname === '/about-us' 
                     ? 'text-blue-600 bg-blue-50' 
                     : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
@@ -488,47 +488,47 @@ const Header = () => {
                 
                 {isIndustriesOpen && (
                   <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto">
-                    <Link to="complaint-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/complaint-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Custom CRM</span>
                     </Link>
-                    <Link to="education-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/education-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <GraduationCap className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Education</span>
                     </Link>
-                    <Link to="enterprise-resource-planning" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">ERP</span>
                     </Link>
-                    <Link to="healthcare-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Heart className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
                     </Link>
-                    <Link to="interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Building className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Interior & Architecture</span>
                     </Link>
-                    <Link to="kindergarten-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Star className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Kindergarten</span>
                     </Link>
-                    <Link to="library-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/library-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Library</span>
                     </Link>
-                    <Link to="logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Truck className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Logistics</span>
                     </Link>  
-                    <Link to="manufacturing-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/manufacturing" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Wrench className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Manufacturing</span>
                     </Link>
-                    <Link to="real-estate-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Home className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Real Estate</span>
                     </Link>
-                    <Link to="travel-tourism-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/travel-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Plane className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Travel & Tourism</span>
                     </Link>
@@ -592,7 +592,7 @@ const Header = () => {
                 
                 {isResourcesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
-                    <Link to="/blogs" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
+                    <Link to="/blog" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Blogs</span>
                     </Link>
@@ -606,7 +606,7 @@ const Header = () => {
 
               
               <Link 
-                to="/contact"
+                to="/contact-us"
                 className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
