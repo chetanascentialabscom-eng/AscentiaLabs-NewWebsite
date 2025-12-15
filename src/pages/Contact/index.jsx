@@ -266,7 +266,7 @@ const ContactPage = () => {
                       value={formData.fullName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200"
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -283,57 +283,25 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200"
                       placeholder="Enter your email address"
                     />
                   </div>
 
                   <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="country" className="flex items-center text-sm font-medium text-gray-700 mb-2">
                       <Globe className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Country *</span>
+                      <span>Country</span>
                     </label>
-                    <div className="relative" ref={countryDropdownRef}>
-                      <button
-                        type="button"
-                        onClick={() => setIsCountryDropdownOpen(!isCountryDropdownOpen)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 flex items-center justify-between"
-                      >
-                        <span className="truncate flex-1 text-left">
-                          {formData.country || 'Select your country'}
-                        </span>
-                        <svg 
-                          className={`w-4 h-4 ml-3 flex-shrink-0 transition-transform duration-200 ${isCountryDropdownOpen ? 'rotate-180' : ''}`}
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      
-                      {isCountryDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden w-full z-50 max-h-60 overflow-y-auto">
-                          {countries.map((country, index) => (
-                            <button
-                              key={country}
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({ ...prev, country }));
-                                setIsCountryDropdownOpen(false);
-                              }}
-                              className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-blue-50 whitespace-nowrap ${
-                                formData.country === country 
-                                  ? 'bg-blue-50 text-blue-600 font-medium' 
-                                  : 'text-gray-700 hover:text-blue-600'
-                              } ${index === countries.length - 1 ? '' : 'border-b border-gray-100'}`}
-                            >
-                              {country}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200"
+                      placeholder="Enter your country"
+                    />
                   </div>
                 </div>
 
@@ -350,7 +318,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -366,7 +334,7 @@ const ContactPage = () => {
                       name="companyName"
                       value={formData.companyName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200"
                       placeholder="Enter your company name"
                     />
                   </div>
@@ -380,7 +348,7 @@ const ContactPage = () => {
                       <button
                         type="button"
                         onClick={() => setIsBudgetDropdownOpen(!isBudgetDropdownOpen)}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 flex items-center justify-between"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 flex items-center justify-between"
                       >
                         <span className="truncate flex-1 text-left">
                           {formData.budgetRange || 'Select budget range'}
@@ -433,7 +401,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent focus:outline-none transition-all duration-200 resize-none"
                     placeholder="Tell us about your project requirements, goals, and any specific details you'd like us to know..."
                   />
                 </div>

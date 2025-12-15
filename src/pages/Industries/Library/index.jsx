@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { BookOpen, Users, Database, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LibraryPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
   // Custom scrollbar styles - hidden scrollbar
   const scrollbarStyles = `
@@ -203,11 +205,12 @@ const LibraryPage = () => {
                 Streamline operations, manage patrons, books, memberships effortlessly with enhanced 
                 security and boost efficiency with our comprehensive library management admin tools.
               </p>
-              <Link to="/contact">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Get Free Consultation
-                </button>
-              </Link>
+              <button 
+                onClick={openConsultation}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Get Free Consultation
+              </button>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -470,11 +473,12 @@ const LibraryPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join libraries who trust our solutions to enhance patron experience and streamline library operations.
                     </p>
-                    <Link to="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Start Your Project Today
-                      </button>
-                    </Link>
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Start Your Project Today
+                    </button>
                   </div>
                 </div>
               </div>

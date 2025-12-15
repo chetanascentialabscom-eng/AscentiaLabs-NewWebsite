@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { Building2, Users, BarChart3, Settings, ChevronDown, ChevronUp } from 'lucide-react';
 
 const ERPPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
   // Custom scrollbar styles - hidden scrollbar
   const scrollbarStyles = `
@@ -202,11 +204,12 @@ const ERPPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 From managing departments and tracking performance to generating insightful reports, our Admin Panel puts the power of data-driven decision-making at your fingertips, ensuring seamless coordination and efficiency at every level.
               </p>
-              <Link to="/contact">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Get Free Consultation
-                </button>
-              </Link>
+              <button 
+                onClick={openConsultation}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Get Free Consultation
+              </button>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -469,11 +472,12 @@ const ERPPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join industry leaders who trust our ERP solutions to optimize their business processes and drive growth.
                     </p>
-                    <Link to="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Start Your Project Today
-                      </button>
-                    </Link>
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Start Your Project Today
+                    </button>
                   </div>
                 </div>
               </div>

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { Truck, MapPin, Package, ChevronDown, ChevronUp } from 'lucide-react';
 
 const LogisticsPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
   // Custom scrollbar styles - hidden scrollbar
   const scrollbarStyles = `
@@ -235,11 +237,12 @@ const LogisticsPage = () => {
               <p className="text-lg text-gray-300 leading-relaxed">
                 From overseeing inventory management and tracking shipments to optimizing route planning and analyzing performance metrics, our versatile admin panel offers essential logistics tools tailored to your logistics business needs.
               </p>
-              <Link to="/contact">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Get Free Consultation
-                </button>
-              </Link>
+              <button 
+                onClick={openConsultation}
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Get Free Consultation
+              </button>
             </div>
 
             {/* Right Content - Admin Features */}
@@ -502,7 +505,10 @@ const LogisticsPage = () => {
                     <p className="text-blue-100 mb-6">
                       Join industry leaders who trust our logistics management solutions to streamline their operations and reduce costs.
                     </p>
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
                       Request a Demo
                     </button>
                   </div>
