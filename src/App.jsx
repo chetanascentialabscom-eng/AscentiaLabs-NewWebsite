@@ -4,6 +4,7 @@ import NewsTicker from './components/NewsTicker'
 import Footer from './components/Footer'
 import WhatsAppFloat from './components/WhatsAppFloat'
 import ScrollToTop from './components/ScrollToTop'
+import { ConsultationProvider } from './contexts/ConsultationContext'
 import { useLenis } from './hooks/useLenis'
 import {
   Home,
@@ -48,13 +49,14 @@ function App() {
   
   return (
     <Router>
-      <ScrollToTop />
-      <div className="min-h-screen">
-        <Header />
-        <div className="fixed top-[70px] md:top-[110px] left-0 right-0 z-[9998] w-full">
-          <NewsTicker />
-        </div>
-        <Routes>
+      <ConsultationProvider>
+        <ScrollToTop />
+        <div className="min-h-screen">
+          <Header />
+          <div className="fixed top-[70px] md:top-[110px] left-0 right-0 z-[9998] w-full">
+            <NewsTicker />
+          </div>
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact-us" element={<Contact />} />
@@ -97,10 +99,11 @@ function App() {
           <Route path="/case-study-routemaestro-ai-travel-platform" element={<RouteMaestroCase />} />
           <Route path="/case-study-kinderconnect-kindergarten-management" element={<KinderConnectCase />} />
           <Route path="/case-study-insurancesafe-digital-platform" element={<InsuranceSafeCase />} />
-        </Routes>
-        <Footer />
-        <WhatsAppFloat />
-      </div>
+          </Routes>
+          <Footer />
+          <WhatsAppFloat />
+        </div>
+      </ConsultationProvider>
     </Router>
   )
 }

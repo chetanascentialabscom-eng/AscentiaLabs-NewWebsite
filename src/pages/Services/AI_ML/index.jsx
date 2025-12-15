@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { 
   Brain, 
   Shield, 
@@ -28,37 +29,38 @@ import {
 const AI_ML = () => {
   const [activeTab, setActiveTab] = useState('ml');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
   const whyChooseUs = [
     {
       icon: <Award className="w-8 h-8" />,
       title: "Proven Experience in AI & ML",
-      description: "Ascentia Labs boasts a proven track record in crafting innovative, secure and scalable AI/ML solutions. With 10+ years of experience, our team of experts have helped businesses across various industries by leveraging the power of artificial intelligence and machine learning."
+      description: "10+ years of experience crafting innovative, secure and scalable AI/ML solutions across various industries."
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Security-Focused Approach",
-      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our AI/ML solutions leverage robust encryption and adhere to top security certifications. This ensures your implementation is a reliable and trustworthy foundation."
+      description: "Industry-leading security protocols with robust encryption and top security certifications for reliable AI/ML implementation."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Scalability & Flexibility",
-      description: "Our Experts build scalable AI/ML solutions designed to grow alongside your business. We utilize flexible and scalable platforms to tailor fit your specific needs. This ensures your solution can adapt to evolving requirements, future-proofing your investment."
+      description: "Scalable AI/ML solutions designed to grow with your business, adapting to evolving requirements and future-proofing investments."
     },
     {
       icon: <Workflow className="w-8 h-8" />,
       title: "End-to-End Project Management",
-      description: "From initial concept to development, deployment, and ongoing support our experts handle everything. This ensures a smooth and efficient project lifecycle, allowing you to focus on your business while we take care of technical complexities."
+      description: "Complete project lifecycle management from concept to deployment, allowing you to focus on your business."
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "Transparency and Communication",
-      description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way. Expect regular updates and transparent discussions throughout your project. This fosters trust and ensures your project aligns with your vision."
+      description: "Clear communication with regular updates and transparent discussions throughout your AI/ML project lifecycle."
     },
     {
       icon: <Zap className="w-7 h-7" />,
       title: "Cost-Effective Solutions",
-      description: "We deliver exceptional value with competitive pricing models that fit your budget, focusing on increased efficiency, reduced operational costs, and maximum ROI for your investment."
+      description: "Exceptional value with competitive pricing, focusing on efficiency, reduced costs, and maximum ROI."
     }
   ];
 
@@ -176,12 +178,13 @@ const AI_ML = () => {
                 At Ascentia Labs, we deliver cutting-edge AI and machine learning solutions that transform your business with intelligent automation. Our expert team specializes in building scalable, secure, and high-performance AI models using the latest technologies and best practices in artificial intelligence.
               </p>
               <div className="mb-8 sm:mb-12">
-                <Link to="/contact">
-                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                    Get Consultation
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
+                <button 
+                  onClick={openConsultation}
+                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2"
+                >
+                  Get Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
 
               {/* Stats - Mobile/Tablet */}
@@ -463,11 +466,12 @@ const AI_ML = () => {
                     <p className="text-blue-100 mb-6">
                       Join 200+ AI/ML projects and unlock intelligent automation with cutting-edge solutions from Ascentia Labs.
                     </p>
-                    <Link to="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Get Your AI Consultation
-                      </button>
-                    </Link>
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Get Your AI Consultation
+                    </button>
                   </div>
                 </div>
               </div>

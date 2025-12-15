@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { 
   Rocket, 
   Shield, 
@@ -26,37 +27,38 @@ import {
 const DigitalTransformation = () => {
   const [activeTab, setActiveTab] = useState('strategy');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
-  const whyChooseUs = [
+    const whyChooseUs = [
     {
       icon: <Award className="w-8 h-8" />,
-      title: "Proven Digital Transformation Experience",
-      description: "Ascentia Labs boasts a proven track record in driving successful digital transformations. With 10+ years of experience, our team of experts have helped businesses across various industries embrace digital innovation and achieve measurable results."
+      title: "Proven Experience in Technology Consulting",
+      description: "10+ years of experience crafting innovative, secure and scalable technology solutions across various industries."
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Security-Focused Approach",
-      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our digital transformation solutions leverage robust encryption and adhere to top security certifications ensuring a secure digital foundation."
+      description: "Industry-leading security protocols with robust encryption and top security certifications for reliable implementation."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
-      title: "Business-Driven Strategy",
-      description: "Our experts develop transformation strategies aligned with your business goals. We focus on delivering tangible ROI and measurable outcomes that drive growth and competitive advantage."
+      title: "Scalability & Flexibility",
+      description: "Scalable solutions designed to grow with your business, adapting to evolving requirements and future-proofing investments."
     },
     {
       icon: <Workflow className="w-8 h-8" />,
-      title: "End-to-End Transformation Support",
-      description: "From strategy development to implementation and change management, our experts handle everything. This ensures a smooth transformation journey with minimal disruption to your business operations."
+      title: "End-to-End Project Management",
+      description: "Complete project lifecycle management from concept to deployment, allowing you to focus on your business."
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "Transparency and Communication",
-      description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way with regular updates and transparent discussions throughout your digital transformation journey."
+      description: "Clear communication with regular updates and transparent discussions throughout your project lifecycle."
     },
     {
       icon: <Zap className="w-7 h-7" />,
-      title: "Accelerated Time-to-Value",
-      description: "We deliver exceptional value with agile methodologies that accelerate your digital transformation, focusing on quick wins and iterative improvements that deliver measurable business impact."
+      title: "Cost-Effective Solutions",
+      description: "Exceptional value with competitive pricing, focusing on efficiency, reduced costs, and maximum ROI."
     }
   ];
 
@@ -173,12 +175,13 @@ const DigitalTransformation = () => {
                 At Ascentia Labs, we drive digital transformation that delivers real business value. Our expert team specializes in developing and implementing comprehensive digital strategies that modernize operations, enhance customer experiences, and accelerate growth through innovative technology solutions.
               </p>
               <div className="mb-8 sm:mb-12">
-                <Link to="/contact">
-                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                    Get Consultation
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
+                <button 
+                  onClick={openConsultation}
+                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2"
+                >
+                  Get Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
@@ -402,11 +405,12 @@ const DigitalTransformation = () => {
                     <p className="text-blue-100 mb-6">
                       Join 400+ successful transformations and accelerate your digital journey with innovative solutions from Ascentia Labs.
                     </p>
-                    <Link to="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Begin Your Transformation
-                      </button>
-                    </Link>
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Begin Your Transformation
+                    </button>
                   </div>
                 </div>
               </div>

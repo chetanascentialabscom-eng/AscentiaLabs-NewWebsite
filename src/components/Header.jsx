@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useConsultation } from '../contexts/ConsultationContext';
 import { 
   Settings, 
   GraduationCap, 
@@ -39,6 +40,7 @@ const Header = () => {
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const location = useLocation();
+  const { openConsultation } = useConsultation();
 
   // Handle body scroll lock when mobile menu is open
   useEffect(() => {
@@ -139,7 +141,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
-                      <Lightbulb className="w-6 h-6 mr-2 text-blue-600" />
+                      <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Technology Consultation & MIS</div>
                         <div className="text-xs text-gray-500">Strategic technology guidance</div>
@@ -370,14 +372,25 @@ const Header = () => {
               </div>
             </div>
 
+            <Link 
+              to="/contact-us" 
+              className={`font-medium transition-colors ${
+                location.pathname === '/contact-us' 
+                  ? 'text-blue-600' 
+                  : 'text-gray-700 hover:text-blue-600'
+              }`}
+            >
+              Contact
+            </Link>
+
           </nav>
 
-          <Link 
-            to="/contact-us"
+          <button
+            onClick={openConsultation}
             className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
           >
             Get In Touch
-          </Link>
+          </button>
 
           {/* Mobile Menu Button */}
           <button 
@@ -441,7 +454,7 @@ const Header = () => {
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
-                      <Lightbulb className="w-5 h-5 mr-3 text-blue-600" />
+                      <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Technology Consultation & MIS</span>
                     </Link>
                     <Link to="/software-engineering" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
@@ -604,14 +617,28 @@ const Header = () => {
                 )}
               </div>
 
-              
               <Link 
-                to="/contact-us"
-                className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center"
+                to="/contact-us" 
+                className={`font-medium transition-colors py-2 px-4 rounded ${
+                  location.pathname === '/contact-us' 
+                    ? 'text-blue-600 bg-blue-50' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get In Touch
+                Contact
               </Link>
+
+              
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  openConsultation();
+                }}
+                className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center"
+              >
+                Get In Touch
+              </button>
             </nav>
           </div>
         )}

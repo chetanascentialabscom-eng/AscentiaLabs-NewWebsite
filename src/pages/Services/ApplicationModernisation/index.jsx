@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useConsultation } from '../../../contexts/ConsultationContext';
 import { 
   RefreshCw, 
   Shield, 
@@ -24,37 +25,38 @@ import {
 const ApplicationModernisation = () => {
   const [activeTab, setActiveTab] = useState('legacy');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
+  const { openConsultation } = useConsultation();
 
   const whyChooseUs = [
     {
       icon: <Award className="w-8 h-8" />,
       title: "Proven Modernisation Experience",
-      description: "Ascentia Labs boasts a proven track record in modernising legacy applications with innovative, secure and scalable solutions. With 10+ years of experience, our team of experts have helped businesses transform their applications for the modern era."
+      description: "10+ years of experience modernising legacy applications with innovative, secure and scalable solutions."
     },
     {
       icon: <Lock className="w-8 h-8" />,
       title: "Security-Focused Approach",
-      description: "We prioritize protecting your data and infrastructure with industry-leading security protocols. Our modernisation solutions leverage robust encryption and adhere to top security certifications ensuring a reliable foundation."
+      description: "Industry-leading security protocols with robust encryption and top security certifications for reliable modernisation."
     },
     {
       icon: <TrendingUp className="w-8 h-8" />,
       title: "Scalability & Performance",
-      description: "Our experts build scalable solutions designed to grow alongside your business. We utilize modern architectures and cloud-native technologies to ensure your applications can handle future demands."
+      description: "Modern architectures and cloud-native technologies ensuring applications can handle future demands and growth."
     },
     {
       icon: <Workflow className="w-8 h-8" />,
       title: "End-to-End Migration Support",
-      description: "From initial assessment to deployment and ongoing support, our experts handle everything. This ensures a smooth migration process, minimizing downtime and allowing you to focus on your business."
+      description: "Complete migration process from assessment to deployment, minimizing downtime and business disruption."
     },
     {
       icon: <MessageSquare className="w-8 h-8" />,
       title: "Transparency and Communication",
-      description: "At Ascentia Labs, clear communication is key. We believe in keeping you informed every step of the way with regular updates and transparent discussions throughout your modernisation journey."
+      description: "Clear communication with regular updates and transparent discussions throughout your modernisation journey."
     },
     {
       icon: <Zap className="w-7 h-7" />,
       title: "Cost-Effective Solutions",
-      description: "We deliver exceptional value with competitive pricing models that fit your budget, focusing on increased efficiency, reduced operational costs, and maximum ROI for your investment."
+      description: "Exceptional value with competitive pricing, focusing on efficiency, reduced costs, and maximum ROI."
     }
   ];
 
@@ -172,12 +174,13 @@ const ApplicationModernisation = () => {
                 At Ascentia Labs, we transform legacy applications into modern, cloud-native solutions that drive business growth. Our expert team specializes in modernising applications using cutting-edge technologies, ensuring improved performance, enhanced security, and reduced operational costs.
               </p>
               <div className="mb-8 sm:mb-12">
-                <Link to="/contact">
-                  <button className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2">
-                    Get Consultation
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
+                <button 
+                  onClick={openConsultation}
+                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2"
+                >
+                  Get Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
 
               {/* Stats - Mobile/Tablet */}
@@ -431,11 +434,12 @@ const ApplicationModernisation = () => {
                     <p className="text-blue-100 mb-6">
                       Join 300+ modernised applications and transform your legacy systems with cutting-edge solutions from Ascentia Labs.
                     </p>
-                    <Link to="/contact">
-                      <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        Start Your Modernisation Journey
-                      </button>
-                    </Link>
+                    <button 
+                      onClick={openConsultation}
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      Start Your Modernisation Journey
+                    </button>
                   </div>
                 </div>
               </div>

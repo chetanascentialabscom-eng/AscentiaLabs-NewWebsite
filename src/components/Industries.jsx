@@ -1,4 +1,5 @@
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import ConsultationButton from './ConsultationButton';
 
 const Industries = () => {
   const navigate = useNavigate();
@@ -112,11 +113,11 @@ const Industries = () => {
       'Interior & Architecture': '/interior-design-app-development',
       'Real Estate': '/real-estate-app-development',
       'Education': '/education-app-development',
-      'Kindergarten': '/kindergarten-management-system',
-      'Travel & Tourism': '/travel-tourism-app-development',
+      'Kindergarten': '/kindergarten-school-management',
+      'Travel & Tourism': '/travel-app-development',
       'ERP': '/enterprise-resource-planning',
       'Library': '/library-management-system',
-      'Manufacturing': '/manufacturing-app-development',
+      'Manufacturing': '/manufacturing',
       'Health Care': '/healthcare-app-development',
       'Logistics': '/logistics-software-development'
     };
@@ -134,7 +135,7 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-12 sm:py-16 overflow-hidden" style={{ background: '#000000' }}>
+    <section id="industries" className="py-12 sm:py-16 overflow-hidden bg-gradient-to-r from-blue-600 via-black to-blue-600">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
@@ -151,11 +152,11 @@ const Industries = () => {
             <div
               key={index}
               onClick={() => handleIndustryClick(industry.title)}
-              className="group relative flex flex-col items-center p-4 sm:p-6 bg-slate-800/80 backdrop-blur-md rounded-2xl border border-slate-700/50 hover:bg-slate-600 transition-all duration-500 hover:scale-105 cursor-pointer transform hover:-translate-y-3 shadow-lg hover:shadow-2xl hover:shadow-slate-500/50 mobile-no-hover"
+              className="group relative flex flex-col items-center p-4 sm:p-6 bg-slate-800/90 backdrop-blur-md rounded-2xl border border-blue-500/30 hover:bg-slate-700/90 transition-all duration-500 hover:scale-105 cursor-pointer transform hover:-translate-y-3 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 mobile-no-hover"
             >
               {/* Icon Container with Better Styling */}
               <div className="flex justify-center mb-4">
-                <div className="p-3 sm:p-4 rounded-full bg-blue-600 shadow-md group-hover:shadow-lg group-hover:bg-blue-500 transition-all duration-500 group-hover:scale-110">
+                <div className="p-3 sm:p-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg group-hover:shadow-xl group-hover:from-blue-400 group-hover:to-blue-500 transition-all duration-500 group-hover:scale-110 border border-blue-400/50">
                   <div className="text-white">
                     {industry.icon}
                   </div>
@@ -168,16 +169,16 @@ const Industries = () => {
               </h3>
 
               {/* Animated Background Effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-300/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-blue-500/10 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
               
               {/* Glowing Border Effect */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-300/40 via-transparent to-blue-300/40 rounded-2xl blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/50 via-transparent to-blue-400/50 rounded-2xl blur-sm"></div>
               </div>
 
               {/* Floating Animation Dots */}
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-300 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
-              <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-blue-200 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-bounce"></div>
+              <div className="absolute -bottom-1 -left-1 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-700 animate-pulse"></div>
             </div>
           ))}
         </div>
@@ -188,13 +189,13 @@ const Industries = () => {
           
           {/* Centered Button */}
           <div className="flex justify-center">
-            <Link to="/contact">
-              <button className="group relative px-8 py-4 bg-slate-700 text-white font-bold text-lg rounded-full shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 transform hover:scale-105 transition-all duration-300 hover:bg-slate-600 overflow-hidden border border-slate-600/50">
-                <span className="relative z-10">Consult Our Experts Today</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-600 to-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 animate-ping"></div>
-              </button>
-            </Link>
+            <ConsultationButton 
+              className="px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 border border-slate-600/50"
+              variant="primary"
+              size="large"
+            >
+              Consult Our Experts Today
+            </ConsultationButton>
           </div>
         </div>
 
