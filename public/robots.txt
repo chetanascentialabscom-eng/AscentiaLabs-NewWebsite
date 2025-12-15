@@ -13,4 +13,4 @@ Crawl-delay: 1
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://ascentialabs.com/sitemap.xml
+Sitemap: https://ascentialabs.com/sitemap_index.xml

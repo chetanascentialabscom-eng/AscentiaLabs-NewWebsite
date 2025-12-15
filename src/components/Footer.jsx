@@ -14,7 +14,7 @@ const Footer = () => {
     { name: "About Us", route: "/about-us" },
     { name: "Send A Message", route: "/contact-us" },
     { name: "Our Blogs", route: "/blog" },
-    { name: "Sitemap", route: "/sitemap.xml", external: true }
+    { name: "Sitemap", route: "/sitemap_index.xml", external: true }
   ];
 
   return (
