@@ -1,6 +1,30 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Add floating animation styles
+const floatingStyles = `
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(2deg); }
+    50% { transform: translateY(-5px) rotate(-1deg); }
+    75% { transform: translateY(-15px) rotate(1deg); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-1000 { animation-delay: 1s; }
+  .delay-1500 { animation-delay: 1.5s; }
+  .delay-2000 { animation-delay: 2s; }
+`;
+
+// Inject styles
+if (typeof document !== 'undefined') {
+  const styleSheet = document.createElement('style');
+  styleSheet.textContent = floatingStyles;
+  document.head.appendChild(styleSheet);
+}
+
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState({});
@@ -8,7 +32,6 @@ const About = () => {
   const images = [
     '/aboutPics/Image 1.jpg',
     '/aboutPics/Image 2.jpg', 
-    '/aboutPics/Image 3.jpg',
     '/aboutPics/20241230_123418 1.png',
     '/aboutPics/different.png',
     '/aboutPics/WhatsApp Image 2025-01-16 at 11.33.47 AM (1) 1.png',
@@ -53,44 +76,90 @@ const About = () => {
     <div className="min-h-screen bg-white">
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <section className="min-h-screen bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden pt-20 md:pt-0 md:flex md:items-center md:justify-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-black/20"></div>
+        
+        {/* Animated Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gray-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+
+        {/* Floating Icons */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Tech Icons */}
+          <div className="absolute top-1/4 left-1/4 animate-float">
+            <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          
+          <div className="absolute top-1/3 right-1/4 animate-float delay-1000">
+            <svg className="w-6 h-6 text-blue-400/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+
+          <div className="absolute bottom-1/3 left-1/6 animate-float delay-2000">
+            <svg className="w-10 h-10 text-gray-300/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+
+          <div className="absolute top-2/3 right-1/6 animate-float delay-1500">
+            <svg className="w-5 h-5 text-blue-300/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+
+          <div className="absolute bottom-1/4 right-1/3 animate-float delay-500">
+            <svg className="w-7 h-7 text-white/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 max-w-7xl relative z-10 md:flex md:items-center md:justify-center md:min-h-screen">
           <div 
-            className={`text-center transform transition-all duration-1000 ${
+            className={`text-center transform transition-all duration-1000 w-full max-w-4xl pt-4 md:pt-0 ${
               isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
             id="hero"
             data-animate
           >
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+            {/* Main Icon */}
+            <div className="mb-4 md:mb-6 flex justify-center">
+              <div className="relative">
+                <svg className="w-12 h-12 md:w-16 md:h-16 text-blue-400 animate-pulse" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div className="inline-block mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-base font-semibold tracking-wider uppercase">
                 About Ascentia Labs
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight">
               Innovating Tomorrow's Solutions
-              <span className="block bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 to-gray-400 bg-clip-text text-transparent ">
                 Today
               </span>
             </h1>
-            <p className="text-base md:text-xl text-gray-700 max-w-5xl mx-auto leading-relaxed mb-10 font-medium">
-              At Ascentia Labs, we transform visionary ideas into powerful technological realities. We specialize in 
-              crafting innovative solutions that bridge complex business challenges with elegant, scalable technology 
-              that drives exceptional growth and competitive advantage.
-            </p>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              With decades of combined expertise across software development, digital transformation, and enterprise 
-              solutions, we have established ourselves as the trusted technology partner for forward-thinking businesses. 
-              Our unwavering commitment to excellence, innovation, and client success positions us as industry leaders 
-              in delivering world-class solutions that redefine standards and create lasting value.
-            </p>
+
+            {/* Decorative Elements */}
+            <div className="flex justify-center items-center space-x-8 mt-12">
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+              <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+            </div>
+
+          
           </div>
         </div>
-        
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-16 h-16 bg-blue-200 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-20 h-20 bg-gray-300 rounded-full opacity-20 animate-pulse delay-1000"></div>
       </section>
 
       {/* Stats Section */}
@@ -128,8 +197,13 @@ const About = () => {
       </section> */}
 
        {/* Who We Are Section */}
-      <section className="py-16 bg-white relative">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="py-16 bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-black/20"></div>
+          <div className="absolute top-10 left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-60 h-60 bg-gray-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div 
               className={`transform transition-all duration-1000 delay-500 ${
@@ -139,54 +213,21 @@ const About = () => {
               data-animate
             >
               <div className="inline-block mb-4">
-                <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+                <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
                   Our Story
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-gray-200 bg-clip-text text-transparent">
                   Who We Are
                 </span>
               </h2>
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-6">
+              <p className="text-base md:text-2xl text-gray-200 leading-relaxed mb-6">
                 At Ascentia Labs, we excel in fostering collaboration and innovation, leveraging cutting-edge 
                 technologies to craft tailored, industry-specific solutions. With a steadfast commitment to 
                 redefining industry standards, we empower our clients to achieve unparalleled business 
                 growth and success.
               </p>
-              
-              {/* Image Slider Controls */}
-              {/* <div className="flex items-center space-x-4 mb-6">
-                <button 
-                  onClick={prevSlide}
-                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <polyline points="15,18 9,12 15,6"/>
-                  </svg>
-                </button>
-                <div className="flex space-x-2">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        currentSlide === index 
-                          ? 'bg-gradient-to-r from-blue-600 to-black scale-125' 
-                          : 'bg-gray-300 hover:bg-gray-400'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <button 
-                  onClick={nextSlide}
-                  className="bg-gradient-to-r from-blue-600 to-black hover:from-blue-700 hover:to-gray-900 text-white p-2 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <polyline points="9,18 15,12 9,6"/>
-                  </svg>
-                </button>
-              </div> */}
             </div>
             
             {/* Enhanced Image Slider */}
@@ -197,10 +238,10 @@ const About = () => {
             >
               <div className="relative">
                 {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-black rounded-[3rem] opacity-20 blur-xl"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-gray-400 rounded-[3rem] opacity-30 blur-xl"></div>
                 
                 {/* Main slider container */}
-                <div className="relative bg-white rounded-[2rem] p-1 shadow-xl max-w-sm mx-auto">
+                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-[2rem] p-1 shadow-2xl max-w-sm mx-auto border border-gray-600/50">
                   <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                     <div 
                       className="flex transition-transform duration-500 ease-in-out h-full"
@@ -214,7 +255,7 @@ const About = () => {
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                         </div>
                       ))}
                     </div>
@@ -223,7 +264,7 @@ const About = () => {
                   {/* Navigation arrows on image */}
                   <button 
                     onClick={prevSlide}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600/90 to-black/90 hover:from-blue-500 hover:to-gray-800 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <polyline points="15,18 9,12 15,6"/>
@@ -231,7 +272,7 @@ const About = () => {
                   </button>
                   <button 
                     onClick={nextSlide}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600/90 to-black/90 hover:from-blue-500 hover:to-gray-800 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <polyline points="9,18 15,12 9,6"/>
@@ -370,7 +411,7 @@ const About = () => {
               </div>
             </div>
             <Link 
-              to="/contact" 
+              to="/contact-us" 
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
             >
               GET IN TOUCH
