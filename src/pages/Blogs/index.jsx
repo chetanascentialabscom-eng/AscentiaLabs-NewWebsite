@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight, Search, Filter, Tag } from 'lucide-react';
+import SEO from '../../components/SEO';
+import { seoData } from '../../utils/seoData';
 
 const BlogsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -122,6 +124,7 @@ const BlogsPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+      <SEO {...seoData.blog} />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-8 sm:pb-12 lg:pb-16 overflow-visible hero-section">
         <div className="absolute inset-0">

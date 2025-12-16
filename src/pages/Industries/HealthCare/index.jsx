@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import { Heart, Activity, FileText, Shield, ChevronDown, ChevronUp } from 'lucide-react';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const HealthCarePage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -205,6 +207,7 @@ const HealthCarePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.healthcare} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import { GraduationCap, Users, ChevronDown, ChevronUp, Shield, UserCheck, BookOpen, Calendar } from 'lucide-react';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const EducationPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -235,6 +237,7 @@ const EducationPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.education} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       
       {/* Hero Section */}

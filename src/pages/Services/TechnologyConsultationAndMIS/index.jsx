@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 import { 
   Lightbulb, 
   Shield, 
@@ -200,6 +202,7 @@ const TechnologyConsultationAndMIS = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.technologyConsultation} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
         {/* Animated Background Elements */}

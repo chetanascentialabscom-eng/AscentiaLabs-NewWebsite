@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Settings, DollarSign, ChevronDown, ChevronUp, Shield, UserCheck, BarChart3, Truck } from 'lucide-react';
 import { useConsultation } from '../../../contexts/ConsultationContext';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const ManufacturingPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -207,6 +209,7 @@ const ManufacturingPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.manufacturing} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       
       {/* Hero Section */}

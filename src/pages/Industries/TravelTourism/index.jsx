@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Plane, Users, ChevronDown, ChevronUp, Shield, MapPin } from 'lucide-react';
 import { useConsultation } from '../../../contexts/ConsultationContext';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const TravelTourismPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -239,6 +241,7 @@ const TravelTourismPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.travelTourism} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       
       {/* Hero Section */}

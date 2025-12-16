@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Home, DollarSign, ChevronDown, ChevronUp, Shield, UserCheck } from 'lucide-react';
 import { useConsultation } from '../../../contexts/ConsultationContext';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const RealEstatePage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -227,6 +229,7 @@ const RealEstatePage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.realEstate} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       
       {/* Hero Section */}

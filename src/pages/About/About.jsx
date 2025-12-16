@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '../../components/SEO';
+import { seoData } from '../../utils/seoData';
 
 // Add floating animation styles
 const floatingStyles = `
@@ -74,6 +76,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.about} />
 
       {/* Hero Section */}
       <section className="min-h-screen bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden pt-20 md:pt-0 md:flex md:items-center md:justify-center">

@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowLeft, Share2, BookOpen, Tag } from 'lucide-react';
+import SEO from '../../components/SEO';
+import { seoData } from '../../utils/seoData';
 
 const TravelAppDevelopment = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+      <SEO {...seoData.travelAppDevelopmentBlog} />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0">

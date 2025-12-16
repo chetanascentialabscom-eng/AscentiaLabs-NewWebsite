@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import { Building2, Users, BarChart3, Settings, ChevronDown, ChevronUp } from 'lucide-react';
+import SEO from '../../../components/SEO';
+import { seoData } from '../../../utils/seoData';
 
 const ERPPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -184,6 +186,7 @@ const ERPPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO {...seoData.erp} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
