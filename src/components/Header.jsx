@@ -39,8 +39,22 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  
+  // Desktop dropdown states
+  const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
+  const [isDesktopIndustriesOpen, setIsDesktopIndustriesOpen] = useState(false);
+  const [isDesktopProductsOpen, setIsDesktopProductsOpen] = useState(false);
+  const [isDesktopResourcesOpen, setIsDesktopResourcesOpen] = useState(false);
   const location = useLocation();
   const { openConsultation } = useConsultation();
+
+  // Function to close all desktop dropdowns
+  const closeAllDesktopDropdowns = () => {
+    setIsDesktopServicesOpen(false);
+    setIsDesktopIndustriesOpen(false);
+    setIsDesktopProductsOpen(false);
+    setIsDesktopResourcesOpen(false);
+  };
 
   // Handle body scroll lock when mobile menu is open
   useEffect(() => {
@@ -132,64 +146,74 @@ const Header = () => {
             >
               About Us
             </Link>
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors">
+            <div className="relative">
+              <button 
+                className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
+                onMouseEnter={() => setIsDesktopServicesOpen(true)}
+                onMouseLeave={() => setIsDesktopServicesOpen(false)}
+              >
                 Services 
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+              <div 
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
+                  isDesktopServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+                onMouseEnter={() => setIsDesktopServicesOpen(true)}
+                onMouseLeave={() => setIsDesktopServicesOpen(false)}
+              >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Technology Consultation & MIS</div>
                         <div className="text-xs text-gray-500">Strategic technology guidance</div>
                       </div>
                     </Link>
-                    <Link to="/software-engineering" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/software-engineering" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Cpu className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Software Engineering</div>
                         <div className="text-xs text-gray-500">Custom software development</div>
                       </div>
                     </Link>
-                    <Link to="/ai-ml-services" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ai-ml-services" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Brain className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">AI ML Services</div>
                         <div className="text-xs text-gray-500">Artificial intelligence solutions</div>
                       </div>
                     </Link>
-                    <Link to="/application-modernisation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/application-modernisation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Application Modernisation</div>
                         <div className="text-xs text-gray-500">Legacy system upgrades</div>
                       </div>
                     </Link>
-                    <Link to="/digital-transformation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/digital-transformation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Workflow className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Digital Transformation</div>
                         <div className="text-xs text-gray-500">Business digitalization</div>
                       </div>
                     </Link>
-                    <Link to="/ideation-design" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/ideation-design" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <PenTool className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Ideation & Design Strategy</div>
                         <div className="text-xs text-gray-500">Creative design solutions</div>
                       </div>
                     </Link>
-                    <Link to="/go-to-market" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/go-to-market" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Send className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Go-To-Market</div>
                         <div className="text-xs text-gray-500">Product launch strategies</div>
                       </div>
                     </Link>
-                    <Link to="/mobile-application" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/mobile-application" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Smartphone className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Mobile Application</div>
@@ -200,21 +224,29 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative group">
-              <Link 
+            <div className="relative">
+              <button 
                 className={`font-medium transition-colors flex items-center ${
                   location.pathname === '/industries' 
                     ? 'text-blue-600' 
                     : 'text-gray-700 hover:text-blue-600'
                 }`}
+                onMouseEnter={() => setIsDesktopIndustriesOpen(true)}
+                onMouseLeave={() => setIsDesktopIndustriesOpen(false)}
               >
                 Industries 
                 <ChevronDown className="ml-1 w-4 h-4" />
-              </Link>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+              </button>
+              <div 
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
+                  isDesktopIndustriesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+                onMouseEnter={() => setIsDesktopIndustriesOpen(true)}
+                onMouseLeave={() => setIsDesktopIndustriesOpen(false)}
+              >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="/complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Custom CRM</div>
@@ -222,7 +254,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Building className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
@@ -230,7 +262,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Home className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Real Estate</div>
@@ -238,7 +270,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="/education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Education</div>
@@ -246,7 +278,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Star className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Kindergarten</div>
@@ -254,7 +286,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/travel-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/travel-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Plane className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Travel & Tourism</div>
@@ -262,7 +294,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">ERP</div>
@@ -270,7 +302,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Library</div>
@@ -278,7 +310,7 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/manufacturing" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/manufacturing" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Wrench className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Manufacturing</div>
@@ -286,7 +318,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Heart className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Health Care</div>
@@ -294,7 +326,7 @@ const Header = () => {
                       </div>
                     </Link>
 
-                    <Link to="/logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer">
+                    <Link to="/logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Truck className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Logistics</div>
@@ -305,36 +337,46 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors">
+            <div className="relative">
+              <button 
+                className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
+                onMouseEnter={() => setIsDesktopProductsOpen(true)}
+                onMouseLeave={() => setIsDesktopProductsOpen(false)}
+              >
                 Products 
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+              <div 
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
+                  isDesktopProductsOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+                onMouseEnter={() => setIsDesktopProductsOpen(true)}
+                onMouseLeave={() => setIsDesktopProductsOpen(false)}
+              >
                 <div className="p-5">
                   <div className="grid grid-cols-2 gap-4">
-                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-24 h-16 mr-4 flex-shrink-0 object-contain" />
                       <div>
                         <div className="font-medium text-base">RouteMaestro</div>
                         <div className="text-sm text-gray-500">AI Powered Travel Planning And Booking Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <img src="/SoftwareProducts/Insurance Safe.png" alt="InsuranceSafe" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
                         <div className="font-medium text-base">InsuranceSafe</div>
                         <div className="text-sm text-gray-500">Insurance Management Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <img src="/SoftwareProducts/Frame 1000002695.png" alt="KinderConnect" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
                         <div className="font-medium text-base">KinderConnect</div>
                         <div className="text-sm text-gray-500">Kindergarten Management Software</div>
                       </div>
                     </a>
-                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <a href="#" className="flex items-center py-4 px-4 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <img src="/SoftwareProducts/JusDoIt.png" alt="JusDoIt" className="w-20 h-20 mr-4 flex-shrink-0 object-contain" />
                       <div>
                         <div className="font-medium text-base">JusDoIt</div>
@@ -345,22 +387,32 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors">
+            <div className="relative">
+              <button 
+                className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
+                onMouseEnter={() => setIsDesktopResourcesOpen(true)}
+                onMouseLeave={() => setIsDesktopResourcesOpen(false)}
+              >
                 Resources 
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-100">
+              <div 
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
+                  isDesktopResourcesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                }`}
+                onMouseEnter={() => setIsDesktopResourcesOpen(true)}
+                onMouseLeave={() => setIsDesktopResourcesOpen(false)}
+              >
                 <div className="p-5">
                   <div className="grid grid-cols-1 gap-3">
-                    <Link to="/blog" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <Link to="/blog" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Blogs</div>
                         <div className="text-xs text-gray-500">Latest insights and articles</div>
                       </div>
                     </Link>
-                    <Link to="/case-studies" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all">
+                    <Link to="/case-studies" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Case Studies</div>

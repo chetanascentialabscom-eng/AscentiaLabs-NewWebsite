@@ -74,22 +74,29 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-12 sm:py-16">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             
-            {/* Our Address */}
+            {/* Locations */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">OUR ADDRESS</h3>
-              <div className="space-y-4 text-gray-400">
-                <div className="leading-relaxed">
-                  <p className="font-medium mb-1">SBS Nagar, Ludhiana</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">LOCATIONS</h3>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-bold text-white mb-1 text-sm">Ludhiana</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">
+                    SCO. 56-57, SBS Nagar, Opp. Keys Hotel, Ludhiana, Punjab
+                  </p>
                 </div>
-                <div className="leading-relaxed">
-                  <p className="font-medium mb-1">Krishna Nagar, Ludhiana</p>
+                <div>
+                  <h4 className="font-bold text-white mb-1 text-sm">SAS Nagar</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">
+                    3rd Floor, Plot No.1273, Sector 82, JLPL Industrial Area, SAS Nagar, Punjab
+                  </p>
                 </div>
-                <div className="leading-relaxed">
-                  <p className="font-medium mb-1">Chhattarpur, New Delhi</p>
+                <div>
+                  <h4 className="font-bold text-white mb-1 text-sm">New Delhi</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">
+                    106, Centrum Mall, MG Road, Sultanpur, New Delhi
+                  </p>
                 </div>
-                <div className="leading-relaxed">
-                  <p className="font-medium mb-1">Melbourne, Australia</p>
-                </div>
+               
               </div>
             </div>
 

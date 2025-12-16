@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, User, Building, Globe, DollarSign, MessageSq
 import emailjs from '@emailjs/browser';
 import SEO from '../../components/SEO';
 import { seoData } from '../../utils/seoData';
+import LeafletMap from '../../components/LeafletMap';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -227,6 +228,13 @@ const ContactPage = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+       {/* Interactive Map Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <LeafletMap />
         </div>
       </section>
 
@@ -482,6 +490,8 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
+
+     
 
       {/* Toast Notification */}
       {showToast && (

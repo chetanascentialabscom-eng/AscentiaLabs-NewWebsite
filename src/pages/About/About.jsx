@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { seoData } from '../../utils/seoData';
+import LeafletMap from '../../components/LeafletMap';
 
 // Add floating animation styles
 const floatingStyles = `
@@ -461,8 +462,12 @@ const About = () => {
         </div>
       </section>
 
-     
-
+      {/* Interactive Map Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <LeafletMap />
+        </div>
+      </section>
      
     </div>
   );
