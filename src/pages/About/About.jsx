@@ -80,7 +80,7 @@ const About = () => {
       <SEO {...seoData.about} />
 
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden pt-20 md:pt-0 md:flex md:items-center md:justify-center">
+      <section className="h-[90vh] md:h-screen bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-black/20"></div>
         
         {/* Animated Background Elements */}
@@ -92,41 +92,54 @@ const About = () => {
 
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Tech Icons */}
-          <div className="absolute top-1/4 left-1/4 animate-float">
-            <svg className="w-8 h-8 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          {/* Tech Icons - Responsive positioning */}
+          <div className="absolute top-[15%] left-[10%] md:top-1/4 md:left-1/4 animate-float">
+            <svg className="w-6 h-6 md:w-8 md:h-8 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
           </div>
           
-          <div className="absolute top-1/3 right-1/4 animate-float delay-1000">
-            <svg className="w-6 h-6 text-blue-400/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className="absolute top-[20%] right-[15%] md:top-1/3 md:right-1/4 animate-float delay-1000">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
 
-          <div className="absolute bottom-1/3 left-1/6 animate-float delay-2000">
-            <svg className="w-10 h-10 text-gray-300/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className="absolute top-[35%] left-[5%] md:bottom-1/3 md:left-1/6 animate-float delay-2000">
+            <svg className="w-7 h-7 md:w-10 md:h-10 text-gray-300/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
 
-          <div className="absolute top-2/3 right-1/6 animate-float delay-1500">
-            <svg className="w-5 h-5 text-blue-300/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className="absolute bottom-[25%] right-[8%] md:top-2/3 md:right-1/6 animate-float delay-1500">
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-300/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           </div>
 
-          <div className="absolute bottom-1/4 right-1/3 animate-float delay-500">
-            <svg className="w-7 h-7 text-white/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className="absolute bottom-[15%] left-[20%] md:bottom-1/4 md:right-1/3 animate-float delay-500">
+            <svg className="w-5 h-5 md:w-7 md:h-7 text-white/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+            </svg>
+          </div>
+
+          {/* Additional mobile-specific icons to fill empty spaces */}
+          <div className="absolute top-[45%] right-[20%] md:hidden animate-float delay-700">
+            <svg className="w-4 h-4 text-blue-200/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4"/>
+            </svg>
+          </div>
+
+          <div className="absolute bottom-[35%] left-[12%] md:hidden animate-float delay-1200">
+            <svg className="w-5 h-5 text-gray-400/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
             </svg>
           </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10 md:flex md:items-center md:justify-center md:min-h-screen">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10 flex items-center justify-center h-full pt-16 md:pt-0">
           <div 
-            className={`text-center transform transition-all duration-1000 w-full max-w-4xl pt-4 md:pt-0 ${
+            className={`text-center transform transition-all duration-1000 w-full max-w-4xl ${
               isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
             id="hero"
@@ -143,14 +156,14 @@ const About = () => {
 
             <div className="inline-block mb-6">
               <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-base font-semibold tracking-wider uppercase">
-                About Ascentia Labs
+                Driving Excellence
               </span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight">
-              Innovating Tomorrow's Solutions
+              Building
               <span className="block bg-gradient-to-r from-blue-600 to-gray-400 bg-clip-text text-transparent ">
-                Today
+                Tomorrow
               </span>
             </h1>
 
@@ -322,8 +335,7 @@ const About = () => {
              
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              In all our industry solutions, we strive to uphold the highest standards of integrity and foster a culture of innovation 
-              that results in continued improvements and breakthroughs.
+              We build trust through excellence, drive innovation through collaboration, and deliver results that matter.
             </p>
           </div>
 
@@ -336,7 +348,7 @@ const About = () => {
                   </svg>
                 ),
                 title: 'Our Mission',
-                description: 'Our mission at Ascentia Labs is to empower our clients through innovative solutions, unwavering excellence, and meaningful collaboration, driving success and creating lasting value.',
+                description: 'Empowering businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage.',
                 gradient: 'from-blue-500 to-blue-600'
               },
               {
@@ -346,7 +358,7 @@ const About = () => {
                   </svg>
                 ),
                 title: 'Our Vision',
-                description: 'Our vision at Ascentia Labs is to be a trusted global leader in innovation, transforming ideas into impactful solutions that empower our clients and shape a better future.',
+                description: 'To be the global leader in transforming business challenges into breakthrough technology solutions that shape the future.',
                 gradient: 'from-blue-600 to-black'
               },
               {
@@ -356,7 +368,7 @@ const About = () => {
                   </svg>
                 ),
                 title: 'Our Values',
-                description: 'At Ascentia Labs, we are committed to delivering exceptional value to our clients while fostering a culture of trust, respect, and continuous growth for their businesses.',
+                description: 'Excellence, integrity, innovation, and client success. These values guide every decision we make and every solution we deliver.',
                 gradient: 'from-gray-600 to-gray-800'
               }
             ].map((value, index) => (
@@ -409,8 +421,8 @@ const About = () => {
               <div>
                 <div className="text-blue-200 text-xs font-semibold mb-1 tracking-wider uppercase">Let's Get in Touch</div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Let's Talk About Your Business IT<br />
-                  Services Needs
+                  Ready to Transform<br />
+                  Your Business?
                 </h2>
               </div>
             </div>
@@ -427,7 +439,16 @@ const About = () => {
         </div>
       </section>
 
-      {/* Bridging Ideas Section */}
+    
+
+      {/* Interactive Map Section */}
+      <section className="py-12 bg-black">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <LeafletMap />
+        </div>
+      </section>
+
+        {/* Bridging Ideas Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
@@ -452,20 +473,13 @@ const About = () => {
             </h2>
             <div className="space-y-3 max-w-4xl mx-auto">
               <p className="text-lg md:text-xl font-semibold text-gray-300">
-                Crafting Unique Technical Solutions
+                Where Innovation Meets Excellence
               </p>
               <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-400 to-gray-400 bg-clip-text text-transparent">
-                to Meet All Your Business Demands!
+                Delivering Solutions That Drive Success
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Interactive Map Section */}
-      <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <LeafletMap />
         </div>
       </section>
      

@@ -72,7 +72,7 @@ const LeafletMap = () => {
 
         // Custom marker icons
         const createCustomIcon = (type) => {
-          const color = type === 'main' ? '#dc2626' : '#2563eb';
+          const color = type === 'main' ? '#2563eb' : '#6b7280';
           return window.L.divIcon({
             html: `
               <div style="
@@ -181,27 +181,27 @@ const LeafletMap = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 p-8 rounded-2xl">
+    <div className="relative bg-black p-8 rounded-2xl">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             Our Locations
           </span>
-          <span className="text-gray-800"> in India</span>
+          <span className="text-white"> in India</span>
         </h2>
-        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+        <p className="text-white/80 text-lg max-w-2xl mx-auto">
           Visit our offices across India for personalized consultations and support
         </p>
       </div>
       
       {/* Map Container */}
-      <div className="relative bg-white rounded-xl shadow-lg p-6">
+      <div className="relative bg-black rounded-xl shadow-lg p-6 border border-white/10">
         <div 
           ref={mapRef} 
           className="w-full rounded-xl overflow-hidden"
           style={{
-            height: '600px',
-            minHeight: '600px',
+            height: '300px',
+            minHeight: '300px',
             backgroundColor: '#f3f4f6',
             border: '1px solid #e5e7eb'
           }}
@@ -215,7 +215,7 @@ const LeafletMap = () => {
               left: '24px',
               right: '24px',
               bottom: '24px',
-              height: '552px'
+              height: '252px'
             }}
           >
             <div className="text-center">
@@ -230,36 +230,30 @@ const LeafletMap = () => {
           {locations.map((location) => (
             <div
               key={location.id}
-              className={`bg-gradient-to-br p-4 rounded-lg border hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+              className={`bg-black p-4 rounded-lg border hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                 location.type === 'main' 
-                  ? 'from-red-50 to-red-100 border-red-200 hover:border-red-300' 
-                  : 'from-blue-50 to-blue-100 border-blue-200 hover:border-blue-300'
-              } ${selectedLocation?.id === location.id ? 'ring-2 ring-offset-2 ' + (location.type === 'main' ? 'ring-red-400' : 'ring-blue-400') : ''}`}
+                  ? 'border-white/30 hover:border-white/50' 
+                  : 'border-white/20 hover:border-white/40'
+              } ${selectedLocation?.id === location.id ? 'ring-2 ring-offset-2 ring-white/50' : ''}`}
               onClick={() => focusLocation(location)}
             >
               <div className="flex items-start space-x-3">
-                <MapPin className={`w-5 h-5 mt-1 flex-shrink-0 ${
-                  location.type === 'main' ? 'text-red-600' : 'text-blue-600'
-                }`} />
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-white" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
-                    <h4 className="font-semibold text-gray-800">{location.name}</h4>
+                    <h4 className="font-bold text-white">{location.name}</h4>
                     {location.type === 'main' && (
-                      <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-white text-black px-2 py-1 rounded-full font-medium">
                         Main Office
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-600 mb-2 leading-relaxed">{location.address}</p>
+                  <p className="text-sm text-white/80 mb-2 leading-relaxed">{location.address}</p>
                   <div className="flex items-center justify-between">
-                    <p className={`text-sm font-medium ${
-                      location.type === 'main' ? 'text-red-600' : 'text-blue-600'
-                    }`}>
+                    <p className="text-sm font-semibold text-white">
                       {location.phone}
                     </p>
-                    <Navigation className={`w-4 h-4 ${
-                      location.type === 'main' ? 'text-red-400' : 'text-blue-400'
-                    }`} />
+                    <Navigation className="w-4 h-4 text-white" />
                   </div>
                 </div>
               </div>

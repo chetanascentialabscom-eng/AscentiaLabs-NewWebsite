@@ -23,11 +23,11 @@ const NewsTicker = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white py-2.5 overflow-hidden w-full shadow-md">
+    <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-black py-2.5 overflow-hidden w-full shadow-lg border-y border-yellow-700">
       <div ref={tickerRef} className="ticker-wrapper flex">
         <div className="ticker-content flex items-center whitespace-nowrap animate-scroll">
           {newsItems.map((item, index) => (
-            <span key={index} className="inline-flex items-center mx-8 text-sm md:text-base font-medium">
+            <span key={index} className="inline-flex items-center mx-8 text-sm md:text-base font-bold text-black">
               {item}
             </span>
           ))}

@@ -232,7 +232,7 @@ const ContactPage = () => {
       </section>
 
        {/* Interactive Map Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-black">
         <div className="container mx-auto px-4 max-w-7xl">
           <LeafletMap />
         </div>
@@ -448,7 +448,7 @@ const ContactPage = () => {
       </section>
 
       {/* Additional Contact Information */}
-      <section className="py-12 bg-white">
+      {/* <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Ascentia Labs?</h2>
@@ -489,7 +489,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
      
 
