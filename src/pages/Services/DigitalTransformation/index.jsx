@@ -168,7 +168,7 @@ const DigitalTransformation = () => {
         <div className="max-w-7xl mx-auto w-full relative z-10 py-8 sm:py-12 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm font-semibold mb-4 sm:mb-6 backdrop-blur-sm">
+              <div className="inline-block sm:mt-4 px-4 py-2 bg-blue-500/30 rounded-full text-sm font-semibold mb-4 sm:mb-6 backdrop-blur-sm">
                 Industry's Favorite
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
@@ -274,7 +274,7 @@ const DigitalTransformation = () => {
               Why Ascentia Labs?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Experience the advantages of working with digital transformation experts who understand your business needs
+              Partner with digital transformation experts who modernize operations
             </p>
           </div>
 
