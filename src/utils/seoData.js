@@ -87,11 +87,18 @@ export const seoData = {
     url: "https://ascentialabs.com/travel-app-development"
   },
 
-  library: {
-    title: "Library Management System Development | Ascentia Labs",
-    description: "Custom library management system development services. Digitize library operations with book tracking, member management, and automated systems.",
-    keywords: "library management system, library software, book tracking system, digital library, library automation",
-    url: "https://ascentialabs.com/library-management-system"
+  ticketingSolution: {
+    title: "Ticketing Solution Development - FINLO Digital Ticketing | Ascentia Labs",
+    description: "Comprehensive ticketing solution development with FINLO. Digital ticketing for parking, events, transport, and entertainment venues with QR-based validation.",
+    keywords: "ticketing solution, digital ticketing, FINLO, parking ticketing, event ticketing, transport ticketing, QR ticketing",
+    url: "https://ascentialabs.com/ticketing-solution"
+  },
+
+  textiles: {
+    title: "Textile Industry Software Development - Manufacturing Solutions | Ascentia Labs",
+    description: "Custom textile industry software development services. Optimize textile manufacturing with production planning, inventory management, and quality control systems.",
+    keywords: "textile software development, textile industry solutions, fabric management, textile manufacturing, production planning, textile ERP",
+    url: "https://ascentialabs.com/textiles"
   },
 
   manufacturing: {

@@ -19,7 +19,8 @@ import {
   KindergartenPage, 
   EducationPage, 
   TravelTourismPage, 
-  LibraryPage, 
+  TicketingSolutionPage, 
+  TextilesPage,
   ManufacturingPage, 
   TechnologyConsultationAndMIS, 
   SoftwareEngineering, 
@@ -72,7 +73,8 @@ function App() {
           <Route path="/kindergarten-school-management" element={<KindergartenPage/> } />
           <Route path="/education-app-development" element={<EducationPage/> } />
           <Route path="/travel-app-development" element={<TravelTourismPage/> } />
-          <Route path="/library-management-system" element={<LibraryPage/> } />
+          <Route path="/ticketing-solution" element={<TicketingSolutionPage/> } />
+          <Route path="/textiles" element={<TextilesPage/> } />
           <Route path="/manufacturing" element={<ManufacturingPage/> } />
           
           {/* Services Routes */}

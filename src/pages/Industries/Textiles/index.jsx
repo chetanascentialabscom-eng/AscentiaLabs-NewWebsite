@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Settings, DollarSign, ChevronDown, ChevronUp, Shield, UserCheck, BarChart3, Package } from 'lucide-react';
 import { useConsultation } from '../../../contexts/ConsultationContext';
-import { BookOpen, Users, Database, Shield, ChevronDown, ChevronUp } from 'lucide-react';
 import SEO from '../../../components/SEO';
 import { seoData } from '../../../utils/seoData';
 
-const LibraryPage = () => {
+const TextilesPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
   const { openConsultation } = useConsultation();
@@ -27,156 +27,179 @@ const LibraryPage = () => {
 
   const features = [
     {
-      id: 'digital-library-management',
-      title: 'Digital Library Management',
-      description: 'Comprehensive digital library management system for modern libraries.',
+      id: 'fabric-inventory-management',
+      title: 'Fabric & Raw Material Inventory Management',
+      description: 'Comprehensive inventory tracking for textile materials and supplies.',
       details: [
-        'Our digital library management system allows librarians to store and manage digital assets like eBooks, audiobooks, and multimedia files.',
-        'Our system supports various digital formats for seamless accessibility across devices.',
-        'Integrated analytics provide insights into usage patterns, aiding informed resource allocation and collection development.'
+        'Real-time tracking of fabric inventory with automated stock level monitoring and alerts.',
+        'Multi-warehouse management with transfer tracking and location optimization.',
+        'Automated reorder points with supplier integration and purchase order generation.',
+        'Batch tracking for fabric lots with quality control and traceability features.'
       ]
     },
     {
-      id: 'search-discovery',
-      title: 'Search & Discovery',
-      description: 'Advanced search and discovery tools for library resources.',
+      id: 'production-planning-scheduling',
+      title: 'Production Planning & Scheduling',
+      description: 'Advanced production planning system for textile manufacturing.',
       details: [
-        'Powerful search functionality with advanced filtering options for quick resource location.',
-        'Intelligent recommendation system based on user preferences and borrowing history.',
-        'Cross-platform search capabilities covering physical and digital collections.',
-        'Real-time availability status and reservation management for popular items.'
+        'Comprehensive production scheduling with capacity planning and resource optimization.',
+        'Real-time production monitoring with performance tracking and bottleneck identification.',
+        'Automated workflow management with task assignment and progress tracking.',
+        'Integration with inventory systems for seamless material requirement planning.'
       ]
     },
     {
-      id: 'library-catalog-management',
-      title: 'Library Catalog Management',
-      description: 'Complete catalog management for all library resources.',
+      id: 'quality-control-testing',
+      title: 'Quality Control & Testing',
+      description: 'Complete quality management system for textile standards.',
       details: [
-        'Comprehensive cataloging system with MARC record support and metadata management.',
-        'Automated ISBN lookup and bibliographic data import for efficient cataloging.',
-        'Multi-format support including books, journals, DVDs, and digital resources.',
-        'Bulk import/export capabilities for large-scale catalog management.'
+        'Automated quality inspection workflows with customizable checkpoints and criteria.',
+        'Fabric testing management with color matching and texture analysis.',
+        'Defect tracking with corrective action management and documentation.',
+        'Compliance management with textile industry standards and certifications.'
       ]
     },
     {
-      id: 'reservation-hold-management',
-      title: 'Reservation & Hold Management',
-      description: 'Efficient reservation and hold management system.',
+      id: 'order-management-system',
+      title: 'Order Management System',
+      description: 'End-to-end order processing and fulfillment platform.',
       details: [
-        'Online reservation system allowing patrons to reserve items remotely.',
-        'Automated hold notifications via email and SMS when items become available.',
-        'Priority queue management for high-demand resources.',
-        'Hold expiration tracking with automatic release and notification systems.'
+        'Customer order processing with design specifications and delivery tracking.',
+        'Sample management with approval workflows and revision tracking.',
+        'Bulk order processing with production scheduling and timeline management.',
+        'Customer portal integration for order status updates and communication.'
       ]
     },
     {
-      id: 'membership-plan-management',
-      title: 'Membership Plan Management',
-      description: 'Flexible membership and patron management system.',
+      id: 'design-pattern-management',
+      title: 'Design & Pattern Management',
+      description: 'Digital design and pattern management system.',
       details: [
-        'Multiple membership tiers with customizable borrowing privileges and duration.',
-        'Automated membership renewal reminders and online renewal capabilities.',
-        'Patron profile management with borrowing history and preferences tracking.',
-        'Integration with payment systems for membership fees and fine collection.'
+        'Digital pattern library with version control and design history.',
+        'Color palette management with seasonal trend tracking.',
+        'Design collaboration tools with approval workflows and feedback systems.',
+        'Pattern grading and sizing with automated calculations and adjustments.'
       ]
     },
     {
-      id: 'online-secure-payment',
-      title: 'Online & Secure Payment',
-      description: 'Secure online payment processing for library services.',
+      id: 'supplier-vendor-management',
+      title: 'Supplier & Vendor Management',
+      description: 'Comprehensive supplier relationship management platform.',
       details: [
-        'Multiple payment gateway integration for membership fees and fine payments.',
-        'Secure transaction processing with PCI compliance and data encryption.',
-        'Automated receipt generation and payment history tracking.',
-        'Flexible payment options including installments for annual memberships.'
+        'Supplier performance tracking with quality ratings and delivery metrics.',
+        'Procurement automation with RFQ management and contract tracking.',
+        'Vendor portal integration for seamless communication and collaboration.',
+        'Price comparison tools with cost analysis and negotiation support.'
       ]
     },
     {
-      id: 'automated-notifications',
-      title: 'Automated Notifications',
-      description: 'Comprehensive notification system for library operations.',
+      id: 'costing-pricing-management',
+      title: 'Costing & Pricing Management',
+      description: 'Advanced costing and pricing calculation system.',
       details: [
-        'Automated due date reminders via email, SMS, and push notifications.',
-        'Overdue notices with escalating reminder schedules and fine calculations.',
-        'New arrival notifications based on patron interests and preferences.',
-        'System maintenance and closure notifications for all registered users.'
+        'Detailed cost calculation with material, labor, and overhead tracking.',
+        'Dynamic pricing models with market analysis and competitor benchmarking.',
+        'Profit margin analysis with break-even calculations and forecasting.',
+        'Quote generation with customizable templates and approval workflows.'
       ]
     },
     {
-      id: 'reporting-analytics',
-      title: 'Reporting & Analytics',
-      description: 'Advanced reporting and analytics for library management.',
+      id: 'compliance-sustainability',
+      title: 'Compliance & Sustainability Tracking',
+      description: 'Environmental and regulatory compliance management.',
       details: [
-        'Comprehensive circulation reports with borrowing trends and popular resources.',
-        'Patron analytics including usage patterns and demographic insights.',
-        'Collection analysis with acquisition recommendations and weeding reports.',
-        'Financial reporting for membership revenue, fines, and operational costs.'
+        'Environmental impact tracking with sustainability metrics and reporting.',
+        'Regulatory compliance monitoring with certification management.',
+        'Waste management tracking with recycling and disposal optimization.',
+        'Carbon footprint calculation with reduction strategies and goals.'
+      ]
+    },
+    {
+      id: 'sales-distribution-management',
+      title: 'Sales & Distribution Management',
+      description: 'Complete sales and distribution management system.',
+      details: [
+        'Multi-channel sales management with online and offline integration.',
+        'Distribution network optimization with logistics coordination.',
+        'Customer relationship management with order history and preferences.',
+        'Sales analytics with performance tracking and trend analysis.'
+      ]
+    },
+    {
+      id: 'financial-reporting-analytics',
+      title: 'Financial Reporting & Analytics',
+      description: 'Comprehensive financial management and business intelligence.',
+      details: [
+        'Real-time financial dashboards with key performance indicators.',
+        'Cost accounting with job costing and profitability analysis.',
+        'Budget planning and variance analysis with automated reporting.',
+        'Integration with ERP systems for seamless financial data synchronization.'
       ]
     }
   ];
 
   const adminFeatures = [
     {
-      icon: Database,
-      title: 'Database Management',
-      description: 'Manage patron databases, membership plans, fines, and book records with advanced search and batch processing capabilities.'
-    },
-    {
-      icon: Users,
-      title: 'User Support',
-      description: 'Handle support requests, update FAQs, guides, and tutorials to empower users with self-service solutions.'
+      icon: Settings,
+      title: 'Production Control System',
+      description: 'Efficiently manage textile production schedules, monitor workflows, and optimize manufacturing processes.'
     },
     {
       icon: Shield,
-      title: 'Role Based Access',
-      description: 'Create and manage user accounts with specific roles and permissions for librarians, students, and staff.'
+      title: 'Quality Assurance',
+      description: 'Implement comprehensive quality control measures with fabric testing, color matching, and defect management.'
     },
     {
-      icon: BookOpen,
-      title: 'System Settings',
-      description: 'Configure catalog entries, e-books, and notification alerts for enhanced library operations.'
+      icon: BarChart3,
+      title: 'Analytics & Reporting',
+      description: 'Generate detailed production reports, track KPIs, and analyze performance metrics for data-driven decisions.'
+    },
+    {
+      icon: Package,
+      title: 'Inventory Management',
+      description: 'Manage fabric inventory, track raw materials, and optimize procurement processes for seamless operations.'
     }
   ];
 
   const processSteps = [
     { 
       number: '1', 
-      title: 'Library Assessment', 
-      description: 'Our team conducts a comprehensive analysis of your library operations to identify workflow inefficiencies, collection management needs, and opportunities for digital transformation in library services.' 
+      title: 'Industry Analysis', 
+      description: 'Our team conducts comprehensive analysis of your textile operations, identifying key challenges, production requirements, and opportunities for digital transformation.' 
     },
     { 
       number: '2', 
-      title: 'System Architecture', 
-      description: 'We design a customized library management solution that aligns with library standards, incorporating cataloging protocols, user management, and advanced library technologies.' 
+      title: 'Custom Solution Design', 
+      description: 'We design a tailored textile management platform that aligns with your production model, incorporating features like design management, quality control, and supply chain optimization.' 
     },
     { 
       number: '3', 
-      title: 'Implementation & Integration', 
-      description: 'Our experts deploy the library solution with minimal disruption to daily operations, ensuring seamless integration with existing library systems and third-party platforms.' 
+      title: 'Development & Integration', 
+      description: 'Our experts develop and deploy the solution with seamless integration to existing systems, ERP platforms, and production equipment while ensuring minimal disruption.' 
     },
     { 
       number: '4', 
       title: 'Training & Support', 
-      description: 'We provide comprehensive training for library staff and ensure ongoing support, continuously optimizing system performance to enhance patron experience and operational efficiency.' 
+      description: 'We provide comprehensive training for your team and ongoing support, continuously monitoring system performance and implementing optimizations for maximum efficiency.' 
     }
   ];
 
   const faqs = [
     {
-      question: "How can I determine if your Library Management System is the optimal choice for my library?",
-      answer: "Our Library Management System is ideal for libraries seeking comprehensive digital transformation. It offers advanced cataloging, patron management, digital resource integration, automated workflows, and detailed analytics. The system scales from small community libraries to large academic institutions, providing customizable features that adapt to your specific operational needs and budget requirements."
+      question: "What are the key benefits of implementing textile management software?",
+      answer: "Textile management software offers numerous benefits including improved production efficiency, enhanced quality control, streamlined inventory management, better supplier relationships, automated order processing, and comprehensive analytics for data-driven decision making in the textile industry."
     },
     {
-      question: "How Does a Library Management System Benefit Libraries?",
-      answer: "A Library Management System streamlines operations by automating cataloging, circulation, and patron management. It reduces manual workload, minimizes errors, improves resource accessibility, enhances patron experience through online services, provides valuable analytics for decision-making, and enables efficient inventory management. The system also supports digital collections and remote access capabilities."
+      question: "How does textile software improve production efficiency?",
+      answer: "The software automates production planning, provides real-time monitoring of textile processes, enables predictive maintenance, optimizes resource allocation, manages design workflows, and provides centralized control systems, significantly reducing waste and improving overall productivity."
     },
     {
-      question: "What sets Ascentia Labs apart as the premier leader in Library Management System development?",
-      answer: "Ascentia Labs combines deep library science expertise with cutting-edge technology to deliver tailored solutions. Our systems feature intuitive interfaces, robust security, seamless integration capabilities, and comprehensive support. We understand library workflows, offer extensive customization, provide ongoing training, and maintain long-term partnerships to ensure your system evolves with your needs."
+      question: "What features should I look for in a textile management platform?",
+      answer: "Essential features include fabric inventory management, production planning and scheduling, quality control systems, design and pattern management, supplier management, costing and pricing tools, compliance tracking, and comprehensive reporting and analytics capabilities."
     },
     {
-      question: "How Secure is Library Patron Data in a Library Management System?",
-      answer: "Our Library Management System employs enterprise-grade security measures including data encryption, secure user authentication, role-based access controls, regular security audits, and compliance with privacy regulations. Patron data is protected through multiple security layers, automated backups, and disaster recovery protocols, ensuring complete confidentiality and data integrity."
+      question: "Is textile management software secure for handling sensitive design and production data?",
+      answer: "Yes, professional textile software implements enterprise-grade security measures including data encryption, secure access controls, role-based permissions, regular security updates, and compliance with industry regulations to ensure design and production data remains secure."
     }
   ];
 
@@ -186,8 +209,9 @@ const LibraryPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO {...seoData.library} />
+      <SEO {...seoData.textiles} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
+      
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
         {/* Background Pattern */}
@@ -202,11 +226,10 @@ const LibraryPage = () => {
             {/* Left Content */}
             <div className="text-white space-y-6">
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-                Streamline Library Operations with Our Comprehensive Management System
+                Transform Your Textile Business with Our Comprehensive Management Solutions
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Streamline operations, manage patrons, books, memberships effortlessly with enhanced 
-                security and boost efficiency with our comprehensive library management admin tools.
+                Discover the power of our state-of-the-art textile management system, designed to streamline production processes, optimize workflows, and enhance operational efficiency for your textile business.
               </p>
               <button 
                 onClick={openConsultation}
@@ -244,11 +267,10 @@ const LibraryPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
-              Key Features In Our Library Management System
+              Comprehensive Features for Textile Industry Management
             </h2>
             <p className="text-base text-gray-600 max-w-2xl mx-auto">
-              Unleash your library business potential with our dynamic feature of Library Management system, or 
-              if you want to add some of your own library business features, don't worry, we'll do it for you.
+              Discover comprehensive textile management features designed to optimize your production processes, enhance quality control, and streamline operations for maximum efficiency in the textile industry.
             </p>
           </div>
 
@@ -317,10 +339,10 @@ const LibraryPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
-              Our Library Management Implementation Process
+              Our Textile Management Implementation Process
             </h2>
             <p className="text-lg text-gray-600">
-              A streamlined approach to deploying your library management solution efficiently and effectively.
+              A streamlined approach to deploying your textile management solution efficiently and effectively.
             </p>
           </div>
 
@@ -379,10 +401,10 @@ const LibraryPage = () => {
               <div className="text-white space-y-8">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                    Transform Your Library Operations with Our Library Expertise
+                    Revolutionize Your Textile Operations with Our Expertise
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
-                    Why Leading Libraries Choose Our Solutions
+                    Why Leading Textile Companies Choose Our Solutions
                   </p>
                 </div>
 
@@ -393,7 +415,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Well Experienced Team
+                        Textile Industry Expertise
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -405,7 +427,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Customization & Flexibility
+                        Scalable Solutions
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -417,7 +439,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Innovative Solutions
+                        Advanced Technology
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -429,7 +451,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Quality Assurance & Reliability
+                        Quality Assurance & Compliance
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -441,7 +463,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Timely Delivery & Project Management
+                        Seamless Integration
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -453,7 +475,7 @@ const LibraryPage = () => {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
-                        Competitive Pricing
+                        24/7 Support
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
                     </div>
@@ -485,10 +507,10 @@ const LibraryPage = () => {
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Ready to Modernize Your Library?
+                      Ready to Transform Your Textile Operations?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join libraries who trust our solutions to enhance patron experience and streamline library operations.
+                      Join industry leaders who trust our textile management solutions to optimize their production processes and boost efficiency.
                     </p>
                     <button 
                       onClick={openConsultation}
@@ -513,7 +535,7 @@ const LibraryPage = () => {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-600">
-                Find answers to common questions about our library management solutions
+                Find answers to common questions about our textile management solutions
               </p>
             </div>
 
@@ -555,4 +577,4 @@ const LibraryPage = () => {
   );
 };
 
-export default LibraryPage;
+export default TextilesPage;

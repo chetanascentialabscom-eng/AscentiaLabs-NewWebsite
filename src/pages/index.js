@@ -12,7 +12,8 @@ export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as KindergartenPage } from './Industries/Kindergarten';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';
-export { default as LibraryPage } from './Industries/Library';
+export { default as TicketingSolutionPage } from './Industries/TicketingSolution';
+export { default as TextilesPage } from './Industries/Textiles';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
 
 // Services Pages

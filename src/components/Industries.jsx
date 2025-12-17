@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Settings, Building, Home, GraduationCap, Star, Plane, BarChart3, Ticket, Package, Wrench, Stethoscope, Truck } from 'lucide-react';
 import ConsultationButton from './ConsultationButton';
 
 const Industries = () => {
@@ -8,101 +9,62 @@ const Industries = () => {
     {
       title: "Custom CRM",
       description: "Customer relationship management",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      )
+      icon: <Settings className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Interior & Architecture",
       description: "Design & planning solutions",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M6.36 18.78L6.61 21l1.62-1.54 2.77-2.77-.7-.7-2.77 2.77L6.36 18.78zm.24-2.83l2.77 2.77 8.46-8.46-2.77-2.77L6.6 15.95zm11.31-11.31c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
-        </svg>
-      )
+      icon: <Building className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Real Estate",
       description: "Property management systems",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-        </svg>
-      )
+      icon: <Home className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Education",
       description: "Learning management platforms",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-        </svg>
-      )
+      icon: <GraduationCap className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Kindergarten",
       description: "Early education systems",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-      )
+      icon: <Star className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Travel & Tourism",
       description: "Booking & travel solutions",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/>
-        </svg>
-      )
+      icon: <Plane className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "ERP",
       description: "Enterprise resource planning",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-        </svg>
-      )
+      icon: <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
-      title: "Library",
-      description: "Library management systems",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-        </svg>
-      )
+      title: "Ticketing Solution",
+      description: "Digital ticketing systems",
+      icon: <Ticket className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+    },
+    {
+      title: "Textiles",
+      description: "Textile industry solutions",
+      icon: <Package className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Manufacturing",
       description: "Production management tools",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
-        </svg>
-      )
+      icon: <Wrench className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Health Care",
       description: "Medical & healthcare solutions",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/>
-        </svg>
-      )
+      icon: <Stethoscope className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Logistics",
       description: "Supply chain management",
-      icon: (
-        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
-        </svg>
-      )
+      icon: <Truck className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     }
   ];
 
@@ -116,7 +78,8 @@ const Industries = () => {
       'Kindergarten': '/kindergarten-school-management',
       'Travel & Tourism': '/travel-app-development',
       'ERP': '/enterprise-resource-planning',
-      'Library': '/library-management-system',
+      'Ticketing Solution': '/ticketing-solution',
+      'Textiles': '/textiles',
       'Manufacturing': '/manufacturing',
       'Health Care': '/healthcare-app-development',
       'Logistics': '/logistics-software-development'

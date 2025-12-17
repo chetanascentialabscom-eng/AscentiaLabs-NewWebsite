@@ -11,6 +11,7 @@ import {
   BookOpen, 
   Wrench, 
   Heart, 
+  Stethoscope,
   Truck,
   Phone,
   Mail,
@@ -31,6 +32,7 @@ import {
   Workflow,
   TrendingUp,
   Cpu,
+  Ticket,
 } from 'lucide-react';
 
 const Header = () => {
@@ -309,11 +311,19 @@ const Header = () => {
                       </div>
                     </Link>
                     
-                    <Link to="/library-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
-                      <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
+                    <Link to="/ticketing-solution" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                      <Ticket className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm">Library</div>
-                        <div className="text-xs text-gray-500">Library management systems</div>
+                        <div className="font-medium text-sm">Ticketing Solution</div>
+                        <div className="text-xs text-gray-500">Digital ticketing systems</div>
+                      </div>
+                    </Link>
+                    
+                    <Link to="/textiles" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                      <Package className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Textiles</div>
+                        <div className="text-xs text-gray-500">Textile industry solutions</div>
                       </div>
                     </Link>
                     
@@ -326,7 +336,7 @@ const Header = () => {
                     </Link>
 
                     <Link to="/healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
-                      <Heart className="w-5 h-5 mr-2 text-blue-600" />
+                      <Stethoscope className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Health Care</div>
                         <div className="text-xs text-gray-500">Medical & healthcare solutions</div>
@@ -577,7 +587,7 @@ const Header = () => {
                       <span className="text-sm">ERP</span>
                     </Link>
                     <Link to="/healthcare-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
-                      <Heart className="w-4 h-4 mr-3 text-blue-600" />
+                      <Stethoscope className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
                     </Link>
                     <Link to="/interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
@@ -588,9 +598,13 @@ const Header = () => {
                       <Star className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Kindergarten</span>
                     </Link>
-                    <Link to="/library-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
-                      <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
-                      <span className="text-sm">Library</span>
+                    <Link to="/ticketing-solution" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                      <Ticket className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Ticketing Solution</span>
+                    </Link>
+                    <Link to="/textiles" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                      <Package className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Textiles</span>
                     </Link>
                     <Link to="/logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Truck className="w-4 h-4 mr-3 text-blue-600" />

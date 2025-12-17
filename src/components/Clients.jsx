@@ -29,6 +29,36 @@ const Clients = () => {
       image: "/clients/Frame 28.png",
       testimonial: "The insurance management software developed by Ascentia Labs revolutionized how we handle our operations. Their attention to detail, timely delivery, and ongoing support have made them our trusted technology partner for all future projects.",
       rating: 5
+    },
+    {
+      id: 4,
+      name: "Ashutosh Shrivastava",
+      position: "Tech Lead",
+      company: "Technology Solutions",
+      location: "",
+      image: null,
+      testimonial: "I've had a great experience with Ascentia Labs. Their team is highly professional, innovative and always ready to go the extra mile. Their quality solutions, attention to detail, and client-first approach truly stand out.",
+      rating: 5
+    },
+    {
+      id: 5,
+      name: "Ritika Agarwal",
+      position: "Tech Manager",
+      company: "Digital Innovations",
+      location: "",
+      image: null,
+      testimonial: "Opportunities for growth and learning, excellent customer support, smart colleagues and supporting team. Working with Ascentia Labs has been an incredible journey of professional development and technical excellence.",
+      rating: 5
+    },
+    {
+      id: 6,
+      name: "Rohan John",
+      position: "Operations Head",
+      company: "Business Solutions",
+      location: "",
+      image: null,
+      testimonial: "We have had an excellent experience working with Ascentia Labs. Their CRM solution is intuitive, well-designed, and has significantly streamlined our operations. The team is extremely responsive and professional.",
+      rating: 5
     }
   ];
 
@@ -82,7 +112,7 @@ const Clients = () => {
 
           {/* Testimonials Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-0 responsive-grid-sm">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
                 key={testimonial.id}
                 className="group relative bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 text-white flex flex-col mobile-no-hover"
@@ -113,14 +143,22 @@ const Clients = () => {
                 {/* Client Info */}
                 <div className="flex items-center">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-blue-300 mr-4 flex-shrink-0">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.src = "/clients/Avatar.png";
-                      }}
-                    />
+                    {testimonial.image ? (
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.src = "/clients/Avatar.png";
+                        }}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <span className="text-white font-bold text-lg sm:text-xl">
+                          {testimonial.name.charAt(0).toUpperCase()}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-white text-sm sm:text-base">
