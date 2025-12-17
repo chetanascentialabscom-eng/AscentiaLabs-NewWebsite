@@ -9,12 +9,12 @@ const ConsultationButton = ({
 }) => {
   const { openConsultation } = useConsultation();
 
-  const baseClasses = "group relative font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2";
+  const baseClasses = "group relative font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2";
   
   const variants = {
-    primary: "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] overflow-hidden",
-    secondary: "bg-blue-600 hover:bg-blue-700 text-white shadow-lg",
-    outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+    primary: "bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] overflow-hidden",
+    secondary: "bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black shadow-lg",
+    outline: "border-2 border-amber-500 text-amber-600 hover:bg-gradient-to-r hover:from-amber-400 hover:to-orange-500 hover:text-black"
   };
   
   const sizes = {
@@ -32,7 +32,7 @@ const ConsultationButton = ({
       className={`${baseClasses} ${variantClasses} ${sizeClasses} ${className}`}
     >
       {variant === "primary" && (
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       )}
       <span className="relative z-10 flex items-center justify-center gap-2">
         {children}

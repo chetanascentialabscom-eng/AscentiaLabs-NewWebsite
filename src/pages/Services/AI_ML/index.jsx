@@ -133,7 +133,7 @@ const AI_ML = () => {
     { number: '200+', label: 'AI/ML Projects Delivered' },
     { number: '40+', label: 'Data Scientists' },
     { number: '10+', label: 'Years In the Industry' },
-    { number: '80+', label: 'Countries Empowered' }
+    { number: '4+', label: 'Countries Empowered' }
   ];
 
   const faqs = [
@@ -183,7 +183,7 @@ const AI_ML = () => {
               <div className="mb-8 sm:mb-12">
                 <button 
                   onClick={openConsultation}
-                  className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full hover:from-blue-700 hover:to-blue-900 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2"
+                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 hover:shadow-amber-500/50"
                 >
                   Get Consultation
                   <ArrowRight className="w-5 h-5" />
@@ -458,10 +458,27 @@ const AI_ML = () => {
               <div className="relative">
                 <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
                   <div className="text-center text-white">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                      </svg>
+                    <div className="relative w-32 h-32 mx-auto mb-6">
+                      {/* Main circle with yellow and black accent for high contrast */}
+                      <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
+                        {/* Animated color overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
+                        
+                        {/* Inner black accent ring */}
+                        {/* <div className="absolute inset-3 rounded-full border-2 border-black/30"></div> */}
+                        
+                        {/* Checkmark icon with white color */}
+                        <svg className="w-16 h-16 text-black relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        
+                        {/* Subtle rotating border effect */}
+                        <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
+                      </div>
+                      
+                      {/* Outer glow rings with yellow theme */}
+                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
+                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
                       Ready to Harness AI Power?
@@ -471,7 +488,7 @@ const AI_ML = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
                     >
                       Get Your AI Consultation
                     </button>

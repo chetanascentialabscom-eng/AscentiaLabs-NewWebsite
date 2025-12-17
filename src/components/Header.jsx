@@ -439,7 +439,7 @@ const Header = () => {
 
           <button
             onClick={openConsultation}
-            className="hidden md:block bg-gradient-to-r from-blue-600 to-black text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
+            className="hidden md:block bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-center hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50 font-bold"
           >
             Get In Touch
           </button>
@@ -687,7 +687,7 @@ const Header = () => {
                   setIsMenuOpen(false);
                   openConsultation();
                 }}
-                className="bg-gradient-to-r from-blue-600 to-black text-white px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-full w-fit mt-4 hover:shadow-lg transition-all duration-300 text-center hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50 font-bold"
               >
                 Get In Touch
               </button>

@@ -49,7 +49,7 @@ const SoftwareProducts = () => {
                   href="https://www.routemaestro.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg"
+                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg hover:shadow-amber-500/50"
                 >
                   Explore RouteMaestro
                   <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
