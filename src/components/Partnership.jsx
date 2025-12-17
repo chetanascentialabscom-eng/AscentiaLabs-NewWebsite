@@ -95,7 +95,10 @@ const Partnership = () => {
     { name: "George & Oakes", url: "/partnerships/go.svg" },
     { name: "Pumpkins", url: "/partnerships/pumpkins.svg" },
     { name: "Read LDH Read", url: "/partnerships/read-ldh-read.svg" },
-    { name: "Kiddogram", url: "/partnerships/kiddogram.svg" }
+    { name: "Kiddogram", url: "/partnerships/kiddogram.svg" },
+    { name: "Godwit", url: "/partnerships/godwit.png" },
+    { name: "Jujhar Group", url: "/partnerships/jujhar_group.png" },
+    { name: "NDMC", url: "/partnerships/NDMC.png" }
   ];
 
   // Triple the logos for seamless infinite scroll

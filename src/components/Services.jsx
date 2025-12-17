@@ -1,4 +1,15 @@
 import { Link } from 'react-router-dom';
+import { 
+  Settings, 
+  Cpu, 
+  Brain, 
+  Package, 
+  Workflow, 
+  PenTool, 
+  Send, 
+  Smartphone, 
+  Building2 
+} from 'lucide-react';
 
 const Services = () => {
   // Service route mapping
@@ -12,6 +23,7 @@ const Services = () => {
       "Application Modernisation": "/application-modernisation",
       "Go-To-Market": "/go-to-market",
       "Ideation & Design Strategy": "/ideation-design",
+      "Startup Partnership": "/startup-technology-partnership",
     };
     return routeMap[title] || "/";
   };
@@ -20,77 +32,50 @@ const Services = () => {
     {
       title: "Software Engineering",
       description: "Custom software development",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0L19.2 12l-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
-        </svg>
-      )
+      icon: <Cpu className="w-10 h-10 text-white" />
     },
     {
       title: "Digital Transformation",
       description: "Business digitalization",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-        </svg>
-      )
+      icon: <Workflow className="w-10 h-10 text-white" />
     },
     {
       title: "AI ML Services",
       description: "Artificial intelligence solutions",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      ),
+      icon: <Brain className="w-10 h-10 text-white" />,
       // highlighted: true
     },
     {
       title: "Mobile Application",
       description: "iOS & Android development",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
-        </svg>
-      )
+      icon: <Smartphone className="w-10 h-10 text-white" />
     },
 
     {
       title: "Technology Consultation & MIS",
       description: "Strategic technology guidance",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-        </svg>
-      )
+      icon: <Settings className="w-10 h-10 text-white" />
     },
     {
       title: "Application Modernisation",
       description: "Legacy system upgrades",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-      )
+      icon: <Package className="w-10 h-10 text-white" />
     },
 
     {
       title: "Go-To-Market",
       description: "Product launch strategies",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6zm2.5-9H15V1h-2v1H9V1H7v1H4.5C3.67 2 3 2.67 3 3.5v15C3 19.33 3.67 20 4.5 20h15c.83 0 1.5-.67 1.5-1.5v-15C21 2.67 20.33 2 19.5 2z"/>
-        </svg>
-      )
+      icon: <Send className="w-10 h-10 text-white" />
     },
     {
       title: "Ideation & Design Strategy",
       description: "Creative design solutions",
-      icon: (
-        <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-      )
+      icon: <PenTool className="w-10 h-10 text-white" />
+    },
+    {
+      title: "Startup Partnership",
+      description: "Complete tech division support",
+      icon: <Building2 className="w-10 h-10 text-white" />
     },
     // {
     //   title: "Cloud Services",
@@ -125,12 +110,12 @@ const Services = () => {
         </div>
 
         {/* Services Grid with Staggered Animations */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto responsive-grid-md responsive-grid-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-6 max-w-5xl mx-auto responsive-grid-md responsive-grid-lg">
           {services.map((service, index) => (
             <Link
               key={index}
               to={getServiceRoute(service.title)}
-              className={`group relative p-3 sm:p-4 rounded-xl transition-all duration-500 hover:scale-110 cursor-pointer transform hover:-translate-y-2 mobile-no-hover block ${
+              className={`group relative p-4 sm:p-6 rounded-xl transition-all duration-500 hover:scale-105 cursor-pointer transform hover:-translate-y-2 mobile-no-hover block min-h-[160px] sm:min-h-[180px] flex flex-col justify-between ${
                 service.highlighted 
                   ? 'bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-400 shadow-lg shadow-blue-500/25' 
                   : 'bg-gray-800/80 hover:bg-gray-700/90 border border-gray-600/50 hover:border-blue-500/50'
@@ -147,17 +132,20 @@ const Services = () => {
                 </div>
               </div>
 
-              {/* Service Title */}
-              <h3 className="text-center text-xs sm:text-sm font-semibold leading-tight px-1 mb-1">
-                {service.title}
-              </h3>
-              
-              {/* Service Description */}
-              {service.description && (
-                <p className="text-center text-xs text-gray-300 leading-tight px-1">
-                  {service.description}
-                </p>
-              )}
+              {/* Content Container */}
+              <div className="flex-1 flex flex-col justify-center">
+                {/* Service Title */}
+                <h3 className="text-center text-sm sm:text-base font-semibold leading-tight px-2 mb-2">
+                  {service.title}
+                </h3>
+                
+                {/* Service Description */}
+                {service.description && (
+                  <p className="text-center text-xs sm:text-sm text-gray-300 leading-relaxed px-2">
+                    {service.description}
+                  </p>
+                )}
+              </div>
 
               {/* Enhanced Hover Effect Overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-xl"></div>

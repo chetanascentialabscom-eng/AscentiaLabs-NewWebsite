@@ -24,13 +24,13 @@ import {
   ShoppingCart,
   BarChart3,
   Brain,
-  Lightbulb,
+  Building2,
   Package,
   Send,
   PenTool,
   Workflow,
   TrendingUp,
-  Cpu
+  Cpu,
 } from 'lucide-react';
 
 const Header = () => {
@@ -218,6 +218,13 @@ const Header = () => {
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Mobile Application</div>
                         <div className="text-xs text-gray-500">iOS & Android development</div>
+                      </div>
+                    </Link>
+                    <Link to="/startup-technology-partnership" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                      <Building2 className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm whitespace-nowrap">Startup Partnership</div>
+                        <div className="text-xs text-gray-500">Complete tech division support</div>
                       </div>
                     </Link>
                   </div>
@@ -536,6 +543,10 @@ const Header = () => {
                     <Link to="/mobile-application" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Smartphone className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Mobile Application</span>
+                    </Link>
+                    <Link to="/startup-technology-partnership" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                      <Building2 className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Startup Partnership</span>
                     </Link>
                   </div>
                 )}

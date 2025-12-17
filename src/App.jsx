@@ -29,6 +29,7 @@ import {
   IdeationDesign,
   MobileApplication,
   GoToMarket,
+  Startup,
   BlogsPage, 
   TravelAppDevelopment, 
   TourismReport2025, 
@@ -83,6 +84,7 @@ function App() {
           <Route path="/ideation-design" element={<IdeationDesign/> } />
           <Route path="/mobile-application" element={<MobileApplication/> } />
           <Route path="/go-to-market" element={<GoToMarket/> } />
+          <Route path="/startup-technology-partnership" element={<Startup/> } />
           
           {/* Blog Routes */}
           <Route path="/blog" element={<BlogsPage />} />
