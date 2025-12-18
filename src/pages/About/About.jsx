@@ -162,7 +162,7 @@ const About = () => {
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight">
               Building
-              <span className="block bg-gradient-to-r from-blue-600 to-gray-400 bg-clip-text text-transparent ">
+              <span className="block bg-gradient-to-r from-blue-600 to-gray-400 bg-clip-text text-transparent">
                 Tomorrow
               </span>
             </h1>
@@ -214,9 +214,9 @@ const About = () => {
       </section> */}
 
        {/* Who We Are Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/10 to-black/20"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/10"></div>
           <div className="absolute top-10 left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-10 right-10 w-60 h-60 bg-gray-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
@@ -402,8 +402,11 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-600 via-black to-blue-600 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
+          <div className="absolute top-10 right-10 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+        </div>
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div 
             className={`flex flex-col md:flex-row items-center justify-between transform transition-all duration-1000 ${
@@ -421,8 +424,8 @@ const About = () => {
               <div>
                 <div className="text-blue-200 text-xs font-semibold mb-1 tracking-wider uppercase">Let's Get in Touch</div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Ready to Transform<br />
-                  Your Business?
+                  Ready to Transform
+                  <span className="block">Your Business?</span>
                 </h2>
               </div>
             </div>
@@ -442,7 +445,7 @@ const About = () => {
     
 
       {/* Interactive Map Section */}
-      <section className="py-12 bg-black">
+      <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <LeafletMap />
         </div>
@@ -468,8 +471,7 @@ const About = () => {
               <span className="bg-gradient-to-r from-blue-400 via-gray-400 to-blue-400 bg-clip-text text-transparent">
                 Bridging Ideas
               </span>
-              <br />
-              <span className="text-white">With Technology</span>
+              <span className="block text-white">With Technology</span>
             </h2>
             <div className="space-y-3 max-w-4xl mx-auto">
               <p className="text-lg md:text-xl font-semibold text-gray-300">
