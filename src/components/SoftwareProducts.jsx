@@ -1,11 +1,11 @@
 const SoftwareProducts = () => {
   return (
     <section className="py-20 bg-black relative overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
             At Ascentia Labs: We Develop World-Class Solutions
             <br className="hidden sm:block" />
             That Redefine Industry Standards & Add Value!
@@ -13,29 +13,29 @@ const SoftwareProducts = () => {
         </div>
 
         {/* RouteMaestro Showcase */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
-            {/* Left Content - RouteMaestro Image */}
-            <div className="order-1 lg:order-1 flex justify-center">
-              <div className="bg-white rounded-3xl p-8 shadow-2xl max-w-lg w-full transform hover:scale-105 transition-transform duration-300">
+            {/* Left Content - RouteMaestro Hero Image */}
+            <div className="order-1 lg:order-1 flex justify-center px-2">
+              <div className="transform hover:scale-105 transition-transform duration-300 max-w-full">
                 <img
                   src="/routemaestro.png"
-                  alt="RouteMaestro"
-                  className="w-full h-auto object-contain"
+                  alt="RouteMaestro Hero Section"
+                  className="w-full h-auto object-contain rounded-2xl shadow-2xl max-w-lg"
                 />
               </div>
             </div>
 
             {/* Right Content - RouteMaestro Info */}
-            <div className="order-1 lg:order-2 text-center lg:text-left space-y-8">
+            <div className="order-1 lg:order-2 text-center lg:text-left space-y-8 px-2">
               
               {/* Title */}
               <div>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   RouteMaestro
                 </h3>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-300 leading-relaxed">
                   AI Powered Travel Planning And Booking Software - Streamline your travel business with intelligent 
                   booking management and personalized customer experiences.
                 </p>
@@ -49,7 +49,7 @@ const SoftwareProducts = () => {
                   href="https://www.routemaestro.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-lg hover:shadow-amber-500/50"
+                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-base hover:shadow-amber-500/50"
                 >
                   Explore RouteMaestro
                   <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,8 +70,8 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-lg mb-3">AI-Powered Intelligence</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">Advanced machine learning algorithms create personalized travel experiences.</p>
+                <h4 className="text-white font-bold text-base mb-3">AI-Powered Intelligence</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Advanced machine learning algorithms create personalized travel experiences.</p>
               </div>
 
               <div className="text-center group">
@@ -81,8 +81,8 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-lg mb-3">Smart Route Planning</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">Intelligent itinerary generation considering preferences and budget.</p>
+                <h4 className="text-white font-bold text-base mb-3">Smart Route Planning</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Intelligent itinerary generation considering preferences and budget.</p>
               </div>
 
               <div className="text-center group">
@@ -91,8 +91,8 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-lg mb-3">Lightning Fast Booking</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">Streamlined booking process with real-time inventory management.</p>
+                <h4 className="text-white font-bold text-base mb-3">Lightning Fast Booking</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Streamlined booking process with real-time inventory management.</p>
               </div>
 
               <div className="text-center group">
@@ -101,8 +101,8 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-lg mb-3">Real-Time Analytics</h4>
-                <p className="text-gray-400 text-sm leading-relaxed">Monitor booking trends and customer behavior with detailed insights.</p>
+                <h4 className="text-white font-bold text-base mb-3">Real-Time Analytics</h4>
+                <p className="text-gray-400 text-xs leading-relaxed">Monitor booking trends and customer behavior with detailed insights.</p>
               </div>
             </div>
           </div>
