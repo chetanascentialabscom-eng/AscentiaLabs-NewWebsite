@@ -1,4 +1,4 @@
-import { Phone } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../contexts/ConsultationContext';
 
@@ -78,23 +78,32 @@ const Footer = () => {
             <div className="lg:col-span-1">
               <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">LOCATIONS</h3>
               <div className="space-y-3">
-                <div>
-                  <h4 className="font-bold text-white mb-1 text-sm">Ludhiana</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">
-                    SCO. 56-57, SBS Nagar, Opp. Keys Hotel, Ludhiana, Punjab
-                  </p>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-white mb-1 text-sm">Ludhiana</h4>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                      SCO. 56-57, SBS Nagar, Opp. Keys Hotel, Ludhiana, Punjab
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white mb-1 text-sm">SAS Nagar</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">
-                    3rd Floor, Plot No.1273, Sector 82, JLPL Industrial Area, SAS Nagar, Punjab
-                  </p>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-white mb-1 text-sm">SAS Nagar</h4>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                      3rd Floor, Plot No.1273, Sector 82, JLPL Industrial Area, SAS Nagar, Punjab
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white mb-1 text-sm">New Delhi</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">
-                    106, Centrum Mall, MG Road, Sultanpur, New Delhi
-                  </p>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-white mb-1 text-sm">New Delhi</h4>
+                    <p className="text-gray-400 text-xs leading-relaxed">
+                      106, Centrum Mall, MG Road, Sultanpur, New Delhi
+                    </p>
+                  </div>
                 </div>
                
               </div>
