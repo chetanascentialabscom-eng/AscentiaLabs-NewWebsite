@@ -155,7 +155,7 @@ const LeafletMap = () => {
           }
           .custom-popup .leaflet-popup-content {
             margin: 0;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           }
           .custom-marker {
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));

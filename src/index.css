@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Global font family - Calibri */
+* {
+  font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  font-family: 'Calibri', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Reset and ensure proper sticky positioning */
 * {
   box-sizing: border-box;
