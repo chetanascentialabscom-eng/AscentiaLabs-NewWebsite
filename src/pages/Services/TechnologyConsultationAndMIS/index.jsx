@@ -228,7 +228,7 @@ const TechnologyConsultationAndMIS = () => {
               <div className="mb-8 sm:mb-12">
                 <button 
                   onClick={openConsultation}
-                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 hover:shadow-amber-500/50"
+                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 hover:shadow-amber-500/50"
                 >
                   Get Consultation
                   <ArrowRight className="w-5 h-5" />
@@ -250,7 +250,7 @@ const TechnologyConsultationAndMIS = () => {
             <div className="mt-8 lg:mt-0">
               {/* Central Feature Badge - At Top */}
               <div className="flex justify-center mb-6 animate-fadeIn">
-                <div className="bg-white/15 backdrop-blur-lg rounded-full border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-2.5">
                     <Cpu className="w-7 h-7 text-white animate-pulse" />
                     <h3 className="text-sm sm:text-base font-bold text-white">Technology Consulting Excellence</h3>
@@ -530,7 +530,7 @@ const TechnologyConsultationAndMIS = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
                     >
                       Get Your Free Consultation
                     </button>
@@ -560,7 +560,7 @@ const TechnologyConsultationAndMIS = () => {
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
-                className={`group relative px-5 py-3 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
+                className={`group relative px-5 py-3 rounded-xl font-semibold text-sm transition-all duration-300 transform hover:scale-105 ${
                   activeTab === service.id
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'

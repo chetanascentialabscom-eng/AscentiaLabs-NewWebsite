@@ -265,7 +265,7 @@ const TravelTourismPage = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
               >
                 Get Free Consultation
               </button>
@@ -335,14 +335,14 @@ const TravelTourismPage = () => {
                     </div>
                     
                     <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 md:mb-8 max-w-xs sm:max-w-sm md:max-w-md mx-auto leading-relaxed px-2">
-                      AI Powered Travel Planning And Booking Software - Streamline your travel business with intelligent booking management and personalized customer experiences.
+                      An AI Powered Travel Planning & Booking Platform - Equip your B2B / B2C travel business with AI Personalised Dynamic Packaging. Generate & book AI personalised, multi city real-time packages integrated with your own inventory within 2 Minutes! 
                     </p>
 
                     <a 
                       href="https://www.routemaestro.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group-hover:animate-pulse text-sm sm:text-base hover:shadow-amber-500/50"
+                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group-hover:animate-pulse text-sm sm:text-base hover:shadow-amber-500/50"
                     >
                       Explore RouteMaestro
                     </a>
@@ -647,7 +647,7 @@ const TravelTourismPage = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-full font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
                     >
                       Start Your Project Today
                     </button>

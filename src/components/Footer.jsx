@@ -60,10 +60,10 @@ const Footer = () => {
             
             <button 
               onClick={openConsultation}
-              className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+              className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
             >
               <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+              <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
             </button>
           </div>
         </div>

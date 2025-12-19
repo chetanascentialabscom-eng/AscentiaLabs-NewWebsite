@@ -167,7 +167,7 @@ const CaseStudiesPage = () => {
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="w-48 max-w-xs pl-9 pr-3 py-2.5 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 flex items-center justify-between"
+                  className="w-48 max-w-xs pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 flex items-center justify-between"
                 >
                   <span className="truncate flex-1 text-left">{selectedCategory}</span>
                   <svg 

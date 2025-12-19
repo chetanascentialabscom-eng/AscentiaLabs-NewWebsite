@@ -111,7 +111,7 @@ const Partnership = () => {
         <div className="text-center mb-8 sm:mb-12">
          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-             Our Impactful Partnerships
+             Some Of Our Enterprise Clients
             </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
