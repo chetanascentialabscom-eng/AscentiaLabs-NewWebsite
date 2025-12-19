@@ -183,6 +183,51 @@ const Hero = () => {
               </Link>
             </motion.div>
 
+            {/* Statistics Numbers - Left Side */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="hidden lg:block"
+            >
+              <div className="grid grid-cols-4 gap-6 max-w-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">
+                    7+
+                  </div>
+                  <p className="text-blue-200/70 text-xs font-medium">
+                    Business Years
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">
+                    100+
+                  </div>
+                  <p className="text-blue-200/70 text-xs font-medium">
+                    Projects Delivered
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">
+                    10+
+                  </div>
+                  <p className="text-blue-200/70 text-xs font-medium">
+                    Industries Catered
+                  </p>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white mb-1">
+                    4+
+                  </div>
+                  <p className="text-blue-200/70 text-xs font-medium">
+                    Countries
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+     
+
            
           </div>
 
@@ -379,6 +424,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
+       
 
       </div>
     </section>

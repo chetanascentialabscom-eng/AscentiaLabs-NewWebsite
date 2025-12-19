@@ -150,12 +150,7 @@ const Startup = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO 
-        title="Startup Technology Partnership | Complete Tech Division Management | Ascentia Labs"
-        description="Partner with Ascentia Labs for complete startup technology support. From MVP development to scaling solutions, we manage your entire tech division for rapid growth and success."
-        keywords="startup technology, MVP development, technology partnership, startup CTO, tech team building, startup scaling"
-        canonical="/startup-technology-partnership"
-      />
+      <SEO {...seoData.startupTechnologyPartnership} />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
         {/* Animated Background Elements */}

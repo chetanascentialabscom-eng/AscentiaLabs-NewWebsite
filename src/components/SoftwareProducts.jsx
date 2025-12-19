@@ -16,14 +16,25 @@ const SoftwareProducts = () => {
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             
-            {/* Left Content - RouteMaestro Hero Image */}
+            {/* Left Content - RouteMaestro Video */}
             <div className="order-1 lg:order-1 flex justify-center px-2">
-              <div className="transform hover:scale-105 transition-transform duration-300 max-w-full">
-                <img
-                  src="/routemaestro.png"
-                  alt="RouteMaestro Hero Section"
-                  className="w-full h-auto object-contain rounded-2xl shadow-2xl max-w-lg"
-                />
+              <div className="transform hover:scale-105 transition-transform duration-300 w-full max-w-2xl">
+                <div className="relative w-full aspect-video">
+                  <video
+                    src="/routemastero.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls={false}
+                    disablePictureInPicture
+                    controlsList="nodownload nofullscreen noremoteplayback"
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-2xl pointer-events-none"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
 

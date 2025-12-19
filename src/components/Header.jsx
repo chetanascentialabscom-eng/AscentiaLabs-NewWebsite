@@ -90,13 +90,13 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-blue-600" />
-              <a href="tel:+919356385744" className="text-gray-700 hover:text-blue-600 font-semibold">
+              <a href="tel:+919356385744" className="text-gray-500 hover:text-blue-600 font-medium">
                 +91 9356385744
               </a>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4 text-blue-600" />
-              <a href="mailto:support@ascentialabs.com" className="text-gray-700 hover:text-blue-600 font-semibold">
+              <a href="mailto:support@ascentialabs.com" className="text-gray-500 hover:text-blue-600 font-medium">
                 support@ascentialabs.com
               </a>
             </div>
