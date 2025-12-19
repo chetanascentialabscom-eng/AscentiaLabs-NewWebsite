@@ -12,6 +12,19 @@ const SEO = ({
     // Update document title
     document.title = title;
     
+    // DEPLOYMENT PHASE: Add no-index meta tags
+    // Update robots meta tag to prevent indexing
+    const robotsMeta = document.querySelector('meta[name="robots"]');
+    if (robotsMeta) {
+      robotsMeta.setAttribute('content', 'noindex, nofollow');
+    }
+    
+    // Update googlebot meta tag to prevent indexing
+    const googlebotMeta = document.querySelector('meta[name="googlebot"]');
+    if (googlebotMeta) {
+      googlebotMeta.setAttribute('content', 'noindex, nofollow');
+    }
+    
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
