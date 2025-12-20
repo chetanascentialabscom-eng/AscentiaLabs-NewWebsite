@@ -173,63 +173,71 @@ const ContactPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+    <div className="min-h-screen">
       <SEO {...seoData.contact} />
-      {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
+      {/* Hero Section with Enhanced Gradient matching website theme */}
+      <section className="relative pt-32 md:pt-40 pb-20 lg:pb-24 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50/30 to-white">
+        {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 right-20 w-40 h-40 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-40 left-20 w-32 h-32 bg-blue-500/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-100/20 rounded-full blur-3xl"></div>
         </div>
         
+        {/* Gradient Overlay for Smooth Transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent via-white/30 to-white"></div>
+        
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-          <div className="text-center max-w-4xl mx-auto mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-blue-600">
-              Get In <span className="text-gray-800">Touch</span> With <span className="text-gray-700">Us</span>
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-blue-600">Get In</span> <span className="text-gray-800">Touch</span> <span className="text-gray-700">With Us</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Ready to transform your business with innovative technology solutions? 
               Let's discuss your project and bring your vision to life.
             </p>
           </div>
 
-          {/* Contact Info Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-blue-600" />
+          {/* Enhanced Contact Info Cards with your theme colors */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center border border-gray-100 group hover:border-blue-200">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-2">Ready to talk? Give us a call</p>
-              <a href="tel:+919356385744" className="text-blue-600 font-semibold hover:text-blue-700">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Call Us</h3>
+              <p className="text-gray-600 mb-3">Ready to talk? Give us a call</p>
+              <a href="tel:+919356385744" className="text-blue-600 font-semibold hover:text-blue-700 text-lg transition-colors">
                 +91 9356385744
               </a>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-blue-600" />
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center border border-gray-100 group hover:border-blue-200">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-2">Send us an email anytime</p>
-              <a href="mailto:support@ascentialabs.com" className="text-blue-600 font-semibold hover:text-blue-700">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Email Us</h3>
+              <p className="text-gray-600 mb-3">Send us an email anytime</p>
+              <a href="mailto:support@ascentialabs.com" className="text-blue-600 font-semibold hover:text-blue-700 text-lg transition-colors">
                 support@ascentialabs.com
               </a>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 text-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6 text-blue-600" />
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center border border-gray-100 group hover:border-blue-200">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">Visit Us</h3>
-              <p className="text-gray-600 mb-2">Come say hello at our office</p>
-              <p className="text-blue-600 font-semibold">
+              <h3 className="text-xl font-semibold text-gray-800 mb-3">Visit Us</h3>
+              <p className="text-gray-600 mb-3">Come say hello at our office</p>
+              <p className="text-blue-600 font-semibold text-lg">
                 India & Australia
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Smooth Transition Section */}
+      <div className="h-16 bg-gradient-to-b from-white via-gray-50/50 to-black"></div>
 
        {/* Interactive Map Section */}
       <section className="py-12 bg-black">
@@ -422,10 +430,10 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
                       isSubmitting
-                        ? 'bg-gray-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-black hover:shadow-lg'
+                        ? 'bg-gray-400 cursor-not-allowed text-white'
+                        : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:shadow-lg hover:from-amber-500 hover:to-orange-600'
                     }`}
                   >
                     {isSubmitting ? (
