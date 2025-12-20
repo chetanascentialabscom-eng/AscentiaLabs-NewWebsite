@@ -22,7 +22,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen lg:h-screen pt-16 pb-8 lg:pt-10">
+    <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden flex items-center min-h-screen lg:h-screen pt-0 pb-8 lg:pt-10">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       

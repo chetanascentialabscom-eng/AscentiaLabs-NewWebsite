@@ -65,6 +65,21 @@ const SoftwareEngineering = () => {
 
   const services = [
     {
+      id: 'custom',
+      name: 'Custom Development',
+      icon: <Settings className="w-5 h-5" />,
+      title: 'Tailored Software Solutions',
+      description: 'Our custom software development experts create bespoke applications designed specifically for your business needs, facilitating unique workflows, optimizing operational efficiency, and ensuring perfect alignment with your business objectives, to drive growth and competitive advantage.',
+      techLogos: [
+        '/techLogo/React.png',
+        '/techLogo/node js.png',
+        '/techLogo/python.png',
+        '/techLogo/Java.png',
+        '/techLogo/aws.png',
+        '/techLogo/typescript.png'
+      ]
+    },
+    {
       id: 'web',
       name: 'Web Development',
       icon: <Globe className="w-5 h-5" />,

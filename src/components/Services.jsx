@@ -105,7 +105,7 @@ const Services = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight max-w-4xl mx-auto">
             <span className="inline-block">At Ascentia Labs: We Develop World-Class Solutions</span>
             <br className="hidden md:block" />
-            <span className="block mt-1 sm:mt-2">That Redefine Industry Standards & Add Value!</span>
+            <span className="block mt-1 sm:mt-2">That Redefine Industry Standards </span>
           </h2>
         </div>
 

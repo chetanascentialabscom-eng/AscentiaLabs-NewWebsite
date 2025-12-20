@@ -781,6 +781,6 @@ html {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 110px; /* Mobile header (~70px) + Ticker (~40px) */
+    padding-top: 90px; /* No ticker, so no extra padding needed */
   }
 }

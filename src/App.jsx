@@ -55,7 +55,7 @@ function App() {
         <ScrollToTop />
         <div className="min-h-screen">
           <Header />
-          <div className="fixed top-[70px] md:top-[110px] left-0 right-0 z-[9998] w-full">
+          <div className="fixed top-[60px] md:top-[110px] left-0 right-0 z-[9998] w-full">
             <NewsTicker />
           </div>
           <Routes>

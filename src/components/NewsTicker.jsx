@@ -23,7 +23,7 @@ const NewsTicker = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-black py-1 overflow-hidden w-full shadow-lg flex items-center relative z-10 mt-1">
+    <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-black py-2 overflow-hidden w-full shadow-lg flex items-center relative z-10 mt-1">
       <div ref={tickerRef} className="ticker-wrapper flex items-center h-full w-full">
         <div className="ticker-content flex items-center whitespace-nowrap animate-scroll h-full">
           {newsItems.map((item, index) => (
