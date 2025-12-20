@@ -162,7 +162,7 @@ const Technologies = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent block sm:inline">
               Advanced Technology Stack
             </span>

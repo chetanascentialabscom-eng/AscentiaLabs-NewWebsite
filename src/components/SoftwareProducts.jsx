@@ -87,7 +87,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">AI Powered Dynamic Packages</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Advanced machine learning algorithms create personalised real time packages within 2 minutes!</p>
+                <p className="text-gray-400 text-base leading-relaxed">Advanced machine learning algorithms create personalised real time packages within 2 minutes!</p>
               </div>
 
               <div className="text-center group">
@@ -98,7 +98,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Smart Travel Route Planning</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Intelligent multicity route generator for you to choose most convenient & affordable travel routes</p>
+                <p className="text-gray-400 text-base leading-relaxed">Intelligent multicity route generator for you to choose most convenient & affordable travel routes</p>
               </div>
 
               <div className="text-center group">
@@ -108,7 +108,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Instant Integrated Booking</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Generate & book travel packages with Hotels, Flights, Experiences, Transfers & more, all at once! </p>
+                <p className="text-gray-400 text-base leading-relaxed">Generate & book travel packages with Hotels, Flights, Experiences, Transfers & more, all at once! </p>
               </div>
 
               <div className="text-center group">
@@ -118,7 +118,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Smart Itinerary Builder</h4>
-                <p className="text-gray-400 text-xs leading-relaxed">Builds your package minute by minute on a daily basis throughout your trip duration, and can be edited end to end.</p>
+                <p className="text-gray-400 text-base leading-relaxed">Builds your package minute by minute on a daily basis throughout your trip duration, and can be edited end to end.</p>
               </div>
             </div>
           </div>

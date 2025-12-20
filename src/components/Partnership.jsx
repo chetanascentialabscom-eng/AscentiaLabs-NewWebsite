@@ -109,7 +109,7 @@ const Partnership = () => {
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+         <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
              Some Of Our Enterprise Clients
             </span>
