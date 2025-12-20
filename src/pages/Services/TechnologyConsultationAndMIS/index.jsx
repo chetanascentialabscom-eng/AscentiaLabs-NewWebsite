@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import SEO from '../../../components/SEO';
+import ReadMore from '../../../components/ReadMore';
 import { seoData } from '../../../utils/seoData';
 import { 
   Lightbulb, 
@@ -387,9 +388,11 @@ const TechnologyConsultationAndMIS = () => {
                     </h3>
                   </div>
                   
-                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
-                    {item.description}
-                  </p>
+                  <div className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
+                    <ReadMore maxChars={80} mobileOnly={true}>
+                      {item.description}
+                    </ReadMore>
+                  </div>
 
                   {/* Decorative element */}
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
@@ -582,9 +585,11 @@ const TechnologyConsultationAndMIS = () => {
                   <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
                     {service.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
-                    {service.description}
-                  </p>
+                  <div className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
+                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
+                      {service.description}
+                    </ReadMore>
+                  </div>
                  
                 </div>
                 <div className="order-1 lg:order-2">

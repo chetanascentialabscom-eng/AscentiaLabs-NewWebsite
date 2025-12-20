@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import SEO from '../../../components/SEO';
+import ReadMore from '../../../components/ReadMore';
 import { seoData } from '../../../utils/seoData';
 import { 
   RefreshCw, 
@@ -327,7 +328,9 @@ const ApplicationModernisation = () => {
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
-                    {item.description}
+                    <ReadMore maxChars={80} mobileOnly={true}>
+                      {item.description}
+                    </ReadMore>
                   </p>
 
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
@@ -506,7 +509,9 @@ const ApplicationModernisation = () => {
                     {service.title}
                   </h3>
                   <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
-                    {service.description}
+                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
+                      {service.description}
+                    </ReadMore>
                   </p>
                 </div>
                 <div className="order-1 lg:order-2">

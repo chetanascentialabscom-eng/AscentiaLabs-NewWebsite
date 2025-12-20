@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../../../contexts/ConsultationContext';
 import SEO from '../../../components/SEO';
+import ReadMore from '../../../components/ReadMore';
 import { seoData } from '../../../utils/seoData';
 import { 
   Code, 
@@ -357,7 +358,9 @@ const SoftwareEngineering = () => {
                   </div>
                   
                   <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
-                    {item.description}
+                    <ReadMore maxLines={3} mobileOnly={true}>
+                      {item.description}
+                    </ReadMore>
                   </p>
 
                   {/* Decorative element */}
@@ -552,7 +555,9 @@ const SoftwareEngineering = () => {
                     {service.title}
                   </h3>
                   <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
-                    {service.description}
+                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
+                      {service.description}
+                    </ReadMore>
                   </p>
                  
                 </div>
