@@ -29,32 +29,7 @@ if (typeof document !== 'undefined') {
 }
 
 const About = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState({});
-  
-  const images = [
-    '/aboutPics/Image 1.jpg',
-    '/aboutPics/Image 2.jpg', 
-    '/aboutPics/20241230_123418 1.png',
-    '/aboutPics/different.png',
-    '/aboutPics/WhatsApp Image 2025-01-16 at 11.33.47 AM (1) 1.png',
-    '/aboutPics/WhatsApp Image 2025-01-16 at 11.33.55 AM (1) 1.png',
-    '/aboutPics/WhatsApp Image 2025-01-16 at 11.33.56 AM 1.png'
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Intersection Observer for animations
   useEffect(() => {
@@ -80,19 +55,18 @@ const About = () => {
       <SEO {...seoData.about} />
 
       {/* Hero Section */}
-      <section className="h-[90vh] md:h-screen bg-gradient-to-br from-blue-600 via-black to-gray-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-black/20"></div>
+      <section className="h-[85vh] md:h-screen bg-gradient-to-br from-blue-500 via-black to-blue-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-black/20"></div>
         
         {/* Animated Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gray-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-60 h-60 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-black/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
 
         {/* Floating Icons */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Tech Icons - Responsive positioning */}
           <div className="absolute top-[15%] left-[10%] md:top-1/4 md:left-1/4 animate-float">
             <svg className="w-6 h-6 md:w-8 md:h-8 text-white/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -100,19 +74,19 @@ const About = () => {
           </div>
           
           <div className="absolute top-[20%] right-[15%] md:top-1/3 md:right-1/4 animate-float delay-1000">
-            <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-400/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-300/70" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
 
           <div className="absolute top-[35%] left-[5%] md:bottom-1/3 md:left-1/6 animate-float delay-2000">
-            <svg className="w-7 h-7 md:w-10 md:h-10 text-gray-300/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-7 h-7 md:w-10 md:h-10 text-white/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
 
           <div className="absolute bottom-[25%] right-[8%] md:top-2/3 md:right-1/6 animate-float delay-1500">
-            <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-300/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 md:w-5 md:h-5 text-blue-200/60" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
             </svg>
           </div>
@@ -122,120 +96,71 @@ const About = () => {
               <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
             </svg>
           </div>
-
-          {/* Additional mobile-specific icons to fill empty spaces */}
-          <div className="absolute top-[45%] right-[20%] md:hidden animate-float delay-700">
-            <svg className="w-4 h-4 text-blue-200/50" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4"/>
-            </svg>
-          </div>
-
-          <div className="absolute bottom-[35%] left-[12%] md:hidden animate-float delay-1200">
-            <svg className="w-5 h-5 text-gray-400/40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-            </svg>
-          </div>
         </div>
 
-        <div className="container mx-auto px-4 max-w-7xl relative z-10 flex items-center justify-center h-full pt-16 md:pt-0">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10 h-full flex items-center justify-center pt-8 md:pt-0">
           <div 
-            className={`text-center transform transition-all duration-1000 w-full max-w-4xl ${
+            className={`text-center transform transition-all duration-1000 w-full max-w-4xl -mt-8 md:mt-0 ${
               isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
             id="hero"
             data-animate
           >
-            {/* Main Icon */}
+            {/* Main Icon - Yellow like CTA */}
             <div className="mb-4 md:mb-6 flex justify-center">
-              <div className="relative">
-                <svg className="w-12 h-12 md:w-16 md:h-16 text-blue-400 animate-pulse" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+              <div className="relative bg-yellow-400 rounded-full p-3 md:p-4 shadow-lg">
+                <svg className="w-8 h-8 md:w-12 md:h-12 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z"/>
                 </svg>
               </div>
             </div>
 
-            <div className="inline-block mb-6">
-              <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-base font-semibold tracking-wider uppercase">
+            <div className="inline-block mb-3 md:mb-4">
+              <span className="bg-gradient-to-r from-blue-300 to-white bg-clip-text text-transparent text-sm md:text-base font-semibold tracking-wider uppercase">
                 Driving Excellence
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-12 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-8 leading-tight">
               Building
-              <span className="block bg-gradient-to-r from-blue-600 to-gray-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Tomorrow
               </span>
             </h1>
 
             {/* Decorative Elements */}
-            <div className="flex justify-center items-center space-x-8 mt-12">
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
-              <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+            <div className="flex justify-center items-center space-x-4 md:space-x-8 mt-4 md:mt-8">
+              <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-blue-300 rounded-full animate-pulse"></div>
+              <div className="w-12 md:w-16 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
             </div>
-
-          
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      {/* <section className="py-12 bg-gradient-to-br from-gray-50 to-white relative">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div 
-            className={`grid grid-cols-1 md:grid-cols-4 gap-6 transform transition-all duration-1000 delay-300 ${
-              isVisible.stats ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}
-            id="stats"
-            data-animate
-          >
-            {[
-              { number: '35+', label: 'Business Years', color: 'from-blue-500 to-blue-600' },
-              { number: '240+', label: 'Clients', color: 'from-blue-600 to-black' },
-              { number: '2000+', label: 'Projects', color: 'from-gray-600 to-gray-800' },
-              { number: '130+', label: 'Team Members', color: 'from-blue-500 to-gray-700' }
-            ].map((stat, index) => (
-              <div 
-                key={index}
-                className={`text-center group hover:scale-105 transition-all duration-300 delay-${index * 100}`}
-              >
-                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                  <div className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    {stat.number}
-                  </div>
-                  <div className="text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-       {/* Who We Are Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+      {/* Who We Are Section */}
+      <section className="py-16 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/10"></div>
-          <div className="absolute top-10 left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-10 w-60 h-60 bg-gray-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500/5 to-black/10"></div>
+          <div className="absolute top-10 left-10 w-40 h-40 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-60 h-60 bg-black/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-4xl mx-auto text-center">
             <div 
               className={`transform transition-all duration-1000 delay-500 ${
-                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+                isVisible.whoWeAre ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
               }`}
               id="whoWeAre"
               data-animate
             >
               <div className="inline-block mb-4">
-                <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+                <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
                   Our Story
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
-                <span className="bg-gradient-to-r from-blue-600 to-gray-200 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                   Who We Are
                 </span>
               </h2>
@@ -246,75 +171,16 @@ const About = () => {
                 growth and success.
               </p>
             </div>
-            
-            {/* Enhanced Image Slider */}
-            <div 
-              className={`relative group transform transition-all duration-1000 delay-700 ${
-                isVisible.whoWeAre ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
-              }`}
-            >
-              <div className="relative">
-                {/* Background decoration */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-gray-400 rounded-[3rem] opacity-30 blur-xl"></div>
-                
-                {/* Main slider container */}
-                <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-[2rem] p-1 shadow-2xl max-w-sm mx-auto border border-gray-600/50">
-                  <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[1.5rem]">
-                    <div 
-                      className="flex transition-transform duration-500 ease-in-out h-full"
-                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                    >
-                      {images.map((image, index) => (
-                        <div key={index} className="w-full h-full flex-shrink-0 relative">
-                          <img
-                            src={image}
-                            alt={`Office environment ${index + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Navigation arrows on image */}
-                  <button 
-                    onClick={prevSlide}
-                    className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600/90 to-black/90 hover:from-blue-500 hover:to-gray-800 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <polyline points="15,18 9,12 15,6"/>
-                    </svg>
-                  </button>
-                  <button 
-                    onClick={nextSlide}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-600/90 to-black/90 hover:from-blue-500 hover:to-gray-800 text-white p-2 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg backdrop-blur-sm hover:scale-110"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <polyline points="9,18 15,12 9,6"/>
-                    </svg>
-                  </button>
-                </div>
-                
-                {/* Enhanced Image counter */}
-                <div className="absolute bottom-3 right-3 bg-gradient-to-r from-blue-600 to-black text-white px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm shadow-lg">
-                  {currentSlide + 1} / {images.length}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-    
-
       {/* Core Values Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+      <section className="py-12 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-gray-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-black/10 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -326,13 +192,12 @@ const About = () => {
             data-animate
           >
             <div className="inline-block mb-3">
-              <span className="bg-gradient-to-r from-blue-400 to-gray-400 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+              <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
                 Our Foundation
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Our Core Values
-             
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
               We build trust through excellence, drive innovation through collaboration, and deliver results that matter.
@@ -349,7 +214,7 @@ const About = () => {
                 ),
                 title: 'Our Mission',
                 description: 'Empowering businesses through innovative technology solutions that drive growth, efficiency, and competitive advantage.',
-                gradient: 'from-blue-500 to-blue-600'
+                gradient: 'from-blue-400 to-blue-600'
               },
               {
                 icon: (
@@ -359,7 +224,7 @@ const About = () => {
                 ),
                 title: 'Our Vision',
                 description: 'To be the global leader in transforming business challenges into breakthrough technology solutions that shape the future.',
-                gradient: 'from-blue-600 to-black'
+                gradient: 'from-blue-500 to-black'
               },
               {
                 icon: (
@@ -369,7 +234,7 @@ const About = () => {
                 ),
                 title: 'Our Values',
                 description: 'Excellence, integrity, innovation, and client success. These values guide every decision we make and every solution we deliver.',
-                gradient: 'from-gray-600 to-gray-800'
+                gradient: 'from-black to-gray-800'
               }
             ].map((value, index) => (
               <div 
@@ -401,11 +266,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+      {/* CTA Section with Yellow Button */}
+      <section className="py-12 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
-          <div className="absolute top-10 right-10 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500/5 to-black/5"></div>
+          <div className="absolute top-10 right-10 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div 
@@ -431,7 +296,7 @@ const About = () => {
             </div>
             <Link 
               to="/contact-us" 
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
+              className="bg-yellow-400 text-black hover:bg-yellow-300 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
             >
               GET IN TOUCH
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -442,21 +307,19 @@ const About = () => {
         </div>
       </section>
 
-    
-
-      {/* Interactive Map Section */}
+      {/* Interactive Map Section - Our Location (Unchanged) */}
       <section className="py-12 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="container mx-auto px-4 max-w-7xl">
           <LeafletMap />
         </div>
       </section>
 
-        {/* Bridging Ideas Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+      {/* Bridging Ideas Section */}
+      <section className="py-16 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-600/5 to-gray-600/5"></div>
-          <div className="absolute top-20 left-20 w-60 h-60 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-gray-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500/5 to-black/5"></div>
+          <div className="absolute top-20 left-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-black/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -468,7 +331,7 @@ const About = () => {
             data-animate
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-blue-400 via-gray-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                 Bridging Ideas
               </span>
               <span className="block text-white">With Technology</span>
@@ -477,7 +340,7 @@ const About = () => {
               <p className="text-lg md:text-xl font-semibold text-gray-300">
                 Where Innovation Meets Excellence
               </p>
-              <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-400 to-gray-400 bg-clip-text text-transparent">
+              <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
                 Delivering Solutions That Drive Success
               </p>
             </div>
