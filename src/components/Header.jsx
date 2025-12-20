@@ -521,7 +521,7 @@ const Header = () => {
                 </button>
                 
                 {isServicesOpen && (
-                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
+                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Technology Consultation & MIS</span>
@@ -573,7 +573,7 @@ const Header = () => {
                 </button>
                 
                 {isIndustriesOpen && (
-                  <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto">
+                  <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link to="/complaint-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Custom CRM</span>
@@ -637,7 +637,7 @@ const Header = () => {
                 </button>
                 
                 {isProductsOpen && (
-                  <div className="pb-2 space-y-2 max-h-80 overflow-y-auto px-2">
+                  <div className="pb-2 space-y-2 max-h-80 overflow-y-auto px-2 custom-scrollbar relative mobile-dropdown-scroll">
                     <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="flex items-center py-4 px-4 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" onClick={() => {setIsMenuOpen(false); setIsProductsOpen(false);}}>
                       <img src="/SoftwareProducts/Route Maestro Logo.png" alt="RouteMaestro" className="w-20 h-16 mr-4 object-contain flex-shrink-0" />
                       <div>
@@ -681,7 +681,7 @@ const Header = () => {
                 </button>
                 
                 {isResourcesOpen && (
-                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto">
+                  <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link to="/blog" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Blogs</span>

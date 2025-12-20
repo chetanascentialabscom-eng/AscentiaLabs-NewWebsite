@@ -729,7 +729,7 @@ html {
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -745,6 +745,43 @@ html {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #9CA3AF;
+}
+
+/* Mobile Dropdown Scroll Indicators */
+@media (max-width: 768px) {
+  .mobile-dropdown-scroll {
+    position: relative;
+  }
+  
+  .mobile-dropdown-scroll::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.9));
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .mobile-dropdown-scroll.scrolled-to-bottom::after {
+    display: none;
+  }
+  
+  /* Enhanced scrollbar visibility on mobile */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #6B7280;
+    border-radius: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:active {
+    background: #4B5563;
+  }
 }
 
 /* News Ticker Animation */
