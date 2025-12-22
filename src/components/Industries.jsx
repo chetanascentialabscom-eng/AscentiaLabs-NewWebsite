@@ -103,9 +103,9 @@ const Industries = () => {
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-3xl md:text-4xl  lg:text-5xl font-bold text-white leading-tight max-w-4xl mx-auto">
-            <span className="inline-block">Crafting Our</span>
+            <span className="inline-block">Crafting Our Bespoke Solutions </span>
             <br className="hidden md:block" />
-            <span className="block mt-1 sm:mt-2">Bespoke Solutions For Unique Industry Demands</span>
+            <span className="block mt-1 sm:mt-2">For Unique Industry Demands</span>
           </h2>
         </div>
 
