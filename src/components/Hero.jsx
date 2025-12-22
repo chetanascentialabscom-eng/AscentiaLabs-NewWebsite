@@ -192,34 +192,34 @@ const Hero = () => {
             >
               <div className="grid grid-cols-4 gap-6 max-w-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">
+                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     7+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-medium">
+                  <p className="text-blue-200/70 text-sm font-bold">
                     Business Years
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">
+                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     100+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-medium">
+                  <p className="text-blue-200/70 text-sm font-bold">
                     Projects Delivered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">
+                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     10+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-medium">
+                  <p className="text-blue-200/70 text-sm font-bold">
                     Industries Catered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-white mb-1">
+                  <div className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     4+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-medium">
+                  <p className="text-blue-200/70 text-sm font-bold">
                     Countries
                   </p>
                 </div>
