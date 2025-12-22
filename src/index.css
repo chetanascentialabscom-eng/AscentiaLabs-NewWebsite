@@ -821,3 +821,20 @@ html {
     padding-top: 90px; /* No ticker, so no extra padding needed */
   }
 }
+
+/* Global Title Case - Apply to all text elements */
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, button,
+.font-medium, .font-semibold, .font-bold,
+nav a, .text-sm, .text-base, .text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl,
+label, input::placeholder, textarea::placeholder {
+  text-transform: capitalize;
+}
+
+/* Override for specific elements that should not be capitalized */
+.no-capitalize,
+input[type="email"], input[type="url"], input[type="password"],
+code, pre, .font-mono,
+.lowercase, .uppercase, .normal-case {
+  text-transform: none !important;
+}
