@@ -98,7 +98,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-black text-white overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-b from-black via-gray-900 to-black text-white overflow-hidden relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
@@ -155,14 +155,7 @@ const Services = () => {
             </Link>
           ))}
         </div>
-
-        {/* Floating Background Elements */}
-        {/* <div className="absolute top-1/4 left-10 w-2 h-2 bg-blue-500 rounded-full animate-float delay-1000"></div>
-        <div className="absolute top-3/4 right-10 w-3 h-3 bg-blue-400 rounded-full animate-float delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-1 h-1 bg-white rounded-full animate-float delay-3000"></div> */}
       </div>
-
-
     </section>
   );
 };
