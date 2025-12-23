@@ -22,6 +22,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-white relative overflow-hidden">
+      {/* Smooth transition from Clients section */}
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
 
       {/* Call to Action Section */}
       <div className="relative z-10 py-12 sm:py-16 lg:py-20">

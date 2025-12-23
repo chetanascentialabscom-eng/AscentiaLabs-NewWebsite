@@ -1,6 +1,6 @@
 const SoftwareProducts = () => {
   return (
-    <section className="py-20 bg-black relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-black to-blue-600 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Section Header */}
@@ -52,7 +52,7 @@ const SoftwareProducts = () => {
                     />
                   </div>
                 </div>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   An AI Powered Travel Planning & Booking Platform - Equip your B2B / B2C travel business with AI Personalised Dynamic Packaging. Generate & book AI personalised, multi city real-time packages integrated with your own inventory within 2 Minutes! 
                 </p>
               </div>
@@ -87,7 +87,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">AI Powered Dynamic Packages</h4>
-                <p className="text-gray-400 text-base leading-relaxed">Advanced machine learning algorithms create personalised real time packages within 2 minutes!</p>
+                <p className="text-white text-base leading-relaxed">Advanced machine learning algorithms create personalised real time packages within 2 minutes!</p>
               </div>
 
               <div className="text-center group">
@@ -98,7 +98,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Smart Travel Route Planning</h4>
-                <p className="text-gray-400 text-base leading-relaxed">Intelligent multicity route generator for you to choose most convenient & affordable travel routes</p>
+                <p className="text-white text-base leading-relaxed">Intelligent multicity route generator for you to choose most convenient & affordable travel routes</p>
               </div>
 
               <div className="text-center group">
@@ -108,7 +108,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Instant Integrated Booking</h4>
-                <p className="text-gray-400 text-base leading-relaxed">Generate & book travel packages with Hotels, Flights, Experiences, Transfers & more, all at once! </p>
+                <p className="text-white text-base leading-relaxed">Generate & book travel packages with Hotels, Flights, Experiences, Transfers & more, all at once! </p>
               </div>
 
               <div className="text-center group">
@@ -118,7 +118,7 @@ const SoftwareProducts = () => {
                   </svg>
                 </div>
                 <h4 className="text-white font-bold text-base mb-3">Smart Itinerary Builder</h4>
-                <p className="text-gray-400 text-base leading-relaxed">Builds your package minute by minute on a daily basis throughout your trip duration, and can be edited end to end.</p>
+                <p className="text-white text-base leading-relaxed">Builds your package minute by minute on a daily basis throughout your trip duration, and can be edited end to end.</p>
               </div>
             </div>
           </div>

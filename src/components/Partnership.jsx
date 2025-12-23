@@ -105,16 +105,14 @@ const Partnership = () => {
   const duplicatedLogos = [...partnerLogos, ...partnerLogos, ...partnerLogos];
 
   return (
-    <section className="relative py-12 sm:py-16 bg-gray-50 overflow-hidden">
+    <section className="relative py-12 sm:py-16 bg-gradient-to-b from-black via-blue-600 to-black overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-         <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-             Some Of Our Enterprise Clients
-            </span>
+         <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white">
+            Some Of Our Enterprise Clients
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-white max-w-3xl mx-auto px-4">
             Our solutions have enabled businesses in a variety of industries to achieve remarkable outcomes, 
             ranging from streamlined operations to exponential growth.
           </p>
@@ -140,17 +138,12 @@ const Partnership = () => {
             ))}
           </div>
 
-          {/* Enhanced gradient fade effects on sides */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-20"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 via-gray-50/80 to-transparent pointer-events-none z-20"></div>
+          {/* Enhanced gradient fade effects on sides - seamless with background */}
+          {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-600 via-blue-600/90 to-transparent pointer-events-none z-20"></div> */}
+          {/* <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-600 via-blue-600/90 to-transparent pointer-events-none z-20"></div> */}
           
           {/* Pause indicator */}
-          <div className={`absolute top-4 right-4 text-sm text-gray-500 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="flex items-center space-x-2 bg-white/90 px-3 py-1 rounded-full shadow-md">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              {/* <span>Paused</span> */}
-            </div>
-          </div>
+        
         </div>
       </div>
     </section>

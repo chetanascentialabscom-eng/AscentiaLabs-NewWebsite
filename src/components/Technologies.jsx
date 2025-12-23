@@ -153,25 +153,25 @@ const Technologies = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-b from-black via-gray-900 to-blue-600 text-white relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-200/20 to-orange-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/10 to-purple-900/10"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-600/5 to-purple-600/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-600/5 to-orange-600/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-            <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent block sm:inline">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
+            <span className="inline-block">
               Advanced Technology Stack
             </span>
             <br className="hidden sm:block" />
-            <span className="text-gray-700 text-base sm:text-2xl md:text-3xl lg:text-4xl block mt-2 sm:mt-0 leading-relaxed">
+            <span className="text-gray-300 text-base sm:text-2xl md:text-3xl lg:text-4xl block mt-2 sm:mt-0 leading-relaxed">
               for Real Estate Software and App Development
             </span>
           </h2>
-          <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-sm sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
             We leverage cutting-edge technologies to craft exceptional digital experiences that drive innovation and deliver results
           </p>
         </div>
@@ -186,7 +186,7 @@ const Technologies = () => {
                 container.scrollBy({ left: -200, behavior: 'smooth' });
               }
             }}
-            className="flex-shrink-0 z-10 bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 mr-2 sm:mr-4"
+            className="flex-shrink-0 z-10 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 mr-2 sm:mr-4"
             aria-label="Scroll left"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,7 +204,7 @@ const Technologies = () => {
                   className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
                     activeCategory === index
                       ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-md'
-                      : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
                   }`}
                 >
                   {category.category}
@@ -221,7 +221,7 @@ const Technologies = () => {
                 container.scrollBy({ left: 200, behavior: 'smooth' });
               }
             }}
-            className="flex-shrink-0 z-10 bg-white hover:bg-blue-50 text-gray-700 hover:text-blue-600 rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ml-2 sm:ml-4"
+            className="flex-shrink-0 z-10 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300 ml-2 sm:ml-4"
             aria-label="Scroll right"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -242,7 +242,7 @@ const Technologies = () => {
             >
               {/* Category Header */}
               <div className="text-center mb-6 sm:mb-8 px-4">
-                <h3 className={`text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r ${category.color} bg-clip-text text-transparent mb-2`}>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                   {category.category}
                 </h3>
                 {/* <div className={`w-8 sm:w-16 md:w-24 h-0.5 bg-gradient-to-r ${category.color} mx-auto rounded-sm`}></div> */}
@@ -296,6 +296,9 @@ const Technologies = () => {
 
         
       </div>
+      
+      {/* Smooth transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-blue-600 pointer-events-none"></div>
       
       {/* Hide scrollbar but keep functionality */}
       <style>{`

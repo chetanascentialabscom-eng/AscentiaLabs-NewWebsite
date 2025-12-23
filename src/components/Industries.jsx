@@ -98,7 +98,7 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-12 sm:py-16 overflow-hidden bg-gradient-to-r from-blue-600 via-black to-blue-600">
+    <section id="industries" className="py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-blue-600 to-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">

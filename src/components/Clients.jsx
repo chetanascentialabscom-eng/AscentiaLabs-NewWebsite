@@ -115,25 +115,23 @@ const Clients = () => {
 
   return (
     <>
-    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-b from-blue-600 to-black relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-200/20 to-purple-200/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-pink-200/20 to-orange-200/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-blue-700/10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-blue-600/10 to-blue-700/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Testimonials Section */}
         <div className="mb-8 sm:mb-12">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-              <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-                Client Success Stories
-              </span>
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
+              Client Success Stories
               <br />
               
             </h2>
-            <p className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
+            <p className="text-sm sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed px-2">
               Hear from our clients as they share how Ascentia Labs innovative solutions and dedicated service have transformed their business.
             </p>
           </div>
@@ -233,7 +231,12 @@ const Clients = () => {
         </div>
 
       </div>
+      
+      {/* Smooth transition to Footer */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
     </section>
+
+    {/* Smooth transition to next section */}
 
     {/* Statistics Section - Full Width */}
    
