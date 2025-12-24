@@ -98,14 +98,12 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-blue-600 to-black">
+    <section id="industries" className="py-12 sm:py-16 overflow-hidden bg-gradient-to-b from-blue-800 to-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="text-3xl sm:text-3xl md:text-4xl  lg:text-5xl font-bold text-white leading-tight max-w-4xl mx-auto">
-            <span className="inline-block">Crafting Our Bespoke Solutions </span>
-            <br className="hidden md:block" />
-            <span className="block mt-1 sm:mt-2">For Unique Industry Demands</span>
+            <span className="inline-block">Crafting Our Bespoke Solutions For Unique Industry Demands</span>
           </h2>
         </div>
 
@@ -119,7 +117,7 @@ const Industries = () => {
             >
               {/* Icon Container with Better Styling */}
               <div className="flex justify-center mb-4">
-                <div className="p-3 sm:p-4 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg group-hover:shadow-xl group-hover:from-blue-400 group-hover:to-blue-500 transition-all duration-500 group-hover:scale-110 border border-blue-400/50">
+                <div className="p-3 sm:p-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg group-hover:shadow-xl group-hover:from-blue-500 group-hover:to-blue-600 transition-all duration-500 group-hover:scale-110 border border-blue-500/50">
                   <div className="text-white">
                     {industry.icon}
                   </div>
@@ -132,11 +130,11 @@ const Industries = () => {
               </h3>
 
               {/* Animated Background Effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-blue-500/10 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/15 via-blue-600/8 to-blue-700/15 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
               
               {/* Glowing Border Effect */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/50 via-transparent to-blue-400/50 rounded-2xl blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/40 via-transparent to-blue-500/40 rounded-2xl blur-sm"></div>
               </div>
 
               {/* Floating Animation Dots */}

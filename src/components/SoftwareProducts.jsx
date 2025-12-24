@@ -1,14 +1,14 @@
 const SoftwareProducts = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-blue-600 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-black to-blue-800 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6">
-            At Ascentia Labs: We Develop World-Class Solutions
+          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            Don't Believe Us Just Yet? 
             <br className="hidden sm:block" />
-            That Redefine Industry Standards & Add Value!
+             Test Our Capabilities: Demo Our Enterprise Product!
           </h2>
         </div>
 
@@ -65,7 +65,7 @@ const SoftwareProducts = () => {
                   href="https://www.routemaestro.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-base hover:shadow-amber-500/50"
+                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg  hover:scale-105 text-base "
                 >
                   Explore RouteMaestro
                   <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

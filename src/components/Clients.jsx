@@ -115,7 +115,7 @@ const Clients = () => {
 
   return (
     <>
-    <section className="py-12 sm:py-16 bg-gradient-to-b from-blue-600 to-black relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-b from-blue-800 to-black relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-blue-700/10"></div>
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>

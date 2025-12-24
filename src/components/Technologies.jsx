@@ -162,16 +162,22 @@ const Technologies = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-2 sm:mb-4">
             <span className="inline-block">
-              Advanced Technology Stack
+              Cutting-Edge Technology Arsenal
             </span>
-            <br className="hidden sm:block" />
-            <span className="text-gray-300 text-base sm:text-2xl md:text-3xl lg:text-4xl block mt-2 sm:mt-0 leading-relaxed">
-              for Real Estate Software and App Development
-            </span>
+            {/* Alternative titles you can use:
+                - "Advanced Technology Stack"
+                - "Next-Generation Tech Solutions" 
+                - "Innovation-Driven Technology Suite"
+                - "Enterprise-Grade Technology Platform"
+                - "Future-Ready Development Stack"
+                - "Comprehensive Technology Ecosystem"
+                - "World-Class Technology Infrastructure"
+                - "Premium Technology Solutions"
+            */}
           </h2>
-          <p className="text-sm sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-base sm:text-lg text-white max-w-3xl mx-auto px-4">
             We leverage cutting-edge technologies to craft exceptional digital experiences that drive innovation and deliver results
           </p>
         </div>
@@ -298,7 +304,7 @@ const Technologies = () => {
       </div>
       
       {/* Smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-blue-600 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-blue-800 pointer-events-none"></div>
       
       {/* Hide scrollbar but keep functionality */}
       <style>{`

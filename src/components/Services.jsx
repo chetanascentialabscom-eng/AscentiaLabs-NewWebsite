@@ -102,10 +102,8 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-4xl mx-auto">
-            <span className="inline-block">At Ascentia Labs: We Develop World-Class</span>
-            <br className="hidden md:block" />
-            <span className="block mt-1 sm:mt-2"> Solutions That Redefine Industry Standards </span>
+          <h2 className="services-heading text-3xl rows-wrap sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight max-w-6xl mx-auto px-4">
+            <span className="block">At Ascentia Labs: We Develop World-Class Solutions That Redefine Industry Standards</span>
           </h2>
         </div>
 
