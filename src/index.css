@@ -220,6 +220,52 @@ header {
   }
 }
 
+/* MacBook and larger screen fixes */
+@media screen and (min-width: 1024px) {
+  #home {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+    overflow: hidden !important;
+  }
+  
+  #home .container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+/* MacBook Pro 13" and 14" specific fixes */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  #home {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* MacBook Pro 16" and larger displays */
+@media screen and (min-width: 1440px) {
+  #home {
+    padding-top: 5rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Ensure hero content fits without scrolling */
+@media screen and (min-height: 600px) and (min-width: 1024px) {
+  #home {
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
+  
+  #home .flex.flex-col.lg\\:flex-row {
+    height: 100% !important;
+    justify-content: center !important;
+  }
+}
+
 /* High DPI displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   img {
@@ -427,6 +473,13 @@ header {
   /* Ensure proper mobile layout without affecting desktop */
   
   /* Hero section mobile fixes */
+  #home {
+    min-height: 100vh !important;
+    height: auto !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
   .hero-buttons {
     flex-direction: column !important;
     gap: 1rem !important;

@@ -22,7 +22,7 @@ const Hero = () => {
 
 
   return (
-    <section id="home" className="relative bg-gradient-to-b from-slate-900 via-blue-950 to-black overflow-hidden flex items-center min-h-screen lg:h-screen pt-0 pb-0 lg:pt-10">
+    <section id="home" className="relative bg-gradient-to-b from-slate-900 via-blue-950 to-black overflow-hidden flex items-center h-screen pt-16 pb-4 lg:pt-20 lg:pb-8">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
       
@@ -112,7 +112,7 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10 max-w-[1400px]">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 py-4 md:py-8 lg:py-16">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 py-4 md:py-6 lg:py-8">
           
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left w-full lg:max-w-2xl lg:pr-8">
@@ -122,7 +122,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-5xl font-bold mb-3 md:mb-5 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-2 md:mb-3 leading-tight">
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-1">
                   Building Tomorrow's
                 </span>
@@ -157,7 +157,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-3 md:mb-4 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               We transform your ideas into powerful software solutions that drive growth, 
               enhance efficiency, and deliver exceptional user experiences.
@@ -168,7 +168,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-10 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-2 mb-4 md:mb-6 justify-center lg:justify-start"
             >
               <ConsultationButton 
                 className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
@@ -183,43 +183,43 @@ const Hero = () => {
               </Link>
             </motion.div>
 
-            {/* Statistics Numbers - Left Side */}
+            {/* Statistics Numbers - Desktop */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="hidden lg:block"
+              className="hidden lg:block mt-4"
             >
-              <div className="grid grid-cols-4 gap-6 max-w-lg">
+              <div className="grid grid-cols-4 gap-4 max-w-lg">
                 <div className="text-center">
-                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     7+
                   </div>
-                  <p className="text-blue-200/70 text-sm font-bold">
+                  <p className="text-blue-200/70 text-xs font-bold">
                     Business Years
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     100+
                   </div>
-                  <p className="text-blue-200/70 text-sm font-bold">
+                  <p className="text-blue-200/70 text-xs font-bold">
                     Projects Delivered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-black text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     10+
                   </div>
-                  <p className="text-blue-200/70 text-sm font-bold">
+                  <p className="text-blue-200/70 text-xs font-bold">
                     Industries Catered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     4+
                   </div>
-                  <p className="text-blue-200/70 text-sm font-bold">
+                  <p className="text-blue-200/70 text-xs font-bold">
                     Countries
                   </p>
                 </div>
@@ -423,6 +423,49 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Statistics Numbers - Mobile (At the end) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+          className="block lg:hidden mt-8 w-full px-4"
+        >
+          <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
+              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                7+
+              </div>
+              <p className="text-blue-200/70 text-xs font-bold">
+                Business Years
+              </p>
+            </div>
+            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
+              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                100+
+              </div>
+              <p className="text-blue-200/70 text-xs font-bold">
+                Projects Delivered
+              </p>
+            </div>
+            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
+              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                10+
+              </div>
+              <p className="text-blue-200/70 text-xs font-bold">
+                Industries Catered
+              </p>
+            </div>
+            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
+              <div className="text-2xl font-bold text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                4+
+              </div>
+              <p className="text-blue-200/70 text-xs font-bold">
+                Countries
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
        
 
