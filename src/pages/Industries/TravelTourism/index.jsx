@@ -265,7 +265,7 @@ const TravelTourismPage = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
                 Get Free Consultation
               </button>
@@ -291,18 +291,21 @@ const TravelTourismPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
       </section>
 
        {/* RouteMaestro Showcase Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Title */}
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Introducing <span className="bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">RouteMaestro</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Introducing <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">RouteMaestro</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                 Our flagship AI-powered travel planning and booking software that revolutionizes the way travel businesses operate
               </p>
             </div>
@@ -342,7 +345,7 @@ const TravelTourismPage = () => {
                       href="https://www.routemaestro.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group-hover:animate-pulse text-sm sm:text-base hover:shadow-amber-500/50"
+                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group-hover:animate-pulse text-sm sm:text-base "
                     >
                       Explore RouteMaestro
                     </a>
@@ -400,13 +403,13 @@ const TravelTourismPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Key Features In Travel Software And App Development
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto"> 
+            <p className="text-base text-gray-300 max-w-2xl mx-auto"> 
                 Unleash your travel technology business potential with our dynamic features of travel crm, or if you want to add some of your travel technology business features, do      worry, we'll do it for you.
             </p>
           </div>
@@ -471,13 +474,13 @@ const TravelTourismPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Our Travel Technology Development Implementation Process
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               A streamlined approach to deploying your travel management solution efficiently and effectively.
             </p>
           </div>
@@ -494,7 +497,7 @@ const TravelTourismPage = () => {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -507,7 +510,7 @@ const TravelTourismPage = () => {
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -523,6 +526,9 @@ const TravelTourismPage = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -647,7 +653,7 @@ const TravelTourismPage = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your Project Today
                     </button>
@@ -657,44 +663,47 @@ const TravelTourismPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl font-bold mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Find answers to common questions about our travel technology solutions
               </p>
             </div>
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg border border-blue-100 overflow-hidden">
+                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
                   <button
-                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-blue-50 transition-colors duration-200"
+                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    <h3 className="text-lg font-semibold text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-blue-600" />
+                        <ChevronUp className="w-5 h-5 text-blue-400" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-blue-600" />
+                        <ChevronDown className="w-5 h-5 text-blue-400" />
                       )}
                     </div>
                   </button>
                   
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
-                      <div className="border-t border-blue-100 pt-4">
-                        <p className="text-gray-700 leading-relaxed">
+                      <div className="border-t border-gray-700 pt-4">
+                        <p className="text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

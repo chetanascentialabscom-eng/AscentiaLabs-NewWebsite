@@ -14,12 +14,15 @@ const NewsTicker = () => {
   }, []);
 
   const newsItems = [
-    "Ascentia Labs launches new AI-powered solutions for enterprise clients",
-    "Innovative software development services now available",
-    "Award-winning team delivering cutting-edge technology solutions",
-    "Mobile app development expertise across iOS and Android platforms",
-    "Custom software solutions tailored to your business needs",
-    "Digital transformation services helping businesses grow",
+    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+    "Ascentia Labs Launches RouteMaestro Platform",
+    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+    "Ascentia Labs Launches RouteMaestro Platform",
+    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+    "Ascentia Labs Launches RouteMaestro Platform",
+    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+    "Ascentia Labs Launches RouteMaestro Platform",
+    
   ];
 
   return (
@@ -28,7 +31,7 @@ const NewsTicker = () => {
         <div className="ticker-content flex items-center whitespace-nowrap animate-scroll h-full">
           {newsItems.map((item, index) => (
             <span key={index} className="inline-flex items-center mx-4 md:mx-8 text-xs font-medium text-black">
-              {item}
+              {item} <span className='text-blue-700 text-bold mx-1'>View Here</span>
             </span>
           ))}
         </div>

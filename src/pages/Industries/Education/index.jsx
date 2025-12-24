@@ -99,71 +99,6 @@ const EducationPage = () => {
         'Students and teachers can easily search for and borrow books and e-learning materials. Librarians can maintain up-to-date inventory records, track borrowing patterns, and generate resource usage reports, supporting efficient library management.',
         'Integrate digital resources with physical inventory for comprehensive resource management and accessibility.'
       ]
-    },
-    {
-      id: 'examination-management',
-      title: 'Examination Management',
-      description: 'Complete examination and assessment management system.',
-      details: [
-        'Comprehensive examination management with automated scheduling, hall allocation, and invigilator assignment.',
-        'Digital answer sheet evaluation with AI-powered grading assistance and plagiarism detection.',
-        'Automated result generation with grade calculation, rank assignment, and performance analytics.',
-        'Secure online examination platform with proctoring capabilities and anti-cheating measures.'
-      ]
-    },
-    {
-      id: 'staff-management-module',
-      title: 'Staff Management Module',
-      description: 'Complete human resource management for educational institutions.',
-      details: [
-        'Comprehensive staff management including recruitment, onboarding, performance evaluation, and professional development tracking.',
-        'Automated payroll processing with salary calculations, deductions, and tax management for all staff categories.',
-        'Staff scheduling and workload management with class assignments, duty rosters, and substitute teacher coordination.',
-        'Professional development tracking with certification management, training records, and career progression planning.'
-      ]
-    },
-    {
-      id: 'human-resource-management',
-      title: 'Human Resource Management',
-      description: 'Advanced HR solutions for educational institutions.',
-      details: [
-        'Complete HR lifecycle management from recruitment to retirement with comprehensive employee record keeping.',
-        'Performance management system with goal setting, regular evaluations, and professional development planning.',
-        'Leave management with automated approval workflows, balance tracking, and substitute arrangement coordination.',
-        'Compliance management ensuring adherence to educational regulations and employment laws.'
-      ]
-    },
-    {
-      id: 'integrated-parent-teacher-student-app',
-      title: 'Integrated Parent, Teacher & Student Mobile App',
-      description: 'Unified mobile platform for all stakeholders.',
-      details: [
-        'Integrated mobile application connecting parents, teachers, and students with real-time communication and updates.',
-        'Parents can track student progress, communicate with teachers, and receive instant notifications about school activities.',
-        'Teachers can update grades, share assignments, and communicate with parents through secure messaging systems.',
-        'Students can access learning materials, submit assignments, and participate in collaborative learning activities.'
-      ]
-    },   
- {
-      id: 'integrated-media-app-module',
-      title: 'Integrated Media App Module',
-      description: 'Multimedia content management and delivery system.',
-      details: [
-        'Comprehensive media management system for educational content including videos, audio, presentations, and interactive materials.',
-        'Live streaming capabilities for virtual classes, webinars, and school events with recording and playback features.',
-        'Interactive multimedia content creation tools for teachers to develop engaging educational materials.',
-        'Content library management with categorization, search functionality, and access control for different user roles.'
-      ]
-    },
-    {
-      id: 'communication-module',
-      title: 'Communication Module',
-      description: 'Advanced communication and notification system.',
-      details: [
-        'Communication module allows administrators to send announcements, newsletters, and important updates through the notice board to specific classes, batches, or individual students.',
-        'Teachers can communicate lesson plans, assignments, and classroom updates to students and parents.',
-        'Additionally, the module supports two-way communication, including WhatsApp integration and chat features, enabling real-time interaction between teachers and parents to address academic concerns and foster the professional development of students.'
-      ]
     }
   ];
 
@@ -248,6 +183,9 @@ const EducationPage = () => {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -261,7 +199,7 @@ const EducationPage = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
                 Get Free Consultation
               </button>
@@ -290,13 +228,13 @@ const EducationPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Key Features In Your School CRM Portal
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Empower teachers, engage students & improve your educational institution result with our state-of-the-art School CRM, or if you want to add some features of your own, don't worry, we'll do it for you.
             </p>
           </div>
@@ -361,13 +299,13 @@ const EducationPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Our School CRM Development Implementation Process
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               A streamlined approach to deploying your school management solution efficiently and effectively.
             </p>
           </div>
@@ -384,7 +322,7 @@ const EducationPage = () => {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -397,7 +335,7 @@ const EducationPage = () => {
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -411,6 +349,9 @@ const EducationPage = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -535,7 +476,7 @@ const EducationPage = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your Project Today
                     </button>
@@ -545,44 +486,47 @@ const EducationPage = () => {
             </div>
           </div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl font-bold mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Find answers to common questions about our school management solutions
               </p>
             </div>
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg border border-blue-100 overflow-hidden">
+                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
                   <button
-                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-blue-50 transition-colors duration-200"
+                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    <h3 className="text-lg font-semibold text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-blue-600" />
+                        <ChevronUp className="w-5 h-5 text-blue-400" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-blue-600" />
+                        <ChevronDown className="w-5 h-5 text-blue-400" />
                       )}
                     </div>
                   </button>
                   
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
-                      <div className="border-t border-blue-100 pt-4">
-                        <p className="text-gray-700 leading-relaxed">
+                      <div className="border-t border-gray-700 pt-4">
+                        <p className="text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

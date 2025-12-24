@@ -102,61 +102,7 @@ const KindergartenPage = () => {
         'Nutrition reporting with meal consumption tracking and dietary analysis for parents.'
       ]
     },
-    {
-      id: 'billing-payment-system',
-      title: 'Billing & Payment System',
-      description: 'Automated billing and financial management features.',
-      details: [
-        'Automated tuition billing with flexible payment plans and fee structure management.',
-        'Multiple payment gateway integration with secure transaction processing and receipts.',
-        'Late fee management with automated reminders and payment tracking for parents.',
-        'Financial reporting with income statements and expense categorization for school administration.'
-      ]
-    },
-    {
-      id: 'activity-event-management',
-      title: 'Activity & Event Management',
-      description: 'Comprehensive activity planning and event coordination system.',
-      details: [
-        'Event planning tools with activity scheduling and resource allocation management.',
-        'Parent participation tracking with volunteer coordination and event registration.',
-        'Photo and video sharing from school events with secure parent access.',
-        'Activity reporting with participation tracking and developmental milestone documentation.'
-      ]
-    },
-    {
-      id: 'multi-platform-compatibility',
-      title: 'Multi-platform Compatibility',
-      description: 'Cross-platform accessibility and device optimization.',
-      details: [
-        'Responsive web design with mobile-first approach for all device types.',
-        'Native mobile applications for iOS and Android with offline capabilities.',
-        'Desktop application integration with cloud synchronization and data backup.',
-        'API integration for third-party educational tools and existing school systems.'
-      ]
-    },
-    {
-      id: 'reporting-analytics',
-      title: 'Reporting & Analytics',
-      description: 'Comprehensive educational analytics and performance reporting.',
-      details: [
-        'Real-time enrollment analytics with trend analysis and capacity planning.',
-        'Student progress dashboards with developmental milestone tracking and learning outcomes.',
-        'Parent engagement analytics with communication tracking and participation insights.',
-        'Financial reporting with revenue analysis and operational cost assessments.'
-      ]
-    },
-    {
-      id: 'security-privacy',
-      title: 'Security & Privacy Protection',
-      description: 'Advanced security measures and child protection protocols.',
-      details: [
-        'Child protection compliance with secure data handling and privacy regulations.',
-        'Role-based access control with staff permissions and parent access management.',
-        'Secure photo and video sharing with parent consent and privacy controls.',
-        'Background check integration for staff verification and child safety protocols.'
-      ]
-    }
+    
   ];
 
   const adminFeatures = [
@@ -241,6 +187,9 @@ const KindergartenPage = () => {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -254,7 +203,7 @@ const KindergartenPage = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
                 Get Free Consultation
               </button>
@@ -284,13 +233,13 @@ const KindergartenPage = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Explore Top Features of Our Custom Kindergarten Management Solutions
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Discover comprehensive features designed specifically for early childhood education management, ensuring the best care and learning environment for children.
             </p>
           </div>
@@ -356,13 +305,13 @@ const KindergartenPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-black relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Our Kindergarten Management Implementation Process
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               A streamlined approach to deploying your kindergarten management solution efficiently and effectively.
             </p>
           </div>
@@ -379,7 +328,7 @@ const KindergartenPage = () => {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -393,7 +342,7 @@ const KindergartenPage = () => {
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -407,6 +356,9 @@ const KindergartenPage = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -414,6 +366,9 @@ const KindergartenPage = () => {
           <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
           <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -536,7 +491,7 @@ const KindergartenPage = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your Project Today
                     </button>
@@ -549,41 +504,41 @@ const KindergartenPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl font-bold mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Find answers to common questions about our kindergarten management solutions
               </p>
             </div>
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg border border-blue-100 overflow-hidden">
+                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
                   <button
-                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-blue-50 transition-colors duration-200"
+                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    <h3 className="text-lg font-semibold text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-blue-600" />
+                        <ChevronUp className="w-5 h-5 text-blue-400" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-blue-600" />
+                        <ChevronDown className="w-5 h-5 text-blue-400" />
                       )}
                     </div>
                   </button>
                   
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
-                      <div className="border-t border-blue-100 pt-4">
-                        <p className="text-gray-700 leading-relaxed">
+                      <div className="border-t border-gray-700 pt-4">
+                        <p className="text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

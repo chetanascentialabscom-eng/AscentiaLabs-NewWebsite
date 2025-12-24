@@ -192,34 +192,34 @@ const Hero = () => {
             >
               <div className="grid grid-cols-4 gap-4 max-w-lg">
                 <div className="text-center">
-                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl  text-white  bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     7+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-bold">
+                  <p className="text-blue-200/70 text-sm">
                     Business Years
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl  text-white bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     100+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-bold">
+                  <p className="text-blue-200/70 text-sm ">
                     Projects Delivered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl  text-white  bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     10+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-bold">
+                  <p className="text-blue-200/70 text-sm ">
                     Industries Catered
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-3xl  text-white  bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     4+
                   </div>
-                  <p className="text-blue-200/70 text-xs font-bold">
+                  <p className="text-blue-200/70 text-sm ">
                     Countries
                   </p>
                 </div>

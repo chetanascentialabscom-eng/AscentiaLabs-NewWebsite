@@ -96,36 +96,7 @@ const InteriorArchitecture = () => {
         'Client Feedback Integration: Collect and manage client feedback directly within the presentation interface.'
       ]
     },
-    {
-      id: 'budget-estimation',
-      title: 'Budget & Cost Estimation Management',
-      description: 'Comprehensive tools for managing project budgets and costs.',
-      details: [
-        'Automated Cost Estimation: Generate accurate cost estimates based on material selections and project specifications.',
-        'Budget Tracking: Monitor project expenses in real-time with visual budget dashboards.',
-        'Cost Analysis: Analyze different design options based on cost implications and client budgets.'
-      ]
-    },
-    {
-      id: 'payment-collection',
-      title: 'Payment Collection Management Solution',
-      description: 'Streamlined payment processing for design services.',
-      details: [
-        'Secure Payment Gateway: Integrated payment processing with multiple payment method options.',
-        'Invoice Generation: Automatically generate and send professional invoices to clients.',
-        'Payment Tracking: Monitor payment status and send automated payment reminders.'
-      ]
-    },
-    {
-      id: 'mobile-compatibility',
-      title: 'Mobile Compatibility',
-      description: 'Access design projects on-the-go with full mobile support.',
-      details: [
-        'Responsive Design: Full functionality across all mobile devices and screen sizes.',
-        'Mobile App: Native mobile applications for iOS and Android platforms.',
-        'Offline Access: View and edit projects even without an internet connection.'
-      ]
-    }
+   
   ];
 
   const adminFeatures = [
@@ -193,6 +164,9 @@ const InteriorArchitecture = () => {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -206,7 +180,7 @@ const InteriorArchitecture = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50"
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
                 Get Free Consultation
               </button>
@@ -236,13 +210,13 @@ const InteriorArchitecture = () => {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-10 bg-gray-50">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Key Features In Our Interior Design App Development
             </h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
               Explore the functionality of our state-of-the-art interior design system, or if you want to add some personalized features for your interior design system, don't worry, we'll do it for you.
             </p>
           </div>
@@ -308,14 +282,14 @@ const InteriorArchitecture = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-black relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
               Our Interior Design Process
             </h2>
-            <p className="text-lg text-gray-600">
-              Witness our step by step process in making a complaint management system process.
+            <p className="text-lg text-gray-300">
+              Witness our step by step process in creating exceptional interior design solutions.
             </p>
           </div>
 
@@ -331,7 +305,7 @@ const InteriorArchitecture = () => {
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -345,7 +319,7 @@ const InteriorArchitecture = () => {
                     <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-sm mb-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -359,6 +333,9 @@ const InteriorArchitecture = () => {
 
       {/* Why Choose Us Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -366,6 +343,9 @@ const InteriorArchitecture = () => {
           <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
           <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -374,7 +354,7 @@ const InteriorArchitecture = () => {
               <div className="text-white space-y-8">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                    Lead The Future Of Complaint Management With Ascentia Labs
+                    Transform Your Interior Design Vision with Ascentia Labs
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
                     Here's Why You Can't Afford to Miss Us Out!
@@ -480,14 +460,14 @@ const InteriorArchitecture = () => {
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
                     </div>
                     <h3 className="text-2xl font-bold mb-4">
-                      Ready to Transform Your Business?
+                      Ready to Transform Your Interior Design Business?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join hundreds of satisfied clients who trust Ascentia Labs for their complaint management solutions.
+                      Join hundreds of satisfied clients who trust Ascentia Labs for their interior design solutions.
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your Project Today
                     </button>
@@ -500,41 +480,41 @@ const InteriorArchitecture = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl font-bold mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Get answers to common questions about our Interior Design System
               </p>
             </div>
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg border border-blue-100 overflow-hidden">
+                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
                   <button
-                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-blue-50 transition-colors duration-200"
+                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                    <h3 className="text-lg font-semibold text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-blue-600" />
+                        <ChevronUp className="w-5 h-5 text-blue-400" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-blue-600" />
+                        <ChevronDown className="w-5 h-5 text-blue-400" />
                       )}
                     </div>
                   </button>
                   
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
-                      <div className="border-t border-blue-100 pt-4">
-                        <p className="text-gray-700 leading-relaxed">
+                      <div className="border-t border-gray-700 pt-4">
+                        <p className="text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
@@ -543,8 +523,6 @@ const InteriorArchitecture = () => {
                 </div>
               ))}
             </div>
-
-            
           </div>
         </div>
       </section>
