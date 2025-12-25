@@ -119,11 +119,11 @@ const GoToMarket = () => {
     }
   ];
 
-  const stats = [
-    { number: '150+', label: 'Successful Product Launches' },
-    { number: '30+', label: 'Marketing Experts' },
-    { number: '10+', label: 'Years In the Industry' },
-    { number: '4+', label: 'Countries Empowered' }
+ const stats = [
+    { number: '7+', label: 'Business Years' },
+    { number: '100+', label: 'Projects Delivered' },
+    { number: '10+', label: 'Industries Catered' },
+    { number: '4+', label: 'Countries' }
   ];
 
   const faqs = [
@@ -157,6 +157,9 @@ const GoToMarket = () => {
           <div className="absolute bottom-20 right-40 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
         
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+        
         <div className="max-w-7xl mx-auto w-full relative z-10 py-8 sm:py-12 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -173,7 +176,7 @@ const GoToMarket = () => {
               <div className="mb-8 sm:mb-12">
                 <button 
                   onClick={openConsultation}
-                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 hover:shadow-amber-500/50"
+                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 "
                 >
                   Get Consultation
                   <ArrowRight className="w-5 h-5" />
@@ -289,59 +292,102 @@ const GoToMarket = () => {
         `}</style>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent">
-              Why Ascentia Labs?
+  {/* Services Tabs Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Go-To-Market Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Work with go-to-market experts who accelerate successful product launches
+            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
+              Comprehensive market launch solutions tailored to your business needs
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-purple-500 transform hover:-translate-y-2 overflow-hidden"
+          {/* Service Tabs - Compact */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 mb-12">
+            {services.map((service) => (
+              <button
+                key={service.id}
+                onClick={() => setActiveTab(service.id)}
+                className={`group relative px-3 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
+                  activeTab === service.id
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
+                }`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                      {item.icon}
-                    </div>
-                    
-                    <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-gray-900 bg-clip-text text-transparent group-hover:from-blue-700 group-hover:to-black transition-all duration-300 leading-tight">
-                      {item.title}
-                    </h3>
-                  </div>
-                  
-                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-800 transition-colors duration-300">
-                    <ReadMore maxChars={80} mobileOnly={true}>
-                      {item.description}
-                    </ReadMore>
-                  </p>
-
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-black/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                </div>
-              </div>
+                <span className="inline-flex items-center gap-1 sm:gap-2">
+                  {service.icon}
+                  <span className="whitespace-nowrap">{service.name}</span>
+                </span>
+              </button>
             ))}
           </div>
+
+          {/* Tab Content */}
+          {services.map((service) => (
+            activeTab === service.id && (
+              <div key={service.id} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeIn">
+                <div className="order-2 lg:order-1">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+                    {service.title}
+                  </h3>
+                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
+                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
+                      {service.description}
+                    </ReadMore>
+                  </p>
+                </div>
+                <div className="order-1 lg:order-2">
+                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
+                    <div className="grid grid-cols-3 gap-6">
+                      {service.techLogos.map((logo, index) => (
+                        <div 
+                          key={index}
+                          className="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-110 group"
+                        >
+                          <img 
+                            src={logo} 
+                            alt="Technology" 
+                            className="w-full h-12 object-contain transition-all duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
+                    <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
+                  </div>
+                </div>
+              </div>
+            )
+          ))}
         </div>
       </section>
+     
 
       {/* Promotional Section */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        
+        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
         </div>
+        
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -449,7 +495,7 @@ const GoToMarket = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-amber-500/50"
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your GTM Strategy
                     </button>
@@ -461,107 +507,108 @@ const GoToMarket = () => {
         </div>
       </section>
 
-      {/* Services Tabs Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Our Go-To-Market Services
+ {/* Why Choose Us Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
+              Why Ascentia Labs?
             </h2>
-            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
-              Comprehensive market launch solutions tailored to your business needs
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              Work with go-to-market experts who accelerate successful product launches
             </p>
           </div>
 
-          {/* Service Tabs - Compact */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 mb-12">
-            {services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
-                className={`group relative px-3 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === service.id
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
-                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
-                }`}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseUs.map((item, index) => (
+              <div 
+                key={index} 
+                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-gray-700 hover:border-blue-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden"
               >
-                <span className="inline-flex items-center gap-1 sm:gap-2">
-                  {service.icon}
-                  <span className="whitespace-nowrap">{service.name}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-
-          {/* Tab Content */}
-          {services.map((service) => (
-            activeTab === service.id && (
-              <div key={service.id} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeIn">
-                <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
-                    {service.title}
-                  </h3>
-                  <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
-                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
-                      {service.description}
-                    </ReadMore>
-                  </p>
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-blue-800/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Animated background elements */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute top-4 right-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl group-hover:scale-150 group-hover:bg-blue-400/20 transition-all duration-500"></div>
+                  <div className="absolute bottom-4 left-4 w-12 h-12 bg-blue-300/10 rounded-full blur-lg group-hover:scale-125 group-hover:bg-blue-300/20 transition-all duration-500"></div>
                 </div>
-                <div className="order-1 lg:order-2">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
-                    <div className="grid grid-cols-3 gap-6">
-                      {service.techLogos.map((logo, index) => (
-                        <div 
-                          key={index}
-                          className="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-110 group"
-                        >
-                          <img 
-                            src={logo} 
-                            alt="Technology" 
-                            className="w-full h-12 object-contain transition-all duration-300"
-                          />
-                        </div>
-                      ))}
+                
+                <div className="relative z-10">
+                  {/* Icon and Title in one line */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/50">
+                      {item.icon}
                     </div>
-                    <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
+                    
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-blue-100 transition-all duration-300 leading-tight">
+                      {item.title}
+                    </h3>
                   </div>
+                  
+                  <div className="text-gray-300 leading-relaxed text-sm group-hover:text-gray-200 transition-colors duration-300">
+                    <ReadMore maxChars={80} mobileOnly={true}>
+                      {item.description}
+                    </ReadMore>
+                  </div>
+
+                  {/* Decorative element */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
                 </div>
               </div>
-            )
-          ))}
+            ))}
+          </div>
         </div>
       </section>
+    
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-black bg-clip-text text-transparent mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-300">
               Get answers to common questions about our go-to-market services
             </p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
+              <div key={index} className="bg-gray-900 rounded-2xl border border-gray-700 overflow-hidden hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
                 <button
-                  className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
+                  className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors"
                   onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
                 >
-                  <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
+                  <span className="font-semibold text-white pr-4">{faq.question}</span>
                   {expandedFAQ === index ? (
-                    <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0 transform transition-transform duration-300" />
+                    <ChevronUp className="w-5 h-5 text-blue-400 flex-shrink-0 transform transition-transform duration-300" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0 transform transition-transform duration-300" />
+                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transform transition-transform duration-300" />
                   )}
                 </button>
                 {expandedFAQ === index && (
-                  <div className="px-6 pb-5 bg-white animate-fadeIn">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 pb-5 bg-gray-800 animate-fadeIn">
+                    <div className="border-t border-gray-700 pt-4">
+                      <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                    </div>
                   </div>
                 )}
               </div>
