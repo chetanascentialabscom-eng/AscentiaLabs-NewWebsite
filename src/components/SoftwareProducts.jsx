@@ -6,9 +6,7 @@ const SoftwareProducts = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
-            Don't Believe Us Just Yet? 
-            <br className="hidden sm:block" />
-             Test Our Capabilities: Demo Our Enterprise Product!
+            Don't Believe Us Just Yet? Test Our Capabilities: Demo Our Enterprise Product!
           </h2>
         </div>
 

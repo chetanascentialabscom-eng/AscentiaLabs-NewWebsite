@@ -96,7 +96,7 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4 text-blue-600" />
-              <a href="mailto:support@ascentialabs.com" className="text-gray-500 hover:text-blue-600 font-medium">
+              <a href="mailto:support@ascentialabs.com" className="text-gray-500 hover:text-blue-600 font-medium lowercase">
                 support@ascentialabs.com
               </a>
             </div>
@@ -456,7 +456,7 @@ const Header = () => {
 
           <button
             onClick={openConsultation}
-            className="hidden md:block bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 text-center hover:from-amber-500 hover:to-orange-600 hover:shadow-amber-500/50 font-bold"
+            className="hidden md:block bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-2 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 text-center hover:from-amber-500 hover:to-orange-600  font-bold"
           >
             Get In Touch
           </button>
