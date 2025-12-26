@@ -1,13 +1,6 @@
 import { useState, useRef, useEffect, useCallback, memo } from 'react';
 import { X, Send, User, Mail, Phone, MessageSquare, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
-import emailjs from '@emailjs/browser';
-
-// EmailJS Configuration - moved outside component
-const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_0ftxvuf',
-  TEMPLATE_ID: 'template_6dsymfm',
-  USER_ID: 'Xws9hZ7gOUXxCs3lu'
-};
+import { sendEmail, validateContactForm, extractFormData, initializeEmailJS } from '../utils/email';
 
 const ConsultationDialog = memo(({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -28,7 +21,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
   // Initialize EmailJS only once
   useEffect(() => {
     if (isOpen) {
-      emailjs.init(EMAILJS_CONFIG.USER_ID);
+      initializeEmailJS();
     }
   }, [isOpen]);
 
@@ -116,57 +109,47 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
     
     const form = e.target;
     
-    // Extract form values
-    const fullName = form.querySelector('#fullName')?.value || '';
-    const email = form.querySelector('#email')?.value || '';
-    const message = form.querySelector('#message')?.value || '';
+    // Extract and validate form data
+    const formDataObj = extractFormData(form);
     
-    // Validation
-    if (!fullName) {
-      showToastMessage('error', 'Full Name is required');
-      return;
-    }
+    // Validate form data
+    const validation = validateContactForm(formDataObj);
     
-    if (!email) {
-      showToastMessage('error', 'Invalid Email Address');
-      return;
-    }
-    
-    if (!message) {
-      showToastMessage('error', 'Message is required');
+    if (!validation.isValid) {
+      showToastMessage('error', validation.errors[0]); // Show first error
       return;
     }
     
     setIsSubmitting(true);
 
     try {
-      // EmailJS Integration
-      await emailjs.sendForm(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        form
-      );
+      // Send email using utility function
+      const result = await sendEmail(form);
       
-      // Show success toast
-      showToastMessage('success', 'Email sent successfully! We\'ll get back to you within 24 hours.');
-      
-      // Reset the form after successful submission
-      form.reset();
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      if (result.success) {
+        // Show success toast
+        showToastMessage('success', result.message);
+        
+        // Reset the form after successful submission
+        form.reset();
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
 
-      // Close dialog after successful submission
-      setTimeout(() => {
-        onClose();
-      }, 2000);
+        // Close dialog after successful submission
+        setTimeout(() => {
+          onClose();
+        }, 2000);
+      } else {
+        throw new Error(result.message);
+      }
 
     } catch (error) {
       // Show error toast
-      showToastMessage('error', `Failed to send email: ${error.text || error.message || 'Unknown error'}`);
+      showToastMessage('error', error.message || 'Failed to send email. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -200,19 +183,19 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
           </div>
 
           {/* Left Side - Form */}
-          <div className="flex-1 flex flex-col relative z-10 bg-white rounded-l-3xl">
+          <div className="flex-1 flex flex-col relative z-10 bg-gray-900 rounded-l-3xl">
             {/* Header */}
-            <div className="flex-shrink-0 px-6 py-4 border-b border-gray-200 relative">
+            <div className="flex-shrink-0 px-6 py-4 border-b border-gray-700 relative">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-800 mb-1">
-                    Consult With Our Experts
+                  <h2 className="text-2xl font-bold text-white mb-1">
+                    Get In Touch
                   </h2>
-                  <div className="w-20 h-1 bg-blue-600 rounded-full"></div>
+                  <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
                 </div>
                 <button
                   onClick={onClose}
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-200"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-300 hover:bg-gray-800 transition-all duration-200"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -231,7 +214,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-gray-800 bg-white border-0 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
                     placeholder="Full Name*"
                   />
                 </div>
@@ -245,7 +228,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-gray-800 bg-white border-0 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
                     placeholder="Email Id*"
                   />
                 </div>
@@ -259,7 +242,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-gray-800 bg-white border-0 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
                     placeholder="Phone Number*"
                   />
                 </div>
@@ -272,7 +255,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full h-full min-h-[80px] px-3 py-2.5 text-gray-800 bg-white border-0 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none hover:border-gray-300"
+                    className="w-full h-full min-h-[80px] px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none hover:border-gray-500 placeholder-gray-400"
                     placeholder="Describe Your Project Idea/Message"
                   />
                 </div>
@@ -304,8 +287,8 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
 
           {/* Right Side - Visual */}
           <div className="hidden lg:flex lg:w-96 relative overflow-hidden">
-            {/* Background with same gradient as hero */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/40 to-blue-800/60 backdrop-blur-sm"></div>
+            {/* Background with dark gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-800/90 to-gray-900/95 backdrop-blur-sm"></div>
             
             {/* Decorative Elements */}
             <div className="absolute inset-0 opacity-20">
@@ -315,32 +298,31 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
             </div>
             
             {/* Content */}
-            <div className="relative z-10 p-8 flex flex-col justify-center text-white">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 leading-tight">
-                  Guiding Your Business <span className="text-amber-400">Vision</span> And, Turn Your Ideas Into A Well-Crafted <span className="text-amber-400">Reality</span> With <span className="text-amber-400">Precision</span> And <span className="text-amber-400">Dedication</span>.
+            <div className="relative z-10 p-8 flex flex-col justify-center items-center h-full text-white">
+              {/* Heading */}
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold leading-tight text-white">
+                  Let's Build Something Amazing Together
                 </h3>
               </div>
               
-              {/* Logo/Image Area */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-blue-400/30 mb-8">
-                <div className="w-full h-48 bg-white rounded-xl flex items-center justify-center">
+              {/* Large Image */}
+              <div className="w-full flex justify-center">
+                <div className="w-full max-w-sm h-80 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-2xl">
                   <img 
-                    src="/ascentialabslogopng.png" 
+                    src="/contact.jpg" 
                     alt="Ascential Labs" 
-                    className="max-w-full max-h-full object-contain"
+                    className="w-full h-full object-cover object-center"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
                     }}
                   />
-                  <div className="hidden w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl items-center justify-center">
-                    <div className="text-white text-2xl font-bold">Ascential Labs</div>
+                  <div className="hidden w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl items-center justify-center">
+                    <div className="text-white text-3xl font-bold">Ascential Labs</div>
                   </div>
                 </div>
               </div>
-
-             
             </div>
           </div>
         </div>

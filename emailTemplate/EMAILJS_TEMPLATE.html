@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Contact Form Submission - Ascential Labs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2563eb;
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            color: #666;
+            margin: 5px 0 0 0;
+            font-size: 14px;
+        }
+        .field {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+        }
+        .field-label {
+            font-weight: bold;
+            color: #2563eb;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+        .field-value {
+            color: #333;
+            font-size: 16px;
+            word-wrap: break-word;
+        }
+        .message-field {
+            background: #e3f2fd;
+            border-left-color: #1976d2;
+        }
+        .message-field .field-value {
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 12px;
+        }
+        .timestamp {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            font-size: 14px;
+        }
+        .important {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+        .optional-info {
+            opacity: 0.8;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>New Contact Form Submission</h1>
+            <p>Ascential Labs - Contact Form</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="field important">
+            <div class="field-label">Full Name</div>
+            <div class="field-value">{{fullName}}</div>
+        </div>
+
+        <div class="field important">
+            <div class="field-label">Email Address</div>
+            <div class="field-value">{{email}}</div>
+        </div>
+
+        <div class="field">
+            <div class="field-label">Phone Number</div>
+            <div class="field-value">{{phone}}</div>
+        </div>
+
+        <!-- Optional Company Information (Contact Page Only) -->
+        <div class="field optional-info">
+            <div class="field-label">Company Name</div>
+            <div class="field-value">{{companyName}}</div>
+        </div>
+
+        <div class="field optional-info">
+            <div class="field-label">Country</div>
+            <div class="field-value">{{country}}</div>
+        </div>
+
+        <div class="field optional-info">
+            <div class="field-label">Budget Range</div>
+            <div class="field-value">{{budgetRange}}</div>
+        </div>
+
+        <!-- Message -->
+        <div class="field message-field">
+            <div class="field-label">Message</div>
+            <div class="field-value">{{message}}</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>This email was sent from the Ascential Labs contact form.</p>
+            <p>Please respond within 24 hours for the best customer experience.</p>
+            <hr style="margin: 15px 0; border: none; border-top: 1px solid #eee;">
+            <p><strong>Ascential Labs</strong> | Innovative Technology Solutions</p>
+            <p>Email: support@ascentialabs.com | Phone: +91 9356385744</p>
+        </div>
+    </div>
+</body>
+</html>

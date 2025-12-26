@@ -1,9 +1,9 @@
 import { useState, useRef , useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, User, Building, Globe, DollarSign, MessageSquare, CheckCircle, X } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import SEO from '../../components/SEO';
 import { seoData } from '../../utils/seoData';
 import LeafletMap from '../../components/LeafletMap';
+import { sendEmail, validateContactForm, extractFormData, initializeEmailJS } from '../../utils/email';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -26,14 +26,9 @@ const ContactPage = () => {
   const budgetDropdownRef = useRef(null);
   const formRef = useRef(null);
 
-  // EmailJS Configuration
-  const EMAILJS_SERVICE_ID = 'service_0ftxvuf';
-  const EMAILJS_TEMPLATE_ID = 'template_6dsymfm';
-  const EMAILJS_USER_ID = 'Xws9hZ7gOUXxCs3lu';
-
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init(EMAILJS_USER_ID);
+    initializeEmailJS();
   }, []);
 
   const countries = [
@@ -67,83 +62,57 @@ const ContactPage = () => {
     
     const form = e.target; // Get the form element
     
-    // Extract form values (similar to your reference code)
-    const fullName = form.querySelector('#fullName')?.value || '';
-    const email = form.querySelector('#email')?.value || '';
-    const phone = form.querySelector('#phone')?.value || '';
-    const message = form.querySelector('#message')?.value || '';
+    // Extract and validate form data
+    const formDataObj = extractFormData(form);
+    console.log('Form data:', formDataObj);
     
-    console.log({ fullName, email, phone, message });
+    // Validate form data
+    const validation = validateContactForm(formDataObj);
     
-    let isValid = true;
-    
-    // Validation (matching your reference code pattern)
-    if (!fullName) {
-      isValid = false;
+    if (!validation.isValid) {
       setToastType('error');
-      setToastMessage('Full Name is required');
+      setToastMessage(validation.errors[0]); // Show first error
       setShowToast(true);
       setTimeout(() => setShowToast(false), 5000);
       return;
     }
-    
-    if (!email) {
-      isValid = false;
-      setToastType('error');
-      setToastMessage('Invalid Email Address');
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 5000);
-      return;
-    }
-    
-    if (!message) {
-      isValid = false;
-      setToastType('error');
-      setToastMessage('Message is required');
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 5000);
-      return;
-    }
-    
-    // Stop if the form is not valid
-    if (!isValid) return;
     
     console.log('Validation passed. Sending email...');
     setIsSubmitting(true);
 
     try {
-      // EmailJS Integration (matching your reference code)
-      const result = await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        form
-      );
-
-      console.log('Email sent successfully:', result);
+      // Send email using utility function
+      const result = await sendEmail(form);
       
-      // Show success toast
-      setToastType('success');
-      setToastMessage('Email sent successfully! We\'ll get back to you within 24 hours.');
-      setShowToast(true);
-      
-      // Reset the form after successful submission
-      form.reset();
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        companyName: '',
-        country: '',
-        budgetRange: '',
-        message: ''
-      });
+      if (result.success) {
+        console.log('Email sent successfully:', result.result);
+        
+        // Show success toast
+        setToastType('success');
+        setToastMessage(result.message);
+        setShowToast(true);
+        
+        // Reset the form after successful submission
+        form.reset();
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          companyName: '',
+          country: '',
+          budgetRange: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.message);
+      }
 
     } catch (error) {
       console.error('Error sending email:', error);
       
       // Show error toast
       setToastType('error');
-      setToastMessage(`Failed to send email: ${error.text || error.message || 'Unknown error'}`);
+      setToastMessage(error.message || 'Failed to send email. Please try again.');
       setShowToast(true);
     } finally {
       setIsSubmitting(false);
