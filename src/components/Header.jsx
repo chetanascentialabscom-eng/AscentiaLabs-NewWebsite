@@ -354,7 +354,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               <button 
                 className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
                 onMouseEnter={() => setIsDesktopProductsOpen(true)}
@@ -403,7 +403,7 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="relative">
               <button 
                 className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
@@ -627,7 +627,7 @@ const Header = () => {
               </div>
 
               {/* Products Accordion */}
-              <div className="border-b border-gray-100">
+              {/* <div className="border-b border-gray-100">
                 <button 
                   className="w-full flex items-center justify-between py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded transition-colors"
                   onClick={() => setIsProductsOpen(!isProductsOpen)}
@@ -668,7 +668,7 @@ const Header = () => {
                     </a>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Resources Accordion */}
               <div className="border-b border-gray-100">

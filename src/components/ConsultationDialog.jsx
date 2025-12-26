@@ -302,7 +302,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
               {/* Heading */}
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold leading-tight text-white">
-                  Let's Build Something Amazing Together
+                  Let's Build Something Amazing Together!
                 </h3>
               </div>
               
@@ -310,9 +310,9 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
               <div className="w-full flex justify-center">
                 <div className="w-full max-w-sm h-80 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-2xl">
                   <img 
-                    src="/contact.jpg" 
+                    src="/contactus.jpg" 
                     alt="Ascential Labs" 
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-fit"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
