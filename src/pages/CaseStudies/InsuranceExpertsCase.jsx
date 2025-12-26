@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Calendar, User, Clock, ArrowLeft, Share2, Building, Users, TrendingUp, Award, CheckCircle, Target, Zap, Globe } from 'lucide-react';
+import { Calendar, User, Clock, ArrowLeft, Share2, Building, Users, TrendingUp, Award, CheckCircle, Target, Zap, Globe, Shield } from 'lucide-react';
 import SEO from '../../components/SEO';
-import { seoData } from '../../utils/seoData';
 
-const RouteMaestroCase = () => {
+const InsuranceExpertsCase = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
-      <SEO {...seoData.routeMaestroCase} />
+      <SEO 
+        title="Insurance Experts Management Platform Case Study | Ascentia Labs"
+        description="Modern insurance management solution with policy tracking, claims processing, and customer portal. Automated 85% of manual processes."
+        keywords="insurance management, policy tracking, claims processing, insurance technology, digital transformation"
+      />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0">
@@ -27,7 +30,7 @@ const RouteMaestroCase = () => {
             <div className="mb-6 flex flex-wrap gap-3">
               <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Building className="w-3 h-3 mr-2" />
-                Travel & Tourism
+                Insurance
               </span>
               <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Award className="w-3 h-3 mr-2" />
@@ -36,21 +39,21 @@ const RouteMaestroCase = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
-              AI Travel Planning & Booking Tool
+              Insurance Management Platform
             </h1>
             
             <div className="flex flex-wrap items-center text-blue-200/80 mb-8 gap-6">
               <div className="flex items-center">
                 <Building className="w-5 h-5 mr-2" />
-                <span>Airnet Travels</span>
+                <span>Insurance Experts</span>
               </div>
               <div className="flex items-center">
                 <Users className="w-5 h-5 mr-2" />
-                <span>12 developers</span>
+                <span>18 developers</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
-                <span>8 months</span>
+                <span>12 months</span>
               </div>
             </div>
           </div>
@@ -65,9 +68,9 @@ const RouteMaestroCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/SoftwareProducts/Route Maestro Logo.png" 
-                  alt="Airnet Travels"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  src="/partnerships/logo-1a.jpg" 
+                  alt="Insurance Experts"
+                  className="w-full h-64 bg-white md:h-96 object-contain rounded-xl  p-8"
                 />
               </div>
 
@@ -75,12 +78,12 @@ const RouteMaestroCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-bold text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  An AI Powered Multi-City Travel Planning & Booking Platform that generates ready-to-book AI personalised, multi city real-time travel packages integrated with global hotels, flights, sightseeings, transfers within 2 Minutes!
+                  Modern insurance management solution with policy tracking, claims processing, and customer portal. Automated 85% of manual processes and improved customer satisfaction by 40% while providing 24/7 support capabilities.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-4">The Challenge</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
-                  Airnet Travels needed a revolutionary solution to streamline multi-city travel planning. Traditional methods required hours of research across multiple platforms, often resulting in suboptimal itineraries and frustrated customers. The challenge was to create an AI-powered system that could generate comprehensive travel packages in minutes.
+                  Insurance Experts struggled with outdated legacy systems, manual claim processing, poor customer experience, and lack of real-time policy management. The company needed a comprehensive digital transformation to compete in the modern insurance market and improve operational efficiency.
                 </p>
 
                 <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
@@ -88,26 +91,26 @@ const RouteMaestroCase = () => {
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
-                      <span className="text-blue-100 text-sm">Multi-city travel complexity and coordination</span>
+                      <span className="text-blue-100 text-sm">Manual claims processing causing delays</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
-                      <span className="text-blue-100 text-sm">Real-time availability and pricing integration</span>
+                      <span className="text-blue-100 text-sm">Poor customer portal experience</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
-                      <span className="text-blue-100 text-sm">Personalized AI-driven recommendations</span>
+                      <span className="text-blue-100 text-sm">Lack of real-time policy tracking</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
-                      <span className="text-blue-100 text-sm">Instant booking and payment processing</span>
+                      <span className="text-blue-100 text-sm">Limited reporting and analytics capabilities</span>
                     </div>
                   </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4">Our Solution</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
-                  We developed an AI-powered travel platform that integrates machine learning algorithms with comprehensive travel data to provide personalized recommendations, seamless booking experiences, and intelligent itinerary management. The platform leverages advanced technologies to deliver real-time insights and automated travel planning within 2 minutes.
+                  We developed a comprehensive insurance management platform with automated workflows, intelligent claims processing, customer self-service portals, and advanced analytics. The solution includes mobile applications, web portals, and AI-powered automation to streamline operations.
                 </p>
 
                 {/* Technology Stack */}
@@ -117,33 +120,33 @@ const RouteMaestroCase = () => {
                     <div>
                       <h5 className="font-semibold text-blue-300 mb-2">Frontend</h5>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">React</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Angular</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">TypeScript</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Tailwind CSS</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Material UI</span>
                       </div>
                     </div>
                     <div>
                       <h5 className="font-semibold text-blue-300 mb-2">Backend</h5>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Node.js</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Express</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">MongoDB</span>
-                      </div>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">AI/ML</h5>
-                      <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">TensorFlow</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Python</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Recommendation Engine</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Spring Boot</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Java</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">MySQL</span>
                       </div>
                     </div>
                     <div>
                       <h5 className="font-semibold text-blue-300 mb-2">Infrastructure</h5>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">AWS</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Azure</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Docker</span>
-                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Redis</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Kubernetes</span>
+                      </div>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-blue-300 mb-2">AI/Analytics</h5>
+                      <div className="flex flex-wrap gap-2">
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Machine Learning</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Power BI</span>
+                        <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Elasticsearch</span>
                       </div>
                     </div>
                   </div>
@@ -154,85 +157,69 @@ const RouteMaestroCase = () => {
                 <div className="grid md:grid-cols-2 gap-6 my-8">
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Zap className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">2-Minute AI Planning</h4>
-                    <p className="text-blue-200/80 text-sm">Instant multi-city travel packages with AI-powered recommendations and real-time pricing.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">Automated Claims Processing</h4>
+                    <p className="text-blue-200/80 text-sm">AI-powered claims assessment and automated approval workflows.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Globe className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Global Integration</h4>
-                    <p className="text-blue-200/80 text-sm">Seamless integration with global hotels, flights, sightseeing, and transfer providers.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">Customer Self-Service Portal</h4>
+                    <p className="text-blue-200/80 text-sm">Comprehensive web and mobile portals for policy management and claims.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Personalized Packages</h4>
-                    <p className="text-blue-200/80 text-sm">AI-driven personalization based on preferences, budget, and travel history.</p>
+                    <Shield className="w-8 h-8 text-blue-400 mb-3" />
+                    <h4 className="text-lg font-semibold text-white mb-2">Policy Management</h4>
+                    <p className="text-blue-200/80 text-sm">Real-time policy tracking, renewals, and premium calculations.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Ready-to-Book</h4>
-                    <p className="text-blue-200/80 text-sm">Complete travel packages ready for immediate booking with secure payment processing.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">Advanced Analytics</h4>
+                    <p className="text-blue-200/80 text-sm">Comprehensive reporting, risk assessment, and business intelligence.</p>
                   </div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4">Results & Impact</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
-                  The AI Travel Planning & Booking Tool for Airnet Travels exceeded all expectations, delivering remarkable improvements in booking efficiency, customer satisfaction, and operational effectiveness. The platform revolutionized how customers plan and book multi-city travel.
+                  The Insurance Management Platform transformed Insurance Experts' operations, delivering significant improvements in efficiency, customer satisfaction, and operational costs while enabling 24/7 customer support capabilities.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-slate-900 text-white p-8 rounded-xl my-8 border border-blue-400/30">
                   <h4 className="text-2xl font-bold mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">2 min</div>
-                      <div className="text-lg font-semibold mb-1">Booking Time</div>
-                      <div className="text-blue-100 text-sm">Complete travel packages generated instantly</div>
+                      <div className="text-4xl font-bold text-blue-200 mb-2">85%</div>
+                      <div className="text-lg font-semibold mb-1">Process Automation</div>
+                      <div className="text-blue-100 text-sm">Automated manual processes and workflows</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">300%</div>
-                      <div className="text-lg font-semibold mb-1">Efficiency Increase</div>
-                      <div className="text-blue-100 text-sm">Dramatic improvement in booking process speed</div>
+                      <div className="text-4xl font-bold text-blue-200 mb-2">40%</div>
+                      <div className="text-lg font-semibold mb-1">Customer Satisfaction Increase</div>
+                      <div className="text-blue-100 text-sm">Improved customer experience and service quality</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">95%</div>
-                      <div className="text-lg font-semibold mb-1">User Satisfaction</div>
-                      <div className="text-blue-100 text-sm">Exceptional customer experience ratings</div>
+                      <div className="text-4xl font-bold text-blue-200 mb-2">24/7</div>
+                      <div className="text-lg font-semibold mb-1">Support Availability</div>
+                      <div className="text-blue-100 text-sm">Round-the-clock customer service capabilities</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">50K+</div>
-                      <div className="text-lg font-semibold mb-1">Packages Generated</div>
-                      <div className="text-blue-100 text-sm">AI-powered travel packages created monthly</div>
+                      <div className="text-4xl font-bold text-blue-200 mb-2">60%</div>
+                      <div className="text-lg font-semibold mb-1">Faster Claims Processing</div>
+                      <div className="text-blue-100 text-sm">Reduced claim processing time significantly</div>
                     </div>
                   </div>
-                  
-               
                 </div>
-                   {/* CTA Button */}
-                  <div className="text-center mt-8">
-                    <a 
-                      href="https://www.routemaestro.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-4 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg hover:scale-105 text-lg"
-                    >
-                      RouteMaestro 
-                      <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
-                    </a>
-                  </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4">Client Testimonial</h3>
                 <div className="bg-slate-800/30 border-l-4 border-blue-400 p-6 rounded-r-lg italic backdrop-blur-sm">
                   <p className="text-blue-100/90 text-lg leading-relaxed mb-4">
-                    "Ascentia Labs transformed our travel business completely. The AI-powered platform generates comprehensive travel packages in just 2 minutes - something that used to take hours. Our customers love the personalized recommendations and seamless booking experience. This solution has revolutionized how we serve our clients."
+                    "Ascentia Labs completely transformed our insurance operations. The new platform automated 85% of our manual processes and our customers can now manage their policies and claims 24/7. Customer satisfaction has increased by 40%, and our operational efficiency has improved dramatically. This solution has positioned us as a leader in digital insurance services."
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                      AT
+                      IE
                     </div>
                     <div>
-                      <div className="font-semibold text-white">Airnet Travels Team</div>
-                      <div className="text-blue-300 text-sm">Travel Technology Company</div>
+                      <div className="font-semibold text-white">Insurance Experts Team</div>
+                      <div className="text-blue-300 text-sm">Insurance Technology Company</div>
                     </div>
                   </div>
                 </div>
@@ -261,46 +248,46 @@ const RouteMaestroCase = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <Link to="/case-study-ndmc-mcl-ticketing-platform" className="group">
+            <Link to="/case-study-s-sood-co-task-management" className="group">
               <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/20">
                 <img 
-                  src="/partnerships/NDMC.png" 
-                  alt="NDMC & MCL"
+                  src="/partnerships/image-14.png" 
+                  alt="S. Sood & Co."
                   className="w-full bg-white h-48 object-contain bg-slate-700/50 p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Government</span>
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Productivity</span>
                   <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
-                    NDMC & MCL Ticketing Platform
+                    S. Sood & Co. Task Management
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
                     <Building className="w-4 h-4 mr-1" />
-                    <span className="mr-4">NDMC & MCL</span>
+                    <span className="mr-4">S. Sood & Co.</span>
                     <Users className="w-4 h-4 mr-1" />
-                    <span>15 developers</span>
+                    <span>8 developers</span>
                   </div>
                   <p className="text-blue-400 font-semibold">View Case Study →</p>
                 </div>
               </article>
             </Link>
 
-            <Link to="/case-study-insurance-experts-management" className="group">
+            <Link to="/case-study-pumpkins-kindergarten-management" className="group">
               <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/20">
                 <img 
-                  src="/partnerships/logo-1a.jpg" 
-                  alt="Insurance Experts"
+                  src="/partnerships/pumpkins.svg" 
+                  alt="Pumpkins Kindergarten"
                   className="w-full h-48 bg-white object-contain bg-slate-700/50 p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Insurance</span>
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Education</span>
                   <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
-                    Insurance Management Platform
+                    Pumpkins Kindergarten Management
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
                     <Building className="w-4 h-4 mr-1" />
-                    <span className="mr-4">Insurance Experts</span>
+                    <span className="mr-4">Pumpkins Kindergarten</span>
                     <Users className="w-4 h-4 mr-1" />
-                    <span>18 developers</span>
+                    <span>10 developers</span>
                   </div>
                   <p className="text-blue-400 font-semibold">View Case Study →</p>
                 </div>
@@ -313,4 +300,4 @@ const RouteMaestroCase = () => {
   );
 };
 
-export default RouteMaestroCase;
+export default InsuranceExpertsCase;

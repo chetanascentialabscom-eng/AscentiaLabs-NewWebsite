@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const SoftwareProducts = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-black to-blue-800 relative overflow-hidden">
@@ -41,35 +42,49 @@ const SoftwareProducts = () => {
               
               {/* Title */}
               <div>
-                <div className="flex justify-center lg:justify-start">
-                  <div className=" rounded-xl  py-3 shadow-lg">
-                    <img 
-                      src="/SoftwareProducts/Route Maestro Logo.png" 
-                      alt="RouteMaestro Logo" 
-                      className="h-12 rounded-lg md:h-16 w-auto object-contain"
-                    />
+                <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
+                  {/* <img 
+                    src="/SoftwareProducts/Route Maestro Logo.png" 
+                    alt="Airnet Travels" 
+                    className="h-12 md:h-16 w-auto object-contain rounded-lg"
+                  /> */}
+                  <h3 className="text-2xl md:text-3xl font-bold text-white">AI Travel Planning & Booking Tool</h3>
+                </div>
+                
+                <p className="text-lg text-white leading-relaxed">
+                  An AI Powered Multi-City Travel Planning & Booking Platform that generates ready-to-book AI personalised, multi city real-time travel packages integrated with global hotels, flights, sightseeings, transfers within 2 Minutes!
+                </p>
+                
+                {/* Impact Metrics */}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 p-4 bg-blue-900/30 rounded-xl backdrop-blur-sm border border-blue-400/20">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-300">2 min</div>
+                    <div className="text-sm text-blue-200/80">Booking Time</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-300">300%</div>
+                    <div className="text-sm text-blue-200/80">Efficiency Boost</div>
+                  </div>
+                  <div className="text-center md:col-span-1 col-span-2">
+                    <div className="text-2xl font-bold text-blue-300">95%</div>
+                    <div className="text-sm text-blue-200/80">User Satisfaction</div>
                   </div>
                 </div>
-                <p className="text-lg text-white leading-relaxed">
-                  An AI Powered Travel Planning & Booking Platform - Equip your B2B / B2C travel business with AI Personalised Dynamic Packaging. Generate & book AI personalised, multi city real-time packages integrated with your own inventory within 2 Minutes! 
-                </p>
               </div>
               
              
               
               {/* CTA Button */}
               <div className="pt-4 ">
-                <a 
-                  href="https://www.routemaestro.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <Link 
+                  to="/case-study-airnet-travels-routemaestro" 
                   className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg  hover:scale-105 text-base "
                 >
-                  Explore RouteMaestro
+                  View Case Study
                   <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

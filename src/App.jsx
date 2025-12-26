@@ -45,6 +45,13 @@ import {
   JusDoItCase
 } from './pages'
 
+// Import new case study components
+import NDMCTicketingCase from './pages/CaseStudies/NDMCTicketingCase'
+import InsuranceExpertsCase from './pages/CaseStudies/InsuranceExpertsCase'
+import SSoodTaskManagementCase from './pages/CaseStudies/SSoodTaskManagementCase'
+import PumpkinsKindergartenCase from './pages/CaseStudies/PumpkinsKindergartenCase'
+import SunviewEnclaveCase from './pages/CaseStudies/SunviewEnclaveCase'
+
 function App() {
   // Initialize Lenis smooth scrolling
   useLenis()
@@ -101,8 +108,14 @@ function App() {
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/case-study-justdoit" element={<JusDoItCase />} />
           <Route path="/case-study-routemaestro-ai-travel-platform" element={<RouteMaestroCase />} />
+          <Route path="/case-study-airnet-travels-routemaestro" element={<RouteMaestroCase />} />
           <Route path="/case-study-kinderconnect-kindergarten-management" element={<KinderConnectCase />} />
           <Route path="/case-study-insurancesafe-digital-platform" element={<InsuranceSafeCase />} />
+          <Route path="/case-study-ndmc-mcl-ticketing-platform" element={<NDMCTicketingCase />} />
+          <Route path="/case-study-insurance-experts-management" element={<InsuranceExpertsCase />} />
+          <Route path="/case-study-s-sood-co-task-management" element={<SSoodTaskManagementCase />} />
+          <Route path="/case-study-pumpkins-kindergarten-management" element={<PumpkinsKindergartenCase />} />
+          <Route path="/case-study-sunview-enclave-real-estate" element={<SunviewEnclaveCase />} />
           </Routes>
           <Footer />
           <WhatsAppFloat />
