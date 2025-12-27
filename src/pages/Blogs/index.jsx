@@ -123,21 +123,21 @@ const BlogsPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData.blog} />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-8 sm:pb-12 lg:pb-16 overflow-visible hero-section">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl  mb-3 sm:mb-4 text-blue-600">
-              Our <span className="text-gray-800">Blog</span> - <span className="text-gray-700">Insights & Innovation</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl  mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+              Our <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Blog</span> - <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">Insights & Innovation</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
+            <p className="text-base sm:text-lg text-blue-200/80 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
               Stay updated with the latest insights, trends, and innovations in technology, 
               software development, and digital transformation.
             </p>
@@ -145,13 +145,13 @@ const BlogsPage = () => {
             {/* Search and Filter */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-2xl mx-auto relative">
               <div className="relative flex-1 w-full sm:w-auto">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                {/* <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" /> */}
                 <input
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white text-sm"
+                  className="w-full pl-6 pr-4 py-2.5 rounded-lg border border-blue-400/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-slate-800/50 backdrop-blur-sm text-white placeholder-gray-400 text-sm"
                 />
               </div>
               
@@ -161,7 +161,7 @@ const BlogsPage = () => {
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="w-48 max-w-xs pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 bg-white cursor-pointer text-sm text-gray-700 font-medium shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 flex items-center justify-between"
+                  className="w-48 max-w-xs pl-9 pr-3 py-2.5 rounded-xl border border-blue-400/20 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 bg-slate-800/50 backdrop-blur-sm cursor-pointer text-sm text-white font-medium shadow-sm hover:shadow-md hover:border-blue-400/40 transition-all duration-200 flex items-center justify-between"
                 >
                   <span className="truncate flex-1 text-left">{selectedCategory}</span>
                   <svg 
@@ -176,7 +176,7 @@ const BlogsPage = () => {
                 
                 {/* Custom Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden w-48 max-w-xs z-50">
+                  <div className="absolute top-full left-0 mt-2 bg-slate-800 border border-blue-400/20 rounded-xl shadow-xl overflow-hidden w-48 max-w-xs z-50 backdrop-blur-sm">
                     {categories.map((category, index) => (
                       <button
                         key={category}
@@ -185,11 +185,11 @@ const BlogsPage = () => {
                           setSelectedCategory(category);
                           setIsDropdownOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-blue-50 whitespace-nowrap ${
+                        className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-blue-900/30 whitespace-nowrap ${
                           selectedCategory === category 
-                            ? 'bg-blue-50 text-blue-600 font-medium' 
-                            : 'text-gray-700 hover:text-blue-600'
-                        } ${index === categories.length - 1 ? '' : 'border-b border-gray-100'}`}
+                            ? 'bg-blue-900/30 text-blue-400 font-medium' 
+                            : 'text-blue-200/80 hover:text-blue-300'
+                        } ${index === categories.length - 1 ? '' : 'border-b border-blue-400/10'}`}
                       >
                         {category}
                       </button>
@@ -207,7 +207,7 @@ const BlogsPage = () => {
         <div className="container mx-auto px-4">
           {/* Results Counter */}
           <div className="text-center mb-4">
-            <p className="text-gray-600">
+            <p className="text-blue-200/80">
               {filteredBlogs.length > 0 
                 ? `Showing ${filteredBlogs.length} article${filteredBlogs.length !== 1 ? 's' : ''} ${selectedCategory !== 'All' ? `in ${selectedCategory}` : ''}`
                 : 'No articles found'
@@ -217,11 +217,11 @@ const BlogsPage = () => {
 
           {filteredBlogs.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="w-10 h-10 text-gray-400" />
+              <div className="w-20 h-20 bg-slate-800/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="w-10 h-10 text-blue-400" />
               </div>
-              <h3 className="text-xl  text-gray-800 mb-2">No articles found</h3>
-              <p className="text-gray-600">Try adjusting your search terms or filters.</p>
+              <h3 className="text-xl  text-white mb-2">No articles found</h3>
+              <p className="text-blue-200/80">Try adjusting your search terms or filters.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -232,7 +232,7 @@ const BlogsPage = () => {
                   className="block"
                 >
                   <article 
-                    className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group hover:-translate-y-1 blog-card cursor-pointer"
+                    className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group hover:-translate-y-1 blog-card cursor-pointer border border-blue-400/20"
                   >
                   <div className="relative overflow-hidden">
                     <img 
@@ -252,7 +252,7 @@ const BlogsPage = () => {
                   </div>
                   
                   <div className="p-5">
-                    <div className="flex items-center text-xs text-gray-500 mb-3 space-x-3">
+                    <div className="flex items-center text-xs text-blue-300/70 mb-3 space-x-3">
                       <div className="flex items-center">
                         <User className="w-3 h-3 mr-1" />
                         {blog.author}
@@ -264,15 +264,15 @@ const BlogsPage = () => {
                      
                     </div>
                     
-                    <h3 className="text-lg  text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+                    <h3 className="text-lg  text-white mb-2 line-clamp-2 group-hover:text-blue-400 transition-colors leading-tight">
                       {blog.title}
                     </h3>
                     
-                    <p className="text-gray-600 mb-4 line-clamp-2 text-sm leading-relaxed">
+                    <p className="text-blue-200/80 mb-4 line-clamp-2 text-sm leading-relaxed">
                       {blog.excerpt}
                     </p>
                     
-                    <div className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors text-sm">
+                    <div className="inline-flex items-center text-blue-400 font-medium hover:text-blue-300 transition-colors text-sm">
                       Read More
                       <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                     </div>

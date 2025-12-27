@@ -5,20 +5,20 @@ import { seoData } from '../../utils/seoData';
 
 const MobileAppTrends2025 = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData.mobileAppTrends2025} />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <Link 
               to="/blog" 
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium mb-8 transition-colors"
+              className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium mb-8 transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blogs
@@ -31,11 +31,11 @@ const MobileAppTrends2025 = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 text-gray-800 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 text-white leading-tight">
              Mobile App Development Trends for 2025: The Future of Digital Innovation
             </h1>
             
-            <div className="flex flex-wrap items-center text-gray-600 mb-8 gap-6">
+            <div className="flex flex-wrap items-center text-blue-200/80 mb-8 gap-6">
               <div className="flex items-center">
                 <User className="w-5 h-5 mr-2" />
                 <span>Mobile Team</span>
@@ -48,7 +48,7 @@ const MobileAppTrends2025 = () => {
                 <Clock className="w-5 h-5 mr-2" />
                 <span>9 min read</span>
               </div>
-              {/* <button className="flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+              {/* <button className="flex items-center text-blue-400 hover:text-blue-300 transition-colors">
                 <Share2 className="w-5 h-5 mr-2" />
                 <span>Share</span>
               </button> */}
@@ -75,67 +75,67 @@ const MobileAppTrends2025 = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <article className="prose prose-lg max-w-none">
-              <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-6">
-                <p className="text-xl text-gray-700 leading-relaxed mb-4">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-400/20 p-6 md:p-8 mb-6">
+                <p className="text-xl text-blue-100/90 leading-relaxed mb-4">
                   The mobile app development landscape is evolving rapidly, with new technologies and trends shaping how we build and interact with mobile applications. As we move into 2025, several key trends are emerging that will define the future of mobile development.
                 </p>
 
-                <h2 className="text-3xl  text-gray-800 mb-4 flex items-center">
-                  <Smartphone className="w-8 h-8 mr-3 text-blue-600" />
+                <h2 className="text-3xl  text-white mb-4 flex items-center">
+                  <Smartphone className="w-8 h-8 mr-3 text-blue-400" />
                   Key Trends Shaping Mobile Development
                 </h2>
 
                 <div className="space-y-6">
-                  <div className="bg-blue-50 rounded-xl p-6">
-                    <h3 className="text-2xl  text-gray-800 mb-3">1. AI-Powered Mobile Apps</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="bg-slate-800/30 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 className="text-2xl  text-white mb-3">1. AI-Powered Mobile Apps</h3>
+                    <p className="text-blue-100/90 leading-relaxed">
                       Artificial Intelligence integration is becoming standard in mobile apps. From personalized user experiences to predictive analytics, AI is transforming how apps understand and serve users. Machine learning algorithms are enabling apps to learn from user behavior and provide more relevant content and features.
                     </p>
                   </div>
 
-                  <div className="bg-green-50 rounded-xl p-6">
-                    <h3 className="text-2xl  text-gray-800 mb-3">2. Cross-Platform Development</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="bg-slate-800/30 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 className="text-2xl  text-white mb-3">2. Cross-Platform Development</h3>
+                    <p className="text-blue-100/90 leading-relaxed">
                       Frameworks like Flutter, React Native, and .NET MAUI are gaining popularity as businesses seek to reduce development costs and time-to-market. These technologies allow developers to write code once and deploy across multiple platforms while maintaining native performance.
                     </p>
                   </div>
 
-                  <div className="bg-purple-50 rounded-xl p-6">
-                    <h3 className="text-2xl  text-gray-800 mb-3">3. 5G Integration</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="bg-slate-800/30 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 className="text-2xl  text-white mb-3">3. 5G Integration</h3>
+                    <p className="text-blue-100/90 leading-relaxed">
                       With 5G networks becoming more widespread, mobile apps can leverage faster data speeds and lower latency. This enables new possibilities for real-time applications, augmented reality experiences, and cloud-based processing.
                     </p>
                   </div>
 
-                  <div className="bg-orange-50 rounded-xl p-6">
-                    <h3 className="text-2xl  text-gray-800 mb-3">4. Enhanced Security Features</h3>
-                    <p className="text-gray-700 leading-relaxed">
+                  <div className="bg-slate-800/30 border border-blue-400/20 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 className="text-2xl  text-white mb-3">4. Enhanced Security Features</h3>
+                    <p className="text-blue-100/90 leading-relaxed">
                       Security remains a top priority with biometric authentication, end-to-end encryption, and zero-trust security models becoming standard. Apps are implementing advanced security measures to protect user data and maintain privacy.
                     </p>
                   </div>
                 </div>
 
-                <h2 className="text-3xl  text-gray-800 mb-4 mt-8 flex items-center">
-                  <Zap className="w-8 h-8 mr-3 text-blue-600" />
+                <h2 className="text-3xl  text-white mb-4 mt-8 flex items-center">
+                  <Zap className="w-8 h-8 mr-3 text-blue-400" />
                   Emerging Technologies
                 </h2>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
-                    <h4 className="text-xl  text-gray-800 mb-3">Augmented Reality (AR)</h4>
-                    <p className="text-gray-700">AR integration is becoming more accessible, enabling immersive experiences in retail, education, and entertainment apps.</p>
+                  <div className="bg-slate-800/30 border border-blue-400/20 backdrop-blur-sm rounded-xl p-6">
+                    <h4 className="text-xl  text-white mb-3">Augmented Reality (AR)</h4>
+                    <p className="text-blue-100/90">AR integration is becoming more accessible, enabling immersive experiences in retail, education, and entertainment apps.</p>
                   </div>
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
-                    <h4 className="text-xl  text-gray-800 mb-3">Internet of Things (IoT)</h4>
-                    <p className="text-gray-700">Mobile apps are increasingly serving as control centers for IoT devices, from smart homes to industrial applications.</p>
+                  <div className="bg-slate-800/30 border border-blue-400/20 backdrop-blur-sm rounded-xl p-6">
+                    <h4 className="text-xl  text-white mb-3">Internet of Things (IoT)</h4>
+                    <p className="text-blue-100/90">Mobile apps are increasingly serving as control centers for IoT devices, from smart homes to industrial applications.</p>
                   </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6">
-                    <h4 className="text-xl  text-gray-800 mb-3">Blockchain Integration</h4>
-                    <p className="text-gray-700">Blockchain technology is being integrated for secure transactions, digital identity verification, and decentralized applications.</p>
+                  <div className="bg-slate-800/30 border border-blue-400/20 backdrop-blur-sm rounded-xl p-6">
+                    <h4 className="text-xl  text-white mb-3">Blockchain Integration</h4>
+                    <p className="text-blue-100/90">Blockchain technology is being integrated for secure transactions, digital identity verification, and decentralized applications.</p>
                   </div>
-                  <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6">
-                    <h4 className="text-xl  text-gray-800 mb-3">Voice User Interface</h4>
-                    <p className="text-gray-700">Voice commands and conversational interfaces are becoming more sophisticated, offering hands-free app interactions.</p>
+                  <div className="bg-slate-800/30 border border-blue-400/20 backdrop-blur-sm rounded-xl p-6">
+                    <h4 className="text-xl  text-white mb-3">Voice User Interface</h4>
+                    <p className="text-blue-100/90">Voice commands and conversational interfaces are becoming more sophisticated, offering hands-free app interactions.</p>
                   </div>
                 </div>
 
@@ -147,16 +147,16 @@ const MobileAppTrends2025 = () => {
       </section>
 
       {/* Other Blogs Section */}
-      <section className="py-12 bg-white">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl  text-gray-800 mb-4">Other Blogs</h2>
-            <p className="text-gray-600 text-lg">Explore more insights and articles</p>
+            <h2 className="text-3xl md:text-4xl  text-white mb-4">Other Blogs</h2>
+            <p className="text-blue-200/80 text-lg">Explore more insights and articles</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <Link to="/custom-software-development-business" className="group">
-              <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/20 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/blogs/blog4.png" 
                   alt="Custom Software Development"
@@ -164,22 +164,22 @@ const MobileAppTrends2025 = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Software Development</span>
-                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     CUSTOM SOFTWARE DEVELOPMENT: TRANSFORMING BUSINESS ...
                   </h3>
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <div className="flex items-center text-sm text-blue-300/70 mb-3">
                     <User className="w-4 h-4 mr-1" />
                     <span className="mr-4">Development Team</span>
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>10/06/2025</span>
                   </div>
-                  <p className="text-blue-600 ">Read More →</p>
+                  <p className="text-blue-400 ">Read More →</p>
                 </div>
               </article>
             </Link>
 
             <Link to="/healthcare-app-development-patient-care" className="group">
-              <article className="bg-gradient-to-br from-slate-100 to-blue-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/20 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img 
                   src="/blogs/blog6.jpg" 
                   alt="Healthcare App Development"
@@ -187,16 +187,16 @@ const MobileAppTrends2025 = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Healthcare</span>
-                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     HEALTHCARE APP DEVELOPMENT: REVOLUTIONIZING PATIENT CARE
                   </h3>
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <div className="flex items-center text-sm text-blue-300/70 mb-3">
                     <User className="w-4 h-4 mr-1" />
                     <span className="mr-4">Healthcare Team</span>
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>05/06/2025</span>
                   </div>
-                  <p className="text-blue-600 ">Read More →</p>
+                  <p className="text-blue-400 ">Read More →</p>
                 </div>
               </article>
             </Link>
