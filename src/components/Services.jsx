@@ -102,7 +102,7 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="services-heading text-3xl rows-wrap sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight max-w-6xl mx-auto px-4">
+          <h2 className="services-heading text-3xl rows-wrap sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl  leading-tight max-w-6xl mx-auto px-4">
             <span className="block">At Ascentia Labs: We Develop World-Class Solutions That Redefine Industry Standards</span>
           </h2>
         </div>
@@ -133,7 +133,7 @@ const Services = () => {
               {/* Content Container */}
               <div className="flex-1 flex flex-col justify-center">
                 {/* Service Title */}
-                <h3 className="text-center text-sm sm:text-base font-semibold leading-tight px-2 mb-2">
+                <h3 className="text-center text-sm sm:text-base  leading-tight px-2 mb-2">
                   {service.title}
                 </h3>
                 

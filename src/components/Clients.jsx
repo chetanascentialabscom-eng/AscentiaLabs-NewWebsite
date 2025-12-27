@@ -126,7 +126,7 @@ const Clients = () => {
         <div className="mb-8 sm:mb-12">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl  text-white leading-tight mb-4 sm:mb-6">
               Client Success Stories
               <br />
               
@@ -195,14 +195,14 @@ const Clients = () => {
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                          <span className="text-white font-bold text-lg sm:text-xl">
+                          <span className="text-white  text-lg sm:text-xl">
                             {testimonial.name.charAt(0).toUpperCase()}
                           </span>
                         </div>
                       )}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-white text-sm sm:text-base">
+                      <h4 className=" text-white text-sm sm:text-base">
                         {testimonial.name}
                       </h4>
                       <p className="text-blue-200 text-xs sm:text-sm">

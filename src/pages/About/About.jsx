@@ -116,12 +116,12 @@ const About = () => {
             </div>
 
             <div className="inline-block mb-3 md:mb-4">
-              <span className="bg-gradient-to-r from-blue-300 to-white bg-clip-text text-transparent text-sm md:text-base font-semibold tracking-wider uppercase">
+              <span className="bg-gradient-to-r from-blue-300 to-white bg-clip-text text-transparent text-sm md:text-base  tracking-wider uppercase">
                 Driving Excellence
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl  text-white mb-4 md:mb-8 leading-tight">
               Building
               <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                 Tomorrow
@@ -155,11 +155,11 @@ const About = () => {
               data-animate
             >
               <div className="inline-block mb-4">
-                <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+                <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm  tracking-wider uppercase">
                   Our Story
                 </span>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl  mb-8 leading-tight">
                 <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
                   Who We Are
                 </span>
@@ -192,11 +192,11 @@ const About = () => {
             data-animate
           >
             <div className="inline-block mb-3">
-              <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm font-semibold tracking-wider uppercase">
+              <span className="bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent text-sm  tracking-wider uppercase">
                 Our Foundation
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl  mb-6">
               Our Core Values
             </h2>
             <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -249,7 +249,7 @@ const About = () => {
                     {value.icon}
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-4 text-white group-hover:text-gray-100 transition-colors">
+                  <h3 className="text-xl  mb-4 text-white group-hover:text-gray-100 transition-colors">
                     {value.title}
                   </h3>
                   
@@ -287,8 +287,8 @@ const About = () => {
                 </svg>
               </div>
               <div>
-                <div className="text-blue-200 text-xs font-semibold mb-1 tracking-wider uppercase">Let's Get in Touch</div>
-                <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+                <div className="text-blue-200 text-xs  mb-1 tracking-wider uppercase">Let's Get in Touch</div>
+                <h2 className="text-2xl md:text-3xl  leading-tight">
                   Ready to Transform
                   <span className="block">Your Business?</span>
                 </h2>
@@ -296,7 +296,7 @@ const About = () => {
             </div>
             <Link 
               to="/contact-us" 
-              className="bg-yellow-400 text-black hover:bg-yellow-300 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
+              className="bg-yellow-400 text-black hover:bg-yellow-300 px-8 py-3 rounded-full  transition-all duration-300 hover:scale-105 shadow-2xl flex items-center group"
             >
               GET IN TOUCH
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -330,17 +330,17 @@ const About = () => {
             id="bridging"
             data-animate
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl  mb-6 leading-tight">
               <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-blue-400 bg-clip-text text-transparent">
                 Bridging Ideas
               </span>
               <span className="block text-white">With Technology</span>
             </h2>
             <div className="space-y-3 max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl font-semibold text-gray-300">
+              <p className="text-lg md:text-xl  text-gray-300">
                 Where Innovation Meets Excellence
               </p>
-              <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
+              <p className="text-lg md:text-xl  bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent">
                 Delivering Solutions That Drive Success
               </p>
             </div>

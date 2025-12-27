@@ -165,10 +165,10 @@ const stats = [
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-block sm:mt-4 px-4 py-2 bg-blue-500/30 rounded-full text-sm font-semibold mb-4 sm:mb-6 backdrop-blur-sm">
+              <div className="inline-block sm:mt-4 px-4 py-2 bg-blue-500/30 rounded-full text-sm  mb-4 sm:mb-6 backdrop-blur-sm">
                 Industry's Favorite
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 leading-tight">
                 Ideation & Design Strategy Solutions
               </h1>
               <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
@@ -177,7 +177,7 @@ const stats = [
               <div className="mb-8 sm:mb-12">
                 <button 
                   onClick={openConsultation}
-                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300 font-bold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 "
+                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300  shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 "
                 >
                   Get Consultation
                   <ArrowRight className="w-5 h-5" />
@@ -188,7 +188,7 @@ const stats = [
               <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.number}</div>
+                    <div className="text-3xl md:text-4xl  text-white mb-1">{stat.number}</div>
                     <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 ))}
@@ -202,7 +202,7 @@ const stats = [
                 <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <div className="flex items-center gap-2.5">
                     <PenTool className="w-7 h-7 text-white animate-pulse" />
-                    <h3 className="text-sm sm:text-base font-bold text-white">Design Excellence</h3>
+                    <h3 className="text-sm sm:text-base  text-white">Design Excellence</h3>
                   </div>
                 </div>
               </div>
@@ -212,7 +212,7 @@ const stats = [
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <Palette className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">UX/UI Design</h4>
+                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">UX/UI Design</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">User interfaces</p>
                 </div>
 
@@ -220,7 +220,7 @@ const stats = [
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <PenTool className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Brand Identity</h4>
+                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">Brand Identity</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Brand strategy</p>
                 </div>
 
@@ -228,7 +228,7 @@ const stats = [
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <Layout className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">Prototyping</h4>
+                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">Prototyping</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Interactive prototypes</p>
                 </div>
 
@@ -236,7 +236,7 @@ const stats = [
                 <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
                   <MessageSquare className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base font-bold text-white mb-1.5 relative z-10">User Research</h4>
+                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">User Research</h4>
                   <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data insights</p>
                 </div>
               </div>
@@ -247,7 +247,7 @@ const stats = [
           <div className="hidden lg:grid grid-cols-4 gap-8 mt-20 pt-12 border-t border-blue-400/30">
             {stats.map((stat, index) => (
               <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl  text-white mb-2">{stat.number}</div>
                 <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
@@ -304,7 +304,7 @@ const stats = [
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl  text-white mb-4">
               Our Ideation & Design Services
             </h2>
             <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
@@ -318,7 +318,7 @@ const stats = [
               <button
                 key={service.id}
                 onClick={() => setActiveTab(service.id)}
-                className={`group relative px-3 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
+                className={`group relative px-3 sm:px-5 py-3 rounded-xl  text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
                   activeTab === service.id
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
@@ -337,7 +337,7 @@ const stats = [
             activeTab === service.id && (
               <div key={service.id} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeIn">
                 <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6">
+                  <h3 className="text-2xl sm:text-3xl  text-white mb-4 sm:mb-6">
                     {service.title}
                   </h3>
                   <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
@@ -395,7 +395,7 @@ const stats = [
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="text-white space-y-8">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
                     Transform Your Vision With Ascentia Labs
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
@@ -405,9 +405,9 @@ const stats = [
 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">01</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">01</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         User-Centered Design Approach
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -415,9 +415,9 @@ const stats = [
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">02</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">02</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Design System Development
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -425,9 +425,9 @@ const stats = [
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">03</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">03</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Rapid Prototyping & Testing
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -435,9 +435,9 @@ const stats = [
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">04</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">04</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Brand Identity Excellence
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -445,9 +445,9 @@ const stats = [
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">05</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">05</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Collaborative Design Process
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -455,9 +455,9 @@ const stats = [
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">06</div>
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">06</div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Continuous Design Support
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -488,7 +488,7 @@ const stats = [
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4">
+                    <h3 className="text-2xl  mb-4">
                       Ready to Transform Your Design?
                     </h3>
                     <p className="text-blue-100 mb-6">
@@ -496,7 +496,7 @@ const stats = [
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Start Your Design Journey
                     </button>
@@ -512,7 +512,7 @@ const stats = [
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            <h2 className="text-4xl md:text-5xl  mb-4 text-white">
               Why Ascentia Labs?
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
@@ -534,7 +534,7 @@ const stats = [
                       {item.icon}
                     </div>
                     
-                    <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-all duration-300 leading-tight">
+                    <h3 className="text-lg  text-white group-hover:text-blue-300 transition-all duration-300 leading-tight">
                       {item.title}
                     </h3>
                   </div>
@@ -557,7 +557,7 @@ const stats = [
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl  text-white mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-gray-400">
@@ -572,7 +572,7 @@ const stats = [
                   className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors"
                   onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
                 >
-                  <span className="font-semibold text-white pr-4">{faq.question}</span>
+                  <span className=" text-white pr-4">{faq.question}</span>
                   {expandedFAQ === index ? (
                     <ChevronUp className="w-5 h-5 text-blue-400 flex-shrink-0 transform transition-transform duration-300" />
                   ) : (

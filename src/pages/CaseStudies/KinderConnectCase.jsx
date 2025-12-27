@@ -35,7 +35,7 @@ const KinderConnectCase = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 text-gray-800 leading-tight">
               KinderConnect: Comprehensive Kindergarten Management System
             </h1>
             
@@ -75,18 +75,18 @@ const KinderConnectCase = () => {
 
               {/* Project Overview */}
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-bold text-gray-800 mb-4">Project Overview</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4">Project Overview</h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
                   KinderConnect revolutionizes kindergarten management by providing a comprehensive digital solution that streamlines administrative tasks, enhances parent-teacher communication, and improves overall educational outcomes for young learners.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">The Challenge</h3>
+                <h3 className="text-2xl  text-gray-800 mb-4">The Challenge</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Traditional kindergarten management relied heavily on paper-based systems, manual attendance tracking, and fragmented communication channels. Parents struggled to stay informed about their child's progress, while teachers spent excessive time on administrative tasks rather than focusing on education.
                 </p>
 
                 <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-                  <h4 className="text-lg font-semibold text-blue-800 mb-4">Key Challenges Addressed:</h4>
+                  <h4 className="text-lg  text-blue-800 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
@@ -107,17 +107,17 @@ const KinderConnectCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Solution</h3>
+                <h3 className="text-2xl  text-gray-800 mb-4">Our Solution</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   We developed a comprehensive kindergarten management system that digitizes all aspects of early childhood education administration. The platform includes student management, parent communication portals, attendance tracking, and progress monitoring tools.
                 </p>
 
                 {/* Technology Stack */}
                 <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-xl my-8">
-                  <h4 className="text-xl font-bold text-gray-800 mb-4">Technology Stack</h4>
+                  <h4 className="text-xl  text-gray-800 mb-4">Technology Stack</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-semibold text-gray-700 mb-2">Mobile App</h5>
+                      <h5 className=" text-gray-700 mb-2">Mobile App</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React Native</span>
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
@@ -125,7 +125,7 @@ const KinderConnectCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-gray-700 mb-2">Backend</h5>
+                      <h5 className=" text-gray-700 mb-2">Backend</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Node.js</span>
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Express</span>
@@ -133,7 +133,7 @@ const KinderConnectCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-gray-700 mb-2">Real-time</h5>
+                      <h5 className=" text-gray-700 mb-2">Real-time</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Firebase</span>
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Push Notifications</span>
@@ -141,7 +141,7 @@ const KinderConnectCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-gray-700 mb-2">Security</h5>
+                      <h5 className=" text-gray-700 mb-2">Security</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JWT Auth</span>
                         <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">COPPA Compliant</span>
@@ -151,73 +151,73 @@ const KinderConnectCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Key Features Delivered</h3>
+                <h3 className="text-2xl  text-gray-800 mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
                   <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <Users className="w-8 h-8 text-blue-600 mb-3" />
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Student Management</h4>
+                    <h4 className="text-lg  text-gray-800 mb-2">Student Management</h4>
                     <p className="text-gray-600 text-sm">Comprehensive student profiles with attendance, health records, and progress tracking.</p>
                   </div>
                   <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <Globe className="w-8 h-8 text-blue-600 mb-3" />
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Parent Portal</h4>
+                    <h4 className="text-lg  text-gray-800 mb-2">Parent Portal</h4>
                     <p className="text-gray-600 text-sm">Real-time updates, photo sharing, and direct communication with teachers.</p>
                   </div>
                   <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <Target className="w-8 h-8 text-blue-600 mb-3" />
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Attendance Tracking</h4>
+                    <h4 className="text-lg  text-gray-800 mb-2">Attendance Tracking</h4>
                     <p className="text-gray-600 text-sm">Automated attendance with QR codes and instant parent notifications.</p>
                   </div>
                   <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                     <TrendingUp className="w-8 h-8 text-blue-600 mb-3" />
-                    <h4 className="text-lg font-semibold text-gray-800 mb-2">Progress Reports</h4>
+                    <h4 className="text-lg  text-gray-800 mb-2">Progress Reports</h4>
                     <p className="text-gray-600 text-sm">Digital progress tracking with milestone achievements and developmental assessments.</p>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Results & Impact</h3>
+                <h3 className="text-2xl  text-gray-800 mb-4">Results & Impact</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   KinderConnect has transformed kindergarten operations across 100+ institutions, significantly improving administrative efficiency and parent satisfaction while enhancing the overall educational experience for children.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-black text-white p-8 rounded-xl my-8">
-                  <h4 className="text-2xl font-bold mb-6">Project Outcomes</h4>
+                  <h4 className="text-2xl  mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">100+</div>
-                      <div className="text-lg font-semibold mb-1">Institutions Served</div>
+                      <div className="text-4xl  text-blue-200 mb-2">100+</div>
+                      <div className="text-lg  mb-1">Institutions Served</div>
                       <div className="text-blue-100 text-sm">Kindergartens using the platform</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">180%</div>
-                      <div className="text-lg font-semibold mb-1">Efficiency Improvement</div>
+                      <div className="text-4xl  text-blue-200 mb-2">180%</div>
+                      <div className="text-lg  mb-1">Efficiency Improvement</div>
                       <div className="text-blue-100 text-sm">Reduced administrative workload</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">95%</div>
-                      <div className="text-lg font-semibold mb-1">Parent Satisfaction</div>
+                      <div className="text-4xl  text-blue-200 mb-2">95%</div>
+                      <div className="text-lg  mb-1">Parent Satisfaction</div>
                       <div className="text-blue-100 text-sm">Highly satisfied with communication</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">5K+</div>
-                      <div className="text-lg font-semibold mb-1">Children Benefited</div>
+                      <div className="text-4xl  text-blue-200 mb-2">5K+</div>
+                      <div className="text-lg  mb-1">Children Benefited</div>
                       <div className="text-blue-100 text-sm">Students using the platform</div>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">Client Testimonial</h3>
+                <h3 className="text-2xl  text-gray-800 mb-4">Client Testimonial</h3>
                 <div className="bg-gray-50 border-l-4 border-blue-600 p-6 rounded-r-lg italic">
                   <p className="text-gray-700 text-lg leading-relaxed mb-4">
                     "KinderConnect has completely transformed how we manage our kindergarten. The platform has streamlined our operations, improved parent communication, and allowed our teachers to focus more on what they do best - educating children. The response from parents has been overwhelmingly positive."
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
                       KC
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-800">KinderConnect Team</div>
+                      <div className=" text-gray-800">KinderConnect Team</div>
                       <div className="text-gray-600 text-sm">Education Technology Company</div>
                     </div>
                   </div>
@@ -226,7 +226,7 @@ const KinderConnectCase = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <Link 
                     to="/case-studies" 
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700  transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return To Case Studies
@@ -242,7 +242,7 @@ const KinderConnectCase = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Other Success Stories</h2>
+            <h2 className="text-3xl md:text-4xl  text-gray-800 mb-4">Other Success Stories</h2>
             <p className="text-gray-600 text-lg">Explore more of our successful projects</p>
           </div>
           
@@ -256,7 +256,7 @@ const KinderConnectCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel & Tourism</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     RouteMaestro: AI-Powered Travel Planning 
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -265,7 +265,7 @@ const KinderConnectCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>12 developers</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">View Case Study →</p>
+                  <p className="text-blue-600 ">View Case Study →</p>
                 </div>
               </article>
             </Link>
@@ -279,7 +279,7 @@ const KinderConnectCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Productivity</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     JusDoIt: Task Management Solution
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -288,7 +288,7 @@ const KinderConnectCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>6 developers</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">View Case Study →</p>
+                  <p className="text-blue-600 ">View Case Study →</p>
                 </div>
               </article>
             </Link>

@@ -237,7 +237,7 @@ const LogisticsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="text-white space-y-6">
-              <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-4xl  leading-tight">
                 Transform Your Logistics Operations with Our Advanced Management System
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
@@ -245,7 +245,7 @@ const LogisticsPage = () => {
               </p>
               <button 
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
                 Get Free Consultation
               </button>
@@ -262,7 +262,7 @@ const LogisticsPage = () => {
                         <IconComponent size={20} />
                       </div>
                       <div>
-                        <h3 className="text-white font-bold text-lg mb-1">{feature.title}</h3>
+                        <h3 className="text-white  text-lg mb-1">{feature.title}</h3>
                         <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
                       </div>
                     </div>
@@ -278,7 +278,7 @@ const LogisticsPage = () => {
       <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
               Comprehensive Logistics Management Features
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
@@ -304,7 +304,7 @@ const LogisticsPage = () => {
                         onClick={() => setActiveFeature(index)}
                       >
                         <div className="flex items-center space-x-2">
-                          <span className={`text-xs font-bold px-2 py-1 rounded ${
+                          <span className={`text-xs  px-2 py-1 rounded ${
                             activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
                           }`}>
                             {index < 9 ? `0${index + 1}` : index + 1}
@@ -327,7 +327,7 @@ const LogisticsPage = () => {
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      <h3 className="text-xl  text-gray-900 mb-3">
                         {features[activeFeature].title}
                       </h3>
                       <ul className="space-y-2 text-gray-600 text-sm">
@@ -351,7 +351,7 @@ const LogisticsPage = () => {
       <section className="py-16 bg-black relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent font-bold mb-3">
+            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
               Our Logistics Management Implementation Process
             </h2>
             <p className="text-lg text-gray-300">
@@ -368,10 +368,10 @@ const LogisticsPage = () => {
                 
                 {processSteps.map((step, index) => (
                   <div key={index} className="flex-1 text-center relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl font-bold mb-2 mx-auto border-2 border-white shadow-lg">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl  mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className=" text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -382,10 +382,10 @@ const LogisticsPage = () => {
               {processSteps.map((step, index) => (
                 <div key={index} className="flex items-center">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mb-3 mx-auto">
+                    <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl  mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-semibold text-white text-sm mb-1">{step.title}</h3>
+                    <h3 className=" text-white text-sm mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -419,7 +419,7 @@ const LogisticsPage = () => {
               {/* Left Content */}
               <div className="text-white space-y-8">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
                     Revolutionize Your Supply Chain with Our Logistics Expertise
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
@@ -429,11 +429,11 @@ const LogisticsPage = () => {
 
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       01
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Well Experienced Team
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -441,11 +441,11 @@ const LogisticsPage = () => {
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       02
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Customization & Flexibility
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -453,11 +453,11 @@ const LogisticsPage = () => {
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       03
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Innovative Solutions
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -465,11 +465,11 @@ const LogisticsPage = () => {
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       04
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Quality Assurance & Reliability
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -477,11 +477,11 @@ const LogisticsPage = () => {
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       05
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Timely Delivery & Project Management
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -489,11 +489,11 @@ const LogisticsPage = () => {
                   </div>
 
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md font-bold text-sm">
+                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
                       06
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
                         Competitive Pricing
                       </h3>
                       <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
@@ -525,7 +525,7 @@ const LogisticsPage = () => {
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-4">
+                    <h3 className="text-2xl  mb-4">
                       Ready to Optimize Your Supply Chain?
                     </h3>
                     <p className="text-blue-100 mb-6">
@@ -533,7 +533,7 @@ const LogisticsPage = () => {
                     </p>
                     <button 
                       onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg "
+                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
                       Request a Demo
                     </button>
@@ -550,7 +550,7 @@ const LogisticsPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl  mb-4">
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-300">
@@ -565,7 +565,7 @@ const LogisticsPage = () => {
                     className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-white pr-4">
+                    <h3 className="text-lg  text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">

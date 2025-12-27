@@ -188,7 +188,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
             <div className="flex-shrink-0 px-6 py-4 border-b border-gray-700 relative">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-white mb-1">
+                  <h2 className="text-2xl  text-white mb-1">
                     Get In Touch
                   </h2>
                   <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
@@ -309,7 +309,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
             <div className="relative z-10 p-10 flex flex-col justify-between h-full text-white py-16">
               {/* Heading */}
               <div className="mb-8">
-                <h3 className="text-3xl font-bold leading-tight text-white mb-4">
+                <h3 className="text-3xl  leading-tight text-white mb-4">
                   Let's Build<br />Something Amazing<br />Together!
                 </h3>
                 <p className="text-gray-400 text-sm">
@@ -324,7 +324,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     <Rocket className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Fast Response</h4>
+                    <h4 className=" text-white mb-1">Fast Response</h4>
                     <p className="text-gray-400 text-sm">We'll get back to you within 24 hours</p>
                   </div>
                 </div>
@@ -334,7 +334,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     <Target className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Tailored Solutions</h4>
+                    <h4 className=" text-white mb-1">Tailored Solutions</h4>
                     <p className="text-gray-400 text-sm">Custom solutions for your unique needs</p>
                   </div>
                 </div>
@@ -344,7 +344,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     <Zap className="w-6 h-6 text-black" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1">Expert Team</h4>
+                    <h4 className=" text-white mb-1">Expert Team</h4>
                     <p className="text-gray-400 text-sm">Experienced professionals at your service</p>
                   </div>
                 </div>
@@ -373,7 +373,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                 </div>
               </div>
               <div className="ml-3 flex-1">
-                <h3 className="text-sm font-semibold text-gray-800">
+                <h3 className="text-sm  text-gray-800">
                   {toastType === 'success' ? 'Message Sent Successfully!' : 'Error Sending Message'}
                 </h3>
                 <p className="text-xs text-gray-600 mt-1">{toastMessage}</p>

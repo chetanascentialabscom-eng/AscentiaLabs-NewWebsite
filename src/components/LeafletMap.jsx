@@ -113,7 +113,7 @@ const LeafletMap = () => {
           // Create popup content
           const popupContent = `
             <div class="p-3 min-w-[250px]">
-              <h4 class="font-bold text-gray-800 mb-2 text-lg">${location.name}</h4>
+              <h4 class=" text-gray-800 mb-2 text-lg">${location.name}</h4>
               ${location.type === 'main' ? '<span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full mb-2">Main Office</span>' : ''}
               <p class="text-sm text-gray-600 mb-3 leading-relaxed">${location.address}</p>
               <div class="space-y-2">
@@ -183,7 +183,7 @@ const LeafletMap = () => {
   return (
     <div className="relative bg-black p-8 rounded-2xl">
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl  mb-4">
           <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
             Our Locations
           </span>
@@ -241,7 +241,7 @@ const LeafletMap = () => {
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-white" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
-                    <h4 className="font-bold text-white">{location.name}</h4>
+                    <h4 className=" text-white">{location.name}</h4>
                     {location.type === 'main' && (
                       <span className="text-xs bg-white text-black px-2 py-1 rounded-full font-medium">
                         Main Office
@@ -250,7 +250,7 @@ const LeafletMap = () => {
                   </div>
                   <p className="text-sm text-white/80 mb-2 leading-relaxed">{location.address}</p>
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-semibold text-white">
+                    <p className="text-sm  text-white">
                       {location.phone}
                     </p>
                     <Navigation className="w-4 h-4 text-white" />

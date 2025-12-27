@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-4 sm:mb-6 px-4">
               Ready To Take Next Step?
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-400 mb-8 max-w-2xl mx-auto px-4">
@@ -62,10 +62,9 @@ const Footer = () => {
             
             <button 
               onClick={openConsultation}
-              className="group relative px-8 py-4 bg-white text-black font-bold text-lg rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden"
+              className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:scale-105 text-lg"
             >
-              <span className="relative z-10">Get In Touch</span>
-              <div className="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              Get In Touch
             </button>
           </div>
         </div>
@@ -78,30 +77,30 @@ const Footer = () => {
             
             {/* Locations */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">LOCATIONS</h3>
+              <h3 className="text-lg sm:text-xl  mb-6 text-gray-300">LOCATIONS</h3>
               <div className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-white mb-1 text-sm">Ludhiana</h4>
+                    <h4 className=" text-white mb-1 text-sm">Ludhiana</h4>
                     <p className="text-gray-400 text-xs leading-relaxed">
                       SCO. 56-57, SBS Nagar, Opp. Keys Hotel, Ludhiana, Punjab
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-white mb-1 text-sm">SAS Nagar</h4>
+                    <h4 className=" text-white mb-1 text-sm">SAS Nagar</h4>
                     <p className="text-gray-400 text-xs leading-relaxed">
                       3rd Floor, Plot No.1273, Sector 82, JLPL Industrial Area, SAS Nagar, Punjab
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-bold text-white mb-1 text-sm">New Delhi</h4>
+                    <h4 className=" text-white mb-1 text-sm">New Delhi</h4>
                     <p className="text-gray-400 text-xs leading-relaxed">
                       106, Centrum Mall, MG Road, Sultanpur, New Delhi
                     </p>
@@ -113,18 +112,18 @@ const Footer = () => {
 
             {/* Our Contacts */}
             <div className="lg:col-span-1 min-w-0">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">OUR CONTACTS</h3>
+              <h3 className="text-lg sm:text-xl  mb-6 text-gray-300">OUR CONTACTS</h3>
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   <a href="tel:+919356385744" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex gap-1">
-                  <Phone className="hidden md:block w-5 h-5 text-gray-500 flex-shrink-0" />
+                  <Phone className="hidden md:block w-5 h-5 text-yellow-500 flex-shrink-0" />
 
                     +91 9356385744
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <a href="tel:+61412566906" className="text-gray-400 hover:text-white transition-colors duration-300 font-medium flex gap-1">
-                  <Phone className="hidden md:block w-5 h-5 text-gray-500 flex-shrink-0" />
+                  <Phone className="hidden md:block w-5 h-5 text-yellow-500 flex-shrink-0" />
 
                     +61 412566906
                   </a>
@@ -134,12 +133,12 @@ const Footer = () => {
 
             {/* Useful Links */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">USEFUL LINKS</h3>
+              <h3 className="text-lg sm:text-xl  mb-6 text-gray-300">USEFUL LINKS</h3>
               <ul className="space-y-3">
                 {usefulLinks.map((link, index) => (
                   <li key={index}>
                     <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
-                      <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                      <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3 group-hover:bg-yellow-400 transition-colors duration-300"></span>
                       {link.name}
                     </Link>
                   </li>
@@ -149,7 +148,7 @@ const Footer = () => {
 
             {/* About */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">ABOUT</h3>
+              <h3 className="text-lg sm:text-xl  mb-6 text-gray-300">ABOUT</h3>
               <ul className="space-y-3">
                 {aboutLinks.map((link, index) => (
                   <li key={index}>
@@ -160,12 +159,12 @@ const Footer = () => {
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group"
                       >
-                        <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                        <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3 group-hover:bg-yellow-400 transition-colors duration-300"></span>
                         {link.name}
                       </a>
                     ) : (
                       <Link to={link.route} className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center group">
-                        <span className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white transition-colors duration-300"></span>
+                        <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-3 group-hover:bg-yellow-400 transition-colors duration-300"></span>
                         {link.name}
                       </Link>
                     )}
@@ -176,7 +175,7 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="lg:col-span-1">
-              <h3 className="text-lg sm:text-xl font-bold mb-6 text-gray-300">SOCIAL MEDIA</h3>
+              <h3 className="text-lg sm:text-xl  mb-6 text-gray-300">SOCIAL MEDIA</h3>
               <div className="flex space-x-4">
                 <a href="https://www.linkedin.com/company/ascentialabs/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center hover:scale-110 transition-all duration-300">
                   <svg className="w-6 h-6 text-[#0A66C2] hover:text-[#004182]" fill="currentColor" viewBox="0 0 20 20">

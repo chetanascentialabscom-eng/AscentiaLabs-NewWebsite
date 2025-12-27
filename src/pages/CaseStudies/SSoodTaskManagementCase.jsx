@@ -38,7 +38,7 @@ const SSoodTaskManagementCase = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
               S. Sood & Co. Task Management
             </h1>
             
@@ -76,18 +76,18 @@ const SSoodTaskManagementCase = () => {
 
               {/* Project Overview */}
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-bold text-white mb-4">Project Overview</h2>
+                <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
                   Advanced task management solution with team collaboration, project tracking, and productivity analytics. Enhanced team productivity by 200% and reduced project delivery time by 35% while completing over 10,000 tasks efficiently.
                 </p>
 
-                <h3 className="text-2xl font-bold text-white mb-4">The Challenge</h3>
+                <h3 className="text-2xl  text-white mb-4">The Challenge</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   S. Sood & Co. faced challenges with scattered project management, lack of team collaboration tools, missed deadlines, and poor visibility into project progress. The company needed a comprehensive solution to streamline workflows and improve team productivity.
                 </p>
 
                 <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg font-semibold text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
@@ -108,17 +108,17 @@ const SSoodTaskManagementCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Our Solution</h3>
+                <h3 className="text-2xl  text-white mb-4">Our Solution</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   We developed a comprehensive task management platform with advanced collaboration features, real-time project tracking, automated workflows, and detailed analytics. The solution includes mobile applications, web dashboards, and integration capabilities for seamless workflow management.
                 </p>
 
                 {/* Technology Stack */}
                 <div className="bg-gradient-to-r from-slate-800/50 to-blue-900/30 p-6 rounded-xl my-8 border border-blue-400/20">
-                  <h4 className="text-xl font-bold text-white mb-4">Technology Stack</h4>
+                  <h4 className="text-xl  text-white mb-4">Technology Stack</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Frontend</h5>
+                      <h5 className=" text-blue-300 mb-2">Frontend</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Vue.js</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">TypeScript</span>
@@ -126,7 +126,7 @@ const SSoodTaskManagementCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Backend</h5>
+                      <h5 className=" text-blue-300 mb-2">Backend</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Express.js</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Node.js</span>
@@ -134,7 +134,7 @@ const SSoodTaskManagementCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Real-time</h5>
+                      <h5 className=" text-blue-300 mb-2">Real-time</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Socket.io</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">WebRTC</span>
@@ -142,7 +142,7 @@ const SSoodTaskManagementCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Infrastructure</h5>
+                      <h5 className=" text-blue-300 mb-2">Infrastructure</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">AWS</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Docker</span>
@@ -152,73 +152,73 @@ const SSoodTaskManagementCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Key Features Delivered</h3>
+                <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Layers className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Project Hierarchy</h4>
+                    <h4 className="text-lg  text-white mb-2">Project Hierarchy</h4>
                     <p className="text-blue-200/80 text-sm">Multi-level project organization with tasks, subtasks, and milestone tracking.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Users className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Team Collaboration</h4>
+                    <h4 className="text-lg  text-white mb-2">Team Collaboration</h4>
                     <p className="text-blue-200/80 text-sm">Real-time chat, file sharing, and collaborative workspaces for teams.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Target className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Smart Scheduling</h4>
+                    <h4 className="text-lg  text-white mb-2">Smart Scheduling</h4>
                     <p className="text-blue-200/80 text-sm">AI-powered task scheduling and resource allocation optimization.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Analytics Dashboard</h4>
+                    <h4 className="text-lg  text-white mb-2">Analytics Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive productivity metrics and performance analytics.</p>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Results & Impact</h3>
+                <h3 className="text-2xl  text-white mb-4">Results & Impact</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   The Task Management Solution transformed S. Sood & Co.'s operations, delivering remarkable improvements in team productivity, project delivery times, and overall organizational efficiency while completing thousands of tasks successfully.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-slate-900 text-white p-8 rounded-xl my-8 border border-blue-400/30">
-                  <h4 className="text-2xl font-bold mb-6">Project Outcomes</h4>
+                  <h4 className="text-2xl  mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">200%</div>
-                      <div className="text-lg font-semibold mb-1">Productivity Increase</div>
+                      <div className="text-4xl  text-blue-200 mb-2">200%</div>
+                      <div className="text-lg  mb-1">Productivity Increase</div>
                       <div className="text-blue-100 text-sm">Dramatic improvement in team efficiency and output</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">35%</div>
-                      <div className="text-lg font-semibold mb-1">Faster Delivery</div>
+                      <div className="text-4xl  text-blue-200 mb-2">35%</div>
+                      <div className="text-lg  mb-1">Faster Delivery</div>
                       <div className="text-blue-100 text-sm">Reduced project delivery time significantly</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">10K+</div>
-                      <div className="text-lg font-semibold mb-1">Tasks Completed</div>
+                      <div className="text-4xl  text-blue-200 mb-2">10K+</div>
+                      <div className="text-lg  mb-1">Tasks Completed</div>
                       <div className="text-blue-100 text-sm">Successfully managed and completed tasks</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">95%</div>
-                      <div className="text-lg font-semibold mb-1">Team Satisfaction</div>
+                      <div className="text-4xl  text-blue-200 mb-2">95%</div>
+                      <div className="text-lg  mb-1">Team Satisfaction</div>
                       <div className="text-blue-100 text-sm">High user adoption and satisfaction rates</div>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Client Testimonial</h3>
+                <h3 className="text-2xl  text-white mb-4">Client Testimonial</h3>
                 <div className="bg-slate-800/30 border-l-4 border-blue-400 p-6 rounded-r-lg italic backdrop-blur-sm">
                   <p className="text-blue-100/90 text-lg leading-relaxed mb-4">
                     "Ascentia Labs delivered an exceptional task management solution that revolutionized our workflow. Team productivity increased by 200%, and we're delivering projects 35% faster than before. The platform's intuitive design and powerful features have made project management effortless. Our team collaboration has never been better, and we've successfully completed over 10,000 tasks with remarkable efficiency."
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
                       SS
                     </div>
                     <div>
-                      <div className="font-semibold text-white">S. Sood & Co. Team</div>
+                      <div className=" text-white">S. Sood & Co. Team</div>
                       <div className="text-blue-300 text-sm">Project Management Company</div>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ const SSoodTaskManagementCase = () => {
                 <div className="mt-8 pt-6 border-t border-blue-400/30">
                   <Link 
                     to="/case-studies" 
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300  transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return To Case Studies
@@ -243,7 +243,7 @@ const SSoodTaskManagementCase = () => {
       <section className="py-12 ">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Other Success Stories</h2>
+            <h2 className="text-3xl md:text-4xl  text-white mb-4">Other Success Stories</h2>
             <p className="text-blue-200/80 text-lg">Explore more of our successful projects</p>
           </div>
           
@@ -257,7 +257,7 @@ const SSoodTaskManagementCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Education</span>
-                  <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     Pumpkins Kindergarten Management
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
@@ -266,7 +266,7 @@ const SSoodTaskManagementCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>10 developers</span>
                   </div>
-                  <p className="text-blue-400 font-semibold">View Case Study →</p>
+                  <p className="text-blue-400 ">View Case Study →</p>
                 </div>
               </article>
             </Link>
@@ -280,7 +280,7 @@ const SSoodTaskManagementCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Real Estate</span>
-                  <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     Sunview Enclave Real Estate Management
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
@@ -289,7 +289,7 @@ const SSoodTaskManagementCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>12 developers</span>
                   </div>
-                  <p className="text-blue-400 font-semibold">View Case Study →</p>
+                  <p className="text-blue-400 ">View Case Study →</p>
                 </div>
               </article>
             </Link>

@@ -134,7 +134,7 @@ const BlogsPage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-blue-600">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl  mb-3 sm:mb-4 text-blue-600">
               Our <span className="text-gray-800">Blog</span> - <span className="text-gray-700">Insights & Innovation</span>
             </h1>
             <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
@@ -220,7 +220,7 @@ const BlogsPage = () => {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Search className="w-10 h-10 text-gray-400" />
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">No articles found</h3>
+              <h3 className="text-xl  text-gray-800 mb-2">No articles found</h3>
               <p className="text-gray-600">Try adjusting your search terms or filters.</p>
             </div>
           ) : (
@@ -264,7 +264,7 @@ const BlogsPage = () => {
                      
                     </div>
                     
-                    <h3 className="text-lg font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+                    <h3 className="text-lg  text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
                       {blog.title}
                     </h3>
                     

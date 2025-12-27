@@ -158,7 +158,7 @@ const ContactPage = () => {
         
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl  mb-6">
               <span className="text-blue-600">Get In</span> <span className="text-gray-800">Touch</span> <span className="text-gray-700">With Us</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -173,9 +173,9 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Call Us</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Call Us</h3>
               <p className="text-gray-600 mb-3">Ready to talk? Give us a call</p>
-              <a href="tel:+919356385744" className="text-blue-600 font-semibold hover:text-blue-700 text-lg transition-colors">
+              <a href="tel:+919356385744" className="text-blue-600  hover:text-blue-700 text-lg transition-colors">
                 +91 9356385744
               </a>
             </div>
@@ -184,9 +184,9 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Email Us</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Email Us</h3>
               <p className="text-gray-600 mb-3">Send us an email anytime</p>
-              <a href="mailto:support@ascentialabs.com" className="text-blue-600 font-semibold hover:text-blue-700 text-lg transition-colors">
+              <a href="mailto:support@ascentialabs.com" className="text-blue-600  hover:text-blue-700 text-lg transition-colors">
                 support@ascentialabs.com
               </a>
             </div>
@@ -195,9 +195,9 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Visit Us</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Visit Us</h3>
               <p className="text-gray-600 mb-3">Come say hello at our office</p>
-              <p className="text-blue-600 font-semibold text-lg">
+              <p className="text-blue-600  text-lg">
                 India & Australia
               </p>
             </div>
@@ -226,7 +226,7 @@ const ContactPage = () => {
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
                     <Send className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Send Us a Message</h2>
+                  <h2 className="text-2xl md:text-3xl  text-gray-800">Send Us a Message</h2>
                 </div>
                 <p className="text-gray-600">
                   Fill out the form below and we'll get back to you within 24 hours
@@ -399,7 +399,7 @@ const ContactPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+                    className={`px-8 py-4 rounded-full  transition-all duration-300 transform hover:scale-105 ${
                       isSubmitting
                         ? 'bg-gray-400 cursor-not-allowed text-white'
                         : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:shadow-lg hover:from-amber-500 hover:to-orange-600'
@@ -428,7 +428,7 @@ const ContactPage = () => {
       {/* <section className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Ascentia Labs?</h2>
+            <h2 className="text-3xl md:text-4xl  text-gray-800 mb-4">Why Choose Ascentia Labs?</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               We're committed to delivering exceptional results and building long-term partnerships with our clients.
             </p>
@@ -439,7 +439,7 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Proven Expertise</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Proven Expertise</h3>
               <p className="text-gray-600">
                 Years of experience delivering successful projects across various industries and technologies.
               </p>
@@ -449,7 +449,7 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <User className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Dedicated Support</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Dedicated Support</h3>
               <p className="text-gray-600">
                 24/7 support and dedicated project managers to ensure your success every step of the way.
               </p>
@@ -459,7 +459,7 @@ const ContactPage = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Building className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-3">Scalable Solutions</h3>
+              <h3 className="text-xl  text-gray-800 mb-3">Scalable Solutions</h3>
               <p className="text-gray-600">
                 Future-proof solutions that grow with your business and adapt to changing requirements.
               </p>
@@ -489,7 +489,7 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className="ml-3 flex-1">
-                <h3 className="text-sm font-semibold text-gray-800">
+                <h3 className="text-sm  text-gray-800">
                   {toastType === 'success' ? 'Message Sent Successfully!' : 'Error Sending Message'}
                 </h3>
                 <p className="text-xs text-gray-600 mt-1">{toastMessage}</p>

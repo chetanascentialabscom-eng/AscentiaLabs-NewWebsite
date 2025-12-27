@@ -38,7 +38,7 @@ const SunviewEnclaveCase = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent leading-tight">
               Sunview Enclave Real Estate Management
             </h1>
             
@@ -76,18 +76,18 @@ const SunviewEnclaveCase = () => {
 
               {/* Project Overview */}
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-bold text-white mb-4">Project Overview</h2>
+                <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
                   Comprehensive real estate management platform with property listings, customer management, and sales tracking. Increased sales conversion by 150% and reduced administrative overhead by 60% while managing 500+ properties efficiently.
                 </p>
 
-                <h3 className="text-2xl font-bold text-white mb-4">The Challenge</h3>
+                <h3 className="text-2xl  text-white mb-4">The Challenge</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   Sunview Enclave struggled with manual property management processes, poor lead tracking, inefficient sales workflows, and lack of customer relationship management. The company needed a comprehensive digital solution to streamline operations and improve sales performance in the competitive real estate market.
                 </p>
 
                 <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg font-semibold text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
                       <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
@@ -108,17 +108,17 @@ const SunviewEnclaveCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Our Solution</h3>
+                <h3 className="text-2xl  text-white mb-4">Our Solution</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   We developed a comprehensive real estate management platform with advanced property listing capabilities, CRM integration, automated sales workflows, and customer portal. The solution includes mobile applications, web portals, and integrated payment systems for seamless property transactions.
                 </p>
 
                 {/* Technology Stack */}
                 <div className="bg-gradient-to-r from-slate-800/50 to-blue-900/30 p-6 rounded-xl my-8 border border-blue-400/20">
-                  <h4 className="text-xl font-bold text-white mb-4">Technology Stack</h4>
+                  <h4 className="text-xl  text-white mb-4">Technology Stack</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Frontend</h5>
+                      <h5 className=" text-blue-300 mb-2">Frontend</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">React</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Next.js</span>
@@ -126,7 +126,7 @@ const SunviewEnclaveCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Backend</h5>
+                      <h5 className=" text-blue-300 mb-2">Backend</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Node.js</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Express.js</span>
@@ -134,7 +134,7 @@ const SunviewEnclaveCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Payment & Maps</h5>
+                      <h5 className=" text-blue-300 mb-2">Payment & Maps</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Stripe</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">Google Maps</span>
@@ -142,7 +142,7 @@ const SunviewEnclaveCase = () => {
                       </div>
                     </div>
                     <div>
-                      <h5 className="font-semibold text-blue-300 mb-2">Infrastructure</h5>
+                      <h5 className=" text-blue-300 mb-2">Infrastructure</h5>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">AWS</span>
                         <span className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-400/30">CloudFront</span>
@@ -152,73 +152,73 @@ const SunviewEnclaveCase = () => {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Key Features Delivered</h3>
+                <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Home className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Property Management</h4>
+                    <h4 className="text-lg  text-white mb-2">Property Management</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive property listings with virtual tours, detailed specifications, and pricing.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Users className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">CRM Integration</h4>
+                    <h4 className="text-lg  text-white mb-2">CRM Integration</h4>
                     <p className="text-blue-200/80 text-sm">Advanced customer relationship management with lead tracking and automated follow-ups.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <Target className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Sales Pipeline</h4>
+                    <h4 className="text-lg  text-white mb-2">Sales Pipeline</h4>
                     <p className="text-blue-200/80 text-sm">Automated sales workflows with stage tracking and conversion optimization.</p>
                   </div>
                   <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
                     <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-lg font-semibold text-white mb-2">Analytics Dashboard</h4>
+                    <h4 className="text-lg  text-white mb-2">Analytics Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive reporting on sales performance, property trends, and market analytics.</p>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Results & Impact</h3>
+                <h3 className="text-2xl  text-white mb-4">Results & Impact</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
                   The Real Estate Management Platform transformed Sunview Enclave's operations, delivering exceptional improvements in sales conversion, operational efficiency, and customer satisfaction while managing hundreds of properties effectively.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-slate-900 text-white p-8 rounded-xl my-8 border border-blue-400/30">
-                  <h4 className="text-2xl font-bold mb-6">Project Outcomes</h4>
+                  <h4 className="text-2xl  mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">150%</div>
-                      <div className="text-lg font-semibold mb-1">Sales Conversion Increase</div>
+                      <div className="text-4xl  text-blue-200 mb-2">150%</div>
+                      <div className="text-lg  mb-1">Sales Conversion Increase</div>
                       <div className="text-blue-100 text-sm">Dramatic improvement in lead-to-sale conversion rates</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">60%</div>
-                      <div className="text-lg font-semibold mb-1">Admin Overhead Reduction</div>
+                      <div className="text-4xl  text-blue-200 mb-2">60%</div>
+                      <div className="text-lg  mb-1">Admin Overhead Reduction</div>
                       <div className="text-blue-100 text-sm">Significant reduction in administrative workload</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">500+</div>
-                      <div className="text-lg font-semibold mb-1">Properties Managed</div>
+                      <div className="text-4xl  text-blue-200 mb-2">500+</div>
+                      <div className="text-lg  mb-1">Properties Managed</div>
                       <div className="text-blue-100 text-sm">Comprehensive management of property portfolio</div>
                     </div>
                     <div>
-                      <div className="text-4xl font-bold text-blue-200 mb-2">95%</div>
-                      <div className="text-lg font-semibold mb-1">Customer Satisfaction</div>
+                      <div className="text-4xl  text-blue-200 mb-2">95%</div>
+                      <div className="text-lg  mb-1">Customer Satisfaction</div>
                       <div className="text-blue-100 text-sm">Exceptional client experience and service quality</div>
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">Client Testimonial</h3>
+                <h3 className="text-2xl  text-white mb-4">Client Testimonial</h3>
                 <div className="bg-slate-800/30 border-l-4 border-blue-400 p-6 rounded-r-lg italic backdrop-blur-sm">
                   <p className="text-blue-100/90 text-lg leading-relaxed mb-4">
                     "Ascentia Labs has revolutionized our real estate business. The platform increased our sales conversion by 150% and reduced administrative overhead by 60%. We now manage over 500 properties efficiently with automated workflows and comprehensive CRM capabilities. Our customers love the virtual tours and seamless booking process. This solution has positioned us as a leader in the real estate market."
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
                       SE
                     </div>
                     <div>
-                      <div className="font-semibold text-white">Sunview Enclave Team</div>
+                      <div className=" text-white">Sunview Enclave Team</div>
                       <div className="text-blue-300 text-sm">Real Estate Company</div>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ const SunviewEnclaveCase = () => {
                 <div className="mt-8 pt-6 border-t border-blue-400/30">
                   <Link 
                     to="/case-studies" 
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-400 hover:text-blue-300  transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return To Case Studies
@@ -243,7 +243,7 @@ const SunviewEnclaveCase = () => {
       <section className="py-12 ">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Other Success Stories</h2>
+            <h2 className="text-3xl md:text-4xl  text-white mb-4">Other Success Stories</h2>
             <p className="text-blue-200/80 text-lg">Explore more of our successful projects</p>
           </div>
           
@@ -257,7 +257,7 @@ const SunviewEnclaveCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel & Tourism</span>
-                  <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     AI Travel Planning & Booking Tool
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
@@ -266,7 +266,7 @@ const SunviewEnclaveCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>12 developers</span>
                   </div>
-                  <p className="text-blue-400 font-semibold">View Case Study →</p>
+                  <p className="text-blue-400 ">View Case Study →</p>
                 </div>
               </article>
             </Link>
@@ -280,7 +280,7 @@ const SunviewEnclaveCase = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Government</span>
-                  <h3 className="text-xl font-bold text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     NDMC & MCL Ticketing Platform
                   </h3>
                   <div className="flex items-center text-sm text-blue-300/70 mb-3">
@@ -289,7 +289,7 @@ const SunviewEnclaveCase = () => {
                     <Users className="w-4 h-4 mr-1" />
                     <span>15 developers</span>
                   </div>
-                  <p className="text-blue-400 font-semibold">View Case Study →</p>
+                  <p className="text-blue-400 ">View Case Study →</p>
                 </div>
               </article>
             </Link>

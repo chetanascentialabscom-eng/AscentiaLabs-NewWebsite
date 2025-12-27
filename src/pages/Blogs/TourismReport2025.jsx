@@ -31,7 +31,7 @@ const TourismReport2025 = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 text-gray-800 leading-tight">
               Latest Tourism Report [2025] New Insights in the Travel Industry
             </h1>
             
@@ -76,71 +76,71 @@ const TourismReport2025 = () => {
                   The travel and tourism industry continues to evolve rapidly in 2025, driven by technological innovations, changing consumer preferences, and emerging market trends. This comprehensive report provides insights into the latest developments shaping the future of travel.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Key Industry Statistics for 2025</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Key Industry Statistics for 2025</h2>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-6">
                   <div className="bg-blue-50 p-6 rounded-xl">
                     <div className="flex items-center mb-4">
                       <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
-                      <h3 className="text-xl font-bold text-gray-800">Market Growth</h3>
+                      <h3 className="text-xl  text-gray-800">Market Growth</h3>
                     </div>
-                    <p className="text-3xl font-bold text-blue-600 mb-2">15.2%</p>
+                    <p className="text-3xl  text-blue-600 mb-2">15.2%</p>
                     <p className="text-gray-600">Expected annual growth rate in travel app usage</p>
                   </div>
                   
                   <div className="bg-green-50 p-6 rounded-xl">
                     <div className="flex items-center mb-4">
                       <BarChart3 className="w-8 h-8 text-green-600 mr-3" />
-                      <h3 className="text-xl font-bold text-gray-800">Digital Adoption</h3>
+                      <h3 className="text-xl  text-gray-800">Digital Adoption</h3>
                     </div>
-                    <p className="text-3xl font-bold text-green-600 mb-2">78%</p>
+                    <p className="text-3xl  text-green-600 mb-2">78%</p>
                     <p className="text-gray-600">Of travelers now use mobile apps for booking</p>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Emerging Travel Trends</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Emerging Travel Trends</h2>
                 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">1. Sustainable Tourism</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">1. Sustainable Tourism</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Environmental consciousness is driving a significant shift towards sustainable travel options. Travelers are increasingly choosing eco-friendly accommodations, carbon-neutral transportation, and destinations that prioritize environmental conservation.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">2. AI-Powered Personalization</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">2. AI-Powered Personalization</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Artificial Intelligence is revolutionizing how travel experiences are curated. From personalized itinerary recommendations to dynamic pricing models, AI is making travel more efficient and tailored to individual preferences.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-black text-white p-6 rounded-xl my-8">
-                  <h3 className="text-2xl font-bold mb-6">Usage of Different Travel Apps by Travelers</h3>
+                  <h3 className="text-2xl  mb-6">Usage of Different Travel Apps by Travelers</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">45%</div>
+                      <div className="text-3xl  mb-2">45%</div>
                       <div className="text-blue-100">Flight Booking Apps</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">38%</div>
+                      <div className="text-3xl  mb-2">38%</div>
                       <div className="text-blue-100">Hotel Booking Apps</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold mb-2">32%</div>
+                      <div className="text-3xl  mb-2">32%</div>
                       <div className="text-blue-100">Travel Planning Apps</div>
                     </div>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Technology Integration in Travel</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Technology Integration in Travel</h2>
                 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">Virtual Reality (VR) and Augmented Reality (AR)</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">Virtual Reality (VR) and Augmented Reality (AR)</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   AR and VR have the potential to completely transform the way we travel the world. In the future, travel apps may include VR and AR elements that allow users to visually explore tourist places, observe famous tourist attractions in 3D, and receive real-time information about their surroundings.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">Voice Recognition Technology</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">Voice Recognition Technology</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   With the popularity and the advancement of AI in voice assistants and with 93.7% of search queries being answered perfectly by voice assistants, it is now possible to say that travel apps may include voice recognition in the coming 2-3 years. This means that users will now have the ability to utilize voice commands to search for accommodations and book flight tickets, hotel bookings, and reservations, which simplifies the entire travel booking process.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Future Predictions</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Future Predictions</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   The travel industry is expected to continue its digital transformation, with mobile applications becoming even more integral to the travel experience. We anticipate increased integration of IoT devices, blockchain technology for secure transactions, and enhanced AI capabilities for predictive travel analytics.
                 </p>
@@ -148,7 +148,7 @@ const TourismReport2025 = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <Link 
                     to="/blog" 
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700  transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return To Blogs
@@ -164,7 +164,7 @@ const TourismReport2025 = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Other Blogs</h2>
+            <h2 className="text-3xl md:text-4xl  text-gray-800 mb-4">Other Blogs</h2>
             <p className="text-gray-600 text-lg">Explore more insights and articles</p>
           </div>
           
@@ -178,7 +178,7 @@ const TourismReport2025 = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     HOW DID TRAVEL APP DEVELOPMENT BECOME CRUCIAL IN THE TOURISM ...
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -187,7 +187,7 @@ const TourismReport2025 = () => {
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>18/06/2025</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">Read More →</p>
+                  <p className="text-blue-600 ">Read More →</p>
                 </div>
               </article>
             </Link>
@@ -201,7 +201,7 @@ const TourismReport2025 = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">AI & Technology</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     BENEFITS OF AI IN TRAVEL AND TOURISM INDUSTRY
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -210,7 +210,7 @@ const TourismReport2025 = () => {
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>12/06/2025</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">Read More →</p>
+                  <p className="text-blue-600 ">Read More →</p>
                 </div>
               </article>
             </Link>

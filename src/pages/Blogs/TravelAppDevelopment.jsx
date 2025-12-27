@@ -31,7 +31,7 @@ const TravelAppDevelopment = () => {
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-800 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl  mb-6 text-gray-800 leading-tight">
               How Did Travel App Development Become Crucial In The Tourism Industry
             </h1>
             
@@ -77,7 +77,7 @@ const TravelAppDevelopment = () => {
                   In this modern millennium, technology is everything in many aspects of our lives including travel. With the growing demand for smartphones and mobile applications, it has become a crucial step to have a mobile app to run any business successfully, and this is why Travel App Development has become a vital tool for travel companies and agencies in the travel and tourism industry.
                 </p>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">The Rise of Mobile Technology in Travel Industry</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">The Rise of Mobile Technology in Travel Industry</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Travel applications make it easy and efficient for travelers to organize their trips, get information on vital tourist places, and help travelers to stay organized while traveling. These travel applications have several features including flight booking, hotel bookings as well as a reservation at local tourist attractions and restaurants, with real-time updates on weather and flights.
                 </p>
@@ -92,71 +92,71 @@ const TravelAppDevelopment = () => {
                   </p>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Why Are Travel Apps Preferred For Travel?</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Why Are Travel Apps Preferred For Travel?</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   With the rise in modern technology, travel apps have also transformed how people book and enjoy their travel trips. Many travel mobile applications provide various benefits, such as booking flight tickets, hotels, and making a personalized travel itinerary with real-time price updates on flights and hotel reservations that traditional approaches just cannot match.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">1. Convenience and Personalized Experience</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">1. Convenience and Personalized Experience</h3>
                 
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">Centralize Information</h4>
+                <h4 className="text-xl  text-gray-800 mb-3">Centralize Information</h4>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Travel applications compile all travel-related data, including flight tickets, hotel booking reservations or confirmations, and travel itineraries all at a single place. Centralized information access further makes it easy for travel companies, agencies and agents to retrieve important travel details of their customers without sifting through emails or paperwork.
                 </p>
 
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">Personalized Experience</h4>
+                <h4 className="text-xl  text-gray-800 mb-3">Personalized Experience</h4>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Many travel apps utilize AI (Artificial Intelligence) algorithms to study users travel preferences and behaviors, providing travel customers with personalized travel suggestions for the best tourist places, accommodations, activities, and dining options.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 mt-6">2. Real-Time Updates and Notifications</h3>
+                <h3 className="text-2xl  text-gray-800 mb-3 mt-6">2. Real-Time Updates and Notifications</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Travel apps provide real-time updates on flight status, gate changes, delays, and cancellations. This feature helps travelers stay informed and make necessary adjustments to their travel plans promptly.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-black text-white p-6 rounded-xl my-8">
-                  <h3 className="text-2xl font-bold mb-4">Benefits Of AI In Travel And Tourism Industry</h3>
+                  <h3 className="text-2xl  mb-4">Benefits Of AI In Travel And Tourism Industry</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex items-start">
                       <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">01</span>
+                        <span className="text-white  text-sm">01</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Personalized Recommendations</h4>
+                        <h4 className=" mb-2">Personalized Recommendations</h4>
                         <p className="text-blue-100 text-sm">AI analyzes user preferences to suggest tailored travel packages</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">02</span>
+                        <span className="text-white  text-sm">02</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Efficient Booking Process</h4>
+                        <h4 className=" mb-2">Efficient Booking Process</h4>
                         <p className="text-blue-100 text-sm">Streamlined booking with intelligent automation</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">03</span>
+                        <span className="text-white  text-sm">03</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Predictive Analysis</h4>
+                        <h4 className=" mb-2">Predictive Analysis</h4>
                         <p className="text-blue-100 text-sm">Forecast travel trends and customer behavior</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">04</span>
+                        <span className="text-white  text-sm">04</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-2">Dynamic Pricing</h4>
+                        <h4 className=" mb-2">Dynamic Pricing</h4>
                         <p className="text-blue-100 text-sm">Real-time price optimization based on demand</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <h2 className="text-3xl font-bold text-gray-800 mb-4 mt-8">Conclusion</h2>
+                <h2 className="text-3xl  text-gray-800 mb-4 mt-8">Conclusion</h2>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   To summarize, travel app development has become a crucial thing in the travel and tourism industry, as we now know how travel apps can transform travel plans and increase the overall experience of the travel customers during their travel trip. These apps provide the users with real-time access to flight bookings, hotel bookings with personalized travel recommendations to consumers. Such travel applications have also promoted sustainability in travel and tourism practices by harnessing technology, in addition to improving cost efficiency and facilitating communication. As the travel tourism sector evolves, travel applications will play an increasingly important role in driving innovation and changing the future of travel and tourism industry through improved accessibility and efficiency, with an increased awareness on eco tourism.
                 </p>
@@ -164,7 +164,7 @@ const TravelAppDevelopment = () => {
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <Link 
                     to="/blog" 
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700  transition-colors"
                   >
                     <ArrowLeft className="w-4 h-4 mr-2" />
                     Return To Blogs
@@ -180,7 +180,7 @@ const TravelAppDevelopment = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Other Blogs</h2>
+            <h2 className="text-3xl md:text-4xl  text-gray-800 mb-4">Other Blogs</h2>
             <p className="text-gray-600 text-lg">Explore more insights and articles</p>
           </div>
           
@@ -194,7 +194,7 @@ const TravelAppDevelopment = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     LATEST TOURISM REPORT [2025] NEW INSIGHTS IN THE TRAVEL INDUSTRY
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -203,7 +203,7 @@ const TravelAppDevelopment = () => {
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>15/06/2025</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">Read More →</p>
+                  <p className="text-blue-600 ">Read More →</p>
                 </div>
               </article>
             </Link>
@@ -217,7 +217,7 @@ const TravelAppDevelopment = () => {
                 />
                 <div className="p-6">
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">AI & Technology</span>
-                  <h3 className="text-xl font-bold text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl  text-gray-800 mt-4 mb-2 group-hover:text-blue-600 transition-colors">
                     BENEFITS OF AI IN TRAVEL AND TOURISM INDUSTRY
                   </h3>
                   <div className="flex items-center text-sm text-gray-500 mb-3">
@@ -226,7 +226,7 @@ const TravelAppDevelopment = () => {
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>12/06/2025</span>
                   </div>
-                  <p className="text-blue-600 font-semibold">Read More →</p>
+                  <p className="text-blue-600 ">Read More →</p>
                 </div>
               </article>
             </Link>

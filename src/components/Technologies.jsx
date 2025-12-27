@@ -162,7 +162,7 @@ const Technologies = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-2 sm:mb-4">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl  text-white leading-tight mb-2 sm:mb-4">
             <span className="inline-block">
               Cutting-Edge Technology Arsenal
             </span>
@@ -248,7 +248,7 @@ const Technologies = () => {
             >
               {/* Category Header */}
               <div className="text-center mb-6 sm:mb-8 px-4">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                <h3 className="text-xl sm:text-2xl md:text-3xl  text-white mb-2">
                   {category.category}
                 </h3>
                 {/* <div className={`w-8 sm:w-16 md:w-24 h-0.5 bg-gradient-to-r ${category.color} mx-auto rounded-sm`}></div> */}
@@ -274,14 +274,14 @@ const Technologies = () => {
                           }}
                         />
                         {/* Fallback icon */}
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm hidden">
+                        <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg flex items-center justify-center text-white  text-xs sm:text-sm hidden">
                           {tech.name.charAt(0)}
                         </div>
                       </div>
                     </div>
 
                     {/* Tech Name */}
-                    <h4 className="text-center text-xs sm:text-sm md:text-base font-bold text-gray-900 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight px-1">
+                    <h4 className="text-center text-xs sm:text-sm md:text-base  text-gray-900 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight px-1">
                       {tech.name}
                     </h4>
 

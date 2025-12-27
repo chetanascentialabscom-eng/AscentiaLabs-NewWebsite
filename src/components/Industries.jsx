@@ -102,7 +102,7 @@ const Industries = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Section Title with Animation */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-3xl md:text-4xl  lg:text-5xl font-bold text-white leading-tight max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl  lg:text-5xl  text-white leading-tight max-w-4xl mx-auto">
             <span className="inline-block">Crafting Our Bespoke Solutions For Unique Industry Demands</span>
           </h2>
         </div>
@@ -125,7 +125,7 @@ const Industries = () => {
               </div>
 
               {/* Industry Title */}
-              <h3 className="text-center text-sm sm:text-base font-bold text-white leading-tight px-2">
+              <h3 className="text-center text-sm sm:text-base  text-white leading-tight px-2">
                 {industry.title}
               </h3>
 
@@ -151,7 +151,7 @@ const Industries = () => {
           {/* Centered Button */}
           <div className="flex justify-center">
             <ConsultationButton 
-              className="px-8 py-4 text-lg font-bold shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 border border-slate-600/50"
+              className="px-8 py-4 text-lg  shadow-xl hover:shadow-2xl hover:shadow-blue-500/30 border border-slate-600/50"
               variant="primary"
               size="large"
             >

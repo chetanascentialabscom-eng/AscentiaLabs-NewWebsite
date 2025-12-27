@@ -6,7 +6,7 @@ const SoftwareProducts = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl  text-white leading-tight mb-6">
             Don't Believe Us Just Yet? Test Our Capabilities: Demo Our Enterprise Product!
           </h2>
         </div>
@@ -48,7 +48,7 @@ const SoftwareProducts = () => {
                     alt="Airnet Travels" 
                     className="h-12 md:h-16 w-auto object-contain rounded-lg"
                   /> */}
-                  <h3 className="text-2xl md:text-3xl font-bold text-white">AI Travel Planning & Booking Tool</h3>
+                  <h3 className="text-2xl md:text-3xl  text-white">AI Travel Planning & Booking Tool</h3>
                 </div>
                 
                 <p className="text-lg text-white leading-relaxed">
@@ -58,15 +58,15 @@ const SoftwareProducts = () => {
                 {/* Impact Metrics */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6 p-4 bg-blue-900/30 rounded-xl backdrop-blur-sm border border-blue-400/20">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-300">2 min</div>
+                    <div className="text-2xl  text-blue-300">2 min</div>
                     <div className="text-sm text-blue-200/80">Booking Time</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-300">300%</div>
+                    <div className="text-2xl  text-blue-300">300%</div>
                     <div className="text-sm text-blue-200/80">Efficiency Boost</div>
                   </div>
                   <div className="text-center md:col-span-1 col-span-2">
-                    <div className="text-2xl font-bold text-blue-300">95%</div>
+                    <div className="text-2xl  text-blue-300">95%</div>
                     <div className="text-sm text-blue-200/80">User Satisfaction</div>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ const SoftwareProducts = () => {
               {/* CTA Button */}
               <div className="pt-4 ">
                 <Link 
-                  to="/case-study-airnet-travels-routemaestro" 
-                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg  hover:scale-105 text-base "
+                  to="/case-studies" 
+                  className="inline-flex items-center bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-8 py-3 rounded-xl  transition-all duration-300 shadow-lg  hover:scale-105 text-base "
                 >
-                  View Case Study
+                  View All Case Studies
                   <svg className="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -99,7 +99,7 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-base mb-3">AI Powered Dynamic Packages</h4>
+                <h4 className="text-white  text-base mb-3">AI Powered Dynamic Packages</h4>
                 <p className="text-white text-base leading-relaxed">Advanced machine learning algorithms create personalised real time packages within 2 minutes!</p>
               </div>
 
@@ -110,7 +110,7 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-base mb-3">Smart Travel Route Planning</h4>
+                <h4 className="text-white  text-base mb-3">Smart Travel Route Planning</h4>
                 <p className="text-white text-base leading-relaxed">Intelligent multicity route generator for you to choose most convenient & affordable travel routes</p>
               </div>
 
@@ -120,7 +120,7 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-base mb-3">Instant Integrated Booking</h4>
+                <h4 className="text-white  text-base mb-3">Instant Integrated Booking</h4>
                 <p className="text-white text-base leading-relaxed">Generate & book travel packages with Hotels, Flights, Experiences, Transfers & more, all at once! </p>
               </div>
 
@@ -130,7 +130,7 @@ const SoftwareProducts = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h4 className="text-white font-bold text-base mb-3">Smart Itinerary Builder</h4>
+                <h4 className="text-white  text-base mb-3">Smart Itinerary Builder</h4>
                 <p className="text-white text-base leading-relaxed">Builds your package minute by minute on a daily basis throughout your trip duration, and can be edited end to end.</p>
               </div>
             </div>

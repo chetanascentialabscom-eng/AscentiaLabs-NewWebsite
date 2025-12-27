@@ -9,7 +9,7 @@ const ConsultationButton = ({
 }) => {
   const { openConsultation } = useConsultation();
 
-  const baseClasses = "group relative font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2";
+  const baseClasses = "group relative  transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2";
   
   const variants = {
     primary: "bg-gradient-to-r from-amber-400 to-orange-500 text-black  overflow-hidden",

@@ -122,7 +122,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-2 md:mb-3 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl  mb-2 md:mb-3 leading-tight">
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-1">
                   Building Tomorrow's
                 </span>
@@ -130,7 +130,7 @@ const Hero = () => {
                   {titles.map((title, index) => (
                     <motion.span
                       key={index}
-                      className="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap"
+                      className="absolute left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0  bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent whitespace-nowrap"
                       initial={{ opacity: 0, y: "-100" }}
                       transition={{ type: "spring", stiffness: 50 }}
                       animate={
@@ -176,7 +176,7 @@ const Hero = () => {
               />
               
               <Link to="/case-studies" className="w-full sm:w-auto">
-                <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-xl font-semibold text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-xl  text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                   View Our Work
                   <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 </button>
@@ -254,7 +254,7 @@ const Hero = () => {
                     <TrendingUp className="w-6 h-6 text-blue-300" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-sm">Performance</div>
+                    <div className="text-white  text-sm">Performance</div>
                     <div className="text-blue-300/70 text-xs">+45% Growth</div>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ const Hero = () => {
                     <Shield className="w-6 h-6 text-blue-300" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-sm">Security</div>
+                    <div className="text-white  text-sm">Security</div>
                     <div className="text-blue-300/70 text-xs">Enterprise Grade</div>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ const Hero = () => {
                       transition={{ delay: 1.5 + i * 0.1 }}
                       className="w-7 h-7 bg-blue-500/30 rounded border border-blue-400/50 flex items-center justify-center"
                     >
-                      <span className="text-blue-300 text-xs font-bold">•</span>
+                      <span className="text-blue-300 text-xs ">•</span>
                     </motion.div>
                   ))}
                 </div>
@@ -308,7 +308,7 @@ const Hero = () => {
                   <div className="inline-flex p-4 bg-blue-500/30 rounded-2xl mb-3">
                     <Code2 className="w-9 h-9 text-blue-300" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-2">AI-Powered</div>
+                  <div className="text-2xl  text-white mb-2">AI-Powered</div>
                   <div className="text-blue-200/80 text-sm mb-4">Next-Gen Solutions</div>
                   <div className="flex items-center justify-center gap-2 mt-4">
                     <Sparkles className="w-4 h-4 text-blue-400" />
@@ -351,7 +351,7 @@ const Hero = () => {
                   >
                     <Code2 className="w-7 h-7 text-blue-200" />
                   </motion.div>
-                  <h3 className="text-lg font-bold text-white mb-1">
+                  <h3 className="text-lg  text-white mb-1">
                     Custom Software Development
                   </h3>
                   <p className="text-blue-200/80 text-xs leading-relaxed">
@@ -368,7 +368,7 @@ const Hero = () => {
                     transition={{ delay: 0.8, duration: 0.6 }}
                   >
                     <Zap className="w-4 h-4 text-blue-300" />
-                    <div className="text-white text-xs font-semibold">Fast Delivery</div>
+                    <div className="text-white text-xs ">Fast Delivery</div>
                   </motion.div>
                   
                   <motion.div 
@@ -378,7 +378,7 @@ const Hero = () => {
                     transition={{ delay: 1, duration: 0.6 }}
                   >
                     <Sparkles className="w-4 h-4 text-blue-300" />
-                    <div className="text-white text-xs font-semibold">AI-Powered</div>
+                    <div className="text-white text-xs ">AI-Powered</div>
                   </motion.div>
                   
                   <motion.div 
@@ -388,7 +388,7 @@ const Hero = () => {
                     transition={{ delay: 1.2, duration: 0.6 }}
                   >
                     <Target className="w-4 h-4 text-blue-300" />
-                    <div className="text-white text-xs font-semibold">Goal-Focused</div>
+                    <div className="text-white text-xs ">Goal-Focused</div>
                   </motion.div>
                   
                   <motion.div 
@@ -398,24 +398,24 @@ const Hero = () => {
                     transition={{ delay: 1.4, duration: 0.6 }}
                   >
                     <Cpu className="w-4 h-4 text-blue-300" />
-                    <div className="text-white text-xs font-semibold">Scalable</div>
+                    <div className="text-white text-xs ">Scalable</div>
                   </motion.div>
                 </div>
 
                 {/* Stats - Compact */}
                 <div className="flex items-center justify-between pt-3 border-t border-blue-400/30">
                   <div className="text-center flex-1">
-                    <div className="text-lg font-bold text-white">50+</div>
+                    <div className="text-lg  text-white">50+</div>
                     <div className="text-blue-300/70 text-[10px]">Projects</div>
                   </div>
                   <div className="w-px h-8 bg-blue-400/30"></div>
                   <div className="text-center flex-1">
-                    <div className="text-lg font-bold text-white">100%</div>
+                    <div className="text-lg  text-white">100%</div>
                     <div className="text-blue-300/70 text-[10px]">Quality</div>
                   </div>
                   <div className="w-px h-8 bg-blue-400/30"></div>
                   <div className="text-center flex-1">
-                    <div className="text-lg font-bold text-white">24/7</div>
+                    <div className="text-lg  text-white">24/7</div>
                     <div className="text-blue-300/70 text-[10px]">Support</div>
                   </div>
                 </div>
@@ -436,7 +436,7 @@ const Hero = () => {
               <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 7+
               </div>
-              <p className="text-blue-200/70 text-xs font-bold">
+              <p className="text-blue-200/70 text-xs ">
                 Business Years
               </p>
             </div>
@@ -444,7 +444,7 @@ const Hero = () => {
               <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 100+
               </div>
-              <p className="text-blue-200/70 text-xs font-bold">
+              <p className="text-blue-200/70 text-xs ">
                 Projects Delivered
               </p>
             </div>
@@ -452,15 +452,15 @@ const Hero = () => {
               <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 10+
               </div>
-              <p className="text-blue-200/70 text-xs font-bold">
+              <p className="text-blue-200/70 text-xs ">
                 Industries Catered
               </p>
             </div>
             <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
-              <div className="text-2xl font-bold text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+              <div className="text-2xl  text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                 4+
               </div>
-              <p className="text-blue-200/70 text-xs font-bold">
+              <p className="text-blue-200/70 text-xs ">
                 Countries
               </p>
             </div>

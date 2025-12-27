@@ -175,7 +175,7 @@ const CaseStudiesPage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl  mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               Our <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Case Studies</span> - <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">Success Stories</span>
             </h1>
             <p className="text-base sm:text-lg text-blue-200/80 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">
@@ -259,7 +259,7 @@ const CaseStudiesPage = () => {
               <div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="w-10 h-10 text-blue-400 flex items-center justify-center text-2xl">🔍</div>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">No case studies found</h3>
+              <h3 className="text-xl  text-white mb-2">No case studies found</h3>
               <p className="text-blue-200/70">Try adjusting your search terms or filters.</p>
             </div>
           ) : (
@@ -308,7 +308,7 @@ const CaseStudiesPage = () => {
                         </div>
                       </div>
                       
-                      <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 group-hover:text-blue-400 transition-colors leading-tight">
+                      <h3 className="text-lg  text-white mb-2 line-clamp-2 group-hover:text-blue-400 transition-colors leading-tight">
                         {study.title}
                       </h3>
                       
