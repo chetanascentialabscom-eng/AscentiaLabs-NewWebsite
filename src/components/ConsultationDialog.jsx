@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback, memo } from 'react';
-import { X, Send, User, Mail, Phone, MessageSquare, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
+import { X, CheckCircle, Zap, Rocket, Target, Code, Lightbulb, Users } from 'lucide-react';
 import { sendEmail, validateContactForm, extractFormData, initializeEmailJS } from '../utils/email';
 
 const ConsultationDialog = memo(({ isOpen, onClose }) => {
@@ -265,7 +265,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full px-6 py-3 font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 rounded-lg ${
+                    className={`w-full px-6 py-3 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 rounded-lg ${
                       isSubmitting
                         ? 'bg-gradient-to-r from-amber-400 to-orange-500 cursor-not-allowed text-black opacity-75'
                         : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:from-amber-500 hover:to-orange-600 hover:shadow-lg'
@@ -286,40 +286,66 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
           </div>
 
           {/* Right Side - Visual */}
-          <div className="hidden lg:flex lg:w-96 relative overflow-hidden">
-            {/* Background with dark gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-800/90 to-gray-900/95 backdrop-blur-sm"></div>
+          <div className="hidden lg:flex lg:w-96 relative overflow-hidden bg-slate-800">
+            {/* Subtle Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+            </div>
             
-            {/* Decorative Elements */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-10 right-10 w-20 h-20 border-2 border-blue-400/30 rounded-full animate-pulse"></div>
-              <div className="absolute top-32 right-16 w-16 h-16 border-2 border-blue-300/40 rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute bottom-20 right-16 w-12 h-12 border-2 border-blue-400/30 rounded-full animate-pulse delay-500"></div>
+            {/* Floating Animated Icons */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute top-35 right-8 opacity-8 animate-float">
+                <Code className="w-20 h-20 text-amber-400" />
+              </div>
+              <div className="absolute bottom-10 left-8 opacity-8 animate-float-delayed">
+                <Lightbulb className="w-16 h-16 text-orange-400" />
+              </div>
+              <div className="absolute bottom-10 right-12 opacity-8 animate-float-slow">
+                <Users className="w-14 h-14 text-amber-500" />
+              </div>
             </div>
             
             {/* Content */}
-            <div className="relative z-10 p-8 flex flex-col justify-center items-center h-full text-white">
+            <div className="relative z-10 p-10 flex flex-col justify-between h-full text-white py-16">
               {/* Heading */}
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold leading-tight text-white">
-                  Let's Build Something Amazing Together!
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold leading-tight text-white mb-4">
+                  Let's Build<br />Something Amazing<br />Together!
                 </h3>
+                <p className="text-gray-400 text-sm">
+                  Transform your ideas into reality
+                </p>
               </div>
               
-              {/* Large Image */}
-              <div className="w-full flex justify-center">
-                <div className="w-full max-w-sm h-80 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-2xl">
-                  <img 
-                    src="/contactus.jpg" 
-                    alt="Ascential Labs" 
-                    className="w-full h-full object-fit"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="hidden w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl items-center justify-center">
-                    <div className="text-white text-3xl font-bold">Ascential Labs</div>
+              {/* Feature List */}
+              <div className="space-y-8 flex-1 flex flex-col justify-center">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Rocket className="w-6 h-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Fast Response</h4>
+                    <p className="text-gray-400 text-sm">We'll get back to you within 24 hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Tailored Solutions</h4>
+                    <p className="text-gray-400 text-sm">Custom solutions for your unique needs</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-6 h-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white mb-1">Expert Team</h4>
+                    <p className="text-gray-400 text-sm">Experienced professionals at your service</p>
                   </div>
                 </div>
               </div>
