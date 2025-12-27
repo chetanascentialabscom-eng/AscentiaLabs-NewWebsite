@@ -195,7 +195,7 @@ const LeafletMap = () => {
       </div>
       
       {/* Map Container */}
-      <div className="relative bg-black rounded-xl shadow-lg p-6 border border-white/10">
+      <div className="relative bg-black rounded-xl shadow-lg p-6 border-2 border-amber-400/30">
         <div 
           ref={mapRef} 
           className="w-full rounded-xl overflow-hidden"
@@ -203,7 +203,7 @@ const LeafletMap = () => {
             height: '300px',
             minHeight: '300px',
             backgroundColor: '#f3f4f6',
-            border: '1px solid #e5e7eb'
+            border: '2px solid rgba(251, 191, 36, 0.3)'
           }}
         />
 
@@ -230,30 +230,30 @@ const LeafletMap = () => {
           {locations.map((location) => (
             <div
               key={location.id}
-              className={`bg-black p-4 rounded-lg border hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 ${
+              className={`bg-black p-4 rounded-lg border-2 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 ${
                 location.type === 'main' 
-                  ? 'border-white/30 hover:border-white/50' 
-                  : 'border-white/20 hover:border-white/40'
-              } ${selectedLocation?.id === location.id ? 'ring-2 ring-offset-2 ring-white/50' : ''}`}
+                  ? 'border-amber-400/40 hover:border-amber-400/60' 
+                  : 'border-amber-400/20 hover:border-amber-400/40'
+              } ${selectedLocation?.id === location.id ? 'ring-2 ring-offset-2 ring-amber-400/50' : ''}`}
               onClick={() => focusLocation(location)}
             >
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-white" />
+                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-amber-400" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-1">
                     <h4 className=" text-white">{location.name}</h4>
                     {location.type === 'main' && (
-                      <span className="text-xs bg-white text-black px-2 py-1 rounded-full font-medium">
+                      <span className="text-xs bg-gradient-to-r from-amber-400 to-orange-500 text-black px-2 py-1 rounded-full font-medium">
                         Main Office
                       </span>
                     )}
                   </div>
                   <p className="text-sm text-white/80 mb-2 leading-relaxed">{location.address}</p>
                   <div className="flex items-center justify-between">
-                    <p className="text-sm  text-white">
+                    <p className="text-sm  text-amber-400">
                       {location.phone}
                     </p>
-                    <Navigation className="w-4 h-4 text-white" />
+                    <Navigation className="w-4 h-4 text-amber-400" />
                   </div>
                 </div>
               </div>

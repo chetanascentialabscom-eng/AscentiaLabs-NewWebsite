@@ -185,13 +185,13 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
           {/* Left Side - Form */}
           <div className="flex-1 flex flex-col relative z-10 bg-gray-900 rounded-l-3xl">
             {/* Header */}
-            <div className="flex-shrink-0 px-6 py-4 border-b border-gray-700 relative">
+            <div className="flex-shrink-0 px-6 py-4 border-b border-amber-400/30 relative">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-2xl  text-white mb-1">
                     Get In Touch
                   </h2>
-                  <div className="w-20 h-1 bg-blue-500 rounded-full"></div>
+                  <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
                 </div>
                 <button
                   onClick={onClose}
@@ -214,7 +214,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
                     placeholder="Full Name*"
                   />
                 </div>
@@ -228,7 +228,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
                     placeholder="Email Id*"
                   />
                 </div>
@@ -242,7 +242,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 hover:border-gray-500 placeholder-gray-400"
+                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
                     placeholder="Phone Number*"
                   />
                 </div>
@@ -255,7 +255,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
-                    className="w-full h-full min-h-[80px] px-3 py-2.5 text-white bg-gray-800  border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none transition-all duration-200 resize-none hover:border-gray-500 placeholder-gray-400"
+                    className="w-full h-full min-h-[80px] px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 resize-none hover:border-amber-400/40 placeholder-gray-400"
                     placeholder="Describe Your Project Idea/Message"
                   />
                 </div>
