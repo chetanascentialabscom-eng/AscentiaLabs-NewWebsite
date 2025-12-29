@@ -133,8 +133,230 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData.contact} />
+     {/* Contact Form Section */}
+      <section className="pt-24 pb-8 bg-black relative">
+        {/* Smooth transition gradient at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-blue-950 pointer-events-none z-10"></div>
+        
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-8 border-2 border-amber-400/30">
+              {/* Form Header */}
+              <div className="text-center mb-6">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                    <Send className="w-5 h-5 text-black" />
+                  </div>
+                  <h2 className="text-2xl md:text-3xl text-white">Send Us A Message</h2>
+                </div>
+                <p className="text-blue-200/80 text-sm">
+                  Fill Out The Form Below And We'll Get Back To You Within 24 Hours
+                </p>
+              </div>
+
+              {/* Contact Form */}
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4" id="contactForm">
+                {/* Hidden inputs for dropdown values to ensure they're sent with EmailJS */}
+                <input type="hidden" name="country" value={formData.country} />
+                <input type="hidden" name="budgetRange" value={formData.budgetRange} />
+                {/* Row 1: Full Name, Email, Country */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label htmlFor="fullName" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <User className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Full Name *</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Your Email *</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="country" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <Globe className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Country</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      placeholder="Enter your country"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2: Phone Number, Company Name, Budget Range */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label htmlFor="phone" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Phone Number</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="companyName" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <Building className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Company Name</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="companyName"
+                      name="companyName"
+                      value={formData.companyName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      placeholder="Enter your company name"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                      <DollarSign className="w-4 h-4 mr-2 flex-shrink-0" />
+                      <span>Budget Range</span>
+                    </label>
+                    <div className="relative" ref={budgetDropdownRef}>
+                      <button
+                        type="button"
+                        onClick={() => setIsBudgetDropdownOpen(!isBudgetDropdownOpen)}
+                        className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 cursor-pointer text-sm text-white font-medium shadow-sm hover:shadow-md hover:border-amber-400/50 flex items-center justify-between"
+                      >
+                        <span className={`truncate flex-1 text-left ${formData.budgetRange ? 'text-white' : 'text-blue-200/50'}`}>
+                          {formData.budgetRange || 'Select budget range'}
+                        </span>
+                        <svg 
+                          className={`w-4 h-4 ml-3 flex-shrink-0 transition-transform duration-200 text-blue-200 ${isBudgetDropdownOpen ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      
+                      {isBudgetDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-2 bg-slate-900/95 backdrop-blur-sm border border-blue-400/20 rounded-xl shadow-xl overflow-hidden w-full z-50">
+                          {budgetRanges.map((range, index) => (
+                            <button
+                              key={range}
+                              type="button"
+                              onClick={() => {
+                                setFormData(prev => ({ ...prev, budgetRange: range }));
+                                setIsBudgetDropdownOpen(false);
+                              }}
+                              className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-blue-500/20 whitespace-nowrap ${
+                                formData.budgetRange === range 
+                                  ? 'bg-blue-500/20 text-blue-300' 
+                                  : 'text-blue-200 hover:text-blue-300'
+                              } ${index === budgetRanges.length - 1 ? '' : 'border-b border-blue-400/10'}`}
+                            >
+                              {range}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message Field */}
+                <div>
+                  <label htmlFor="message" className="flex items-center text-sm font-medium text-blue-200 mb-2">
+                    <MessageSquare className="w-4 h-4 mr-2 flex-shrink-0" />
+                    <span>Your Message *</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 resize-none bg-slate-900/50 text-white placeholder-blue-200/50"
+                    placeholder="Tell us about your project requirements, goals, and any specific details you'd like us to know..."
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <div className="text-center pt-4">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`px-8 py-4 rounded-full  transition-all duration-300 transform hover:scale-105 ${
+                      isSubmitting
+                        ? 'bg-gray-400 cursor-not-allowed text-white'
+                        : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:shadow-lg hover:from-amber-500 hover:to-orange-600'
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <div className="flex items-center">
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <Send className="w-5 h-5 mr-2" />
+                        Submit Message
+                      </div>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       {/* Interactive Map Section */}
+      <section className="py-12 bg-black">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <LeafletMap />
+        </div>
+      </section>
+
+      
       {/* Hero Section with Enhanced Gradient matching website theme */}
-      <section className="relative pt-32 md:pt-40 pb-20 lg:pb-24 overflow-hidden">
+
+      <section className="relative overflow-hidden py-20 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-900">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none z-10"></div>
+        
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -188,222 +410,6 @@ const ContactPage = () => {
               <p className="text-amber-400 text-lg">
                 India & Australia
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-       {/* Interactive Map Section */}
-      <section className="py-12 bg-black">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <LeafletMap />
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-12 bg-black">
-        <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-12 border-2 border-amber-400/30">
-              {/* Form Header */}
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mr-4">
-                    <Send className="w-6 h-6 text-black" />
-                  </div>
-                  <h2 className="text-2xl md:text-3xl text-white">Send Us a Message</h2>
-                </div>
-                <p className="text-blue-200/80">
-                  Fill out the form below and we'll get back to you within 24 hours
-                </p>
-              </div>
-
-
-
-              {/* Contact Form */}
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6" id="contactForm">
-                {/* Hidden inputs for dropdown values to ensure they're sent with EmailJS */}
-                <input type="hidden" name="country" value={formData.country} />
-                <input type="hidden" name="budgetRange" value={formData.budgetRange} />
-                {/* Row 1: Full Name, Email, Country */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <label htmlFor="fullName" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <User className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Full Name *</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="fullName"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <Mail className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Your Email *</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="country" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <Globe className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Country</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="country"
-                      name="country"
-                      value={formData.country}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
-                      placeholder="Enter your country"
-                    />
-                  </div>
-                </div>
-
-                {/* Row 2: Phone Number, Company Name, Budget Range */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <Phone className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Phone Number</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="companyName" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <Building className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Company Name</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="companyName"
-                      name="companyName"
-                      value={formData.companyName}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
-                      placeholder="Enter your company name"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                      <DollarSign className="w-4 h-4 mr-2 flex-shrink-0" />
-                      <span>Budget Range</span>
-                    </label>
-                    <div className="relative" ref={budgetDropdownRef}>
-                      <button
-                        type="button"
-                        onClick={() => setIsBudgetDropdownOpen(!isBudgetDropdownOpen)}
-                        className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 cursor-pointer text-sm text-white font-medium shadow-sm hover:shadow-md hover:border-amber-400/50 flex items-center justify-between"
-                      >
-                        <span className={`truncate flex-1 text-left ${formData.budgetRange ? 'text-white' : 'text-blue-200/50'}`}>
-                          {formData.budgetRange || 'Select budget range'}
-                        </span>
-                        <svg 
-                          className={`w-4 h-4 ml-3 flex-shrink-0 transition-transform duration-200 text-blue-200 ${isBudgetDropdownOpen ? 'rotate-180' : ''}`}
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                      
-                      {isBudgetDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-2 bg-slate-900/95 backdrop-blur-sm border border-blue-400/20 rounded-xl shadow-xl overflow-hidden w-full z-50">
-                          {budgetRanges.map((range, index) => (
-                            <button
-                              key={range}
-                              type="button"
-                              onClick={() => {
-                                setFormData(prev => ({ ...prev, budgetRange: range }));
-                                setIsBudgetDropdownOpen(false);
-                              }}
-                              className={`w-full text-left px-4 py-3 text-sm transition-colors hover:bg-blue-500/20 whitespace-nowrap ${
-                                formData.budgetRange === range 
-                                  ? 'bg-blue-500/20 text-blue-300' 
-                                  : 'text-blue-200 hover:text-blue-300'
-                              } ${index === budgetRanges.length - 1 ? '' : 'border-b border-blue-400/10'}`}
-                            >
-                              {range}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Message Field */}
-                <div>
-                  <label htmlFor="message" className="flex items-center text-sm font-medium text-blue-200 mb-2">
-                    <MessageSquare className="w-4 h-4 mr-2 flex-shrink-0" />
-                    <span>Your Message *</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 resize-none bg-slate-900/50 text-white placeholder-blue-200/50"
-                    placeholder="Tell us about your project requirements, goals, and any specific details you'd like us to know..."
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <div className="text-center pt-4">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`px-8 py-4 rounded-full  transition-all duration-300 transform hover:scale-105 ${
-                      isSubmitting
-                        ? 'bg-gray-400 cursor-not-allowed text-white'
-                        : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black hover:shadow-lg hover:from-amber-500 hover:to-orange-600'
-                    }`}
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </div>
-                    ) : (
-                      <div className="flex items-center">
-                        <Send className="w-5 h-5 mr-2" />
-                        Submit Message
-                      </div>
-                    )}
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
         </div>
