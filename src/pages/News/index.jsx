@@ -39,8 +39,8 @@ const News = () => {
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="hidden md:block absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="hidden md:block absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -64,14 +64,16 @@ const News = () => {
                 <Link 
                   key={article.id}
                   to={article.link}
-                  className="group"
+                  className="group block"
                 >
-                  <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/20 overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] h-full flex flex-col">
+                  <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/20 overflow-hidden shadow-lg md:hover:shadow-2xl md:hover:shadow-blue-500/20 transition-all duration-300 md:hover:scale-[1.02] h-full flex flex-col">
                     <div className="relative h-64 overflow-hidden">
                       <img 
                         src={article.image}
                         alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-500"
+                        loading="eager"
+                        decoding="async"
                       />
                       <div className="absolute top-4 left-4">
                         <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -92,7 +94,7 @@ const News = () => {
                         </div>
                       </div>
                       
-                      <h2 className="text-2xl text-white mb-3 group-hover:text-blue-400 transition-colors leading-tight">
+                      <h2 className="text-2xl text-white mb-3 md:group-hover:text-blue-400 transition-colors leading-tight">
                         {article.title}
                       </h2>
                       
@@ -100,9 +102,9 @@ const News = () => {
                         {article.excerpt}
                       </p>
                       
-                      <div className="flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors">
+                      <div className="flex items-center text-blue-400 font-medium md:group-hover:text-blue-300 transition-colors">
                         <span>Read More</span>
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 ml-2 md:group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </article>

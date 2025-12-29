@@ -502,6 +502,60 @@ header {
     -moz-appearance: none;
     appearance: none;
   }
+  
+  /* Disable expensive animations on mobile for better performance */
+  .animate-pulse,
+  .animate-spin-slow,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation: none !important;
+  }
+  
+  /* Reduce blur effects on mobile */
+  .blur-3xl,
+  .blur-2xl {
+    filter: blur(20px) !important;
+  }
+  
+  /* Optimize image rendering on mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    will-change: auto;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Reduce transition complexity on mobile */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.05) !important;
+  }
+  
+  /* Optimize scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Hardware acceleration for smooth scrolling */
+  .overflow-x-auto,
+  .overflow-y-auto {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: scroll-position;
+  }
+  
+  /* Reduce backdrop blur on mobile */
+  .backdrop-blur-sm {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(30, 41, 59, 0.95) !important;
+  }
+  
+  /* Simplify shadows on mobile */
+  .shadow-lg,
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
 }
 
 /* Android device optimizations */

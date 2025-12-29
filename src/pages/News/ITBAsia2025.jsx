@@ -40,8 +40,8 @@ const ITBAsia2025 = () => {
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="hidden md:block absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="hidden md:block absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -96,19 +96,21 @@ const ITBAsia2025 = () => {
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
                     className="w-full h-full object-contain"
+                    loading="eager"
+                    decoding="async"
                   />
                   
                   {/* Navigation Buttons */}
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 active:bg-black/80 text-white p-2 rounded-full transition-all touch-manipulation"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="w-6 h-6" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 active:bg-black/80 text-white p-2 rounded-full transition-all touch-manipulation"
                     aria-label="Next image"
                   >
                     <ChevronRight className="w-6 h-6" />
@@ -121,25 +123,29 @@ const ITBAsia2025 = () => {
                 </div>
                 
                 {/* Thumbnail Navigation */}
-                <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                <div className="flex gap-2 mt-4 overflow-x-auto pb-2 scrollbar-hide">
                   {images.map((image, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`ml-2 flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all bg-slate-900/50 ${
+                      className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all bg-slate-900/50 touch-manipulation ${
                         currentImageIndex === index 
                           ? 'border-blue-500 scale-105' 
-                          : 'border-transparent opacity-60 hover:opacity-100'
+                          : 'border-transparent opacity-60 active:opacity-100'
                       }`}
                     >
                       <img 
                         src={image.src} 
                         alt={image.alt}
                         className="w-full h-full object-contain"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </button>
                   ))}
                 </div>
+                
+             
               </div>
 
               {/* Article Content */}

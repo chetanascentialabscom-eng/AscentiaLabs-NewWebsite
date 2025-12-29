@@ -17,8 +17,8 @@ const RouteMaestroPlatform = () => {
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          <div className="hidden md:block absolute top-20 right-20 w-32 h-32 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="hidden md:block absolute bottom-40 left-20 w-24 h-24 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -72,6 +72,8 @@ const RouteMaestroPlatform = () => {
                   src="/routemaestro.png" 
                   alt="RouteMaestro Platform"
                   className="w-full h-64 md:h-96 object-contain rounded-xl bg-white/5"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
 
