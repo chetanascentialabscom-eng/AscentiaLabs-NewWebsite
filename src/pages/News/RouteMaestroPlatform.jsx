@@ -45,7 +45,7 @@ const RouteMaestroPlatform = () => {
             <div className="flex flex-wrap items-center text-blue-200/80 mb-8 gap-6">
               <div className="flex items-center">
                 <User className="w-5 h-5 mr-2" />
-                <span>Ascentia Labs</span>
+                <span>Arham Jain</span>
               </div>
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
