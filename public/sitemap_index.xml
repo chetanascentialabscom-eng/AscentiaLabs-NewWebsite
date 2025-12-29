@@ -8,9 +8,9 @@
   </url>
   <url>
     <loc>https://ascentialabs.com/about-us</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2025-12-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/contact-us</loc>
@@ -126,9 +126,9 @@
   </url>
   <url>
     <loc>https://ascentialabs.com/travel-app-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2025-12-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/ticketing-solution</loc>
@@ -147,6 +147,26 @@
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Products & Solutions -->
+  <url>
+    <loc>https://ascentialabs.com/custom-software-development</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/itb-asia-2025</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/routemaestro</loc>
+    <lastmod>2025-12-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   
   <!-- Blog Posts -->

@@ -161,6 +161,13 @@ const TextilesPage = () => {
     }
   ];
 
+  const stats = [
+    { number: '7+', label: 'Business Years' },
+    { number: '100+', label: 'Projects Delivered' },
+    { number: '10+', label: 'Industries Catered' },
+    { number: '4+', label: 'Countries' }
+  ];
+
   const processSteps = [
     { 
       number: '1', 
@@ -260,6 +267,29 @@ const TextilesPage = () => {
                   </div>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Stats Section */}
+          <div className="mt-16 pt-12 border-t border-blue-400/30">
+            {/* Stats - Mobile/Tablet */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
+                  <div className="text-3xl md:text-4xl  text-white mb-1">{stat.number}</div>
+                  <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Stats - Desktop */}
+            <div className="hidden lg:grid grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                  <div className="text-4xl md:text-5xl  text-white mb-2">{stat.number}</div>
+                  <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
