@@ -33,6 +33,7 @@ import {
   TrendingUp,
   Cpu,
   Ticket,
+  Newspaper,
 } from 'lucide-react';
 
 const Header = () => {
@@ -429,6 +430,13 @@ const Header = () => {
                         <div className="text-xs text-gray-500">Latest insights and articles</div>
                       </div>
                     </Link>
+                    <Link to="/news" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
+                      <Newspaper className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">News</div>
+                        <div className="text-xs text-gray-500">Company updates and announcements</div>
+                      </div>
+                    </Link>
                     <Link to="/case-studies" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
@@ -685,6 +693,10 @@ const Header = () => {
                     <Link to="/blog" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Blogs</span>
+                    </Link>
+                    <Link to="/news" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
+                      <Newspaper className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">News</span>
                     </Link>
                     <Link to="/case-studies" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />

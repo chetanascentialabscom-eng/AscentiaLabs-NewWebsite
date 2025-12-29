@@ -36,6 +36,11 @@ export { default as CustomSoftwareDevelopment } from './Blogs/CustomSoftwareDeve
 export { default as MobileAppTrends2025 } from './Blogs/MobileAppTrends2025';
 export { default as HealthcareAppDevelopment } from './Blogs/HealthcareAppDevelopment';
 
+// News Pages
+export { default as NewsPage } from './News';
+export { default as ITBAsia2025 } from './News/ITBAsia2025';
+export { default as RouteMaestroPlatform } from './News/RouteMaestroPlatform';
+
 // Case Studies Pages
 export { default as CaseStudiesPage } from './CaseStudies';
 export { default as RouteMaestroCase } from './CaseStudies/RouteMaestroCase';

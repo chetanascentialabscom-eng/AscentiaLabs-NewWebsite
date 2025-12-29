@@ -42,7 +42,10 @@ import {
   RouteMaestroCase,
   KinderConnectCase,
   InsuranceSafeCase,
-  JusDoItCase
+  JusDoItCase,
+  NewsPage,
+  ITBAsia2025,
+  RouteMaestroPlatform
 } from './pages'
 
 // Import new case study components
@@ -103,6 +106,11 @@ function App() {
           <Route path="/custom-software-development-business" element={<CustomSoftwareDevelopment />} />
           <Route path="/mobile-app-development-trends-2025" element={<MobileAppTrends2025 />} />
           <Route path="/healthcare-app-development-patient-care" element={<HealthcareAppDevelopment />} />
+          
+          {/* News Routes */}
+          <Route path="/news" element={<NewsPage />} />
+          <Route path="/news/itb-asia-2025" element={<ITBAsia2025 />} />
+          <Route path="/news/routemaestro-platform" element={<RouteMaestroPlatform />} />
           
           {/* Case Studies Routes */}
           <Route path="/case-studies" element={<CaseStudiesPage />} />

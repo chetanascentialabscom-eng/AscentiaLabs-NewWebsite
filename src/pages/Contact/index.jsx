@@ -134,9 +134,9 @@ const ContactPage = () => {
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData.contact} />
      {/* Contact Form Section */}
-      <section className="pt-24 pb-8 bg-black relative">
+      <section className="pt-32 pb-8 bg-black relative">
         {/* Smooth transition gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-blue-950 pointer-events-none z-10"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none z-10"></div>
         
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <div className="max-w-5xl mx-auto">
