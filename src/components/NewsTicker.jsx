@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const NewsTicker = () => {
   const tickerRef = useRef(null);
@@ -14,25 +15,53 @@ const NewsTicker = () => {
   }, []);
 
   const newsItems = [
-    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
-    "Ascentia Labs Launches RouteMaestro Platform",
-    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
-    "Ascentia Labs Launches RouteMaestro Platform",
-    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
-    "Ascentia Labs Launches RouteMaestro Platform",
-    "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
-    "Ascentia Labs Launches RouteMaestro Platform",
-    
+    {
+      text: "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+      link: "/news/itb-asia-2025"
+    },
+    {
+      text: "Ascentia Labs Launches RouteMaestro Platform",
+      link: "/news/routemaestro-platform"
+    },
+    {
+      text: "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+      link: "/news/itb-asia-2025"
+    },
+    {
+      text: "Ascentia Labs Launches RouteMaestro Platform",
+      link: "/news/routemaestro-platform"
+    },
+    {
+      text: "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+      link: "/news/itb-asia-2025"
+    },
+    {
+      text: "Ascentia Labs Launches RouteMaestro Platform",
+      link: "/news/routemaestro-platform"
+    },
+    {
+      text: "Ascentia Labs Exhibited At ITB Asia 2025, Singapore",
+      link: "/news/itb-asia-2025"
+    },
+    {
+      text: "Ascentia Labs Launches RouteMaestro Platform",
+      link: "/news/routemaestro-platform"
+    },
   ];
 
   return (
-    <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-black py-2 overflow-hidden w-full shadow-lg flex items-center relative z-10 mt-1">
+    <div className="bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 text-black  md:py-2 overflow-hidden w-full shadow-lg flex items-center relative z-10 mt-1">
       <div ref={tickerRef} className="ticker-wrapper flex items-center h-full w-full">
         <div className="ticker-content flex items-center whitespace-nowrap animate-scroll h-full">
           {newsItems.map((item, index) => (
-            <span key={index} className="inline-flex items-center mx-4 md:mx-8 text-xs font-medium text-black">
-              {item} <span className='text-blue-700 text-bold mx-1'>View Here</span>
-            </span>
+            <Link 
+              key={index}
+              to={item.link} 
+              className="inline-flex items-center mx-2 md:mx-8 text-xs font-medium text-black hover:text-blue-900 transition-colors whitespace-nowrap"
+            >
+              <span>{item.text}</span>
+              <span className="text-blue-700 font-bold ml-1 hover:underline">View Here</span>
+            </Link>
           ))}
         </div>
       </div>

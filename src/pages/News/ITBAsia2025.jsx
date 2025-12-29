@@ -7,15 +7,15 @@ const ITBAsia2025 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
   const images = [
+     { src: '/ITB/Z62_6351.jpg', alt: 'ITB Asia Showcase' },
+    { src: '/ITB/DSC_2607.jpg', alt: 'ITB Asia Exhibition' },
+    { src: '/ITB/image (45).png', alt: 'RouteMaestro Demo' },
+    { src: '/ITB/image (46).png', alt: 'Travel Technology Arena' },
     { src: '/ITB/ITB Asia 2025 - Singapore.jpeg', alt: 'ITB Asia 2025 Singapore' },
     { src: '/ITB/Ascentia Labs Expo.jpeg', alt: 'Ascentia Labs Exhibition Booth' },
     { src: '/ITB/Mr. Luca - Ascentia Labs.jpeg', alt: 'Mr. Luca at Ascentia Labs Booth' },
     { src: '/ITB/Alice Lee.png', alt: 'Alice Lee at ITB Asia' },
     { src: '/ITB/DSB_8009.jpg', alt: 'ITB Asia Event' },
-    { src: '/ITB/DSC_2607.jpg', alt: 'ITB Asia Exhibition' },
-    { src: '/ITB/Z62_6351.jpg', alt: 'ITB Asia Showcase' },
-    { src: '/ITB/image (45).png', alt: 'RouteMaestro Demo' },
-    { src: '/ITB/image (46).png', alt: 'Travel Technology Arena' },
   ];
 
   const nextImage = () => {
@@ -91,11 +91,11 @@ const ITBAsia2025 = () => {
               
               {/* Image Gallery Carousel */}
               <div className="mb-8 relative">
-                <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                <div className="relative h-64 md:h-96 rounded-xl overflow-hidden bg-slate-900/50">
                   <img 
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   
                   {/* Navigation Buttons */}
@@ -126,7 +126,7 @@ const ITBAsia2025 = () => {
                     <button
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                      className={`ml-2 flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all bg-slate-900/50 ${
                         currentImageIndex === index 
                           ? 'border-blue-500 scale-105' 
                           : 'border-transparent opacity-60 hover:opacity-100'
@@ -135,7 +135,7 @@ const ITBAsia2025 = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </button>
                   ))}
