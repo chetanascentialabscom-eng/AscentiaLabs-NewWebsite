@@ -22,7 +22,7 @@ const News = () => {
     },
     {
       id: 2,
-      title: 'RouteMaestro – AI-Powered Dynamic Packaging & Whitelabel Travel Software Platform',
+      title: 'RouteMaestro – AI-Powered Dynamic Planning & Packaging Travel Booking Platform',
       excerpt: 'Introducing RouteMaestro, an AI-powered dynamic travel packaging platform for B2B and B2C whitelabel travel solutions.',
       image: '/routemaestro.png',
       date: 'December 2025',
@@ -76,7 +76,7 @@ const News = () => {
                         decoding="async"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm ">
                           {article.category}
                         </span>
                       </div>

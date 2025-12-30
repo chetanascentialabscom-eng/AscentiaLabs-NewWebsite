@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowLeft, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEO from '../../components/SEO';
 
 const ITBAsia2025 = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({});
+  const [imageErrors, setImageErrors] = useState({});
+  const imageCache = useRef({});
   
   const images = [
      { src: '/ITB/Z62_6351.jpg', alt: 'ITB Asia Showcase' },
@@ -25,6 +28,58 @@ const ITBAsia2025 = () => {
   const prevImage = () => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  const preloadImage = (index) => {
+    const src = images[index].src;
+    
+    // Check if already loaded or in cache
+    if (loadedImages[index] || imageCache.current[src]) {
+      setLoadedImages(prev => ({ ...prev, [index]: true }));
+      return;
+    }
+
+    // Check if image is already cached by browser
+    const img = new Image();
+    img.src = src;
+    
+    if (img.complete && img.naturalHeight !== 0) {
+      // Image is already cached
+      imageCache.current[src] = true;
+      setLoadedImages(prev => ({ ...prev, [index]: true }));
+    } else {
+      // Load image
+      img.onload = () => {
+        imageCache.current[src] = true;
+        setLoadedImages(prev => ({ ...prev, [index]: true }));
+      };
+      img.onerror = () => {
+        setImageErrors(prev => ({ ...prev, [index]: true }));
+      };
+    }
+  };
+
+  useEffect(() => {
+    // Preload current and adjacent images
+    preloadImage(currentImageIndex);
+    const nextIndex = (currentImageIndex + 1) % images.length;
+    const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+    
+    setTimeout(() => {
+      preloadImage(nextIndex);
+      preloadImage(prevIndex);
+    }, 100);
+  }, [currentImageIndex]);
+
+  // Preload all images on mount for better UX
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      images.forEach((_, index) => {
+        if (index !== 0) preloadImage(index);
+      });
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   const seoData = {
     title: 'Ascentia Labs Showcases RouteMaestro at ITB Asia 2025 | Travel Technology',
@@ -55,7 +110,7 @@ const ITBAsia2025 = () => {
             </Link>
             
             <div className="mb-6">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm  inline-flex items-center">
                 <Tag className="w-3 h-3 mr-2" />
                 Company News
               </span>
@@ -92,12 +147,47 @@ const ITBAsia2025 = () => {
               {/* Image Gallery Carousel */}
               <div className="mb-8 relative">
                 <div className="relative h-64 md:h-96 rounded-xl overflow-hidden bg-slate-900/50">
+                  {/* Loading Skeleton */}
+                  {!loadedImages[currentImageIndex] && !imageErrors[currentImageIndex] && (
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="animate-pulse flex flex-col items-center gap-3">
+                        <div className="w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                        <p className="text-blue-300 text-sm">Loading image...</p>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Error State */}
+                  {imageErrors[currentImageIndex] && (
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="text-center">
+                        <p className="text-red-400 mb-2">Failed to load image</p>
+                        <button 
+                          onClick={() => {
+                            setImageErrors(prev => ({ ...prev, [currentImageIndex]: false }));
+                            preloadImage(currentImageIndex);
+                          }}
+                          className="text-blue-400 hover:text-blue-300 text-sm underline"
+                        >
+                          Retry
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
                   <img 
                     src={images[currentImageIndex].src}
                     alt={images[currentImageIndex].alt}
-                    className="w-full h-full object-contain"
+                    className={`w-full h-full object-contain transition-opacity duration-200 ${
+                      loadedImages[currentImageIndex] ? 'opacity-100' : 'opacity-0'
+                    }`}
                     loading="eager"
                     decoding="async"
+                    onLoad={() => {
+                      imageCache.current[images[currentImageIndex].src] = true;
+                      setLoadedImages(prev => ({ ...prev, [currentImageIndex]: true }));
+                    }}
+                    onError={() => setImageErrors(prev => ({ ...prev, [currentImageIndex]: true }))}
                   />
                   
                   {/* Navigation Buttons */}
@@ -127,8 +217,10 @@ const ITBAsia2025 = () => {
                   {images.map((image, index) => (
                     <button
                       key={index}
-                      onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all bg-slate-900/50 touch-manipulation ${
+                      onClick={() => {
+                        setCurrentImageIndex(index);
+                      }}
+                      className={`flex-shrink-0 ml-2 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all bg-slate-900/50 touch-manipulation relative ${
                         currentImageIndex === index 
                           ? 'border-blue-500 scale-105' 
                           : 'border-transparent opacity-60 active:opacity-100'
@@ -137,10 +229,21 @@ const ITBAsia2025 = () => {
                       <img 
                         src={image.src} 
                         alt={image.alt}
-                        className="w-full h-full object-contain"
+                        className={`w-full h-full object-contain transition-opacity duration-200 ${
+                          loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                        }`}
                         loading="lazy"
                         decoding="async"
+                        onLoad={() => {
+                          imageCache.current[image.src] = true;
+                          setLoadedImages(prev => ({ ...prev, [index]: true }));
+                        }}
                       />
+                      {!loadedImages[index] && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                      )}
                     </button>
                   ))}
                 </div>

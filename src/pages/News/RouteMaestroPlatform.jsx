@@ -32,14 +32,14 @@ const RouteMaestroPlatform = () => {
             </Link>
             
             <div className="mb-6">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm  inline-flex items-center">
                 <Tag className="w-3 h-3 mr-2" />
                 Product Launch
               </span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight">
-              RouteMaestro – AI-Powered Dynamic Packaging & Whitelabel Travel Software Platform
+             RouteMaestro – AI-Powered Dynamic Planning & Packaging Travel Booking Platform
             </h1>
             
             <div className="flex flex-wrap items-center text-blue-200/80 mb-8 gap-6">
@@ -69,9 +69,9 @@ const RouteMaestroPlatform = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/routemaestro.png" 
+                  src="/RMLogo.png" 
                   alt="RouteMaestro Platform"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white/5"
+                  className="w-full bg-white h-64 md:h-96 object-contain rounded-xl "
                   loading="eager"
                   decoding="async"
                 />
