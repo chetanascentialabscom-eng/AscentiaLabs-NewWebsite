@@ -7,9 +7,14 @@ const Industries = () => {
 
   const industries = [
     {
-      title: "Custom CRM",
-      description: "Customer relationship management",
+      title: "Field Service CRM",
+      description: "Field operations management",
       icon: <Settings className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+    },
+    {
+      title: "Business CRM",
+      description: "Business management solutions",
+      icon: <Building className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
     },
     {
       title: "Interior & Architecture",
@@ -71,7 +76,8 @@ const Industries = () => {
   const handleIndustryClick = (industryTitle) => {
     // Map industry titles to their corresponding routes
     const industryRoutes = {
-      'Custom CRM': '/complaint-management-system',
+      'Field Service CRM': '/field-service-crm',
+      'Business CRM': '/business-management-crm-solution',
       'Interior & Architecture': '/interior-design-app-development',
       'Real Estate': '/real-estate-app-development',
       'Education': '/education-app-development',

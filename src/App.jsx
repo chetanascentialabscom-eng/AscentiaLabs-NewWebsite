@@ -10,7 +10,8 @@ import {
   Home,
   About,
   Contact,
-  CustomCRM,
+  FieldServiceCRM,
+  BusinessCRM,
   InteriorArchitecture,
   LogisticsPage, 
   ERPPage, 
@@ -22,6 +23,7 @@ import {
   TicketingSolutionPage, 
   TextilesPage,
   ManufacturingPage, 
+  CustomCRMDevelopment,
   TechnologyConsultationAndMIS, 
   SoftwareEngineering, 
   AI_ML,
@@ -74,7 +76,8 @@ function App() {
           <Route path="/contact-us" element={<Contact />} />
 
           {/* Industry Routes - Using old website URLs */}
-          <Route path="/complaint-management-system" element={<CustomCRM />} />
+          <Route path="/field-service-crm" element={<FieldServiceCRM />} />
+          <Route path="/business-management-crm-solution" element={<BusinessCRM />} />
           <Route path="/interior-design-app-development" element={<InteriorArchitecture />} />
           <Route path="/logistics-software-development" element={<LogisticsPage/> } />
           <Route path="/enterprise-resource-planning" element={<ERPPage/> } />
@@ -88,6 +91,7 @@ function App() {
           <Route path="/manufacturing" element={<ManufacturingPage/> } />
           
           {/* Services Routes */}
+          <Route path="/custom-crm-development" element={<CustomCRMDevelopment />} />
           <Route path="/technology-consultation-mis" element={<TechnologyConsultationAndMIS/> } />
           <Route path="/software-engineering" element={<SoftwareEngineering/> } />
           <Route path="/ai-ml-services" element={<AI_ML/> } />

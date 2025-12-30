@@ -3,7 +3,8 @@ export { default as About } from './About';
 export { default as Contact } from './Contact';
 
 // Industry Pages
-export { default as CustomCRM } from './Industries/CustomCRM';
+export { default as FieldServiceCRM } from './Industries/FieldServiceCRM';
+export { default as BusinessCRM } from './Industries/BusinessCRM';
 export { default as InteriorArchitecture } from './Industries/InteriorArchitecture';
 export { default as LogisticsPage } from './Industries/LogisticsPage';
 export { default as ERPPage } from './Industries/ERP';
@@ -17,6 +18,7 @@ export { default as TextilesPage } from './Industries/Textiles';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
 
 // Services Pages
+export { default as CustomCRMDevelopment } from './Services/CustomCRM';
 export { default as TechnologyConsultationAndMIS } from './Services/TechnologyConsultationAndMIS';
 export { default as SoftwareEngineering } from './Services/SoftwareEngineering';
 export { default as AI_ML } from './Services/AI_ML';

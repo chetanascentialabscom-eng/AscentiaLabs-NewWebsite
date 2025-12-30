@@ -167,6 +167,13 @@ const Header = () => {
               >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
+                    <Link to="/custom-crm-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                      <Settings className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm whitespace-nowrap">Custom CRM Development</div>
+                        <div className="text-xs text-gray-500">Bespoke CRM solutions</div>
+                      </div>
+                    </Link>
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
@@ -256,11 +263,19 @@ const Header = () => {
               >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="/complaint-management-system" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link to="/field-service-crm" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm">Custom CRM</div>
-                        <div className="text-xs text-gray-500">Customer relationship management</div>
+                        <div className="font-medium text-sm">Field Service CRM</div>
+                        <div className="text-xs text-gray-500">Field operations management</div>
+                      </div>
+                    </Link>
+
+                    <Link to="/business-management-crm-solution" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                      <Building2 className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Business CRM</div>
+                        <div className="text-xs text-gray-500">Business management solutions</div>
                       </div>
                     </Link>
                     
@@ -530,6 +545,10 @@ const Header = () => {
                 
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
+                    <Link to="/custom-crm-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                      <Settings className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Custom CRM Development</span>
+                    </Link>
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Technology Consultation & MIS</span>
@@ -582,9 +601,13 @@ const Header = () => {
                 
                 {isIndustriesOpen && (
                   <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
-                    <Link to="/complaint-management-system" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link to="/field-service-crm" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
-                      <span className="text-sm">Custom CRM</span>
+                      <span className="text-sm">Field Service CRM</span>
+                    </Link>
+                    <Link to="/business-management-crm-solution" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                      <Building2 className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Business CRM</span>
                     </Link>
                     <Link to="/education-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
                       <GraduationCap className="w-4 h-4 mr-3 text-blue-600" />

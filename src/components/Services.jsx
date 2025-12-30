@@ -15,6 +15,7 @@ const Services = () => {
   // Service route mapping
   const getServiceRoute = (title) => {
     const routeMap = {
+      "Custom CRM Development": "/custom-crm-development",
       "Software Engineering": "/software-engineering",
       "Digital Transformation": "/digital-transformation",
       "AI ML Services": "/ai-ml-services",
@@ -29,6 +30,11 @@ const Services = () => {
   };
 
   const services = [
+    {
+      title: "Custom CRM Development",
+      description: "Bespoke CRM solutions",
+      icon: <Settings className="w-10 h-10 text-white" />
+    },
     {
       title: "Software Engineering",
       description: "Custom software development",

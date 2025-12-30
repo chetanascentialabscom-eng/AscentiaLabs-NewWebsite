@@ -24,11 +24,18 @@ export const seoData = {
   },
 
   // Industry Pages
-  customCRM: {
-    title: "Complaint Management App Development | Ascentia Labs",
-    description: "Streamline complaint handling with our comprehensive complaint management system. Features role-based access, real-time monitoring, analytics & automated notifications.",
-    keywords: "custom CRM development, complaint management system, customer relationship management, CRM software, business automation",
-    url: "https://ascentialabs.com/complaint-management-system"
+  fieldServiceCRM: {
+    title: "Field Service CRM | Ascentia Labs",
+    description: "Streamline field service operations with our comprehensive field service CRM. Features role-based access, real-time monitoring, analytics & automated notifications.",
+    keywords: "field service CRM, field service management, service management software, field operations, mobile workforce management",
+    url: "https://ascentialabs.com/field-service-crm"
+  },
+
+  businessCRM: {
+    title: "Business Management CRM Solutions | Ascentia Labs",
+    description: "Discover the best CRM for Your Business. Streamline your business specific workflows with our business management CRM.",
+    keywords: "Enterprise CRM, SME CRM, business management CRM, industry-ready workflows, business CRM software",
+    url: "https://ascentialabs.com/business-management-crm-solution"
   },
 
   interiorArchitecture: {
@@ -109,6 +116,13 @@ export const seoData = {
   },
 
   // Services Pages
+  customCRMDevelopment: {
+    title: "Custom CRM Development Services | Ascentia Labs",
+    description: "Build a scalable, custom CRM tailored to your unique workflows. Specialized in bespoke CRM development, API integrations, and secure data management.",
+    keywords: "Scalable CRM architecture, CRM integration services, custom sales software, bespoke CRM solutions, custom CRM development",
+    url: "https://ascentialabs.com/custom-crm-development"
+  },
+
   technologyConsultation: {
     title: "Technology Consultation & MIS Services | Ascentia Labs",
     description: "Expert technology consultation & MIS services for digital transformation. Strategic planning, cloud migration, system integration & performance optimization.",
