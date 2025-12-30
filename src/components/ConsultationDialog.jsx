@@ -10,6 +10,13 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
     message: ''
   });
 
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState('success');
@@ -89,13 +96,84 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
+  const validateField = useCallback((name, value) => {
+    let error = '';
+
+    switch (name) {
+      case 'fullName':
+        if (!value.trim()) {
+          error = 'Full name is required';
+        } else if (value.trim().length < 2) {
+          error = 'Name must be at least 2 characters';
+        } else if (!/^[a-zA-Z\s]+$/.test(value)) {
+          error = 'Name can only contain letters and spaces';
+        }
+        break;
+
+      case 'email':
+        if (!value.trim()) {
+          error = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+
+      case 'phone':
+        if (!value.trim()) {
+          error = 'Phone number is required';
+        } else {
+          const cleanedPhone = value.replace(/[\s\-\(\)+]/g, '');
+          if (!/^\d+$/.test(cleanedPhone)) {
+            error = 'Phone number can only contain digits';
+          } else if (cleanedPhone.length < 10) {
+            error = 'Phone number must be at least 10 digits';
+          } else if (cleanedPhone.length > 15) {
+            error = 'Phone number is too long';
+          }
+        }
+        break;
+
+      case 'message':
+        if (!value.trim()) {
+          error = 'Message is required';
+        } else if (value.trim().length < 10) {
+          error = 'Message must be at least 10 characters';
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  }, []);
+
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-  }, []);
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  }, [errors]);
+
+  const handleBlur = useCallback((e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
+  }, [validateField]);
 
   const showToastMessage = useCallback((type, message) => {
     setToastType(type);
@@ -106,6 +184,24 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
+    
+    // Validate all fields
+    const newErrors = {
+      fullName: validateField('fullName', formData.fullName),
+      email: validateField('email', formData.email),
+      phone: validateField('phone', formData.phone),
+      message: validateField('message', formData.message)
+    };
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(newErrors).some(error => error !== '');
+    
+    if (hasErrors) {
+      showToastMessage('error', 'Please fix all errors before submitting');
+      return;
+    }
     
     const form = e.target;
     
@@ -138,6 +234,12 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
           phone: '',
           message: ''
         });
+        setErrors({
+          fullName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
 
         // Close dialog after successful submission
         setTimeout(() => {
@@ -153,7 +255,7 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
     } finally {
       setIsSubmitting(false);
     }
-  }, [onClose, showToastMessage]);
+  }, [formData, validateField, onClose, showToastMessage]);
 
   if (!isOpen) return null;
 
@@ -213,10 +315,17 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
-                    placeholder="Full Name*"
+                    onBlur={handleBlur}
+                    className={`w-full px-3 py-2.5 text-white bg-gray-800 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 placeholder-gray-400 ${
+                      errors.fullName 
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                        : 'border-amber-400/20 focus:ring-amber-500 focus:border-amber-500 hover:border-amber-400/40'
+                    }`}
+                    placeholder="Full Name *"
                   />
+                  {errors.fullName && (
+                    <p className="mt-1 text-xs text-red-400">{errors.fullName}</p>
+                  )}
                 </div>
 
                 {/* Email */}
@@ -227,10 +336,17 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
-                    placeholder="Email Id*"
+                    onBlur={handleBlur}
+                    className={`w-full px-3 py-2.5 text-white bg-gray-800 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 placeholder-gray-400 ${
+                      errors.email 
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                        : 'border-amber-400/20 focus:ring-amber-500 focus:border-amber-500 hover:border-amber-400/40'
+                    }`}
+                    placeholder="Email Id *"
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+                  )}
                 </div>
 
                 {/* Phone */}
@@ -241,10 +357,17 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    required
-                    className="w-full px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 hover:border-amber-400/40 placeholder-gray-400"
-                    placeholder="Phone Number*"
+                    onBlur={handleBlur}
+                    className={`w-full px-3 py-2.5 text-white bg-gray-800 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 placeholder-gray-400 ${
+                      errors.phone 
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                        : 'border-amber-400/20 focus:ring-amber-500 focus:border-amber-500 hover:border-amber-400/40'
+                    }`}
+                    placeholder="Phone Number *"
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-xs text-red-400">{errors.phone}</p>
+                  )}
                 </div>
 
                 {/* Message */}
@@ -254,10 +377,17 @@ const ConsultationDialog = memo(({ isOpen, onClose }) => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    required
-                    className="w-full h-full min-h-[80px] px-3 py-2.5 text-white bg-gray-800 border border-amber-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 focus:outline-none transition-all duration-200 resize-none hover:border-amber-400/40 placeholder-gray-400"
-                    placeholder="Describe Your Project Idea/Message"
+                    onBlur={handleBlur}
+                    className={`w-full h-full min-h-[80px] px-3 py-2.5 text-white bg-gray-800 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 resize-none placeholder-gray-400 ${
+                      errors.message 
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                        : 'border-amber-400/20 focus:ring-amber-500 focus:border-amber-500 hover:border-amber-400/40'
+                    }`}
+                    placeholder="Describe Your Project Idea/Message *"
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-red-400">{errors.message}</p>
+                  )}
                 </div>
 
                 {/* Submit Button */}

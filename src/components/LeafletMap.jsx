@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MapPin, Phone, ExternalLink, Navigation } from 'lucide-react';
+import { MapPin, Navigation } from 'lucide-react';
 
 const LeafletMap = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -239,21 +239,21 @@ const LeafletMap = () => {
             >
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-amber-400" />
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-1">
-                    <h4 className=" text-white">{location.name}</h4>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-2">
+                    <h4 className="text-base md:text-lg text-white">{location.name}</h4>
                     {location.type === 'main' && (
-                      <span className="text-xs bg-gradient-to-r from-amber-400 to-orange-500 text-black px-2 py-1 rounded-full font-medium">
+                      <span className="text-xs bg-gradient-to-r from-amber-400 to-orange-500 text-black px-2.5 py-1 rounded-full font-medium inline-block w-fit">
                         Main Office
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-white/80 mb-2 leading-relaxed">{location.address}</p>
-                  <div className="flex items-center justify-between">
-                    <p className="text-sm  text-amber-400">
+                  <p className="text-xs sm:text-sm text-white/80 mb-3 leading-relaxed">{location.address}</p>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-xs sm:text-sm text-amber-400 truncate">
                       {location.phone}
                     </p>
-                    <Navigation className="w-4 h-4 text-amber-400" />
+                    <Navigation className="w-4 h-4 text-amber-400 flex-shrink-0" />
                   </div>
                 </div>
               </div>

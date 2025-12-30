@@ -327,7 +327,10 @@ const TravelTourismPage = () => {
       </section>
 
        {/* RouteMaestro Showcase Section */}
-      <section className="py-16 bg-black">
+      <section className="py-20 bg-gradient-to-b from-black via-slate-900 to-black relative overflow-hidden">
+        {/* Smooth transition gradient at top */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black via-black/50 to-transparent pointer-events-none"></div>
+        
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             {/* Section Title */}
@@ -335,23 +338,23 @@ const TravelTourismPage = () => {
               <h2 className="text-3xl md:text-4xl  text-white mb-4">
                 Introducing <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">RouteMaestro</span>
               </h2>
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              <p className="text-lg text-blue-200/90 max-w-2xl mx-auto">
                 Our flagship AI-powered travel planning and booking software that revolutionizes the way travel businesses operate
               </p>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg border border-blue-200 overflow-hidden">
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl border border-blue-400/20 overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Content - RouteMaestro Card */}
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-6 md:p-8 relative min-h-[300px] md:min-h-[400px] flex items-center justify-center hover:from-blue-200 hover:to-blue-300 transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black p-6 md:p-8 relative min-h-[300px] md:min-h-[400px] flex items-center justify-center hover:from-slate-800 hover:to-slate-900 transition-all duration-300 group border-r border-blue-400/10">
                   {/* External Link Icon */}
                   <a 
                     href="https://www.routemaestro.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="absolute top-4 right-4 w-8 h-8 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="absolute top-4 right-4 w-8 h-8 bg-amber-500 hover:bg-amber-600 rounded-lg flex items-center justify-center transition-colors duration-200 shadow-lg"
                   >
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                       <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
                   </a>
@@ -362,12 +365,11 @@ const TravelTourismPage = () => {
                       <img 
                         src="/SoftwareProducts/Route Maestro Logo.png" 
                         alt="RouteMaestro Logo" 
-                        className="w-56 h-24 sm:w-48 sm:h-20 md:w-56 md:h-24 object-contain sm:mb-0 sm:mr-4 group-hover:scale-2.5 transition-transform duration-300"
+                        className="w-56 h-24 sm:w-48 sm:h-20 md:w-56 md:h-24 object-contain sm:mb-0 sm:mr-4 group-hover:scale-110 transition-transform duration-300"
                       />
-                    
                     </div>
                     
-                    <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6 md:mb-8 max-w-xs sm:max-w-sm md:max-w-md mx-auto leading-relaxed px-2">
+                    <p className="text-sm sm:text-base md:text-lg text-blue-200/90 mb-6 md:mb-8 max-w-xs sm:max-w-sm md:max-w-md mx-auto leading-relaxed px-2">
                       An AI Powered Travel Planning & Booking Platform - Equip your B2B / B2C travel business with AI Personalised Dynamic Packaging. Generate & book AI personalised, multi city real-time packages integrated with your own inventory within 2 Minutes! 
                     </p>
 
@@ -375,7 +377,7 @@ const TravelTourismPage = () => {
                       href="https://www.routemaestro.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl  transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group-hover:animate-pulse text-sm sm:text-base "
+                      className="inline-block bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-black px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base"
                     >
                       Explore RouteMaestro
                     </a>
@@ -383,46 +385,46 @@ const TravelTourismPage = () => {
                 </div>
 
                 {/* Right Content - Features Grid */}
-                <div className="p-6 md:p-10">
+                <div className="p-6 md:p-10 bg-slate-900/50">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                    <div className="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                    <div className="bg-slate-800/60 backdrop-blur-sm p-4 rounded-lg border border-blue-400/20 hover:border-amber-400/40 hover:shadow-lg transition-all duration-300 cursor-pointer group">
                       <div className="flex items-center mb-3">
-                        <div className="bg-blue-600 p-2 rounded-lg text-white flex-shrink-0 mr-3 group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+                        <div className="bg-amber-500 p-2 rounded-lg text-black flex-shrink-0 mr-3 group-hover:bg-amber-600 group-hover:scale-110 transition-all duration-300">
                           <Users size={20} />
                         </div>
-                        <h4 className=" text-gray-900 group-hover:text-blue-700 transition-colors duration-300">AI-Powered Intelligence</h4>
+                        <h4 className="text-white group-hover:text-amber-400 transition-colors duration-300">AI-Powered Intelligence</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">Advanced machine learning algorithms create personalized travel experiences.</p>
+                      <p className="text-blue-200/80 text-sm">Advanced machine learning algorithms create personalized travel experiences.</p>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                    <div className="bg-slate-800/60 backdrop-blur-sm p-4 rounded-lg border border-blue-400/20 hover:border-amber-400/40 hover:shadow-lg transition-all duration-300 cursor-pointer group">
                       <div className="flex items-center mb-3">
-                        <div className="bg-blue-600 p-2 rounded-lg text-white flex-shrink-0 mr-3 group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+                        <div className="bg-amber-500 p-2 rounded-lg text-black flex-shrink-0 mr-3 group-hover:bg-amber-600 group-hover:scale-110 transition-all duration-300">
                           <MapPin size={20} />
                         </div>
-                        <h4 className=" text-gray-900 group-hover:text-blue-700 transition-colors duration-300">Smart Route Planning</h4>
+                        <h4 className="text-white group-hover:text-amber-400 transition-colors duration-300">Smart Route Planning</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">Intelligent itinerary generation considering preferences and budget.</p>
+                      <p className="text-blue-200/80 text-sm">Intelligent itinerary generation considering preferences and budget.</p>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                    <div className="bg-slate-800/60 backdrop-blur-sm p-4 rounded-lg border border-blue-400/20 hover:border-amber-400/40 hover:shadow-lg transition-all duration-300 cursor-pointer group">
                       <div className="flex items-center mb-3">
-                        <div className="bg-blue-600 p-2 rounded-lg text-white flex-shrink-0 mr-3 group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+                        <div className="bg-amber-500 p-2 rounded-lg text-black flex-shrink-0 mr-3 group-hover:bg-amber-600 group-hover:scale-110 transition-all duration-300">
                           <Plane size={20} />
                         </div>
-                        <h4 className=" text-gray-900 group-hover:text-blue-700 transition-colors duration-300">Lightning Fast Booking</h4>
+                        <h4 className="text-white group-hover:text-amber-400 transition-colors duration-300">Lightning Fast Booking</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">Streamlined booking process with real-time inventory management.</p>
+                      <p className="text-blue-200/80 text-sm">Streamlined booking process with real-time inventory management.</p>
                     </div>
 
-                    <div className="bg-blue-50 p-4 rounded-lg hover:bg-blue-100 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                    <div className="bg-slate-800/60 backdrop-blur-sm p-4 rounded-lg border border-blue-400/20 hover:border-amber-400/40 hover:shadow-lg transition-all duration-300 cursor-pointer group">
                       <div className="flex items-center mb-3">
-                        <div className="bg-blue-600 p-2 rounded-lg text-white flex-shrink-0 mr-3 group-hover:bg-blue-700 group-hover:scale-110 transition-all duration-300">
+                        <div className="bg-amber-500 p-2 rounded-lg text-black flex-shrink-0 mr-3 group-hover:bg-amber-600 group-hover:scale-110 transition-all duration-300">
                           <Shield size={20} />
                         </div>
-                        <h4 className=" text-gray-900 group-hover:text-blue-700 transition-colors duration-300">Real-Time Analytics</h4>
+                        <h4 className="text-white group-hover:text-amber-400 transition-colors duration-300">Real-Time Analytics</h4>
                       </div>
-                      <p className="text-gray-600 text-sm">Monitor booking trends and customer behavior with detailed insights.</p>
+                      <p className="text-blue-200/80 text-sm">Monitor booking trends and customer behavior with detailed insights.</p>
                     </div>
                   </div>
                 </div>

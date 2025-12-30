@@ -16,6 +16,13 @@ const ContactPage = () => {
     message: ''
   });
 
+  const [errors, setErrors] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [toastType, setToastType] = useState('success'); // 'success' or 'error'
@@ -40,17 +47,107 @@ const ContactPage = () => {
     '$250,000+'
   ];
 
+  const validateField = (name, value) => {
+    let error = '';
+
+    switch (name) {
+      case 'fullName':
+        if (!value.trim()) {
+          error = 'Full name is required';
+        } else if (value.trim().length < 2) {
+          error = 'Name must be at least 2 characters';
+        } else if (!/^[a-zA-Z\s]+$/.test(value)) {
+          error = 'Name can only contain letters and spaces';
+        }
+        break;
+
+      case 'email':
+        if (!value.trim()) {
+          error = 'Email is required';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = 'Please enter a valid email address';
+        }
+        break;
+
+      case 'phone':
+        if (value.trim()) { // Only validate if phone is provided (it's optional)
+          const cleanedPhone = value.replace(/[\s\-\(\)+]/g, '');
+          if (!/^\d+$/.test(cleanedPhone)) {
+            error = 'Phone number can only contain digits';
+          } else if (cleanedPhone.length < 10) {
+            error = 'Phone number must be at least 10 digits';
+          } else if (cleanedPhone.length > 15) {
+            error = 'Phone number is too long';
+          }
+        }
+        break;
+
+      case 'message':
+        if (!value.trim()) {
+          error = 'Message is required';
+        } else if (value.trim().length < 10) {
+          error = 'Message must be at least 10 characters';
+        }
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
+    }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
     }));
   };
 
   const handleSubmit = async (e) => {
     console.log("Event", e);
     e.preventDefault(); // Prevent default form submission
+    
+    // Validate all required fields
+    const newErrors = {
+      fullName: validateField('fullName', formData.fullName),
+      email: validateField('email', formData.email),
+      phone: validateField('phone', formData.phone),
+      message: validateField('message', formData.message)
+    };
+
+    setErrors(newErrors);
+
+    // Check if there are any errors
+    const hasErrors = Object.values(newErrors).some(error => error !== '');
+    
+    if (hasErrors) {
+      setToastType('error');
+      setToastMessage('Please fix all errors before submitting');
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 5000);
+      return;
+    }
     
     const form = e.target; // Get the form element
     
@@ -93,6 +190,12 @@ const ContactPage = () => {
           companyName: '',
           country: '',
           budgetRange: '',
+          message: ''
+        });
+        setErrors({
+          fullName: '',
+          email: '',
+          phone: '',
           message: ''
         });
       } else {
@@ -172,10 +275,17 @@ const ContactPage = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50 ${
+                        errors.fullName 
+                          ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                          : 'border-blue-400/20 focus:ring-amber-500 focus:border-transparent'
+                      }`}
                       placeholder="Enter your full name"
                     />
+                    {errors.fullName && (
+                      <p className="mt-1 text-xs text-red-400">{errors.fullName}</p>
+                    )}
                   </div>
 
                   <div>
@@ -189,10 +299,17 @@ const ContactPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50 ${
+                        errors.email 
+                          ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                          : 'border-blue-400/20 focus:ring-amber-500 focus:border-transparent'
+                      }`}
                       placeholder="Enter your email address"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+                    )}
                   </div>
 
                   <div>
@@ -225,9 +342,17 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50"
+                      onBlur={handleBlur}
+                      className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 bg-slate-900/50 text-white placeholder-blue-200/50 ${
+                        errors.phone 
+                          ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                          : 'border-blue-400/20 focus:ring-amber-500 focus:border-transparent'
+                      }`}
                       placeholder="Enter your phone number"
                     />
+                    {errors.phone && (
+                      <p className="mt-1 text-xs text-red-400">{errors.phone}</p>
+                    )}
                   </div>
 
                   <div>
@@ -306,11 +431,18 @@ const ContactPage = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    required
+                    onBlur={handleBlur}
                     rows={4}
-                    className="w-full px-4 py-2.5 border border-blue-400/20 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent focus:outline-none transition-all duration-200 resize-none bg-slate-900/50 text-white placeholder-blue-200/50"
-                    placeholder="Tell us about your project requirements, goals, and any specific details you'd like us to know..."
+                    className={`w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:outline-none transition-all duration-200 resize-none bg-slate-900/50 text-white placeholder-blue-200/50 ${
+                      errors.message 
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500' 
+                        : 'border-blue-400/20 focus:ring-amber-500 focus:border-transparent'
+                    }`}
+                    placeholder="Tell us about your project requirements, goals, and any specific details you'd like us to know... (min 10 characters)"
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-red-400">{errors.message}</p>
+                  )}
                 </div>
 
                 {/* Submit Button */}
