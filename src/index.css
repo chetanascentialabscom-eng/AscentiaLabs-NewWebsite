@@ -991,3 +991,122 @@ code, pre, .font-mono,
 .lowercase, .uppercase, .normal-case {
   text-transform: none !important;
 }
+
+/* About Page Animated Background Styles */
+
+/* Floating particle animation */
+@keyframes particle {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.animate-particle {
+  animation: particle 20s linear infinite;
+}
+
+/* Pulse slow animation for geometric shapes */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Enhanced float animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px) rotate(-5deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) translateX(-15px) rotate(-8deg);
+  }
+  66% {
+    transform: translateY(-25px) translateX(5px) rotate(8deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-10px) scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 9s ease-in-out infinite;
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Mobile optimization - disable heavy animations */
+@media (max-width: 768px) {
+  .animate-particle,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation-duration: 15s !important;
+  }
+  
+  .bg-grid-pattern {
+    opacity: 0.5;
+  }
+  
+  /* Reduce blur on mobile for better performance */
+  .blur-3xl {
+    filter: blur(40px) !important;
+  }
+  
+  /* Reduce number of animated elements on mobile */
+  .animate-particle:nth-child(n+16),
+  div[class*="circle-"]:nth-child(n+8) {
+    display: none;
+  }
+}

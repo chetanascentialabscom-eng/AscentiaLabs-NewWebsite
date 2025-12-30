@@ -184,7 +184,7 @@ const LeafletMap = () => {
     <div className="relative bg-black p-8 rounded-2xl">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl lg:text-5xl  mb-4">
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+          <span className="bg-white bg-clip-text text-transparent">
             Our Locations
           </span>
           <span className="text-white"> In India</span>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import { seoData } from '../../utils/seoData';
 import LeafletMap from '../../components/LeafletMap';
@@ -42,29 +41,64 @@ const About = () => {
       description: 'A B.Tech & M.S Computer Science Engineer With 10+ Yrs Experience Across Building Technology Architecture For Profitable 3+ Enterprise Products.',
       education: 'Maharishi Markandeshwar, Uppsala University',
       linkedin: 'https://www.linkedin.com/in/kalrasukhpreet/'
+    },
+    {
+      name: 'Team Member',
+      role: 'Position Title',
+      image: '/team/anmol.png',
+      description: 'Experienced Professional With Expertise In Technology And Innovation, Contributing To Enterprise Solutions And Digital Transformation.',
+      education: 'University Name',
+      linkedin: '#'
     }
   ];
 
   const galleryImages = [
-    { src: '/ITB/Ascentia Labs Expo.jpeg', alt: 'Ascentia Labs Expo' },
-    { src: '/ITB/DSB_8009.jpg', alt: 'Team Event' },
-    { src: '/ITB/DSC_2607.jpg', alt: 'Conference' },
-    { src: '/ITB/ITB Asia 2025 - Singapore.jpeg', alt: 'ITB Asia 2025' },
-    { src: '/ITB/Z62_6351.jpg', alt: 'Team Collaboration' },
-    { src: '/ITB/Alice Lee.png', alt: 'Alice Lee' },
-    { src: '/ITB/Mr. Luca - Ascentia Labs.jpeg', alt: 'Mr. Luca' },
-    { src: '/about/WhatsApp Image 2025-12-23 at 11.39.34.jpeg', alt: 'Office Culture' },
-    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.53.jpeg', alt: 'Team Meeting' },
-    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.54.jpeg', alt: 'Innovation Hub' },
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.54 (2).jpeg', alt: 'Team Building' },
     { src: '/about/WhatsApp Image 2025-12-23 at 11.47.54 (1).jpeg', alt: 'Workspace' },
-    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.54 (2).jpeg', alt: 'Team Building' }
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.54.jpeg', alt: 'Innovation Hub' },
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.53.jpeg', alt: 'Team Meeting' },
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.55.jpeg', alt: 'Team Gathering' },
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.47.55 (1).jpeg', alt: 'Professional Event' },
+    { src: '/about/WhatsApp Image 2025-12-23 at 11.37.07.jpeg', alt: 'Company Milestone' },
+    { src: '/ITB/Mr. Luca - Ascentia Labs.jpeg', alt: 'Mr. Luca' },
+    { src: '/ITB/Alice Lee.png', alt: 'Alice Lee' },
+    { src: '/ITB/Z62_6351.jpg', alt: 'Team Collaboration' },
+    { src: '/ITB/ITB Asia 2025 - Singapore.jpeg', alt: 'ITB Asia 2025' },
+    { src: '/ITB/DSC_2607.jpg', alt: 'Conference' },
+    { src: '/ITB/DSB_8009.jpg', alt: 'Team Event' },
+    { src: '/ITB/Ascentia Labs Expo.jpeg', alt: 'Ascentia Labs Expo' },
+    { src: '/ITB/image (45).png', alt: 'Exhibition Booth' },
+    { src: '/ITB/image (46).png', alt: 'Event Showcase' }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
+    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black relative">
       <SEO {...seoData.about} />
+      
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+        {/* Small Glowing Particles */}
+        {[...Array(150)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
+            className="absolute animate-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${2 + Math.random() * 6}px`,
+              height: `${2 + Math.random() * 6}px`,
+              backgroundColor: `rgba(${Math.random() > 0.5 ? '96, 165, 250' : '252, 211, 77'}, ${0.4 + Math.random() * 0.6})`,
+              boxShadow: `0 0 ${8 + Math.random() * 15}px rgba(${Math.random() > 0.5 ? '96, 165, 250' : '252, 211, 77'}, 0.8)`,
+              borderRadius: '50%',
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${10 + Math.random() * 20}s`
+            }}
+          ></div>
+        ))}
+      </div>
+
       {/* Company Overview */}
-      <section className="pt-32 pb-32 md:pb-40 bg-slate-900 relative overflow-hidden">
+      <section className="pt-32 pb-32 md:pb-40 bg-slate-900/80 relative overflow-hidden" style={{ zIndex: 1 }}>
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent via-blue-950/50 to-blue-950 pointer-events-none"></div>
         
@@ -118,7 +152,7 @@ const About = () => {
       </section>
 
       {/* Core Team Section */}
-      <section className="py-12 bg-slate-900 relative overflow-hidden">
+      <section className="py-12 bg-slate-900/70 relative overflow-hidden" style={{ zIndex: 1 }}>
         {/* Smooth transition gradient at top */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-blue-950 to-transparent pointer-events-none"></div>
         {/* Smooth transition gradient at bottom */}
@@ -142,7 +176,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
                 <div 
                   key={index}
@@ -152,17 +186,17 @@ const About = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-full h-full object-contain group-hover:scale-105 bg-white transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
                   <div className="p-5">
-                    <h3 className="text-xl text-white mb-1">{member.name}</h3>
-                    <p className="text-amber-400 mb-2 text-base font-semibold">{member.role}</p>
+                    <h3 className="text-2xl text-white mb-1 ">{member.name}</h3>
+                    <p className="text-amber-400 mb-2 text-base">{member.role}</p>
                     <p className="text-blue-200/80 text-sm leading-relaxed mb-3">{member.description}</p>
-                    <p className="text-blue-300/70 text-xs mb-2">
-                      <span className="font-semibold">Education:</span> {member.education}
+                    <p className="text-blue-300/70 text-sm mb-2">
+                      <span className="text-white">Education:</span> {member.education}
                     </p>
                     <a 
                       href={member.linkedin}
@@ -186,7 +220,7 @@ const About = () => {
     
 
       {/* Gallery Section */}
-      <section className="py-20 bg-gradient-to-b from-slate-900 via-blue-950 to-black relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-slate-900/70 via-blue-950/70 to-black/70 relative overflow-hidden" style={{ zIndex: 1 }}>
         {/* Smooth transition gradient at top */}
         <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-slate-900 to-transparent pointer-events-none"></div>
         
@@ -258,7 +292,7 @@ const About = () => {
    
 
       {/* Map Section */}
-      <section className="py-20 bg-black relative overflow-hidden">
+      <section className="py-20 bg-black/80 relative overflow-hidden" style={{ zIndex: 1 }}>
         {/* Smooth transition gradient at top */}
         <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black via-slate-900/30 to-transparent pointer-events-none"></div>
         
