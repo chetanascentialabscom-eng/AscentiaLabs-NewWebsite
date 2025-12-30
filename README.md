@@ -1,4 +1,4 @@
-# Ascentia Labs - Official Website
+# Ascentia Labs Official Website
 
 Modern, responsive website for Ascentia Labs - a leading software development company specializing in custom software solutions, mobile app development, and digital transformation services.
 
