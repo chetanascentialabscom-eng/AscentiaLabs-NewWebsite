@@ -388,10 +388,10 @@ const TextilesPage = () => {
                 
                 {processSteps.map((step, index) => (
                   <div key={index} className="flex-1 text-center relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg sm:text-xl  mb-2 mx-auto border-2 border-white shadow-lg">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg sm:text-xl font-extrabold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className=" text-white text-xs sm:text-sm leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">{step.title}</h3>
                   </div>
                 ))}
               </div>
@@ -402,10 +402,10 @@ const TextilesPage = () => {
               {processSteps.map((step, index) => (
                 <div key={index} className="flex items-center">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl  mb-3 mx-auto">
+                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className=" text-white text-sm mb-1">{step.title}</h3>
+                    <h3 className="font-medium text-white text-base mb-1">{step.title}</h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>

@@ -1,8 +1,100 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowLeft, Tag } from 'lucide-react';
 import SEO from '../../components/SEO';
 
 const RouteMaestroPlatform = () => {
+  const [activeFeature, setActiveFeature] = useState(0);
+
+  // Custom scrollbar styles - hidden scrollbar
+  const scrollbarStyles = `
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .custom-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  `;
+
+  const features = [
+    {
+      id: 'multi-city-routing-engine',
+      title: 'Multi City Routing Engine',
+      description: 'Displays travel routes combining multiple transport modes.',
+      details: [
+        'Displays Travel Routes Combining Air, Land, Public Transit, And Rail Options.',
+        'Intelligent Route Planning For Multi-City Itineraries With Optimal Connections.',
+        'Visualize Complete Journey Paths With All Transportation Modes Integrated.'
+      ]
+    },
+    {
+      id: 'travel-route-recommendation-engine',
+      title: 'Travel Route Recommendation Engine',
+      description: 'Displays total travel duration and cheapest routes.',
+      details: [
+        'Displays Total Travel Duration, Cheapest Travel Routes, And Incentives If Any.',
+        'Compare Multiple Route Options With Cost And Time Analysis.',
+        'Smart Recommendations Based On Budget, Time Preferences, And Travel Patterns.'
+      ]
+    },
+    {
+      id: 'ai-personalization-engine',
+      title: 'AI Personalization Engine',
+      description: 'AI-LLMs map traveler intent with relevant services.',
+      details: [
+        'AI-LLMs Map The Intent Of The Traveler With The Relevant Services Across Hotels, Flights, Sightseeings, And More.',
+        'Personalized Service Recommendations Based On Traveler Preferences And Behavior.',
+        'Intelligent Matching Of Travel Services To Customer Requirements Using Advanced AI.'
+      ]
+    },
+    {
+      id: 'budget-optimization-engine',
+      title: 'Budget Optimization Engine',
+      description: 'Services shortlisted by AI considering total budget.',
+      details: [
+        'Services Across The Package Are Shortlisted By The AI Engine Considering The Total Budget Of Your Traveller And Their Preferences.',
+        'Optimize Package Components To Maximize Value Within Budget Constraints.',
+        'Dynamic Service Selection Based On Price Points And Customer Spending Capacity.'
+      ]
+    },
+    {
+      id: 'multi-service-bundling-scheduling',
+      title: 'Multi-Service Bundling & Scheduling',
+      description: 'Intelligent engine bundles and schedules multiple services.',
+      details: [
+        'RouteMaestro\'s Intelligent Engine Bundles & Schedules Multiple Services For Seamless Travel.',
+        'Coordinate Flights, Hotels, Transfers, And Activities In A Single Unified Package.',
+        'Automated Scheduling With Conflict Resolution And Optimal Time Management.'
+      ]
+    },
+    {
+      id: 'commercial-policy',
+      title: 'Commercial Policy',
+      description: 'Set markup and cancellation policies to boost profitability.',
+      details: [
+        'Set Mark Up / Cancellation Policies Globally, Category Specific Or Service Specific To Boost Profitability.',
+        'Flexible Pricing Rules And Commission Structures For Different Service Types.',
+        'Automated Policy Application Across All Bookings And Quotations.'
+      ]
+    },
+    {
+      id: 'booking-cancellation-atomicity',
+      title: 'Booking, Cancellation Atomicity',
+      description: 'All services can be booked or cancelled at once.',
+      details: [
+        'All The Services Of The Package Can Be Booked / Cancelled At Once.',
+        'Atomic Transactions Ensure Complete Package Integrity During Booking Process.',
+        'Simplified Management With Single-Click Booking And Cancellation For Entire Packages.'
+      ]
+    },
+   
+  ];
+
   const seoData = {
     title: 'RouteMaestro | Whitelabel Dynamic Packaging & Travel Software Platform',
     description: 'RouteMaestro is an AI-powered dynamic packaging platform offering B2B and B2C whitelabel travel software for itineraries, quotations, and customised travel packages.',
@@ -13,6 +105,7 @@ const RouteMaestroPlatform = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData} />
+      <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
@@ -101,47 +194,68 @@ const RouteMaestroPlatform = () => {
                   Unlike static tour systems, RouteMaestro is built specifically for custom travel planning and personalised travel packages.
                 </p>
 
-                <div className="bg-gradient-to-r from-blue-600 to-black text-white p-6 rounded-xl my-8">
-                  <h3 className="text-2xl mb-4">Key Features</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white text-sm">01</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-2">Dynamic Bundling</h4>
-                        <p className="text-blue-100 text-sm">Bundle multiple services in minutes</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white text-sm">02</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-2">AI Personalization</h4>
-                        <p className="text-blue-100 text-sm">Match services to traveler preferences</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white text-sm">03</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-2">Whitelabel Solution</h4>
-                        <p className="text-blue-100 text-sm">Fully branded for your business</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="bg-white/20 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                        <span className="text-white text-sm">04</span>
-                      </div>
-                      <div>
-                        <h4 className="mb-2">Real-time Pricing</h4>
-                        <p className="text-blue-100 text-sm">Live cost and availability updates</p>
+                {/* Key Features Section */}
+                <div className="my-12">
+                  <h3 className="text-2xl text-white mb-6">Platform Features</h3>
+                  <div className="max-w-full">
+                    <div className="bg-slate-700/50 rounded-xl shadow-lg overflow-hidden border border-blue-400/30">
+                      <div className="grid grid-cols-1 lg:grid-cols-2">
+                        {/* Left Side - Feature List */}
+                        <div className="bg-gray-900 p-4">
+                          <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar">
+                            {features.map((feature, index) => (
+                              <div
+                                key={index}
+                                className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
+                                  activeFeature === index 
+                                    ? 'bg-blue-600 text-white' 
+                                    : 'text-gray-300 hover:bg-gray-800'
+                                }`}
+                                onClick={() => setActiveFeature(index)}
+                              >
+                                <div className="flex items-center space-x-2">
+                                  <span className={`text-xs px-2 py-1 rounded ${
+                                    activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
+                                  }`}>
+                                    {index < 9 ? `0${index + 1}` : index + 1}
+                                  </span>
+                                  <span className="font-medium text-sm">{feature.title}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Right Side - Feature Details */}
+                        <div className="p-6 flex items-center bg-slate-800/50">
+                          <div className="space-y-4">
+                            <div className="bg-blue-100 p-3 rounded-xl w-fit">
+                              <div className="bg-blue-600 p-2 rounded-lg">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-xl text-white mb-3">
+                                {features[activeFeature].title}
+                              </h3>
+                              <ul className="space-y-2 text-blue-100/90 text-sm">
+                                {features[activeFeature].details.map((detail, idx) => (
+                                  <li key={idx} className="flex items-start space-x-2">
+                                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                    <span>{detail}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
 
                 <h2 className="text-3xl text-white mb-4 mt-8">Travel Itinerary Builder Software (B2B & B2C)</h2>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
