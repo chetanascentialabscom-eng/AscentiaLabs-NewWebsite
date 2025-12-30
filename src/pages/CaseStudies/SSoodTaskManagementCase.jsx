@@ -28,7 +28,7 @@ const SSoodTaskManagementCase = () => {
             </Link>
             
             <div className="mb-6 flex flex-wrap gap-3">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Building className="w-3 h-3 mr-2" />
                 Productivity
               </span>
@@ -256,7 +256,7 @@ const SSoodTaskManagementCase = () => {
                   className="w-full h-48 bg-white object-contain  p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Education</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Education</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     Pumpkins Kindergarten Management
                   </h3>
@@ -279,7 +279,7 @@ const SSoodTaskManagementCase = () => {
                   className="w-full h-48 object-contain bg-white p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Real Estate</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Real Estate</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     Sunview Enclave Real Estate Management
                   </h3>

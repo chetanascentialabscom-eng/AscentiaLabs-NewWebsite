@@ -25,7 +25,7 @@ const AIBenefitsTravel = () => {
             </Link>
             
             <div className="mb-6">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Tag className="w-3 h-3 mr-2" />
                 AI & Technology
               </span>
@@ -221,7 +221,7 @@ const AIBenefitsTravel = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Travel</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     HOW DID TRAVEL APP DEVELOPMENT BECOME CRUCIAL IN THE TOURISM ...
                   </h3>
@@ -244,7 +244,7 @@ const AIBenefitsTravel = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Travel</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     LATEST TOURISM REPORT [2025] NEW INSIGHTS IN THE TRAVEL INDUSTRY
                   </h3>

@@ -25,7 +25,7 @@ const MobileAppTrends2025 = () => {
             </Link>
             
             <div className="mb-6">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Tag className="w-3 h-3 mr-2" />
                 Mobile Development
               </span>
@@ -163,7 +163,7 @@ const MobileAppTrends2025 = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Software Development</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Software Development</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     CUSTOM SOFTWARE DEVELOPMENT: TRANSFORMING BUSINESS ...
                   </h3>
@@ -186,7 +186,7 @@ const MobileAppTrends2025 = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Healthcare</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Healthcare</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     HEALTHCARE APP DEVELOPMENT: REVOLUTIONIZING PATIENT CARE
                   </h3>

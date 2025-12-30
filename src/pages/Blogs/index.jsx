@@ -244,7 +244,7 @@ const BlogsPage = () => {
                       }}
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center">
+                      <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center">
                         <Tag className="w-3 h-3 mr-1" />
                         {blog.category}
                       </span>

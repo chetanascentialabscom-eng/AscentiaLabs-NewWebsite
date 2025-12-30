@@ -28,7 +28,7 @@ const NDMCTicketingCase = () => {
             </Link>
             
             <div className="mb-6 flex flex-wrap gap-3">
-              <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-4 py-2 rounded-full text-sm font-medium inline-flex items-center">
                 <Building className="w-3 h-3 mr-2" />
                 Government
               </span>
@@ -256,7 +256,7 @@ const NDMCTicketingCase = () => {
                   className="w-full bg-white h-48 object-contain bg-slate-700/50 p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Travel & Tourism</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Travel & Tourism</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     AI Travel Planning & Booking Tool
                   </h3>
@@ -279,7 +279,7 @@ const NDMCTicketingCase = () => {
                   className="w-full h-48 bg-white object-contain bg-slate-700/50 p-4"
                 />
                 <div className="p-6">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">Insurance</span>
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-3 py-1 rounded-full text-sm font-medium">Insurance</span>
                   <h3 className="text-xl  text-white mt-4 mb-2 group-hover:text-blue-400 transition-colors">
                     Insurance Management Platform
                   </h3>
