@@ -8,7 +8,8 @@ import {
   PenTool, 
   Send, 
   Smartphone, 
-  Building2 
+  Building2,
+  Database
 } from 'lucide-react';
 
 const Services = () => {
@@ -33,7 +34,7 @@ const Services = () => {
     {
       title: "Custom CRM Development",
       description: "Bespoke CRM solutions",
-      icon: <Settings className="w-10 h-10 text-white" />
+      icon: <Database className="w-10 h-10 text-white" />
     },
     {
       title: "Software Engineering",

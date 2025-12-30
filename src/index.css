@@ -260,7 +260,7 @@ header {
     max-height: 100vh !important;
   }
   
-  #home .flex.flex-col.lg\\:flex-row {
+  #home .flex.flex-col.lg\:flex-row {
     height: 100% !important;
     justify-content: center !important;
   }

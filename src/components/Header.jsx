@@ -34,6 +34,7 @@ import {
   Cpu,
   Ticket,
   Newspaper,
+  Database
 } from 'lucide-react';
 
 const Header = () => {
@@ -168,7 +169,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
                     <Link to="/custom-crm-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
-                      <Settings className="w-5 h-5 mr-2 text-blue-600" />
+                      <Database className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm whitespace-nowrap">Custom CRM Development</div>
                         <div className="text-xs text-gray-500">Bespoke CRM solutions</div>
@@ -546,7 +547,7 @@ const Header = () => {
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link to="/custom-crm-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
-                      <Settings className="w-4 h-4 mr-3 text-blue-600" />
+                      <Database className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Custom CRM Development</span>
                     </Link>
                     <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>

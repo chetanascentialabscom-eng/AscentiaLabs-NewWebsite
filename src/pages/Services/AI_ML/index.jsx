@@ -85,9 +85,9 @@ const AI_ML = () => {
     },
     {
       id: 'nlp',
-      name: 'Natural Language Processing',
+      name: 'NLP',
       icon: <MessageSquare className="w-5 h-5" />,
-      title: 'NLP & Text Analytics',
+      title: 'Natural Language Processing & Text Analytics',
       description: 'Our NLP experts build secure, intelligent and efficient natural language processing solutions, facilitating sentiment analysis, chatbots, language translation, and text understanding, to enhance customer engagement and automate communication.',
       techLogos: [
         '/techLogo/python.png',
@@ -346,7 +346,7 @@ const AI_ML = () => {
               >
                 <span className="inline-flex items-center gap-1 sm:gap-2">
                   {service.icon}
-                  <span className="whitespace-nowrap">{service.name}</span>
+                  <span className="whitespace-normal sm:whitespace-nowrap text-left">{service.name}</span>
                 </span>
               </button>
             ))}
