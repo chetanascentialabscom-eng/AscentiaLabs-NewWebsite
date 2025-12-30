@@ -60,6 +60,18 @@ const Technologies = () => {
 
   const techCategories = [
     {
+      category: "AI & Machine Learning",
+      color: "from-amber-400 to-orange-500",
+      technologies: [
+        { name: "OpenAI", logo: "/techLogo/open ai logo.png", description: "AI platform" },
+        { name: "TensorFlow", logo: "/techLogo/tensor flow.png", description: "ML framework" },
+        { name: "PyTorch", logo: "/techLogo/pytorch.png", description: "Deep learning" },
+        { name: "Gemini", logo: "/techLogo/gemini logo.png", description: "Google AI" },
+        { name: "Claude AI", logo: "/techLogo/calude ai.png", description: "Anthropic AI" },
+        { name: "Gamma AI", logo: "/techLogo/gamma ai.png", description: "AI assistant" }
+      ]
+    },
+    {
       category: "Frontend Development",
       color: "from-blue-600 to-black",
       technologies: [
@@ -117,18 +129,6 @@ const Technologies = () => {
         { name: "Oracle", logo: "/techLogo/oracle logo.png", description: "Enterprise database" },
         { name: "Power BI", logo: "/techLogo/power bi.png", description: "Business intelligence" },
         { name: "Google Analytics", logo: "/techLogo/google analytics.png", description: "Web analytics" }
-      ]
-    },
-    {
-      category: "AI & Machine Learning",
-      color: "from-blue-600 to-black",
-      technologies: [
-        { name: "OpenAI", logo: "/techLogo/open ai logo.png", description: "AI platform" },
-        { name: "TensorFlow", logo: "/techLogo/tensor flow.png", description: "ML framework" },
-        { name: "PyTorch", logo: "/techLogo/pytorch.png", description: "Deep learning" },
-        { name: "Gemini", logo: "/techLogo/gemini logo.png", description: "Google AI" },
-        { name: "Claude AI", logo: "/techLogo/calude ai.png", description: "Anthropic AI" },
-        { name: "Gamma AI", logo: "/techLogo/gamma ai.png", description: "AI assistant" }
       ]
     },
     {
@@ -209,7 +209,7 @@ const Technologies = () => {
                   onClick={() => handleCategoryClick(index)}
                   className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-full whitespace-nowrap transition-all duration-300 ${
                     activeCategory === index
-                      ? 'bg-gradient-to-r from-blue-600 to-black text-white shadow-md'
+                      ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-lg hover:from-amber-500 hover:to-orange-600'
                       : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
                   }`}
                 >
