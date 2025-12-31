@@ -121,6 +121,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="-mt-8 lg:mt-0"
             >
               <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl  mb-2 md:mb-3 leading-tight">
                 <span className="block bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-1">
@@ -163,12 +164,12 @@ const Hero = () => {
               enhance efficiency, and deliver exceptional user experiences.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons - Desktop Only */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-2 mb-4 md:mb-6 justify-center lg:justify-start"
+              className="hidden lg:flex flex-col sm:flex-row gap-2 mb-4 md:mb-6 justify-center lg:justify-start"
             >
               <ConsultationButton 
                 className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
@@ -327,7 +328,7 @@ const Hero = () => {
             </div>
 
             {/* Mobile Layout - Single Feature Card */}
-            <div className="lg:hidden w-full max-w-md px-4">
+            <div className="lg:hidden w-full max-w-md px-4 space-y-4">
               {/* Single Card - Custom Software Development */}
               <motion.div
                 animate={{ 
@@ -419,6 +420,26 @@ const Hero = () => {
                     <div className="text-blue-300/70 text-[10px]">Support</div>
                   </div>
                 </div>
+              </motion.div>
+
+              {/* CTA Buttons - Mobile Only (After Card) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.6 }}
+                className="flex flex-col gap-2 w-full"
+              >
+                <ConsultationButton 
+                  className="w-full px-6 py-3 text-sm"
+                  variant="primary"
+                />
+                
+                <Link to="/case-studies" className="w-full">
+                  <button className="group w-full px-6 py-3 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-xl text-sm hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
+                    View Our Work
+                    <Code2 className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+                  </button>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
