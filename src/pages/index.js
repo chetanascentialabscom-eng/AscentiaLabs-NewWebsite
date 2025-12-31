@@ -49,3 +49,6 @@ export { default as RouteMaestroCase } from './CaseStudies/RouteMaestroCase';
 export { default as KinderConnectCase } from './CaseStudies/KinderConnectCase';
 export { default as InsuranceSafeCase } from './CaseStudies/InsuranceSafeCase';
 export { default as JusDoItCase } from './CaseStudies/JusDoItCase';
+
+// 404 Page
+export { default as NotFound } from './NotFound';

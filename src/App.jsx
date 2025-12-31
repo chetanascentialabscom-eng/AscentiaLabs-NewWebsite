@@ -47,7 +47,8 @@ import {
   JusDoItCase,
   NewsPage,
   ITBAsia2025,
-  RouteMaestroPlatform
+  RouteMaestroPlatform,
+  NotFound
 } from './pages'
 
 // Import new case study components
@@ -128,6 +129,9 @@ function App() {
           <Route path="/case-study-s-sood-co-task-management" element={<SSoodTaskManagementCase />} />
           <Route path="/case-study-pumpkins-kindergarten-management" element={<PumpkinsKindergartenCase />} />
           <Route path="/case-study-sunview-enclave-real-estate" element={<SunviewEnclaveCase />} />
+          
+          {/* 404 Catch-all Route - Must be last */}
+          <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
           <WhatsAppFloat />
