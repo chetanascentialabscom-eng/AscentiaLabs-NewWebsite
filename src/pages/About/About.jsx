@@ -42,14 +42,7 @@ const About = () => {
       education: 'Maharishi Markandeshwar, Uppsala University',
       linkedin: 'https://www.linkedin.com/in/kalrasukhpreet/'
     },
-    {
-      name: 'Team Member',
-      role: 'Position Title',
-      image: '/team/anmol.png',
-      description: 'Experienced Professional With Expertise In Technology And Innovation, Contributing To Enterprise Solutions And Digital Transformation.',
-      education: 'University Name',
-      linkedin: '#'
-    }
+    
   ];
 
   const galleryImages = [
@@ -119,31 +112,60 @@ const About = () => {
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <p className="text-lg text-blue-200/80 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   With A Proven Track Record Of Launching Our Own Proprietary Enterprise Solutions—Now Trusted By Over <span className="text-amber-400 font-semibold">100+</span> Enterprise Users—We Have A Unique "Insider" Understanding Of What It Takes To Scale. We Know The Stakes Because We've Been In Your Shoes.
                 </p>
-                <p className="text-lg text-blue-200/80 leading-relaxed">
+                <p className="text-lg text-white leading-relaxed">
                   At Ascentia Labs, We Translate <span className="text-amber-400 font-semibold">7+</span> Years Of Product-Building Expertise Into A Competitive Edge For Our Clients. Facilitating Clients Across <span className="text-amber-400 font-semibold">4+</span> Countries, We Don't Just Deliver Projects; We Engineer The Digital Transformation That Allows You To Redefine What's Possible In Your Industry.
                 </p>
                
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-blue-400/20 hover:border-amber-400/50 transition-all">
-                  <div className="text-4xl text-amber-400 mb-2">7+</div>
-                  <div className="text-blue-200/80">Business Years</div>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-blue-400/20 hover:border-amber-400/50 transition-all">
-                  <div className="text-4xl text-amber-400 mb-2">100+</div>
-                  <div className="text-blue-200/80">Projects Delivered</div>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-blue-400/20 hover:border-amber-400/50 transition-all">
-                  <div className="text-4xl text-amber-400 mb-2">10+</div>
-                  <div className="text-blue-200/80">Industries Catered</div>
-                </div>
-                <div className="bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl border border-blue-400/20 hover:border-amber-400/50 transition-all">
-                  <div className="text-4xl text-amber-400 mb-2">4+</div>
-                  <div className="text-blue-200/80">Countries</div>
+              <div className="relative">
+                {/* Connecting Line */}
+                <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-blue-400 to-amber-400 opacity-30 -translate-y-1/2"></div>
+                
+                {/* Stats Grid */}
+                <div className="relative grid grid-cols-2 gap-6">
+                  {/* Stat 1 */}
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl border-2 border-amber-400/30 hover:border-amber-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
+                      <div className="absolute -top-4 -left-4 w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-amber-400/50">1</div>
+                      <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-3">7+</div>
+                      <div className="text-white font-medium text-lg">Business Years</div>
+                    </div>
+                  </div>
+
+                  {/* Stat 2 */}
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl border-2 border-blue-400/30 hover:border-blue-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
+                      <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-blue-400/50">2</div>
+                      <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">100+</div>
+                      <div className="text-white font-medium text-lg">Projects Delivered</div>
+                    </div>
+                  </div>
+
+                  {/* Stat 3 */}
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl border-2 border-amber-400/30 hover:border-amber-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
+                      <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-amber-400/50">3</div>
+                      <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-3">10+</div>
+                      <div className="text-white font-medium text-lg">Industries Catered</div>
+                    </div>
+                  </div>
+
+                  {/* Stat 4 */}
+                  <div className="group relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl border-2 border-blue-400/30 hover:border-blue-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
+                      <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-blue-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-blue-400/50">4</div>
+                      <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">4+</div>
+                      <div className="text-white font-medium text-lg">Countries</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,11 +198,11 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-10 max-w-6xl mx-auto">
               {teamMembers.map((member, index) => (
                 <div 
                   key={index}
-                  className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-400/20 hover:border-amber-400/50 hover:-translate-y-2"
+                  className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-blue-400/20 hover:border-amber-400/50 hover:-translate-y-2 w-full md:w-[calc(50%-12px)] lg:w-[350px]"
                 >
                   <div className="relative overflow-hidden h-64 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
                     <img 

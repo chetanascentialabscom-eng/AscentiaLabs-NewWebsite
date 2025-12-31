@@ -284,7 +284,7 @@ const TravelTourismPage = () => {
                 return (
                   <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
                     <div className="flex items-start space-x-3">
-                      <div className="bg-blue-600 p-2 rounded-lg text-white flex-shrink-0">
+                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
                         <IconComponent size={20} />
                       </div>
                       <div>
@@ -447,7 +447,7 @@ const TravelTourismPage = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-blue-300">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Feature List */}
                 <div className="bg-gray-900 p-4">
@@ -457,14 +457,14 @@ const TravelTourismPage = () => {
                         key={index}
                         className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
                           activeFeature === index 
-                            ? 'bg-blue-600 text-white' 
+                            ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black' 
                             : 'text-gray-300 hover:bg-gray-800'
                         }`}
                         onClick={() => setActiveFeature(index)}
                       >
                         <div className="flex items-center space-x-2">
                           <span className={`text-xs  px-2 py-1 rounded ${
-                            activeFeature === index ? 'bg-white text-blue-600' : 'bg-blue-600 text-white'
+                            activeFeature === index ? 'bg-black text-amber-400' : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black'
                           }`}>
                             {index < 9 ? `0${index + 1}` : index + 1}
                           </span>
@@ -477,9 +477,9 @@ const TravelTourismPage = () => {
            {/* Right Side - Feature Details */}
                 <div className="p-6 flex items-center">
                   <div className="space-y-4">
-                    <div className="bg-blue-100 p-3 rounded-xl w-fit">
-                      <div className="bg-blue-600 p-2 rounded-lg">
-                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <div className="bg-amber-100 p-3 rounded-xl w-fit">
+                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
+                        <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                       </div>
@@ -491,7 +491,7 @@ const TravelTourismPage = () => {
                       <ul className="space-y-2 text-gray-600 text-sm">
                         {features[activeFeature].details.map((detail, idx) => (
                           <li key={idx} className="flex items-start space-x-2">
-                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>
+                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
                             <span>{detail}</span>
                           </li>
                         ))}
