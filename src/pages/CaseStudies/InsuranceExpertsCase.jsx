@@ -78,7 +78,7 @@ const InsuranceExpertsCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Modern insurance management solution with policy tracking, claims processing, and customer portal. Automated 85% of manual processes and improved customer satisfaction by 40% while providing 24/7 support capabilities.
+                  Modern insurance management solution with policy tracking, claims processing, and customer portal. Automated 85% of manual processes and improved customer satisfaction by 40% while providing 24/7 support capabilities. Visit <a href="https://www.insuranceexpert.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">Insurance Experts</a> to learn more.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>

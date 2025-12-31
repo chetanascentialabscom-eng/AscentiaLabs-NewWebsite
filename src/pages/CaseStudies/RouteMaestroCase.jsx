@@ -65,9 +65,9 @@ const RouteMaestroCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/SoftwareProducts/Route Maestro Logo.png" 
+                  src="/pics/air.jpg" 
                   alt="Airnet Travels"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
               </div>
 
@@ -75,12 +75,12 @@ const RouteMaestroCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  An AI Powered Multi-City Travel Planning & Booking Platform that generates ready-to-book AI personalised, multi city real-time travel packages integrated with global hotels, flights, sightseeings, transfers within 2 Minutes!
+                  An AI Powered Multi-City Travel Planning & Booking Platform that generates ready-to-book AI personalised, multi city real-time travel packages integrated with global hotels, flights, sightseeings, transfers within 2 Minutes! Experience <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">RouteMaestro</a> today.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
-                  Airnet Travels needed a revolutionary solution to streamline multi-city travel planning. Traditional methods required hours of research across multiple platforms, often resulting in suboptimal itineraries and frustrated customers. The challenge was to create an AI-powered system that could generate comprehensive travel packages in minutes.
+                  <a href="https://airnet-travels.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">Airnet Travels</a> needed a revolutionary solution to streamline multi-city travel planning. Traditional methods required hours of research across multiple platforms, often resulting in suboptimal itineraries and frustrated customers. The challenge was to create an AI-powered system that could generate comprehensive travel packages in minutes.
                 </p>
 
                 <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
@@ -231,7 +231,11 @@ const RouteMaestroCase = () => {
                       AT
                     </div>
                     <div>
-                      <div className=" text-white">Airnet Travels Team</div>
+                      <div className=" text-white">
+                        <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors">
+                          Airnet Travels Team
+                        </a>
+                      </div>
                       <div className="text-blue-300 text-sm">Travel Technology Company</div>
                     </div>
                   </div>

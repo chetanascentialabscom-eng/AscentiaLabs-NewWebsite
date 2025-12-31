@@ -68,9 +68,9 @@ const PumpkinsKindergartenCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/partnerships/pumpkins.svg" 
+                  src="/pics/kinder.png" 
                   alt="Pumpkins Kindergarten"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
               </div>
 
@@ -78,7 +78,7 @@ const PumpkinsKindergartenCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Complete digital transformation of kindergarten operations with parent communication, student tracking, and administrative tools. Streamlined operations for 50+ educational institutions with 90% parent satisfaction and 180% efficiency improvement.
+                  Complete digital transformation of kindergarten operations with parent communication, student tracking, and administrative tools. Streamlined operations for 50+ educational institutions with 90% parent satisfaction and 180% efficiency improvement. Learn more about <a href="https://apps.apple.com/us/app/pumpkins-kindergarten/id6479735653" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">Pumpkins Kindergarten</a>.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>

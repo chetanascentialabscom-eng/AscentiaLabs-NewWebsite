@@ -17,7 +17,7 @@ const CaseStudiesPage = () => {
       id: 1,
       title: "AI Travel Planning & Booking Tool",
       excerpt: "An AI Powered Multi-City Travel Planning & Booking Platform that generates ready-to-book AI personalised, multi city real-time travel packages integrated with global hotels, flights, sightseeings, transfers within 2 Minutes!",
-      image: "/SoftwareProducts/Route Maestro Logo.png", // Airnet Travels logo
+      image: "/SoftwareProducts/air.jpeg", // Airnet Travels logo
       category: "Travel & Tourism",
       client: "Airnet Travels",
       industry: "Travel Technology",

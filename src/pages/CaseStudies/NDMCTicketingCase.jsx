@@ -9,6 +9,7 @@ const NDMCTicketingCase = () => {
         title="NDMC & MCL Ticketing Platform Case Study | Ascentia Labs"
         description="Comprehensive digital ticketing solution for municipal corporations with real-time booking, payment processing, and administrative management."
         keywords="NDMC, MCL, ticketing platform, government technology, digital transformation"
+        noIndex={true}
       />
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-12 lg:pb-16 overflow-hidden">
@@ -68,9 +69,9 @@ const NDMCTicketingCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/partnerships/NDMC.png" 
+                  src="/pics/ndmc.jpg" 
                   alt="NDMC & MCL"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
               </div>
 
@@ -78,7 +79,7 @@ const NDMCTicketingCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Comprehensive digital ticketing solution for municipal corporations with real-time booking, payment processing, and administrative management. Streamlined operations and reduced processing time by 80% while handling 50,000+ daily tickets.
+                  Comprehensive digital ticketing solution for municipal corporations with real-time booking, payment processing, and administrative management. Streamlined operations and reduced processing time by 80% while handling 50,000+ daily tickets. Learn more about <a href="https://www.ndmc.gov.in/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">NDMC & MCL</a>.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>

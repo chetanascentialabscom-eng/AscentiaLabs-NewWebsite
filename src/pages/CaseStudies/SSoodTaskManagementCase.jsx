@@ -68,9 +68,9 @@ const SSoodTaskManagementCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/partnerships/image-14.png" 
+                  src="/pics/sood.jpg" 
                   alt="S. Sood & Co."
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
               </div>
 
@@ -78,7 +78,7 @@ const SSoodTaskManagementCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Advanced task management solution with team collaboration, project tracking, and productivity analytics. Enhanced team productivity by 200% and reduced project delivery time by 35% while completing over 10,000 tasks efficiently.
+                  Advanced task management solution with team collaboration, project tracking, and productivity analytics. Enhanced team productivity by 200% and reduced project delivery time by 35% while completing over 10,000 tasks efficiently. Visit <a href="https://www.ssoodco.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">S. Sood & Co.</a> to learn more.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>

@@ -67,7 +67,7 @@ const KinderConnectCase = () => {
                 <img 
                   src="/SoftwareProducts/Frame 1000002695.png" 
                   alt="KinderConnect Platform"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-8"
+                  className="w-full h-64 md:h-96 object-contain rounded-xl"
                 />
               </div>
 
@@ -77,7 +77,7 @@ const KinderConnectCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-gray-800 mb-4">Project Overview</h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                  KinderConnect revolutionizes kindergarten management by providing a comprehensive digital solution that streamlines administrative tasks, enhances parent-teacher communication, and improves overall educational outcomes for young learners.
+                  KinderConnect revolutionizes kindergarten management by providing a comprehensive digital solution that streamlines administrative tasks, enhances parent-teacher communication, and improves overall educational outcomes for young learners. Download <a href="https://apps.apple.com/us/app/kinderconnect-teacher/id1469867835" target="_blank" rel="noopener noreferrer" className="text-amber-500 hover:text-orange-600 font-semibold underline transition-colors">KinderConnect App</a> now.
                 </p>
 
                 <h3 className="text-2xl  text-gray-800 mb-4">The Challenge</h3>
@@ -217,7 +217,11 @@ const KinderConnectCase = () => {
                       KC
                     </div>
                     <div>
-                      <div className=" text-gray-800">KinderConnect Team</div>
+                      <div className=" text-gray-800">
+                        <a href="https://apps.apple.com/us/app/kinderconnect-teacher/id1469867835" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">
+                          KinderConnect Team
+                        </a>
+                      </div>
                       <div className="text-gray-600 text-sm">Education Technology Company</div>
                     </div>
                   </div>

@@ -6,23 +6,23 @@ const SEO = ({
   keywords, 
   ogImage = "https://ascentialabs.com/ascentialabslogopng.png",
   url = "https://ascentialabs.com",
-  type = "website"
+  type = "website",
+  noIndex = false
 }) => {
   useEffect(() => {
     // Update document title
     document.title = title;
     
-    // DEPLOYMENT PHASE: Add no-index meta tags
-    // Update robots meta tag to prevent indexing
+    // Update robots meta tag based on noIndex prop
     const robotsMeta = document.querySelector('meta[name="robots"]');
     if (robotsMeta) {
-      robotsMeta.setAttribute('content', 'noindex, nofollow');
+      robotsMeta.setAttribute('content', noIndex ? 'noindex, nofollow' : 'index, follow');
     }
     
-    // Update googlebot meta tag to prevent indexing
+    // Update googlebot meta tag based on noIndex prop
     const googlebotMeta = document.querySelector('meta[name="googlebot"]');
     if (googlebotMeta) {
-      googlebotMeta.setAttribute('content', 'noindex, nofollow');
+      googlebotMeta.setAttribute('content', noIndex ? 'noindex, nofollow' : 'index, follow');
     }
     
     // Update meta description
@@ -91,7 +91,7 @@ const SEO = ({
       twitterImage.setAttribute('content', ogImage);
     }
     
-  }, [title, description, keywords, ogImage, url, type]);
+  }, [title, description, keywords, ogImage, url, type, noIndex]);
 
   return null; // This component doesn't render anything
 };

@@ -68,9 +68,9 @@ const SunviewEnclaveCase = () => {
               {/* Featured Image */}
               <div className="mb-8">
                 <img 
-                  src="/partnerships/sunview-1.png" 
+                  src="/pics/sunview.jpeg" 
                   alt="Sunview Enclave"
-                  className="w-full h-64 md:h-96 object-contain rounded-xl bg-white p-8"
+                  className="w-full h-64 md:h-96 object-cover rounded-xl"
                 />
               </div>
 
@@ -78,7 +78,7 @@ const SunviewEnclaveCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Comprehensive real estate management platform with property listings, customer management, and sales tracking. Increased sales conversion by 150% and reduced administrative overhead by 60% while managing 500+ properties efficiently.
+                  Comprehensive real estate management platform with property listings, customer management, and sales tracking. Increased sales conversion by 150% and reduced administrative overhead by 60% while managing 500+ properties efficiently. Visit <a href="https://sunviewenclave.com" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">Sunview Enclave</a> to learn more.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>
@@ -218,7 +218,11 @@ const SunviewEnclaveCase = () => {
                       SE
                     </div>
                     <div>
-                      <div className=" text-white">Sunview Enclave Team</div>
+                      <div className=" text-white">
+                        <a href="https://sunviewenclave.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors">
+                          Sunview Enclave Team
+                        </a>
+                      </div>
                       <div className="text-blue-300 text-sm">Real Estate Company</div>
                     </div>
                   </div>

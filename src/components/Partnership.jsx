@@ -77,6 +77,7 @@ const Partnership = () => {
 
   // Partner logos - using images from public folder
   const partnerLogos = [
+    { name: "Vardhman Textiles", url: "/partnerships/vardhman.png" },
     { name: "Sunview", url: "/partnerships/sunview-1.png" },
     { name: "Sood", url: "/partnerships/image-14.png" },
     { name: "Insurance", url: "/partnerships/logo-1a.jpg" },
@@ -94,7 +95,7 @@ const Partnership = () => {
     { name: "CIPT", url: "/partnerships/cipt.svg" },
     { name: "George & Oakes", url: "/partnerships/go.svg" },
     { name: "Pumpkins", url: "/partnerships/pumpkins.svg" },
-    { name: "Read LDH Read", url: "/partnerships/read-ldh-read.svg" },
+    // { name: "Read LDH Read", url: "/partnerships/read-ldh-read.svg" },
     { name: "Kiddogram", url: "/partnerships/kiddogram.svg" },
     { name: "Godwit", url: "/partnerships/godwit.png" },
     { name: "Jujhar Group", url: "/partnerships/jujhar_group.png" },

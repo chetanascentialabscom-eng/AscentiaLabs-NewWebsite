@@ -77,7 +77,7 @@ const InsuranceSafeCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-gray-800 mb-4">Project Overview</h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                  InsuranceSafe transforms traditional insurance operations through a comprehensive digital platform that streamlines policy management, claims processing, and customer interactions while ensuring regulatory compliance and data security.
+                  InsuranceSafe transforms traditional insurance operations through a comprehensive digital platform that streamlines policy management, claims processing, and customer interactions while ensuring regulatory compliance and data security. Discover <a href="https://www.insuranceexpert.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">InsuranceSafe</a> today.
                 </p>
 
                 <h3 className="text-2xl  text-gray-800 mb-4">The Challenge</h3>
