@@ -353,7 +353,7 @@ const SoftwareEngineering = () => {
                 onClick={() => setActiveTab(service.id)}
                 className={`group relative px-3 sm:px-5 py-3 rounded-xl  text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
                   activeTab === service.id
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/50'
+                    ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-lg shadow-amber-500/50'
                     : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
                 }`}
               >
