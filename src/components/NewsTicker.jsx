@@ -130,7 +130,7 @@ const NewsTicker = () => {
               }}
             >
               <span>{item.text}</span>
-              <span className="text-blue-700 font-bold ml-1 hover:underline">View Here</span>
+              <span className="text-blue-700 font-bold ml-1 underline">View Here</span>
             </a>
           ))}
         </div>

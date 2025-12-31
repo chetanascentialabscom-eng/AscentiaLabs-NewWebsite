@@ -335,8 +335,8 @@ const TravelTourismPage = () => {
           <div className="max-w-7xl mx-auto">
             {/* Section Title */}
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl  text-white mb-2">
-                Our <span className="bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">Travel Technology Products</span>
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
+                Our Travel Technology Products
               </h2>
               <p className="text-base text-blue-200/90">
                 Powerful Solutions Designed To Transform Your Travel Business Operations
