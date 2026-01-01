@@ -250,7 +250,7 @@ const ContactPage = () => {
                   <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mr-3">
                     <Send className="w-5 h-5 text-black" />
                   </div>
-                  <h2 className="text-2xl md:text-3xl text-white">Send Us A Message</h2>
+                  <h2 className="text-xl sm:text-2xl md:text-3xl text-white">Send Us A Message</h2>
                 </div>
                 <p className="text-blue-200/80 text-sm">
                   Fill Out The Form Below And We'll Get Back To You Within 24 Hours
@@ -500,7 +500,7 @@ const ContactPage = () => {
         
         <div className="container mx-auto px-4 relative z-10 max-w-7xl">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               Get In <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Touch</span> With Us
             </h1>
             <p className="text-lg sm:text-xl text-blue-200/80 leading-relaxed max-w-3xl mx-auto">

@@ -126,10 +126,8 @@ const Clients = () => {
         <div className="mb-8 sm:mb-12">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16 animate-fade-in-up px-4">
-            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl  text-white leading-tight mb-4 sm:mb-6">
+            <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl  text-white leading-tight mb-4 sm:mb-6">
               Client Success Stories
-              <br />
-              
             </h2>
             <p className="text-sm sm:text-lg md:text-xl text-white max-w-3xl mx-auto leading-relaxed px-2">
               Hear from our clients as they share how Ascentia Labs innovative solutions and dedicated service have transformed their business.

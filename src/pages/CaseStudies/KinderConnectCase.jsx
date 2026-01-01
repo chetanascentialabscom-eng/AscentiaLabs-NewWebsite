@@ -178,14 +178,14 @@ const KinderConnectCase = () => {
 
                 <h3 className="text-2xl  text-gray-800 mb-4">Results & Impact</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  KinderConnect has transformed kindergarten operations across 100+ institutions, significantly improving administrative efficiency and parent satisfaction while enhancing the overall educational experience for children.
+                  KinderConnect has transformed kindergarten operations across 120+ institutions, significantly improving administrative efficiency and parent satisfaction while enhancing the overall educational experience for children.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-black text-white p-8 rounded-xl my-8">
                   <h4 className="text-2xl  mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl  text-blue-200 mb-2">100+</div>
+                      <div className="text-4xl  text-blue-200 mb-2">120+</div>
                       <div className="text-lg  mb-1">Institutions Served</div>
                       <div className="text-blue-100 text-sm">Kindergartens using the platform</div>
                     </div>

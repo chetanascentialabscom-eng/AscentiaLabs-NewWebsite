@@ -6,8 +6,8 @@ const SoftwareProducts = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-5xl  text-white leading-tight mb-6">
-            Don't Believe Us Just Yet? Test Our Capabilities!<br />Demo Our Enterprise Product!
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl  text-white leading-tight mb-6">
+            Don't Believe Us Just Yet? Test Our Capabilities! Demo Our Enterprise Product!
           </h2>
         </div>
 

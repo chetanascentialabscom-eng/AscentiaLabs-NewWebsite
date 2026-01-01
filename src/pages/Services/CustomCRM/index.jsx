@@ -146,7 +146,7 @@ const CustomCRMDevelopment = () => {
 
   const stats = [
     { number: '7+', label: 'Business Years' },
-    { number: '100+', label: 'Projects Delivered' },
+    { number: '120+', label: 'Projects Delivered' },
     { number: '10+', label: 'Industries Catered' },
     { number: '4+', label: 'Countries' }
   ];
@@ -544,7 +544,7 @@ const CustomCRMDevelopment = () => {
                       Ready to Build Your Custom CRM?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join 100+ successful projects and transform your customer relationships with a custom CRM solution from Ascentia Labs.
+                      Join 120+ successful projects and transform your customer relationships with a custom CRM solution from Ascentia Labs.
                     </p>
                     <button 
                       onClick={openConsultation}

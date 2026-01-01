@@ -134,7 +134,7 @@ const BlogsPage = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl  mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  mb-3 sm:mb-4 bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
               Our <span className="bg-gradient-to-r from-blue-400 to-blue-500 bg-clip-text text-transparent">Blog</span> - <span className="bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">Insights & Innovation</span>
             </h1>
             <p className="text-base sm:text-lg text-blue-200/80 mb-4 sm:mb-6 leading-relaxed px-4 sm:px-0">

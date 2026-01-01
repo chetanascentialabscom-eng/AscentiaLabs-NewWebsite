@@ -202,7 +202,7 @@ const Hero = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-3xl  text-white bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                    100+
+                    120+
                   </div>
                   <p className="text-blue-200/70 text-sm ">
                     Projects Delivered
@@ -406,18 +406,18 @@ const Hero = () => {
                 {/* Stats - Compact */}
                 <div className="flex items-center justify-between pt-3 border-t border-blue-400/30">
                   <div className="text-center flex-1">
-                    <div className="text-lg  text-white">50+</div>
+                    <div className="text-lg  text-white">120+</div>
                     <div className="text-blue-300/70 text-[10px]">Projects</div>
                   </div>
                   <div className="w-px h-8 bg-blue-400/30"></div>
                   <div className="text-center flex-1">
-                    <div className="text-lg  text-white">100%</div>
-                    <div className="text-blue-300/70 text-[10px]">Quality</div>
+                    <div className="text-lg  text-white">10+</div>
+                    <div className="text-blue-300/70 text-[10px]">Industries Catered</div>
                   </div>
                   <div className="w-px h-8 bg-blue-400/30"></div>
                   <div className="text-center flex-1">
-                    <div className="text-lg  text-white">24/7</div>
-                    <div className="text-blue-300/70 text-[10px]">Support</div>
+                    <div className="text-lg  text-white">4+</div>
+                    <div className="text-blue-300/70 text-[10px]">Countries</div>
                   </div>
                 </div>
               </motion.div>
@@ -444,49 +444,6 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Statistics Numbers - Mobile (At the end) */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="block lg:hidden mt-8 w-full px-4"
-        >
-          <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
-            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
-              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                7+
-              </div>
-              <p className="text-blue-200/70 text-xs ">
-                Business Years
-              </p>
-            </div>
-            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
-              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                100+
-              </div>
-              <p className="text-blue-200/70 text-xs ">
-                Projects Delivered
-              </p>
-            </div>
-            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
-              <div className="text-2xl font-black text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                10+
-              </div>
-              <p className="text-blue-200/70 text-xs ">
-                Industries Catered
-              </p>
-            </div>
-            <div className="text-center bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-blue-400/20">
-              <div className="text-2xl  text-white mb-1 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                4+
-              </div>
-              <p className="text-blue-200/70 text-xs ">
-                Countries
-              </p>
-            </div>
-          </div>
-        </motion.div>
 
        
 

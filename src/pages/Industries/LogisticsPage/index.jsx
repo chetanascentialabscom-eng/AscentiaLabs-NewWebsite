@@ -173,7 +173,7 @@ const LogisticsPage = () => {
 
   const stats = [
     { number: '7+', label: 'Business Years' },
-    { number: '100+', label: 'Projects Delivered' },
+    { number: '120+', label: 'Projects Delivered' },
     { number: '10+', label: 'Industries Catered' },
     { number: '4+', label: 'Countries' }
   ];

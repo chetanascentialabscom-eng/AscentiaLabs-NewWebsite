@@ -186,9 +186,9 @@ const SunviewEnclaveCase = () => {
                   <h4 className="text-2xl  mb-6">Project Outcomes</h4>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <div className="text-4xl  text-blue-200 mb-2">150%</div>
-                      <div className="text-lg  mb-1">Sales Conversion Increase</div>
-                      <div className="text-blue-100 text-sm">Dramatic improvement in lead-to-sale conversion rates</div>
+                      <div className="text-4xl  text-blue-200 mb-2">2X</div>
+                      <div className="text-lg  mb-1">Collection Efficiency</div>
+                      <div className="text-blue-100 text-sm">Automated client ledgers helped with efficient collections</div>
                     </div>
                     <div>
                       <div className="text-4xl  text-blue-200 mb-2">60%</div>

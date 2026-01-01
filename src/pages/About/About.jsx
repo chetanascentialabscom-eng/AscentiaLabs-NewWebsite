@@ -104,8 +104,8 @@ const About = () => {
             data-animate
           >
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-tight">
-                100+ Projects Delivered. <br className="sm:hidden"/>4+ Countries. <br/>1 Shared Goal
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+                120+ Projects Delivered. <br className="sm:hidden"/>4+ Countries. <br/>1 Shared Goal
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
             </div>
@@ -113,7 +113,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-white leading-relaxed">
-                  With A Proven Track Record Of Launching Our Own Proprietary Enterprise Solutions—Now Trusted By Over <span className="text-amber-400 font-semibold">100+</span> Enterprise Users—We Have A Unique "Insider" Understanding Of What It Takes To Scale. We Know The Stakes Because We've Been In Your Shoes.
+                  With A Proven Track Record Of Launching Our Own Proprietary Enterprise Solutions—Now Trusted By Over <span className="text-amber-400 font-semibold">120+</span> Enterprise Users—We Have A Unique "Insider" Understanding Of What It Takes To Scale. We Know The Stakes Because We've Been In Your Shoes.
                 </p>
                 <p className="text-lg text-white leading-relaxed">
                   At Ascentia Labs, We Translate <span className="text-amber-400 font-semibold">7+</span> Years Of Product-Building Expertise Into A Competitive Edge For Our Clients. Facilitating Clients Across <span className="text-amber-400 font-semibold">4+</span> Countries, We Don't Just Deliver Projects; We Engineer The Digital Transformation That Allows You To Redefine What's Possible In Your Industry.
@@ -142,7 +142,7 @@ const About = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
                     <div className="relative bg-slate-800/80 backdrop-blur-sm p-4 md:p-8 rounded-2xl border-2 border-blue-400/30 hover:border-blue-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
                       <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 bg-blue-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-blue-400/50 text-xs md:text-base">2</div>
-                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2 md:mb-3">100+</div>
+                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2 md:mb-3">120+</div>
                       <div className="text-white font-medium text-sm md:text-lg">Projects Delivered</div>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ const About = () => {
             data-animate
           >
             <div className="text-center mb-8">
-              <h2 className="text-4xl md:text-5xl text-white mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4">
                 Core Team
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-4"></div>
@@ -255,7 +255,7 @@ const About = () => {
             data-animate
           >
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl text-white mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6">
                 Our Journey
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
