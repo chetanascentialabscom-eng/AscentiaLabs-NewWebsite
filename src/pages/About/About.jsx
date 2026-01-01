@@ -104,7 +104,7 @@ const About = () => {
             data-animate
           >
             <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
                 120+ Projects Delivered. <br className="sm:hidden"/>4+ Countries. <br/>1 Shared Goal
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-8"></div>
@@ -121,50 +121,17 @@ const About = () => {
                
               </div>
 
-              <div className="relative">
-                {/* Connecting Line */}
-                <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-blue-400 to-amber-400 opacity-30 -translate-y-1/2"></div>
-                
-                {/* Stats Grid */}
-                <div className="relative grid grid-cols-2 gap-4 md:gap-6">
-                  {/* Stat 1 */}
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-4 md:p-8 rounded-2xl border-2 border-amber-400/30 hover:border-amber-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
-                      <div className="absolute -top-3 -left-3 md:-top-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 bg-amber-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-amber-400/50 text-xs md:text-base">1</div>
-                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-2 md:mb-3">7+</div>
-                      <div className="text-white font-medium text-sm md:text-lg">Business Years</div>
-                    </div>
-                  </div>
-
-                  {/* Stat 2 */}
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-4 md:p-8 rounded-2xl border-2 border-blue-400/30 hover:border-blue-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
-                      <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 bg-blue-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-blue-400/50 text-xs md:text-base">2</div>
-                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2 md:mb-3">120+</div>
-                      <div className="text-white font-medium text-sm md:text-lg">Projects Delivered</div>
-                    </div>
-                  </div>
-
-                  {/* Stat 3 */}
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-4 md:p-8 rounded-2xl border-2 border-amber-400/30 hover:border-amber-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
-                      <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 w-6 h-6 md:w-8 md:h-8 bg-amber-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-amber-400/50 text-xs md:text-base">3</div>
-                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-2 md:mb-3">10+</div>
-                      <div className="text-white font-medium text-sm md:text-lg">Industries Catered</div>
-                    </div>
-                  </div>
-
-                  {/* Stat 4 */}
-                  <div className="group relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-amber-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
-                    <div className="relative bg-slate-800/80 backdrop-blur-sm p-4 md:p-8 rounded-2xl border-2 border-blue-400/30 hover:border-blue-400/60 transition-all hover:scale-105 hover:-translate-y-2 duration-300">
-                      <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-6 h-6 md:w-8 md:h-8 bg-blue-400 rounded-full flex items-center justify-center text-slate-900 font-bold shadow-lg shadow-blue-400/50 text-xs md:text-base">4</div>
-                      <div className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2 md:mb-3">4+</div>
-                      <div className="text-white font-medium text-sm md:text-lg">Countries</div>
-                    </div>
+              <div className="relative group">
+                {/* Hero Image */}
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all"></div>
+                  <div className="relative">
+                    <img 
+                      src="https://plus.unsplash.com/premium_photo-1661414423895-5854eb6b573a?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                      alt="Professional Team Collaboration"
+                      className="w-full h-auto rounded-2xl border-2 border-blue-400/30 group-hover:border-amber-400/50 transition-all duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent rounded-2xl"></div>
                   </div>
                 </div>
               </div>
