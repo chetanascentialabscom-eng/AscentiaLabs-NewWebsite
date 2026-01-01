@@ -64,12 +64,12 @@ const GoToMarket = () => {
       title: 'Go-To-Market Strategy Development',
       description: 'Our strategy experts create comprehensive, data-driven and actionable go-to-market plans, facilitating market entry, optimizing positioning, and ensuring competitive advantage, to enhance product success and drive revenue growth.',
       techLogos: [
-        '/techLogo/google analytics.png',
-        '/techLogo/salesforce.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/python.png',
-        '/techLogo/React.png'
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       ]
     },
     {
@@ -79,12 +79,12 @@ const GoToMarket = () => {
       title: 'Digital Marketing & Campaign Management',
       description: 'Our marketing experts develop targeted, engaging and measurable digital campaigns, facilitating brand awareness, optimizing customer acquisition, and ensuring ROI maximization, to enhance market presence and drive conversions.',
       techLogos: [
-        '/techLogo/google analytics.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/salesforce.png',
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png'
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
       ]
     },
     {
@@ -94,12 +94,12 @@ const GoToMarket = () => {
       title: 'Sales Strategy & Enablement',
       description: 'Our sales experts implement effective, scalable and results-driven sales strategies, facilitating pipeline development, optimizing conversion rates, and ensuring revenue targets, to enhance sales performance and market penetration.',
       techLogos: [
-        '/techLogo/salesforce.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/power bi.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/aws.png',
-        '/techLogo/oracle cloud.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
       ]
     },
     {
@@ -109,12 +109,12 @@ const GoToMarket = () => {
       title: 'Market Research & Analytics',
       description: 'Our analytics experts conduct thorough, insightful and actionable market research, facilitating informed decisions, optimizing market understanding, and ensuring strategic positioning, to enhance competitive advantage and market success.',
       techLogos: [
-        '/techLogo/google analytics.png',
-        '/techLogo/power bi.png',
-        '/techLogo/python.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/aws.png',
-        '/techLogo/salesforce.png'
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     }
   ];

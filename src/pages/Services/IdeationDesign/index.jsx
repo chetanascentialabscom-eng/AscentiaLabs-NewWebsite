@@ -65,12 +65,12 @@ const IdeationDesign = () => {
       title: 'User Experience & Interface Design',
       description: 'Our UX/UI experts create intuitive, beautiful and efficient user interfaces, facilitating seamless user experiences, optimizing usability, and ensuring visual consistency, to enhance customer satisfaction and drive engagement.',
       techLogos: [
-        '/techLogo/figma.png',
-        '/techLogo/photoshop logo.png',
-        '/techLogo/sketchup.png',
-        '/techLogo/blender.png',
-        '/techLogo/Framer logo.png',
-        '/techLogo/HTML 5.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg',
+        'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
       ]
     },
     {
@@ -80,12 +80,12 @@ const IdeationDesign = () => {
       title: 'Brand Strategy & Identity Design',
       description: 'Our branding experts develop compelling, memorable and cohesive brand identities, facilitating brand recognition, optimizing visual communication, and ensuring consistent messaging, to enhance brand value and market presence.',
       techLogos: [
-        '/techLogo/photoshop logo.png',
-        '/techLogo/figma.png',
-        '/techLogo/blender.png',
-        '/techLogo/sketchup.png',
-        '/techLogo/Framer logo.png',
-        '/techLogo/CSS.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg',
+        'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
       ]
     },
     {
@@ -95,12 +95,12 @@ const IdeationDesign = () => {
       title: 'Interactive Prototyping & Testing',
       description: 'Our prototyping experts build interactive, realistic and testable prototypes, facilitating user testing, optimizing design validation, and ensuring functionality verification, to enhance product development and reduce risks.',
       techLogos: [
-        '/techLogo/figma.png',
-        '/techLogo/Framer logo.png',
-        '/techLogo/React.png',
-        '/techLogo/HTML 5.png',
-        '/techLogo/CSS.png',
-        '/techLogo/Java Script.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
       ]
     },
     {
@@ -110,12 +110,12 @@ const IdeationDesign = () => {
       title: 'User Research & Strategy',
       description: 'Our research experts conduct comprehensive, data-driven and insightful user research, facilitating informed design decisions, optimizing user understanding, and ensuring strategic planning, to enhance product-market fit and user satisfaction.',
       techLogos: [
-        '/techLogo/google analytics.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/power bi.png',
-        '/techLogo/python.png',
-        '/techLogo/figma.png',
-        '/techLogo/React.png'
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       ]
     }
   ];

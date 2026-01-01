@@ -73,12 +73,12 @@ const DigitalTransformation = () => {
       title: 'Digital Transformation Strategy',
       description: 'Our strategy experts develop comprehensive digital transformation roadmaps, facilitating business alignment, technology selection, and change management planning, to enhance organizational readiness and ensure successful transformation.',
       techLogos: [
-        '/techLogo/figma.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/salesforce.png',
-        '/techLogo/oracle logo.png',
-        '/techLogo/aws.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg'
       ]
     },
     {
@@ -88,12 +88,12 @@ const DigitalTransformation = () => {
       title: 'Business Process Automation',
       description: 'Our automation experts implement intelligent process automation solutions, facilitating workflow optimization, reducing manual tasks, and improving operational efficiency, to enhance productivity and reduce costs.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/node js.png',
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/salesforce.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     },
     {
@@ -103,12 +103,12 @@ const DigitalTransformation = () => {
       title: 'Digital Customer Experience',
       description: 'Our CX experts design and implement digital customer experiences, facilitating omnichannel engagement, personalization, and seamless interactions, to enhance customer satisfaction and loyalty.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/Angular.png',
-        '/techLogo/Vue Js.png',
-        '/techLogo/next js.png',
-        '/techLogo/figma.png',
-        '/techLogo/salesforce.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     },
     {
@@ -118,12 +118,12 @@ const DigitalTransformation = () => {
       title: 'Data-Driven Transformation',
       description: 'Our data experts implement advanced analytics and business intelligence solutions, facilitating data-driven decision making, predictive insights, and performance optimization, to enhance strategic planning and operational excellence.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/oracle logo.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
       ]
     }
   ];

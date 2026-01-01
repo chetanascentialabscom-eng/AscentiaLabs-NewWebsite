@@ -72,12 +72,12 @@ const SoftwareEngineering = () => {
       title: 'Tailored Software Solutions',
       description: 'Our custom software development experts create bespoke applications designed specifically for your business needs, facilitating unique workflows, optimizing operational efficiency, and ensuring perfect alignment with your business objectives, to drive growth and competitive advantage.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/aws.png',
-        '/techLogo/typescript.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
       ]
     },
     {
@@ -87,12 +87,12 @@ const SoftwareEngineering = () => {
       title: 'Custom Web Application Development',
       description: 'Our web development experts create secure, responsive and efficient web applications, facilitating seamless user experiences, optimizing performance, and ensuring cross-platform compatibility, to enhance business operations and customer engagement.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/Angular.png',
-        '/techLogo/Vue Js.png',
-        '/techLogo/next js.png',
-        '/techLogo/node js.png',
-        '/techLogo/typescript.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
       ]
     },
     {
@@ -102,12 +102,12 @@ const SoftwareEngineering = () => {
       title: 'Native & Cross-Platform Mobile Apps',
       description: 'Our mobile development experts build secure, intuitive and efficient mobile applications, facilitating native and cross-platform solutions, optimizing user experience, and ensuring seamless performance, to enhance customer engagement and business growth.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/flutter.png',
-        '/techLogo/swift.png',
-        '/techLogo/kotlin.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/node js.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       ]
     },
     {
@@ -117,12 +117,12 @@ const SoftwareEngineering = () => {
       title: 'Robust Backend Architecture',
       description: 'Our backend experts develop secure, scalable and efficient server-side solutions, facilitating reliable APIs, optimizing database management, and ensuring high-performance infrastructure, to enhance application reliability and operational excellence.',
       techLogos: [
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/aws.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg'
       ]
     },
     {
@@ -132,12 +132,12 @@ const SoftwareEngineering = () => {
       title: 'DevOps & Cloud Infrastructure',
       description: 'Our DevOps experts implement secure, automated and efficient CI/CD pipelines, facilitating cloud deployment, optimizing infrastructure management, and ensuring continuous delivery, to enhance development velocity and operational efficiency.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/go.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg'
       ]
     }
   ];

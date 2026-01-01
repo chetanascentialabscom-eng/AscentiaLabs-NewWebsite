@@ -65,12 +65,12 @@ const MobileApplication = () => {
       title: 'Native iOS Application Development',
       description: 'Our iOS experts create secure, performant and beautiful native iOS applications, facilitating seamless user experiences, optimizing for Apple ecosystem, and ensuring App Store compliance, to enhance customer engagement and drive business growth.',
       techLogos: [
-        '/techLogo/swift.png',
-        '/techLogo/ios.png',
-        '/techLogo/React.png',
-        '/techLogo/typescript.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/node js.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       ]
     },
     {
@@ -80,12 +80,12 @@ const MobileApplication = () => {
       title: 'Native Android Application Development',
       description: 'Our Android experts develop secure, scalable and efficient native Android applications, facilitating optimal performance, optimizing for Google Play, and ensuring device compatibility, to enhance user satisfaction and market reach.',
       techLogos: [
-        '/techLogo/kotlin.png',
-        '/techLogo/android.png',
-        '/techLogo/Java.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/node js.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       ]
     },
     {
@@ -95,12 +95,12 @@ const MobileApplication = () => {
       title: 'Cross-Platform Mobile Development',
       description: 'Our cross-platform experts build efficient, cost-effective and maintainable mobile applications, facilitating code reusability, optimizing development time, and ensuring consistent experience across platforms, to enhance ROI and faster time-to-market.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/flutter.png',
-        '/techLogo/typescript.png',
-        '/techLogo/Java Script.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/node js.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       ]
     },
     {
@@ -110,12 +110,12 @@ const MobileApplication = () => {
       title: 'Mobile Backend & API Development',
       description: 'Our backend experts implement secure, scalable and efficient mobile backend solutions, facilitating reliable APIs, optimizing data synchronization, and ensuring cloud integration, to enhance app functionality and user experience.',
       techLogos: [
-        '/techLogo/node js.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/aws.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/python.png',
-        '/techLogo/mysql.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
       ]
     }
   ];

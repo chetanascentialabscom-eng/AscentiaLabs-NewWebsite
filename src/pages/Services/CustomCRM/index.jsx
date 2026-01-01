@@ -74,12 +74,12 @@ const CustomCRMDevelopment = () => {
       title: 'Enterprise-Grade CRM Solutions',
       description: 'Our enterprise CRM development experts create comprehensive, scalable solutions designed for large organizations, facilitating complex workflows, multi-department coordination, and advanced automation to drive operational excellence and customer satisfaction across your entire enterprise.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/aws.png',
-        '/techLogo/mongo db.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
       ]
     },
     {
@@ -89,12 +89,12 @@ const CustomCRMDevelopment = () => {
       title: 'Custom Sales CRM Development',
       description: 'Our sales CRM experts build powerful, intuitive sales automation platforms, facilitating lead management, pipeline tracking, and sales forecasting, optimizing team productivity, and ensuring seamless customer engagement to accelerate your revenue growth and sales performance.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/Angular.png',
-        '/techLogo/node js.png',
-        '/techLogo/typescript.png',
-        '/techLogo/mysql.png',
-        '/techLogo/microsoft azure.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
       ]
     },
     {
@@ -104,12 +104,12 @@ const CustomCRMDevelopment = () => {
       title: 'Seamless CRM Integration Services',
       description: 'Our integration experts connect your CRM with existing business systems, facilitating data synchronization, API development, and third-party integrations, optimizing workflow automation, and ensuring unified customer data across all platforms for enhanced operational efficiency.',
       techLogos: [
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/salesforce.png',
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
       ]
     },
     {
@@ -119,12 +119,12 @@ const CustomCRMDevelopment = () => {
       title: 'Advanced CRM Analytics & Reporting',
       description: 'Our analytics experts develop comprehensive reporting and business intelligence solutions, facilitating custom dashboards, predictive analytics, and data visualization, optimizing decision-making processes, and ensuring actionable insights from your customer data for strategic growth.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/python.png',
-        '/techLogo/power bi.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/aws.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg'
       ]
     },
     {
@@ -134,12 +134,12 @@ const CustomCRMDevelopment = () => {
       title: 'Mobile CRM Applications',
       description: 'Our mobile CRM experts build native and cross-platform mobile applications, facilitating on-the-go access, offline capabilities, and real-time synchronization, optimizing field sales productivity, and ensuring seamless customer management from any device, anywhere.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/flutter.png',
-        '/techLogo/swift.png',
-        '/techLogo/kotlin.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/node js.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
       ]
     }
   ];

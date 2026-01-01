@@ -75,12 +75,12 @@ const AI_ML = () => {
       title: 'Custom Machine Learning Solutions',
       description: 'Our machine learning experts create secure, intelligent and efficient ML models, facilitating predictive analytics, pattern recognition, and automated decision-making, to enhance business operations and drive data-driven insights.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
-        '/techLogo/aws.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
       ]
     },
     {
@@ -90,12 +90,12 @@ const AI_ML = () => {
       title: 'Natural Language Processing & Text Analytics',
       description: 'Our NLP experts build secure, intelligent and efficient natural language processing solutions, facilitating sentiment analysis, chatbots, language translation, and text understanding, to enhance customer engagement and automate communication.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
-        '/techLogo/open ai logo.png',
-        '/techLogo/gemini logo.png',
-        '/techLogo/calude ai.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+        'https://static.vecteezy.com/system/resources/previews/022/227/364/non_2x/openai-chatgpt-logo-icon-free-png.png',
+        'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/1/13/ChatGPT-Logo.png'
       ]
     },
     {
@@ -105,12 +105,12 @@ const AI_ML = () => {
       title: 'Computer Vision Solutions',
       description: 'Our computer vision experts develop secure, accurate and efficient image recognition systems, facilitating object detection, facial recognition, and visual analytics, to enhance automation and enable intelligent visual processing.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/tensor flow.png',
-        '/techLogo/pytorch.png',
-        '/techLogo/aws.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
       ]
     },
     {
@@ -120,12 +120,12 @@ const AI_ML = () => {
       title: 'Data Analytics & Insights',
       description: 'Our analytics experts implement secure, intelligent and efficient predictive models, facilitating forecasting, trend analysis, and business intelligence, to enhance strategic planning and drive informed decision-making.',
       techLogos: [
-        '/techLogo/python.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/oracle logo.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
       ]
     }
   ];

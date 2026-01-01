@@ -71,12 +71,12 @@ const ApplicationModernisation = () => {
       title: 'Legacy Application Modernisation',
       description: 'Our modernisation experts transform legacy applications into modern, cloud-native solutions, facilitating improved performance, enhanced security, and reduced maintenance costs, to enhance business agility and operational efficiency.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg'
       ]
     },
     {
@@ -86,12 +86,12 @@ const ApplicationModernisation = () => {
       title: 'Cloud Migration & Optimization',
       description: 'Our cloud experts facilitate seamless migration to cloud platforms, optimizing infrastructure, ensuring scalability, and reducing costs, to enhance business flexibility and operational excellence.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/salesforce.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     },
     {
@@ -101,12 +101,12 @@ const ApplicationModernisation = () => {
       title: 'Modern Architecture Design',
       description: 'Our architects design modern, microservices-based architectures, facilitating improved scalability, enhanced maintainability, and better performance, to enhance system reliability and development velocity.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/Angular.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/go.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg'
       ]
     },
     {
@@ -116,12 +116,12 @@ const ApplicationModernisation = () => {
       title: 'API Development & Integration',
       description: 'Our API experts develop modern RESTful and GraphQL APIs, facilitating seamless integration, improved performance, and enhanced security, to enhance system connectivity and data exchange.',
       techLogos: [
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/Java.png',
-        '/techLogo/go.png',
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
       ]
     }
   ];

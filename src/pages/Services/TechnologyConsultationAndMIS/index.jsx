@@ -69,12 +69,12 @@ const TechnologyConsultationAndMIS = () => {
       title: 'Strategic Technology Planning',
       description: 'Our technology experts develop secure, transparent and efficient solutions for strategic planning, facilitating trusted roadmaps, optimizing technology infrastructure, and ensuring digital transformation, to enhance business growth and operational excellence.',
       techLogos: [
-        '/techLogo/figma.png',
-        '/techLogo/power bi.png',
-        '/techLogo/google analytics.png',
-        '/techLogo/Framer logo.png',
-        '/techLogo/salesforce.png',
-        '/techLogo/oracle logo.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://cdn.worldvectorlogo.com/logos/framer-motion.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
       ]
     },
     {
@@ -84,12 +84,12 @@ const TechnologyConsultationAndMIS = () => {
       title: 'Management Information Systems',
       description: 'Our MIS experts develop secure, integrated and efficient solutions for management information systems, facilitating trusted data management, optimizing reporting processes, and ensuring performance analytics, to enhance decision-making and operational efficiency.',
       techLogos: [
-        '/techLogo/mongo db.png',
-        '/techLogo/mysql.png',
-        '/techLogo/oracle logo.png',
-        '/techLogo/Cassandra.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/power bi.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cassandra/cassandra-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg'
       ]
     },
     {
@@ -99,12 +99,12 @@ const TechnologyConsultationAndMIS = () => {
       title: 'Cloud Strategy & Migration',
       description: 'Our cloud experts develop secure, scalable and efficient solutions for cloud migration, facilitating trusted platform selection, optimizing cloud infrastructure, and ensuring cost optimization, to enhance business agility and operational excellence.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/salesforce.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     },
     {
@@ -114,12 +114,12 @@ const TechnologyConsultationAndMIS = () => {
       title: 'IT Security Consulting',
       description: 'Our security experts develop robust, compliant and efficient solutions for IT security, facilitating trusted risk assessments, optimizing security protocols, and ensuring incident response planning, to enhance protection and operational resilience.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/oracle cloud.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/salesforce.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/salesforce/salesforce-original.svg'
       ]
     }
   ];

@@ -68,12 +68,12 @@ const Startup = () => {
       title: 'Minimum Viable Product Development',
       description: 'Our startup experts create lean, efficient and market-ready MVP solutions, facilitating rapid prototyping, user validation, and iterative development, to help you test your business hypothesis and secure funding with minimal investment.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/aws.png',
-        '/techLogo/Firebase.png',
-        '/techLogo/mongo db.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
       ]
     },
     {
@@ -83,12 +83,12 @@ const Startup = () => {
       title: 'Startup Technology Scaling Solutions',
       description: 'Our scaling experts implement robust, performant and maintainable technology infrastructure, facilitating seamless growth, optimizing system performance, and ensuring reliability, to support your startup\'s rapid expansion and user growth.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/React.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
       ]
     },
     {
@@ -98,12 +98,12 @@ const Startup = () => {
       title: 'Technology Team & Process Setup',
       description: 'Our team building experts establish efficient, collaborative and productive development teams, facilitating hiring strategies, process implementation, and culture building, to create a strong technology foundation for your startup.',
       techLogos: [
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/figma.png',
-        '/techLogo/python.png',
-        '/techLogo/aws.png',
-        '/techLogo/mongo db.png'
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg'
       ]
     },
     {
@@ -113,12 +113,12 @@ const Startup = () => {
       title: 'Strategic Technology Consulting',
       description: 'Our strategy experts provide comprehensive, data-driven and actionable technology roadmaps, facilitating architecture decisions, technology stack selection, and growth planning, to align your technology vision with business objectives.',
       techLogos: [
-        '/techLogo/aws.png',
-        '/techLogo/React.png',
-        '/techLogo/node js.png',
-        '/techLogo/python.png',
-        '/techLogo/google cloud.png',
-        '/techLogo/microsoft azure.png'
+        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
+        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
       ]
     }
   ];
