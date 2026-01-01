@@ -86,23 +86,23 @@ const PumpkinsKindergartenCase = () => {
                   Pumpkins Kindergarten faced challenges with manual administrative processes, poor parent-teacher communication, lack of student progress tracking, and inefficient resource management. The institution needed a comprehensive digital solution to modernize operations and improve educational outcomes.
                 </p>
 
-                <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg backdrop-blur-sm">
+                  <h4 className="text-lg  text-amber-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Manual attendance and record keeping</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Limited parent-teacher communication</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Lack of student progress tracking</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Inefficient administrative workflows</span>
                     </div>
                   </div>
@@ -155,23 +155,23 @@ const PumpkinsKindergartenCase = () => {
                 <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <GraduationCap className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <GraduationCap className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Student Progress Tracking</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive tracking of academic progress, milestones, and developmental activities.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Users className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Users className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Parent Communication</h4>
                     <p className="text-blue-200/80 text-sm">Real-time messaging, photo sharing, and daily activity updates for parents.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Target className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Attendance Management</h4>
                     <p className="text-blue-200/80 text-sm">Automated attendance tracking with biometric integration and parent notifications.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Administrative Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive management tools for staff, schedules, and institutional operations.</p>
                   </div>
@@ -274,7 +274,7 @@ const PumpkinsKindergartenCase = () => {
             <Link to="/case-study-airnet-travels-routemaestro" className="group">
               <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/20">
                 <img 
-                  src="/SoftwareProducts/Route Maestro Logo.png" 
+                  src="/SoftwareProducts/air.png" 
                   alt="Airnet Travels"
                   className="w-full h-48 object-contain bg-white p-4"
                 />

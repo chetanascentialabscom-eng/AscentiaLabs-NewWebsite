@@ -85,24 +85,24 @@ const KinderConnectCase = () => {
                   Traditional kindergarten management relied heavily on paper-based systems, manual attendance tracking, and fragmented communication channels. Parents struggled to stay informed about their child's progress, while teachers spent excessive time on administrative tasks rather than focusing on education.
                 </p>
 
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-                  <h4 className="text-lg  text-blue-800 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">
+                  <h4 className="text-lg  text-amber-800 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Manual attendance and record keeping</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Manual attendance and record keeping</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Limited parent-teacher communication</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Limited parent-teacher communication</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Inefficient administrative processes</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Inefficient administrative processes</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Lack of real-time progress tracking</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Lack of real-time progress tracking</span>
                     </div>
                   </div>
                 </div>
@@ -154,23 +154,23 @@ const KinderConnectCase = () => {
                 <h3 className="text-2xl  text-gray-800 mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <Users className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <Users className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Student Management</h4>
                     <p className="text-gray-600 text-sm">Comprehensive student profiles with attendance, health records, and progress tracking.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <Globe className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <Globe className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Parent Portal</h4>
                     <p className="text-gray-600 text-sm">Real-time updates, photo sharing, and direct communication with teachers.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <Target className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <Target className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Attendance Tracking</h4>
                     <p className="text-gray-600 text-sm">Automated attendance with QR codes and instant parent notifications.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Progress Reports</h4>
                     <p className="text-gray-600 text-sm">Digital progress tracking with milestone achievements and developmental assessments.</p>
                   </div>

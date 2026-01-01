@@ -86,23 +86,23 @@ const SunviewEnclaveCase = () => {
                   Sunview Enclave struggled with manual property management processes, poor lead tracking, inefficient sales workflows, and lack of customer relationship management. The company needed a comprehensive digital solution to streamline operations and improve sales performance in the competitive real estate market.
                 </p>
 
-                <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg backdrop-blur-sm">
+                  <h4 className="text-lg  text-amber-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Manual property listing and management</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Poor lead tracking and follow-up</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Inefficient sales process management</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Lack of customer relationship tools</span>
                     </div>
                   </div>
@@ -155,23 +155,23 @@ const SunviewEnclaveCase = () => {
                 <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Home className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Home className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Property Management</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive property listings with virtual tours, detailed specifications, and pricing.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Users className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Users className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">CRM Integration</h4>
                     <p className="text-blue-200/80 text-sm">Advanced customer relationship management with lead tracking and automated follow-ups.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Target className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Sales Pipeline</h4>
                     <p className="text-blue-200/80 text-sm">Automated sales workflows with stage tracking and conversion optimization.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Analytics Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive reporting on sales performance, property trends, and market analytics.</p>
                   </div>
@@ -255,7 +255,7 @@ const SunviewEnclaveCase = () => {
             <Link to="/case-study-airnet-travels-routemaestro" className="group">
               <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/20">
                 <img 
-                  src="/SoftwareProducts/Route Maestro Logo.png" 
+                  src="/SoftwareProducts/air.png" 
                   alt="Airnet Travels"
                   className="w-full h-48 object-contain bg-white p-4"
                 />

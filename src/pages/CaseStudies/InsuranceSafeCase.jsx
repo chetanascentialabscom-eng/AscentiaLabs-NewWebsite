@@ -85,24 +85,24 @@ const InsuranceSafeCase = () => {
                   The insurance industry faced significant challenges with legacy systems, manual processes, lengthy claim processing times, and poor customer experience. InsuranceSafe needed a modern solution to digitize operations while maintaining strict security and compliance standards.
                 </p>
 
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-8 rounded-r-lg">
-                  <h4 className="text-lg  text-blue-800 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg">
+                  <h4 className="text-lg  text-amber-800 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Legacy system integration and modernization</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Legacy system integration and modernization</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Manual claims processing and policy management</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Manual claims processing and policy management</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Regulatory compliance and data security</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Regulatory compliance and data security</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
-                      <span className="text-blue-700 text-sm">Poor customer experience and communication</span>
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-600 flex-shrink-0" />
+                      <span className="text-amber-700 text-sm">Poor customer experience and communication</span>
                     </div>
                   </div>
                 </div>
@@ -154,23 +154,23 @@ const InsuranceSafeCase = () => {
                 <h3 className="text-2xl  text-gray-800 mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <FileText className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <FileText className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Policy Management</h4>
                     <p className="text-gray-600 text-sm">Digital policy creation, modification, and tracking with automated workflows.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <Zap className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <Zap className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Claims Processing</h4>
                     <p className="text-gray-600 text-sm">Automated claims workflow with document management and approval processes.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <Globe className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <Globe className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Customer Portal</h4>
                     <p className="text-gray-600 text-sm">Self-service portal for policy viewing, claims submission, and payment processing.</p>
                   </div>
-                  <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-600 mb-3" />
+                  <div className="bg-white border border-amber-200 p-6 rounded-xl shadow-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-600 mb-3" />
                     <h4 className="text-lg  text-gray-800 mb-2">Analytics Dashboard</h4>
                     <p className="text-gray-600 text-sm">Real-time reporting and analytics for business intelligence and decision making.</p>
                   </div>

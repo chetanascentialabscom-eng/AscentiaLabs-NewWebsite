@@ -86,23 +86,23 @@ const SSoodTaskManagementCase = () => {
                   S. Sood & Co. faced challenges with scattered project management, lack of team collaboration tools, missed deadlines, and poor visibility into project progress. The company needed a comprehensive solution to streamline workflows and improve team productivity.
                 </p>
 
-                <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg backdrop-blur-sm">
+                  <h4 className="text-lg  text-amber-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Fragmented project management processes</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Poor team collaboration and communication</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Lack of real-time project visibility</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Inefficient resource allocation and tracking</span>
                     </div>
                   </div>
@@ -155,23 +155,23 @@ const SSoodTaskManagementCase = () => {
                 <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Layers className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Layers className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Project Hierarchy</h4>
                     <p className="text-blue-200/80 text-sm">Multi-level project organization with tasks, subtasks, and milestone tracking.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Users className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Users className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Team Collaboration</h4>
                     <p className="text-blue-200/80 text-sm">Real-time chat, file sharing, and collaborative workspaces for teams.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Target className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Smart Scheduling</h4>
                     <p className="text-blue-200/80 text-sm">AI-powered task scheduling and resource allocation optimization.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Analytics Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive productivity metrics and performance analytics.</p>
                   </div>

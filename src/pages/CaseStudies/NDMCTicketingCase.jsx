@@ -87,23 +87,23 @@ const NDMCTicketingCase = () => {
                   NDMC and MCL faced significant challenges with their legacy ticketing systems, including long queues, manual processing, payment delays, and lack of real-time tracking. The organizations needed a modern, scalable solution to handle high-volume ticket processing while ensuring transparency and efficiency.
                 </p>
 
-                <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg backdrop-blur-sm">
+                  <h4 className="text-lg  text-amber-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Manual ticketing processes causing delays</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Lack of real-time tracking and reporting</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Payment processing inefficiencies</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Administrative overhead and paperwork</span>
                     </div>
                   </div>
@@ -156,23 +156,23 @@ const NDMCTicketingCase = () => {
                 <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Zap className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Zap className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Real-time Processing</h4>
                     <p className="text-blue-200/80 text-sm">Instant ticket generation and processing with real-time status updates.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Globe className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Globe className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Multi-platform Access</h4>
                     <p className="text-blue-200/80 text-sm">Web portal, mobile app, and kiosk integration for maximum accessibility.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Target className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Payment Integration</h4>
                     <p className="text-blue-200/80 text-sm">Seamless payment processing with multiple payment options and instant receipts.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Analytics Dashboard</h4>
                     <p className="text-blue-200/80 text-sm">Comprehensive reporting and analytics for administrative oversight.</p>
                   </div>
@@ -252,7 +252,7 @@ const NDMCTicketingCase = () => {
             <Link to="/case-study-airnet-travels-routemaestro" className="group">
               <article className="bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-blue-400/20">
                 <img 
-                  src="/SoftwareProducts/Route Maestro Logo.png" 
+                  src="/SoftwareProducts/air.png" 
                   alt="Airnet Travels"
                   className="w-full bg-white h-48 object-contain bg-slate-700/50 p-4"
                 />

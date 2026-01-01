@@ -83,23 +83,23 @@ const RouteMaestroCase = () => {
                   <a href="https://airnet-travels.com/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">Airnet Travels</a> needed a revolutionary solution to streamline multi-city travel planning. Traditional methods required hours of research across multiple platforms, often resulting in suboptimal itineraries and frustrated customers. The challenge was to create an AI-powered system that could generate comprehensive travel packages in minutes.
                 </p>
 
-                <div className="bg-blue-900/30 border-l-4 border-blue-400 p-6 my-8 rounded-r-lg backdrop-blur-sm">
-                  <h4 className="text-lg  text-blue-300 mb-4">Key Challenges Addressed:</h4>
+                <div className="bg-amber-900/20 border-l-4 border-amber-500 p-6 my-8 rounded-r-lg backdrop-blur-sm">
+                  <h4 className="text-lg  text-amber-300 mb-4">Key Challenges Addressed:</h4>
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Multi-city travel complexity and coordination</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Real-time availability and pricing integration</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Personalized AI-driven recommendations</span>
                     </div>
                     <div className="flex items-start">
-                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-blue-400 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 mr-2 mt-0.5 text-amber-400 flex-shrink-0" />
                       <span className="text-blue-100 text-sm">Instant booking and payment processing</span>
                     </div>
                   </div>
@@ -152,23 +152,23 @@ const RouteMaestroCase = () => {
                 <h3 className="text-2xl  text-white mb-4">Key Features Delivered</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6 my-8">
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Zap className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Zap className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">2-Minute AI Planning</h4>
                     <p className="text-blue-200/80 text-sm">Instant multi-city travel packages with AI-powered recommendations and real-time pricing.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Globe className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Globe className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Global Integration</h4>
                     <p className="text-blue-200/80 text-sm">Seamless integration with global hotels, flights, sightseeing, and transfer providers.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <Target className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <Target className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Personalized Packages</h4>
                     <p className="text-blue-200/80 text-sm">AI-driven personalization based on preferences, budget, and travel history.</p>
                   </div>
-                  <div className="bg-slate-800/30 border border-blue-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
-                    <TrendingUp className="w-8 h-8 text-blue-400 mb-3" />
+                  <div className="bg-slate-800/30 border border-amber-400/20 p-6 rounded-xl shadow-sm backdrop-blur-sm">
+                    <TrendingUp className="w-8 h-8 text-amber-500 mb-3" />
                     <h4 className="text-lg  text-white mb-2">Ready-to-Book</h4>
                     <p className="text-blue-200/80 text-sm">Complete travel packages ready for immediate booking with secure payment processing.</p>
                   </div>
@@ -198,7 +198,7 @@ const RouteMaestroCase = () => {
                       <div className="text-blue-100 text-sm">Exceptional customer experience ratings</div>
                     </div>
                     <div>
-                      <div className="text-4xl  text-blue-200 mb-2">50K+</div>
+                      <div className="text-4xl  text-blue-200 mb-2">500+</div>
                       <div className="text-lg  mb-1">Packages Generated</div>
                       <div className="text-blue-100 text-sm">AI-powered travel packages created monthly</div>
                     </div>
@@ -228,15 +228,15 @@ const RouteMaestroCase = () => {
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
-                      AT
+                      GS
                     </div>
                     <div>
                       <div className=" text-white">
                         <a href="https://www.routemaestro.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-300 transition-colors">
-                          Airnet Travels Team
+                          Mr. Gurjit Singh
                         </a>
                       </div>
-                      <div className="text-blue-300 text-sm">Travel Technology Company</div>
+                      <div className="text-blue-300 text-sm">Director, Airnet Travels</div>
                     </div>
                   </div>
                 </div>
