@@ -247,7 +247,7 @@ const InteriorArchitecture = () => {
               Key Features In Our Interior Design App Development
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Explore the functionality of our state-of-the-art interior design system, or if you want to add some personalized features for your interior design system, don't worry, we'll do it for you.
+              Explore The Functionality Of Our State-Of-The-Art Interior Design System
             </p>
           </div>
 

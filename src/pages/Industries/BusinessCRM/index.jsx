@@ -247,7 +247,7 @@ const BusinessCRM = () => {
               Key Features In Our Business Management CRM
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Unleash your business potential with our comprehensive CRM features. Enterprise CRM, SME CRM, and industry-ready workflows designed for your success.
+              Unleash Your Business Potential With Our Comprehensive CRM Features
             </p>
           </div>
 

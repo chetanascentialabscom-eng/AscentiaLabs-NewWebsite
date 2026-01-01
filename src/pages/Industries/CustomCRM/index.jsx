@@ -245,8 +245,7 @@ const CustomCRM = () => {
               Key Features In Our Complaint Management System
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Unleash your business potential with our dynamic feature of Complaint Management system, or 
-              if you want to add some of your own business features, don't worry, we'll do it for you.
+              Unleash Your Business Potential With Our Dynamic Complaint Management Features
             </p>
           </div>
 

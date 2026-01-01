@@ -335,7 +335,7 @@ const TravelTourismPage = () => {
           <div className="max-w-7xl mx-auto">
             {/* Section Title */}
             <div className="text-center mb-8">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
+              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mt-12 mb-3">
                 Our Travel Technology Products
               </h2>
               <p className="text-base text-blue-200/90">
@@ -347,11 +347,11 @@ const TravelTourismPage = () => {
               {/* Left Side - RouteMaestro Project */}
               <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black rounded-2xl shadow-2xl border border-blue-400/20 flex flex-col hover:from-slate-800 hover:to-slate-900 transition-all duration-300 group hover:border-amber-400/40 overflow-hidden">
                 {/* Route Planning Image */}
-                <div className="flex-shrink-0 w-full bg-white">
+                <div className="flex-shrink-0 w-full p-8" style={{backgroundColor: '#f5f3ed'}}>
                   <img 
                     src="/RMLogo.png" 
                     alt="RouteMaestro - Route Planning" 
-                    className="w-full h-56 object-contain"
+                    className="w-full h-40 object-contain"
                   />
                 </div>
                 
@@ -416,11 +416,11 @@ const TravelTourismPage = () => {
               {/* Right Side - Travel CRM Project */}
               <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-black rounded-2xl shadow-2xl border border-blue-400/20 flex flex-col hover:from-slate-800 hover:to-slate-900 transition-all duration-300 group hover:border-amber-400/40 overflow-hidden">
                 {/* CRM Image */}
-                <div className="flex-shrink-0 w-full bg-white">
+                <div className="flex-shrink-0 w-full p-8" style={{backgroundColor: '#f5f3ed'}}>
                   <img 
                     src="/crm.jpg" 
                     alt="Travel CRM System" 
-                    className="w-full h-56 object-contain"
+                    className="w-full h-40 object-contain"
                   />
                 </div>
                 
@@ -494,7 +494,7 @@ const TravelTourismPage = () => {
               Key Features In Travel Software And App Development
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto"> 
-                Unleash your travel technology business potential with our dynamic features of travel crm, or if you want to add some of your travel technology business features, do      worry, we'll do it for you.
+                Unleash Your Travel Technology Business Potential With Our Dynamic Features
             </p>
           </div>
 

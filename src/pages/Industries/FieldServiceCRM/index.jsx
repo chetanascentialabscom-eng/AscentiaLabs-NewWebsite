@@ -247,7 +247,7 @@ const FieldServiceCRM = () => {
               Key Features In Our Field Service CRM
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Unleash your field service potential with our dynamic features, or if you want to add some of your own business features, don't worry, we'll do it for you.
+              Unleash Your Field Service Potential With Our Dynamic Features
             </p>
           </div>
 

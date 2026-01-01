@@ -312,8 +312,7 @@ const LogisticsPage = () => {
               Comprehensive Logistics Management Features
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Our logistics management system is packed with powerful features to streamline your supply chain, 
-              optimize routes, and provide real-time visibility across your entire operation.
+              Powerful Features To Streamline Your Supply Chain And Optimize Routes
             </p>
           </div>
 

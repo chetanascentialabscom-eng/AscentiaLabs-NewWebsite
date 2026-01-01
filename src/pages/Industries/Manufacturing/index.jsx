@@ -271,7 +271,7 @@ const ManufacturingPage = () => {
               Explore Top Features of Our Custom Manufacturing Management Solutions
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Discover comprehensive manufacturing management features designed to optimize your production processes, enhance quality control, and streamline operations for maximum efficiency.
+              Discover Comprehensive Features Designed To Optimize Your Production Processes
             </p>
           </div>
 

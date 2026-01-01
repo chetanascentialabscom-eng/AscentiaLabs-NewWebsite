@@ -269,8 +269,7 @@ const ERPPage = () => {
               Key Features In Our Enterprise Resource Planning Software Development
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Witness our feature-packed solutions for boosting your conversions, loyalty, and customer satisfaction, 
-              or if you have any other idea, don't worry we will build it for you.
+              Witness Our Feature-Packed Solutions For Boosting Your Conversions 
             </p>
           </div>
 

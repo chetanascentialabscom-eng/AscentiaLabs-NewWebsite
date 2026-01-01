@@ -323,7 +323,7 @@ const RealEstatePage = () => {
               Explore Top Features of Our Custom Real Estate App Development Solutions
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Explore the functionality of our state-of-the-art real estate app development system, or if you want to add some personalized features for your real estate business, don't worry, we'll do it for you
+              Explore The Functionality Of Our State-Of-The-Art Real Estate App Development System
             </p>
           </div>
 

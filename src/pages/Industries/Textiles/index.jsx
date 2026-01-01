@@ -303,7 +303,7 @@ const TextilesPage = () => {
               Comprehensive Features for Textile Industry Management
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Discover comprehensive textile management features designed to optimize your production processes, enhance quality control, and streamline operations for maximum efficiency in the textile industry.
+              Discover Comprehensive Features Designed To Optimize Your Textile Production Processes
             </p>
           </div>
 

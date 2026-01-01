@@ -265,7 +265,7 @@ const EducationPage = () => {
               Key Features In Your School CRM Portal
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Empower teachers, engage students & improve your educational institution result with our state-of-the-art School CRM, or if you want to add some features of your own, don't worry, we'll do it for you.
+              Empower Teachers, Engage Students & Improve Your Educational Institution Results
             </p>
           </div>
 

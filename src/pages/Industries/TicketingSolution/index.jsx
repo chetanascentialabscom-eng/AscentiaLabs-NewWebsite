@@ -308,7 +308,7 @@ const TicketingSolutionPage = () => {
               Our Services - Helping You Grow with the Power of Digital
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Comprehensive ticketing and billing solutions designed to streamline your operations and enhance customer experience.
+              Comprehensive ticketing and billing solutions designed to streamline your operations
             </p>
           </div>
 

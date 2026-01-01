@@ -270,7 +270,7 @@ const KindergartenPage = () => {
               Explore Top Features of Our Custom Kindergarten Management Solutions
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Discover comprehensive features designed specifically for early childhood education management, ensuring the best care and learning environment for children.
+              Discover Comprehensive Features Designed For Early Childhood Education Management
             </p>
           </div>
 
