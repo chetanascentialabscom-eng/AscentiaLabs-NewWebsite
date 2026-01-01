@@ -214,12 +214,14 @@ const InsuranceExpertsCase = () => {
                     "Ascentia Labs completely transformed our insurance operations. The new platform automated 85% of our manual processes and our customers can now manage their policies and claims 24/7. Customer satisfaction has increased by 40%, and our operational efficiency has improved dramatically. This solution has positioned us as a leader in digital insurance services."
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
-                      IE
-                    </div>
+                    <img 
+                      src="/clients/Frame 28.png" 
+                      alt="Gaurav Jain"
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
                     <div>
-                      <div className=" text-white">Insurance Experts Team</div>
-                      <div className="text-blue-300 text-sm">Insurance Technology Company</div>
+                      <div className=" text-white">Gaurav Jain</div>
+                      <div className="text-blue-300 text-sm">Director, Insurance Experts</div>
                     </div>
                   </div>
                 </div>

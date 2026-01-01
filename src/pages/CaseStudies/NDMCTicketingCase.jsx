@@ -79,7 +79,7 @@ const NDMCTicketingCase = () => {
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl  text-white mb-4">Project Overview</h2>
                 <p className="text-xl text-blue-200/80 leading-relaxed mb-6">
-                  Comprehensive digital ticketing solution for municipal corporations with real-time booking, payment processing, and administrative management. Streamlined operations and reduced processing time by 80% while handling 50,000+ daily tickets. Learn more about <a href="https://www.ndmc.gov.in/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">NDMC & MCL</a>.
+                  Comprehensive digital ticketing solution for municipal corporations with real-time booking, payment processing, and administrative management. Streamlined operations and reduced processing time by 80% while managing 220+ parking sites. Learn more about <a href="https://mcludhiana.gov.in/" target="_blank" rel="noopener noreferrer" className="text-amber-400 hover:text-orange-500 font-semibold underline transition-colors">MCL (Municipal Corporation of Ludhiana)</a>.
                 </p>
 
                 <h3 className="text-2xl  text-white mb-4">The Challenge</h3>
@@ -180,7 +180,7 @@ const NDMCTicketingCase = () => {
 
                 <h3 className="text-2xl  text-white mb-4">Results & Impact</h3>
                 <p className="text-blue-100/90 leading-relaxed mb-6">
-                  The NDMC & MCL Ticketing Platform delivered exceptional results, transforming the municipal ticketing process and significantly improving citizen experience while reducing operational costs and administrative burden.
+                  The NDMC & MCL Ticketing Platform delivered exceptional results, transforming the municipal ticketing process and significantly improving citizen experience while reducing operational costs and administrative burden across 220+ parking sites.
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-600 to-slate-900 text-white p-8 rounded-xl my-8 border border-blue-400/30">
@@ -192,9 +192,9 @@ const NDMCTicketingCase = () => {
                       <div className="text-blue-100 text-sm">Dramatic improvement in ticket processing speed</div>
                     </div>
                     <div>
-                      <div className="text-4xl  text-blue-200 mb-2">50K+</div>
-                      <div className="text-lg  mb-1">Daily Tickets</div>
-                      <div className="text-blue-100 text-sm">High-volume ticket processing capacity</div>
+                      <div className="text-4xl  text-blue-200 mb-2">220+</div>
+                      <div className="text-lg  mb-1">Parking Sites</div>
+                      <div className="text-blue-100 text-sm">Comprehensive parking management coverage</div>
                     </div>
                     <div>
                       <div className="text-4xl  text-blue-200 mb-2">99.9%</div>
@@ -205,22 +205,6 @@ const NDMCTicketingCase = () => {
                       <div className="text-4xl  text-blue-200 mb-2">95%</div>
                       <div className="text-lg  mb-1">User Satisfaction</div>
                       <div className="text-blue-100 text-sm">Exceptional citizen experience ratings</div>
-                    </div>
-                  </div>
-                </div>
-
-                <h3 className="text-2xl  text-white mb-4">Client Testimonial</h3>
-                <div className="bg-slate-800/30 border-l-4 border-blue-400 p-6 rounded-r-lg italic backdrop-blur-sm">
-                  <p className="text-blue-100/90 text-lg leading-relaxed mb-4">
-                    "Ascentia Labs delivered a world-class ticketing solution that has transformed our operations. The platform handles over 50,000 tickets daily with remarkable efficiency. Citizens can now get their tickets processed in minutes instead of hours, and our administrative overhead has been reduced significantly."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
-                      NM
-                    </div>
-                    <div>
-                      <div className=" text-white">NDMC & MCL Team</div>
-                      <div className="text-blue-300 text-sm">Municipal Corporation</div>
                     </div>
                   </div>
                 </div>

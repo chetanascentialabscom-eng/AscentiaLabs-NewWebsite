@@ -215,11 +215,11 @@ const PumpkinsKindergartenCase = () => {
                   </p>
                   <div className="flex items-center">
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
-                      PK
+                      AK
                     </div>
                     <div>
-                      <div className=" text-white">Pumpkins Kindergarten Team</div>
-                      <div className="text-blue-300 text-sm">Educational Institution</div>
+                      <div className=" text-white">Anna Kler</div>
+                      <div className="text-blue-300 text-sm">Director, Pumpkins Kindergarten</div>
                     </div>
                   </div>
                 </div>

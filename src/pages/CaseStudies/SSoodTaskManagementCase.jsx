@@ -214,12 +214,14 @@ const SSoodTaskManagementCase = () => {
                     "Ascentia Labs delivered an exceptional task management solution that revolutionized our workflow. Team productivity increased by 200%, and we're delivering projects 35% faster than before. The platform's intuitive design and powerful features have made project management effortless. Our team collaboration has never been better, and we've successfully completed over 10,000 tasks with remarkable efficiency."
                   </p>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white  mr-4">
-                      SS
-                    </div>
+                    <img 
+                      src="/clients/Avatar.png" 
+                      alt="Vinayak Sood"
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
                     <div>
-                      <div className=" text-white">S. Sood & Co. Team</div>
-                      <div className="text-blue-300 text-sm">Project Management Company</div>
+                      <div className=" text-white">Vinayak Sood</div>
+                      <div className="text-blue-300 text-sm">Director, S. Sood And Co.</div>
                     </div>
                   </div>
                 </div>
