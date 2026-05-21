@@ -28,7 +28,7 @@ const BlogsPage = () => {
       slug: "travel-and-ai-2026",
     },
     {
-      id: 1,
+      id: 2,
       title: `The 2-Minute Itinerary: How 60% of Travel Leaders are Reclaiming Their Margins in 2026`,
       excerpt: ` The data for 2026 is officially in, and it signals a "strategic inflection point" for travel agencies. According to the latest research from Phocuswright, over 60% of travel businesses have shifted their focus toward Agentic AI—systems that don't just "chat" but actually execute complex tasks across workflows.`,
       image: "/blogs/blog8.png",
@@ -39,7 +39,7 @@ const BlogsPage = () => {
       slug: "travel-margin-2026",
     },
     {
-      id: 1,
+      id: 3,
       title:
         "How Did Travel App Development Become Crucial In The Tourism Industry",
       excerpt:
@@ -52,7 +52,7 @@ const BlogsPage = () => {
       slug: "travel-app-development-in-tourism",
     },
     {
-      id: 2,
+      id: 4,
       title: "Latest Tourism Report [2025] New Insights in the Travel Industry",
       excerpt:
         "Discover the latest trends and insights shaping the travel and tourism industry in 2025. From emerging technologies to changing consumer behaviors, explore what's driving the future of travel...",
@@ -64,7 +64,7 @@ const BlogsPage = () => {
       slug: "latest-tourism-insights2025",
     },
     {
-      id: 3,
+      id: 5,
       title: "Benefits Of AI In Travel And Tourism Industry",
       excerpt:
         "Artificial Intelligence is revolutionizing the travel industry with personalized recommendations, efficient booking processes, predictive analysis, dynamic pricing, and 24x7 customer support...",
@@ -76,7 +76,7 @@ const BlogsPage = () => {
       slug: "benefits-ai-travel-tourism",
     },
     {
-      id: 4,
+      id: 6,
       title: "Custom Software Development: Transforming Business Operations",
       excerpt:
         "Learn how custom software solutions can streamline your business processes, improve efficiency, and provide competitive advantages in today's digital landscape. Discover the benefits of tailored applications that meet your specific business requirements and drive growth...",
@@ -88,7 +88,7 @@ const BlogsPage = () => {
       slug: "custom-software-development-business",
     },
     {
-      id: 5,
+      id: 7,
       title:
         "Mobile App Development Trends for 2025: The Future of Digital Innovation",
       excerpt:
@@ -101,7 +101,7 @@ const BlogsPage = () => {
       slug: "mobile-app-development-trends-2025",
     },
     {
-      id: 6,
+      id: 8,
       title: "Healthcare App Development: Revolutionizing Patient Care",
       excerpt:
         "Discover how healthcare applications are transforming patient care, improving medical outcomes, and streamlining healthcare operations through innovative technology solutions...",
