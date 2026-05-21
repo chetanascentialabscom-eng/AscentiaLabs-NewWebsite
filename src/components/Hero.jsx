@@ -1,12 +1,24 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Code2, Sparkles, Zap, Target, TrendingUp, Shield, Cpu } from 'lucide-react';
-import ConsultationButton from './ConsultationButton';
+import {
+  ArrowRight,
+  Code2,
+  Sparkles,
+  Zap,
+  Target,
+  TrendingUp,
+  Shield,
+  Cpu,
+} from "lucide-react";
+import ConsultationButton from "./ConsultationButton";
 
 const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(() => ["Innovative", "Scalable", "Powerful", "Modern", "Intelligent"], []);
+  const titles = useMemo(
+    () => ["Innovative", "Scalable", "Powerful", "Modern", "Intelligent"],
+    [],
+  );
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -19,13 +31,14 @@ const Hero = () => {
     return () => clearTimeout(timeoutId);
   }, [titleNumber, titles]);
 
-
-
   return (
-    <section id="home" className="relative bg-gradient-to-b from-slate-900 via-blue-950 to-black overflow-hidden flex items-center h-screen pt-16 pb-4 lg:pt-20 lg:pb-8">
+    <section
+      id="home"
+      className="relative bg-gradient-to-b from-slate-900 via-blue-950 to-black overflow-hidden flex items-center h-screen pt-16 pb-4 lg:pt-20 lg:pb-8"
+    >
       {/* Animated Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e3a8a15_1px,transparent_1px),linear-gradient(to_bottom,#1e3a8a15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
+
       {/* Glowing Orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse"></div>
@@ -43,7 +56,7 @@ const Hero = () => {
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 10}s`
+              animationDuration: `${5 + Math.random() * 10}s`,
             }}
           ></div>
         ))}
@@ -60,7 +73,7 @@ const Hero = () => {
           {/* Large Circle */}
           <div className="absolute -left-20 top-0 w-40 h-40 border-2 border-blue-500/20 rounded-full"></div>
           <div className="absolute -left-16 top-4 w-32 h-32 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
-          
+
           {/* Floating Icons */}
           <motion.div
             animate={{ y: [0, -20, 0] }}
@@ -69,10 +82,15 @@ const Hero = () => {
           >
             <Cpu className="w-8 h-8 text-blue-400" />
           </motion.div>
-          
+
           <motion.div
             animate={{ y: [0, 20, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
             className="absolute left-4 top-55 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
           >
             <Zap className="w-8 h-8 text-blue-300" />
@@ -91,7 +109,7 @@ const Hero = () => {
           {/* Large Circle */}
           <div className="absolute -right-20 top-0 w-40 h-40 border-2 border-blue-500/20 rounded-full"></div>
           <div className="absolute -right-16 top-4 w-32 h-32 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
-          
+
           {/* Floating Icons */}
           <motion.div
             animate={{ y: [0, 20, 0] }}
@@ -100,20 +118,24 @@ const Hero = () => {
           >
             <Shield className="w-8 h-8 text-blue-400" />
           </motion.div>
-          
+
           <motion.div
             animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            transition={{
+              duration: 4.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
             className="absolute right-4 top-80 bg-blue-600/10 backdrop-blur-sm p-4 rounded-2xl border border-blue-500/20"
           >
             <Target className="w-8 h-8 text-blue-300" />
           </motion.div>
         </motion.div>
       </div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 relative z-10 max-w-[1400px]">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 py-4 md:py-6 lg:py-8">
-          
           {/* Left Content */}
           <div className="flex-1 text-center lg:text-left w-full lg:max-w-2xl lg:pr-8">
             {/* Main Heading */}
@@ -152,7 +174,7 @@ const Hero = () => {
                 </span>
               </h1>
             </motion.div>
-            
+
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -160,8 +182,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-sm sm:text-base md:text-lg text-blue-200/80 mb-3 md:mb-4 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              We transform your ideas into powerful software solutions that drive growth, 
-              enhance efficiency, and deliver exceptional user experiences.
+              We transform your ideas into powerful software solutions that
+              drive growth, enhance efficiency, and deliver exceptional user
+              experiences.
             </motion.p>
 
             {/* CTA Buttons - Desktop Only */}
@@ -171,11 +194,11 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="hidden lg:flex flex-col sm:flex-row gap-2 mb-4 md:mb-6 justify-center lg:justify-start"
             >
-              <ConsultationButton 
+              <ConsultationButton
                 className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base"
                 variant="primary"
               />
-              
+
               <Link to="/case-studies" className="w-full sm:w-auto">
                 <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-xl  text-sm sm:text-base hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                   View Our Work
@@ -226,10 +249,6 @@ const Hero = () => {
                 </div>
               </div> */}
             </motion.div>
-
-     
-
-           
           </div>
 
           {/* Right Visual Element */}
@@ -241,13 +260,17 @@ const Hero = () => {
           >
             {/* Central Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full blur-3xl"></div>
-            
+
             {/* Floating Cards Container - Desktop Layout */}
             <div className="relative w-full max-w-[600px] h-[300px] hidden lg:block">
               {/* Card 1 - Top Right */}
               <motion.div
                 animate={{ y: [0, -15, 0], rotate: [0, 2, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute bottom-0 right-0 w-60 bg-gradient-to-br from-blue-500/25 to-blue-600/15 backdrop-blur-md p-5 rounded-2xl border border-blue-400/40 shadow-2xl"
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -272,7 +295,12 @@ const Hero = () => {
               {/* Card 2 - Bottom Left */}
               <motion.div
                 animate={{ y: [0, 15, 0], rotate: [0, -2, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
                 className="absolute bottom-0 left-0 w-60 bg-gradient-to-br from-blue-600/25 to-blue-700/15 backdrop-blur-md p-5 rounded-2xl border border-blue-500/40 shadow-2xl"
               >
                 <div className="flex items-center gap-3 mb-4">
@@ -281,7 +309,9 @@ const Hero = () => {
                   </div>
                   <div>
                     <div className="text-white  text-sm">Security</div>
-                    <div className="text-blue-300/70 text-xs">Enterprise Grade</div>
+                    <div className="text-blue-300/70 text-xs">
+                      Enterprise Grade
+                    </div>
                   </div>
                 </div>
                 <div className="flex gap-1.5">
@@ -302,7 +332,11 @@ const Hero = () => {
               {/* Card 3 - Center */}
               <motion.div
                 animate={{ scale: [1, 1.05, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute top-14 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-72 bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-8 rounded-3xl border border-blue-400/50 shadow-2xl"
               >
                 <div className="text-center">
@@ -310,10 +344,14 @@ const Hero = () => {
                     <Code2 className="w-9 h-9 text-blue-300" />
                   </div>
                   <div className="text-2xl  text-white mb-2">AI-Powered</div>
-                  <div className="text-blue-200/80 text-sm mb-4">Next-Gen Solutions</div>
+                  <div className="text-blue-200/80 text-sm mb-4">
+                    Next-Gen Solutions
+                  </div>
                   <div className="flex items-center justify-center gap-2 mt-4">
                     <Sparkles className="w-4 h-4 text-blue-400" />
-                    <div className="text-blue-300/90 text-xs font-medium">Smart Automation</div>
+                    <div className="text-blue-300/90 text-xs font-medium">
+                      Smart Automation
+                    </div>
                   </div>
                   <div className="h-1.5 bg-blue-900/40 rounded-full overflow-hidden mt-3">
                     <motion.div
@@ -331,24 +369,28 @@ const Hero = () => {
             <div className="lg:hidden w-full max-w-md px-4 space-y-4">
               {/* Single Card - Custom Software Development */}
               <motion.div
-                animate={{ 
+                animate={{
                   y: [0, -15, 0],
-                  scale: [1, 1.03, 1]
+                  scale: [1, 1.03, 1],
                 }}
-                transition={{ 
-                  duration: 5, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
                   ease: "easeInOut",
-                  times: [0, 0.5, 1]
+                  times: [0, 0.5, 1],
                 }}
                 className="w-full bg-gradient-to-br from-blue-600/35 to-blue-700/25 backdrop-blur-md p-4 rounded-2xl border border-blue-400/60 shadow-2xl will-change-transform"
               >
                 {/* Header */}
                 <div className="text-center mb-3">
-                  <motion.div 
+                  <motion.div
                     className="inline-flex p-3 bg-blue-500/40 rounded-xl mb-2"
                     animate={{ rotate: [0, 5, -5, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
                   >
                     <Code2 className="w-7 h-7 text-blue-200" />
                   </motion.div>
@@ -362,7 +404,7 @@ const Hero = () => {
 
                 {/* Features Grid */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
-                  <motion.div 
+                  <motion.div
                     className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg gap-1.5 flex justify-center items-center border border-blue-400/40"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -371,8 +413,8 @@ const Hero = () => {
                     <Zap className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs ">Fast Delivery</div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -381,8 +423,8 @@ const Hero = () => {
                     <Sparkles className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs ">AI-Powered</div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -391,8 +433,8 @@ const Hero = () => {
                     <Target className="w-4 h-4 text-blue-300" />
                     <div className="text-white text-xs ">Goal-Focused</div>
                   </motion.div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     className="bg-blue-500/20 backdrop-blur-sm p-2 rounded-lg border border-blue-400/40 gap-1.5 flex justify-center items-center"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -404,7 +446,7 @@ const Hero = () => {
                 </div>
 
                 {/* Stats - Compact */}
-                <div className="flex items-center justify-between pt-3 border-t border-blue-400/30">
+                {/* <div className="flex items-center justify-between pt-3 border-t border-blue-400/30">
                   <div className="text-center flex-1">
                     <div className="text-lg  text-white">120+</div>
                     <div className="text-blue-300/70 text-[10px]">Projects</div>
@@ -419,7 +461,7 @@ const Hero = () => {
                     <div className="text-lg  text-white">4+</div>
                     <div className="text-blue-300/70 text-[10px]">Countries</div>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
 
               {/* CTA Buttons - Mobile Only (After Card) */}
@@ -429,11 +471,11 @@ const Hero = () => {
                 transition={{ duration: 0.8, delay: 1.6 }}
                 className="flex flex-col gap-2 w-full"
               >
-                <ConsultationButton 
+                <ConsultationButton
                   className="w-full px-6 py-3 text-sm"
                   variant="primary"
                 />
-                
+
                 <Link to="/case-studies" className="w-full">
                   <button className="group w-full px-6 py-3 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white rounded-xl text-sm hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-2">
                     View Our Work
@@ -444,11 +486,8 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-
-       
-
       </div>
-      
+
       {/* Smooth transition to next section */}
       <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black/50 pointer-events-none"></div>
     </section>
