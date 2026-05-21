@@ -191,7 +191,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.2 }}
               className="hidden lg:block mt-4"
             >
-              <div className="grid grid-cols-4 gap-4 max-w-lg">
+              {/* <div className="grid grid-cols-4 gap-4 max-w-lg">
                 <div className="text-center">
                   <div className="text-3xl  text-white  bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     7+
@@ -224,7 +224,7 @@ const Hero = () => {
                     Countries
                   </p>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
 
      

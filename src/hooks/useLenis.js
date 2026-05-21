@@ -1,64 +1,53 @@
-import { useEffect } from 'react'
-import Lenis from 'lenis'
+import { useEffect } from "react";
+import Lenis from "lenis";
 
 export const useLenis = () => {
   useEffect(() => {
-    // Initialize Lenis with perfect momentum scrolling
+    // Disable Lenis on mobile/tablet
+    const isMobile = window.innerWidth < 1024;
+
+    if (isMobile) {
+      document.documentElement.style.scrollBehavior = "smooth";
+      return;
+    }
+
     const lenis = new Lenis({
-      // Longer duration for smoother momentum
-      duration: 2.0,
-      
-      // Smooth easing that continues after scroll stops
-      easing: (t) => {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
-      },
-      
-      // Vertical scrolling
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      
-      // Enable smooth scrolling
-      smooth: true,
-      
-      // Mouse wheel sensitivity (higher = more momentum)
-      mouseMultiplier: 2,
-      
-      // Disable smooth touch for better mobile performance
-      smoothTouch: false,
-      touchMultiplier: 2,
-      
-      // No infinite scroll
+      duration: 1.2,
+
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+
+      smoothWheel: true,
+
+      wheelMultiplier: 1,
+
+      touchMultiplier: 1,
+
       infinite: false,
-      
-      // Normalize wheel events for consistent behavior
-      normalizeWheel: true,
-      
-      // Additional wheel multiplier for momentum
-      wheelMultiplier: 1.5,
-      
-      // Lerp intensity (lower = smoother momentum)
-      lerp: 0.08,
-    })
 
-    // Add lenis class to html for CSS targeting
-    document.documentElement.classList.add('lenis')
+      lerp: 0.1,
+    });
 
-    // Make Lenis globally available
-    window.lenis = lenis
+    let rafId;
 
-    // Animation frame function for smooth rendering
     function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf);
 
-    // Cleanup function
+    document.documentElement.classList.add("lenis");
+
+    window.lenis = lenis;
+
     return () => {
-      lenis.destroy()
-      document.documentElement.classList.remove('lenis')
-      window.lenis = null
-    }
-  }, [])
-}
+      cancelAnimationFrame(rafId);
+
+      lenis.destroy();
+
+      document.documentElement.classList.remove("lenis");
+
+      window.lenis = null;
+    };
+  }, []);
+};
