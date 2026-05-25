@@ -4,14 +4,10 @@ import { useConsultation } from "../../../../contexts/ConsultationContext";
 
 const JobList = ({ jobs }) => {
   const { openConsultation } = useConsultation();
+
   return (
-    <div
-      className="relative"
-      style={{
-        background: "linear-gradient(180deg, #071226 0%, #08172d 100%)",
-      }}
-    >
-      <div className="max-w-[820px] 2xl:max-w-[1000px] mx-auto px-6 lg:px-0 pb-20 pt-4">
+    <div className="relative">
+      <div className="max-w-[820px] 2xl:max-w-[1000px] mx-auto px-6 lg:px-0 pb-10 pt-4">
         <AnimatePresence mode="wait">
           {jobs.length > 0 ? (
             <motion.div
@@ -22,30 +18,32 @@ const JobList = ({ jobs }) => {
               transition={{ duration: 0.4 }}
               className="relative overflow-hidden py-28"
             >
-              {/* SAME CTA BACKGROUND GLOW */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 50% 50%, rgba(255,180,0,0.07) 0%, rgba(56,139,253,0.05) 40%, transparent 70%)",
-                }}
-              />
+              {/* Background Glow */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-500/10 blur-3xl rounded-full" />
 
-              {/* SAME CTA RINGS */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-amber-400/5 blur-3xl rounded-full" />
+              </div>
+
+              {/* Rings */}
               <div
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-                style={{ border: "1px solid rgba(255,180,0,0.06)" }}
+                style={{
+                  border: "1px solid rgba(255,180,0,0.05)",
+                }}
               />
 
               <div
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full pointer-events-none"
-                style={{ border: "1px solid rgba(255,255,255,0.04)" }}
+                style={{
+                  border: "1px solid rgba(255,255,255,0.03)",
+                }}
               />
 
               <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
                 {/* Icon */}
                 <div
-                  className="mx-auto mb-8 w-20 h-20 rounded-3xl flex items-center justify-center"
+                  className="mx-auto mb-8 w-15 h-15 rounded-3xl flex items-center justify-center"
                   style={{
                     background:
                       "linear-gradient(135deg, rgba(255,180,0,0.2), rgba(244,122,0,0.1))",
@@ -62,7 +60,7 @@ const JobList = ({ jobs }) => {
                 </div>
 
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 tracking-[-0.02em]">
                   No open positions right now
                 </h2>
 
@@ -76,8 +74,8 @@ const JobList = ({ jobs }) => {
                 {/* Button */}
               </div>
 
-              {/* SMOOTH FOOTER MERGE */}
-              {/* <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-slate-950/30 to-black pointer-events-none" /> */}
+              {/* Footer Merge */}
+              {/* <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-b from-transparent via-blue-950/30 to-black pointer-events-none" /> */}
             </motion.div>
           ) : (
             <motion.div
