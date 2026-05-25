@@ -59,6 +59,7 @@ import PumpkinsKindergartenCase from "./pages/CaseStudies/PumpkinsKindergartenCa
 import SunviewEnclaveCase from "./pages/CaseStudies/SunviewEnclaveCase";
 import TravelandAiBlog26 from "./pages/Blogs/TravelandAiBlog2026";
 import TravelMargin2026 from "./pages/Blogs/TravelMargins2026";
+import Careers from "./pages/career-page";
 
 function App() {
   // Initialize Lenis smooth scrolling
@@ -226,6 +227,9 @@ function App() {
               path="/case-study-sunview-enclave-real-estate"
               element={<SunviewEnclaveCase />}
             />
+
+            {/* career page */}
+            <Route path="/careers" element={<Careers />} />
 
             {/* 404 Catch-all Route - Must be last */}
             <Route path="*" element={<NotFound />} />

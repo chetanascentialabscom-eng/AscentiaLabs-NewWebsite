@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useConsultation } from '../contexts/ConsultationContext';
-import { 
-  Settings, 
-  GraduationCap, 
-  Building, 
-  Star, 
-  Home, 
-  Plane, 
-  BookOpen, 
-  Wrench, 
-  Heart, 
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useConsultation } from "../contexts/ConsultationContext";
+import {
+  Settings,
+  GraduationCap,
+  Building,
+  Star,
+  Home,
+  Plane,
+  BookOpen,
+  Wrench,
+  Heart,
   Stethoscope,
   Truck,
   Phone,
@@ -34,8 +34,9 @@ import {
   Cpu,
   Ticket,
   Newspaper,
-  Database
-} from 'lucide-react';
+  Database,
+  Briefcase,
+} from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-  
+
   // Desktop dropdown states
   const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
   const [isDesktopIndustriesOpen, setIsDesktopIndustriesOpen] = useState(false);
@@ -63,24 +64,24 @@ const Header = () => {
   // Handle body scroll lock when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.classList.add('mobile-menu-open');
+      document.body.classList.add("mobile-menu-open");
       // Store current scroll position
       const scrollY = window.scrollY;
       document.body.style.top = `-${scrollY}px`;
     } else {
-      document.body.classList.remove('mobile-menu-open');
+      document.body.classList.remove("mobile-menu-open");
       // Restore scroll position
       const scrollY = document.body.style.top;
-      document.body.style.top = '';
+      document.body.style.top = "";
       if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        window.scrollTo(0, parseInt(scrollY || "0") * -1);
       }
     }
 
     // Cleanup on unmount
     return () => {
-      document.body.classList.remove('mobile-menu-open');
-      document.body.style.top = '';
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.top = "";
     };
   }, [isMenuOpen]);
 
@@ -92,25 +93,46 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-blue-600" />
-              <a href="tel:+919356385744" className="text-gray-500 hover:text-blue-600 font-medium">
+              <a
+                href="tel:+919356385744"
+                className="text-gray-500 hover:text-blue-600 font-medium"
+              >
                 +91 9356385744
               </a>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4 text-blue-600" />
-              <a href="mailto:support@ascentialabs.com" className="text-gray-500 hover:text-blue-600 font-medium lowercase">
+              <a
+                href="mailto:support@ascentialabs.com"
+                className="text-gray-500 hover:text-blue-600 font-medium lowercase"
+              >
                 support@ascentialabs.com
               </a>
             </div>
           </div>
           <div className="flex space-x-4">
-            <a href="https://www.linkedin.com/company/ascentialabs/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a
+              href="https://www.linkedin.com/company/ascentialabs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a href="https://www.instagram.com/ascentialabs/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600 transition-colors">
+            <a
+              href="https://www.instagram.com/ascentialabs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-pink-600 transition-colors"
+            >
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="https://wa.me/61412566906" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-green-600 transition-colors">
+            <a
+              href="https://wa.me/61412566906"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-green-600 transition-colors"
+            >
               <MessageCircle className="w-5 h-5" />
             </a>
           </div>
@@ -120,9 +142,9 @@ const Header = () => {
         <div className="flex justify-between items-center py-3 sm:py-4">
           <div className="flex items-center">
             <Link to="/">
-              <img 
-                src="/ascentialabslogopng.png" 
-                alt="Ascentia Labs" 
+              <img
+                src="/ascentialabslogopng.png"
+                alt="Ascentia Labs"
                 className="h-10 sm:h-12 w-auto hover:opacity-80 transition-opacity"
               />
             </Link>
@@ -130,112 +152,194 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className={`font-medium transition-colors ${
-                location.pathname === '/' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-700 hover:text-blue-600'
+                location.pathname === "/"
+                  ? "text-blue-600"
+                  : "text-gray-700 hover:text-blue-600"
               }`}
             >
               Home
             </Link>
-            <Link 
-              to="/about-us" 
+            <Link
+              to="/about-us"
               className={`font-medium transition-colors ${
-                location.pathname === '/about-us' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-700 hover:text-blue-600'
+                location.pathname === "/about-us"
+                  ? "text-blue-600"
+                  : "text-gray-700 hover:text-blue-600"
               }`}
             >
               About Us
             </Link>
             <div className="relative">
-              <button 
+              <button
                 className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
                 onMouseEnter={() => setIsDesktopServicesOpen(true)}
                 onMouseLeave={() => setIsDesktopServicesOpen(false)}
               >
-                Services 
+                Services
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div 
+              <div
                 className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
-                  isDesktopServicesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                  isDesktopServicesOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
                 }`}
                 onMouseEnter={() => setIsDesktopServicesOpen(true)}
                 onMouseLeave={() => setIsDesktopServicesOpen(false)}
               >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="/custom-crm-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/custom-crm-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Database className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Custom CRM Development</div>
-                        <div className="text-xs text-gray-500">Bespoke CRM solutions</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Custom CRM Development
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Bespoke CRM solutions
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/technology-consultation-mis"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Technology Consultation & MIS</div>
-                        <div className="text-xs text-gray-500">Strategic technology guidance</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Technology Consultation & MIS
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Strategic technology guidance
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/software-engineering" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/software-engineering"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Cpu className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Software Engineering</div>
-                        <div className="text-xs text-gray-500">Custom software development</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Software Engineering
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Custom software development
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/ai-ml-services" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/ai-ml-services"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Brain className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">AI ML Services</div>
-                        <div className="text-xs text-gray-500">Artificial intelligence solutions</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          AI ML Services
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Artificial intelligence solutions
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/application-modernisation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/application-modernisation"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Application Modernisation</div>
-                        <div className="text-xs text-gray-500">Legacy system upgrades</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Application Modernisation
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Legacy system upgrades
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/digital-transformation" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/digital-transformation"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Workflow className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Digital Transformation</div>
-                        <div className="text-xs text-gray-500">Business digitalization</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Digital Transformation
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Business digitalization
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/ideation-design" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/ideation-design"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <PenTool className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Ideation & Design Strategy</div>
-                        <div className="text-xs text-gray-500">Creative design solutions</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Ideation & Design Strategy
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Creative design solutions
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/go-to-market" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/go-to-market"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Send className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Go-To-Market</div>
-                        <div className="text-xs text-gray-500">Product launch strategies</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Go-To-Market
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Product launch strategies
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/mobile-application" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/mobile-application"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Smartphone className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Mobile Application</div>
-                        <div className="text-xs text-gray-500">iOS & Android development</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Mobile Application
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          iOS & Android development
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/startup-technology-partnership" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/startup-technology-partnership"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Building2 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Startup Partnership</div>
-                        <div className="text-xs text-gray-500">Complete tech division support</div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Startup Partnership
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Complete tech division support
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -243,128 +347,216 @@ const Header = () => {
               </div>
             </div>
             <div className="relative">
-              <button 
+              <button
                 className={`font-medium transition-colors flex items-center ${
-                  location.pathname === '/industries' 
-                    ? 'text-blue-600' 
-                    : 'text-gray-700 hover:text-blue-600'
+                  location.pathname === "/industries"
+                    ? "text-blue-600"
+                    : "text-gray-700 hover:text-blue-600"
                 }`}
                 onMouseEnter={() => setIsDesktopIndustriesOpen(true)}
                 onMouseLeave={() => setIsDesktopIndustriesOpen(false)}
               >
-                Industries 
+                Industries
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div 
+              <div
                 className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
-                  isDesktopIndustriesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                  isDesktopIndustriesOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
                 }`}
                 onMouseEnter={() => setIsDesktopIndustriesOpen(true)}
                 onMouseLeave={() => setIsDesktopIndustriesOpen(false)}
               >
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
-                    <Link to="/field-service-crm" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/field-service-crm"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Settings className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm">Field Service CRM</div>
-                        <div className="text-xs text-gray-500">Field operations management</div>
+                        <div className="font-medium text-sm">
+                          Field Service CRM
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Field operations management
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/business-management-crm-solution" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/business-management-crm-solution"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Building2 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Business CRM</div>
-                        <div className="text-xs text-gray-500">Business management solutions</div>
-                      </div>
-                    </Link>
-                    
-                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
-                      <Building className="w-5 h-5 mr-2 text-blue-600" />
-                      <div>
-                        <div className="font-medium text-sm whitespace-nowrap">Interior & Architecture</div>
-                        <div className="text-xs text-gray-500">Design & planning solutions</div>
+                        <div className="text-xs text-gray-500">
+                          Business management solutions
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/interior-design-app-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
+                      <Building className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm whitespace-nowrap">
+                          Interior & Architecture
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Design & planning solutions
+                        </div>
+                      </div>
+                    </Link>
+
+                    <Link
+                      to="/real-estate-app-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Home className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Real Estate</div>
-                        <div className="text-xs text-gray-500">Property management systems</div>
+                        <div className="text-xs text-gray-500">
+                          Property management systems
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/education-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/education-app-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Education</div>
-                        <div className="text-xs text-gray-500">Learning management platforms</div>
+                        <div className="text-xs text-gray-500">
+                          Learning management platforms
+                        </div>
                       </div>
                     </Link>
-                    
-                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+
+                    <Link
+                      to="/kindergarten-school-management"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Star className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Kindergarten</div>
-                        <div className="text-xs text-gray-500">Early education systems</div>
-                      </div>
-                    </Link>
-                    
-                    <Link to="/travel-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
-                      <Plane className="w-5 h-5 mr-2 text-blue-600" />
-                      <div>
-                        <div className="font-medium text-sm">Travel & Tourism</div>
-                        <div className="text-xs text-gray-500">Booking & travel solutions</div>
+                        <div className="text-xs text-gray-500">
+                          Early education systems
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/travel-app-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
+                      <Plane className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">
+                          Travel & Tourism
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Booking & travel solutions
+                        </div>
+                      </div>
+                    </Link>
+
+                    <Link
+                      to="/enterprise-resource-planning"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">ERP</div>
-                        <div className="text-xs text-gray-500">Enterprise resource planning</div>
+                        <div className="text-xs text-gray-500">
+                          Enterprise resource planning
+                        </div>
                       </div>
                     </Link>
-                    
-                    <Link to="/ticketing-solution" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+
+                    <Link
+                      to="/ticketing-solution"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Ticket className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
-                        <div className="font-medium text-sm">Ticketing Solution</div>
-                        <div className="text-xs text-gray-500">Digital ticketing systems</div>
+                        <div className="font-medium text-sm">
+                          Ticketing Solution
+                        </div>
+                        <div className="text-xs text-gray-500">
+                          Digital ticketing systems
+                        </div>
                       </div>
                     </Link>
-                    
-                    <Link to="/textiles" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+
+                    <Link
+                      to="/textiles"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Package className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Textiles</div>
-                        <div className="text-xs text-gray-500">Textile industry solutions</div>
+                        <div className="text-xs text-gray-500">
+                          Textile industry solutions
+                        </div>
                       </div>
                     </Link>
-                    
-                    <Link to="/manufacturing" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+
+                    <Link
+                      to="/manufacturing"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Wrench className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Manufacturing</div>
-                        <div className="text-xs text-gray-500">Production management tools</div>
+                        <div className="text-xs text-gray-500">
+                          Production management tools
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/healthcare-app-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Stethoscope className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Health Care</div>
-                        <div className="text-xs text-gray-500">Medical & healthcare solutions</div>
+                        <div className="text-xs text-gray-500">
+                          Medical & healthcare solutions
+                        </div>
                       </div>
                     </Link>
 
-                    <Link to="/logistics-software-development" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/logistics-software-development"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Truck className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Logistics</div>
-                        <div className="text-xs text-gray-500">Supply chain management</div>
+                        <div className="text-xs text-gray-500">
+                          Supply chain management
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -422,42 +614,75 @@ const Header = () => {
               </div>
             </div> */}
             <div className="relative">
-              <button 
+              <button
                 className="text-gray-700 hover:text-blue-600 font-medium flex items-center transition-colors"
                 onMouseEnter={() => setIsDesktopResourcesOpen(true)}
                 onMouseLeave={() => setIsDesktopResourcesOpen(false)}
               >
-                Resources 
+                Resources
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div 
+              <div
                 className={`absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white rounded-lg shadow-xl transition-all duration-300 border border-gray-100 ${
-                  isDesktopResourcesOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+                  isDesktopResourcesOpen
+                    ? "opacity-100 visible"
+                    : "opacity-0 invisible"
                 }`}
                 onMouseEnter={() => setIsDesktopResourcesOpen(true)}
                 onMouseLeave={() => setIsDesktopResourcesOpen(false)}
               >
                 <div className="p-5">
                   <div className="grid grid-cols-1 gap-3">
-                    <Link to="/blog" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/blog"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <BookOpen className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Blogs</div>
-                        <div className="text-xs text-gray-500">Latest insights and articles</div>
+                        <div className="text-xs text-gray-500">
+                          Latest insights and articles
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/news" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/news"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <Newspaper className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">News</div>
-                        <div className="text-xs text-gray-500">Company updates and announcements</div>
+                        <div className="text-xs text-gray-500">
+                          Company updates and announcements
+                        </div>
                       </div>
                     </Link>
-                    <Link to="/case-studies" className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={closeAllDesktopDropdowns}>
+                    <Link
+                      to="/case-studies"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={closeAllDesktopDropdowns}
+                    >
                       <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
                       <div>
                         <div className="font-medium text-sm">Case Studies</div>
-                        <div className="text-xs text-gray-500">Success stories and examples</div>
+                        <div className="text-xs text-gray-500">
+                          Success stories and examples
+                        </div>
+                      </div>
+                    </Link>
+                    <Link
+                      to="/careers"
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={closeAllDesktopDropdowns}
+                    >
+                      <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
+                      <div>
+                        <div className="font-medium text-sm">Careers</div>
+                        <div className="text-xs text-gray-500">
+                          Join our team
+                        </div>
                       </div>
                     </Link>
                   </div>
@@ -465,17 +690,16 @@ const Header = () => {
               </div>
             </div>
 
-            <Link 
-              to="/contact-us" 
+            <Link
+              to="/contact-us"
               className={`font-medium transition-colors ${
-                location.pathname === '/contact-us' 
-                  ? 'text-blue-600' 
-                  : 'text-gray-700 hover:text-blue-600'
+                location.pathname === "/contact-us"
+                  ? "text-blue-600"
+                  : "text-gray-700 hover:text-blue-600"
               }`}
             >
               Contact
             </Link>
-
           </nav>
 
           <button
@@ -486,7 +710,7 @@ const Header = () => {
           </button>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden"
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);
@@ -499,9 +723,15 @@ const Header = () => {
             }}
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+              <span
+                className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}
+              ></span>
+              <span
+                className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}
+              ></span>
+              <span
+                className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}
+              ></span>
             </div>
           </button>
         </div>
@@ -510,24 +740,24 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100 max-h-[calc(100vh-140px)] overflow-y-auto">
             <nav className="flex flex-col space-y-2">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className={`font-medium transition-colors py-2 px-4 rounded ${
-                  location.pathname === '/' 
-                    ? 'text-blue-600 bg-blue-50' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  location.pathname === "/"
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
-              
-              <Link 
-                to="/about-us" 
+
+              <Link
+                to="/about-us"
                 className={`font-medium transition-colors py-2 px-4 rounded ${
-                  location.pathname === '/about-us' 
-                    ? 'text-blue-600 bg-blue-50' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  location.pathname === "/about-us"
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -536,53 +766,129 @@ const Header = () => {
 
               {/* Services Accordion */}
               <div className="border-b border-gray-100">
-                <button 
+                <button
                   className="w-full flex items-center justify-between py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded transition-colors"
                   onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
                   Services
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
-                
+
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
-                    <Link to="/custom-crm-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/custom-crm-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Database className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Custom CRM Development</span>
                     </Link>
-                    <Link to="/technology-consultation-mis" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/technology-consultation-mis"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
-                      <span className="text-sm">Technology Consultation & MIS</span>
+                      <span className="text-sm">
+                        Technology Consultation & MIS
+                      </span>
                     </Link>
-                    <Link to="/software-engineering" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/software-engineering"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Cpu className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Software Engineering</span>
                     </Link>
-                    <Link to="/ai-ml-services" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/ai-ml-services"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Brain className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">AI ML Services</span>
                     </Link>
-                    <Link to="/application-modernisation" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/application-modernisation"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Package className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Application Modernisation</span>
                     </Link>
-                    <Link to="/digital-transformation" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/digital-transformation"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Workflow className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Digital Transformation</span>
                     </Link>
-                    <Link to="/ideation-design" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/ideation-design"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <PenTool className="w-4 h-4 mr-3 text-blue-600" />
-                      <span className="text-sm">Ideation & Design Strategy</span>
+                      <span className="text-sm">
+                        Ideation & Design Strategy
+                      </span>
                     </Link>
-                    <Link to="/go-to-market" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/go-to-market"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Send className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Go-To-Market</span>
                     </Link>
-                    <Link to="/mobile-application" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/mobile-application"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Smartphone className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Mobile Application</span>
                     </Link>
-                    <Link to="/startup-technology-partnership" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer" onClick={() => {setIsMenuOpen(false); setIsServicesOpen(false);}}>
+                    <Link
+                      to="/startup-technology-partnership"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
                       <Building2 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Startup Partnership</span>
                     </Link>
@@ -592,65 +898,158 @@ const Header = () => {
 
               {/* Industries Accordion */}
               <div className="border-b border-gray-100">
-                <button 
+                <button
                   className="w-full flex items-center justify-between py-3 px-4 bg-blue-600 text-white font-medium rounded transition-colors"
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
                 >
                   INDUSTRIES
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
-                
+
                 {isIndustriesOpen && (
                   <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
-                    <Link to="/field-service-crm" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/field-service-crm"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Settings className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Field Service CRM</span>
                     </Link>
-                    <Link to="/business-management-crm-solution" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/business-management-crm-solution"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Building2 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Business CRM</span>
                     </Link>
-                    <Link to="/education-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/education-app-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <GraduationCap className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Education</span>
                     </Link>
-                    <Link to="/enterprise-resource-planning" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/enterprise-resource-planning"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">ERP</span>
                     </Link>
-                    <Link to="/healthcare-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/healthcare-app-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Stethoscope className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Health Care</span>
                     </Link>
-                    <Link to="/interior-design-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/interior-design-app-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Building className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Interior & Architecture</span>
                     </Link>
-                    <Link to="/kindergarten-school-management" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/kindergarten-school-management"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Star className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Kindergarten</span>
                     </Link>
-                    <Link to="/ticketing-solution" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/ticketing-solution"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Ticket className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Ticketing Solution</span>
                     </Link>
-                    <Link to="/textiles" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/textiles"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Package className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Textiles</span>
                     </Link>
-                    <Link to="/logistics-software-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/logistics-software-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Truck className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Logistics</span>
-                    </Link>  
-                    <Link to="/manufacturing" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    </Link>
+                    <Link
+                      to="/manufacturing"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Wrench className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Manufacturing</span>
                     </Link>
-                    <Link to="/real-estate-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/real-estate-app-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Home className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Real Estate</span>
                     </Link>
-                    <Link to="/travel-app-development" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsIndustriesOpen(false);}}>
+                    <Link
+                      to="/travel-app-development"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsIndustriesOpen(false);
+                      }}
+                    >
                       <Plane className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Travel & Tourism</span>
                     </Link>
@@ -704,45 +1103,78 @@ const Header = () => {
 
               {/* Resources Accordion */}
               <div className="border-b border-gray-100">
-                <button 
+                <button
                   className="w-full flex items-center justify-between py-2 px-4 text-gray-700 hover:text-blue-600 hover:bg-gray-50 font-medium rounded transition-colors"
                   onClick={() => setIsResourcesOpen(!isResourcesOpen)}
                 >
                   Resources
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
-                
+
                 {isResourcesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
-                    <Link to="/blog" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
+                    <Link
+                      to="/blog"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsResourcesOpen(false);
+                      }}
+                    >
                       <BookOpen className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Blogs</span>
                     </Link>
-                    <Link to="/news" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
+                    <Link
+                      to="/news"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsResourcesOpen(false);
+                      }}
+                    >
                       <Newspaper className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">News</span>
                     </Link>
-                    <Link to="/case-studies" className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all" onClick={() => {setIsMenuOpen(false); setIsResourcesOpen(false);}}>
+                    <Link
+                      to="/case-studies"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsResourcesOpen(false);
+                      }}
+                    >
                       <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
                       <span className="text-sm">Case Studies</span>
+                    </Link>
+                    <Link
+                      to="/careers"
+                      className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setIsResourcesOpen(false);
+                      }}
+                    >
+                      <BarChart3 className="w-4 h-4 mr-3 text-blue-600" />
+                      <span className="text-sm">Careers</span>
                     </Link>
                   </div>
                 )}
               </div>
 
-              <Link 
-                to="/contact-us" 
+              <Link
+                to="/contact-us"
                 className={`font-medium transition-colors py-2 px-4 rounded ${
-                  location.pathname === '/contact-us' 
-                    ? 'text-blue-600 bg-blue-50' 
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                  location.pathname === "/contact-us"
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
 
-              
               <button
                 onClick={() => {
                   setIsMenuOpen(false);

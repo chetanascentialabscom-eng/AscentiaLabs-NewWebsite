@@ -1,0 +1,113 @@
+/**
+ * Jobs data — single source of truth for all listings.
+ * Each entry maps to a department filter pill.
+ */
+export const jobs = [
+  {
+    id: 1,
+    title: 'Product Designer',
+    description: "We're looking for a mid-level product designer to join our team.",
+    department: 'Design',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 2,
+    title: 'Engineering Manager',
+    description: "We're looking for an experienced engineering manager to join our team.",
+    department: 'Development',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 3,
+    title: 'Customer Success Manager',
+    description: "We're looking for a customer success manager to join our team.",
+    department: 'Customer Service',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 4,
+    title: 'Account Executive',
+    description: "We're looking for an account executive to join our team.",
+    department: 'Finance',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 5,
+    title: 'SEO Marketing Manager',
+    description: "We're looking for an experienced SEO marketing manager to join our team.",
+    department: 'Marketing',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 6,
+    title: 'Senior Frontend Engineer',
+    description: "We're looking for a senior frontend engineer with React expertise to join our team.",
+    department: 'Development',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 7,
+    title: 'Brand Designer',
+    description: "We're looking for a passionate brand designer to shape our visual identity.",
+    department: 'Design',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 8,
+    title: 'Growth Marketing Lead',
+    description: "We're looking for a data-driven growth marketer to scale our acquisition channels.",
+    department: 'Marketing',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 9,
+    title: 'Operations Coordinator',
+    description: "We're looking for a detail-oriented operations coordinator to streamline our workflows.",
+    department: 'Operations',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 10,
+    title: 'Head of Finance',
+    description: "We're looking for an experienced finance leader to oversee our financial operations.",
+    department: 'Finance',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 11,
+    title: 'Engineering Team Lead',
+    description: "We're looking for an engineering team lead to mentor and grow our backend team.",
+    department: 'Management',
+    remote: true,
+    type: 'Full-time',
+  },
+  {
+    id: 12,
+    title: 'Backend Engineer',
+    description: "We're looking for a backend engineer with Node.js and PostgreSQL experience.",
+    department: 'Development',
+    remote: true,
+    type: 'Full-time',
+  },
+];
+
+export const departments = [
+  'View all',
+  'Development',
+  'Design',
+  'Marketing',
+  'Customer Service',
+  'Operations',
+  'Finance',
+  'Management',
+];
