@@ -22,9 +22,9 @@ const CtaSection = () => {
         style={{ border: "1px solid rgba(255,255,255,0.04)" }}
       />
 
-      <div className="relative z-10 max-w-[760px] mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-[760px] lg:max-w-[560px] mx-auto px-6 text-center">
         {/* Icon */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -43,7 +43,7 @@ const CtaSection = () => {
               fill="#ffb400"
             />
           </svg>
-        </motion.div>
+        </motion.div> */}
 
         {/* Quote text */}
         <motion.p
@@ -51,7 +51,7 @@ const CtaSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="text-[26px] sm:text-[32px] lg:text-[38px] font-bold leading-[1.25] tracking-[-0.02em] text-white"
+          className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold leading-[1.25] tracking-[-0.02em] text-white"
         >
           Untitled truly values work-life balance. We work hard and deliver, but
           at the end of the day you can{" "}
