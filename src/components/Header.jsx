@@ -534,7 +534,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/manufacturing"
+                      to="/manufacturing-management-software"
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -1049,7 +1049,7 @@ const Header = () => {
                       <span className="text-sm">Logistics</span>
                     </Link>
                     <Link
-                      to="/manufacturing"
+                      to="/manufacturing-management-software"
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);

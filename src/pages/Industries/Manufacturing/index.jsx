@@ -1,9 +1,18 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Settings, DollarSign, ChevronDown, ChevronUp, Shield, UserCheck, BarChart3, Truck } from 'lucide-react';
-import { useConsultation } from '../../../contexts/ConsultationContext';
-import SEO from '../../../components/SEO';
-import { seoData } from '../../../utils/seoData';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  Settings,
+  DollarSign,
+  ChevronDown,
+  ChevronUp,
+  Shield,
+  UserCheck,
+  BarChart3,
+  Truck,
+} from "lucide-react";
+import { useConsultation } from "../../../contexts/ConsultationContext";
+import SEO from "../../../components/SEO";
+import { seoData } from "../../../utils/seoData";
 
 const ManufacturingPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -27,155 +36,408 @@ const ManufacturingPage = () => {
 
   const features = [
     {
-      id: 'production-planning-management',
-      title: 'Production Planning & Management',
-      description: 'Comprehensive production planning system for manufacturing operations.',
-      details: [
-        'Advanced production scheduling with capacity planning and resource optimization.',
-        'Real-time production monitoring with performance tracking and bottleneck identification.',
-        'Automated workflow management with task assignment and progress tracking.',
-        'Integration with inventory systems for seamless material requirement planning.'
-      ]
+      id: "production-planning-management",
+      title: "Production Planning — Auto Schedule, No Bottlenecks",
+
+      sections: [
+        {
+          heading: "For Factory Owners",
+          details: [
+            "Auto production scheduling (10 minutes)",
+            "Capacity planning (know max output)",
+            "Resource optimization (right machines)",
+            "Real-time monitoring (live dashboard)",
+            "Bottleneck identification (alerts before delay)",
+            "Task assignment (auto assign to team)",
+            "Progress tracking (see status live)",
+            "Inventory integration (auto material needed)",
+          ],
+        },
+
+        {
+          heading: "For Managers",
+          details: [
+            "See schedule (dashboard)",
+            "Track progress (live)",
+            "Find bottlenecks (alerts)",
+            "Assign tasks (auto)",
+          ],
+        },
+      ],
     },
     {
-      id: 'inventory-management-system',
-      title: 'Inventory Management System',
-      description: 'Advanced inventory tracking and management solutions.',
-      details: [
-        'Real-time inventory tracking with automated stock level monitoring and alerts.',
-        'Multi-location warehouse management with transfer tracking and optimization.',
-        'Automated reorder points with supplier integration and purchase order generation.',
-        'Batch and serial number tracking for complete product traceability.'
-      ]
+      id: "inventory-management-system",
+      title: "Inventory Management — Auto Order When Low (No Stockouts)",
+
+      sections: [
+        {
+          heading: "For Factory Owners",
+          details: [
+            "Real-time tracking (live stock levels)",
+            "Auto stock alerts (when low, instant)",
+            "Multi-warehouse management (all locations)",
+            "Auto reorder points (no manual work)",
+            "Supplier integration (auto-order placed)",
+            "Purchase order generation (1 click)",
+            "Batch + serial tracking (full traceability)",
+          ],
+        },
+
+        {
+          heading: "For Warehouse Staff",
+          details: [
+            "See stock levels (dashboard)",
+            "Transfer tracking (live)",
+            "Auto orders (alerts)",
+            "Batch lookup (quick)",
+          ],
+        },
+      ],
     },
     {
-      id: 'quality-control-assurance',
-      title: 'Quality Control & Assurance',
-      description: 'Complete quality management system for manufacturing standards.',
-      details: [
-        'Automated quality inspection workflows with customizable checkpoints and criteria.',
-        'Statistical process control with real-time monitoring and trend analysis.',
-        'Non-conformance tracking with corrective action management and documentation.',
-        'Compliance management with regulatory standards and audit trail maintenance.'
-      ]
+      id: "quality-control-assurance",
+      title: "Quality Control — 0% Defects Shipped (Auto Checks)",
+
+      sections: [
+        {
+          heading: "For Quality Teams",
+          details: [
+            "Auto inspections (custom checkpoints)",
+            "Real-time monitoring (live)",
+            "Trend analysis (see patterns)",
+            "Non-conformance tracking (alerts)",
+            "Corrective actions (auto assign)",
+            "Compliance management (standards met)",
+            "Audit trail (auto documentation)",
+          ],
+        },
+
+        {
+          heading: "For Owners",
+          details: [
+            "See quality (dashboard)",
+            "Track defects (live)",
+            "Compliance status (reports)",
+          ],
+        },
+      ],
     },
     {
-      id: 'supply-chain-management',
-      title: 'Supply Chain Management',
-      description: 'End-to-end supply chain optimization platform.',
-      details: [
-        'Supplier relationship management with performance tracking and evaluation.',
-        'Procurement automation with RFQ management and contract tracking.',
-        'Logistics optimization with shipping coordination and delivery tracking.',
-        'Vendor portal integration for seamless communication and collaboration.'
-      ]
+      id: "supply-chain-management",
+      title: "Supply Chain — Track Suppliers, No Delays",
+
+      sections: [
+        {
+          heading: "For Owners",
+          details: [
+            "Track supplier quality (ratings)",
+            "Delivery times (live tracking)",
+            "Supplier performance (KPIs)",
+            "Procurement automation (RFQ auto)",
+            "Contract tracking (alerts)",
+            "Logistics optimization (auto plan)",
+            "Delivery tracking (live)",
+            "Vendor portal (chat with suppliers)",
+          ],
+        },
+
+        {
+          heading: "For Procurement",
+          details: [
+            "See suppliers (dashboard)",
+            "Send RFQ (auto generate)",
+            "Track contracts (alerts)",
+            "Coordinate shipping (portal)",
+          ],
+        },
+      ],
     },
     {
-      id: 'maintenance-scheduling',
-      title: 'Maintenance & Scheduling',
-      description: 'Intelligent equipment maintenance and scheduling system.',
-      details: [
-        'Preventive maintenance scheduling with automated reminders and work orders.',
-        'Equipment performance monitoring with predictive maintenance capabilities.',
-        'Maintenance cost tracking with budget management and reporting.',
-        'Spare parts inventory management with automatic reordering and availability tracking.'
-      ]
+      id: "maintenance-management",
+      title: "Maintenance — Prevent Breakdowns (No Surprises)",
+
+      sections: [
+        {
+          heading: "For Maintenance Teams",
+          details: [
+            "Preventive schedules (auto reminders)",
+            "Predictive maintenance (alerts before break)",
+            "Performance monitoring (live KPIs)",
+            "Cost tracking (budget management)",
+            "Spare parts auto-reorder (always available)",
+            "Work orders (auto create)",
+          ],
+        },
+
+        {
+          heading: "For Owners",
+          details: [
+            "See maintenance (dashboard)",
+            "Track costs (reports)",
+            "Breakdown alerts (instant)",
+          ],
+        },
+      ],
     },
     {
-      id: 'workforce-management',
-      title: 'Workforce Management',
-      description: 'Advanced workforce planning and management system.',
-      details: [
-        'Employee scheduling with skill-based assignment and shift optimization.',
-        'Time and attendance tracking with productivity monitoring and reporting.',
-        'Training management with certification tracking and compliance monitoring.',
-        'Performance analytics with KPI tracking and employee development planning.'
-      ]
+      id: "workforce-management",
+      title: "Workforce — Auto Schedules, Track Performance",
+
+      sections: [
+        {
+          heading: "For Managers",
+          details: [
+            "Auto scheduling (skill-based, right people)",
+            "Shift optimization (efficient)",
+            "Time + attendance (digital, 5 seconds)",
+            "Productivity tracking (KPIs live)",
+            "Training management (certifications tracked)",
+            "Performance analytics (live)",
+          ],
+        },
+
+        {
+          heading: "For Employees",
+          details: [
+            "See schedule (app)",
+            "Mark attendance (5 seconds)",
+            "View training (dashboard)",
+          ],
+        },
+      ],
     },
     {
-      id: 'financial-reporting-analytics',
-      title: 'Financial Reporting & Analytics',
-      description: 'Comprehensive financial management and business intelligence.',
-      details: [
-        'Real-time cost accounting with job costing and profitability analysis.',
-        'Financial dashboards with key performance indicators and trend analysis.',
-        'Budget planning and variance analysis with automated reporting capabilities.',
-        'Integration with ERP systems for seamless financial data synchronization.'
-      ]
+      id: "financial-reporting",
+      title: "Financial Reporting — See Profits, Cut Costs",
+
+      sections: [
+        {
+          heading: "For Owners",
+          details: [
+            "Real-time cost accounting (live)",
+            "Job costing (per project)",
+            "Profitability analysis (see profits)",
+            "Financial dashboards (KPIs live)",
+            "Budget planning (auto)",
+            "Variance analysis (alerts)",
+            "ERP integration (sync auto)",
+          ],
+        },
+
+        {
+          heading: "For Finance",
+          details: [
+            "Track costs (dashboard)",
+            "See profits (reports)",
+            "Budget tracking (live)",
+          ],
+        },
+      ],
     },
-    
+    {
+      id: "mobile-app",
+      title: "Mobile App — Manage Factory from Phone",
+
+      sections: [
+        {
+          heading: "For Managers",
+          details: [
+            "See production (app, live)",
+            "Track inventory (live)",
+            "Approve orders (1 click)",
+            "Alerts (push notifications)",
+            "Reports (PDF download)",
+          ],
+        },
+
+        {
+          heading: "For Workers",
+          details: [
+            "Mark attendance (app, 5 seconds)",
+            "See schedule (dashboard)",
+            "Report issues (instant)",
+          ],
+        },
+      ],
+    },
+    {
+      id: "machine-monitoring",
+      title: "Machine Monitoring — Track All Machines Live",
+
+      sections: [
+        {
+          heading: "For Owners",
+          details: [
+            "See all machines (dashboard)",
+            "Performance (live KPIs)",
+            "Breakdown alerts (instant)",
+            "Usage tracking (reports)",
+            "Efficiency (KPIs)",
+          ],
+        },
+
+        {
+          heading: "For Maintenance",
+          details: [
+            "Monitor machines (live)",
+            "Alerts (instant)",
+            "Usage data (reports)",
+          ],
+        },
+      ],
+    },
   ];
 
   const adminFeatures = [
     {
       icon: Settings,
-      title: 'Production Control System',
-      description: 'Efficiently manage production schedules, monitor workflows, and optimize manufacturing processes for maximum efficiency.'
+      title: "Production Control System",
+      description:
+        "Efficiently manage production schedules, monitor workflows, and optimize manufacturing processes for maximum efficiency.",
     },
     {
       icon: Shield,
-      title: 'Quality Assurance',
-      description: 'Implement comprehensive quality control measures with automated testing, compliance tracking, and defect management.'
+      title: "Quality Assurance",
+      description:
+        "Implement comprehensive quality control measures with automated testing, compliance tracking, and defect management.",
     },
     {
       icon: BarChart3,
-      title: 'Analytics & Reporting',
-      description: 'Generate detailed production reports, track KPIs, and analyze performance metrics for data-driven decision making.'
+      title: "Analytics & Reporting",
+      description:
+        "See production reports, track performance, find problems fast  and  save money with real data.",
     },
     {
       icon: Truck,
-      title: 'Supply Chain Management',
-      description: 'Manage supplier relationships, track inventory levels, and optimize procurement processes for seamless operations.'
-    }
+      title: "Supply Chain Management",
+      description:
+        "Track suppliers, manage inventory, order on time — no stockouts or delays.",
+    },
   ];
 
   const stats = [
-    { number: '7+', label: 'Business Years' },
-    { number: '120+', label: 'Projects Delivered' },
-    { number: '10+', label: 'Industries Catered' },
-    { number: '4+', label: 'Countries' }
+    { number: "7+", label: "Business Years" },
+    { number: "120+", label: "Projects Delivered" },
+    { number: "10+", label: "Industries Catered" },
+    { number: "4+", label: "Countries" },
   ];
+  const [activeIndex, setActiveIndex] = useState(null);
 
+  const advantages = [
+    {
+      id: 1,
+      title: "Industry Expertise",
+      description: "We Know Manufacturing",
+    },
+    {
+      id: 2,
+      title: "Scalable Solutions",
+      description: "Grows With You — From Small to Large Factory",
+    },
+    {
+      id: 3,
+      title: "Advanced Technology",
+      description: "Modern Tech — AI, Auto-tracking, Real-time Reports",
+    },
+    {
+      id: 4,
+      title: "Quality Assurance & Compliance",
+      description: "No Bugs, Meets Standards — We test 3 times",
+    },
+    {
+      id: 5,
+      title: "Seamless Integration",
+      description: "Works With Your Current Systems — No disruption",
+    },
+    {
+      id: 6,
+      title: "24/7 Support",
+      description: "24/7 Support — We Answer Fast",
+    },
+  ];
   const processSteps = [
-    { 
-      number: '1', 
-      title: 'Requirements Analysis', 
-      description: 'Our team conducts comprehensive analysis of your manufacturing processes, identifying key challenges, operational requirements, and opportunities for digital transformation.' 
+    {
+      number: "1",
+      title: "Learn Your Factory",
+      description:
+        "Our team conducts comprehensive analysis of your manufacturing processes, identifying key challenges, operational requirements, and opportunities for digital transformation.",
     },
-    { 
-      number: '2', 
-      title: 'Custom Solution Design', 
-      description: 'We design a tailored manufacturing management platform that aligns with your production model, incorporating advanced features like IoT integration, predictive analytics, and automated workflows.' 
+    {
+      number: "2",
+      title: "Custom Design",
+      description:
+        "We design a tailored manufacturing management platform that aligns with your production model, incorporating advanced features like IoT integration, predictive analytics, and automated workflows.",
     },
-    { 
-      number: '3', 
-      title: 'Development & Integration', 
-      description: 'Our experts develop and deploy the solution with seamless integration to existing systems, ERP platforms, and manufacturing equipment while ensuring minimal disruption to operations.' 
+    {
+      number: "3",
+      title: "Build + Test",
+      description:
+        "Our experts develop and deploy the solution with seamless integration to existing systems, ERP platforms, and manufacturing equipment while ensuring minimal disruption to operations.",
     },
-    { 
-      number: '4', 
-      title: 'Training & Support', 
-      description: 'We provide comprehensive training for your team and ongoing support, continuously monitoring system performance and implementing optimizations to maximize efficiency and ROI.' 
-    }
+    {
+      number: "4",
+      title: "Train + Start",
+      description:
+        "We provide comprehensive training for your team and ongoing support, continuously monitoring system performance and implementing optimizations to maximize efficiency and ROI.",
+    },
   ];
 
   const faqs = [
     {
-      question: "What are the key benefits of implementing manufacturing management software?",
-      answer: "Manufacturing management software offers numerous benefits including improved production efficiency, enhanced quality control, automated workflows, better inventory management, streamlined supply chain operations, and comprehensive analytics for data-driven decision making."
+      question: "How long to build manufacturing software?",
+      answer: `
+        6-8 weeks total:
+
+        Week 1: Learn your factory + design
+
+        Week 2: Custom build for you
+
+        Week 3-7: Develop + test everything
+
+        Week 8: Train team + start
+       `,
     },
     {
-      question: "How does manufacturing software improve production efficiency?",
-      answer: "The software automates production planning, provides real-time monitoring of manufacturing processes, enables predictive maintenance, optimizes resource allocation, and provides centralized control systems, significantly reducing downtime and improving overall productivity."
+      question: "How much does it cost?",
+      answer: `
+       ₹15,000 - ₹60,000/month by machine count:
+
+       5-10 machines: ₹15,000/month (basic features)
+
+       10-30 machines: ₹30,000/month (full features)
+
+       30-100 machines: ₹60,000/month (all features + AI)
+       `,
     },
     {
-      question: "What features should I look for in a manufacturing management platform?",
-      answer: "Essential features include production planning and scheduling, inventory management, quality control systems, supply chain management, maintenance scheduling, workforce management, financial reporting, compliance tracking, and IoT integration capabilities."
+      question: "Mobile app for managers?",
+      answer: `Yes — iOS + Android app:
+
+      See production (app, live)
+
+      Track inventory (live)
+
+      Approve orders (1 click)
+
+      Alerts (push notifications)
+
+      Reports (PDF download)
+`,
     },
     {
-      question: "Is manufacturing management software secure for handling sensitive production data?",
-      answer: "Yes, professional manufacturing software implements enterprise-grade security measures including data encryption, secure access controls, role-based permissions, regular security updates, and compliance with industry regulations to ensure production data remains secure."
-    }
+      question: "Do you train your team?",
+      answer: `
+    Yes — complete training:
+
+    2-day training at your factory (5-10 staff)
+
+    30 video tutorials (watch anytime)
+
+    24/7 support (call anytime)
+
+    1-month free support after start
+`,
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -186,7 +448,7 @@ const ManufacturingPage = () => {
     <div className="min-h-screen bg-white">
       <SEO {...seoData.manufacturing} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
-      
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
         {/* Background Pattern */}
@@ -195,7 +457,7 @@ const ManufacturingPage = () => {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
-        
+
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
@@ -204,16 +466,20 @@ const ManufacturingPage = () => {
             {/* Left Content */}
             <div className="text-white space-y-6">
               <h1 className="text-3xl md:text-4xl  leading-tight">
-                Explore Top Features of Our Custom Manufacturing Management Solutions
+                Manufacturing Management Software | Production, Inventory,
+                Quality & Supply Chain for Factories in India
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Discover the power of our state-of-the-art manufacturing management system, designed to streamline production processes, optimize workflows, and enhance operational efficiency for your manufacturing business.
+                See how our manufacturing software helps you track production,
+                reduce machine breakdowns, and save costs. It streamlines your
+                production, optimizes workflows, and makes your factory run more
+                efficiently
               </p>
-              <button 
+              <button
                 onClick={openConsultation}
                 className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
               >
-                Get Free Consultation
+                📞 Get Free Consultation
               </button>
             </div>
 
@@ -222,14 +488,21 @@ const ManufacturingPage = () => {
               {adminFeatures.map((feature, index) => {
                 const IconComponent = feature.icon;
                 return (
-                  <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                  <div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                  >
                     <div className="flex items-start space-x-3">
                       <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
                         <IconComponent size={20} />
                       </div>
                       <div>
-                        <h3 className="text-white  text-lg mb-1">{feature.title}</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
+                        <h3 className="text-white  text-lg mb-1">
+                          {feature.title}
+                        </h3>
+                        <p className="text-gray-300 text-sm leading-relaxed">
+                          {feature.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -243,9 +516,16 @@ const ManufacturingPage = () => {
             {/* Stats - Mobile/Tablet */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
-                  <div className="text-3xl md:text-4xl  text-white mb-1">{stat.number}</div>
-                  <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
+                <div
+                  key={index}
+                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="text-3xl md:text-4xl  text-white mb-1">
+                    {stat.number}
+                  </div>
+                  <div className="text-blue-200 text-xs sm:text-sm">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -253,9 +533,16 @@ const ManufacturingPage = () => {
             {/* Stats - Desktop */}
             <div className="hidden lg:grid grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="text-4xl md:text-5xl  text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
+                <div
+                  key={index}
+                  className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer"
+                >
+                  <div className="text-4xl md:text-5xl  text-white mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-blue-200 text-sm md:text-base">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -268,10 +555,12 @@ const ManufacturingPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
-              Explore Top Features of Our Custom Manufacturing Management Solutions
+              Explore Top Features of Our Custom Manufacturing Management
+              Solutions
             </h2>
             <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Discover Comprehensive Features Designed To Optimize Your Production Processes
+              Discover Comprehensive Features Designed To Optimize Your
+              Production Processes
             </p>
           </div>
 
@@ -280,24 +569,30 @@ const ManufacturingPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 {/* Left Side - Feature List */}
                 <div className="bg-gray-900 p-4">
-                  <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar">
+                  <div className="space-y-2">
                     {features.map((feature, index) => (
                       <div
                         key={index}
                         className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                          activeFeature === index 
-                            ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black' 
-                            : 'text-gray-300 hover:bg-gray-800'
+                          activeFeature === index
+                            ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                            : "text-gray-300 hover:bg-gray-800"
                         }`}
                         onClick={() => setActiveFeature(index)}
                       >
                         <div className="flex items-center space-x-2">
-                          <span className={`text-xs  px-2 py-1 rounded ${
-                            activeFeature === index ? 'bg-black text-amber-400' : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black'
-                          }`}>
+                          <span
+                            className={`text-xs  px-2 py-1 rounded ${
+                              activeFeature === index
+                                ? "bg-black text-amber-400"
+                                : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                            }`}
+                          >
                             {index < 9 ? `0${index + 1}` : index + 1}
                           </span>
-                          <span className="font-medium text-sm">{feature.title}</span>
+                          <span className="font-medium text-sm lg:text-base 2xl:text-lg">
+                            {feature.title}
+                          </span>
                         </div>
                       </div>
                     ))}
@@ -309,23 +604,45 @@ const ManufacturingPage = () => {
                   <div className="space-y-4">
                     <div className="bg-amber-100 p-3 rounded-xl w-fit">
                       <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
-                        <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <svg
+                          className="w-6 h-6 text-black"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
                     </div>
+
                     <div>
-                      <h3 className="text-xl  text-gray-900 mb-3">
-                        {features[activeFeature].title}
-                      </h3>
-                      <ul className="space-y-2 text-gray-600 text-sm">
-                        {features[activeFeature].details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start space-x-2">
-                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="space-y-6">
+                        {features[activeFeature].sections.map(
+                          (section, sectionIndex) => (
+                            <div key={sectionIndex}>
+                              <h4 className="text-base lg:text-xl 2xl:text-2xl font-semibold text-gray-900 mb-3">
+                                {section.heading}
+                              </h4>
+
+                              <ul className="space-y-2 text-gray-600 ">
+                                {section.details.map((detail, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="flex items-start space-x-2"
+                                  >
+                                    <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+
+                                    <span className="text-sm lg:text-[15px] 2xl:text-lg">
+                                      {detail}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ),
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -343,7 +660,7 @@ const ManufacturingPage = () => {
               Our Manufacturing Development Implementation Process
             </h2>
             <p className="text-lg text-gray-300">
-              A streamlined approach to deploying your manufacturing management solution efficiently and effectively.
+              How We Build Your Manufacturing Software — 8 Weeks Total
             </p>
           </div>
 
@@ -353,13 +670,15 @@ const ManufacturingPage = () => {
               <div className="relative flex justify-between items-start gap-2 px-2">
                 {/* Connecting line for mobile */}
                 <div className="absolute top-6 sm:top-7 left-8 right-8 h-0.5 bg-blue-300 z-0"></div>
-                
+
                 {processSteps.map((step, index) => (
                   <div key={index} className="flex-1 text-center relative z-10">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg sm:text-xl font-extrabold mb-2 mx-auto border-2 border-white shadow-lg">
                       {step.number}
                     </div>
-                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">{step.title}</h3>
+                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">
+                      {step.title}
+                    </h3>
                   </div>
                 ))}
               </div>
@@ -373,7 +692,9 @@ const ManufacturingPage = () => {
                     <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mb-3 mx-auto">
                       {step.number}
                     </div>
-                    <h3 className="font-medium text-white text-base mb-1">{step.title}</h3>
+                    <h3 className="font-medium text-white text-base mb-1">
+                      {step.title}
+                    </h3>
                   </div>
                   {index < processSteps.length - 1 && (
                     <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
@@ -389,7 +710,7 @@ const ManufacturingPage = () => {
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
         {/* Smooth transition gradient at top */}
         <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
-        
+
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
@@ -397,7 +718,7 @@ const ManufacturingPage = () => {
           <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
           <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
         </div>
-        
+
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
@@ -407,86 +728,62 @@ const ManufacturingPage = () => {
               {/* Left Content */}
               <div className="text-white space-y-8">
                 <div>
-                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
-                    Revolutionize Your Manufacturing Operations with Our Expertise
+                  <h2 className="text-2xl md:text-4xl  mb-4 leading-tight">
+                    Revolutionize Your Manufacturing Operations with Our
+                    Expertise
                   </h2>
                   <p className="text-xl text-gray-300 mb-8">
-                    Why Leading Manufacturing Companies Choose Our Solutions
+                    Why Manufacturing Companies in India Choose Us
                   </p>
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      01
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Industry Expertise
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+                  {advantages.map((item) => (
+                    <div key={item.id}>
+                      <div
+                        onClick={() =>
+                          setActiveIndex(
+                            activeIndex === item.id ? null : item.id,
+                          )
+                        }
+                        className="flex items-center justify-between cursor-pointer"
+                      >
+                        <div className="flex items-center space-x-4 group">
+                          <div className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">
+                            {String(item.id).padStart(2, "0")}
+                          </div>
 
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      02
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Scalable Solutions
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+                          <div>
+                            <h3 className="lg:text-xl text-md group-hover:text-blue-300 transition-colors">
+                              {item.title}
+                            </h3>
 
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      03
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Advanced Technology
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+                            <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
+                          </div>
+                        </div>
 
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      04
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Quality Assurance & Compliance
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+                        <div
+                          className={`text-blue-500 text-xl transition-transform duration-300 ${
+                            activeIndex === item.id ? "rotate-45" : ""
+                          }`}
+                        >
+                          +
+                        </div>
+                      </div>
 
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      05
+                      <div
+                        className={`overflow-hidden transition-all duration-300 ${
+                          activeIndex === item.id
+                            ? "max-h-32 opacity-100 mt-3"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <p className="pl-16 text-gray-300 text-sm md:text-base">
+                          → {item.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Seamless Integration
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      06
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        24/7 Support
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -499,16 +796,22 @@ const ManufacturingPage = () => {
                       <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
                         {/* Animated color overlay */}
                         <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
-                        
+
                         {/* Checkmark icon with black color */}
-                        <svg className="w-16 h-16 text-black relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <svg
+                          className="w-16 h-16 text-black relative z-10 drop-shadow-lg"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        
+
                         {/* Subtle rotating border effect */}
                         <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
                       </div>
-                      
+
                       {/* Outer glow rings with amber theme */}
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
                       <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
@@ -517,9 +820,11 @@ const ManufacturingPage = () => {
                       Ready to Transform Your Manufacturing Operations?
                     </h3>
                     <p className="text-blue-100 mb-6">
-                      Join industry leaders who trust our manufacturing management solutions to optimize their production processes and boost efficiency.
+                      Join industry leaders who trust our manufacturing
+                      management solutions to optimize their production
+                      processes and boost efficiency.
                     </p>
-                    <button 
+                    <button
                       onClick={openConsultation}
                       className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg "
                     >
@@ -542,20 +847,22 @@ const ManufacturingPage = () => {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-300">
-                Find answers to common questions about our manufacturing management solutions
+                Find answers to common questions about our manufacturing
+                management solutions
               </p>
             </div>
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
+                <div
+                  key={index}
+                  className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden"
+                >
                   <button
                     className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg  text-white pr-4">
-                      {faq.question}
-                    </h3>
+                    <h3 className="text-lg  text-white pr-4">{faq.question}</h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
                         <ChevronUp className="w-5 h-5 text-blue-400" />
@@ -564,11 +871,11 @@ const ManufacturingPage = () => {
                       )}
                     </div>
                   </button>
-                  
+
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
                       <div className="border-t border-gray-700 pt-4">
-                        <p className="text-gray-300 leading-relaxed">
+                        <p className="text-gray-300 whitespace-pre-line leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

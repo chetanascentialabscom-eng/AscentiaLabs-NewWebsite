@@ -123,7 +123,10 @@ function App() {
               path="/textile-industry-software-solutions"
               element={<TextilesPage />}
             />
-            <Route path="/manufacturing" element={<ManufacturingPage />} />
+            <Route
+              path="/manufacturing-management-software"
+              element={<ManufacturingPage />}
+            />
 
             {/* Services Routes */}
             <Route
