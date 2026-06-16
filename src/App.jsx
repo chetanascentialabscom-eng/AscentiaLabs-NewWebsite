@@ -119,7 +119,10 @@ function App() {
               path="/ticketing-solution"
               element={<TicketingSolutionPage />}
             />
-            <Route path="/textiles" element={<TextilesPage />} />
+            <Route
+              path="/textile-industry-software-solutions"
+              element={<TextilesPage />}
+            />
             <Route path="/manufacturing" element={<ManufacturingPage />} />
 
             {/* Services Routes */}
