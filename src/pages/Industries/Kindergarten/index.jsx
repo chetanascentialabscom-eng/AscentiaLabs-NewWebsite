@@ -735,10 +735,10 @@ Get updates (push)
               {/* Left Content */}
               <div className="text-white space-y-8">
                 <div>
-                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
+                  <h2 className="text-2xl md:text-4xl lg:text-3xl mb-4 leading-tight">
                     Transform Your Kindergarten with Our Educational Expertise
                   </h2>
-                  <p className="text-xl text-gray-300 mb-8">
+                  <p className="text-lg md:text-xl text-gray-300 mb-8">
                     Why Leading Early Childhood Education Centers Choose Our
                     Solutions
                   </p>
@@ -759,7 +759,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className=" text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Early Childhood Education Expertise
                           </h3>
 
@@ -804,7 +804,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className="text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Child Safety & Security Focus
                           </h3>
 
@@ -846,7 +846,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className="text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Parent Engagement Solutions
                           </h3>
 
@@ -888,7 +888,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className="text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Compliance & Reporting Tools
                           </h3>
 
@@ -931,7 +931,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className="text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Seamless Implementation & Training
                           </h3>
 
@@ -975,7 +975,7 @@ Get updates (push)
                         </div>
 
                         <div>
-                          <h3 className="text-xl hover:text-blue-300 transition-colors">
+                          <h3 className="text-sm lg:text-xl hover:text-blue-300 transition-colors">
                             Affordable Educational Solutions
                           </h3>
 
@@ -1084,7 +1084,9 @@ Get updates (push)
                     className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg  text-white pr-4">{faq.question}</h3>
+                    <h3 className="text-sm lg:text-lg  text-white pr-4">
+                      {faq.question}
+                    </h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
                         <ChevronUp className="w-5 h-5 text-blue-400" />
@@ -1097,7 +1099,7 @@ Get updates (push)
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
                       <div className="border-t border-gray-700 pt-4">
-                        <p className="text-gray-300 whitespace-pre-line leading-relaxed">
+                        <p className="text-gray-300 text-sm lg:text-base whitespace-pre-line leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>
