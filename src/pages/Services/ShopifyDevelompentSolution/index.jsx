@@ -189,11 +189,15 @@ const heroCards = [
   {
     icon: Store,
     label: "Custom Store Design",
-    sub: "Pixel-perfect Shopify themes",
+    sub: "Store That Looks Like Your Brand",
   },
-  { icon: Gauge, label: "CRO Optimised", sub: "Built to convert & sell" },
-  { icon: Plug, label: "App Integrations", sub: "Payments, CRM & more" },
-  { icon: Clock, label: "30-Day Delivery", sub: "Guaranteed go-live" },
+  {
+    icon: Gauge,
+    label: "CRO Optimised",
+    sub: "Convert More Visitors Into Buyers",
+  },
+  { icon: Plug, label: "App Integrations", sub: "Connect All Your Tools Easy" },
+  { icon: Clock, label: "30-Day Delivery", sub: "Store Live in 30 Days" },
 ];
 
 function Hero() {
@@ -233,7 +237,7 @@ function Hero() {
           >
             Your <span style={{ color: ORANGE }}>Shopify Store</span>
             ,<br />
-            Live & Selling
+            Live & Selling in
             <br />
             <span
               className="relative inline-block"
@@ -243,7 +247,7 @@ function Hero() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              in 30 Days
+              30 Days Start Making Revenue Fast
             </span>
           </motion.h1>
 
@@ -253,9 +257,10 @@ function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-6 text-slate-400 text-[15px] lg:text-[17px] 2xl:text-[19px] leading-relaxed max-w-lg"
           >
-            At Ascentia Labs, we design, develop, and launch fully custom
-            Shopify stores — from brand identity to conversion-optimised
-            checkout — so you can focus entirely on growing your business.
+            Stop wasting money on Shopify stores that don't sell. At Ascentia
+            Labs, we build custom Shopify stores that sell more — from brand
+            identity to checkout that converts. You focus on growing your
+            business, we handle everything.
           </motion.p>
 
           <motion.div
@@ -490,7 +495,8 @@ function ServicesSection() {
         <SectionHeading
           badge="Our Shopify Services"
           badgeIcon={ShoppingBag}
-          title="Complete Shopify Solutions Designed for E-commerce Success"
+          title="Shopify Solutions Designed for E-Commerce Success That Sells More
+"
           subtitle="End-to-end store development tailored specifically to your business model and target audience."
         />
 
@@ -596,7 +602,10 @@ function PromoSplit() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
         {/* LEFT */}
         <FadeUp>
-          <BadgePill icon={TrendingUp} label="Scale Your E-commerce" />
+          <BadgePill
+            icon={TrendingUp}
+            label="Scale Your E-commerce — Sell More, Grow Faster"
+          />
           <h2 className="mt-5 text-3xl md:text-4xl lg:text-[35px] 2xl:text-[40px] font-black text-white leading-tight">
             Why Growing Brands Choose{" "}
             <span style={{ color: ORANGE }}>Ascentia Labs</span> for Shopify
@@ -649,7 +658,7 @@ function PromoSplit() {
               30 Days
             </div>
             <p className="text-slate-400 text-[13px] lg:text-[14px] 2xl:text-[18px] mb-6 mt-2">
-              From brief to fully live Shopify store
+              From brief to fully live Shopify store — no delays.
             </p>
 
             <h3 className="text-white font-bold text-[20px] lg:text-[22px] 2xl:text-[25px] mb-3">
@@ -667,7 +676,8 @@ function PromoSplit() {
                 background: `linear-gradient(135deg, ${ORANGE}, ${ORANGE_LIGHT})`,
               }}
             >
-              Start Your Store Journey <ArrowRight size={16} />
+              Start Your Store Journey Now
+              <ArrowRight size={16} />
             </motion.button>
           </GlassCard>
         </FadeUp>
@@ -725,8 +735,8 @@ function WhyChooseUs() {
         <SectionHeading
           badge="Why Ascentia Labs?"
           badgeIcon={Award}
-          title="Partner With Shopify Experts Who Understand E-commerce"
-          subtitle="We don't just build stores — we build revenue-generating machines tailored to your audience and market."
+          title="Partner With Shopify Experts Who Help You Sell More"
+          subtitle="We don't just build stores — we build stores that sell more to your audience."
         />
 
         <div className="grid md:grid-cols-3 gap-5">
@@ -761,16 +771,16 @@ const timelineSteps = [
   {
     day: "Day 1–3",
     title: "Discovery & Strategy",
-    desc: "Audit requirements, define store architecture, map user journeys, and finalise the scope and tech stack.",
+    desc: "Audit requirements, define architecture, map journeys, finalise scope.",
   },
   {
     day: "Day 4–8",
-    title: "Design & Brand Setup",
-    desc: "Custom wireframes and high-fidelity mockups aligned to your brand guidelines. Client sign-off before dev begins.",
+    title: "Design & Brand — Store Looks Like Your Brand",
+    desc: "Custom wireframes, mockups aligned to brand. Client sign-off before build.",
   },
   {
     day: "Day 9–20",
-    title: "Development & Integration",
+    title: "Build & Integrate — Store Ready to Sell",
     desc: "Full Shopify store build — theme coding, product upload, payment gateways, shipping rules, and third-party integrations.",
   },
   {
