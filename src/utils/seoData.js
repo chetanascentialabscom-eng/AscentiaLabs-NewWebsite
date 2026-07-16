@@ -130,12 +130,13 @@ export const seoData = {
   },
 
   textiles: {
-    title: "Textile Industry Software Development | Ascentia Labs",
+    title:
+      " Textile ERP Software — AI Manufacturing, Inventory & Quality Control | Ascentia Labs",
     description:
-      "Specialized software solutions for textile industry including inventory management, production tracking, quality control & supply chain optimization.",
+      "Reduce downtime by 35% with our textile ERP software. AI-powered production planning, inventory management, and quality control for textile manufacturers. Get a free consultation.",
     keywords:
       "textile software development, textile industry solutions, fabric management, textile manufacturing, production planning, textile ERP",
-    url: "https://ascentialabs.com/textiles",
+    url: "https://ascentialabs.com/textile-erp-software-manufacturing-solutions",
   },
 
   manufacturing: {

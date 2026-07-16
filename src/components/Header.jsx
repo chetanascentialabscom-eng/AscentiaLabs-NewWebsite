@@ -520,7 +520,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/textile-industry-software-solutions"
+                      to="/textile-erp-software-manufacturing-solutions"
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
