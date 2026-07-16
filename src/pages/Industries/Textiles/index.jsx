@@ -134,6 +134,19 @@ const InfoCard = ({ icon: Icon, eyebrow, title, children, footer }) => (
   </article>
 );
 
+// NEW: Reusable seam-blending overlay. Every section that starts on a
+// gradient background (gray-900 -> blue-900 -> black) sits directly under a
+// solid bg-black section above it. Because the gradient *starts* at
+// gray-900/blue-900 (not pure black), that boundary used to show a visible
+// seam. This overlay fades pure black into transparent across the first ~5rem
+// of the section, so it visually keeps matching the black section above it
+// before blending into the section's own gradient — exactly the same trick
+// already used on the Hero (bottom fade) and Why-Ascentia-Labs (top fade)
+// sections, just made consistent everywhere.
+const TopSeamFade = () => (
+  <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-0" />
+);
+
 const TextilesPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
@@ -364,13 +377,14 @@ const TextilesPage = () => {
         "Manual inspection misses 15–20% of defects across 50,000+ meters/day.",
       workflow:
         "Computer vision scans every meter in real time, flags defective batches, and documents defects with photos.",
-      result: "40% fewer rejections, ₹5–12L saved per rejected batch.",
+      result:
+        "40% fewer rejections, saving approximately US$5.8K–14K per rejected batch.",
     },
     {
       icon: Wrench,
       title: "Predictive Maintenance",
       problem:
-        "3–4 unexpected breakdowns/week at ₹2–3L each in lost production.",
+        "3–4 unexpected breakdowns per week, costing approximately US$2,300–US$3,450 each in lost production.",
       workflow:
         "Sensors detect failure patterns 48–72 hours ahead; maintenance teams get automated alerts.",
       result: "45% less unplanned downtime, 90% of breakdowns prevented.",
@@ -386,10 +400,12 @@ const TextilesPage = () => {
     {
       icon: Package,
       title: "Color Matching",
-      problem: "8–10 batches/month rejected over color mismatch, ₹3–5L each.",
+      problem:
+        "8–10 batches per month rejected due to color mismatches, resulting in losses of approximately US$3,500–US$5,800 per batch.",
       workflow:
         "AI color analysis compares batches to approved standards with 99% accuracy.",
-      result: "90% fewer color mismatches, ₹25–30L/month saved.",
+      result:
+        "90% fewer color mismatches, saving approximately US$20K–US$35K per month.",
     },
     {
       icon: BarChart3,
@@ -491,29 +507,22 @@ const TextilesPage = () => {
   // 8. Related AI Services — internal linking
   const relatedServices = [
     {
-      title: "Custom AI Fabric Inspection",
-      description: "98% defect detection accuracy with computer vision",
-      href: "/ai-fabric-inspection",
+      title: "AI & Machine Learning Solutions",
+      description:
+        "Improve textile production, automate quality inspection, reduce fabric waste, and make faster operational decisions with AI-powered solutions.",
+      href: "/ai-ml-services",
     },
     {
-      title: "Custom Predictive Maintenance",
-      description: "45% downtime reduction with IoT sensors",
-      href: "/predictive-maintenance",
+      title: "Digital Transformation Services",
+      description:
+        "Modernize your textile factory with connected workflows, real-time production visibility, and smarter inventory management.",
+      href: "/digital-transformation",
     },
     {
-      title: "Custom AI Production Planning",
-      description: "25% output increase with intelligent scheduling",
-      href: "/ai-production-planning",
-    },
-    {
-      title: "Custom AI Quality Management",
-      description: "Automated quality checkpoints and compliance",
-      href: "/ai-quality-management",
-    },
-    {
-      title: "Custom Textile Analytics",
-      description: "Real-time dashboards and predictive insights",
-      href: "/textile-analytics",
+      title: "Software Engineering",
+      description:
+        "Build custom software for textile production, inventory management, quality control, and factory operations.",
+      href: "/software-engineering",
     },
   ];
 
@@ -572,7 +581,7 @@ const TextilesPage = () => {
   ].map((f, i) => ({ id: i, title: f.question, content: f.answer }));
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <SEO {...seoData.textiles} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* ================= HERO ================= */}
@@ -593,7 +602,7 @@ const TextilesPage = () => {
               Textile Manufacturing
             </span>
 
-            <h1 className="text-3xl md:text-4xl leading-tight">
+            <h1 className="text-[25px] md:text-4xl leading-tight">
               Custom Textile Manufacturing Software - AI & Digital
               Transformation Solutions
             </h1>
@@ -665,8 +674,11 @@ const TextilesPage = () => {
         </div>
       </section>
       {/* ================= BUSINESS CHALLENGES ================= */}
-      <section className="py-16 bg-black" aria-labelledby="challenges-heading">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative overflow-hidden py-16 bg-black"
+        aria-labelledby="challenges-heading"
+      >
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="challenges-heading"
@@ -691,10 +703,11 @@ const TextilesPage = () => {
       </section>
       {/* ================= BUSINESS OUTCOMES ================= */}
       <section
-        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
         aria-labelledby="outcomes-heading"
       >
-        <div className="container mx-auto px-4">
+        <TopSeamFade />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="outcomes-heading"
@@ -720,10 +733,10 @@ const TextilesPage = () => {
       </section>
       {/* ================= AI SOLUTIONS (formerly Features) ================= */}
       <section
-        className="py-16 bg-black"
+        className="relative overflow-hidden py-16 bg-black"
         aria-labelledby="ai-solutions-heading"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-8">
             <h2
               id="ai-solutions-heading"
@@ -825,10 +838,11 @@ const TextilesPage = () => {
       </section>
       {/* ================= INDUSTRY USE CASES ================= */}
       <section
-        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
         aria-labelledby="use-cases-heading"
       >
-        <div className="container mx-auto px-4">
+        <TopSeamFade />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="use-cases-heading"
@@ -864,10 +878,6 @@ const TextilesPage = () => {
                   <span className="text-gray-400">AI Workflow: </span>
                   {u.workflow}
                 </p>
-                <p className="text-amber-400">
-                  <span className="text-gray-400">Result: </span>
-                  {u.result}
-                </p>
               </InfoCard>
             ))}
           </div>
@@ -875,10 +885,10 @@ const TextilesPage = () => {
       </section>
       {/* ================= IMPLEMENTATION PROCESS ================= */}
       <section
-        className="py-16 bg-black relative"
+        className="relative overflow-hidden py-16 bg-black"
         aria-labelledby="process-heading"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="process-heading"
@@ -1007,10 +1017,10 @@ const TextilesPage = () => {
       </section>
       {/* ================= RELATED AI SERVICES ================= */}
       <section
-        className="py-16 bg-black"
+        className="relative overflow-hidden py-16 bg-black"
         aria-labelledby="related-services-heading"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="related-services-heading"
@@ -1045,10 +1055,11 @@ const TextilesPage = () => {
       </section>
       {/* ================= RELATED RESOURCES ================= */}
       <section
-        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
         aria-labelledby="related-resources-heading"
       >
-        <div className="container mx-auto px-4">
+        <TopSeamFade />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
             <h2
               id="related-resources-heading"
@@ -1083,8 +1094,11 @@ const TextilesPage = () => {
         </div>
       </section>
       {/* ================= FAQ ================= */}
-      <section className="py-16 bg-black" aria-labelledby="faq-heading">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative overflow-hidden py-16 bg-black"
+        aria-labelledby="faq-heading"
+      >
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2
