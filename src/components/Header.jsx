@@ -1027,7 +1027,7 @@ const Header = () => {
                       <span className="text-sm">Ticketing Solution</span>
                     </Link>
                     <Link
-                      to="/textile-industry-software-solutions"
+                      to="/textile-erp-software-manufacturing-solutions"
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
