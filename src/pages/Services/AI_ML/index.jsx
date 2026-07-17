@@ -1,665 +1,1260 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useConsultation } from '../../../contexts/ConsultationContext';
-import SEO from '../../../components/SEO';
-import ReadMore from '../../../components/ReadMore';
-import { seoData } from '../../../utils/seoData';
-import { 
-  Brain, 
-  Shield, 
-  ChevronDown, 
-  ChevronUp, 
-  Cpu, 
-  Database, 
-  Cloud, 
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useConsultation } from "../../../contexts/ConsultationContext";
+import SEO from "../../../components/SEO";
+import { seoData } from "../../../utils/seoData";
+import {
+  Brain,
+  ChevronDown,
+  ChevronUp,
   TrendingUp,
   Zap,
   Lock,
-  Layers,
-  Smartphone,
   Workflow,
   Award,
   ArrowRight,
   MessageSquare,
-  Monitor,
-  Globe,
-  Settings,
   Eye,
   BarChart3,
-  Target
-} from 'lucide-react';
+  Bot,
+  Sparkles,
+  Target,
+  Factory,
+  Stethoscope,
+  ShoppingCart,
+  Landmark,
+  Truck,
+  Layers,
+  ShieldCheck,
+} from "lucide-react";
+
+/* -------------------------------------------------------------------------
+ * Reusable presentational pieces — reuse existing visual language
+ * (gray-900 cards, amber/orange CTA gradient, blue-400→white heading
+ * gradient, blue-600 numbered badges) instead of introducing new UI.
+ * ---------------------------------------------------------------------- */
+
+const StatCard = ({ number, label }) => (
+  <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
+    <div className="text-3xl md:text-4xl text-white mb-1">{number}</div>
+    <div className="text-blue-200 text-xs sm:text-sm">{label}</div>
+  </div>
+);
+
+const CheckItem = ({ children }) => (
+  <li className="flex items-center gap-2 text-sm text-gray-200">
+    <span className="text-amber-400">✔</span>
+    {children}
+  </li>
+);
+
+// Problem → Solution → Outcome flow card, used by Business Problems and
+// (in accordion form) by the Services grid.
+const FlowCard = ({
+  icon: Icon,
+  title,
+  problem,
+  solution,
+  outcome,
+  footer,
+}) => (
+  <article className="bg-gray-900 rounded-2xl border border-gray-700 p-6 h-full flex flex-col hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
+    {Icon && (
+      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white mb-4">
+        <Icon className="w-6 h-6" />
+      </div>
+    )}
+    <h3 className="text-white text-lg mb-3">{title}</h3>
+    <div className="text-sm text-gray-300 space-y-2 flex-1">
+      <p>
+        <span className="text-gray-500">Solution — </span>
+        {solution}
+      </p>
+      <p className="text-amber-400">
+        <span className="text-gray-500">Outcome — </span>
+        {outcome}
+      </p>
+    </div>
+    {footer && (
+      <div className="mt-4 pt-4 border-t border-gray-700">{footer}</div>
+    )}
+  </article>
+);
+
+// Large-metric KPI card for Business Outcomes.
+const KPICard = ({ metric, label, industry }) => (
+  <div className="bg-gray-900 rounded-2xl border border-gray-700 p-6 text-center hover:border-blue-500 transition-all duration-300">
+    <div className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-2">
+      {metric}
+    </div>
+    <div className="text-white text-sm mb-1">{label}</div>
+    {industry && <div className="text-gray-500 text-xs">{industry}</div>}
+  </div>
+);
+
+// Why-Ascentia card: headline + short explanation + supporting metric.
+const WhyCard = ({ icon: Icon, title, description, metric }) => (
+  <div className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-500">
+    <div className="flex items-center gap-4 mb-3">
+      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 text-white group-hover:scale-110 transition-transform duration-300">
+        <Icon className="w-6 h-6" />
+      </div>
+      <h3 className="text-base text-white leading-tight">{title}</h3>
+    </div>
+    <p className="text-gray-300 text-sm leading-relaxed mb-3">{description}</p>
+    <div className="text-amber-400 text-sm">{metric}</div>
+  </div>
+);
+
+// Accordion group (same visual/interaction pattern used across the site).
+const AccordionGroup = ({ items, activeId, onToggle }) => (
+  <div className="space-y-4">
+    {items.map((item) => (
+      <div
+        key={item.id}
+        className="bg-gray-900 rounded-2xl border border-gray-700 overflow-hidden hover:border-blue-500 transition-all duration-300"
+      >
+        <button
+          className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors"
+          onClick={() => onToggle(activeId === item.id ? null : item.id)}
+        >
+          <span className="text-white pr-4">{item.title}</span>
+          {activeId === item.id ? (
+            <ChevronUp className="w-5 h-5 text-blue-400 flex-shrink-0" />
+          ) : (
+            <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
+          )}
+        </button>
+        {activeId === item.id && (
+          <div className="px-6 pb-5 bg-gray-800/60">
+            <div className="border-t border-gray-700 pt-4">{item.content}</div>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+);
 
 const AI_ML = () => {
-  const [activeTab, setActiveTab] = useState('ml');
   const [expandedFAQ, setExpandedFAQ] = useState(null);
+  const [expandedService, setExpandedService] = useState(0);
   const { openConsultation } = useConsultation();
 
-  const whyChooseUs = [
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Proven Experience in AI & ML",
-      description: "10+ years of experience crafting innovative, secure and scalable AI/ML solutions across various industries."
-    },
-    {
-      icon: <Lock className="w-8 h-8" />,
-      title: "Security-Focused Approach",
-      description: "Industry-leading security protocols with robust encryption and top security certifications for reliable AI/ML implementation."
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Scalability & Flexibility",
-      description: "Scalable AI/ML solutions designed to grow with your business, adapting to evolving requirements and future-proofing investments."
-    },
-    {
-      icon: <Workflow className="w-8 h-8" />,
-      title: "End-to-End Project Management",
-      description: "Complete project lifecycle management from concept to deployment, allowing you to focus on your business."
-    },
-    {
-      icon: <MessageSquare className="w-8 h-8" />,
-      title: "Transparency and Communication",
-      description: "Clear communication with regular updates and transparent discussions throughout your AI/ML project lifecycle."
-    },
-    {
-      icon: <Zap className="w-7 h-7" />,
-      title: "Cost-Effective Solutions",
-      description: "Exceptional value with competitive pricing, focusing on efficiency, reduced costs, and maximum ROI."
-    }
+  /* ===========================================================
+   * DATA
+   * =========================================================== */
+
+  const heroServiceTags = [
+    { icon: <Bot className="w-4 h-4" />, label: "AI Agents" },
+    { icon: <Sparkles className="w-4 h-4" />, label: "Generative AI" },
+    { icon: <Eye className="w-4 h-4" />, label: "Computer Vision" },
+    { icon: <BarChart3 className="w-4 h-4" />, label: "Predictive Analytics" },
+    { icon: <Brain className="w-4 h-4" />, label: "Machine Learning" },
+    { icon: <MessageSquare className="w-4 h-4" />, label: "NLP" },
+    { icon: <Target className="w-4 h-4" />, label: "Recommendation Systems" },
   ];
 
+  const executiveChecks = [
+    "Reduce Operational Costs",
+    "Automate Manual Processes",
+    "Improve Forecast Accuracy",
+    "Increase Productivity",
+    "Enterprise-Ready AI",
+    "Secure Deployment",
+  ];
+
+  const trustMetrics = [
+    { number: "120+", label: "Projects Delivered" },
+    { number: "7+", label: "Years of Experience" },
+    { number: "10+", label: "Industries Served" },
+    { number: "98%", label: "Project Success Rate" },
+    { number: "95%", label: "Client Satisfaction" },
+  ];
+
+  // 2. Business Problems
+  const businessProblems = [
+    {
+      icon: Workflow,
+      title: "Manual Business Processes",
+      problem: "Teams lose hours to repetitive manual work.",
+      solution: "Intelligent process automation.",
+      outcome: "50-70% less manual work",
+    },
+    {
+      icon: BarChart3,
+      title: "Poor Forecasting Accuracy",
+      problem: "Decisions rely on guesswork and averages.",
+      solution: "Predictive analytics & ML models.",
+      outcome: "85-95% forecast accuracy",
+    },
+    {
+      icon: TrendingUp,
+      title: "High Operational Costs",
+      problem: "Inefficiencies quietly erode margins.",
+      solution: "AI-driven process optimization.",
+      outcome: "20-40% cost reduction",
+    },
+    {
+      icon: Zap,
+      title: "Slow Decision Making",
+      problem: "Insights arrive too late to act on.",
+      solution: "Real-time data intelligence.",
+      outcome: "10x faster decisions",
+    },
+    {
+      icon: Bot,
+      title: "Low Productivity",
+      problem: "Teams are stretched across repetitive tasks.",
+      solution: "Workflow automation & AI agents.",
+      outcome: "30-50% productivity gain",
+    },
+    {
+      icon: Target,
+      title: "Poor Customer Experience",
+      problem: "Generic experiences fail to convert.",
+      solution: "Personalization & recommendation systems.",
+      outcome: "25-40% higher satisfaction",
+    },
+    {
+      icon: Eye,
+      title: "Quality Control Failures",
+      problem: "Manual inspection misses costly defects.",
+      solution: "Computer vision & defect detection.",
+      outcome: "95-99% detection accuracy",
+    },
+    {
+      icon: Layers,
+      title: "Inventory Waste",
+      problem: "Overstock and stockouts drain cash.",
+      solution: "Demand forecasting & optimization.",
+      outcome: "20-40% waste reduction",
+    },
+  ];
+
+  // 3. Business Outcomes (KPI cards)
+  const businessOutcomes = [
+    {
+      metric: "20-40%",
+      label: "Operational Cost Reduction",
+      industry: "Manufacturing, Logistics, Retail",
+    },
+    {
+      metric: "30-50%",
+      label: "Productivity Increase",
+      industry: "All Industries",
+    },
+    {
+      metric: "85-95%",
+      label: "Forecasting Accuracy",
+      industry: "Supply Chain, Finance, Retail",
+    },
+    { metric: "10x", label: "Faster Decisions", industry: "All Industries" },
+    {
+      metric: "25-40%",
+      label: "Customer Satisfaction Gain",
+      industry: "E-commerce, Healthcare, Finance",
+    },
+    { metric: "15-30%", label: "Revenue Growth", industry: "All Industries" },
+    {
+      metric: "50-70%",
+      label: "Manual Work Reduction",
+      industry: "All Industries",
+    },
+    {
+      metric: "95-99%",
+      label: "Defect Detection Accuracy",
+      industry: "Manufacturing, Textile, Quality",
+    },
+  ];
+
+  // 4. Why Ascentia Labs
+  const whyMetrics = [
+    { number: "120+", label: "Projects Delivered" },
+    { number: "10+", label: "Industries Served" },
+    { number: "7+", label: "Years of Experience" },
+    { number: "4+", label: "Countries Served" },
+    { number: "95%+", label: "Client Satisfaction" },
+    { number: "98%", label: "Project Success Rate" },
+  ];
+
+  const whyReasons = [
+    {
+      icon: Award,
+      title: "AI Specialists, Not Generalists",
+      description:
+        "Every team member is an AI expert — from data scientists to ML engineers.",
+      metric: "120+ AI/ML projects",
+    },
+    {
+      icon: Lock,
+      title: "Enterprise-Grade Development",
+      description:
+        "Secure, scalable, production-ready systems with industry-leading security protocols.",
+      metric: "ISO-aligned security",
+    },
+    {
+      icon: Sparkles,
+      title: "Custom Model Development",
+      description:
+        "No off-the-shelf solutions — every model is built for your specific data and use case.",
+      metric: "100% custom-built",
+    },
+    {
+      icon: Brain,
+      title: "Deep Learning & Neural Networks",
+      description:
+        "Advanced capabilities across deep learning, transformers, and large language models.",
+      metric: "LLM & transformer expertise",
+    },
+    {
+      icon: Workflow,
+      title: "MLOps & Model Deployment",
+      description:
+        "End-to-end MLOps — from training to deployment, monitoring, and optimization.",
+      metric: "Continuous model uptime",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Long-Term Partnership",
+      description:
+        "Ongoing model maintenance, retraining, and support — not just one-off delivery.",
+      metric: "95%+ client satisfaction",
+    },
+  ];
+
+  // 5. AI Services — Problem → Solution → Outcome, accordion cards
   const services = [
     {
-      id: 'ml',
-      name: 'Machine Learning',
-      icon: <Brain className="w-5 h-5" />,
-      title: 'Custom Machine Learning Solutions',
-      description: 'Our machine learning experts create secure, intelligent and efficient ML models, facilitating predictive analytics, pattern recognition, and automated decision-making, to enhance business operations and drive data-driven insights.',
-      techLogos: [
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
-      ]
+      icon: Target,
+      title: "AI Strategy & Consulting",
+      problem:
+        "You know AI can transform your business, but don\u2019t know where to start.",
+      solution:
+        "We identify high-impact use cases, assess data readiness, and build a practical AI roadmap prioritized by ROI.",
+      outcome:
+        "A clear, prioritized AI roadmap with ROI projections and a risk/compliance framework.",
     },
     {
-      id: 'nlp',
-      name: 'NLP',
-      icon: <MessageSquare className="w-5 h-5" />,
-      title: 'Natural Language Processing & Text Analytics',
-      description: 'Our NLP experts build secure, intelligent and efficient natural language processing solutions, facilitating sentiment analysis, chatbots, language translation, and text understanding, to enhance customer engagement and automate communication.',
-      techLogos: [
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
-        'https://static.vecteezy.com/system/resources/previews/022/227/364/non_2x/openai-chatgpt-logo-icon-free-png.png',
-        'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/1/13/ChatGPT-Logo.png'
-      ]
+      icon: Sparkles,
+      title: "Generative AI Development",
+      problem:
+        "You want custom generative AI — not generic off-the-shelf tools.",
+      solution:
+        "We build custom solutions on OpenAI, Anthropic, Google, and open-source models, fine-tuned on your data.",
+      outcome:
+        "50-80% less content creation time, 24/7 AI-powered support, new AI-driven revenue streams.",
     },
     {
-      id: 'cv',
-      name: 'Computer Vision',
-      icon: <Eye className="w-5 h-5" />,
-      title: 'Computer Vision Solutions',
-      description: 'Our computer vision experts develop secure, accurate and efficient image recognition systems, facilitating object detection, facial recognition, and visual analytics, to enhance automation and enable intelligent visual processing.',
-      techLogos: [
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
-      ]
+      icon: Bot,
+      title: "AI Agent Development",
+      problem:
+        "You need autonomous agents that act without human intervention.",
+      solution:
+        "We build agentic systems with LangChain, AutoGen, and custom frameworks that automate workflows and decisions.",
+      outcome:
+        "50-70% less manual work, 24/7 autonomous operations, scalable automation.",
     },
     {
-      id: 'analytics',
-      name: 'Predictive Analytics',
-      icon: <BarChart3 className="w-5 h-5" />,
-      title: 'Data Analytics & Insights',
-      description: 'Our analytics experts implement secure, intelligent and efficient predictive models, facilitating forecasting, trend analysis, and business intelligence, to enhance strategic planning and drive informed decision-making.',
-      techLogos: [
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-        'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
-        'https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-        'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
-      ]
-    }
+      icon: Eye,
+      title: "Computer Vision Services",
+      problem:
+        "You need to analyze images and video at scale — inspection, security, retail.",
+      solution:
+        "Custom vision systems using deep learning, CNNs, and vision transformers.",
+      outcome:
+        "95-99% defect detection accuracy, 50-80% less manual inspection.",
+    },
+    {
+      icon: BarChart3,
+      title: "Predictive Analytics Services",
+      problem: "Decisions rely on guesswork instead of accurate predictions.",
+      solution:
+        "Custom predictive models using ML, time series, and deep learning.",
+      outcome:
+        "85-95% forecast accuracy, 20-40% cost reduction, proactive decisions.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Natural Language Processing",
+      problem: "Massive text data sits unused — feedback, tickets, contracts.",
+      solution:
+        "Custom NLP for classification, sentiment, extraction, and conversational AI using transformers and LLMs.",
+      outcome:
+        "80-90% less manual text processing, real-time customer insights.",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Recommendation Systems",
+      problem:
+        "Customers aren\u2019t finding what they want — you\u2019re losing sales.",
+      solution:
+        "Custom recommendation engines using collaborative, content-based, and hybrid filtering.",
+      outcome: "15-30% sales increase, 25-40% better engagement and retention.",
+    },
+    {
+      icon: Brain,
+      title: "Machine Learning Development",
+      problem: "You have data but aren\u2019t using it to predict or optimize.",
+      solution:
+        "Custom ML models for classification, regression, clustering, and optimization.",
+      outcome:
+        "20-40% operational improvement, competitive advantage from data.",
+    },
   ];
 
-  const stats = [
-    { number: '7+', label: 'Business Years' },
-    { number: '120+', label: 'Projects Delivered' },
-    { number: '10+', label: 'Industries Catered' },
-    { number: '4+', label: 'Countries' }
+  // 6. Industry Solutions
+  const industrySolutions = [
+    {
+      icon: Factory,
+      title: "Manufacturing & Industrial AI",
+      applications: [
+        "Predictive maintenance — 45% downtime reduction",
+        "Quality inspection — 98% defect detection",
+        "Production optimization — 25% output increase",
+      ],
+      industries: "Textile, Automotive, Electronics, FMCG",
+    },
+    {
+      icon: Stethoscope,
+      title: "Healthcare AI",
+      applications: [
+        "Medical image analysis",
+        "Clinical decision support",
+        "Patient outcome prediction",
+      ],
+      industries: "Hospitals, Pharma, Biotech, Diagnostics",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Retail & E-commerce AI",
+      applications: [
+        "Recommendation systems — 15-30% sales increase",
+        "Demand forecasting — 85-95% accuracy",
+        "Customer personalization",
+      ],
+      industries: "E-commerce, Retail Chains, D2C Brands",
+    },
+    {
+      icon: Landmark,
+      title: "Financial Services AI",
+      applications: [
+        "Fraud detection",
+        "Credit scoring",
+        "Algorithmic trading & risk management",
+      ],
+      industries: "Banking, Insurance, Fintech, Investment",
+    },
+    {
+      icon: Truck,
+      title: "Logistics & Supply Chain AI",
+      applications: [
+        "Route optimization",
+        "Demand forecasting",
+        "Warehouse automation",
+      ],
+      industries: "Logistics, Transportation, Warehousing",
+    },
   ];
 
+  // 7. Development Process
+  const processSteps = [
+    {
+      number: "1",
+      title: "Discovery",
+      duration: "1-2 weeks",
+      description: "Business problem definition and feasibility analysis.",
+    },
+    {
+      number: "2",
+      title: "Business Analysis",
+      duration: "2-3 weeks",
+      description: "Data assessment, use case prioritization, ROI modeling.",
+    },
+    {
+      number: "3",
+      title: "Solution Architecture",
+      duration: "2-3 weeks",
+      description: "Technology selection and data pipeline planning.",
+    },
+    {
+      number: "4",
+      title: "AI Development",
+      duration: "4-12 weeks",
+      description: "Data preparation, model training, and experimentation.",
+    },
+    {
+      number: "5",
+      title: "Testing",
+      duration: "2-4 weeks",
+      description: "Model validation, performance testing, QA.",
+    },
+    {
+      number: "6",
+      title: "Deployment",
+      duration: "2-4 weeks",
+      description: "Model deployment, integration, MLOps setup.",
+    },
+    {
+      number: "7",
+      title: "Support",
+      duration: "Continuous",
+      description: "Ongoing monitoring, retraining, and optimization.",
+    },
+  ];
+
+  // 8. Technology Capabilities (capability-first, not logos)
+  const techCategories = [
+    {
+      title: "Generative AI",
+      capabilities: "GPT-4/o1, Claude, Gemini",
+      value: "Enterprise copilots, content automation, knowledge assistants",
+    },
+    {
+      title: "Machine Learning & Deep Learning",
+      capabilities: "PyTorch, TensorFlow",
+      value: "Custom model development, production ML systems",
+    },
+    {
+      title: "AI Agents & Orchestration",
+      capabilities: "LangChain, AutoGen",
+      value: "Agentic workflows, RAG systems, autonomous collaboration",
+    },
+    {
+      title: "Computer Vision & NLP",
+      capabilities: "OpenCV, Hugging Face",
+      value: "Image/video analysis, NLP models, fine-tuning",
+    },
+    {
+      title: "MLOps & Deployment",
+      capabilities: "Kubeflow, MLflow, Docker/Kubernetes",
+      value: "Model deployment, monitoring, scalable production",
+    },
+  ];
+
+  // 9. Case Studies
+  const caseStudies = [
+    {
+      title: "Manufacturing Quality Inspection",
+      rows: [
+        {
+          metric: "Defect Detection",
+          before: "60-70% accuracy",
+          after: "98% accuracy",
+        },
+        {
+          metric: "Inspection Speed",
+          before: "Manual (slow)",
+          after: "2.5x faster",
+        },
+        { metric: "Defect Rejections", before: "25-30%", after: "5-10%" },
+      ],
+      impact: "Annual Savings: US$275K+",
+    },
+    {
+      title: "Retail Recommendation System",
+      rows: [
+        { metric: "Conversion Rate", before: "2.5%", after: "3.8%" },
+        { metric: "Average Order Value", before: "$150", after: "$195" },
+        { metric: "Customer Retention", before: "45%", after: "62%" },
+      ],
+      impact: "Annual Revenue Impact: US$1.9M+",
+    },
+    {
+      title: "Predictive Maintenance",
+      rows: [
+        {
+          metric: "Unplanned Downtime",
+          before: "8 hrs/week",
+          after: "4.4 hrs/week",
+        },
+        {
+          metric: "Maintenance Costs",
+          before: "$100K/month",
+          after: "$68K/month",
+        },
+        {
+          metric: "Machine Life",
+          before: "10 yrs projected",
+          after: "14 yrs projected",
+        },
+      ],
+      impact: "Annual Savings: $575K+",
+    },
+  ];
+
+  // 10. Testimonials
+  const testimonials = [
+    {
+      quote:
+        "Ascentia Labs delivered a computer vision solution that reduced our defect rate by 70%. Their AI expertise set them apart.",
+      role: "VP of Manufacturing",
+      industry: "Leading Textile Mill",
+    },
+    {
+      quote:
+        "The recommendation system increased our conversion rate by 52% and average order value by 30%. Game-changing results.",
+      role: "CTO",
+      industry: "E-commerce Platform",
+    },
+    {
+      quote:
+        "Their AI strategy consulting helped us identify 8 high-impact use cases. Within 6 months, 3 models were in production.",
+      role: "Head of Digital",
+      industry: "Enterprise Retailer",
+    },
+  ];
+
+  // 11. Related AI Services
+  const relatedServices = [
+    {
+      title: "AI & Machine Learning",
+      description:
+        "Improve quality control, reduce fabric waste, predict machine failures, and optimize production with AI solutions built for textile manufacturers.",
+      href: "/ai-ml-services",
+    },
+    {
+      title: "Digital Transformation",
+      description:
+        "Replace manual operations with connected digital workflows, real-time production monitoring, inventory visibility, and factory automation.",
+      href: "/digital-transformation",
+    },
+    {
+      title: "Software Engineering",
+      description:
+        "Build custom textile manufacturing software including ERP integrations, production management, inventory systems, and enterprise applications.",
+      href: "/software-engineering",
+    },
+  ];
+
+  // 12. Related Resources
+  const relatedResources = [
+    {
+      title: "AI in Manufacturing: Trends & Applications",
+      topic: "Industrial AI",
+      href: "#",
+    },
+    {
+      title: "Generative AI: A Guide for Enterprises",
+      topic: "GenAI Adoption",
+      href: "#",
+    },
+    {
+      title: "How to Choose an AI Development Partner",
+      topic: "Selection Criteria",
+      href: "#",
+    },
+  ];
+
+  // 13. FAQ
   const faqs = [
     {
-      question: "What AI/ML methodologies do you follow?",
-      answer: "We follow industry-standard methodologies including CRISP-DM, Agile ML development, and MLOps practices. Our approach ensures iterative model development, continuous monitoring, and seamless deployment of AI/ML solutions tailored to your business needs."
+      question: "What AI/ML development services do you offer?",
+      answer:
+        "AI strategy & consulting, custom machine learning, generative AI (LLM applications), AI agents, computer vision, NLP, predictive analytics, recommendation systems, and MLOps — all custom-built for your business problem and data.",
     },
     {
-      question: "How long does it take to develop an AI/ML solution?",
-      answer: "Development timelines vary based on complexity and data availability. Simple ML models can be delivered in 1-2 months, while complex deep learning solutions may take 4-8 months or more. We provide detailed timelines and milestones during the planning phase."
+      question: "How long does it take to develop an AI solution?",
+      answer:
+        "Discovery & Strategy: 2-4 weeks. MVP Development: 6-12 weeks. Full Production System: 12-24 weeks. Most enterprise AI projects complete in 3-6 months from discovery to deployment.",
+    },
+    {
+      question: "What does AI development cost?",
+      answer:
+        "AI Strategy & Consulting: $7K-$21K. Custom ML Models: $14K-$70K. Generative AI/LLM Apps: $21K-$84K. Computer Vision: $14K-$56K. Full Enterprise AI Platform: $70K-$420K+. We provide fixed-price quotes with ROI projections.",
+    },
+    {
+      question: "Can you integrate AI with our existing systems (ERP, CRM)?",
+      answer:
+        "Yes — SAP, Oracle, Dynamics, Tally, Salesforce, HubSpot, Zoho, Snowflake, Databricks, AWS/Azure/GCP, and custom applications, with minimal disruption to operations.",
     },
     {
       question: "Do you provide model maintenance and retraining?",
-      answer: "Yes, we offer comprehensive post-deployment support including model monitoring, performance tracking, periodic retraining with new data, and continuous optimization to ensure your AI/ML models maintain high accuracy and relevance."
+      answer:
+        "Yes, as part of our MLOps services — continuous monitoring and periodic retraining so your models stay accurate as data patterns change.",
     },
     {
-      question: "Can you integrate AI/ML with our existing systems?",
-      answer: "Absolutely. We specialize in seamless integration of AI/ML models with existing platforms, databases, APIs, and business applications to ensure smooth data flow and operational continuity without disrupting your current workflows."
-    }
-  ];
+      question: "What security and compliance measures do you follow?",
+      answer:
+        "AES-256 encryption, role-based access with MFA, GDPR/HIPAA/ISO 27001-aligned compliance, and secure development following OWASP Top 10 practices.",
+    },
+    {
+      question: "What\u2019s your approach to data privacy?",
+      answer:
+        "Client data is never used to train public models. All data is processed in secure, isolated environments under NDAs and data processing agreements — on-premises or in your own cloud.",
+    },
+    {
+      question: "Do you offer support after deployment?",
+      answer:
+        "Yes — 24/7 monitoring, ongoing maintenance, periodic retraining, dedicated technical support, and SLAs for response and resolution times.",
+    },
+  ].map((f, i) => ({
+    id: i,
+    title: f.question,
+    content: (
+      <p className="text-gray-300 text-sm leading-relaxed">{f.answer}</p>
+    ),
+  }));
 
   return (
     <div className="min-h-screen bg-white">
       <SEO {...seoData.aiMl} />
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-0">
-        {/* Animated Background Elements */}
+
+      {/* ================= HERO ================= */}
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white px-4 sm:px-6 lg:px-8 overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-16">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 left-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-20 right-40 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-        
-        {/* Smooth transition gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
-        
-        <div className="max-w-7xl mx-auto w-full relative z-10 py-8 sm:py-12 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="max-w-7xl mx-auto w-full relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left — Enterprise headline & description */}
             <div>
-              <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm  mb-4 sm:mt-4 sm:mb-6 backdrop-blur-sm">
-                Industry's Favorite
+              <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm mb-4 sm:mb-6 backdrop-blur-sm">
+                Industry&apos;s Favorite
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl  mb-4 sm:mb-6 leading-tight">
-                AI & Machine Learning Solutions
+              <h1 className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 leading-tight">
+                AI Development Services — Machine Learning, Generative AI &amp;
+                Enterprise Solutions
               </h1>
-              <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 leading-relaxed">
-                At Ascentia Labs, we deliver cutting-edge AI and machine learning solutions that transform your business with intelligent automation. Our expert team specializes in building scalable, secure, and high-performance AI models using the latest technologies and best practices in artificial intelligence.
+              <p className="text-base sm:text-lg text-blue-100 mb-4 leading-relaxed max-w-xl">
+                Transform your business with custom AI that drives measurable
+                outcomes — from predictive analytics and computer vision to
+                generative AI and intelligent automation.
               </p>
-              <div className="mb-8 sm:mb-12">
-                <button 
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <button
                   onClick={openConsultation}
-                  className="px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300  shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center gap-2 "
+                  className="px-8 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-xl hover:from-amber-500 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 inline-flex items-center justify-center gap-2"
                 >
-                  Get Consultation
+                  📞 Book Free AI Strategy Session
                   <ArrowRight className="w-5 h-5" />
                 </button>
+                <a
+                  href="#services-heading"
+                  className="px-8 py-4 border border-white/30 text-white rounded-xl hover:bg-white/10 transition-all duration-300 text-center"
+                >
+                  Explore Services
+                </a>
               </div>
 
-              {/* Stats - Mobile/Tablet */}
-              <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
-                {stats.map((stat, index) => (
-                  <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
-                    <div className="text-3xl md:text-4xl  text-white mb-1">{stat.number}</div>
-                    <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
-                  </div>
+              <ul className="flex flex-wrap gap-2">
+                {heroServiceTags.map((tag, i) => (
+                  <li
+                    key={i}
+                    className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 text-xs text-blue-100"
+                  >
+                    {tag.icon}
+                    {tag.label}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
 
-            {/* Right Visual Content - Service Cards Grid */}
-            <div className="mt-8 lg:mt-0">
-              {/* Central Feature Badge - At Top */}
-              <div className="flex justify-center mb-6 animate-fadeIn">
-                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-transform duration-300 cursor-pointer">
-                  <div className="flex items-center gap-2.5">
-                    <Brain className="w-7 h-7 text-white animate-pulse" />
-                    <h3 className="text-sm sm:text-base  text-white">AI & ML Excellence</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {/* Card 1 - Machine Learning */}
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Brain className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6 relative z-10" />
-                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">Machine Learning</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Predictive models</p>
-                </div>
-
-                {/* Card 2 - NLP */}
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <MessageSquare className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 relative z-10" />
-                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">NLP</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Text analytics</p>
-                </div>
-
-                {/* Card 3 - Computer Vision */}
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <Eye className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">Computer Vision</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Image recognition</p>
-                </div>
-
-                {/* Card 4 - Predictive Analytics */}
-                <div className="relative bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-xl p-5 sm:p-6 cursor-pointer group flex flex-col items-center justify-center text-center min-h-[140px] sm:min-h-[160px] transition-all duration-500 hover:scale-105 hover:-translate-y-3 hover:bg-white/25 hover:border-white/60 hover:shadow-2xl hover:shadow-blue-500/50 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/10 transition-all duration-500 rounded-2xl"></div>
-                  <BarChart3 className="w-12 h-12 sm:w-14 sm:h-14 text-white mb-3 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" />
-                  <h4 className="text-sm sm:text-base  text-white mb-1.5 relative z-10">Predictive Analytics</h4>
-                  <p className="text-xs text-blue-100 leading-tight relative z-10 group-hover:text-white transition-colors duration-300">Data insights</p>
-                </div>
-              </div>
-            </div>
+            {/* Right — Executive Summary Panel */}
           </div>
 
-          {/* Stats - Desktop */}
-          <div className="hidden lg:grid grid-cols-4 gap-8 mt-20 pt-12 border-t border-blue-400/30">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
-                <div className="text-4xl md:text-5xl  text-white mb-2">{stat.number}</div>
-                <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
-              </div>
+          {/* Trust metrics */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mt-16 pt-10 border-t border-blue-400/30">
+            {trustMetrics.map((stat, index) => (
+              <StatCard key={index} number={stat.number} label={stat.label} />
             ))}
           </div>
         </div>
 
         <style>{`
-          @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-          }
-          @keyframes blob {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-          }
-          @keyframes fadeIn {
-            from { 
-              opacity: 0; 
-              transform: translateY(30px) scale(0.95); 
+            @keyframes blob {
+              0%, 100% { transform: translate(0, 0) scale(1); }
+              33% { transform: translate(30px, -50px) scale(1.1); }
+              66% { transform: translate(-20px, 20px) scale(0.9); }
             }
-            to { 
-              opacity: 1; 
-              transform: translateY(0) scale(1); 
-            }
-          }
-          @keyframes gentleFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-          }
-          .animate-float {
-            animation: float 3s ease-in-out infinite;
-          }
-          .animate-blob {
-            animation: blob 7s infinite;
-          }
-          .animate-fadeIn {
-            animation: fadeIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            animation-fill-mode: forwards;
-          }
-          .animation-delay-1000 {
-            animation-delay: 0.2s;
-          }
-          .animation-delay-2000 {
-            animation-delay: 0.4s;
-          }
-          .animation-delay-3000 {
-            animation-delay: 0.6s;
-          }
-          .animation-delay-4000 {
-            animation-delay: 4s;
-          }
-        `}</style>
+            .animate-blob { animation: blob 7s infinite; }
+            .animation-delay-2000 { animation-delay: 0.4s; }
+            .animation-delay-4000 { animation-delay: 4s; }
+          `}</style>
       </section>
-{/* Services Tabs Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
-        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl  text-white mb-4">
-              Our AI & Machine Learning Services
+      {/* ================= BUSINESS PROBLEMS ================= */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        aria-labelledby="problems-heading"
+      >
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="problems-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              Can AI Solve Your Business Problems?
             </h2>
-            <p className="text-base sm:text-lg text-gray-400 max-w-3xl mx-auto">
-              Comprehensive AI/ML solutions tailored to your business needs
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              If you&apos;re facing any of these challenges, AI can help.
+              Here&apos;s how.
             </p>
           </div>
-
-          {/* Service Tabs - Compact */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 mb-12">
-            {services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => setActiveTab(service.id)}
-                className={`group relative px-3 sm:px-5 py-3 rounded-xl  text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 ${
-                  activeTab === service.id
-                    ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-lg shadow-amber-500/50'
-                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
-                }`}
-              >
-                <span className="inline-flex items-center gap-1 sm:gap-2">
-                  {service.icon}
-                  <span className="whitespace-normal sm:whitespace-nowrap text-left">{service.name}</span>
-                </span>
-              </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {businessProblems.map((p, i) => (
+              <FlowCard
+                key={i}
+                icon={p.icon}
+                title={p.title}
+                problem={p.problem}
+                solution={p.solution}
+                outcome={p.outcome}
+              />
             ))}
           </div>
-
-          {/* Tab Content */}
-          {services.map((service) => (
-            activeTab === service.id && (
-              <div key={service.id} className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center animate-fadeIn">
-                <div className="order-2 lg:order-1">
-                  <h3 className="text-2xl sm:text-3xl  text-white mb-4 sm:mb-6">
-                    {service.title}
-                  </h3>
-                  <div className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6 sm:mb-8">
-                    <ReadMore maxChars={120} mobileOnly={true} className="text-gray-300">
-                      {service.description}
-                    </ReadMore>
-                  </div>
-                 
-                </div>
-                <div className="order-1 lg:order-2">
-                  <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 p-8">
-                    {/* Tech Logos Grid */}
-                    <div className="grid grid-cols-3 gap-6">
-                      {service.techLogos.map((logo, index) => (
-                        <div 
-                          key={index}
-                          className="flex items-center justify-center p-4 bg-white rounded-2xl border border-gray-600 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:scale-110 group"
-                        >
-                          <img 
-                            src={logo} 
-                            alt="Technology" 
-                            className="w-full h-12 object-contain transition-all duration-300"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 right-4 w-20 h-20 bg-blue-500/10 rounded-full blur-2xl"></div>
-                    <div className="absolute bottom-4 left-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl"></div>
-                  </div>
-                </div>
-              </div>
-            )
-          ))}
         </div>
       </section>
-     
 
-       {/* Transform Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        {/* Smooth transition gradient at top */}
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
-        
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
-        </div>
-        
-        {/* Smooth transition gradient at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
-
+      {/* ================= BUSINESS OUTCOMES ================= */}
+      <section
+        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
+        aria-labelledby="outcomes-heading"
+      >
         <div className="relative container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="text-white space-y-8">
-                <div>
-                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
-                    Lead The AI Revolution With Ascentia Labs
-                  </h2>
-                  <p className="text-xl text-gray-300 mb-8">
-                    Here's Why Innovative Companies Choose Us For AI & ML Solutions!
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      01
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Advanced AI/ML Expertise
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      02
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Custom Model Development
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      03
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Deep Learning & Neural Networks
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      04
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Data Science & Analytics
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      05
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        MLOps & Model Deployment
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      06
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Continuous Model Optimization
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Content - Image/Visual */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
-                  <div className="text-center text-white">
-                    <div className="relative w-32 h-32 mx-auto mb-6">
-                      {/* Main circle with yellow and black accent for high contrast */}
-                      <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
-                        {/* Animated color overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
-                        
-                        {/* Inner black accent ring */}
-                        {/* <div className="absolute inset-3 rounded-full border-2 border-black/30"></div> */}
-                        
-                        {/* Checkmark icon with white color */}
-                        <svg className="w-16 h-16 text-black relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        
-                        {/* Subtle rotating border effect */}
-                        <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
-                      </div>
-                      
-                      {/* Outer glow rings with yellow theme */}
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
-                    </div>
-                    <h3 className="text-2xl  mb-4">
-                      Ready to Harness AI Power?
-                    </h3>
-                    <p className="text-blue-100 mb-6">
-                      Join 200+ AI/ML projects and unlock intelligent automation with cutting-edge solutions from Ascentia Labs.
-                    </p>
-                    <button 
-                      onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg "
-                    >
-                      Get Your AI Consultation
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="text-center mb-10">
+            <h2
+              id="outcomes-heading"
+              className="text-3xl md:text-4xl text-white mb-3"
+            >
+              What Our AI Solutions Deliver
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Executives buy outcomes, not technology. Here&apos;s what we
+              deliver.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {businessOutcomes.map((o, i) => (
+              <KPICard
+                key={i}
+                metric={o.metric}
+                label={o.label}
+                industry={o.industry}
+              />
+            ))}
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </section>
 
-       {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl  mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
-              Why Ascentia Labs?
+      {/* ================= WHY ASCENTIA LABS ================= */}
+      <section
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        aria-labelledby="why-us-heading"
+      >
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="why-us-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              Why Leading Enterprises Choose Ascentia Labs
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Partner with AI/ML experts who deliver intelligent automation solutions
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+              Partner with AI/ML experts who deliver measurable business
+              outcomes.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whyChooseUs.map((item, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl shadow-md hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 border border-gray-700 hover:border-blue-500 transform hover:-translate-y-3 hover:scale-105 overflow-hidden"
-              >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-blue-800/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Animated background elements */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-blue-400/10 rounded-full blur-xl group-hover:scale-150 group-hover:bg-blue-400/20 transition-all duration-500"></div>
-                  <div className="absolute bottom-4 left-4 w-12 h-12 bg-blue-300/10 rounded-full blur-lg group-hover:scale-125 group-hover:bg-blue-300/20 transition-all duration-500"></div>
-                </div>
-                
-                <div className="relative z-10">
-                  {/* Icon and Title in one line */}
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg group-hover:shadow-blue-500/50">
-                      {item.icon}
-                    </div>
-                    
-                    <h3 className="text-lg  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-blue-100 transition-all duration-300 leading-tight">
-                      {item.title}
-                    </h3>
-                  </div>
-                  
-                  <div className="text-gray-300 leading-relaxed text-sm group-hover:text-gray-200 transition-colors duration-300">
-                    <ReadMore maxChars={80} mobileOnly={true}>
-                      {item.description}
-                    </ReadMore>
-                  </div>
-
-                  {/* Decorative element */}
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-600/10 to-blue-800/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                </div>
-              </div>
+            {whyReasons.map((item, i) => (
+              <WhyCard
+                key={i}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                metric={item.metric}
+              />
             ))}
           </div>
         </div>
       </section>
 
-     
-
-      {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
-              Frequently Asked Questions
+      {/* ================= AI SERVICES ================= */}
+      {/* ================= AI SERVICES ================= */}
+      <section
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
+        aria-labelledby="services-heading"
+      >
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="services-heading"
+              className="text-3xl sm:text-4xl text-white mb-3"
+            >
+              Our AI &amp; Machine Learning Services
             </h2>
-            <p className="text-lg text-gray-300">
-              Get answers to common questions about our AI & ML services
+            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+              Comprehensive AI/ML solutions — from strategy to deployment.
             </p>
           </div>
 
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-900 rounded-2xl border border-gray-700 overflow-hidden hover:border-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
-                <button
-                  className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors"
-                  onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+          <div className="grid md:grid-cols-2 gap-6 items-start">
+            {services.map((s, i) => {
+              const IconComponent = s.icon;
+              const isOpen = expandedService === i;
+              return (
+                <article
+                  key={i}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden hover:border-white/40 transition-all duration-300"
                 >
-                  <span className=" text-white pr-4">{faq.question}</span>
-                  {expandedFAQ === index ? (
-                    <ChevronUp className="w-5 h-5 text-blue-400 flex-shrink-0 transform transition-transform duration-300" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 transform transition-transform duration-300" />
-                  )}
-                </button>
-                {expandedFAQ === index && (
-                  <div className="px-6 pb-5 bg-gray-800 animate-fadeIn">
-                    <div className="border-t border-gray-700 pt-4">
-                      <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <button
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
+                    onClick={() => setExpandedService(isOpen ? null : i)}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-black flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="w-5 h-5" />
+                      </span>
+                      <span className="text-white">{s.title}</span>
+                    </span>
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-blue-300 flex-shrink-0" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 pb-6 text-sm text-gray-200 space-y-2">
+                      <p>
+                        <span className="text-blue-300">Problem — </span>
+                        {s.problem}
+                      </p>
+                      <p>
+                        <span className="text-blue-300">Solution — </span>
+                        {s.solution}
+                      </p>
+                      <p className="text-amber-300">
+                        <span className="text-blue-300">Outcome — </span>
+                        {s.outcome}
+                      </p>
+                      <button
+                        onClick={openConsultation}
+                        className="text-amber-400 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all mt-2"
+                      >
+                        Talk to us about this <ArrowRight size={14} />
+                      </button>
                     </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+      </section>
+
+      {/* ================= INDUSTRY SOLUTIONS ================= */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black"
+        aria-labelledby="industry-heading"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="industry-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              AI Solutions by Industry
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              Deep domain expertise, proven results, across every industry we
+              serve.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industrySolutions.map((ind, i) => {
+              const IconComponent = ind.icon;
+              return (
+                <article
+                  key={i}
+                  className="bg-gray-900 rounded-2xl border border-gray-700 p-6 hover:border-blue-500 transition-all duration-300 flex flex-col"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center text-white mb-4">
+                    <IconComponent className="w-6 h-6" />
                   </div>
-                )}
+                  <h3 className="text-white text-lg mb-3">{ind.title}</h3>
+                  <ul className="text-sm text-gray-300 space-y-1.5 mb-4 flex-1 list-none">
+                    {ind.applications.map((a, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                        <span>{a}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-gray-500 text-xs mb-4">{ind.industries}</p>
+                  <button
+                    onClick={openConsultation}
+                    className="text-amber-400 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
+                  >
+                    Talk to us about this <ArrowRight size={14} />
+                  </button>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= DEVELOPMENT PROCESS ================= */}
+      <section
+        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
+        aria-labelledby="process-heading"
+      >
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        <div className="relative container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2
+              id="process-heading"
+              className="text-3xl md:text-4xl text-white mb-3"
+            >
+              Our AI Development Process
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              A proven 7-step process — 12-24 weeks from concept to production.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-14 h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg font-extrabold mb-2 mx-auto">
+                  {step.number}
+                </div>
+                <h3 className="font-medium text-white text-sm mb-1">
+                  {step.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+      </section>
+
+      {/* ================= TECHNOLOGY CAPABILITIES ================= */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        aria-labelledby="tech-heading"
+      >
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="tech-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              Our AI Technology Stack
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              The latest AI technologies — mapped to business capability, not
+              logos.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {techCategories.map((t, i) => (
+              <div
+                key={i}
+                className="bg-gray-900 rounded-2xl border border-gray-700 p-6 grid sm:grid-cols-3 gap-4 items-center hover:border-blue-500 transition-all duration-300"
+              >
+                <h3 className="text-white text-base">{t.title}</h3>
+                <p className="text-gray-400 text-sm">{t.capabilities}</p>
+                <p className="text-amber-400 text-sm">{t.value}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-     
-     
+      {/* ================= CASE STUDIES ================= */}
+      <section
+        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
+        aria-labelledby="case-studies-heading"
+      >
+        <div className="relative container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2
+              id="case-studies-heading"
+              className="text-3xl md:text-4xl text-white mb-3"
+            >
+              AI Success Stories — Measurable Results
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Real results from real AI projects.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {caseStudies.map((cs, i) => (
+              <article
+                key={i}
+                className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6"
+              >
+                <h3 className="text-white text-lg mb-4">{cs.title}</h3>
+                <div className="space-y-3 mb-4">
+                  {cs.rows.map((r, idx) => (
+                    <div key={idx} className="text-sm">
+                      <div className="text-gray-300 mb-1">{r.metric}</div>
+                      <div className="flex items-center gap-2 text-xs">
+                        <span className="text-gray-400">{r.before}</span>
+                        <ArrowRight size={12} className="text-blue-300" />
+                        <span className="text-amber-400">{r.after}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-amber-400 text-sm font-medium border-t border-white/20 pt-3">
+                  {cs.impact}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+      </section>
+
+      {/* ================= TESTIMONIALS ================= */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        aria-labelledby="testimonials-heading"
+      >
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="testimonials-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              What Our Clients Say
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              Trusted by enterprises across 10+ industries.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <figure
+                key={i}
+                className="bg-gray-900 rounded-2xl border border-gray-700 p-6 flex flex-col"
+              >
+                <blockquote className="text-gray-200 text-sm leading-relaxed mb-4 flex-1">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="text-sm border-t border-gray-700 pt-3">
+                  <div className="text-white">{t.role}</div>
+                  <div className="text-gray-500 text-xs">{t.industry}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= RELATED AI SERVICES ================= */}
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black"
+        aria-labelledby="related-services-heading"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2
+              id="related-services-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              Related AI Services
+            </h2>
+            <p className="text-base text-gray-400 max-w-2xl mx-auto">
+              Explore our full suite of AI and machine learning solutions.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 list-none">
+            {relatedServices.map((s, i) => (
+              <li key={i}>
+                <Link
+                  to={s.href}
+                  className="block bg-gray-900 rounded-xl border border-gray-700 p-6 h-full hover:border-blue-500 hover:bg-gray-800 transition-all duration-300"
+                >
+                  <h3 className="text-white text-base mb-2">{s.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{s.description}</p>
+                  <span className="text-amber-400 text-sm font-medium inline-flex items-center gap-1">
+                    Learn more <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ================= RELATED RESOURCES ================= */}
+      <section
+        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden "
+        aria-labelledby="related-resources-heading"
+      >
+        <div className="relative container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2
+              id="related-resources-heading"
+              className="text-3xl md:text-4xl text-white mb-3"
+            >
+              Continue Learning — AI &amp; ML Resources
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Deepen your understanding of AI and machine learning.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none">
+            {relatedResources.map((r, i) => (
+              <li key={i}>
+                <Link
+                  to={r.href}
+                  className="block bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20 h-full hover:bg-white/15 transition-all duration-300"
+                >
+                  <figure className="m-0">
+                    <figcaption className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-2">
+                      {r.topic}
+                    </figcaption>
+                    <h3 className="text-white text-base font-medium leading-snug">
+                      {r.title}
+                    </h3>
+                  </figure>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+      </section>
+
+      {/* ================= FAQ ================= */}
+      <section
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        aria-labelledby="faq-heading"
+      >
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2
+              id="faq-heading"
+              className="text-3xl sm:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+            >
+              Frequently Asked Questions — AI &amp; ML Services
+            </h2>
+            <p className="text-base text-gray-300">
+              Get answers to common questions about our AI &amp; ML services.
+            </p>
+          </div>
+          <AccordionGroup
+            items={faqs}
+            activeId={expandedFAQ}
+            onToggle={setExpandedFAQ}
+          />
+        </div>
+      </section>
     </div>
   );
 };

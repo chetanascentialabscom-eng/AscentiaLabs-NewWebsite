@@ -603,7 +603,7 @@ const TextilesPage = () => {
             </span>
 
             <h1 className="text-[25px] md:text-4xl leading-tight">
-              Custom Textile Manufacturing Software - AI & Digital
+              AI-Powered Custom Textile Manufacturing Software & Digital
               Transformation Solutions
             </h1>
 
