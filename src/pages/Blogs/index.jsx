@@ -112,18 +112,18 @@ const BlogsPage = () => {
       readTime: "7 min",
       slug: "healthcare-app-development-patient-care",
     },
-    // {
-    //   id: 9,
-    //   title: "Fabric Shrinkage Prediction: A Complete Guide to Using AI",
-    //   excerpt:
-    //     "Discover how AI-driven fabric shrinkage prediction optimizes production, reduces waste, and improves quality in textile manufacturing.",
-    //   image: "/blogs/blog9.png",
-    //   category: "Textile Manufacturing",
-    //   author: "Textile Team",
-    //   date: "01/06/2025",
-    //   readTime: "7 min",
-    //   slug: "fabric-shrinkage-prediction",
-    // },
+    {
+      id: 9,
+      title: "Fabric Shrinkage Prediction: A Complete Guide to Using AI",
+      excerpt:
+        "A practical guide for Textile Manufacturing owners and operations managers on predicting shrinkage before production — not after it fails.",
+      image: "/blogs/blog9.png",
+      category: "Textile Manufacturing",
+      author: "Textile Team",
+      date: "01/06/2025",
+      readTime: "7 min",
+      slug: "fabric-shrinkage-prediction-ai-guide",
+    },
   ];
 
   const categories = [

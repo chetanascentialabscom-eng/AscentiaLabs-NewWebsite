@@ -189,7 +189,7 @@ function App() {
             />
 
             <Route
-              path="fabric-shrinkage-prediction"
+              path="fabric-shrinkage-prediction-ai-guide"
               element={<FabricShrinkagePredictionBlog />}
             />
 

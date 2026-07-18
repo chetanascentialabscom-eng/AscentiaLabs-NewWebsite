@@ -249,22 +249,6 @@ const AI_ML = () => {
       industry: "Supply Chain, Finance, Retail",
     },
     { metric: "10x", label: "Faster Decisions", industry: "All Industries" },
-    {
-      metric: "25-40%",
-      label: "Customer Satisfaction Gain",
-      industry: "E-commerce, Healthcare, Finance",
-    },
-    { metric: "15-30%", label: "Revenue Growth", industry: "All Industries" },
-    {
-      metric: "50-70%",
-      label: "Manual Work Reduction",
-      industry: "All Industries",
-    },
-    {
-      metric: "95-99%",
-      label: "Defect Detection Accuracy",
-      industry: "Manufacturing, Textile, Quality",
-    },
   ];
 
   // 4. Why Ascentia Labs

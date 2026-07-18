@@ -250,7 +250,14 @@ export const seoData = {
       "technology blog, software development blog, tech insights, industry trends, development best practices",
     url: "https://ascentialabs.com/blog",
   },
-
+  fabricShrinkagePrediction: {
+    title:
+      "Fabric Shrinkage Prediction Using AI: A Guide for Textile Manufacturers | Ascentia Labs",
+    description:
+      "Learn how AI-powered fabric shrinkage prediction helps textile manufacturers reduce waste, improve quality, and cut costs. A practical guide for Textiles factory owners.",
+    keywords: "Fabric shrinkage prediction with AI | Ascentia Labs",
+    url: "https://ascentialabs.com/fabric-shrinkage-prediction-ai-guide",
+  },
   travelAppDevelopmentBlog: {
     title:
       "How Travel App Development Became Crucial in Tourism Industry | Ascentia Labs",

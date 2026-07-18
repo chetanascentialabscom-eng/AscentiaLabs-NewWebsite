@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import SEO from "../../components/SEO";
 import { seoData } from "../../utils/seoData";
+import { useConsultation } from "../../contexts/ConsultationContext";
 
 /* ============================================================
    STATIC CONTENT — everything driving the page lives here so
@@ -351,7 +352,6 @@ const InlineCTA = ({ eyebrow, title, to }) => (
 
 const FabricShrinkagePredictionBlog = () => {
   const [progress, setProgress] = useState(0);
-  const [activeSection, setActiveSection] = useState(TOC_SECTIONS[0].id);
   const [openFaq, setOpenFaq] = useState(0);
   const articleRef = useRef(null);
 
@@ -365,31 +365,12 @@ const FabricShrinkagePredictionBlog = () => {
       setProgress(
         Math.min(100, Math.max(0, (scrolled / Math.max(total, 1)) * 100)),
       );
-
-      let current = TOC_SECTIONS[0].id;
-      for (const section of TOC_SECTIONS) {
-        const node = document.getElementById(section.id);
-        if (node && node.getBoundingClientRect().top <= 140) {
-          current = section.id;
-        }
-      }
-      setActiveSection(current);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const scrollTo = (id) => {
-    const node = document.getElementById(id);
-    if (node) {
-      window.scrollTo({
-        top: node.getBoundingClientRect().top + window.scrollY - 100,
-        behavior: "smooth",
-      });
-    }
-  };
-
+  const { openConsultation } = useConsultation();
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-black">
       <SEO {...seoData.fabricShrinkagePrediction} />
@@ -432,7 +413,7 @@ const FabricShrinkagePredictionBlog = () => {
             </h1>
 
             <p className="text-sm xs:text-base sm:text-lg md:text-xl text-blue-200/80 leading-relaxed mb-6 sm:mb-8 max-w-[70ch]">
-              A practical guide for Indian factory owners and operations
+              A practical guide for textile factory owners and operations
               managers on predicting shrinkage before production — not after it
               fails.
             </p>
@@ -455,11 +436,10 @@ const FabricShrinkagePredictionBlog = () => {
         </div>
       </section>
 
-      {/* Article + Sidebar */}
+      {/* Article - Full Width */}
       <section className="py-6 sm:py-8">
         <div className="container mx-auto px-3 xs:px-4 sm:px-6 lg:px-8 max-w-full">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-[1fr_300px] gap-6 lg:gap-8 items-start">
-            {/* ARTICLE */}
+          <div className="max-w-4xl mx-auto">
             <article
               ref={articleRef}
               className="bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-lg border border-blue-400/20 p-4 xs:p-5 sm:p-6 md:p-10 min-w-0 w-full overflow-hidden"
@@ -536,7 +516,7 @@ const FabricShrinkagePredictionBlog = () => {
                 <InlineCTA
                   eyebrow="Related"
                   title="Explore Textile Industry Solutions"
-                  to="/textile-ai-solutions"
+                  to="/textile-erp-software-manufacturing-solutions"
                 />
 
                 {/* Section 2 */}
@@ -626,26 +606,37 @@ const FabricShrinkagePredictionBlog = () => {
                   title="How the System Works on Your Factory Floor"
                   description="From raw fabric data to a quality manager's sign-off."
                 />
-                <div className="w-full my-6 rounded-xl border border-blue-400/20 bg-slate-800/30 p-4 sm:p-6 backdrop-blur-sm overflow-hidden">
-                  <div className="flex flex-col md:flex-row md:items-stretch gap-3">
+                <div className="w-full my-6 rounded-xl border border-blue-400/20 bg-slate-800/30 p-4 sm:p-6 md:p-8 backdrop-blur-sm overflow-hidden">
+                  {/* Mobile: Vertical Stack | Tablet+: Horizontal Flow */}
+                  <div className="flex flex-col lg:flex-row lg:items-stretch gap-4 lg:gap-2">
                     {WORKFLOW_STEPS.map(({ icon: Icon, title, detail }, i) => (
                       <div
                         key={title}
-                        className="flex flex-col md:flex-row md:flex-1 items-center"
+                        className="flex flex-col lg:flex-row lg:flex-1 items-center"
                       >
-                        <div className="w-full flex-1 rounded-lg bg-slate-900/40 border border-blue-400/10 p-3 sm:p-4 text-center">
-                          <Icon className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                          <p className="text-white text-xs sm:text-sm font-medium">
+                        {/* Step Card */}
+                        <div className="w-full flex-1 rounded-xl bg-gradient-to-br from-slate-900/60 to-slate-800/40 border border-blue-400/10 p-4 sm:p-5 text-center transition-all duration-300 hover:border-blue-400/30 hover:shadow-lg hover:shadow-blue-500/5">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-500/10 border border-blue-400/20 flex items-center justify-center mx-auto mb-3">
+                            <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-blue-400" />
+                          </div>
+                          <p className="text-white text-sm sm:text-base font-semibold mb-1">
                             {title}
                           </p>
-                          <p className="text-blue-200/60 text-[11px] sm:text-xs mt-1">
+                          <p className="text-blue-200/60 text-xs sm:text-sm leading-relaxed">
                             {detail}
                           </p>
                         </div>
+
+                        {/* Arrow between steps - hidden on mobile, visible on tablet+ */}
                         {i < WORKFLOW_STEPS.length - 1 && (
-                          <span className="text-blue-400/50 my-1 md:my-0 md:mx-2 shrink-0 rotate-90 md:rotate-0">
-                            →
-                          </span>
+                          <div className="flex items-center justify-center py-2 lg:py-0 lg:px-1">
+                            <span className="hidden lg:inline text-blue-400/50 text-xl font-light">
+                              →
+                            </span>
+                            <span className="lg:hidden text-blue-400/30 text-xs">
+                              ↓
+                            </span>
+                          </div>
                         )}
                       </div>
                     ))}
@@ -687,35 +678,74 @@ const FabricShrinkagePredictionBlog = () => {
                   title="What Production Data Is Used?"
                   description="The inputs that feed the prediction model."
                 />
-                <div className="my-6 rounded-xl border border-blue-400/20 overflow-hidden">
-                  <div className="max-h-[420px] overflow-y-auto overflow-x-auto">
-                    <table className="w-full min-w-[480px] text-xs sm:text-sm">
-                      <thead className="sticky top-0 bg-slate-800/95 backdrop-blur-sm">
-                        <tr>
-                          <th className="text-left text-white font-medium px-3 sm:px-4 py-3 border-b border-blue-400/20">
-                            Production Data
-                          </th>
-                          <th className="text-left text-white font-medium px-3 sm:px-4 py-3 border-b border-blue-400/20">
-                            Why It Matters
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {DATA_TABLE.map((row) => (
-                          <tr
-                            key={row.param}
-                            className="hover:bg-blue-500/5 transition-colors"
-                          >
-                            <td className="px-3 sm:px-4 py-3 border-b border-blue-400/10 text-blue-100 whitespace-nowrap">
-                              {row.param}
-                            </td>
-                            <td className="px-3 sm:px-4 py-3 border-b border-blue-400/10 text-blue-200/70">
-                              {row.why}
-                            </td>
+
+                {/* Production Data Table - Professionally Responsive */}
+                <div className="my-6 rounded-xl border border-blue-400/20 overflow-hidden bg-slate-800/30">
+                  {/* Desktop Table View - Hidden on mobile */}
+                  <div className="hidden sm:block">
+                    <div className="max-h-[480px] overflow-y-auto overflow-x-auto">
+                      <table className="w-full text-sm">
+                        <thead className="sticky top-0 bg-slate-800/95 backdrop-blur-sm z-10">
+                          <tr>
+                            <th className="text-left text-white font-semibold px-4 py-3.5 border-b border-blue-400/20 text-xs uppercase tracking-wider">
+                              Production Data
+                            </th>
+                            <th className="text-left text-white font-semibold px-4 py-3.5 border-b border-blue-400/20 text-xs uppercase tracking-wider">
+                              Why It Matters
+                            </th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody className="divide-y divide-blue-400/10">
+                          {DATA_TABLE.map((row, index) => (
+                            <tr
+                              key={row.param}
+                              className="transition-colors duration-150 hover:bg-blue-500/5"
+                            >
+                              <td className="px-4 py-3.5 text-blue-100 font-medium whitespace-nowrap">
+                                {row.param}
+                              </td>
+                              <td className="px-4 py-3.5 text-blue-200/80 leading-relaxed">
+                                {row.why}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* Mobile Card View - Visible only on mobile */}
+                  <div className="sm:hidden divide-y divide-blue-400/10">
+                    {DATA_TABLE.map((row) => (
+                      <div
+                        key={row.param}
+                        className="px-4 py-4 space-y-1.5 hover:bg-blue-500/5 transition-colors duration-150"
+                      >
+                        <div className="flex items-start gap-2">
+                          <span className="text-blue-400 text-xs font-semibold uppercase tracking-wider flex-shrink-0 mt-0.5">
+                            Data
+                          </span>
+                          <span className="text-white text-sm font-medium leading-snug">
+                            {row.param}
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-2 pl-[2px]">
+                          <span className="text-blue-400/60 text-xs font-semibold uppercase tracking-wider flex-shrink-0 mt-0.5">
+                            Why
+                          </span>
+                          <span className="text-blue-200/70 text-sm leading-relaxed">
+                            {row.why}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Table footer with row count */}
+                  <div className="border-t border-blue-400/10 px-4 py-2.5 bg-slate-800/50">
+                    <p className="text-blue-200/40 text-xs">
+                      {DATA_TABLE.length} data points · Scroll for more
+                    </p>
                   </div>
                 </div>
 
@@ -724,7 +754,7 @@ const FabricShrinkagePredictionBlog = () => {
                   id="readiness"
                   number="07"
                   title="Is Your Textile Factory Ready?"
-                  description="Answer honestly — four or more “yes” answers means you're ready to explore a pilot."
+                  description="Answer honestly — four or more 'yes' answers means you're ready to explore a pilot."
                 />
                 <ul className="space-y-3 my-6">
                   {CHECKLIST.map((item) => (
@@ -732,7 +762,7 @@ const FabricShrinkagePredictionBlog = () => {
                       key={item}
                       className="flex items-start gap-3 bg-slate-800/30 border border-blue-400/10 rounded-lg p-3 sm:p-4"
                     >
-                      <Circle className="w-5 h-5 text-blue-400/50 flex-shrink-0 mt-0.5" />
+                      {/* <Circle className="w-5 h-5 text-blue-400/50 flex-shrink-0 mt-0.5" /> */}
                       <span className="text-blue-100/90 text-xs xs:text-sm leading-relaxed">
                         {item}
                       </span>
@@ -740,46 +770,10 @@ const FabricShrinkagePredictionBlog = () => {
                   ))}
                 </ul>
 
-                {/* Section 8 — Timeline */}
-                <SectionHeader
-                  id="implementation"
-                  number="08"
-                  title="A Five-Phase Implementation Roadmap"
-                  description="From assessment to full production rollout."
-                />
-                <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {TIMELINE.map(
-                    ({ icon: Icon, phase, title, duration, text }) => (
-                      <div
-                        key={phase}
-                        className="bg-slate-800/30 border border-blue-400/20 rounded-xl p-4 sm:p-5 backdrop-blur-sm"
-                      >
-                        <Icon className="w-6 h-6 text-blue-400 mb-3" />
-                        <p className="text-xs uppercase tracking-wide text-blue-400/70 mb-1">
-                          {phase}
-                        </p>
-                        <p className="text-white font-medium mb-1">{title}</p>
-                        <p className="text-blue-300/60 text-xs mb-2">
-                          {duration}
-                        </p>
-                        <p className="text-blue-200/60 text-xs leading-relaxed">
-                          {text}
-                        </p>
-                      </div>
-                    ),
-                  )}
-                </div>
-
-                <InlineCTA
-                  eyebrow="Ready to start?"
-                  title="Book a Consultation"
-                  to="/contact"
-                />
-
-                {/* Section 9 — FAQ */}
+                {/* Section 8 — FAQ */}
                 <SectionHeader
                   id="faq"
-                  number="09"
+                  number="08"
                   title="Frequently Asked Questions"
                 />
                 <div className="my-6 space-y-3">
@@ -817,8 +811,8 @@ const FabricShrinkagePredictionBlog = () => {
                   })}
                 </div>
 
-                {/* Section 10 — Conclusion + Key Takeaways */}
-                <SectionHeader id="conclusion" number="10" title="Conclusion" />
+                {/* Section 9 — Conclusion + Key Takeaways */}
+                <SectionHeader id="conclusion" number="09" title="Conclusion" />
                 <p className="text-blue-100/90 leading-relaxed mb-6 text-sm xs:text-base">
                   Fabric shrinkage is a persistent, costly challenge, and
                   traditional management of it is reactive and slow. AI
@@ -852,19 +846,20 @@ const FabricShrinkagePredictionBlog = () => {
                     Reduce Fabric Waste with AI-Powered Shrinkage Prediction
                   </h3>
                   <p className="text-blue-100/80 max-w-[60ch] mx-auto mb-6 text-sm xs:text-base">
-                    We build custom AI solutions for Indian textile
-                    manufacturers — starting with your biggest problem, piloting
-                    it, and scaling what works.
+                    We build custom AI solutions for textile manufacturers —
+                    starting with your biggest problem, piloting it, and scaling
+                    what works.
                   </p>
                   <div className="flex flex-col xs:flex-row flex-wrap items-center justify-center gap-3 xs:gap-4">
-                    <Link
-                      to="/contact"
-                      className="w-full xs:w-auto text-center px-6 py-3 rounded-lg bg-white text-blue-900 font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-lg"
+                    <button
+                      type="button"
+                      onClick={openConsultation}
+                      className="w-full xs:w-auto text-center px-6 py-3 rounded-lg bg-white text-blue-900 font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-lg hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-900"
                     >
                       Schedule AI Consultation
-                    </Link>
+                    </button>
                     <Link
-                      to="/textile-ai-solutions"
+                      to="/textile-erp-software-manufacturing-solutions"
                       className="w-full xs:w-auto text-center px-6 py-3 rounded-lg border border-white/40 text-white font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:bg-white/10"
                     >
                       Explore Textile AI Solutions
@@ -883,87 +878,6 @@ const FabricShrinkagePredictionBlog = () => {
                 </div>
               </div>
             </article>
-
-            {/* SIDEBAR */}
-            <aside className="xl:sticky xl:top-24 xl:self-start w-full">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/20 p-4 xs:p-5 sm:p-6 space-y-6">
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-blue-400/70 mb-2">
-                    Reading Progress
-                  </p>
-                  <div className="h-1.5 rounded-full bg-slate-700/50 overflow-hidden">
-                    <div
-                      className="h-full bg-blue-400 transition-[width] duration-150 ease-out"
-                      style={{ width: `${progress}%` }}
-                    />
-                  </div>
-                  <div className="flex items-center gap-2 mt-2 text-blue-200/60 text-xs">
-                    <Clock className="w-3.5 h-3.5 flex-shrink-0" />
-                    13 min read
-                  </div>
-                </div>
-
-                <nav aria-label="Table of contents">
-                  <p className="text-xs uppercase tracking-wide text-blue-400/70 mb-3">
-                    On This Page
-                  </p>
-                  <ul className="space-y-2 border-l border-blue-400/20">
-                    {TOC_SECTIONS.map((s) => (
-                      <li key={s.id}>
-                        <button
-                          onClick={() => scrollTo(s.id)}
-                          className={`block text-left w-full pl-3 -ml-px border-l-2 text-xs sm:text-sm py-1 transition-colors duration-[250ms] ease-out ${
-                            activeSection === s.id
-                              ? "border-blue-400 text-white"
-                              : "border-transparent text-blue-200/60 hover:text-blue-200"
-                          }`}
-                        >
-                          {s.label}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-
-                <button
-                  onClick={() =>
-                    navigator.share
-                      ? navigator.share({
-                          title: document.title,
-                          url: window.location.href,
-                        })
-                      : navigator.clipboard.writeText(window.location.href)
-                  }
-                  className="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm"
-                >
-                  <Share2 className="w-4 h-4 mr-2 flex-shrink-0" />
-                  Share this guide
-                </button>
-
-                <Link
-                  to="/blog"
-                  className="flex items-center text-blue-200/60 hover:text-blue-200 transition-colors text-sm"
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2 flex-shrink-0" />
-                  Back to Blogs
-                </Link>
-
-                <div className="pt-2 space-y-3">
-                  <Link
-                    to="/contact"
-                    className="block text-center px-4 py-2.5 rounded-lg bg-blue-500 text-white text-sm font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:bg-blue-400"
-                  >
-                    Book Consultation
-                  </Link>
-                  <Link
-                    to="/textile-ai-solutions"
-                    className="block text-center px-4 py-2.5 rounded-lg border border-blue-400/30 text-blue-300 text-sm font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:bg-blue-500/10"
-                  >
-                    Explore AI Services
-                  </Link>
-                </div>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
@@ -971,7 +885,7 @@ const FabricShrinkagePredictionBlog = () => {
       {/* Related Content */}
       <section className="py-10 sm:py-12">
         <div className="container mx-auto px-3 xs:px-4 max-w-full">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="mb-6 sm:mb-8">
               <h2 className="text-2xl xs:text-3xl md:text-4xl text-white font-semibold mb-2">
                 Related Reading
@@ -1017,7 +931,7 @@ const FabricShrinkagePredictionBlog = () => {
         </div>
       </section>
 
-      {/* Other Blogs Section — kept from existing pattern */}
+      {/* Other Blogs Section */}
       <section className="py-10 sm:py-12">
         <div className="container mx-auto px-3 xs:px-4 max-w-full">
           <div className="text-center mb-6 sm:mb-8">
