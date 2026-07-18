@@ -62,6 +62,7 @@ import TravelMargin2026 from "./pages/Blogs/TravelMargins2026";
 import Careers from "./pages/career-page";
 import ShopifyServicePage from "./pages/Services/ShopifyDevelompentSolution";
 import FabricShrinkagePredictionBlog from "./pages/Blogs/fabricShrinkagePrediction";
+import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrinkagePredictionBlog";
 
 function App() {
   // Initialize Lenis smooth scrolling
@@ -193,6 +194,10 @@ function App() {
               element={<FabricShrinkagePredictionBlog />}
             />
 
+            <Route
+              path="future-of-fabric-shrinkage-prediction"
+              element={<FutureFabricShrinkagePredictionBlog />}
+            />
             <Route
               path="/healthcare-app-development-patient-care"
               element={<HealthcareAppDevelopment />}

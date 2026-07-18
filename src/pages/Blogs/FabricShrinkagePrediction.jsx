@@ -446,7 +446,7 @@ const FabricShrinkagePredictionBlog = () => {
             >
               <div className="mb-5 sm:mb-8">
                 <img
-                  src="/blogs/blog9.png"
+                  src="/blogs/blog10.png"
                   alt="AI-based fabric shrinkage prediction in a textile factory"
                   className="w-full h-40 xs:h-48 sm:h-64 md:h-96 object-cover rounded-xl"
                   loading="lazy"
