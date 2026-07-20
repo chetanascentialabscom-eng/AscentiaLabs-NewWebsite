@@ -11,6 +11,9 @@ import {
   FlaskConical,
   Boxes,
   Wrench,
+  BrainCircuit,
+  Factory,
+  Cpu,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -102,10 +105,8 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
 const StatCard = ({ number, label, sublabel }) => (
   <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
     <div className="text-3xl md:text-4xl text-white mb-1">{number}</div>
-    <div className="text-blue-200 text-xs sm:text-sm">{label}</div>
-    {sublabel && (
-      <div className="text-gray-400 text-[11px] mt-1">{sublabel}</div>
-    )}
+    <div className="text-white text-xs sm:text-sm">{label}</div>
+    {sublabel && <div className="text-white text-[11px] mt-1">{sublabel}</div>}
   </div>
 );
 
@@ -173,12 +174,6 @@ const TextilesPage = () => {
    * =========================================================== */
 
   // Hero stat cards — reused component, updated copy
-  const stats = [
-    { number: "7+", label: "Business Years" },
-    { number: "120+", label: "Projects Delivered" },
-    { number: "10+", label: "Industries Catered" },
-    { number: "4+", label: "Countries" },
-  ];
 
   // 2. Business Challenges
   const businessChallenges = [
@@ -581,11 +576,11 @@ const TextilesPage = () => {
   ].map((f, i) => ({ id: i, title: f.question, content: f.answer }));
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen  bg-black">
       <SEO {...seoData.textiles} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
       {/* ================= HERO ================= */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20 ">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
@@ -593,82 +588,121 @@ const TextilesPage = () => {
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto mt-5 lg:mt-5 2xl:mt-15 px-4">
           {/* Breadcrumb */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl text-white space-y-6">
+              {/* Industry Badge */}
+              <span className="inline-block bg-white/10 border border-white/20 text-amber-400 text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full">
+                Textile Manufacturing
+              </span>
 
-          <div className="max-w-3xl text-white space-y-6">
-            {/* Industry Badge */}
-            <span className="inline-block bg-white/10 border border-white/20 text-amber-400 text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full">
-              Textile Manufacturing
-            </span>
+              <h1 className="text-[25px] md:text-4xl leading-tight">
+                AI-Powered Custom Textile Manufacturing Software & Digital
+                Transformation Solutions
+              </h1>
 
-            <h1 className="text-[25px] md:text-4xl leading-tight">
-              AI-Powered Custom Textile Manufacturing Software & Digital
-              Transformation Solutions
-            </h1>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Transform your textile manufacturing with AI solutions that help
+                improve production efficiency, strengthen quality control,
+                optimize inventory, and streamline operations across every stage
+                of your manufacturing process.
+              </p>
 
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Transform your textile manufacturing with AI solutions that help
-              improve production efficiency, strengthen quality control,
-              optimize inventory, and streamline operations across every stage
-              of your manufacturing process.
-            </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={openConsultation}
+                  className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
+                >
+                  📞 Schedule a Consultation
+                </button>
+                <a
+                  href="#ai-solutions-heading"
+                  className="border border-white/30 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white/10 text-center"
+                >
+                  Explore Solutions
+                </a>
+              </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
-              >
-                📞 Get Free Consultation
-              </button>
-              <a
-                href="#ai-solutions-heading"
-                className="border border-white/30 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white/10 text-center"
-              >
-                Explore Solutions
-              </a>
+              {/* Business Outcomes */}
+              <ul className="flex flex-wrap gap-x-6 gap-y-3 pt-2 list-none">
+                {[
+                  "Reduce Production Downtime",
+                  "Improve Quality Control",
+                  "Cut Fabric Waste",
+                  "Automate Inventory Tracking",
+                ].map((outcome, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-2 text-sm text-gray-200"
+                  >
+                    <span className="text-amber-400">✓</span>
+                    {outcome}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Business Outcomes */}
-            <ul className="flex flex-wrap gap-x-6 gap-y-3 pt-2 list-none">
-              {[
-                "Reduce Production Downtime",
-                "Improve Quality Control",
-                "Cut Fabric Waste",
-                "Automate Inventory Tracking",
-              ].map((outcome, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-2 text-sm text-gray-200"
-                >
-                  <span className="text-amber-400">✓</span>
-                  {outcome}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Hero stat cards */}
-          <div className="mt-16 pt-12 border-t border-blue-400/30">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
-              {stats.map((stat, index) => (
-                <StatCard key={index} number={stat.number} label={stat.label} />
-              ))}
-            </div>
-            <div className="hidden lg:grid grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer"
-                >
-                  <div className="text-4xl md:text-5xl text-white mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-blue-200 text-sm md:text-base">
-                    {stat.label}
+            {/* Hero stat cards */}
+            {/* Right Visual Content */}
+            <div className="mt-8 lg:mt-0">
+              {/* Top Badge */}
+              <div className="flex justify-center mb-6">
+                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-2">
+                    <Factory className="w-7 h-7 text-white" />
+                    <h3 className="text-white font-semibold">
+                      AI Manufacturing Suite
+                    </h3>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {/* Card 1 */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <BrainCircuit className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    AI Quality Control
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Detect fabric defects automatically using AI vision.
+                  </p>
+                </div>
+
+                {/* Card 2 */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Boxes className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Smart Inventory
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Real-time warehouse and inventory tracking.
+                  </p>
+                </div>
+
+                {/* Card 3 */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <BarChart3 className="w-12 h-12 text-green-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Production Analytics
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Live dashboards for production and machine efficiency.
+                  </p>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Cpu className="w-12 h-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Predictive Maintenance
+                  </h4>
+                  <p className="text-sm text-gray-300">
+                    Prevent machine failures before downtime occurs.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -680,13 +714,13 @@ const TextilesPage = () => {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <h2
+            <h1
               id="challenges-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text font-semibold text-transparent mb-3"
             >
               5 Critical Challenges Facing Textile Manufacturers Today
-            </h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+            </h1>
+            <p className="text-base text-white/95 max-w-2xl mx-auto">
               The problems costing you production hours, quality, and margin —
               and how we solve them.
             </p>
@@ -694,7 +728,7 @@ const TextilesPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {businessChallenges.map((c, i) => (
               <InfoCard key={i} icon={c.icon} title={c.title}>
-                <p>{c.pain}</p>
+                <p className="text-white/95">{c.pain}</p>
                 <p className="text-amber-400">{c.solution}</p>
               </InfoCard>
             ))}
@@ -711,16 +745,16 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="outcomes-heading"
-              className="text-3xl md:text-4xl text-white mb-3"
+              className="text-3xl md:text-4xl font-semibold text-white mb-3"
             >
               What Textile Manufacturers Achieve With Custom AI & ML Solutions
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-white/95 max-w-2xl mx-auto">
               Executives buy outcomes, not features. Measurable results, not
               promises.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 ">
             {businessOutcomes.map((o, i) => (
               <StatCard key={i} number={o.number} label={o.label} />
             ))}
@@ -740,11 +774,11 @@ const TextilesPage = () => {
           <div className="text-center mb-8">
             <h2
               id="ai-solutions-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               AI & ML-Powered Solutions for Textile Manufacturing
             </h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base text-gray-100 max-w-3xl mx-auto">
               Real AI solves real problems. We build custom AI and ML models for
               your specific manufacturing challenges.
             </p>
@@ -846,37 +880,25 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="use-cases-heading"
-              className="text-3xl md:text-4xl text-white mb-3"
+              className="text-3xl md:text-4xl font-semibold text-white mb-3"
             >
               Textile AI Use Cases — Real Business Scenarios
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Not feature lists — real scenarios that solve your specific
-              challenges with custom AI-powered software.
+              challenges with custom software.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {useCases.map((u, i) => (
-              <InfoCard
-                key={i}
-                icon={u.icon}
-                title={u.title}
-                footer={
-                  <button
-                    onClick={openConsultation}
-                    className="text-amber-400 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all"
-                  >
-                    Talk to us about this <ArrowRight size={14} />
-                  </button>
-                }
-              >
+              <InfoCard key={i} icon={u.icon} title={u.title}>
                 <p>
-                  <span className="text-gray-400">Problem: </span>
+                  <span className="text-gray-400 "> Problem: </span>
                   {u.problem}
                 </p>
                 <p>
-                  <span className="text-gray-400">AI Workflow: </span>
-                  {u.workflow}
+                  <span className="text-white/90">AI Workflow: </span>
+                  <span className="text-amber-400"> {u.workflow}</span>
                 </p>
               </InfoCard>
             ))}
@@ -892,11 +914,11 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="process-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               Our Custom Software Development Process
             </h2>
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-white/95">
               A proven 8-12 week development process, built around your
               workflows with minimal disruption.
             </p>
@@ -959,11 +981,11 @@ const TextilesPage = () => {
                 <div>
                   <h2
                     id="why-us-heading"
-                    className="text-3xl md:text-4xl mb-4 leading-tight"
+                    className="text-3xl md:text-4xl font-semibold   mb-4 leading-tight"
                   >
                     Revolutionize Your Textile Operations with Our Expertise
                   </h2>
-                  <p className="text-xl text-gray-300 mb-8">
+                  <p className="text-xl text-gray-100 mb-8">
                     Why leading textile companies choose our solutions
                   </p>
                 </div>
@@ -1024,11 +1046,11 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="related-services-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               Related AI Services for Textile Manufacturers
             </h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
+            <p className="text-base text-gray-100 max-w-2xl mx-auto">
               Explore our full suite of AI-powered solutions for the textile
               industry.
             </p>
@@ -1043,7 +1065,7 @@ const TextilesPage = () => {
                   <h3 className="text-white text-lg font-medium mb-2">
                     {s.title}
                   </h3>
-                  <p className="text-gray-300 text-sm mb-4">{s.description}</p>
+                  <p className="text-white/95 text-sm mb-4">{s.description}</p>
                   <span className="text-amber-400 text-sm font-medium inline-flex items-center gap-1">
                     Learn more <ArrowRight size={14} />
                   </span>
@@ -1063,11 +1085,11 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="related-resources-heading"
-              className="text-3xl md:text-4xl text-white mb-3"
+              className="text-3xl md:text-4xl font-semibold text-white mb-3"
             >
               Continue Learning — Textile Software & AI Resources
             </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-white/95 max-w-2xl mx-auto">
               Deepen your understanding of AI, ML, and custom software in
               textile manufacturing.
             </p>
@@ -1099,15 +1121,15 @@ const TextilesPage = () => {
         aria-labelledby="faq-heading"
       >
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <h2
                 id="faq-heading"
-                className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4"
+                className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4"
               >
                 Frequently Asked Questions — Custom Textile Software Solutions
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-white/95">
                 Find answers to common questions about our custom AI & ML
                 software solutions
               </p>
