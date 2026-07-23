@@ -665,7 +665,7 @@ const TextilesPage = () => {
                   <h4 className="text-white font-semibold mb-2">
                     AI Quality Control
                   </h4>
-                  <p className="text-sm text-gray-100">
+                  <p className="text-sm  text-gray-100">
                     Detect fabric defects automatically using AI vision.
                   </p>
                 </div>
@@ -716,7 +716,7 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h1
               id="challenges-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text font-semibold text-transparent mb-3"
+              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text  text-transparent mb-3"
             >
               5 Critical Challenges Facing Textile Manufacturers Today
             </h1>
@@ -743,10 +743,7 @@ const TextilesPage = () => {
         <TopSeamFade />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <h2
-              id="outcomes-heading"
-              className="text-3xl md:text-4xl font-semibold text-white mb-3"
-            >
+            <h2 id="outcomes-heading" className="text-3xl  text-white mb-3">
               What Textile Manufacturers Achieve With Custom AI & ML Solutions
             </h2>
             <p className="text-lg text-white/95 max-w-2xl mx-auto">
@@ -774,7 +771,7 @@ const TextilesPage = () => {
           <div className="text-center mb-8">
             <h2
               id="ai-solutions-heading"
-              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               AI & ML-Powered Solutions for Textile Manufacturing
             </h2>
@@ -878,10 +875,7 @@ const TextilesPage = () => {
         <TopSeamFade />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-10">
-            <h2
-              id="use-cases-heading"
-              className="text-3xl md:text-4xl font-semibold text-white mb-3"
-            >
+            <h2 id="use-cases-heading" className="text-3xl  text-white mb-3">
               Textile AI Use Cases — Real Business Scenarios
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
@@ -914,7 +908,7 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="process-heading"
-              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               Our Custom Software Development Process
             </h2>
@@ -981,7 +975,7 @@ const TextilesPage = () => {
                 <div>
                   <h2
                     id="why-us-heading"
-                    className="text-3xl md:text-4xl font-semibold   mb-4 leading-tight"
+                    className="text-3xl    mb-4 leading-tight"
                   >
                     Revolutionize Your Textile Operations with Our Expertise
                   </h2>
@@ -1046,7 +1040,7 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="related-services-heading"
-              className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
             >
               Related AI Services for Textile Manufacturers
             </h2>
@@ -1085,7 +1079,7 @@ const TextilesPage = () => {
           <div className="text-center mb-10">
             <h2
               id="related-resources-heading"
-              className="text-3xl md:text-4xl font-semibold text-white mb-3"
+              className="text-3xl  text-white mb-3"
             >
               Continue Learning — Textile Software & AI Resources
             </h2>
@@ -1125,7 +1119,7 @@ const TextilesPage = () => {
             <div className="text-center mb-12">
               <h2
                 id="faq-heading"
-                className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4"
+                className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4"
               >
                 Frequently Asked Questions — Custom Textile Software Solutions
               </h2>
