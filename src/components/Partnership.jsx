@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from "react";
 
 // Logo item component with individual hover state and animations
 const LogoItem = ({ logo }) => {
@@ -15,28 +15,30 @@ const LogoItem = ({ logo }) => {
       {!imageLoaded && (
         <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gray-200 rounded-lg animate-pulse"></div>
       )}
-      
+
       {/* Logo image */}
       <img
         src={logo.url}
         alt={logo.name}
         className={`max-w-[80%] max-h-[80%] object-contain transition-all duration-500 group-hover:scale-110 ${
-          imageLoaded ? 'opacity-100' : 'opacity-0'
+          imageLoaded ? "opacity-100" : "opacity-0"
         }`}
         onLoad={() => setImageLoaded(true)}
         onError={(e) => {
           console.log(`Failed to load image: ${logo.url}`);
-          e.target.style.display = 'none';
+          e.target.style.display = "none";
         }}
       />
-      
+
       {/* Hover glow effect */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
-      
+
       {/* Logo name tooltip on hover */}
       <div
         className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg transition-all duration-300 whitespace-nowrap z-50 border border-gray-700 shadow-xl ${
-          showTooltip ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+          showTooltip
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
         {logo.name}
@@ -81,7 +83,10 @@ const Partnership = () => {
     { name: "Sunview", url: "/partnerships/sunview-1.png" },
     { name: "Sood", url: "/partnerships/image-14.png" },
     { name: "Insurance", url: "/partnerships/logo-1a.jpg" },
-    { name: "Black Simple Photography", url: "/partnerships/black-simple-photography.png" },
+    {
+      name: "Black Simple Photography",
+      url: "/partnerships/black-simple-photography.png",
+    },
     { name: "Simpra Logo", url: "/partnerships/simpra-logo.png" },
     { name: "Centra Greens", url: "/partnerships/centra-greens.svg" },
     { name: "KES", url: "/partnerships/kes.svg" },
@@ -99,7 +104,8 @@ const Partnership = () => {
     { name: "Kiddogram", url: "/partnerships/kiddogram.svg" },
     { name: "Godwit", url: "/partnerships/godwit.png" },
     { name: "Jujhar Group", url: "/partnerships/jujhar_group.png" },
-    { name: "NDMC", url: "/partnerships/NDMC.png" }
+    { name: "NDMC", url: "/partnerships/NDMC.png" },
+    { name: "LKCHILI", url: "/partnerships/lkchili.webp" },
   ];
 
   // Triple the logos for seamless infinite scroll
@@ -110,12 +116,13 @@ const Partnership = () => {
       <div className="relative z-10 container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-         <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl  mb-4 sm:mb-6 text-white">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl  mb-4 sm:mb-6 text-white">
             Some Of Our Enterprise Clients
           </h2>
           <p className="text-base sm:text-lg text-white max-w-3xl mx-auto px-4">
-            Our solutions have enabled businesses in a variety of industries to achieve remarkable outcomes, 
-            ranging from streamlined operations to exponential growth.
+            Our solutions have enabled businesses in a variety of industries to
+            achieve remarkable outcomes, ranging from streamlined operations to
+            exponential growth.
           </p>
         </div>
 
@@ -130,8 +137,8 @@ const Partnership = () => {
             ref={scrollContainerRef}
             className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 overflow-x-auto scrollbar-hide px-4 sm:px-6 py-4"
             style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             {duplicatedLogos.map((logo, index) => (
@@ -142,9 +149,8 @@ const Partnership = () => {
           {/* Enhanced gradient fade effects on sides - seamless with background */}
           {/* <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-600 via-blue-600/90 to-transparent pointer-events-none z-20"></div> */}
           {/* <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-600 via-blue-600/90 to-transparent pointer-events-none z-20"></div> */}
-          
+
           {/* Pause indicator */}
-        
         </div>
       </div>
     </section>

@@ -1,9 +1,60 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useConsultation } from '../../../contexts/ConsultationContext';
-import { Building2, Users, BarChart3, Settings, ChevronDown, ChevronUp } from 'lucide-react';
-import SEO from '../../../components/SEO';
-import { seoData } from '../../../utils/seoData';
+import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { useConsultation } from "../../../contexts/ConsultationContext";
+import {
+  Building2,
+  Users,
+  BarChart3,
+  Settings,
+  ChevronDown,
+  ChevronUp,
+  TrendingUp,
+  Shield,
+  Zap,
+  Clock,
+  Database,
+  Cloud,
+  Cpu,
+  CheckCircle,
+  ArrowRight,
+  Layers,
+  GitBranch,
+  Globe,
+  Lock,
+  Server,
+  HardDrive,
+  Network,
+  Smartphone,
+  Monitor,
+  Code,
+  Award,
+  Briefcase,
+  Calendar,
+  DollarSign,
+  BarChart,
+  PieChart,
+  ShoppingCart,
+  Truck,
+  Heart,
+  GraduationCap,
+  Factory,
+  Home,
+  LineChart,
+  Activity,
+  Target,
+  AlertCircle,
+  RefreshCw,
+  Download,
+  Upload,
+  Share2,
+  Link as LinkIcon,
+  Box,
+  Package,
+  FileText,
+  Handshake,
+} from "lucide-react";
+import SEO from "../../../components/SEO";
+import { seoData } from "../../../utils/seoData";
 
 const ERPPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -25,156 +76,477 @@ const ERPPage = () => {
     }
   `;
 
-  const features = [
-    {
-      id: 'reward-program-management',
-      title: 'Reward Program Management System',
-      description: 'Comprehensive reward program management for enhanced customer engagement.',
-      details: [
-        'Multiple Rewards: Manage diverse reward programs with customizable rules to suit business needs.',
-        'Customizable Reward Criteria: Define reward conditions based on user behavior to encourage engagement.',
-        'Reward Expiration and Conditions: Set expiration dates and conditions to promote timely utilization of rewards.',
-        'Referral Rewards: Incentivize customers with personalized referral codes for referring friends and family.'
-      ]
-    },
-    {
-      id: 'customizable-reward-catalogue',
-      title: 'Customizable Reward Catalogue Management System',
-      description: 'Advanced reward catalogue management and customization.',
-      details: [
-        'Flexible Catalogue Structure: Create and manage diverse reward categories with customizable organization.',
-        'Dynamic Reward Configuration: Set up intelligent reward tiers and automated distribution systems.',
-        'Advanced Tracking Integration: Monitor reward redemption patterns and customer preferences.',
-        'Personalized Recommendations: Use AI to suggest relevant rewards based on customer behavior.'
-      ]
-    },
-    {
-      id: 'visit-management',
-      title: 'Visit Management',
-      description: 'Comprehensive visit tracking and management capabilities.',
-      details: [
-        'Real-time Visit Tracking: Monitor customer visits with complete visibility and automated logging.',
-        'Automated Visit Notifications: Send automatic updates to relevant stakeholders about visit status.',
-        'Multi-location Integration: Connect with multiple locations to manage visits from one platform.',
-        'Visit Analytics: Generate detailed reports on visit patterns and customer engagement metrics.'
-      ]
-    },
-    {
-      id: 'compliance-risk-management',
-      title: 'Compliance & Risk Management',
-      description: 'Complete compliance monitoring and risk assessment system.',
-      details: [
-        'In-Depth Complaint Analysis: Gain insights into complaint trends, identify recurring issues, and evaluate consumer complaints with precision.',
-        'Customizable Reporting Dashboards: Offer real-time visibility into key performance indicators, empowering stakeholders to make data-driven decisions.',
-        'Proactive Intervention Tools: Facilitate continuous improvement programs by enabling timely actions based on analytical insights.'
-      ]
-    },
-    {
-      id: 'financial-management-module',
-      title: 'Financial Management Module',
-      description: 'Comprehensive financial management and reporting system.',
-      details: [
-        'Real-time Financial Tracking: Monitor financial transactions and cash flow with instant updates.',
-        'Automated Budget Management: Set up intelligent budget controls with automated alerts and approvals.',
-        'Advanced Financial Reporting: Generate comprehensive financial reports with detailed analytics.',
-        'Multi-currency Support: Handle international transactions with automated currency conversion.'
-      ]
-    },
-    {
-      id: 'product-catalogue-management',
-      title: 'Product & Catalogue Management System Development',
-      description: 'Advanced product and catalogue management solutions.',
-      details: [
-        'Dynamic Product Management: Create and manage product catalogues with real-time inventory updates.',
-        'Category Organization: Implement hierarchical category structures for easy product navigation.',
-        'Pricing Management: Set up flexible pricing rules with automated discount and promotion systems.',
-        'Product Analytics: Track product performance with detailed sales and engagement metrics.'
-      ]
-    },
-    {
-      id: 'loyalty-management-system',
-      title: 'Loyalty Management System',
-      description: 'Integrated loyalty program management and customer retention.',
-      details: [
-        'Multi-tier Loyalty Programs: Create sophisticated loyalty programs with multiple tiers and benefits.',
-        'Points Management: Comprehensive points earning, redemption, and transfer system.',
-        'Customer Segmentation: Advanced customer segmentation based on loyalty behavior and preferences.',
-        'Loyalty Analytics: Generate insights on customer lifetime value and loyalty program effectiveness.'
-      ]
-    },
-   
+  // Industry Statistics
+  const statistics = [
+    { metric: "$70+ Billion", label: "Global ERP Market Size (2026)" },
+    { metric: "10-12%", label: "Projected CAGR" },
+    { metric: "25%", label: "AI Adoption in ERP (Annual Growth)" },
+    { metric: "15%", label: "Cloud ERP Growth (YoY)" },
+    { metric: "35%", label: "Manufacturing ERP Adoption" },
   ];
 
-  const adminFeatures = [
+  // Business Challenges
+  const challenges = [
     {
-      icon: Building2,
-      title: 'Cashback & Order Management',
-      description: 'Configure reward programs, track order requests, monitor cashback earnings and manage transaction accuracy with comprehensive reporting.'
+      icon: Database,
+      title: "Siloed Data",
+      description:
+        "Departments operate in isolation with no single source of truth, creating inconsistencies, delays, and errors in critical business decisions.",
+    },
+    {
+      icon: Clock,
+      title: "Manual Processes",
+      description:
+        "Time-consuming manual data entry increases costs and creates opportunities for human error across operations.",
+    },
+    {
+      icon: BarChart,
+      title: "Lack of Real-Time Visibility",
+      description:
+        "Without integrated systems, leaders cannot access real-time operational data, leading to reactive rather than proactive decision-making.",
+    },
+    {
+      icon: Shield,
+      title: "Compliance Risks",
+      description:
+        "Disconnected systems make it difficult to maintain consistent compliance with industry regulations and standards.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth Constraints",
+      description:
+        "Scalability challenges when existing systems cannot handle increased volume or complexity as your business expands.",
+    },
+  ];
+
+  // Business Outcomes
+  const outcomes = [
+    {
+      icon: Zap,
+      title: "Operational Efficiency",
+      value: "30-50%",
+      description: "Reduction in manual data entry tasks",
+    },
+    {
+      icon: CheckCircle,
+      title: "Data Accuracy",
+      value: "Eliminate",
+      description: "Data inconsistencies across departments",
+    },
+    {
+      icon: DollarSign,
+      title: "Cost Reduction",
+      value: "Up to 25%",
+      description: "Reduction in administrative costs",
+    },
+    {
+      icon: TrendingUp,
+      title: "Revenue Growth",
+      value: "Faster",
+      description: "Time-to-market for new products",
+    },
+    {
+      icon: Activity,
+      title: "Agility",
+      value: "Faster",
+      description: "Response to market changes",
+    },
+    {
+      icon: Shield,
+      title: "Compliance",
+      value: "Consistent",
+      description: "Adherence to regulatory standards",
+    },
+    {
+      icon: RefreshCw,
+      title: "Scalability",
+      value: "Systems that",
+      description: "Grow with your business",
+    },
+  ];
+
+  // KPI Data
+  const kpiData = [
+    {
+      metric: "Order Processing Time",
+      before: "48-72 hours",
+      after: "4-8 hours",
+      improvement: "83% Faster",
+    },
+    {
+      metric: "Inventory Accuracy",
+      before: "70-80%",
+      after: "95-99%",
+      improvement: "20-25% Better",
+    },
+    {
+      metric: "Financial Close",
+      before: "15-20 days",
+      after: "5-7 days",
+      improvement: "65% Faster",
+    },
+    {
+      metric: "Supplier On-time Delivery",
+      before: "70-80%",
+      after: "85-95%",
+      improvement: "15% Higher",
+    },
+    {
+      metric: "Data Entry Errors",
+      before: "10-15%",
+      after: "<2%",
+      improvement: "80% Reduction",
+    },
+    {
+      metric: "Reporting Time",
+      before: "5-10 days",
+      after: "Real-time",
+      improvement: "Instant Access",
+    },
+  ];
+
+  // Industry Segments
+  const industrySegments = [
+    {
+      icon: Factory,
+      title: "Manufacturing",
+      description:
+        "Production planning and scheduling, quality control and compliance, inventory and supply chain management.",
+    },
+    {
+      icon: Home,
+      title: "Construction",
+      description:
+        "Project cost tracking, resource allocation, compliance and documentation.",
+    },
+    {
+      icon: Heart,
+      title: "Healthcare",
+      description:
+        "Patient and staff management, regulatory compliance, supply chain optimization.",
+    },
+    {
+      icon: Truck,
+      title: "Logistics & Supply Chain",
+      description:
+        "Fleet and shipment tracking, warehouse management, route optimization.",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Retail & E-commerce",
+      description:
+        "Omnichannel inventory management, customer relationship integration, order and fulfillment automation.",
+    },
+    {
+      icon: GraduationCap,
+      title: "Education",
+      description:
+        "Student information management, financial administration, staff and resource allocation.",
+    },
+  ];
+
+  // AI Solutions
+  const aiSolutions = [
+    {
+      icon: LineChart,
+      title: "Predictive Analytics",
+      description:
+        "Anticipate demand, identify trends, and make proactive decisions based on data patterns.",
+    },
+    {
+      icon: Zap,
+      title: "Intelligent Automation",
+      description:
+        "Automate routine tasks from procurement approvals to financial reconciliation, freeing your team for strategic work.",
+    },
+    {
+      icon: AlertCircle,
+      title: "Anomaly Detection",
+      description:
+        "Real-time identification of operational irregularities such as supply chain disruptions, quality deviations, or financial discrepancies.",
+    },
+    {
+      icon: Target,
+      title: "Smart Recommendations",
+      description:
+        "AI-powered insights for inventory optimization, resource allocation, and workflow improvements.",
+    },
+  ];
+
+  // Technology Stack
+  const techStack = {
+    backend: ["Java", "Python", ".NET Core", "Node.js"],
+    frontend: ["React", "Angular", "Vue.js"],
+    cloud: ["AWS", "Azure", "Google Cloud Platform"],
+    database: ["PostgreSQL", "MongoDB", "Oracle", "SQL Server"],
+    apis: ["RESTful", "GraphQL", "SOAP"],
+    integration: ["MuleSoft", "Dell Boomi", "Apache Kafka"],
+    ai: ["TensorFlow", "PyTorch", "OpenAI APIs"],
+  };
+
+  // Integration Ecosystem
+  const integrations = [
+    {
+      icon: Database,
+      title: "Legacy Systems",
+      description: "Modernize without starting from scratch.",
     },
     {
       icon: Users,
-      title: 'Branches & Departments Management',
-      description: 'Centralized management of branches and departments with role-based access controls and detailed analytics for seamless operations.'
+      title: "CRM Systems",
+      description: "Sales, marketing, and customer data synchronization.",
     },
     {
-      icon: BarChart3,
-      title: 'Staff Management',
-      description: 'Oversee staff details, monitor attendance and productivity, assign tasks and generate performance reports for data-driven decisions.'
+      icon: Factory,
+      title: "MES & SCADA",
+      description: "Real-time manufacturing data integration.",
     },
     {
-      icon: Settings,
-      title: 'System Configuration',
-      description: 'Comprehensive system settings management with customizable workflows, automated processes and real-time monitoring capabilities.'
-    }
+      icon: DollarSign,
+      title: "Financial Systems",
+      description: "Seamless financial data flow across platforms.",
+    },
+    {
+      icon: Network,
+      title: "IoT Devices",
+      description:
+        "Real-time sensor data integration for predictive maintenance.",
+    },
+    {
+      icon: Users,
+      title: "HR & Payroll",
+      description: "Unified employee information management.",
+    },
   ];
 
-  const stats = [
-    { number: '7+', label: 'Business Years' },
-    { number: '120+', label: 'Projects Delivered' },
-    { number: '10+', label: 'Industries Catered' },
-    { number: '4+', label: 'Countries' }
+  // Industry Use Cases
+  const useCases = [
+    {
+      industry: "Manufacturing",
+      company: "A mid-sized manufacturer",
+      result:
+        "25% improved production efficiency and 30% reduction in inventory holding costs",
+      icon: Factory,
+    },
+    {
+      industry: "Healthcare",
+      company: "A healthcare network",
+      result:
+        "Reducing waste by 20% and improving patient care through better resource availability",
+      icon: Heart,
+    },
+    {
+      industry: "Construction",
+      company: "A construction company",
+      result: "Improving budget accuracy by 35% and reducing overruns",
+      icon: Home,
+    },
+    {
+      industry: "Retail",
+      company: "A multi-channel retailer",
+      result:
+        "Reducing stockouts by 40% with real-time visibility across 50 stores",
+      icon: ShoppingCart,
+    },
   ];
 
-  const processSteps = [
-    { 
-      number: '1', 
-      title: 'Requirements Analysis', 
-      description: 'Our team conducts a comprehensive analysis of your business processes to identify requirements, pain points, and opportunities for ERP optimization and digital transformation.' 
+  // Deployment Models
+  const deploymentModels = [
+    {
+      icon: Cloud,
+      title: "Cloud-Based ERP System",
+      features: [
+        "No hardware investment",
+        "Automatic updates",
+        "Accessible from anywhere",
+        "Rapid deployment",
+        "Predictable costs",
+      ],
+      type: "cloud",
     },
-    { 
-      number: '2', 
-      title: 'System Design', 
-      description: 'We create a customized ERP solution blueprint that aligns with your business goals, incorporating advanced technologies like AI, cloud computing, and real-time analytics.' 
+    {
+      icon: Server,
+      title: "On-Premise ERP",
+      features: [
+        "Complete data control",
+        "Custom infrastructure",
+        "Regulatory compliance",
+        "Performance optimization",
+        "One-time capital expense",
+      ],
+      type: "premise",
     },
-    { 
-      number: '3', 
-      title: 'Implementation & Integration', 
-      description: 'Our experts deploy the ERP solution with minimal disruption, ensuring seamless integration with your existing systems and third-party platforms for maximum efficiency.' 
+    {
+      icon: GitBranch,
+      title: "Hybrid ERP",
+      features: [
+        "Combination of cloud and on-premise",
+        "Flexibility and control",
+        "Best-of-both-worlds architecture",
+        "Scalable and secure",
+      ],
+      type: "hybrid",
     },
-    { 
-      number: '4', 
-      title: 'Training & Support', 
-      description: 'We provide comprehensive training for your team and offer ongoing support, continuously monitoring system performance and making optimizations to maximize ROI.' 
-    }
   ];
 
+  // Security Features
+  const securityFeatures = [
+    {
+      icon: Lock,
+      title: "Access Control",
+      description:
+        "Role-based permissions ensure employees see only what they need.",
+    },
+    {
+      icon: Lock,
+      title: "Data Encryption",
+      description: "Strong encryption for data at rest and in transit.",
+    },
+    {
+      icon: Shield,
+      title: "Compliance Management",
+      description: "Automated regulatory compliance monitoring and reporting.",
+    },
+    {
+      icon: Clock,
+      title: "Audit Trails",
+      description: "Comprehensive logging of all system activities.",
+    },
+    {
+      icon: Database,
+      title: "Backup & Recovery",
+      description:
+        "Disaster recovery capabilities to protect against data loss.",
+    },
+    {
+      icon: RefreshCw,
+      title: "Regular Updates",
+      description: "Continuous security patching and system improvements.",
+    },
+  ];
+
+  // Case Studies
+  const caseStudies = [
+    {
+      industry: "Manufacturing ERP",
+      title: "40% Productivity Increase",
+      description:
+        "A leading textile manufacturer with multiple production facilities implemented our ERP solution to streamline operations across plants. They achieved 40% productivity improvement and 60% faster time-to-market for new products.",
+    },
+    {
+      industry: "Healthcare ERP",
+      title: "30% Cost Reduction",
+      description:
+        "A healthcare provider reduced operational costs by 30% through centralized procurement and intelligent inventory management capabilities.",
+    },
+  ];
+
+  // Why Ascentia Labs
+  const whyAscentia = [
+    {
+      icon: Award,
+      title: "Deep Industry Expertise",
+      description:
+        "We have built ERP solutions for textile, healthcare, logistics, and construction industries with a deep understanding of their unique needs.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Proven Methodology",
+      description: "Our systematic approach ensures successful delivery.",
+    },
+    {
+      icon: Cpu,
+      title: "Technical Excellence",
+      description: "Modern technology stack with AI and ML capabilities.",
+    },
+    {
+      icon: Users,
+      title: "Industry Experience",
+      description:
+        "Our client roster includes Vardhman Textiles and other industry leaders.",
+    },
+    {
+      icon: Handshake,
+      title: "Partnership Approach",
+      description:
+        "We don't just implement software—we become your long-term technology partner.",
+    },
+  ];
+
+  // Engagement Models
+  const engagementModels = [
+    {
+      icon: DollarSign,
+      title: "Fixed Cost",
+      description: "For projects with clear requirements and defined scope.",
+    },
+    {
+      icon: Users,
+      title: "Dedicated Team",
+      description: "For ongoing development and long-term partnership.",
+    },
+    {
+      icon: Users,
+      title: "Staff Augmentation",
+      description:
+        "To supplement your existing team with specialized expertise.",
+    },
+    {
+      icon: Award,
+      title: "Consulting Only",
+      description: "For assessment, architecture, and technology advisory.",
+    },
+  ];
+
+  // Related Services
+  const relatedServices = [
+    "Custom Software Development",
+    "AI/ML Development",
+    "Digital Transformation Services",
+    "Application Modernization",
+    "Mobile App Development",
+  ];
+
+  // Related Resources
+  const relatedResources = [
+    "Blog: What is ERP and Why Does Your Business Need One?",
+    "Guide: ERP Implementation Checklist",
+    "Whitepaper: Modern ERP Systems",
+    "Case Study: ERP Success Story",
+  ];
+
+  // FAQ Data
   const faqs = [
     {
-      question: "What are the key benefits of implementing an ERP system?",
-      answer: "Implementation of an ERP system offers numerous benefits including improved operational efficiency, reduced costs, better visibility across business processes, streamlined workflows, enhanced data accuracy, improved decision-making through real-time insights, and better customer satisfaction through integrated service delivery."
+      question: "How much does ERP software cost?",
+      answer:
+        "The erp software cost depends on factors including deployment model, number of users, customization requirements, and integration complexity. Contact us for a custom quote.",
     },
     {
-      question: "How customizable are ERP systems to fit specific business needs?",
-      answer: "Modern ERP systems are highly customizable and can be tailored to meet specific business requirements. They offer configurable workflows, custom fields, personalized dashboards, role-based access controls, and can be integrated with existing systems to ensure seamless operations across your organization."
+      question: "How long does ERP implementation take?",
+      answer:
+        "The erp implementation timeline ranges from 4 to 12 months, depending on the project scope, system complexity, and organizational readiness.",
     },
     {
-      question: "What are the challenges typically faced during ERP implementation?",
-      answer: "Common ERP implementation challenges include data migration complexities, user adoption resistance, integration with legacy systems, customization requirements, training needs, and change management. However, with proper planning, experienced implementation partners, and phased rollout approaches, these challenges can be effectively managed."
+      question: "What is the best ERP system?",
+      answer:
+        "The best erp system depends on your specific business needs, industry, and operational requirements. We build custom solutions tailored to your exact needs.",
     },
     {
-      question: "How long does it take to make an Enterprise Resource Planning System?",
-      answer: "The development timeline for an ERP system varies based on complexity, customization requirements, and business size. Typically, it ranges from 6-18 months for comprehensive implementations. Factors affecting timeline include system complexity, data migration scope, integration requirements, customization level, and user training needs."
-    }
+      question: "What are the benefits of ERP?",
+      answer:
+        "ERP benefits include improved operational efficiency, real-time visibility, better decision-making, reduced costs, and enhanced compliance.",
+    },
+    {
+      question: "How do I choose an ERP system?",
+      answer:
+        "Consider business requirements, industry needs, budget, scalability, and technology compatibility.",
+    },
+    {
+      question: "What industries benefit from ERP?",
+      answer:
+        "ERP for manufacturing and industries such as healthcare, logistics, construction, retail, and education.",
+    },
   ];
 
   const toggleFAQ = (index) => {
@@ -185,6 +557,7 @@ const ERPPage = () => {
     <div className="min-h-screen bg-white">
       <SEO {...seoData.erp} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
         {/* Background Pattern */}
@@ -193,7 +566,7 @@ const ERPPage = () => {
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
-        
+
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
@@ -201,181 +574,277 @@ const ERPPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="text-white space-y-6">
-              <h1 className="text-3xl md:text-4xl  leading-tight">
-                Enterprise Resource Planning Software Development
+              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+                ERP System Development — Custom Enterprise Resource Planning
+                Solutions
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                From managing departments and tracking performance to generating insightful reports, our Admin Panel puts the power of data-driven decision-making at your fingertips, ensuring seamless coordination and efficiency at every level.
+                In today's competitive business environment, organizations need
+                more than just standard software—they need a unified,
+                intelligent ERP system that connects every part of their
+                operations. At Ascentia Labs, we design and build custom
+                enterprise resource planning solutions that streamline your
+                workflows, eliminate data silos, and provide real-time
+                visibility across your entire organization.
               </p>
-              <button 
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Whether you are in manufacturing, healthcare, logistics, or
+                retail, our erp software solutions are tailored to your specific
+                business processes. We don't just implement software; we
+                transform how you operate.
+              </p>
+              <button
                 onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600 "
+                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
               >
-                Get Free Consultation
+                Talk to Our ERP Experts
               </button>
             </div>
 
-            {/* Right Content - Admin Features */}
+            {/* Right Content - Features Preview */}
             <div className="space-y-4">
-              {adminFeatures.map((feature, index) => {
-                const IconComponent = feature.icon;
-                return (
-                  <div key={index} className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300">
-                    <div className="flex items-start space-x-3">
-                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
-                        <IconComponent size={20} />
-                      </div>
-                      <div>
-                        <h3 className="text-white  text-lg mb-1">{feature.title}</h3>
-                        <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Stats Section */}
-          <div className="mt-16 pt-12 border-t border-blue-400/30">
-            {/* Stats - Mobile/Tablet */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
-                  <div className="text-3xl md:text-4xl  text-white mb-1">{stat.number}</div>
-                  <div className="text-blue-200 text-xs sm:text-sm">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* Stats - Desktop */}
-            <div className="hidden lg:grid grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center transform hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="text-4xl md:text-5xl  text-white mb-2">{stat.number}</div>
-                  <div className="text-blue-200 text-sm md:text-base">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Features Section */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
-              Key Features In Our Enterprise Resource Planning Software Development
-            </h2>
-            <p className="text-base text-gray-300 max-w-2xl mx-auto">
-              Witness Our Feature-Packed Solutions For Boosting Your Conversions 
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                {/* Left Side - Feature List */}
-                <div className="bg-gray-900 p-4">
-                  <div className="space-y-2 max-h-96 overflow-y-auto custom-scrollbar">
-                    {features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                          activeFeature === index 
-                            ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-black' 
-                            : 'text-gray-300 hover:bg-gray-800'
-                        }`}
-                        onClick={() => setActiveFeature(index)}
-                      >
-                        <div className="flex items-center space-x-2">
-                          <span className={`text-xs  px-2 py-1 rounded ${
-                            activeFeature === index ? 'bg-black text-amber-400' : 'bg-gradient-to-r from-amber-400 to-orange-500 text-black'
-                          }`}>
-                            {index < 9 ? `0${index + 1}` : index + 1}
-                          </span>
-                          <span className="font-medium text-sm">{feature.title}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right Side - Feature Details */}
-                <div className="p-6 flex items-center">
-                  <div className="space-y-4">
-                    <div className="bg-amber-100 p-3 rounded-xl w-fit">
-                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
-                        <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                      </div>
+              {[
+                {
+                  icon: Building2,
+                  title: "Unified Data Management",
+                  description: "One system, one source of truth",
+                },
+                {
+                  icon: Zap,
+                  title: "Process Automation",
+                  description:
+                    "Streamlined workflows from procurement to payroll",
+                },
+                {
+                  icon: BarChart3,
+                  title: "Real-Time Analytics",
+                  description: "Data-driven decision-making",
+                },
+                {
+                  icon: RefreshCw,
+                  title: "Scalability",
+                  description: "Grow with your business needs",
+                },
+                {
+                  icon: Shield,
+                  title: "Compliance",
+                  description: "Built-in regulatory frameworks",
+                },
+              ].map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
+                      <feature.icon size={20} />
                     </div>
                     <div>
-                      <h3 className="text-xl  text-gray-900 mb-3">
-                        {features[activeFeature].title}
+                      <h3 className="text-white font-semibold text-lg mb-1">
+                        {feature.title}
                       </h3>
-                      <ul className="space-y-2 text-gray-600 text-sm">
-                        {features[activeFeature].details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start space-x-2">
-                            <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-16 bg-black relative">
+      {/* Industry Statistics Dashboard */}
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent  mb-3">
-              Our ERP Implementation Process
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
+              The State of Enterprise Resource Planning — Market Insights
             </h2>
-            <p className="text-lg text-gray-300">
-              A streamlined approach to deploying your Enterprise Resource Planning solution efficiently and effectively.
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              The global enterprise resource planning market is experiencing
+              rapid growth as businesses recognize the critical role of
+              integrated management systems.
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto">
-            {/* Mobile Layout - Single Row */}
-            <div className="block md:hidden">
-              <div className="relative flex justify-between items-start gap-2 px-2">
-                {/* Connecting line for mobile */}
-                <div className="absolute top-6 sm:top-7 left-8 right-8 h-0.5 bg-blue-300 z-0"></div>
-                
-                {processSteps.map((step, index) => (
-                  <div key={index} className="flex-1 text-center relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg sm:text-xl font-extrabold mb-2 mx-auto border-2 border-white shadow-lg">
-                      {step.number}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+            {statistics.map((stat, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 text-center border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-2xl md:text-3xl font-bold text-amber-400 mb-2">
+                  {stat.metric}
+                </div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 text-center text-sm text-gray-500">
+            Source: Industry Analysis 2026
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Overview */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-8">
+              What is Enterprise Resource Planning?
+            </h2>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Enterprise resource planning (ERP) refers to integrated software
+                platforms that help organizations manage and automate core
+                business processes across finance, human resources, supply
+                chain, manufacturing, and customer relationship management.
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                An erp system serves as the central nervous system of a modern
+                enterprise, connecting data from multiple departments into a
+                single source of truth. This eliminates the inefficiencies of
+                disparate systems and provides real-time visibility into your
+                business performance.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                  "Unified Data Management",
+                  "Process Automation",
+                  "Real-Time Analytics",
+                  "Scalability",
+                  "Compliance",
+                ].map((capability, index) => (
+                  <div
+                    key={index}
+                    className="bg-black/30 rounded-lg p-3 text-center border border-blue-500/20"
+                  >
+                    <div className="text-amber-400 text-xs font-semibold">
+                      ✓
                     </div>
-                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">{step.title}</h3>
+                    <div className="text-white text-sm mt-1">{capability}</div>
                   </div>
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Desktop Layout - With Connectors */}
-            <div className="hidden md:flex justify-center items-center gap-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mb-3 mx-auto">
-                      {step.number}
+      {/* Why Digital Transformation Now */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              The Business Case for Digital Transformation with ERP
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Businesses that delay digital transformation risk falling behind
+              competitors who leverage technology to optimize operations. An erp
+              software solution is the foundation of any successful digital
+              transformation strategy.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                {
+                  driver: "Supply Chain Disruption",
+                  impact: "Need for real-time visibility and agility",
+                },
+                {
+                  driver: "Data Explosion",
+                  impact: "Requirement for centralized data management",
+                },
+                {
+                  driver: "Customer Expectations",
+                  impact: "Demand for faster, personalized service",
+                },
+                {
+                  driver: "Remote Workforce",
+                  impact: "Need for cloud-based, accessible systems",
+                },
+                {
+                  driver: "Regulatory Compliance",
+                  impact: "Growing complexity of data governance",
+                },
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0 mt-1">
+                      <TrendingUp size={16} />
                     </div>
-                    <h3 className="font-medium text-white text-base mb-1">{step.title}</h3>
+                    <div>
+                      <h3 className="text-white font-semibold mb-1">
+                        {item.driver}
+                      </h3>
+                      <p className="text-gray-400 text-sm">{item.impact}</p>
+                    </div>
                   </div>
-                  {index < processSteps.length - 1 && (
-                    <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
-                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-xl p-6 border border-blue-500/30">
+              <p className="text-blue-200 text-center">
+                Cloud based erp systems enable businesses to modernize without
+                massive upfront infrastructure investments, making
+                enterprise-grade capabilities accessible to mid-market
+                organizations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Business Challenges */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Common Business Challenges Solved by ERP
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Before implementing an erp system, organizations typically
+              struggle with operational inefficiencies that hinder growth.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {challenges.map((challenge, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black flex-shrink-0">
+                      <challenge.icon size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-lg mb-2">
+                        {challenge.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {challenge.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -383,149 +852,795 @@ const ERPPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        {/* Smooth transition gradient at top */}
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
-        
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
+      {/* Business Outcomes */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Measurable Business Outcomes with Custom ERP
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Organizations that implement best erp software solutions achieve
+              significant operational improvements.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {outcomes.map((outcome, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black">
+                      <outcome.icon size={20} />
+                    </div>
+                    <h3 className="text-white font-semibold">
+                      {outcome.title}
+                    </h3>
+                  </div>
+                  <div className="text-2xl font-bold text-amber-400 mb-1">
+                    {outcome.value}
+                  </div>
+                  <div className="text-sm text-gray-400">
+                    {outcome.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        
-        {/* Smooth transition gradient at bottom */}
+      </section>
+
+      {/* KPI Dashboard */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Performance Metrics — Before and After ERP Implementation
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Key Performance Indicator
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white/10 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                    <th className="px-6 py-4 text-left font-bold">Metric</th>
+                    <th className="px-6 py-4 text-left font-bold">
+                      Before ERP
+                    </th>
+                    <th className="px-6 py-4 text-left font-bold">After ERP</th>
+                    <th className="px-6 py-4 text-left font-bold">
+                      Improvement
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {kpiData.map((row, index) => (
+                    <tr
+                      key={index}
+                      className={`border-b border-white/10 ${index % 2 === 0 ? "bg-white/5" : ""} hover:bg-white/10 transition-colors`}
+                    >
+                      <td className="px-6 py-4 text-white font-medium">
+                        {row.metric}
+                      </td>
+                      <td className="px-6 py-4 text-gray-400">{row.before}</td>
+                      <td className="px-6 py-4 text-amber-400 font-semibold">
+                        {row.after}
+                      </td>
+                      <td className="px-6 py-4 text-green-400 font-bold">
+                        {row.improvement}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Segments */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              ERP Solutions for Every Industry
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Every industry has unique operational requirements. Our erp for
+              manufacturing industry solutions are tailored to address specific
+              sector challenges.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {industrySegments.map((industry, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black inline-block mb-4">
+                    <industry.icon size={24} />
+                  </div>
+                  <h3 className="text-white font-semibold text-xl mb-3">
+                    {industry.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {industry.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI & ML Solutions */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl lg:max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              AI-Powered ERP Systems — The Future of Enterprise Management
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              We integrate artificial intelligence (AI) and machine learning
+              into our ERP solutions, transforming traditional systems into
+              platforms.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {aiSolutions.map((solution, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black flex-shrink-0">
+                      <solution.icon size={24} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold text-lg mb-2">
+                        {solution.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {solution.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Our ERP Technology Stack
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              We build robust, scalable ERP systems using modern technology
+              architectures.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {Object.entries(techStack).map(
+                ([category, technologies], index) => (
+                  <div
+                    key={index}
+                    className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                  >
+                    <h3 className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">
+                      {category}
+                    </h3>
+                    <div className="space-y-2">
+                      {technologies.map((tech, techIndex) => (
+                        <div
+                          key={techIndex}
+                          className="bg-black/30 rounded-lg px-3 py-2 text-white text-sm text-center"
+                        >
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Ecosystem */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Seamless Integration with Your Existing Systems
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              An erp integration strategy is essential for modern enterprises.
+              Our solutions connect with your existing ecosystem.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {integrations.map((integration, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black">
+                      <integration.icon size={20} />
+                    </div>
+                    <h3 className="text-white font-semibold">
+                      {integration.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-300 text-sm">
+                    {integration.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry Use Cases */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Real-World ERP Use Cases
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              See how organizations across industries have transformed their
+              operations with our ERP solutions.
+            </p>
+
+            <div className="space-y-6">
+              {useCases.map((useCase, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black flex-shrink-0">
+                      <useCase.icon size={24} />
+                    </div>
+                    <div>
+                      <div className="flex items-center space-x-2 mb-2">
+                        <span className="text-amber-400 font-bold">
+                          {useCase.industry}
+                        </span>
+                        <span className="text-gray-500">•</span>
+                        <span className="text-gray-400 text-sm">
+                          {useCase.company}
+                        </span>
+                      </div>
+                      <p className="text-white">{useCase.result}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI & Business Value */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Understanding ERP Software Cost and ROI
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              The erp software cost and associated implementation expenses are
+              significant, but the return on investment is substantial.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h3 className="text-amber-400 font-bold text-xl mb-4">
+                  Investment Components
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Software licensing",
+                    "Implementation and customization",
+                    "Training and change management",
+                    "Ongoing support and maintenance",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300">
+                      <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-3"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-8 border border-white/20">
+                <h3 className="text-amber-400 font-bold text-xl mb-4">
+                  ROI Drivers
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Operational efficiency gains",
+                    "Inventory cost reduction",
+                    "Labor cost savings",
+                    "Improved customer retention",
+                    "Better decision-making",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300">
+                      <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-3"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Buyer Readiness Checklist */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Is Your Business Ready for ERP Implementation?
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Use this checklist to assess whether your organization is ready to
+              begin the ERP journey.
+            </p>
+
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700">
+              {[
+                "Leadership alignment on transformation goals",
+                "Clear business objectives defined",
+                "Process documentation available",
+                "Data quality assessment performed",
+                "Change management resources allocated",
+                "Budget for implementation and training",
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-between py-4 border-b border-gray-700 last:border-0"
+                >
+                  <span className="text-white">{item}</span>
+                  <div className="flex items-center space-x-4">
+                    <span className="text-gray-500 text-sm">Yes</span>
+                    <div className="w-6 h-6 border-2 border-gray-600 rounded-md bg-black/30"></div>
+                    <span className="text-gray-500 text-sm">No</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Customer Journey */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="text-white space-y-8">
-                <div>
-                  <h2 className="text-3xl md:text-4xl  mb-4 leading-tight">
-                    Transform Your Business Operations with Our ERP Expertise
-                  </h2>
-                  <p className="text-xl text-gray-300 mb-8">
-                    Why Leading Enterprises Choose Our ERP Solutions
-                  </p>
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Your ERP Implementation Journey
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Our ERP implementation process follows a structured customer
+              journey.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                "Discovery",
+                "Assessment",
+                "Architecture",
+                "Development",
+                "Deployment",
+                "Optimization",
+              ].map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">
+                      {index + 1}
+                    </div>
+                    {index < 5 && (
+                      <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-400/50"></div>
+                    )}
+                  </div>
+                  <div className="text-white font-medium text-sm">{step}</div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      01
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Well Experienced Team
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
+      {/* Implementation Process */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Our ERP Implementation Methodology
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              A systematic approach to ensure successful delivery.
+            </p>
 
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      02
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Customization & Flexibility
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      03
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Innovative Solutions
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      04
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Quality Assurance & Reliability
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      05
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Timely Delivery & Project Management
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4 group">
-                    <div className="bg-blue-600 text-white px-3 py-1 rounded-md  text-sm">
-                      06
-                    </div>
-                    <div>
-                      <h3 className="text-xl  group-hover:text-blue-300 transition-colors">
-                        Competitive Pricing
-                      </h3>
-                      <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Content - Image/Visual */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
-                  <div className="text-center text-white">
-                    <div className="relative w-32 h-32 mx-auto mb-6">
-                      {/* Main circle with amber and black accent for high contrast */}
-                      <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
-                        {/* Animated color overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
-                        
-                        {/* Checkmark icon with black color */}
-                        <svg className="w-16 h-16 text-black relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        
-                        {/* Subtle rotating border effect */}
-                        <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
-                      </div>
-                      
-                      {/* Outer glow rings with amber theme */}
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
-                    </div>
-                    <h3 className="text-2xl  mb-4">
-                      Ready to Streamline Your Business Operations?
-                    </h3>
-                    <p className="text-blue-100 mb-6">
-                      Join industry leaders who trust our ERP solutions to optimize their business processes and drive growth.
-                    </p>
-                    <button 
-                      onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl  transition-all duration-300 transform hover:scale-105 shadow-lg "
+            <div className="overflow-x-auto">
+              <table className="w-full bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl border border-gray-700 overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                    <th className="px-6 py-4 text-left font-bold">Phase</th>
+                    <th className="px-6 py-4 text-left font-bold">
+                      Activities
+                    </th>
+                    <th className="px-6 py-4 text-left font-bold">Duration</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      phase: "Discovery",
+                      activities:
+                        "Stakeholder interviews, process mapping, requirements gathering",
+                      duration: "2-4 weeks",
+                    },
+                    {
+                      phase: "Design",
+                      activities:
+                        "Solution architecture, system design, integration planning",
+                      duration: "3-6 weeks",
+                    },
+                    {
+                      phase: "Development",
+                      activities:
+                        "Custom development, module configuration, integration development",
+                      duration: "8-16 weeks",
+                    },
+                    {
+                      phase: "Testing",
+                      activities:
+                        "Unit testing, integration testing, UAT, performance testing",
+                      duration: "4-6 weeks",
+                    },
+                    {
+                      phase: "Deployment",
+                      activities:
+                        "Data migration, go-live planning, production deployment",
+                      duration: "2-4 weeks",
+                    },
+                    {
+                      phase: "Training",
+                      activities:
+                        "End-user training, documentation, change management",
+                      duration: "2-4 weeks",
+                    },
+                    {
+                      phase: "Support",
+                      activities:
+                        "Post-go-live support, optimization, continuous improvement",
+                      duration: "Ongoing",
+                    },
+                  ].map((row, index) => (
+                    <tr
+                      key={index}
+                      className={`border-b border-gray-700 ${index % 2 === 0 ? "bg-white/5" : ""} hover:bg-white/10 transition-colors`}
                     >
-                      Start Your Project Today
-                    </button>
+                      <td className="px-6 py-4 text-amber-400 font-semibold">
+                        {row.phase}
+                      </td>
+                      <td className="px-6 py-4 text-gray-300">
+                        {row.activities}
+                      </td>
+                      <td className="px-6 py-4 text-white font-medium">
+                        {row.duration}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deployment Models */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Flexible ERP Deployment Options
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              We offer deployment flexibility to match your business
+              requirements.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {deploymentModels.map((model, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black inline-block mb-4">
+                    <model.icon size={32} />
+                  </div>
+                  <h3 className="text-white font-bold text-xl mb-4">
+                    {model.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {model.features.map((feature, featureIndex) => (
+                      <li
+                        key={featureIndex}
+                        className="flex items-start text-gray-300"
+                      >
+                        <CheckCircle className="w-4 h-4 text-amber-400 mr-2 flex-shrink-0 mt-1" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Compliance */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Enterprise-Grade Security for Your ERP System
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Data security is a critical concern for ERP implementations. Our
+              ERP solutions deliver:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {securityFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                >
+                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black inline-block mb-3">
+                    <feature.icon size={20} />
+                  </div>
+                  <h3 className="text-white font-semibold mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Case Studies */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Client Success Stories
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              See how we've helped businesses transform their operations.
+            </p>
+
+            <div className="space-y-6">
+              {caseStudies.map((study, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black flex-shrink-0">
+                      <Award size={24} />
+                    </div>
+                    <div>
+                      <div className="flex items-center space-x-2 mb-2">
+                        <span className="text-amber-400 font-bold">
+                          {study.industry}
+                        </span>
+                        <span className="text-gray-500">•</span>
+                        <span className="text-white font-semibold">
+                          {study.title}
+                        </span>
+                      </div>
+                      <p className="text-gray-300">{study.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Ascentia Labs */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Why Choose Ascentia Labs for Your ERP Implementation?
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Partner with us for enterprise-grade ERP solutions.
+            </p>
+
+            <div className="space-y-4">
+              {whyAscentia.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
+                      <item.icon size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold mb-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement Models */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 right-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              Flexible Engagement Models
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Choose the engagement model that best fits your needs.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {engagementModels.map((model, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 text-center"
+                >
+                  <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-3 rounded-xl text-black inline-block mb-4">
+                    <model.icon size={24} />
+                  </div>
+                  <h3 className="text-white font-semibold text-lg mb-2">
+                    {model.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm">{model.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-16 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
+              Related Services
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Explore our comprehensive range of enterprise solutions.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {relatedServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 text-center"
+                >
+                  <div className="text-amber-400 font-semibold">{service}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+              ERP Resources and Insights
+            </h2>
+            <p className="text-lg text-gray-300 text-center mb-12">
+              Explore our collection of ERP resources and insights.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedResources.map((resource, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black">
+                      <FileText size={20} />
+                    </div>
+                    <span className="text-white">{resource}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -536,7 +1651,7 @@ const ERPPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl  mb-4">
+              <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-300">
@@ -546,12 +1661,15 @@ const ERPPage = () => {
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
+                <div
+                  key={index}
+                  className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden"
+                >
                   <button
                     className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg  text-white pr-4">
+                    <h3 className="text-lg font-semibold text-white pr-4">
                       {faq.question}
                     </h3>
                     <div className="flex-shrink-0">
@@ -562,7 +1680,7 @@ const ERPPage = () => {
                       )}
                     </div>
                   </button>
-                  
+
                   {openFAQ === index && (
                     <div className="px-6 pb-5">
                       <div className="border-t border-gray-700 pt-4">
@@ -578,6 +1696,8 @@ const ERPPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Final CTA */}
     </div>
   );
 };
