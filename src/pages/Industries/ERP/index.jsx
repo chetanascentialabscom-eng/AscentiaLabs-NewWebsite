@@ -699,7 +699,7 @@ const ERPPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
-              The State of Enterprise Resource Planning — Market Insights
+              The State of Enterprise Resource Market Insights
             </h2>
             <p className="text-lg text-white max-w-3xl 2xl:max-w-6xl mx-auto">
               The global enterprise resource planning market is experiencing
@@ -1523,8 +1523,8 @@ const ERPPage = () => {
                         <span className="text-amber-400 font-bold">
                           {study.industry}
                         </span>
-                        <span className="text-gray-500">•</span>
-                        <span className="text-white font-semibold">
+                        <span className="text-gray-500 hidden lg:block">•</span>
+                        <span className="text-white font-semibold hidden lg:block">
                           {study.title}
                         </span>
                       </div>
