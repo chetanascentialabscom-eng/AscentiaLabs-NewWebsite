@@ -596,7 +596,7 @@ const ERPPage = () => {
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
-        <div className="relative container mx-auto px-4 py-5 2xl:py-10  ">
+        <div className="relative container mx-auto px-4 py-5 2xl:py-14  ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="text-white space-y-6">
@@ -932,24 +932,28 @@ const ERPPage = () => {
 
         <div className="relative container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl  text-white text-center mb-4">
               Performance Metrics — Before and After ERP Implementation
             </h2>
-            <p className="text-lg text-white text-center mb-12">
-              Key Performance Indicator is an indicator of performance of
-              business.
+            <p className="text-base md:text-lg text-white text-center mb-8 md:mb-12">
+              Key Performance Indicator is an indicator of business.
             </p>
 
-            <div className="overflow-x-auto">
+            {/* Desktop Table View - Hidden on mobile */}
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full bg-white/10 backdrop-blur-md rounded-xl border border-white/20 overflow-hidden">
                 <thead>
                   <tr className="bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-                    <th className="px-6 py-4 text-left font-bold">Metric</th>
-                    <th className="px-6 py-4 text-left font-bold">
+                    <th className="px-4 lg:px-6 py-3 lg:py-4 text-left font-bold text-sm lg:text-base">
+                      Metric
+                    </th>
+                    <th className="px-4 lg:px-6 py-3 lg:py-4 text-left font-bold text-sm lg:text-base">
                       Before ERP
                     </th>
-                    <th className="px-6 py-4 text-left font-bold">After ERP</th>
-                    <th className="px-6 py-4 text-left font-bold">
+                    <th className="px-4 lg:px-6 py-3 lg:py-4 text-left font-bold text-sm lg:text-base">
+                      After ERP
+                    </th>
+                    <th className="px-4 lg:px-6 py-3 lg:py-4 text-left font-bold text-sm lg:text-base">
                       Improvement
                     </th>
                   </tr>
@@ -960,20 +964,98 @@ const ERPPage = () => {
                       key={index}
                       className={`border-b border-white/10 ${index % 2 === 0 ? "bg-white/5" : ""} hover:bg-white/10 transition-colors`}
                     >
-                      <td className="px-6 py-4 text-white font-medium">
+                      <td className="px-4 lg:px-6 py-3 lg:py-4 text-white font-medium text-sm lg:text-base">
                         {row.metric}
                       </td>
-                      <td className="px-6 py-4 text-gray-100">{row.before}</td>
-                      <td className="px-6 py-4 text-amber-400 font-semibold">
+                      <td className="px-4 lg:px-6 py-3 lg:py-4 text-gray-300 text-sm lg:text-base">
+                        {row.before}
+                      </td>
+                      <td className="px-4 lg:px-6 py-3 lg:py-4 text-amber-400 font-semibold text-sm lg:text-base">
                         {row.after}
                       </td>
-                      <td className="px-6 py-4 text-green-400 font-bold">
+                      <td className="px-4 lg:px-6 py-3 lg:py-4 text-green-400 font-bold text-sm lg:text-base">
                         {row.improvement}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Mobile Card View - Visible only on mobile */}
+            <div className="md:hidden space-y-4">
+              {kpiData.map((row, index) => (
+                <div
+                  key={index}
+                  className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-4 hover:bg-white/15 transition-all duration-300"
+                >
+                  {/* Metric Header */}
+                  <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/10">
+                    <h3 className="text-white font-semibold text-sm">
+                      {row.metric}
+                    </h3>
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 px-2 py-1 rounded text-black text-xs font-bold">
+                      {row.improvement}
+                    </div>
+                  </div>
+
+                  {/* Before & After Grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-black/30 rounded-lg p-3 text-center">
+                      <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">
+                        Before ERP
+                      </div>
+                      <div className="text-gray-300 font-medium text-sm">
+                        {row.before}
+                      </div>
+                    </div>
+                    <div className="bg-black/30 rounded-lg p-3 text-center border border-amber-400/20">
+                      <div className="text-amber-400 text-xs uppercase tracking-wider mb-1">
+                        After ERP
+                      </div>
+                      <div className="text-amber-400 font-semibold text-sm">
+                        {row.after}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Improvement Bar */}
+                  <div className="mt-3 pt-2 border-t border-white/10">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400 text-xs">Improvement</span>
+                      <span className="text-green-400 font-bold text-sm">
+                        {row.improvement}
+                      </span>
+                    </div>
+                    {/* Visual improvement bar */}
+                    <div className="mt-1 w-full bg-white/10 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="bg-gradient-to-r from-green-400 to-green-500 h-full rounded-full transition-all duration-1000"
+                        style={{
+                          width: row.improvement.includes("Faster")
+                            ? "85%"
+                            : row.improvement.includes("Better")
+                              ? "75%"
+                              : row.improvement.includes("Higher")
+                                ? "65%"
+                                : row.improvement.includes("Reduction")
+                                  ? "80%"
+                                  : row.improvement.includes("Instant")
+                                    ? "95%"
+                                    : "70%",
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Swipe Hint */}
+            <div className="md:hidden text-center mt-4">
+              <p className="text-gray-500 text-xs">
+                👆 Swipe to view all metrics
+              </p>
             </div>
           </div>
         </div>
@@ -988,8 +1070,8 @@ const ERPPage = () => {
             </h2>
             <p className="text-lg text-white text-center mb-12">
               Every industry has unique operational requirements. Our erp for
-              manufacturing industry solutions are tailored to address specific
-              sector challenges.
+              manufacturing industry solutions are tailored to address sector
+              challenges.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
