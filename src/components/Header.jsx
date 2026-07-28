@@ -930,7 +930,7 @@ const Header = () => {
                   className="w-full flex items-center justify-between py-3 px-4 bg-blue-600 text-white font-medium rounded transition-colors"
                   onClick={() => setIsIndustriesOpen(!isIndustriesOpen)}
                 >
-                  INDUSTRIES
+                  Industries
                   <ChevronDown
                     className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""}`}
                   />

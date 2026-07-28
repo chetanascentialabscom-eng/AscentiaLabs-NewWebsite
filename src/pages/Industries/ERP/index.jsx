@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, Link } from "react-router-dom";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import {
   Building2,
@@ -52,6 +52,15 @@ import {
   Package,
   FileText,
   Handshake,
+  BrainCircuit,
+  Boxes,
+  Wrench,
+  Plane,
+  Stethoscope,
+  Building,
+  Star,
+  Ticket,
+  GraduationCap as Cap,
 } from "lucide-react";
 import SEO from "../../../components/SEO";
 import { seoData } from "../../../utils/seoData";
@@ -111,12 +120,6 @@ const ERPPage = () => {
       description:
         "Disconnected systems make it difficult to maintain consistent compliance with industry regulations and standards.",
     },
-    {
-      icon: TrendingUp,
-      title: "Growth Constraints",
-      description:
-        "Scalability challenges when existing systems cannot handle increased volume or complexity as your business expands.",
-    },
   ];
 
   // Business Outcomes
@@ -156,12 +159,6 @@ const ERPPage = () => {
       title: "Compliance",
       value: "Consistent",
       description: "Adherence to regulatory standards",
-    },
-    {
-      icon: RefreshCw,
-      title: "Scalability",
-      value: "Systems that",
-      description: "Grow with your business",
     },
   ];
 
@@ -275,13 +272,13 @@ const ERPPage = () => {
 
   // Technology Stack
   const techStack = {
-    backend: ["Java", "Python", ".NET Core", "Node.js"],
-    frontend: ["React", "Angular", "Vue.js"],
-    cloud: ["AWS", "Azure", "Google Cloud Platform"],
-    database: ["PostgreSQL", "MongoDB", "Oracle", "SQL Server"],
-    apis: ["RESTful", "GraphQL", "SOAP"],
-    integration: ["MuleSoft", "Dell Boomi", "Apache Kafka"],
-    ai: ["TensorFlow", "PyTorch", "OpenAI APIs"],
+    Backend: ["Java", "Python", ".NET Core", "Node.js"],
+    Frontend: ["React", "Angular", "Vue.js"],
+    Cloud: ["AWS", "Azure", "Google Cloud Platform"],
+    Database: ["PostgreSQL", "MongoDB", "Oracle", "SQL Server"],
+    Apis: ["RESTful", "GraphQL", "SOAP"],
+    Integration: ["MuleSoft", "Dell Boomi", "Apache Kafka"],
+    Ai: ["TensorFlow", "PyTorch", "OpenAI APIs"],
   };
 
   // Integration Ecosystem
@@ -500,11 +497,40 @@ const ERPPage = () => {
 
   // Related Services
   const relatedServices = [
-    "Custom Software Development",
-    "AI/ML Development",
-    "Digital Transformation Services",
-    "Application Modernization",
-    "Mobile App Development",
+    {
+      title: "Custom Software Development",
+      icon: Code,
+      description:
+        "Tailored software solutions built for your specific business needs.",
+      link: "/custom-crm-development",
+    },
+    {
+      title: "AI/ML Development",
+      icon: Cpu,
+      description:
+        "Intelligent automation and predictive analytics for your business.",
+      link: "/ai-ml-services",
+    },
+    {
+      title: "Digital Transformation Services",
+      icon: RefreshCw,
+      description:
+        "Modernize your business operations with cutting-edge technology.",
+      link: "/digital-transformation",
+    },
+    {
+      title: "Application Modernization",
+      icon: Layers,
+      description: "Upgrade legacy systems to modern, scalable architectures.",
+      link: "/application-modernisation",
+    },
+    {
+      title: "Mobile App Development",
+      icon: Smartphone,
+      description:
+        "Native and cross-platform mobile applications for your business.",
+      link: "/mobile-application",
+    },
   ];
 
   // Related Resources
@@ -570,11 +596,11 @@ const ERPPage = () => {
         {/* Smooth transition gradient at bottom */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto px-4 py-5 2xl:py-10  ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="text-white space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+              <h1 className="text-[25px] md:text-4xl leading-tight">
                 ERP System Development — Custom Enterprise Resource Planning
                 Solutions
               </h1>
@@ -584,8 +610,7 @@ const ERPPage = () => {
                 intelligent ERP system that connects every part of their
                 operations. At Ascentia Labs, we design and build custom
                 enterprise resource planning solutions that streamline your
-                workflows, eliminate data silos, and provide real-time
-                visibility across your entire organization.
+                workflows
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Whether you are in manufacturing, healthcare, logistics, or
@@ -602,54 +627,68 @@ const ERPPage = () => {
             </div>
 
             {/* Right Content - Features Preview */}
-            <div className="space-y-4">
-              {[
-                {
-                  icon: Building2,
-                  title: "Unified Data Management",
-                  description: "One system, one source of truth",
-                },
-                {
-                  icon: Zap,
-                  title: "Process Automation",
-                  description:
-                    "Streamlined workflows from procurement to payroll",
-                },
-                {
-                  icon: BarChart3,
-                  title: "Real-Time Analytics",
-                  description: "Data-driven decision-making",
-                },
-                {
-                  icon: RefreshCw,
-                  title: "Scalability",
-                  description: "Grow with your business needs",
-                },
-                {
-                  icon: Shield,
-                  title: "Compliance",
-                  description: "Built-in regulatory frameworks",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:bg-white/15 transition-all duration-300"
-                >
-                  <div className="flex items-start space-x-3">
-                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0">
-                      <feature.icon size={20} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold text-lg mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
+
+            {/* Right Content - ERP Features Grid */}
+            <div className="mt-8 lg:mt-0">
+              {/* Top Badge - ERP Core Capabilities */}
+              <div className="flex justify-center mb-6">
+                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-2">
+                    <Layers className="w-7 h-7 text-amber-400" />
+                    <h3 className="text-white font-semibold">
+                      Complete ERP Suite
+                    </h3>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {/* Card 1 - Financial Management */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <DollarSign className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Financial Management
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Real-time accounting, budgeting, and financial reporting.
+                  </p>
+                </div>
+
+                {/* Card 2 - Supply Chain */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Truck className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Supply Chain Management
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    End-to-end procurement, logistics, and vendor tracking.
+                  </p>
+                </div>
+
+                {/* Card 3 - HR & Workforce */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Users className="w-12 h-12 text-green-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    HR & Workforce Management
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Employee records, payroll, attendance, and performance.
+                  </p>
+                </div>
+
+                {/* Card 4 - Business Intelligence */}
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <BarChart3 className="w-12 h-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Business Intelligence
+                  </h4>
+                  <p className="text-sm text-gray-300">
+                    Real-time dashboards and predictive analytics insights.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Stats Row */}
             </div>
           </div>
         </div>
@@ -662,7 +701,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
               The State of Enterprise Resource Planning — Market Insights
             </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg text-white max-w-3xl 2xl:max-w-6xl mx-auto">
               The global enterprise resource planning market is experiencing
               rapid growth as businesses recognize the critical role of
               integrated management systems.
@@ -678,13 +717,9 @@ const ERPPage = () => {
                 <div className="text-2xl md:text-3xl font-bold text-amber-400 mb-2">
                   {stat.metric}
                 </div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-sm text-gray-100">{stat.label}</div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-6 text-center text-sm text-gray-500">
-            Source: Industry Analysis 2026
           </div>
         </div>
       </section>
@@ -703,13 +738,13 @@ const ERPPage = () => {
               What is Enterprise Resource Planning?
             </h2>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+              <p className="text-white text-lg leading-relaxed mb-6">
                 Enterprise resource planning (ERP) refers to integrated software
                 platforms that help organizations manage and automate core
                 business processes across finance, human resources, supply
                 chain, manufacturing, and customer relationship management.
               </p>
-              <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              <p className="text-white text-lg leading-relaxed mb-8">
                 An erp system serves as the central nervous system of a modern
                 enterprise, connecting data from multiple departments into a
                 single source of truth. This eliminates the inefficiencies of
@@ -747,7 +782,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               The Business Case for Digital Transformation with ERP
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Businesses that delay digital transformation risk falling behind
               competitors who leverage technology to optimize operations. An erp
               software solution is the foundation of any successful digital
@@ -772,10 +807,6 @@ const ERPPage = () => {
                   driver: "Remote Workforce",
                   impact: "Need for cloud-based, accessible systems",
                 },
-                {
-                  driver: "Regulatory Compliance",
-                  impact: "Growing complexity of data governance",
-                },
               ].map((item, index) => (
                 <div
                   key={index}
@@ -789,7 +820,7 @@ const ERPPage = () => {
                       <h3 className="text-white font-semibold mb-1">
                         {item.driver}
                       </h3>
-                      <p className="text-gray-400 text-sm">{item.impact}</p>
+                      <p className="text-gray-100 text-sm">{item.impact}</p>
                     </div>
                   </div>
                 </div>
@@ -797,7 +828,7 @@ const ERPPage = () => {
             </div>
 
             <div className="mt-8 bg-gradient-to-r from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-xl p-6 border border-blue-500/30">
-              <p className="text-blue-200 text-center">
+              <p className="text-blue-100 text-center">
                 Cloud based erp systems enable businesses to modernize without
                 massive upfront infrastructure investments, making
                 enterprise-grade capabilities accessible to mid-market
@@ -821,7 +852,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Common Business Challenges Solved by ERP
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Before implementing an erp system, organizations typically
               struggle with operational inefficiencies that hinder growth.
             </p>
@@ -840,7 +871,7 @@ const ERPPage = () => {
                       <h3 className="text-white font-semibold text-lg mb-2">
                         {challenge.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-100 text-sm leading-relaxed">
                         {challenge.description}
                       </p>
                     </div>
@@ -859,7 +890,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Measurable Business Outcomes with Custom ERP
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Organizations that implement best erp software solutions achieve
               significant operational improvements.
             </p>
@@ -881,7 +912,7 @@ const ERPPage = () => {
                   <div className="text-2xl font-bold text-amber-400 mb-1">
                     {outcome.value}
                   </div>
-                  <div className="text-sm text-gray-400">
+                  <div className="text-sm text-gray-100">
                     {outcome.description}
                   </div>
                 </div>
@@ -904,8 +935,9 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Performance Metrics — Before and After ERP Implementation
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
-              Key Performance Indicator
+            <p className="text-lg text-white text-center mb-12">
+              Key Performance Indicator is an indicator of performance of
+              business.
             </p>
 
             <div className="overflow-x-auto">
@@ -931,7 +963,7 @@ const ERPPage = () => {
                       <td className="px-6 py-4 text-white font-medium">
                         {row.metric}
                       </td>
-                      <td className="px-6 py-4 text-gray-400">{row.before}</td>
+                      <td className="px-6 py-4 text-gray-100">{row.before}</td>
                       <td className="px-6 py-4 text-amber-400 font-semibold">
                         {row.after}
                       </td>
@@ -954,7 +986,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               ERP Solutions for Every Industry
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Every industry has unique operational requirements. Our erp for
               manufacturing industry solutions are tailored to address specific
               sector challenges.
@@ -972,7 +1004,7 @@ const ERPPage = () => {
                   <h3 className="text-white font-semibold text-xl mb-3">
                     {industry.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-100 text-sm leading-relaxed">
                     {industry.description}
                   </p>
                 </div>
@@ -995,7 +1027,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               AI-Powered ERP Systems — The Future of Enterprise Management
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               We integrate artificial intelligence (AI) and machine learning
               into our ERP solutions, transforming traditional systems into
               platforms.
@@ -1015,7 +1047,7 @@ const ERPPage = () => {
                       <h3 className="text-white font-semibold text-lg mb-2">
                         {solution.title}
                       </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-gray-100 text-sm leading-relaxed">
                         {solution.description}
                       </p>
                     </div>
@@ -1034,7 +1066,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Our ERP Technology Stack
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               We build robust, scalable ERP systems using modern technology
               architectures.
             </p>
@@ -1046,7 +1078,7 @@ const ERPPage = () => {
                     key={index}
                     className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
                   >
-                    <h3 className="text-amber-400 font-semibold text-sm uppercase tracking-wider mb-4">
+                    <h3 className="text-amber-400 font-semibold text-sm  uppercase tracking-wider mb-4">
                       {category}
                     </h3>
                     <div className="space-y-2">
@@ -1080,7 +1112,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Seamless Integration with Your Existing Systems
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               An erp integration strategy is essential for modern enterprises.
               Our solutions connect with your existing ecosystem.
             </p>
@@ -1116,7 +1148,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Real-World ERP Use Cases
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               See how organizations across industries have transformed their
               operations with our ERP solutions.
             </p>
@@ -1160,11 +1192,11 @@ const ERPPage = () => {
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="relative container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl lg:max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Understanding ERP Software Cost and ROI
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               The erp software cost and associated implementation expenses are
               significant, but the return on investment is substantial.
             </p>
@@ -1220,7 +1252,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Is Your Business Ready for ERP Implementation?
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Use this checklist to assess whether your organization is ready to
               begin the ERP journey.
             </p>
@@ -1239,11 +1271,6 @@ const ERPPage = () => {
                   className="flex items-center justify-between py-4 border-b border-gray-700 last:border-0"
                 >
                   <span className="text-white">{item}</span>
-                  <div className="flex items-center space-x-4">
-                    <span className="text-gray-500 text-sm">Yes</span>
-                    <div className="w-6 h-6 border-2 border-gray-600 rounded-md bg-black/30"></div>
-                    <span className="text-gray-500 text-sm">No</span>
-                  </div>
                 </div>
               ))}
             </div>
@@ -1264,7 +1291,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Your ERP Implementation Journey
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Our ERP implementation process follows a structured customer
               journey.
             </p>
@@ -1302,7 +1329,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Our ERP Implementation Methodology
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               A systematic approach to ensure successful delivery.
             </p>
 
@@ -1397,7 +1424,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Flexible ERP Deployment Options
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               We offer deployment flexibility to match your business
               requirements.
             </p>
@@ -1439,7 +1466,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Enterprise-Grade Security for Your ERP System
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Data security is a critical concern for ERP implementations. Our
               ERP solutions deliver:
             </p>
@@ -1456,7 +1483,7 @@ const ERPPage = () => {
                   <h3 className="text-white font-semibold mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                  <p className="text-gray-100 text-sm">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -1477,7 +1504,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Client Success Stories
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               See how we've helped businesses transform their operations.
             </p>
 
@@ -1501,7 +1528,7 @@ const ERPPage = () => {
                           {study.title}
                         </span>
                       </div>
-                      <p className="text-gray-300">{study.description}</p>
+                      <p className="text-gray-100">{study.description}</p>
                     </div>
                   </div>
                 </div>
@@ -1518,7 +1545,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Why Choose Ascentia Labs for Your ERP Implementation?
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Partner with us for enterprise-grade ERP solutions.
             </p>
 
@@ -1536,7 +1563,7 @@ const ERPPage = () => {
                       <h3 className="text-white font-semibold mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">
+                      <p className="text-gray-100 text-sm">
                         {item.description}
                       </p>
                     </div>
@@ -1561,7 +1588,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               Flexible Engagement Models
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Choose the engagement model that best fits your needs.
             </p>
 
@@ -1577,7 +1604,7 @@ const ERPPage = () => {
                   <h3 className="text-white font-semibold text-lg mb-2">
                     {model.title}
                   </h3>
-                  <p className="text-gray-300 text-sm">{model.description}</p>
+                  <p className="text-gray-100 text-sm">{model.description}</p>
                 </div>
               ))}
             </div>
@@ -1592,18 +1619,31 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent text-center mb-4">
               Related Services
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Explore our comprehensive range of enterprise solutions.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedServices.map((service, index) => (
-                <div
+                <Link
                   key={index}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 text-center"
+                  to={service.link}
+                  className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10"
                 >
-                  <div className="text-amber-400 font-semibold">{service}</div>
-                </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg text-black flex-shrink-0 group-hover:scale-110 transition-transform">
+                      <service.icon size={20} />
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold group-hover:text-amber-400 transition-colors">
+                        {service.title}
+                      </div>
+                      <p className="text-gray-400 text-sm mt-1 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -1623,7 +1663,7 @@ const ERPPage = () => {
             <h2 className="text-3xl md:text-4xl  text-white text-center mb-4">
               ERP Resources and Insights
             </h2>
-            <p className="text-lg text-gray-300 text-center mb-12">
+            <p className="text-lg text-white text-center mb-12">
               Explore our collection of ERP resources and insights.
             </p>
 
@@ -1654,7 +1694,7 @@ const ERPPage = () => {
               <h2 className="text-3xl md:text-4xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-4">
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-lg text-white">
                 Find answers to common questions about our ERP solutions
               </p>
             </div>
@@ -1669,9 +1709,7 @@ const ERPPage = () => {
                     className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
                     onClick={() => toggleFAQ(index)}
                   >
-                    <h3 className="text-lg font-semibold text-white pr-4">
-                      {faq.question}
-                    </h3>
+                    <h3 className="text-lg  text-white pr-4">{faq.question}</h3>
                     <div className="flex-shrink-0">
                       {openFAQ === index ? (
                         <ChevronUp className="w-5 h-5 text-blue-400" />
