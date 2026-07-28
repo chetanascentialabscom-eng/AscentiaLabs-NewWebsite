@@ -124,17 +124,17 @@ const IntegrationCard = ({ icon: Icon, title }) => (
 
 const UseCaseCard = ({ problem, solution, outcome }) => (
   <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300">
-    <p className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-1">
+    <p className="text-md uppercase tracking-wide text-red-500 font-semibold mb-1">
       Business Problem
     </p>
     <p className="text-white text-sm mb-3">{problem}</p>
     <div className="text-amber-400 text-xs mb-3">↓</div>
-    <p className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-1">
+    <p className="text-md uppercase tracking-wide text-blue-500 font-semibold mb-1">
       Solution
     </p>
     <p className="text-gray-300 text-sm mb-3">{solution}</p>
     <div className="text-amber-400 text-xs mb-3">↓</div>
-    <p className="text-xs uppercase tracking-wide text-gray-400 font-semibold mb-1">
+    <p className="text-md uppercase tracking-wide text-green-500 font-semibold mb-1">
       Outcome
     </p>
     <p className="text-lg font-bold text-white">{outcome}</p>
@@ -195,7 +195,7 @@ const DeploymentCard = ({ icon: Icon, title, points, highlight }) => (
 
 const CaseStudyCard = ({ metric, title, description }) => (
   <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
-    <div className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-3">
+    <div className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-3">
       {metric}
     </div>
     <h3 className="text-white text-base font-semibold mb-2">{title}</h3>
@@ -1143,8 +1143,8 @@ const ManufacturingPage = () => {
 
         <div className="relative container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-white space-y-6 py-8 lg:py-10">
-              <h1 className="text-3xl md:text-4xl leading-tight">
+            <div className="text-white space-y-6 py-8 lg:py-10 2xl:py-15">
+              <h1 className="text-[25px] md:text-4xl leading-tight">
                 Manufacturing Management Software – Production, Inventory,
                 Quality & Supply Chain Solutions
               </h1>
@@ -1154,14 +1154,8 @@ const ManufacturingPage = () => {
                 just an advantage—it's a necessity. Manufacturing management
                 software empowers factory owners, production managers, and
                 operations leaders to streamline production, optimize inventory,
-                maintain quality standards, and strengthen supply chains—all
-                from a single, integrated platform.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                At Ascentia Labs, we build custom manufacturing software
-                solutions that help Indian manufacturers and global enterprises
-                digitize operations, reduce costs, and scale production without
-                compromising quality.
+                maintain quality standards, and strengthen supply chains from a
+                single, integrated platform.
               </p>
               <button
                 onClick={openConsultation}
@@ -1264,14 +1258,12 @@ const ManufacturingPage = () => {
               <p className="text-white leading-relaxed">
                 Manufacturing is moving from reactive, paper-based operations to
                 proactive, data-driven production. Modern platforms integrate
-                production planning, inventory control, quality assurance and
-                supply chain visibility into one digital workflow.
-              </p>
-              <p className="text-gray-300 leading-relaxed">
-                For Indian manufacturers, that shift is accelerating: software
-                is becoming more accessible for small factories, while larger
-                enterprises invest in engineering and simulation tools to design
-                and test production systems before committing resources.
+                production planning, inventory control, quality assurance, and
+                supply chain visibility into one digital workflow. For Indian
+                manufacturers, this shift is accelerating as software becomes
+                more accessible for small factories, while larger enterprises
+                invest in engineering and simulation tools to design and test
+                production systems before committing resources.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
