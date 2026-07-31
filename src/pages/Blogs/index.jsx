@@ -14,6 +14,19 @@ const BlogsPage = () => {
   // Blog data with proper images and content
   const blogPosts = [
     {
+      id: 0,
+      title:
+        "AI-Powered Color Matching in Textile Manufacturing: A Complete Guide for 2025",
+      excerpt:
+        "Discover how AI-powered color matching is revolutionizing textile manufacturing by enabling faster, more accurate color decisions — and how you can implement it in your factory.",
+      image: "/blogs/blog12.png",
+      category: "Textile Manufacturing",
+      author: "Ascentia Labs Team",
+      date: "30/07/2026",
+      readTime: "10 min",
+      slug: "ai-powered-color-matching-textile-manufacturing",
+    },
+    {
       id: 1,
       title:
         "The Future of Fabric Shrinkage Prediction: Why AI Is Transforming Textile Manufacturing",
@@ -137,7 +150,7 @@ const BlogsPage = () => {
       date: "05/06/2025",
       readTime: "7 min",
       slug: "healthcare-app-development-patient-care",
-    }
+    },
   ];
 
   const categories = [

@@ -63,6 +63,7 @@ import Careers from "./pages/career-page";
 import ShopifyServicePage from "./pages/Services/ShopifyDevelompentSolution";
 import FabricShrinkagePredictionBlog from "./pages/Blogs/fabricShrinkagePrediction";
 import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrinkagePredictionBlog";
+import TextileColorMatchingBlog from "./pages/Blogs/Textilecolormatchingblog";
 
 function App() {
   // Initialize Lenis smooth scrolling
@@ -197,6 +198,11 @@ function App() {
             <Route
               path="future-of-fabric-shrinkage-prediction"
               element={<FutureFabricShrinkagePredictionBlog />}
+            />
+
+            <Route
+              path="ai-powered-color-matching-textile-manufacturing"
+              element={<TextileColorMatchingBlog />}
             />
             <Route
               path="/healthcare-app-development-patient-care"

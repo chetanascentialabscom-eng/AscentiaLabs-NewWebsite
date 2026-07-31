@@ -250,6 +250,13 @@ export const seoData = {
       "technology blog, software development blog, tech insights, industry trends, development best practices",
     url: "https://ascentialabs.com/blog",
   },
+  textileColorMatching: {
+    title: "Textile Color Matching Guide 2026 | Ascentia Labs",
+    description:
+      "Learn how AI-powered textile color matching helps manufacturers achieve accurate, repeatable fabric colors while reducing waste & improving production efficiency. Complete guide with best practices.",
+    keywords: "Textile color matching with AI | Ascentia Labs",
+    url: "https://ascentialabs.com/ai-powered-color-matching-textile-manufacturing",
+  },
   fabricShrinkagePrediction: {
     title:
       "Fabric Shrinkage Prediction Using AI: A Guide for Textile Manufacturers | Ascentia Labs",
