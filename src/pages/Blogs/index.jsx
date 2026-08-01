@@ -16,7 +16,7 @@ const BlogsPage = () => {
     {
       id: 0,
       title:
-        "AI-Powered Color Matching in Textile Manufacturing: A Complete Guide for 2025",
+        "AI-Powered Color Matching in Textile Manufacturing: A Complete Guide for 2026",
       excerpt:
         "Discover how AI-powered color matching is revolutionizing textile manufacturing by enabling faster, more accurate color decisions — and how you can implement it in your factory.",
       image: "/blogs/blog12.png",
