@@ -605,19 +605,12 @@ const ERPPage = () => {
                 Solutions
               </h1>
               <p className="text-lg text-gray-300 leading-relaxed">
-                In today's competitive business environment, organizations need
-                more than just standard software—they need a unified,
-                intelligent ERP system that connects every part of their
-                operations. At Ascentia Labs, we design and build custom
-                enterprise resource planning solutions that streamline your
-                workflows
+                At Ascentia Labs, we develop custom ERP software that unifies
+                your business operations into a single, intelligent platform.
+                Our enterprise resource planning solutions streamline workflows,
+                automate processes, and improve operational efficiency.
               </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Whether you are in manufacturing, healthcare, logistics, or
-                retail, our erp software solutions are tailored to your specific
-                business processes. We don't just implement software; we
-                transform how you operate.
-              </p>
+
               <button
                 onClick={openConsultation}
                 className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
@@ -744,13 +737,7 @@ const ERPPage = () => {
                 business processes across finance, human resources, supply
                 chain, manufacturing, and customer relationship management.
               </p>
-              <p className="text-white text-lg leading-relaxed mb-8">
-                An erp system serves as the central nervous system of a modern
-                enterprise, connecting data from multiple departments into a
-                single source of truth. This eliminates the inefficiencies of
-                disparate systems and provides real-time visibility into your
-                business performance.
-              </p>
+
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {[
                   "Unified Data Management",

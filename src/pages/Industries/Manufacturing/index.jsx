@@ -1150,12 +1150,12 @@ const ManufacturingPage = () => {
               </h1>
 
               <p className="text-gray-300 leading-relaxed">
-                In today's competitive manufacturing landscape, efficiency isn't
-                just an advantage—it's a necessity. Manufacturing management
-                software empowers factory owners, production managers, and
-                operations leaders to streamline production, optimize inventory,
-                maintain quality standards, and strengthen supply chains from a
-                single, integrated platform.
+                Manufacturing is rapidly shifting from manual, reactive
+                processes to data-driven operations. Modern manufacturing
+                software integrates production planning, inventory, quality
+                control, and supply chain management into a single digital
+                platform, enabling businesses to improve efficiency, visibility,
+                and decision-making.
               </p>
               <button
                 onClick={openConsultation}
@@ -1256,14 +1256,11 @@ const ManufacturingPage = () => {
                 The State of Manufacturing Today
               </h2>
               <p className="text-white leading-relaxed">
-                Manufacturing is moving from reactive, paper-based operations to
-                proactive, data-driven production. Modern platforms integrate
-                production planning, inventory control, quality assurance, and
-                supply chain visibility into one digital workflow. For Indian
-                manufacturers, this shift is accelerating as software becomes
-                more accessible for small factories, while larger enterprises
-                invest in engineering and simulation tools to design and test
-                production systems before committing resources.
+                At Ascentia Labs, we design and build custom manufacturing
+                software that optimizes every stage of production. Our solutions
+                empower factory owners, production managers, and operations
+                leaders to streamline workflows, improve efficiency, and enhance
+                overall performance.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
