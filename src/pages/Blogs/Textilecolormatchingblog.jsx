@@ -601,7 +601,7 @@ const TextileColorMatchingBlog = () => {
                 <InlineCTA
                   eyebrow="Related"
                   title="Learn more about our Textile Industry AI Solutions"
-                  to="/textile-erp-software-manufacturing-solutions"
+                  to="/textile-manufacturing-software"
                 />
 
                 {/* Section 2 */}
@@ -829,7 +829,7 @@ const TextileColorMatchingBlog = () => {
                 <InlineCTA
                   eyebrow="Related"
                   title="Explore our Textile Industry AI Solutions"
-                  to="/textile-erp-software-manufacturing-solutions"
+                  to="/textile-manufacturing-software"
                 />
 
                 {/* Section 7 — KPI / Benefits grid */}
@@ -1080,7 +1080,7 @@ const TextileColorMatchingBlog = () => {
                       Schedule AI Consultation
                     </button>
                     <Link
-                      to="/textile-erp-software-manufacturing-solutions"
+                      to="/textile-manufacturing-software"
                       className="w-full xs:w-auto text-center px-6 py-3 rounded-lg border border-white/40 text-white font-medium transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:bg-white/10"
                     >
                       Explore Textile Industry Solutions

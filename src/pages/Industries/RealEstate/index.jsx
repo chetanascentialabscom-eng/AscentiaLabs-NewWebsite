@@ -469,7 +469,7 @@ const RealEstatePage = () => {
       icon: Package,
       title: "Textile Industry",
       line: "ERP solutions for textile manufacturing & supply chains.",
-      link: "/textile-erp-software-manufacturing-solutions",
+      link: "/textile-manufacturing-software",
     },
     {
       icon: Truck,

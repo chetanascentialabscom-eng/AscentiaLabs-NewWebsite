@@ -123,7 +123,7 @@ function App() {
               element={<TicketingSolutionPage />}
             />
             <Route
-              path="/textile-erp-software-manufacturing-solutions"
+              path="/textile-manufacturing-software"
               element={<TextilesPage />}
             />
             <Route

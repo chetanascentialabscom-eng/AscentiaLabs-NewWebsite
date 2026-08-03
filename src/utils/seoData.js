@@ -136,7 +136,7 @@ export const seoData = {
       "Reduce downtime by 35% with our textile ERP software. AI-powered production planning, inventory management, and quality control for textile manufacturers. Get a free consultation.",
     keywords:
       "textile software development, textile industry solutions, fabric management, textile manufacturing, production planning, textile ERP",
-    url: "https://ascentialabs.com/textile-erp-software-manufacturing-solutions",
+    url: "https://ascentialabs.com/textile-manufacturing-software",
   },
 
   manufacturing: {
