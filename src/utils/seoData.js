@@ -94,9 +94,9 @@ export const seoData = {
   },
 
   kindergarten: {
-    title: "Kindergarten Management System | Ascentia Labs",
+    title: "Kindergarten Management Software | Ascentia Labs",
     description:
-      "Comprehensive kindergarten management system for early childhood education. Features student tracking, parent communication, staff management & learning analytics.",
+      "Streamline admissions, attendance, billing & parent communication with Ascentia Labs' kindergarten management software. Built for preschools, daycares & childcare centers.",
     keywords:
       "kindergarten management system, school software, education management, student information system, school app",
     url: "https://ascentialabs.com/kindergarten-school-management",
