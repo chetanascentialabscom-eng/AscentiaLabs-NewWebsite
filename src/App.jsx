@@ -17,6 +17,7 @@ import {
   ERPPage,
   HealthCarePage,
   RealEstatePage,
+  UAERealEstatePage,
   KindergartenPage,
   EducationPage,
   TravelTourismPage,
@@ -105,6 +106,10 @@ function App() {
             <Route
               path="/real-estate-app-development"
               element={<RealEstatePage />}
+            />
+            <Route
+              path="/uae-real-estate-software-development"
+              element={<UAERealEstatePage />}
             />
             <Route
               path="/kindergarten-school-management"

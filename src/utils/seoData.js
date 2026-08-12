@@ -93,6 +93,15 @@ export const seoData = {
     url: "https://ascentialabs.com/real-estate-app-development",
   },
 
+  uaeRealEstate: {
+    title: "Real Estate Software Development Company in UAE | Ascentia Labs",
+    description:
+      "Custom real estate software development in UAE — property management, CRM, ERP, PropTech, Ejari & Tawtheeq integrations, and AI-powered platforms for developers, brokers, and investors.",
+    keywords:
+      "real estate software development company UAE, property management software Dubai, real estate CRM UAE, PropTech UAE, Ejari integration, Tawtheeq integration",
+    url: "https://ascentialabs.com/uae-real-estate-software-development",
+  },
+
   kindergarten: {
     title: "Kindergarten Management Software | Ascentia Labs",
     description:
