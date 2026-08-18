@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import NewsTicker from "./components/NewsTicker";
 import Footer from "./components/Footer";
@@ -6,6 +6,7 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 import ScrollToTop from "./components/ScrollToTop";
 import { ConsultationProvider } from "./contexts/ConsultationContext";
 import { useLenis } from "./hooks/useLenis";
+import { ROUTES, LEGACY_REDIRECTS } from "./utils/routes";
 import {
   Home,
   About,
@@ -52,7 +53,6 @@ import {
   NotFound,
 } from "./pages";
 
-// Import new case study components
 import NDMCTicketingCase from "./pages/CaseStudies/NDMCTicketingCase";
 import InsuranceExpertsCase from "./pages/CaseStudies/InsuranceExpertsCase";
 import SSoodTaskManagementCase from "./pages/CaseStudies/SSoodTaskManagementCase";
@@ -67,7 +67,6 @@ import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrin
 import TextileColorMatchingBlog from "./pages/Blogs/Textilecolormatchingblog";
 
 function App() {
-  // Initialize Lenis smooth scrolling
   useLenis();
 
   return (
@@ -80,192 +79,214 @@ function App() {
             <NewsTicker />
           </div>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About />} />
-            <Route path="/contact-us" element={<Contact />} />
+            <Route path={ROUTES.home} element={<Home />} />
+            <Route path={ROUTES.about} element={<About />} />
+            <Route path={ROUTES.contact} element={<Contact />} />
 
-            {/* Industry Routes - Using old website URLs */}
-            <Route path="/field-service-crm" element={<FieldServiceCRM />} />
+            {/* Industry Routes — /industry/{slug} */}
             <Route
-              path="/business-management-crm-solution"
+              path={ROUTES.industry.fieldServiceCrm}
+              element={<FieldServiceCRM />}
+            />
+            <Route
+              path={ROUTES.industry.businessCrm}
               element={<BusinessCRM />}
             />
             <Route
-              path="/interior-design-app-development"
+              path={ROUTES.industry.interiorArchitecture}
               element={<InteriorArchitecture />}
             />
             <Route
-              path="/logistics-software-development"
+              path={ROUTES.industry.logistics}
               element={<LogisticsPage />}
             />
-            <Route path="/enterprise-resource-planning" element={<ERPPage />} />
+            <Route path={ROUTES.industry.erp} element={<ERPPage />} />
             <Route
-              path="/healthcare-app-development"
+              path={ROUTES.industry.healthcare}
               element={<HealthCarePage />}
             />
             <Route
-              path="/real-estate-app-development"
+              path={ROUTES.industry.realEstate}
               element={<RealEstatePage />}
             />
             <Route
-              path="/uae-real-estate-software-development"
+              path={ROUTES.industry.uaeRealEstate}
               element={<UAERealEstatePage />}
             />
             <Route
-              path="/kindergarten-school-management"
+              path={ROUTES.industry.kindergarten}
               element={<KindergartenPage />}
             />
             <Route
-              path="/education-app-development"
+              path={ROUTES.industry.education}
               element={<EducationPage />}
             />
             <Route
-              path="/travel-app-development"
+              path={ROUTES.industry.travelTourism}
               element={<TravelTourismPage />}
             />
             <Route
-              path="/ticketing-solution"
+              path={ROUTES.industry.ticketing}
               element={<TicketingSolutionPage />}
             />
             <Route
-              path="/textile-manufacturing-software"
+              path={ROUTES.industry.textiles}
               element={<TextilesPage />}
             />
             <Route
-              path="/manufacturing-management-software"
+              path={ROUTES.industry.manufacturing}
               element={<ManufacturingPage />}
             />
 
-            {/* Services Routes */}
+            {/* Service Routes — /service/{slug} */}
             <Route
-              path="/custom-crm-development"
+              path={ROUTES.service.customCrm}
               element={<CustomCRMDevelopment />}
             />
             <Route
-              path="/technology-consultation-mis"
+              path={ROUTES.service.technologyConsultation}
               element={<TechnologyConsultationAndMIS />}
             />
             <Route
-              path="/software-engineering"
+              path={ROUTES.service.softwareEngineering}
               element={<SoftwareEngineering />}
             />
-            <Route path="/ai-ml-services" element={<AI_ML />} />
+            <Route path={ROUTES.service.aiMl} element={<AI_ML />} />
             <Route
-              path="/application-modernisation"
+              path={ROUTES.service.applicationModernisation}
               element={<ApplicationModernisation />}
             />
             <Route
-              path="/digital-transformation"
+              path={ROUTES.service.digitalTransformation}
               element={<DigitalTransformation />}
             />
-            <Route path="/ideation-design" element={<IdeationDesign />} />
-            <Route path="/mobile-application" element={<MobileApplication />} />
-            <Route path="/go-to-market" element={<GoToMarket />} />
             <Route
-              path="/startup-technology-partnership"
-              element={<Startup />}
+              path={ROUTES.service.ideationDesign}
+              element={<IdeationDesign />}
             />
             <Route
-              path="/shopify-development-solution"
+              path={ROUTES.service.mobileApplication}
+              element={<MobileApplication />}
+            />
+            <Route
+              path={ROUTES.service.goToMarket}
+              element={<GoToMarket />}
+            />
+            <Route path={ROUTES.service.startup} element={<Startup />} />
+            <Route
+              path={ROUTES.service.shopify}
               element={<ShopifyServicePage />}
             />
 
-            {/* Blog Routes */}
-            <Route path="/blog" element={<BlogsPage />} />
+            {/* Blog Routes — /blog + /blog/{slug} */}
+            <Route path={ROUTES.blog.index} element={<BlogsPage />} />
             <Route
-              path="/travel-app-development-in-tourism"
+              path={ROUTES.blog.travelAppDevelopment}
               element={<TravelAppDevelopment />}
             />
-            <Route path="travel-and-ai-2026" element={<TravelandAiBlog26 />} />
-            <Route path="travel-margin-2026" element={<TravelMargin2026 />} />
             <Route
-              path="/latest-tourism-insights2025"
+              path={ROUTES.blog.travelAndAi2026}
+              element={<TravelandAiBlog26 />}
+            />
+            <Route
+              path={ROUTES.blog.travelMargin2026}
+              element={<TravelMargin2026 />}
+            />
+            <Route
+              path={ROUTES.blog.tourismInsights2025}
               element={<TourismReport2025 />}
             />
             <Route
-              path="/benefits-ai-travel-tourism"
+              path={ROUTES.blog.aiBenefitsTravel}
               element={<AIBenefitsTravel />}
             />
             <Route
-              path="/custom-software-development-business"
+              path={ROUTES.blog.customSoftwareBusiness}
               element={<CustomSoftwareDevelopment />}
             />
             <Route
-              path="/mobile-app-development-trends-2025"
+              path={ROUTES.blog.mobileAppTrends2025}
               element={<MobileAppTrends2025 />}
             />
-
             <Route
-              path="fabric-shrinkage-prediction-ai-guide"
+              path={ROUTES.blog.fabricShrinkage}
               element={<FabricShrinkagePredictionBlog />}
             />
-
             <Route
-              path="future-of-fabric-shrinkage-prediction"
+              path={ROUTES.blog.futureFabricShrinkage}
               element={<FutureFabricShrinkagePredictionBlog />}
             />
-
             <Route
-              path="ai-powered-color-matching-textile-manufacturing"
+              path={ROUTES.blog.textileColorMatching}
               element={<TextileColorMatchingBlog />}
             />
             <Route
-              path="/healthcare-app-development-patient-care"
+              path={ROUTES.blog.healthcarePatientCare}
               element={<HealthcareAppDevelopment />}
             />
 
             {/* News Routes */}
-            <Route path="/news" element={<NewsPage />} />
-            <Route path="/news/itb-asia-2025" element={<ITBAsia2025 />} />
+            <Route path={ROUTES.news} element={<NewsPage />} />
+            <Route path={ROUTES.newsItbAsia2025} element={<ITBAsia2025 />} />
             <Route
-              path="/news/routemaestro-platform"
+              path={ROUTES.newsRouteMaestro}
               element={<RouteMaestroPlatform />}
             />
 
             {/* Case Studies Routes */}
-            <Route path="/case-studies" element={<CaseStudiesPage />} />
-            <Route path="/case-study-justdoit" element={<JusDoItCase />} />
+            <Route path={ROUTES.caseStudies} element={<CaseStudiesPage />} />
             <Route
-              path="/case-study-routemaestro-ai-travel-platform"
+              path={ROUTES.caseStudyJustDoIt}
+              element={<JusDoItCase />}
+            />
+            <Route
+              path={ROUTES.caseStudyRouteMaestro}
               element={<RouteMaestroCase />}
             />
             <Route
-              path="/case-study-airnet-travels-routemaestro"
+              path={ROUTES.caseStudyAirnet}
               element={<RouteMaestroCase />}
             />
             <Route
-              path="/case-study-kinderconnect-kindergarten-management"
+              path={ROUTES.caseStudyKinderConnect}
               element={<KinderConnectCase />}
             />
             <Route
-              path="/case-study-insurancesafe-digital-platform"
+              path={ROUTES.caseStudyInsuranceSafe}
               element={<InsuranceSafeCase />}
             />
             <Route
-              path="/case-study-ndmc-mcl-ticketing-platform"
+              path={ROUTES.caseStudyNdmc}
               element={<NDMCTicketingCase />}
             />
             <Route
-              path="/case-study-insurance-experts-management"
+              path={ROUTES.caseStudyInsuranceExperts}
               element={<InsuranceExpertsCase />}
             />
             <Route
-              path="/case-study-s-sood-co-task-management"
+              path={ROUTES.caseStudySSood}
               element={<SSoodTaskManagementCase />}
             />
             <Route
-              path="/case-study-pumpkins-kindergarten-management"
+              path={ROUTES.caseStudyPumpkins}
               element={<PumpkinsKindergartenCase />}
             />
             <Route
-              path="/case-study-sunview-enclave-real-estate"
+              path={ROUTES.caseStudySunview}
               element={<SunviewEnclaveCase />}
             />
 
-            {/* career page */}
-            <Route path="/careers" element={<Careers />} />
+            <Route path={ROUTES.careers} element={<Careers />} />
 
-            {/* 404 Catch-all Route - Must be last */}
+            {/* Legacy URL redirects → new /industry|/service|/blog slugs */}
+            {LEGACY_REDIRECTS.map(([from, to]) => (
+              <Route
+                key={from}
+                path={from}
+                element={<Navigate to={to} replace />}
+              />
+            ))}
+
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

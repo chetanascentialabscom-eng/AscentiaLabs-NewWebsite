@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useConsultation } from "../contexts/ConsultationContext";
+import { ROUTES } from "../utils/routes";
 import {
   Settings,
   GraduationCap,
@@ -141,7 +142,7 @@ const Header = () => {
         {/* Main Navigation */}
         <div className="flex justify-between items-center py-3 sm:py-4">
           <div className="flex items-center">
-            <Link to="/">
+            <Link to={ROUTES.home}>
               <img
                 src="/ascentialabslogopng.png"
                 alt="Ascentia Labs"
@@ -153,7 +154,7 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-8">
             <Link
-              to="/"
+              to={ROUTES.home}
               className={`font-medium transition-colors ${
                 location.pathname === "/"
                   ? "text-blue-600"
@@ -163,7 +164,7 @@ const Header = () => {
               Home
             </Link>
             <Link
-              to="/about-us"
+              to={ROUTES.about}
               className={`font-medium transition-colors ${
                 location.pathname === "/about-us"
                   ? "text-blue-600"
@@ -193,7 +194,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
                     <Link
-                      to="/custom-crm-development"
+                      to={ROUTES.service.customCrm}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -208,7 +209,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/technology-consultation-mis"
+                      to={ROUTES.service.technologyConsultation}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -223,7 +224,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/software-engineering"
+                      to={ROUTES.service.softwareEngineering}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -238,7 +239,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/ai-ml-services"
+                      to={ROUTES.service.aiMl}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -253,7 +254,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/application-modernisation"
+                      to={ROUTES.service.applicationModernisation}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -268,7 +269,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/digital-transformation"
+                      to={ROUTES.service.digitalTransformation}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -283,7 +284,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/ideation-design"
+                      to={ROUTES.service.ideationDesign}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -298,7 +299,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/go-to-market"
+                      to={ROUTES.service.goToMarket}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -313,7 +314,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/mobile-application"
+                      to={ROUTES.service.mobileApplication}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -328,7 +329,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/startup-technology-partnership"
+                      to={ROUTES.service.startup}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -343,7 +344,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/shopify-development-solution"
+                      to={ROUTES.service.shopify}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -386,7 +387,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-3 gap-3">
                     <Link
-                      to="/field-service-crm"
+                      to={ROUTES.industry.fieldServiceCrm}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -402,7 +403,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/business-management-crm-solution"
+                      to={ROUTES.industry.businessCrm}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -416,7 +417,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/interior-design-app-development"
+                      to={ROUTES.industry.interiorArchitecture}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -432,7 +433,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/real-estate-app-development"
+                      to={ROUTES.industry.realEstate}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -446,7 +447,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/education-app-development"
+                      to={ROUTES.industry.education}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -460,7 +461,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/kindergarten-school-management"
+                      to={ROUTES.industry.kindergarten}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -474,7 +475,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/travel-app-development"
+                      to={ROUTES.industry.travelTourism}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -490,7 +491,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/enterprise-resource-planning"
+                      to={ROUTES.industry.erp}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -504,7 +505,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/ticketing-solution"
+                      to={ROUTES.industry.ticketing}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -520,7 +521,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/textile-manufacturing-software"
+                      to={ROUTES.industry.textiles}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -534,7 +535,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/manufacturing-management-software"
+                      to={ROUTES.industry.manufacturing}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -548,7 +549,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/healthcare-app-development"
+                      to={ROUTES.industry.healthcare}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -562,7 +563,7 @@ const Header = () => {
                     </Link>
 
                     <Link
-                      to="/logistics-software-development"
+                      to={ROUTES.industry.logistics}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -649,7 +650,7 @@ const Header = () => {
                 <div className="p-5">
                   <div className="grid grid-cols-1 gap-3">
                     <Link
-                      to="/blog"
+                      to={ROUTES.blog.index}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -662,7 +663,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/news"
+                      to={ROUTES.news}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -675,7 +676,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/case-studies"
+                      to={ROUTES.caseStudies}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -688,7 +689,7 @@ const Header = () => {
                       </div>
                     </Link>
                     <Link
-                      to="/careers"
+                      to={ROUTES.careers}
                       className="flex items-center py-2 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={closeAllDesktopDropdowns}
                     >
@@ -706,7 +707,7 @@ const Header = () => {
             </div>
 
             <Link
-              to="/contact-us"
+              to={ROUTES.contact}
               className={`font-medium transition-colors ${
                 location.pathname === "/contact-us"
                   ? "text-blue-600"
@@ -756,7 +757,7 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-gray-100 max-h-[calc(100vh-140px)] overflow-y-auto">
             <nav className="flex flex-col space-y-2">
               <Link
-                to="/"
+                to={ROUTES.home}
                 className={`font-medium transition-colors py-2 px-4 rounded ${
                   location.pathname === "/"
                     ? "text-blue-600 bg-blue-50"
@@ -768,7 +769,7 @@ const Header = () => {
               </Link>
 
               <Link
-                to="/about-us"
+                to={ROUTES.about}
                 className={`font-medium transition-colors py-2 px-4 rounded ${
                   location.pathname === "/about-us"
                     ? "text-blue-600 bg-blue-50"
@@ -794,7 +795,7 @@ const Header = () => {
                 {isServicesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link
-                      to="/custom-crm-development"
+                      to={ROUTES.service.customCrm}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -805,7 +806,7 @@ const Header = () => {
                       <span className="text-sm">Custom CRM Development</span>
                     </Link>
                     <Link
-                      to="/technology-consultation-mis"
+                      to={ROUTES.service.technologyConsultation}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -818,7 +819,7 @@ const Header = () => {
                       </span>
                     </Link>
                     <Link
-                      to="/software-engineering"
+                      to={ROUTES.service.softwareEngineering}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -829,7 +830,7 @@ const Header = () => {
                       <span className="text-sm">Software Engineering</span>
                     </Link>
                     <Link
-                      to="/ai-ml-services"
+                      to={ROUTES.service.aiMl}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -840,7 +841,7 @@ const Header = () => {
                       <span className="text-sm">AI ML Services</span>
                     </Link>
                     <Link
-                      to="/application-modernisation"
+                      to={ROUTES.service.applicationModernisation}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -851,7 +852,7 @@ const Header = () => {
                       <span className="text-sm">Application Modernisation</span>
                     </Link>
                     <Link
-                      to="/digital-transformation"
+                      to={ROUTES.service.digitalTransformation}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -862,7 +863,7 @@ const Header = () => {
                       <span className="text-sm">Digital Transformation</span>
                     </Link>
                     <Link
-                      to="/ideation-design"
+                      to={ROUTES.service.ideationDesign}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -875,7 +876,7 @@ const Header = () => {
                       </span>
                     </Link>
                     <Link
-                      to="/go-to-market"
+                      to={ROUTES.service.goToMarket}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -886,7 +887,7 @@ const Header = () => {
                       <span className="text-sm">Go-To-Market</span>
                     </Link>
                     <Link
-                      to="/mobile-application"
+                      to={ROUTES.service.mobileApplication}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -897,7 +898,7 @@ const Header = () => {
                       <span className="text-sm">Mobile Application</span>
                     </Link>
                     <Link
-                      to="/startup-technology-partnership"
+                      to={ROUTES.service.startup}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -908,7 +909,7 @@ const Header = () => {
                       <span className="text-sm">Startup Partnership</span>
                     </Link>
                     <Link
-                      to="/shopify-development-solution"
+                      to={ROUTES.service.shopify}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all cursor-pointer"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -939,7 +940,7 @@ const Header = () => {
                 {isIndustriesOpen && (
                   <div className="pb-2 space-y-1 bg-white max-h-80 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link
-                      to="/field-service-crm"
+                      to={ROUTES.industry.fieldServiceCrm}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -950,7 +951,7 @@ const Header = () => {
                       <span className="text-sm">Field Service CRM</span>
                     </Link>
                     <Link
-                      to="/business-management-crm-solution"
+                      to={ROUTES.industry.businessCrm}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -961,7 +962,7 @@ const Header = () => {
                       <span className="text-sm">Business CRM</span>
                     </Link>
                     <Link
-                      to="/education-app-development"
+                      to={ROUTES.industry.education}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -972,7 +973,7 @@ const Header = () => {
                       <span className="text-sm">Education</span>
                     </Link>
                     <Link
-                      to="/enterprise-resource-planning"
+                      to={ROUTES.industry.erp}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -983,7 +984,7 @@ const Header = () => {
                       <span className="text-sm">ERP</span>
                     </Link>
                     <Link
-                      to="/healthcare-app-development"
+                      to={ROUTES.industry.healthcare}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -994,7 +995,7 @@ const Header = () => {
                       <span className="text-sm">Health Care</span>
                     </Link>
                     <Link
-                      to="/interior-design-app-development"
+                      to={ROUTES.industry.interiorArchitecture}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1005,7 +1006,7 @@ const Header = () => {
                       <span className="text-sm">Interior & Architecture</span>
                     </Link>
                     <Link
-                      to="/kindergarten-school-management"
+                      to={ROUTES.industry.kindergarten}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1016,7 +1017,7 @@ const Header = () => {
                       <span className="text-sm">Kindergarten</span>
                     </Link>
                     <Link
-                      to="/ticketing-solution"
+                      to={ROUTES.industry.ticketing}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1027,7 +1028,7 @@ const Header = () => {
                       <span className="text-sm">Ticketing Solution</span>
                     </Link>
                     <Link
-                      to="/textile-manufacturing-software"
+                      to={ROUTES.industry.textiles}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1038,7 +1039,7 @@ const Header = () => {
                       <span className="text-sm">Textiles</span>
                     </Link>
                     <Link
-                      to="/logistics-software-development"
+                      to={ROUTES.industry.logistics}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1049,7 +1050,7 @@ const Header = () => {
                       <span className="text-sm">Logistics</span>
                     </Link>
                     <Link
-                      to="/manufacturing-management-software"
+                      to={ROUTES.industry.manufacturing}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1060,7 +1061,7 @@ const Header = () => {
                       <span className="text-sm">Manufacturing</span>
                     </Link>
                     <Link
-                      to="/real-estate-app-development"
+                      to={ROUTES.industry.realEstate}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1071,7 +1072,7 @@ const Header = () => {
                       <span className="text-sm">Real Estate</span>
                     </Link>
                     <Link
-                      to="/travel-app-development"
+                      to={ROUTES.industry.travelTourism}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1144,7 +1145,7 @@ const Header = () => {
                 {isResourcesOpen && (
                   <div className="pb-2 space-y-1 max-h-60 overflow-y-auto custom-scrollbar relative mobile-dropdown-scroll">
                     <Link
-                      to="/blog"
+                      to={ROUTES.blog.index}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1155,7 +1156,7 @@ const Header = () => {
                       <span className="text-sm">Blogs</span>
                     </Link>
                     <Link
-                      to="/news"
+                      to={ROUTES.news}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1166,7 +1167,7 @@ const Header = () => {
                       <span className="text-sm">News</span>
                     </Link>
                     <Link
-                      to="/case-studies"
+                      to={ROUTES.caseStudies}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1177,7 +1178,7 @@ const Header = () => {
                       <span className="text-sm">Case Studies</span>
                     </Link>
                     <Link
-                      to="/careers"
+                      to={ROUTES.careers}
                       className="flex items-center py-2 px-6 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-all"
                       onClick={() => {
                         setIsMenuOpen(false);
@@ -1192,7 +1193,7 @@ const Header = () => {
               </div>
 
               <Link
-                to="/contact-us"
+                to={ROUTES.contact}
                 className={`font-medium transition-colors py-2 px-4 rounded ${
                   location.pathname === "/contact-us"
                     ? "text-blue-600 bg-blue-50"

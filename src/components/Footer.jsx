@@ -1,22 +1,23 @@
 import { Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useConsultation } from '../contexts/ConsultationContext';
+import { ROUTES } from '../utils/routes';
 
 const Footer = () => {
   const { openConsultation } = useConsultation();
   
   const usefulLinks = [
-    { name: "Software Engineering", route: "/software-engineering" },
-    { name: "AI ML Services", route: "/ai-ml-services" },
-    { name: "Mobile Application", route: "/mobile-application" },
-    { name: "Digital Transformation", route: "/digital-transformation" },
-    { name: "Technology Consultation ", route: "/technology-consultation-mis" }
+    { name: "Software Engineering", route: ROUTES.service.softwareEngineering },
+    { name: "AI ML Services", route: ROUTES.service.aiMl },
+    { name: "Mobile Application", route: ROUTES.service.mobileApplication },
+    { name: "Digital Transformation", route: ROUTES.service.digitalTransformation },
+    { name: "Technology Consultation ", route: ROUTES.service.technologyConsultation }
   ];
 
   const aboutLinks = [
-    { name: "About Us", route: "/about-us" },
-    { name: "Send A Message", route: "/contact-us" },
-    { name: "Our Blogs", route: "/blog" },
+    { name: "About Us", route: ROUTES.about },
+    { name: "Send A Message", route: ROUTES.contact },
+    { name: "Our Blogs", route: ROUTES.blog.index },
     { name: "Sitemap", route: "/sitemap_index.xml", external: true }
   ];
 

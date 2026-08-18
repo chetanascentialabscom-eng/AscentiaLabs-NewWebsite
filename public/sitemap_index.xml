@@ -1,270 +1,343 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core -->
   <url>
     <loc>https://ascentialabs.com/</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/about-us</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/contact-us</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/careers</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/blog</loc>
-    <lastmod>2025-12-08</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  
-  <!-- Services -->
   <url>
-    <loc>https://ascentialabs.com/custom-crm-development</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://ascentialabs.com/news</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-studies</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Services — /service/{slug} -->
+  <url>
+    <loc>https://ascentialabs.com/service/custom-crm-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/technology-consultation-mis</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/service/technology-consultation-mis</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/software-engineering</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/service/software-engineering</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/ai-ml-services</loc>
-    <lastmod>2024-12-08</lastmod>
+    <loc>https://ascentialabs.com/service/ai-ml-services</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/application-modernisation</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/service/application-modernisation</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/digital-transformation</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/service/digital-transformation</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/ideation-design</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/service/ideation-design</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/mobile-application</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/service/mobile-application</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/go-to-market</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/service/go-to-market</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Industries -->
   <url>
-    <loc>https://ascentialabs.com/field-service-crm</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://ascentialabs.com/service/startup-technology-partnership</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/service/shopify-development-solution</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Industries — /industry/{slug} -->
+  <url>
+    <loc>https://ascentialabs.com/industry/field-service-crm</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/business-management-crm-solution</loc>
-    <lastmod>2025-12-30</lastmod>
+    <loc>https://ascentialabs.com/industry/business-management-crm-solution</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/interior-design-app-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/interior-design-app-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/logistics-software-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/logistics-software-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/enterprise-resource-planning</loc>
-    <lastmod>2024-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/enterprise-resource-planning</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/healthcare-app-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/healthcare-app-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/real-estate-app-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/real-estate-app-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/kindergarten-school-management</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/uae-real-estate-software-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/education-app-development</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/kindergarten-school-management</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/travel-app-development</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ascentialabs.com/ticketing-solution</loc>
-    <lastmod>2025-12-17</lastmod>
+    <loc>https://ascentialabs.com/industry/education-app-development</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/textile-erp-software-manufacturing-solutions</loc>
-    <lastmod>2025-12-17</lastmod>
+    <loc>https://ascentialabs.com/industry/travel-app-development</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/industry/ticketing-solution</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/manufacturing</loc>
-    <lastmod>2025-12-08</lastmod>
+    <loc>https://ascentialabs.com/industry/textile-manufacturing-software</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Products & Solutions -->
   <url>
-    <loc>https://ascentialabs.com/custom-software-development</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://ascentialabs.com/industry/manufacturing-management-software</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
+
+  <!-- Blog posts — /blog/{slug} -->
   <url>
-    <loc>https://ascentialabs.com/itb-asia-2025</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ascentialabs.com/routemaestro</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Blog Posts -->
-  <url>
-    <loc>https://ascentialabs.com/travel-app-development-in-tourism</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/travel-app-development-in-tourism</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/latest-tourism-insights2025</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/latest-tourism-insights2025</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/benefits-ai-travel-tourism</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/benefits-ai-travel-tourism</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/custom-software-development-business</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/custom-software-development-business</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/mobile-app-development-trends-2025</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/mobile-app-development-trends-2025</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ascentialabs.com/healthcare-app-development-patient-care</loc>
-    <lastmod>2025-12-15</lastmod>
+    <loc>https://ascentialabs.com/blog/healthcare-app-development-patient-care</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-  <loc>https://ascentialabs.com/travel-margin-2026</loc>
-  <lastmod>2026-05-21</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://ascentialabs.com/travel-and-ai-2026</loc>
-  <lastmod>2026-05-21</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://ascentialabs.com/fabric-shrinkage-prediction-ai-guide</loc>
-  <lastmod>2026-05-22</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://ascentialabs.com/blog/travel-margin-2026</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/blog/travel-and-ai-2026</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/blog/fabric-shrinkage-prediction-ai-guide</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/blog/future-of-fabric-shrinkage-prediction</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/blog/ai-powered-color-matching-textile-manufacturing</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- News -->
+  <url>
+    <loc>https://ascentialabs.com/news/itb-asia-2025</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/news/routemaestro-platform</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Case Studies -->
   <url>
-    <loc>https://ascentialabs.com/case-studies</loc>
-    <lastmod>2025-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ascentialabs.com/case-study-justdoit</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/case-study-routemaestro-ai-travel-platform</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-airnet-travels-routemaestro</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/case-study-kinderconnect-kindergarten-management</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://ascentialabs.com/case-study-insurancesafe-digital-platform</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-ndmc-mcl-ticketing-platform</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-insurance-experts-management</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-s-sood-co-task-management</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-pumpkins-kindergarten-management</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ascentialabs.com/case-study-sunview-enclave-real-estate</loc>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

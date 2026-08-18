@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Calendar, User, ArrowRight, Search, Filter, Tag } from "lucide-react";
 import SEO from "../../components/SEO";
 import { seoData } from "../../utils/seoData";
+import { paths } from "../../utils/routes";
 
 const BlogsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -323,7 +324,7 @@ const BlogsPage = () => {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {filteredBlogs.map((blog, index) => (
-                <Link key={blog.id} to={`/${blog.slug}`} className="block">
+                <Link key={blog.id} to={paths.blog(blog.slug)} className="block">
                   <article className="bg-slate-800/50 backdrop-blur-sm rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group hover:-translate-y-1 blog-card cursor-pointer border border-blue-400/20">
                     <div className="relative overflow-hidden">
                       <img

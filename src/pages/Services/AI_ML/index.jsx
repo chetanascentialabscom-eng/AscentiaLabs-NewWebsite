@@ -679,6 +679,8 @@ const AI_ML = () => {
     ),
   }));
 
+  const ActiveServiceIcon = services[expandedService].icon;
+
   return (
     <div className="min-h-screen bg-white">
       <SEO {...seoData.aiMl} />
@@ -690,10 +692,10 @@ const AI_ML = () => {
           <div className="absolute top-40 left-20 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-20 right-40 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left — Enterprise headline & description */}
             <div>
               <div className="inline-block px-4 py-2 bg-blue-500/30 rounded-full text-sm mb-4 sm:mb-6 backdrop-blur-sm">
@@ -724,29 +726,71 @@ const AI_ML = () => {
                   Explore Services
                 </a>
               </div>
-
-              <ul className="flex flex-wrap gap-2">
-                {heroServiceTags.map((tag, i) => (
-                  <li
-                    key={i}
-                    className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 text-xs text-blue-100"
-                  >
-                    {tag.icon}
-                    {tag.label}
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            {/* Right — Executive Summary Panel */}
+            {/* Right — AI capability cards (same pattern as Real Estate hero) */}
+            <div className="mt-4 lg:mt-0">
+              <div className="flex justify-center mb-6">
+                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center gap-2">
+                    <Brain className="w-7 h-7 text-amber-400" />
+                    <h3 className="text-white font-semibold">
+                      Complete AI &amp; ML Suite
+                    </h3>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Sparkles className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Generative AI
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Custom LLMs fine-tuned on your data.
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Brain className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Machine Learning
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Predict, classify &amp; optimize with custom models.
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <Eye className="w-12 h-12 text-green-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Computer Vision
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Analyze images &amp; video at enterprise scale.
+                  </p>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                  <BarChart3 className="w-12 h-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform" />
+                  <h4 className="text-white font-semibold mb-2">
+                    Predictive Analytics
+                  </h4>
+                  <p className="text-sm text-gray-100">
+                    Forecast accurately and decide proactively.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Trust metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mt-16 pt-10 border-t border-blue-400/30">
+          {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mt-16 pt-10 border-t border-blue-400/30">
             {trustMetrics.map((stat, index) => (
               <StatCard key={index} number={stat.number} label={stat.label} />
             ))}
-          </div>
+          </div> */}
         </div>
 
         <style>{`
@@ -763,11 +807,10 @@ const AI_ML = () => {
 
       {/* ================= BUSINESS PROBLEMS ================= */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black"
         aria-labelledby="problems-heading"
       >
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
-        <div className="relative max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2
               id="problems-heading"
@@ -800,6 +843,8 @@ const AI_ML = () => {
         className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
         aria-labelledby="outcomes-heading"
       >
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-10">
             <h2
@@ -824,16 +869,14 @@ const AI_ML = () => {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </section>
 
       {/* ================= WHY ASCENTIA LABS ================= */}
       <section
-        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black"
         aria-labelledby="why-us-heading"
       >
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
-        <div className="relative max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2
               id="why-us-heading"
@@ -862,11 +905,12 @@ const AI_ML = () => {
       </section>
 
       {/* ================= AI SERVICES ================= */}
-      {/* ================= AI SERVICES ================= */}
       <section
         className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
         aria-labelledby="services-heading"
       >
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2
@@ -880,59 +924,98 @@ const AI_ML = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 items-start">
-            {services.map((s, i) => {
-              const IconComponent = s.icon;
-              const isOpen = expandedService === i;
-              return (
-                <article
-                  key={i}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden hover:border-white/40 transition-all duration-300"
-                >
-                  <button
-                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4"
-                    onClick={() => setExpandedService(isOpen ? null : i)}
-                  >
-                    <span className="flex items-center gap-3">
-                      <span className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-black flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="w-5 h-5" />
-                      </span>
-                      <span className="text-white">{s.title}</span>
-                    </span>
-                    {isOpen ? (
-                      <ChevronUp className="w-5 h-5 text-blue-300 flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 text-blue-300 flex-shrink-0" />
-                    )}
-                  </button>
-                  {isOpen && (
-                    <div className="px-6 pb-6 text-sm text-gray-200 space-y-2">
-                      <p>
-                        <span className="text-blue-300">Problem — </span>
-                        {s.problem}
-                      </p>
-                      <p>
-                        <span className="text-blue-300">Solution — </span>
-                        {s.solution}
-                      </p>
-                      <p className="text-amber-300">
-                        <span className="text-blue-300">Outcome — </span>
-                        {s.outcome}
-                      </p>
-                      <button
-                        onClick={openConsultation}
-                        className="text-amber-400 text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all mt-2"
-                      >
-                        Talk to us about this <ArrowRight size={14} />
-                      </button>
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                {/* Service list */}
+                <div className="bg-gray-900 p-4">
+                  <div className="space-y-2 max-h-[28rem] overflow-y-auto custom-scrollbar">
+                    {services.map((s, index) => {
+                      const isActive = expandedService === index;
+                      return (
+                        <button
+                          key={index}
+                          type="button"
+                          className={`w-full p-3 rounded-lg text-left cursor-pointer transition-all duration-300 ${
+                            isActive
+                              ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                              : "text-gray-300 hover:bg-gray-800"
+                          }`}
+                          onClick={() => setExpandedService(index)}
+                        >
+                          <div className="flex items-center space-x-2">
+                            <span
+                              className={`text-xs px-2 py-1 rounded font-semibold ${
+                                isActive
+                                  ? "bg-black text-amber-400"
+                                  : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                              }`}
+                            >
+                              {index < 9 ? `0${index + 1}` : index + 1}
+                            </span>
+                            <span className="font-medium text-sm lg:text-base">
+                              {s.title}
+                            </span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Active service detail */}
+                <div className="p-6 sm:p-8 flex items-center bg-white">
+                  <div className="space-y-5 w-full">
+                    <div className="flex items-center gap-3">
+                          <div className="bg-amber-100 p-3 rounded-xl w-fit">
+                            <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
+                              <ActiveServiceIcon className="w-6 h-6 text-black" />
+                            </div>
+                          </div>
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                        {services[expandedService].title}
+                      </h3>
                     </div>
-                  )}
-                </article>
-              );
-            })}
+
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-red-500 font-semibold mb-1">
+                          Problem
+                        </p>
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                          {services[expandedService].problem}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-1">
+                          Solution
+                        </p>
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                          {services[expandedService].solution}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-1">
+                          Outcome
+                        </p>
+                        <p className="text-sm font-medium text-gray-900 leading-relaxed">
+                          {services[expandedService].outcome}
+                        </p>
+                      </div>
+                    </div>
+
+                    <button
+                      onClick={openConsultation}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-400 to-orange-500 text-black px-5 py-2.5 rounded-xl text-sm font-medium hover:from-amber-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-[1.02] shadow-md"
+                    >
+                      Talk to us about this <ArrowRight size={14} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </section>
 
       {/* ================= INDUSTRY SOLUTIONS ================= */}
@@ -992,7 +1075,8 @@ const AI_ML = () => {
         className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
         aria-labelledby="process-heading"
       >
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-10">
             <h2
@@ -1019,16 +1103,14 @@ const AI_ML = () => {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
       </section>
 
       {/* ================= TECHNOLOGY CAPABILITIES ================= */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black"
         aria-labelledby="tech-heading"
       >
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
-        <div className="relative max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2
               id="tech-heading"
@@ -1061,6 +1143,8 @@ const AI_ML = () => {
         className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
         aria-labelledby="case-studies-heading"
       >
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-10">
             <h2
@@ -1099,16 +1183,14 @@ const AI_ML = () => {
             ))}
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </section>
 
       {/* ================= TESTIMONIALS ================= */}
       <section
-        className="py-16 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-black"
         aria-labelledby="testimonials-heading"
       >
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-blue-900/40 to-transparent pointer-events-none"></div>
-        <div className="relative max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2
               id="testimonials-heading"
@@ -1177,9 +1259,11 @@ const AI_ML = () => {
 
       {/* ================= RELATED RESOURCES ================= */}
       <section
-        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden "
+        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
         aria-labelledby="related-resources-heading"
       >
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
         <div className="relative container mx-auto px-4">
           <div className="text-center mb-10">
             <h2
@@ -1212,15 +1296,14 @@ const AI_ML = () => {
             ))}
           </ul>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </section>
 
       {/* ================= FAQ ================= */}
       <section
-        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-black"
         aria-labelledby="faq-heading"
       >
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2
               id="faq-heading"

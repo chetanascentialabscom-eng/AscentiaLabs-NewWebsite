@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Settings, Building, Home, GraduationCap, Star, Plane, BarChart3, Ticket, Package, Wrench, Stethoscope, Truck } from 'lucide-react';
 import ConsultationButton from './ConsultationButton';
+import { ROUTES } from '../utils/routes';
 
 const Industries = () => {
   const navigate = useNavigate();
@@ -76,19 +77,19 @@ const Industries = () => {
   const handleIndustryClick = (industryTitle) => {
     // Map industry titles to their corresponding routes
     const industryRoutes = {
-      'Field Service CRM': '/field-service-crm',
-      'Business CRM': '/business-management-crm-solution',
-      'Interior & Architecture': '/interior-design-app-development',
-      'Real Estate': '/real-estate-app-development',
-      'Education': '/education-app-development',
-      'Kindergarten': '/kindergarten-school-management',
-      'Travel & Tourism': '/travel-app-development',
-      'ERP': '/enterprise-resource-planning',
-      'Ticketing Solution': '/ticketing-solution',
-      'Textiles': '/textiles',
-      'Manufacturing': '/manufacturing',
-      'Health Care': '/healthcare-app-development',
-      'Logistics': '/logistics-software-development'
+      'Field Service CRM': ROUTES.industry.fieldServiceCrm,
+      'Business CRM': ROUTES.industry.businessCrm,
+      'Interior & Architecture': ROUTES.industry.interiorArchitecture,
+      'Real Estate': ROUTES.industry.realEstate,
+      'Education': ROUTES.industry.education,
+      'Kindergarten': ROUTES.industry.kindergarten,
+      'Travel & Tourism': ROUTES.industry.travelTourism,
+      'ERP': ROUTES.industry.erp,
+      'Ticketing Solution': ROUTES.industry.ticketing,
+      'Textiles': ROUTES.industry.textiles,
+      'Manufacturing': ROUTES.industry.manufacturing,
+      'Health Care': ROUTES.industry.healthcare,
+      'Logistics': ROUTES.industry.logistics,
     };
 
     const route = industryRoutes[industryTitle];

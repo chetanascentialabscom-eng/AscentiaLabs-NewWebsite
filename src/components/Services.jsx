@@ -11,23 +11,23 @@ import {
   Building2,
   Database
 } from 'lucide-react';
+import { ROUTES } from '../utils/routes';
 
 const Services = () => {
-  // Service route mapping
   const getServiceRoute = (title) => {
     const routeMap = {
-      "Custom CRM Development": "/custom-crm-development",
-      "Software Engineering": "/software-engineering",
-      "Digital Transformation": "/digital-transformation",
-      "AI ML Services": "/ai-ml-services",
-      "Mobile Application": "/mobile-application",
-      "Technology Consultation & MIS": "/technology-consultation-mis",
-      "Application Modernisation": "/application-modernisation",
-      "Go-To-Market": "/go-to-market",
-      "Ideation & Design Strategy": "/ideation-design",
-      "Startup Partnership": "/startup-technology-partnership",
+      "Custom CRM Development": ROUTES.service.customCrm,
+      "Software Engineering": ROUTES.service.softwareEngineering,
+      "Digital Transformation": ROUTES.service.digitalTransformation,
+      "AI ML Services": ROUTES.service.aiMl,
+      "Mobile Application": ROUTES.service.mobileApplication,
+      "Technology Consultation & MIS": ROUTES.service.technologyConsultation,
+      "Application Modernisation": ROUTES.service.applicationModernisation,
+      "Go-To-Market": ROUTES.service.goToMarket,
+      "Ideation & Design Strategy": ROUTES.service.ideationDesign,
+      "Startup Partnership": ROUTES.service.startup,
     };
-    return routeMap[title] || "/";
+    return routeMap[title] || ROUTES.home;
   };
 
   const services = [
