@@ -1984,43 +1984,7 @@ const RealEstatePage = () => {
       </section>
 
       {/* ===================== UAE REAL ESTATE LINK ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Regional Focus"
-            title="Looking for UAE Real Estate Solutions?"
-            subtitle="Explore our dedicated UAE page for market insights, Ejari & Tawtheeq compliance, and PropTech built for Dubai, Abu Dhabi, and Sharjah."
-          />
-          <div className="max-w-3xl mx-auto">
-            <Link
-              to="/uae-real-estate-software-development"
-              className="bg-gray-900 border border-gray-700 rounded-xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-5 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300 group block"
-            >
-              <div className="flex-shrink-0 w-20 h-12 md:w-24 md:h-14 rounded-md overflow-hidden border border-white/20 shadow-lg">
-                <img
-                  src="/icons/uae-flag.svg"
-                  alt="United Arab Emirates flag"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1 text-center sm:text-left">
-                <h3 className="text-white text-lg md:text-xl font-semibold mb-1 group-hover:text-amber-400 transition-colors">
-                  Real Estate Software Development Company in UAE
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  Custom property technology for UAE developers, brokers,
-                  property managers, and investors.
-                </p>
-              </div>
-              <span className="inline-flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform flex-shrink-0">
-                Explore UAE Page <ArrowRight size={16} className="ml-1" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </section>
+    
 
       {/* ============================= FAQ (existing) ============================= */}
       <section className="py-16 bg-black">
