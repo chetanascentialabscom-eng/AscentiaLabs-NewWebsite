@@ -41,12 +41,12 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.fieldServiceCrm),
   },
 
-  businessCRM: {
-    title: "Business Management CRM Solutions | Ascentia Labs",
+  businessCrm: {
+    title: "Custom Business CRM Software Development | Ascentia Labs",
     description:
-      "Discover the best CRM for Your Business. Streamline your business specific workflows with our business management CRM.",
+      "Build custom business CRM software that connects sales, support, and marketing. Track leads, deals, and customers in one system—from first contact to closed deal.",
     keywords:
-      "Enterprise CRM, SME CRM, business management CRM, industry-ready workflows, business CRM software",
+      "custom business CRM, business CRM software, CRM software development, customer relationship management, small business CRM, sales pipeline CRM, call center CRM",
     url: absoluteUrl(ROUTES.industry.businessCrm),
   },
 
@@ -403,3 +403,5 @@ export const seoData = {
     url: absoluteUrl(ROUTES.caseStudyJustDoIt),
   },
 };
+
+seoData.businessCRM = seoData.businessCrm;
