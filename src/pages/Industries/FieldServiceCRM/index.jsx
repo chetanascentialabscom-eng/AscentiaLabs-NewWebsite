@@ -9,8 +9,15 @@ import {
   MapPinned,
   CheckCircle2,
   Building2,
+  Building,
   Wrench,
-  Cpu,
+  GraduationCap,
+  BarChart3,
+  Stethoscope,
+  Star,
+  Ticket,
+  Home,
+  Plane,
   ClipboardList,
   Brain,
   TrendingUp,
@@ -38,9 +45,6 @@ import {
   Mic,
   Mail,
   MessageSquare,
-  Zap,
-  TreePine,
-  Droplets,
   Bell,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
@@ -108,14 +112,17 @@ const ChallengeCard = ({ problem, impact, solution }) => (
   </div>
 );
 
-const SegmentCard = ({ icon: Icon, title, line }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-5 text-center hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
+const IndustryCard = ({ icon: Icon, title, line, link }) => (
+  <Link
+    to={link}
+    className="bg-gray-900 border border-gray-700 rounded-xl p-5 text-center hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300 block"
+  >
     <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3">
       <Icon size={18} className="text-black" />
     </div>
     <h4 className="text-white font-semibold text-md mb-1">{title}</h4>
     <p className="text-gray-100 text-sm">{line}</p>
-  </div>
+  </Link>
 );
 
 const IntegrationCard = ({ icon: Icon, title }) => (
@@ -339,24 +346,7 @@ const FieldServiceCRM = () => {
       impact:
         "Track field teams and keep office operations synchronized with on-site activities.",
     },
-    {
-      icon: MapPinned,
-      title: "Route Planning & Mapping",
-      impact:
-        "Optimize routes to reduce drive time, fuel costs, and wasted working hours.",
-    },
-    {
-      icon: Camera,
-      title: "Document & Photo Management",
-      impact:
-        "Attach notes, photos, and documentation directly to job records to reduce disputes and repeat visits.",
-    },
-    {
-      icon: DollarSign,
-      title: "Quote-to-Cash Flow",
-      impact:
-        "Connect proposals, digital contracts, and invoicing in one streamlined workflow.",
-    },
+   
   ];
 
   const challenges = [
@@ -375,21 +365,7 @@ const FieldServiceCRM = () => {
       impact: "Longer jobs, lower first-time fix rates, weak customer trust.",
       solution: "Mobile access to customer history, tickets, and previous notes.",
     },
-    {
-      problem: "Customers keep calling just to ask for an ETA.",
-      impact: "Office overload and poor customer experience.",
-      solution: "Automated status notifications and self-service updates.",
-    },
-    {
-      problem: "Lack of proof of work can lead to disputes.",
-      impact: "Chargebacks, delayed payments, and reputation risk.",
-      solution: "Photos and notes attached to every job record.",
-    },
-    {
-      problem: "Invoices go out late, tightening cash flow.",
-      impact: "Owners stuck chasing paperwork instead of growth.",
-      solution: "Quote-to-invoice flow connected inside one system.",
-    },
+   
   ];
 
   const outcomes = [
@@ -412,16 +388,78 @@ const FieldServiceCRM = () => {
   ];
 
   const industries = [
-    { icon: Wrench, title: "HVAC Services", line: "Recurring maintenance contracts, equipment history, and seasonal scheduling." },
-    { icon: Droplets, title: "Plumbing Companies", line: "Route planning, site-specific notes, and rapid emergency response." },
-    { icon: Zap, title: "Electrical Contractors", line: "Skill matching for complex jobs and automated contract renewals." },
-    { icon: TreePine, title: "Landscaping & Arborist", line: "Site history, recurring visits, and equipment tracking." },
-    { icon: Shield, title: "Security Systems", line: "Installation, monitoring, and maintenance with full service history." },
-    { icon: Network, title: "Telecommunications", line: "Field installations, network maintenance, and asset tracking." },
-    { icon: Cpu, title: "IT Field Service", line: "On-site support with offline mode for rural or underground areas." },
-    { icon: Settings, title: "Equipment Maintenance", line: "Preventive scheduling, warranty tracking, and service history." },
-    { icon: Building2, title: "Facility Management", line: "Work orders, preventive maintenance, assets, and SLA tracking." },
-    { icon: Truck, title: "Industrial Services", line: "Heavy equipment servicing, compliance docs, and specialized dispatch." },
+    {
+      icon: Home,
+      title: "Real Estate",
+      line: "Property management, CRM & PropTech software solutions.",
+      link: ROUTES.industry.realEstate,
+    },
+    {
+      icon: Building2,
+      title: "Business CRM",
+      line: "Streamline sales, customer relationships & business workflows.",
+      link: ROUTES.industry.businessCrm,
+    },
+    {
+      icon: GraduationCap,
+      title: "Education",
+      line: "Smart solutions for schools, colleges & e-learning platforms.",
+      link: ROUTES.industry.education,
+    },
+    {
+      icon: BarChart3,
+      title: "Enterprise ERP",
+      line: "Integrate finance, operations, HR & business processes.",
+      link: ROUTES.industry.erp,
+    },
+    {
+      icon: Stethoscope,
+      title: "Healthcare",
+      line: "Digital healthcare, patient management & telemedicine solutions.",
+      link: ROUTES.industry.healthcare,
+    },
+    {
+      icon: Building,
+      title: "Interior & Architecture",
+      line: "Project management, design collaboration & client portals.",
+      link: ROUTES.industry.interiorArchitecture,
+    },
+    {
+      icon: Star,
+      title: "Kindergarten",
+      line: "School management, admissions & parent communication.",
+      link: ROUTES.industry.kindergarten,
+    },
+    {
+      icon: Ticket,
+      title: "Ticketing Solutions",
+      line: "Online booking, event management & digital ticketing systems.",
+      link: ROUTES.industry.ticketing,
+    },
+    {
+      icon: Package,
+      title: "Textile Industry",
+      line: "ERP solutions for textile manufacturing & supply chains.",
+      link: ROUTES.industry.textiles,
+    },
+    {
+      icon: Truck,
+      title: "Logistics",
+      line: "Fleet tracking, warehouse & transportation management.",
+      link: ROUTES.industry.logistics,
+    },
+    {
+      icon: Wrench,
+      title: "Manufacturing",
+      line: "Production, inventory & quality management software.",
+      link: ROUTES.industry.manufacturing,
+    },
+    {
+      icon: Plane,
+      title: "Travel & Tourism",
+      line: "Booking engines, itinerary & travel management platforms.",
+      link: ROUTES.industry.travelTourism,
+    },
   ];
 
   const aiCards = [
@@ -440,21 +478,21 @@ const FieldServiceCRM = () => {
       title: "Intelligent Account Prioritization",
       body: "AI-powered Hot Lists identify the highest-priority accounts to engage.",
     },
-    {
-      icon: Eye,
-      title: "Pre-Call Intelligence",
-      body: "AI condenses key data for rapid review before customer visits.",
-    },
-    {
-      icon: MapPinned,
-      title: "Smart Route Optimization",
-      body: "AI learns from team behavior and tunes route suggestions automatically.",
-    },
-    {
-      icon: Sparkles,
-      title: "Natural Language Execution",
-      body: 'AI agents take plain-English instructions like planning high-value visits within a radius.',
-    },
+    // {
+    //   icon: Eye,
+    //   title: "Pre-Call Intelligence",
+    //   body: "AI condenses key data for rapid review before customer visits.",
+    // },
+    // {
+    //   icon: MapPinned,
+    //   title: "Smart Route Optimization",
+    //   body: "AI learns from team behavior and tunes route suggestions automatically.",
+    // },
+    // {
+    //   icon: Sparkles,
+    //   title: "Natural Language Execution",
+    //   body: 'AI agents take plain-English instructions like planning high-value visits within a radius.',
+    // },
   ];
 
   const techStack = [
@@ -632,16 +670,16 @@ const FieldServiceCRM = () => {
       title: "Audit Logs",
       body: "Comprehensive tracking of all user actions for compliance.",
     },
-    {
-      icon: Network,
-      title: "API Security",
-      body: "OAuth 2.0 and API key management for secure integrations.",
-    },
-    {
-      icon: Cloud,
-      title: "Secure Cloud Deployment",
-      body: "AWS, Azure, or Google Cloud with enterprise-grade security.",
-    },
+    // {
+    //   icon: Network,
+    //   title: "API Security",
+    //   body: "OAuth 2.0 and API key management for secure integrations.",
+    // },
+    // {
+    //   icon: Cloud,
+    //   title: "Secure Cloud Deployment",
+    //   body: "AWS, Azure, or Google Cloud with enterprise-grade security.",
+    // },
   ];
 
   const caseStudies = [
@@ -929,7 +967,7 @@ const FieldServiceCRM = () => {
     },
     {
       number: "3",
-      title: "Build + Mobile",
+      title: "Build ",
       description:
         "CRM core, scheduling engine, native apps, and offline sync.",
     },
@@ -1001,18 +1039,18 @@ const FieldServiceCRM = () => {
       <SEO {...seoData.fieldServiceCRM} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
 
-      {/* ============================= HERO ============================= */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
+      {/* ============================= HERO + OVERVIEW ============================= */}
+      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden pt-20 pb-16">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
           <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
           <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
 
-        <div className="relative container mx-auto px-4">
+        <div className="relative container mx-auto px-4  ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-white space-y-6 py-8 lg:py-10 2xl:py-15">
+            <div className="text-white space-y-6 py-8 lg:py-10 2xl:py-35">
               {/* <p className="text-amber-400 text-sm font-semibold tracking-wide uppercase">
                 Field CRM Development Company
               </p> */}
@@ -1025,11 +1063,7 @@ const FieldServiceCRM = () => {
                 connects customers, technicians, scheduling, dispatch, job
                 management, and billing in one intelligent system.
               </p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                A Field CRM connects your office and field teams by bringing
-                scheduling, assignments, job notes, photos, documents, invoices,
-                and follow-ups into one unified workflow.
-              </p>
+              
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={openConsultation}
@@ -1101,32 +1135,10 @@ const FieldServiceCRM = () => {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      {/* ===================== INDUSTRY STATISTICS ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Market Snapshot"
-            title="What Field CRM Delivers"
-            subtitle="Operational control across pipeline, dispatch, mobile access, proof of work, and billing."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {marketStats.map((s, i) => (
-              <StatCard key={i} value={s.value} label={s.label} />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ===================== INDUSTRY OVERVIEW ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="text-white space-y-5">
-              <h2 className="mt-8 text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 2xl:gap-32 items-center max-w-6xl mx-auto mt-16 pt-8">
+            <div className="text-white space-y-5  ">
+              <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
                 What Is Field CRM?
               </h2>
               <p className="text-white leading-relaxed">
@@ -1165,7 +1177,7 @@ const FieldServiceCRM = () => {
           <SectionHeading
             eyebrow="Why Now"
             title="What Makes Field CRM Different?"
-            subtitle="A standard CRM helps you manage sales. A Field Service CRM manages the entire customer lifecycle—from first contact through project completion, invoicing, and follow-up."
+            subtitle="A standard CRM helps you manage sales. A Field Service CRM manages the entire customer lifecycle—from first contact through project "
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {transformationCards.map((c, i) => (
@@ -1243,47 +1255,7 @@ const FieldServiceCRM = () => {
       </section>
 
       {/* ===================== KPI COMPARISON TABLE ===================== */}
-      <section className="py-16 bg-gradient-to-br  from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4 ">
-          <SectionHeading
-            eyebrow="Before vs. After"
-            title="Before vs After: Field CRM Transformation"
-          />
-          <div className="max-w-5xl mx-auto overflow-x-auto rounded-xl border border-white/20">
-            <table className="w-full text-left text-sm text-gray-200 bg-white/5 backdrop-blur-md">
-              <thead>
-                <tr className="bg-white/10 text-white">
-                  <th className="px-5 py-4 font-semibold">Area</th>
-                  <th className="px-5 py-4 font-semibold">Before</th>
-                  <th className="px-5 py-4 font-semibold">After</th>
-                  <th className="px-5 py-4 font-semibold text-amber-400">
-                    Result
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {kpiRows.map((row, i) => (
-                  <tr
-                    key={i}
-                    className="border-t border-white/10 hover:bg-white/5 transition-colors"
-                  >
-                    {row.map((cell, j) => (
-                      <td
-                        key={j}
-                        className={`px-5 py-4 whitespace-nowrap ${j === 3 ? "text-amber-400 font-semibold" : ""}`}
-                      >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* ===================== INDUSTRIES WE SERVE ===================== */}
       <section className="py-16 bg-black">
@@ -1291,16 +1263,17 @@ const FieldServiceCRM = () => {
           <SectionHeading
             eyebrow="Who We Help"
             title="Industries We Serve"
-            subtitle="Field CRM solutions built for trade and service businesses."
+            subtitle="Explore our industry solutions across the Ascentia Labs platform."
           />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
             {industries.map((industry, index) => (
-              <SegmentCard
+              <IndustryCard
                 key={index}
                 icon={industry.icon}
                 title={industry.title}
                 line={industry.line}
+                link={industry.link}
               />
             ))}
           </div>
@@ -1622,26 +1595,7 @@ const FieldServiceCRM = () => {
       </section>
 
       {/* ===================== ENGAGEMENT MODELS ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Ways to Work With Us"
-            title="Engagement Models"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {engagementModels.map((m, i) => (
-              <EngagementCard
-                key={i}
-                icon={m.icon}
-                title={m.title}
-                points={m.points}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* ============================= WHY CHOOSE US (existing) ============================= */}
       <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">

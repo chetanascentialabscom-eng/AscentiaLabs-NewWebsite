@@ -100,10 +100,7 @@ const ChallengeCard = ({ problem, impact, solution }) => (
       Problem
     </p>
     <p className="text-white text-sm mb-4">{problem}</p>
-    <p className="text-md uppercase tracking-wide text-blue-400 font-semibold mb-1">
-      Business Impact
-    </p>
-    <p className="text-gray-100 text-sm mb-4">{impact}</p>
+   
     <p className="text-md uppercase tracking-wide text-amber-400 font-semibold mb-1">
       Our Solution
     </p>

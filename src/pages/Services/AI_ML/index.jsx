@@ -67,11 +67,11 @@ const FlowCard = ({
     <h3 className="text-white text-lg mb-3">{title}</h3>
     <div className="text-sm text-gray-300 space-y-2 flex-1">
       <p>
-        <span className="text-gray-500">Solution — </span>
+        <span className="text-gray-200">Solution — </span>
         {solution}
       </p>
-      <p className="text-amber-400">
-        <span className="text-gray-500">Outcome — </span>
+      <p className="text-amber-200">
+        <span className="text-gray-200">Outcome — </span>
         {outcome}
       </p>
     </div>
@@ -201,34 +201,7 @@ const AI_ML = () => {
       solution: "Real-time data intelligence.",
       outcome: "10x faster decisions",
     },
-    {
-      icon: Bot,
-      title: "Low Productivity",
-      problem: "Teams are stretched across repetitive tasks.",
-      solution: "Workflow automation & AI agents.",
-      outcome: "30-50% productivity gain",
-    },
-    {
-      icon: Target,
-      title: "Poor Customer Experience",
-      problem: "Generic experiences fail to convert.",
-      solution: "Personalization & recommendation systems.",
-      outcome: "25-40% higher satisfaction",
-    },
-    {
-      icon: Eye,
-      title: "Quality Control Failures",
-      problem: "Manual inspection misses costly defects.",
-      solution: "Computer vision & defect detection.",
-      outcome: "95-99% detection accuracy",
-    },
-    {
-      icon: Layers,
-      title: "Inventory Waste",
-      problem: "Overstock and stockouts drain cash.",
-      solution: "Demand forecasting & optimization.",
-      outcome: "20-40% waste reduction",
-    },
+    
   ];
 
   // 3. Business Outcomes (KPI cards)
@@ -418,26 +391,7 @@ const AI_ML = () => {
       ],
       industries: "E-commerce, Retail Chains, D2C Brands",
     },
-    {
-      icon: Landmark,
-      title: "Financial Services AI",
-      applications: [
-        "Fraud detection",
-        "Credit scoring",
-        "Algorithmic trading & risk management",
-      ],
-      industries: "Banking, Insurance, Fintech, Investment",
-    },
-    {
-      icon: Truck,
-      title: "Logistics & Supply Chain AI",
-      applications: [
-        "Route optimization",
-        "Demand forecasting",
-        "Warehouse automation",
-      ],
-      industries: "Logistics, Transportation, Warehousing",
-    },
+   
   ];
 
   // 7. Development Process
@@ -702,13 +656,12 @@ const AI_ML = () => {
                 Industry&apos;s Favorite
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6 leading-tight">
-                AI Development Services — Machine Learning, Generative AI &amp;
+                AI Development Services —  Generative AI &amp;
                 Enterprise Solutions
               </h1>
               <p className="text-base sm:text-lg text-blue-100 mb-4 leading-relaxed max-w-xl">
                 Transform your business with custom AI that drives measurable
-                outcomes — from predictive analytics and computer vision to
-                generative AI and intelligent automation.
+                outcomes — from predictive analytics and computer vision .
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
