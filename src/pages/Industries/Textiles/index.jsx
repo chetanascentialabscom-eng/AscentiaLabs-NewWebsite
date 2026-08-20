@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   ChevronDown,
@@ -14,139 +14,221 @@ import {
   BrainCircuit,
   Factory,
   Cpu,
+  Building2,
+  Building,
+  Home,
+  GraduationCap,
+  Stethoscope,
+  Truck,
+  Plane,
+  Ticket,
+  Settings,
+  Star,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
 import { seoData } from "../../../utils/seoData";
+import { ROUTES, SITE_URL, absoluteUrl } from "../../../utils/routes";
 
-/* -------------------------------------------------------------------------
- * Reusable presentational pieces (kept intentionally lightweight — they
- * reuse the same Tailwind utility patterns already used across the page:
- * dark gradient section, amber/orange accent, gray-900 cards, rounded-xl,
- * hover:scale, etc. No new design language is introduced.
- * ---------------------------------------------------------------------- */
+/* ------------------------------------------------------------------ */
+/*  Presentational system — dark navy / amber identity preserved      */
+/* ------------------------------------------------------------------ */
 
-// Reuses the existing "accordion row" visual pattern from the original
-// "Why Choose Us" section so it can power multiple sections (Why Ascentia
-// Labs, FAQ) without duplicating markup.
+const SectionShell = ({
+  children,
+  className = "",
+  gradient = false,
+  labelledBy,
+}) => (
+  <section
+    className={`relative overflow-hidden py-16 md:py-20 ${
+      gradient
+        ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+        : "bg-black"
+    } ${className}`}
+    aria-labelledby={labelledBy}
+  >
+    {gradient && (
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-0" />
+    )}
+    {gradient && (
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 to-transparent z-0" />
+    )}
+    <div className="container relative z-10 mx-auto max-w-6xl px-4">
+      {children}
+    </div>
+  </section>
+);
+
+const SectionIntro = ({
+  id,
+  title,
+  subtitle,
+  align = "center",
+  light = false,
+}) => (
+  <div
+    className={`mb-10 md:mb-12 ${
+      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-4xl text-center"
+    }`}
+  >
+    <h2
+      id={id}
+      className={`mb-3 text-3xl leading-tight md:text-4xl ${
+        light
+          ? "text-white"
+          : "bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent"
+      }`}
+    >
+      {title}
+    </h2>
+    {subtitle && (
+      <p
+        className={`text-base leading-relaxed md:text-lg ${
+          light ? "text-white/90" : "text-gray-300"
+        }`}
+      >
+        {subtitle}
+      </p>
+    )}
+  </div>
+);
+
 const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
   const isDark = variant === "dark";
   return (
-    <div className="space-y-4">
-      {items.map((item) => (
-        <div
-          key={item.id}
-          className={
-            isDark
-              ? "bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden"
-              : "shadow-sm hover:shadow-md transition-all duration-300"
-          }
-        >
-          <button
-            onClick={() => onToggle(activeId === item.id ? null : item.id)}
+    <div
+      className={
+        isDark
+          ? "divide-y divide-gray-800 border-y border-gray-800"
+          : "space-y-2"
+      }
+    >
+      {items.map((item) => {
+        const open = activeId === item.id;
+        const panelId = `accordion-panel-${variant}-${item.id}`;
+        const buttonId = `accordion-button-${variant}-${item.id}`;
+        return (
+          <div
+            key={item.id}
             className={
               isDark
-                ? "w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
-                : "w-full p-4 flex items-center justify-between text-left"
+                ? "overflow-hidden"
+                : `rounded-xl border transition-colors duration-300 ${
+                    open
+                      ? "border-amber-400/40 bg-white/[0.04]"
+                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                  }`
             }
           >
-            {isDark ? (
-              <h3 className="lg:text-lg text-md text-white pr-4">
-                {item.title}
-              </h3>
-            ) : (
-              <div className="flex items-center gap-4">
-                <div className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
-                  {String(item.id).padStart(2, "0")}
-                </div>
-                <div>
-                  <h3 className="text-md lg:text-lg md:text-xl font-medium text-gray-200">
-                    {item.title}
-                  </h3>
-                  <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                </div>
-              </div>
-            )}
-            <div className="flex-shrink-0">
-              {activeId === item.id ? (
-                <ChevronUp className="w-5 h-5 text-blue-400" />
+            <button
+              type="button"
+              id={buttonId}
+              aria-expanded={open}
+              aria-controls={panelId}
+              onClick={() => onToggle(open ? null : item.id)}
+              className={
+                isDark
+                  ? "group flex w-full items-center justify-between gap-4 px-1 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  : "flex w-full items-center justify-between gap-4 p-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              }
+            >
+              {isDark ? (
+                <h3 className="pr-2 text-base text-white transition-colors group-hover:text-amber-300 md:text-lg">
+                  {item.title}
+                </h3>
               ) : (
-                <ChevronDown className="w-5 h-5 text-blue-400" />
+                <div className="flex min-w-0 items-center gap-3">
+                  <span
+                    className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide ${
+                      open
+                        ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                        : "bg-blue-600/80 text-white"
+                    }`}
+                  >
+                    {String(item.id).padStart(2, "0")}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="truncate text-md font-medium text-gray-100 lg:text-lg">
+                      {item.title}
+                    </h3>
+                    <div
+                      className={`mt-1 h-0.5 transition-all duration-300 ${
+                        open ? "w-24 bg-amber-400" : "w-12 bg-blue-500/70"
+                      }`}
+                    />
+                  </div>
+                </div>
               )}
-            </div>
-          </button>
+              <span className="flex-shrink-0 text-blue-400" aria-hidden="true">
+                {open ? (
+                  <ChevronUp className="h-5 w-5" />
+                ) : (
+                  <ChevronDown className="h-5 w-5" />
+                )}
+              </span>
+            </button>
 
-          <div
-            className={`overflow-hidden transition-all duration-300 ${
-              activeId === item.id
-                ? "max-h-[600px] opacity-100"
-                : "max-h-0 opacity-0"
-            }`}
-          >
-            <div className={isDark ? "px-6 pb-5" : "px-16 pb-5"}>
-              {isDark && <div className="border-t border-gray-700 pt-4" />}
-              {typeof item.content === "string" ? (
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                  {item.content}
-                </p>
-              ) : (
-                item.content
-              )}
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              hidden={!open}
+              className={`overflow-hidden transition-all duration-300 ease-out ${
+                open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className={isDark ? "pb-5 pr-8" : "px-4 pb-5 pl-[3.75rem]"}>
+                {typeof item.content === "string" ? (
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-gray-300 md:text-base">
+                    {item.content}
+                  </p>
+                ) : (
+                  item.content
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
 
-// Reuses the existing stat-card visual (amber number over label) that was
-// originally used only in the Hero stats row — now powers Business Outcomes.
-const StatCard = ({ number, label, sublabel }) => (
-  <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 transform hover:scale-105 transition-transform duration-300">
-    <div className="text-3xl md:text-4xl text-white mb-1">{number}</div>
-    <div className="text-white text-xs sm:text-sm">{label}</div>
-    {sublabel && <div className="text-white text-[11px] mt-1">{sublabel}</div>}
-  </div>
-);
-
-// Generic dark card used for Business Challenges, Industry Use Cases,
-// Related AI Services and Related Resources — reuses the same
-// "bg-gray-900 rounded-xl border" card shell already used elsewhere.
-const InfoCard = ({ icon: Icon, eyebrow, title, children, footer }) => (
-  <article className="bg-gray-900 rounded-xl border border-gray-700 p-6 h-full flex flex-col hover:border-amber-400/50 transition-all duration-300">
-    {Icon && (
-      <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-10 h-10 rounded-lg flex items-center justify-center text-black mb-4">
-        <Icon size={20} />
-      </div>
-    )}
-    {eyebrow && (
-      <span className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-2">
-        {eyebrow}
-      </span>
-    )}
-    <h3 className="text-white text-lg font-medium mb-3">{title}</h3>
-    <div className="text-gray-300 text-sm leading-relaxed space-y-2 flex-1">
-      {children}
-    </div>
-    {footer && (
-      <div className="mt-4 pt-4 border-t border-gray-700">{footer}</div>
-    )}
-  </article>
-);
-
-// NEW: Reusable seam-blending overlay. Every section that starts on a
-// gradient background (gray-900 -> blue-900 -> black) sits directly under a
-// solid bg-black section above it. Because the gradient *starts* at
-// gray-900/blue-900 (not pure black), that boundary used to show a visible
-// seam. This overlay fades pure black into transparent across the first ~5rem
-// of the section, so it visually keeps matching the black section above it
-// before blending into the section's own gradient — exactly the same trick
-// already used on the Hero (bottom fade) and Why-Ascentia-Labs (top fade)
-// sections, just made consistent everywhere.
-const TopSeamFade = () => (
-  <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-0" />
-);
+// FAQ — AEO lead sentences + FAQPage schema source (module scope for stable JSON-LD)
+const TEXTILE_FAQ_ITEMS = [
+  {
+    question:
+      "What's the difference between custom textile software and off-the-shelf ERP?",
+    answer:
+      "The main difference is that off-the-shelf ERP is built for general manufacturing and forces you to adapt your workflows, while custom textile software is built specifically for your loom types, fabric categories, quality standards, and supplier relationships.\n\nThis means:\n\nNo costly workarounds\n\nFaster implementation (8-12 weeks vs. 12-18 months)\n\nHigher ROI because you're not paying for unused features\n\nAbility to add exactly the AI/ML capabilities you need",
+  },
+  {
+    question: "How long does it take to develop custom textile software?",
+    answer:
+      "Custom textile software typically takes 8-12 weeks for full development:\n\nWeek 1-2: Discovery & analysis\n\nWeek 3: Solution architecture\n\nWeek 4-8: Development & AI/ML model building\n\nWeek 9-10: Testing & QA\n\nWeek 11: Deployment\n\nWeek 12+: Training & support",
+  },
+  {
+    question: "What's the cost of custom textile software?",
+    answer:
+      "Custom textile software typically costs ₹10-25 lakhs for basic production and inventory, ₹25-50 lakhs for full production plus quality and analytics, and ₹50 lakhs–₹2 crores for enterprise IoT and AI/ML — depending on complexity, features, and scope.\n\nROI: 180%+ in first year (average client saves ₹36 lakhs+ annually)",
+  },
+  {
+    question: "Can you integrate with our existing looms and systems?",
+    answer:
+      "Yes — we integrate with 95% of existing textile systems:\n\nLoom brands: Siemens, Toyota, Sumitomo, Murata, Picanol\n\nExisting software: Tally, SAP, Oracle (data migration included)\n\nHardware: QR scanners, IoT sensors, barcode printers",
+  },
+  {
+    question: "Do you provide training for our team?",
+    answer:
+      "Yes — complete training is included:\n\n2-day onsite training at your factory for 5-10 staff members\n\nVideo tutorials for every feature (30+ videos)\n\n24/7 support — call us anytime for help\n\n1-month free support after launch",
+  },
+  {
+    question: "What if we need to add features later?",
+    answer:
+      "Yes — unlimited customization is available as your business grows:\n\nAdd new features as your business grows\n\nModify dashboards for different roles (manager vs. operator)\n\nIntegrate new suppliers/buyers\n\nAdd new AI/ML capabilities\n\nYour software grows with your business — no need to switch systems.",
+  },
+];
 
 const TextilesPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -221,13 +303,13 @@ const TextilesPage = () => {
 
   // 3. Business Outcomes (KPI cards)
   const businessOutcomes = [
-    { number: "35%", label: "Downtime Reduction" },
+    // { number: "35%", label: "Downtime Reduction" },
     { number: "40%", label: "Fabric Waste Reduction" },
-    { number: "98%", label: "Inspection Accuracy" },
+    // { number: "98%", label: "Inspection Accuracy" },
     { number: "60 hrs", label: "Reporting Time Saved / mo" },
-    { number: "25%", label: "Production Output Increase" },
+    // { number: "25%", label: "Production Output Increase" },
     { number: "99%+", label: "Inventory Accuracy" },
-    { number: "45%", label: "Downtime via Predictive Maint." },
+    // { number: "45%", label: "Downtime via Predictive Maint." },
     { number: "180%", label: "Average First-Year ROI" },
   ];
 
@@ -384,14 +466,7 @@ const TextilesPage = () => {
         "Sensors detect failure patterns 48–72 hours ahead; maintenance teams get automated alerts.",
       result: "45% less unplanned downtime, 90% of breakdowns prevented.",
     },
-    {
-      icon: Gauge,
-      title: "Production Planning",
-      problem: "Manual scheduling across 200 looms misses monthly targets.",
-      workflow:
-        "AI planning engine weighs 500+ data points — loom capability, priority, material, deadlines.",
-      result: "25% output increase, 95% loom uptime, zero missed deadlines.",
-    },
+   
     {
       icon: Package,
       title: "Color Matching",
@@ -402,22 +477,8 @@ const TextilesPage = () => {
       result:
         "90% fewer color mismatches, saving approximately US$20K–US$35K per month.",
     },
-    {
-      icon: BarChart3,
-      title: "Cost Optimization",
-      problem: "30% of orders end up with lower-than-expected margins.",
-      workflow:
-        "AI costing engine calculates true cost per meter including material, labor, overhead, and waste.",
-      result: "15–20% improvement in profit margins.",
-    },
-    {
-      icon: Boxes,
-      title: "Supply Chain Optimization",
-      problem: "30% of supplier deliveries are late or below standard.",
-      workflow:
-        "AI tracks supplier quality, timeliness, and pricing, recommending the best source per order.",
-      result: "20% lower material costs, 50% fewer supplier-related delays.",
-    },
+   
+  
   ];
 
   // 6. Implementation Process — reuses existing timeline component
@@ -521,6 +582,82 @@ const TextilesPage = () => {
     },
   ];
 
+  // Related Industries — SEO internal linking (exclude current Textiles page)
+  const relatedIndustries = [
+    {
+      icon: Wrench,
+      title: "Manufacturing Management Software",
+      line: "Custom manufacturing software for production planning, inventory control, and factory operations.",
+      link: ROUTES.industry.manufacturing,
+    },
+    {
+      icon: Truck,
+      title: "Logistics Software Development",
+      line: "Logistics software for fleet tracking, warehouse management, and supply chain optimization.",
+      link: ROUTES.industry.logistics,
+    },
+    {
+      icon: Home,
+      title: "Real Estate App Development",
+      line: "Real estate software for property management, PropTech CRM, and leasing workflows.",
+      link: ROUTES.industry.realEstate,
+    },
+    {
+      icon: Building2,
+      title: "Business CRM Software Development",
+      line: "Custom business CRM software for sales pipeline, client management, and customer retention.",
+      link: ROUTES.industry.businessCrm,
+    },
+    {
+      icon: Settings,
+      title: "Field Service CRM Software",
+      line: "Field service CRM for scheduling, technician dispatch, job tracking, and mobile workforce management.",
+      link: ROUTES.industry.fieldServiceCrm,
+    },
+    {
+      icon: BarChart3,
+      title: "Enterprise ERP Software Development",
+      line: "ERP software development to integrate finance, operations, inventory, and business processes.",
+      link: ROUTES.industry.erp,
+    },
+    {
+      icon: Stethoscope,
+      title: "Healthcare App Development",
+      line: "Healthcare app development for patient management, telemedicine, and digital health platforms.",
+      link: ROUTES.industry.healthcare,
+    },
+    {
+      icon: GraduationCap,
+      title: "Education App Development",
+      line: "Education software for schools, colleges, e-learning platforms, and student management systems.",
+      link: ROUTES.industry.education,
+    },
+    {
+      icon: Building,
+      title: "Interior Design App Development",
+      line: "Interior design software for project management, 3D visualization, and client collaboration.",
+      link: ROUTES.industry.interiorArchitecture,
+    },
+    {
+      icon: Plane,
+      title: "Travel App Development",
+      line: "Travel and tourism software for booking engines, itinerary management, and tour operations.",
+      link: ROUTES.industry.travelTourism,
+    },
+    {
+      icon: Ticket,
+      title: "Ticketing Solution Software",
+      line: "Digital ticketing software for online booking, event management, and access control systems.",
+      link: ROUTES.industry.ticketing,
+    },
+    {
+      icon: Star,
+      title: "Kindergarten Management Software",
+      line: "Kindergarten school management software for admissions, attendance, and parent communication.",
+      link: ROUTES.industry.kindergarten,
+    },
+  ];
+
   // 9. Related Resources — internal linking
   const relatedResources = [
     {
@@ -540,92 +677,212 @@ const TextilesPage = () => {
     },
   ];
 
-  // 10. FAQ — reuses accordion pattern
-  const faqs = [
-    {
-      question:
-        "What's the difference between custom textile software and off-the-shelf ERP?",
-      answer:
-        "Off-the-shelf ERP systems are built for general manufacturing and force you to adapt your workflows to the software. Custom textile software is built specifically for your unique processes — your loom types, your fabric categories, your quality standards, your supplier relationships.\n\nThis means:\n\nNo costly workarounds\n\nFaster implementation (8-12 weeks vs. 12-18 months)\n\nHigher ROI because you're not paying for unused features\n\nAbility to add exactly the AI/ML capabilities you need",
-    },
-    {
-      question: "How long does it take to develop custom textile software?",
-      answer:
-        "8-12 weeks for full development:\n\nWeek 1-2: Discovery & analysis\n\nWeek 3: Solution architecture\n\nWeek 4-8: Development & AI/ML model building\n\nWeek 9-10: Testing & QA\n\nWeek 11: Deployment\n\nWeek 12+: Training & support",
-    },
-    {
-      question: "What's the cost of custom textile software?",
-      answer:
-        "Costs vary based on complexity, features, and scope:\n\nBasic Production & Inventory: ₹10-25 lakhs\n\nFull Production + Quality + Analytics: ₹25-50 lakhs\n\nEnterprise + IoT + AI/ML: ₹50 lakhs - ₹2 crores\n\nROI: 180%+ in first year (average client saves ₹36 lakhs+ annually)",
-    },
-    {
-      question: "Can you integrate with our existing looms and systems?",
-      answer:
-        "Yes — we integrate with 95% of existing textile systems:\n\nLoom brands: Siemens, Toyota, Sumitomo, Murata, Picanol\n\nExisting software: Tally, SAP, Oracle (data migration included)\n\nHardware: QR scanners, IoT sensors, barcode printers",
-    },
-    {
-      question: "Do you provide training for our team?",
-      answer:
-        "Yes — complete training included:\n\n2-day onsite training at your factory for 5-10 staff members\n\nVideo tutorials for every feature (30+ videos)\n\n24/7 support — call us anytime for help\n\n1-month free support after launch",
-    },
-    {
-      question: "What if we need to add features later?",
-      answer:
-        "Yes — unlimited customization available:\n\nAdd new features as your business grows\n\nModify dashboards for different roles (manager vs. operator)\n\nIntegrate new suppliers/buyers\n\nAdd new AI/ML capabilities\n\nYour software grows with your business — no need to switch systems.",
-    },
-  ].map((f, i) => ({ id: i, title: f.question, content: f.answer }));
+  const faqs = TEXTILE_FAQ_ITEMS.map((f, i) => ({
+    id: i,
+    title: f.question,
+    content: f.answer,
+  }));
+
+  const pageUrl = absoluteUrl(ROUTES.industry.textiles);
+  const orgLogo = `${SITE_URL}/ascentialabslogopng.png`;
+
+  const jsonLdGraph = useMemo(() => {
+    const faqSchema = {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: TEXTILE_FAQ_ITEMS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    const organizationSchema = {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Ascentia Labs",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: orgLogo,
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/ascentialabs/",
+        "https://www.instagram.com/ascentialabs/",
+      ],
+      description:
+        "Ascentia Labs builds custom software, AI/ML solutions, and digital platforms for industry-specific operations including textile manufacturing.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        url: absoluteUrl(ROUTES.contact),
+      },
+      // TODO: confirm & add when available:
+      // foundingDate, legalName, address, telephone, email, areaServed, numberOfEmployees
+    };
+
+    const serviceSchema = {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "AI-Powered Custom Textile Manufacturing Software",
+      serviceType: "Textile Manufacturing Software Development",
+      description: seoData.textiles.description,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      url: pageUrl,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Textile AI & ML Solutions",
+        itemListElement: features.map((feature, index) => ({
+          "@type": "Offer",
+          position: index + 1,
+          itemOffered: {
+            "@type": "Service",
+            name: feature.title,
+            description: feature.sections
+              .map(
+                (section) =>
+                  `${section.heading}: ${section.details.join("; ")}`,
+              )
+              .join(" | "),
+          },
+        })),
+      },
+      // TODO: confirm areaServed when available
+    };
+
+    const breadcrumbSchema = {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Industries",
+          // TODO: confirm — no dedicated /industries index route in routes.js
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Textile Manufacturing Software",
+          item: pageUrl,
+        },
+      ],
+    };
+
+    const webPageSchema = {
+      "@type": "WebPage",
+      "@id": pageUrl,
+      url: pageUrl,
+      name: seoData.textiles.title,
+      description: seoData.textiles.description,
+      about: { "@id": `${pageUrl}#service` },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      mainEntity: { "@id": `${pageUrl}#faq` },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    };
+
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        organizationSchema,
+        webPageSchema,
+        serviceSchema,
+        breadcrumbSchema,
+        faqSchema,
+      ],
+    };
+    // Static industry page data — rebuild only if page URL identity changes
+  }, [pageUrl, orgLogo]);
+
+  useEffect(() => {
+    const scriptId = "textiles-jsonld";
+    let script = document.getElementById(scriptId);
+    if (!script) {
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "application/ld+json";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(jsonLdGraph);
+
+    return () => {
+      const existing = document.getElementById(scriptId);
+      if (existing) existing.remove();
+    };
+  }, [jsonLdGraph]);
 
   return (
-    <div className="min-h-screen  bg-black">
+    <div className="min-h-screen bg-black">
       <SEO {...seoData.textiles} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
+
+      {/* Visually hidden breadcrumb for crawlers / assistive tech — no visual change */}
+      <nav aria-label="Breadcrumb" className="sr-only">
+        <ol>
+          <li>
+            <Link to={ROUTES.home}>Home</Link>
+          </li>
+          <li>Industries</li>
+          <li>
+            <Link to={ROUTES.industry.textiles}>
+              Textile Manufacturing Software
+            </Link>
+          </li>
+        </ol>
+      </nav>
       {/* ================= HERO ================= */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20 ">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-20 pb-16 md:pt-24 md:pb-20">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-10"
+          aria-hidden="true"
+        >
+          <div className="absolute top-20 right-20 h-32 w-32 rounded-full bg-blue-500 blur-3xl" />
+          <div className="absolute bottom-40 left-20 h-24 w-24 rounded-full bg-blue-400 blur-2xl" />
+          <div className="absolute top-1/2 right-1/3 h-16 w-16 rounded-full bg-blue-300 blur-xl" />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
 
-        <div className="relative container mx-auto mt-5 lg:mt-5 2xl:mt-15 px-4">
-          {/* Breadcrumb */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-3xl text-white space-y-6">
-              {/* Industry Badge */}
-              <span className="inline-block bg-white/10 border border-white/20 text-amber-400 text-xs font-semibold uppercase tracking-wide px-3 py-1.5 rounded-full">
-                Textile Manufacturing
-              </span>
+        <div className="relative container mx-auto max-w-6xl px-4 py-4 2xl:py-15 ">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="max-w-3xl space-y-6 text-white">
+            
 
-              <h1 className="text-[25px] md:text-4xl leading-tight">
+              <h1 className="text-[25px] leading-tight md:text-4xl">
                 AI-Powered Custom Textile Manufacturing Software & Digital
                 Transformation Solutions
               </h1>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Transform your textile manufacturing with AI solutions that help
-                improve production efficiency, strengthen quality control,
-                optimize inventory, and streamline operations across every stage
-                of your manufacturing process.
+              <p className="text-lg leading-relaxed text-gray-300">
+                AI solutions that improve production efficiency, strengthen
+                quality control, optimize inventory, and streamline every stage
+                of textile manufacturing.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <button
                   onClick={openConsultation}
-                  className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
+                  className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
                   📞 Schedule a Consultation
                 </button>
                 <a
                   href="#ai-solutions-heading"
-                  className="border border-white/30 text-white px-6 py-3 rounded-xl transition-all duration-300 hover:bg-white/10 text-center"
+                  className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Explore Solutions
                 </a>
               </div>
 
-              {/* Business Outcomes */}
-              <ul className="flex flex-wrap gap-x-6 gap-y-3 pt-2 list-none">
+              <ul className="flex list-none flex-wrap gap-x-6 gap-y-3 pt-2">
                 {[
                   "Reduce Production Downtime",
                   "Improve Quality Control",
@@ -636,507 +893,575 @@ const TextilesPage = () => {
                     key={index}
                     className="flex items-center gap-2 text-sm text-gray-200"
                   >
-                    <span className="text-amber-400">✓</span>
+                    <span className="text-amber-400" aria-hidden="true">
+                      ✓
+                    </span>
                     {outcome}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Hero stat cards */}
-            {/* Right Visual Content */}
-            <div className="mt-8 lg:mt-0">
-              {/* Top Badge */}
-              <div className="flex justify-center mb-6">
-                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-2">
-                    <Factory className="w-7 h-7 text-white" />
-                    <h3 className="text-white font-semibold">
+            <div className="mt-4 lg:mt-0">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-5 py-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <Factory className="h-5 w-5 text-amber-400" />
+                    <p className="text-sm font-normal text-white md:text-base">
                       AI Manufacturing Suite
-                    </h3>
+                    </p>
+                  </div>
+                  <div
+                    className="flex items-center gap-1.5"
+                    aria-hidden="true"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[11px] font-light uppercase tracking-wider text-gray-400">
+                      Live
+                    </span>
                   </div>
                 </div>
-              </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                {/* Card 1 */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <BrainCircuit className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    AI Quality Control
-                  </h4>
-                  <p className="text-sm  text-gray-100">
-                    Detect fabric defects automatically using AI vision.
-                  </p>
-                </div>
+                <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+                  <div className="p-5 transition-colors duration-300 hover:bg-white/[0.04]">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-400/25 bg-amber-400/15">
+                        <BrainCircuit className="h-5 w-5 text-amber-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          AI Quality Control
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Detect fabric defects automatically using AI vision.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Card 2 */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Boxes className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Smart Inventory
-                  </h4>
-                  <p className="text-sm text-gray-100">
-                    Real-time warehouse and inventory tracking.
-                  </p>
-                </div>
+                  <div className="p-5 transition-colors duration-300 hover:bg-white/[0.04]">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-400/25 bg-blue-400/15">
+                        <Boxes className="h-5 w-5 text-blue-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Smart Inventory
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Real-time warehouse and inventory tracking.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Card 3 */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <BarChart3 className="w-12 h-12 text-green-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Production Analytics
-                  </h4>
-                  <p className="text-sm text-gray-100">
-                    Live dashboards for production and machine efficiency.
-                  </p>
-                </div>
+                  <div className="border-white/10 p-5 transition-colors duration-300 hover:bg-white/[0.04] sm:border-t">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-emerald-400/25 bg-emerald-400/15">
+                        <BarChart3 className="h-5 w-5 text-green-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Production Analytics
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Live dashboards for production and machine efficiency.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Card 4 */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Cpu className="w-12 h-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Predictive Maintenance
-                  </h4>
-                  <p className="text-sm text-gray-300">
-                    Prevent machine failures before downtime occurs.
-                  </p>
+                  <div className="border-white/10 p-5 transition-colors duration-300 hover:bg-white/[0.04] sm:border-t">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-violet-400/25 bg-violet-400/15">
+                        <Cpu className="h-5 w-5 text-purple-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Predictive Maintenance
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Prevent machine failures before downtime occurs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* ================= BUSINESS CHALLENGES ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-black"
-        aria-labelledby="challenges-heading"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h1
+      <SectionShell labelledBy="challenges-heading">
+        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:sticky lg:top-28 lg:col-span-4">
+            <h2
               id="challenges-heading"
-              className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text  text-transparent mb-3"
+              className="mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl leading-tight text-transparent md:text-4xl"
             >
               5 Critical Challenges Facing Textile Manufacturers Today
-            </h1>
-            <p className="text-base text-white/95 max-w-2xl mx-auto">
+            </h2>
+            <p className="text-base leading-relaxed text-white/95">
               The problems costing you production hours, quality, and margin —
               and how we solve them.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {businessChallenges.map((c, i) => (
-              <InfoCard key={i} icon={c.icon} title={c.title}>
-                <p className="text-white/95">{c.pain}</p>
-                <p className="text-amber-400">{c.solution}</p>
-              </InfoCard>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ================= BUSINESS OUTCOMES ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        aria-labelledby="outcomes-heading"
-      >
-        <TopSeamFade />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h2 id="outcomes-heading" className="text-3xl  text-white mb-3">
-              What Textile Manufacturers Achieve With Custom AI & ML Solutions
-            </h2>
-            <p className="text-lg text-white/95 max-w-2xl mx-auto">
-              Executives buy outcomes, not features. Measurable results, not
-              promises.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 ">
-            {businessOutcomes.map((o, i) => (
-              <StatCard key={i} number={o.number} label={o.label} />
-            ))}
-          </div>
-          <p className="text-center text-gray-300 mt-10 text-sm md:text-base">
-            12+ textile mills saved ₹36 lakhs+ annually · 180% average
-            first-year ROI · 95% loom uptime across 100+ looms
-          </p>
-        </div>
-      </section>
-      {/* ================= AI SOLUTIONS (formerly Features) ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-black"
-        aria-labelledby="ai-solutions-heading"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-8">
-            <h2
-              id="ai-solutions-heading"
-              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
-            >
-              AI & ML-Powered Solutions for Textile Manufacturing
-            </h2>
-            <p className="text-base text-gray-100 max-w-3xl mx-auto">
-              Real AI solves real problems. We build custom AI and ML models for
-              your specific manufacturing challenges.
-            </p>
-          </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <nav
-                  className="bg-gray-900 p-4"
-                  aria-label="AI solution categories"
-                >
-                  <div className="space-y-2">
-                    {features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                          activeFeature === index
-                            ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                            : "text-gray-300 hover:bg-gray-800"
-                        }`}
-                        onClick={() => setActiveFeature(index)}
-                      >
-                        <div className="flex items-center space-x-2">
-                          <span
-                            className={`text-xs px-2 py-1 rounded ${
-                              activeFeature === index
-                                ? "bg-black text-amber-400"
-                                : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                            }`}
-                          >
-                            {index < 9 ? `0${index + 1}` : index + 1}
-                          </span>
-                          <span className="font-medium text-sm">
-                            {feature.title}
-                          </span>
-                        </div>
+          <ol className="ml-3 list-none space-y-0 border-l border-white/10 md:ml-4 lg:col-span-8">
+            {businessChallenges.map((c, i) => {
+              const Icon = c.icon;
+              return (
+                <li key={i} className="relative pb-8 pl-8 last:pb-0 md:pl-10">
+                  <span className="absolute -left-[9px] top-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-[10px] font-bold text-black ring-4 ring-black">
+                    {i + 1}
+                  </span>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-amber-400/35 md:p-6">
+                    <div className="mb-3 flex items-start gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                        <Icon size={18} />
                       </div>
-                    ))}
-                  </div>
-                </nav>
-
-                <article className="p-6">
-                  <div className="space-y-4">
-                    <div className="bg-amber-100 p-3 rounded-xl w-fit">
-                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
-                        <svg
-                          className="w-6 h-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl text-gray-900 mb-5">
-                        {features[activeFeature].title}
+                      <h3 className="pt-1 text-lg font-semibold text-white">
+                        {c.title}
                       </h3>
-                      <div className="space-y-6">
-                        {features[activeFeature].sections.map(
-                          (section, sectionIndex) => (
-                            <div key={sectionIndex}>
-                              <h4 className="text-lg font-semibold text-orange-600 mb-3">
-                                {section.heading}
-                              </h4>
-                              <ul className="space-y-3 text-gray-600 text-sm">
-                                {section.details.map((detail, idx) => (
-                                  <li
-                                    key={idx}
-                                    className="flex items-start gap-2"
-                                  >
-                                    <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-                                    <span>{detail}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ),
-                        )}
-                      </div>
                     </div>
+                    <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
+                      <span className="text-gray-400">Impact: </span>
+                      {c.impact}. {c.pain}
+                    </p>
+                    <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
+                      <span className="font-medium text-amber-300">
+                        Solution:{" "}
+                      </span>
+                      {c.solution}
+                    </p>
                   </div>
-                </article>
-              </div>
-            </div>
-          </div>
+                </li>
+              );
+            })}
+          </ol>
         </div>
-      </section>
-      {/* ================= INDUSTRY USE CASES ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        aria-labelledby="use-cases-heading"
-      >
-        <TopSeamFade />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h2 id="use-cases-heading" className="text-3xl  text-white mb-3">
-              Textile AI Use Cases — Real Business Scenarios
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Not feature lists — real scenarios that solve your specific
-              challenges with custom software.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((u, i) => (
-              <InfoCard key={i} icon={u.icon} title={u.title}>
-                <p>
-                  <span className="text-gray-400 "> Problem: </span>
-                  {u.problem}
-                </p>
-                <p>
-                  <span className="text-white/90">AI Workflow: </span>
-                  <span className="text-amber-400"> {u.workflow}</span>
-                </p>
-              </InfoCard>
+      </SectionShell>
+
+      {/* ================= BUSINESS OUTCOMES ================= */}
+      <SectionShell gradient labelledBy="outcomes-heading">
+        <SectionIntro
+          id="outcomes-heading"
+          title="What Textile Manufacturers Achieve With  AI  Solutions"
+          subtitle="Executives buy outcomes, not features. Measurable results, not promises."
+          light
+        />
+
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/25 backdrop-blur-sm">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {businessOutcomes.map((o, i) => (
+              <div
+                key={i}
+                className={`px-4 py-7 text-center sm:px-5 sm:py-8 ${
+                  i % 2 === 1 ? "border-l border-white/10" : ""
+                } ${i >= 2 ? "border-t border-white/10 md:border-t-0" : ""} ${
+                  i >= 4 ? "border-t border-white/10 md:border-t" : ""
+                } ${i % 4 !== 0 ? "md:border-l md:border-white/10" : ""}`}
+              >
+                <div className="mb-2 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent md:text-4xl">
+                  {o.number}
+                </div>
+                <div className="text-xs leading-snug text-white/90 sm:text-sm">
+                  {o.label}
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      </section>
-      {/* ================= IMPLEMENTATION PROCESS ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-black"
-        aria-labelledby="process-heading"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h2
-              id="process-heading"
-              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
+
+        <p className="mt-10 text-center text-sm text-gray-300 md:text-base">
+          12+ textile mills saved ₹36 lakhs+ annually · 180% average
+          first-year ROI · 95% loom uptime across 100+ looms
+        </p>
+      </SectionShell>
+
+      {/* ================= AI SOLUTIONS ================= */}
+      <SectionShell labelledBy="ai-solutions-heading">
+        <SectionIntro
+          id="ai-solutions-heading"
+          title="AI & ML-Powered Solutions for Textile Manufacturing"
+          subtitle="Real AI solves real problems. We build custom AI and ML models for your specific manufacturing challenges."
+        />
+
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
+          <div className="grid min-h-[420px] grid-cols-1 lg:grid-cols-5">
+            <nav
+              className="border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              aria-label="AI solution categories"
             >
-              Our Custom Software Development Process
-            </h2>
-            <p className="text-lg text-white/95">
-              A proven 8-12 week development process, built around your
-              workflows with minimal disruption.
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="block md:hidden">
-              <div className="grid grid-cols-3 gap-y-6 gap-x-2">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="text-center relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg sm:text-xl font-extrabold mb-2 mx-auto border-2 border-white shadow-lg">
-                      {step.number}
-                    </div>
-                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">
-                      {step.title}
-                    </h3>
-                  </div>
-                ))}
+              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
+                {features.map((feature, index) => {
+                  const active = activeFeature === index;
+                  return (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setActiveFeature(index)}
+                      className={`w-full rounded-lg p-3 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
+                        active
+                          ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md"
+                          : "text-gray-300 hover:bg-white/5"
+                      }`}
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <span
+                          className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[11px] font-semibold ${
+                            active
+                              ? "bg-black text-amber-400"
+                              : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                          }`}
+                        >
+                          {index < 9 ? `0${index + 1}` : index + 1}
+                        </span>
+                        <span className="text-sm font-medium leading-snug">
+                          {feature.title}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-            </div>
+            </nav>
 
-            <div className="hidden md:flex flex-wrap justify-center items-start gap-y-8 gap-x-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-center max-w-[180px]">
-                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mb-3 mx-auto">
-                      {step.number}
-                    </div>
-                    <h3 className="font-medium text-white text-base mb-1">
-                      {step.title}
-                    </h3>
+            <article className="bg-white p-6 md:p-8 lg:col-span-3">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="rounded-xl bg-amber-100 p-2.5">
+                  <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
+                    <svg
+                      className="h-5 w-5 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
-                  {index < processSteps.length - 1 && (
-                    <div className="w-12 h-0.5 bg-blue-300 mx-3 mt-[-2.5rem] hidden lg:block"></div>
-                  )}
                 </div>
-              ))}
-            </div>
+                <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
+              </div>
+
+              <h3 className="mb-6 text-xl leading-snug text-gray-900 md:text-2xl">
+                {features[activeFeature].title}
+              </h3>
+
+              <div className="space-y-7">
+                {features[activeFeature].sections.map(
+                  (section, sectionIndex) => (
+                    <div key={sectionIndex}>
+                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-600">
+                        {section.heading}
+                      </h4>
+                      <ul className="space-y-2.5 text-sm text-gray-600 md:text-[15px]">
+                        {section.details.map((detail, idx) => (
+                          <li key={idx} className="flex items-start gap-2.5">
+                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500" />
+                            <span className="leading-relaxed">{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ),
+                )}
+              </div>
+            </article>
           </div>
         </div>
-      </section>
-      {/* ================= WHY ASCENTIA LABS ================= */}
-      <section
-        className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden"
-        aria-labelledby="why-us-heading"
-      >
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+      </SectionShell>
 
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="text-white space-y-8">
-                <div>
-                  <h2
-                    id="why-us-heading"
-                    className="text-3xl    mb-4 leading-tight"
-                  >
-                    Revolutionize Your Textile Operations with Our Expertise
-                  </h2>
-                  <p className="text-xl text-gray-100 mb-8">
-                    Why leading textile companies choose our solutions
+      {/* ================= INDUSTRY USE CASES ================= */}
+      <SectionShell gradient labelledBy="use-cases-heading">
+        <SectionIntro
+          id="use-cases-heading"
+          title="Textile AI Use Cases — Real Business Scenarios"
+          subtitle="Not feature lists — real scenarios that solve your specific challenges with custom software."
+          light
+        />
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+          {useCases.map((u, i) => {
+            const Icon = u.icon;
+            return (
+              <article
+                key={i}
+                className="group rounded-xl border border-white/10 bg-black/30 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:shadow-lg hover:shadow-black/20 md:p-6"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="text-base font-semibold text-white">
+                    {u.title}
+                  </h3>
+                </div>
+                <div className="space-y-3 text-sm leading-relaxed">
+                  <p className="text-gray-300">
+                    <span className="text-gray-400">Problem: </span>
+                    {u.problem}
+                  </p>
+                  <p>
+                    <span className="text-white/90">AI Workflow: </span>
+                    <span className="text-amber-400">{u.workflow}</span>
+                  </p>
+                  <p className="text-gray-300">
+                    <span className="text-gray-400">Outcome: </span>
+                    {u.result}
                   </p>
                 </div>
-                <AccordionGroup
-                  items={reasons}
-                  activeId={activeIndex}
-                  onToggle={setActiveIndex}
-                  variant="light"
-                />
-              </div>
+              </article>
+            );
+          })}
+        </div>
+      </SectionShell>
 
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
-                  <div className="text-center text-white">
-                    <div className="relative w-32 h-32 mx-auto mb-6">
-                      <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
-                        <svg
-                          className="w-16 h-16 text-black relative z-10 drop-shadow-lg"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
-                      </div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
-                    </div>
-                    <h3 className="text-2xl mb-4">
-                      Ready to Transform Your Textile Operations?
-                    </h3>
-                    <p className="text-blue-100 mb-6">
-                      Join industry leaders who trust our textile management
-                      solutions to optimize production and boost efficiency.
-                    </p>
-                    <button
-                      onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                      Start Your Project Today
-                    </button>
+      {/* ================= IMPLEMENTATION PROCESS ================= */}
+      <SectionShell labelledBy="process-heading">
+        <SectionIntro
+          id="process-heading"
+          title="Our Custom Software Development Process"
+          subtitle="A proven 8-12 week development process, built around your workflows with minimal disruption."
+        />
+
+        <ol className="relative ml-3 list-none space-y-0 border-l border-white/15 md:hidden">
+          {processSteps.map((step, index) => (
+            <li key={index} className="relative pb-8 pl-8 last:pb-0">
+              <span className="absolute -left-[14px] top-0 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-xs font-bold text-black ring-4 ring-black">
+                {step.number}
+              </span>
+              <h3 className="mb-1.5 text-base font-semibold text-white">
+                {step.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-400">
+                {/* {step.description} */}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mx-auto hidden max-w-6xl md:block">
+          <div className="relative">
+            <div
+              className="absolute left-[8%] right-[8%] top-6 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
+              aria-hidden="true"
+            />
+            <ol className="relative grid list-none grid-cols-6 gap-3">
+              {processSteps.map((step, index) => (
+                <li key={index} className="px-1 text-center">
+                  <div className="relative z-10 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-base font-extrabold text-black shadow-lg ring-4 ring-black">
+                    {step.number}
                   </div>
+                  <h3 className="mb-2 text-sm font-semibold leading-snug text-white">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-gray-400">
+                    {/* {step.description} */}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </SectionShell>
+
+      {/* ================= WHY ASCENTIA LABS ================= */}
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"
+        aria-labelledby="why-us-heading"
+      >
+        <div className="pointer-events-none absolute left-0 right-0 top-0 h-20 bg-gradient-to-b from-black to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-15"
+          aria-hidden="true"
+        >
+          <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-yellow-400 blur-3xl" />
+          <div className="absolute bottom-40 right-20 h-24 w-24 rounded-full bg-yellow-300 blur-2xl" />
+        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
+
+        <div className="relative container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="space-y-6 text-white">
+              <div>
+                <h2
+                  id="why-us-heading"
+                  className="mb-4 text-3xl leading-tight md:text-4xl"
+                >
+                  Revolutionize Your Textile Operations with Our Expertise
+                </h2>
+                <p className="text-xl text-gray-100">
+                  Why leading textile companies choose our solutions
+                </p>
+              </div>
+              <AccordionGroup
+                items={reasons}
+                activeId={activeIndex}
+                onToggle={setActiveIndex}
+                variant="light"
+              />
+            </div>
+
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-blue-400/25 bg-gradient-to-br from-blue-600/15 to-blue-900/30 p-8 text-center text-white backdrop-blur-md md:p-10">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black/10 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 shadow-xl">
+                  <svg
+                    className="h-10 w-10 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <h3 className="mb-4 text-2xl leading-snug">
+                  Ready to Transform Your Textile Operations?
+                </h3>
+                <p className="mb-7 leading-relaxed text-blue-100">
+                  Join industry leaders who trust our textile management
+                  solutions to optimize production and boost efficiency.
+                </p>
+                <button
+                  onClick={openConsultation}
+                  className="rounded-xl border-2 border-black/20 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 px-8 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:border-black/40 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                >
+                  Start Your Project Today
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       {/* ================= RELATED AI SERVICES ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-black"
-        aria-labelledby="related-services-heading"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h2
-              id="related-services-heading"
-              className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3"
-            >
-              Related AI Services for Textile Manufacturers
-            </h2>
-            <p className="text-base text-gray-100 max-w-2xl mx-auto">
-              Explore our full suite of AI-powered solutions for the textile
-              industry.
-            </p>
-          </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none">
-            {relatedServices.map((s, i) => (
+      <SectionShell labelledBy="related-services-heading">
+        <SectionIntro
+          id="related-services-heading"
+          title="Related AI Services for Textile Manufacturers"
+          subtitle="Explore our full suite of AI-powered solutions for the textile industry."
+        />
+
+        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
+          {relatedServices.map((s, i) => (
+            <li key={i}>
+              <Link
+                to={s.href}
+                className="group block h-full rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-6"
+              >
+                <h3 className="mb-2 text-lg font-medium text-white transition-colors group-hover:text-amber-300">
+                  {s.title}
+                </h3>
+                <p className="mb-5 text-sm leading-relaxed text-white/90">
+                  {s.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400">
+                  Learn more
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5"
+                  />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </SectionShell>
+
+      {/* ================= RELATED INDUSTRIES ================= */}
+      <SectionShell gradient labelledBy="related-industries-heading">
+        <SectionIntro
+          id="related-industries-heading"
+          title="Related Industry Software Solutions"
+          subtitle="Explore custom software development across manufacturing, logistics, CRM, healthcare, and more."
+          light
+        />
+
+        <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+          {relatedIndustries.map((industry, i) => {
+            const Icon = industry.icon;
+            return (
               <li key={i}>
                 <Link
-                  to={s.href}
-                  className="block bg-gray-900 rounded-xl border border-gray-700 p-6 h-full hover:border-amber-400/50 hover:bg-gray-800 transition-all duration-300"
+                  to={industry.link}
+                  className="group flex h-full flex-col rounded-xl border border-white/10 bg-black/25 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-5"
                 >
-                  <h3 className="text-white text-lg font-medium mb-2">
-                    {s.title}
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="mb-2 text-sm font-semibold leading-snug text-white transition-colors group-hover:text-amber-300 md:text-[15px]">
+                    {industry.title}
                   </h3>
-                  <p className="text-white/95 text-sm mb-4">{s.description}</p>
-                  <span className="text-amber-400 text-sm font-medium inline-flex items-center gap-1">
-                    Learn more <ArrowRight size={14} />
+                  <p className="mb-4 flex-1 text-xs leading-relaxed text-gray-300 md:text-sm">
+                    {industry.line}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-400 md:text-sm">
+                    Explore
+                    <ArrowRight
+                      size={13}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
                   </span>
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+            );
+          })}
+        </ul>
+      </SectionShell>
+
       {/* ================= RELATED RESOURCES ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        aria-labelledby="related-resources-heading"
-      >
-        <TopSeamFade />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-10">
-            <h2
-              id="related-resources-heading"
-              className="text-3xl  text-white mb-3"
-            >
-              Continue Learning — Textile Software & AI Resources
-            </h2>
-            <p className="text-lg text-white/95 max-w-2xl mx-auto">
-              Deepen your understanding of AI, ML, and custom software in
-              textile manufacturing.
-            </p>
-          </div>
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 list-none">
-            {relatedResources.map((r, i) => (
-              <li key={i}>
-                <Link
-                  to={r.href}
-                  className="block bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20 h-full hover:bg-white/15 transition-all duration-300"
-                >
-                  <figure className="m-0">
-                    <figcaption className="text-amber-400 text-xs font-semibold uppercase tracking-wide mb-2">
-                      {r.topic}
-                    </figcaption>
-                    <h3 className="text-white text-base font-medium leading-snug">
-                      {r.title}
-                    </h3>
-                  </figure>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      {/* ================= FAQ ================= */}
-      <section
-        className="relative overflow-hidden py-16 bg-black"
-        aria-labelledby="faq-heading"
-      >
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2
-                id="faq-heading"
-                className="text-3xl  bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4"
+      <SectionShell labelledBy="related-resources-heading">
+        <SectionIntro
+          id="related-resources-heading"
+          title="Continue Learning — Textile Software & AI Resources"
+          subtitle="Deepen your understanding of AI, ML, and custom software in textile manufacturing."
+        />
+
+        <ul className="grid list-none grid-cols-1 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-black/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+          {relatedResources.map((r, i) => (
+            <li key={i} className="flex">
+              <Link
+                to={r.href}
+                className="group flex w-full flex-col p-6 transition-colors duration-300 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-400"
               >
-                Frequently Asked Questions — Custom Textile Software Solutions
-              </h2>
-              <p className="text-lg text-white/95">
-                Find answers to common questions about our custom AI & ML
-                software solutions
-              </p>
-            </div>
-            <AccordionGroup
-              items={faqs}
-              activeId={openFAQ}
-              onToggle={setOpenFAQ}
-              variant="dark"
-            />
-          </div>
+                <span className="mb-3 text-xs font-semibold uppercase tracking-wide text-amber-400">
+                  {r.topic}
+                </span>
+                <h3 className="flex-1 text-base font-medium leading-snug text-white transition-colors group-hover:text-amber-200">
+                  {r.title}
+                </h3>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors group-hover:text-amber-400">
+                  Read more
+                  <ArrowRight size={13} />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </SectionShell>
+
+      {/* ================= FAQ ================= */}
+      <SectionShell labelledBy="faq-heading">
+        <div className="mx-auto max-w-4xl">
+          <SectionIntro
+            id="faq-heading"
+            title="Frequently Asked Questions — Custom Textile Software Solutions"
+            subtitle="Find answers to common questions about our custom AI & ML software solutions"
+          />
+          <AccordionGroup
+            items={faqs}
+            activeId={openFAQ}
+            onToggle={setOpenFAQ}
+            variant="dark"
+          />
         </div>
-      </section>
+      </SectionShell>
     </div>
   );
 };

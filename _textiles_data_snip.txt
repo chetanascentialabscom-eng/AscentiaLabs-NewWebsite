@@ -1,0 +1,427 @@
+const TextilesPage = () => {
+  const [activeFeature, setActiveFeature] = useState(0);
+  const [openFAQ, setOpenFAQ] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(null); // Why Ascentia Labs accordion
+  const { openConsultation } = useConsultation();
+
+  const scrollbarStyles = `
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .custom-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  `;
+
+  /* ===========================================================
+   * DATA — extracted into arrays per the "avoid duplicated JSX"
+   * requirement. Content sourced from the provided documentation.
+   * =========================================================== */
+
+  // Hero stat cards — reused component, updated copy
+
+  // 2. Business Challenges
+  const businessChallenges = [
+    {
+      icon: Gauge,
+      title: "Production Downtime",
+      impact: "₹96L–1.8Cr lost annually",
+      pain: "Factories operate at just 65–70% efficiency — nearly a third of capacity sits idle due to poor scheduling and manual tracking errors.",
+      solution:
+        "We build custom production planning software that auto-schedules looms and flags material shortages, keeping 100+ looms running 95% of the time.",
+    },
+    {
+      icon: Shield,
+      title: "Quality Control Failures",
+      impact: "₹5–12L per rejected batch",
+      pain: "25–30% of shipments are rejected over color mismatches, defects, or inconsistent quality.",
+      solution:
+        "Our custom AI fabric inspection models deliver 98% defect detection accuracy — 2.5x more efficient than manual review — with instant alerts.",
+    },
+    {
+      icon: Boxes,
+      title: "Inventory Waste",
+      impact: "₹15–30L wasted per year",
+      pain: "Manual spreadsheets lead to expired fabric, overstocked yarn, and missing raw materials — 15–25% of total production cost.",
+      solution:
+        "We build custom inventory systems with real-time QR tracking and automated reorder points so you never overstock or run short.",
+    },
+    {
+      icon: BarChart3,
+      title: "Manual Reporting Inefficiency",
+      impact: "60+ hours/month wasted",
+      pain: "Managers spend 10–15 hours a week on Excel reports and still miss bottlenecks, cost spikes, and quality trends.",
+      solution:
+        "Custom real-time dashboards surface production KPIs, cost per meter, and efficiency — built around the metrics you actually track.",
+    },
+    {
+      icon: Wrench,
+      title: "Ineffective Maintenance",
+      impact: "30–40% higher emergency repair cost",
+      pain: "Unplanned equipment downtime remains one of the biggest drags on production efficiency.",
+      solution:
+        "Custom predictive maintenance models flag wear before failure, cutting unplanned downtime by up to 45%.",
+    },
+  ];
+
+  // 3. Business Outcomes (KPI cards)
+  const businessOutcomes = [
+    { number: "35%", label: "Downtime Reduction" },
+    { number: "40%", label: "Fabric Waste Reduction" },
+    { number: "98%", label: "Inspection Accuracy" },
+    { number: "60 hrs", label: "Reporting Time Saved / mo" },
+    { number: "25%", label: "Production Output Increase" },
+    { number: "99%+", label: "Inventory Accuracy" },
+    { number: "45%", label: "Downtime via Predictive Maint." },
+    { number: "180%", label: "Average First-Year ROI" },
+  ];
+
+  // 4. AI Solutions — renamed Features section, same accordion/tab UI, new copy
+  const features = [
+    {
+      id: "ai-production-planning",
+      title:
+        "Custom AI Production Planning — Eliminate Downtime & Scheduling Errors",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "Manual scheduling causes loom idle time — ₹8–15L/month in lost production.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Analyzes historical data, machine availability, and material stock to auto-assign looms",
+            "Predicts production bottlenecks before they occur",
+            "Adjusts schedules in real-time when disruptions happen",
+            "Result: 35% downtime reduction, 25% output increase without adding looms",
+          ],
+        },
+      ],
+    },
+    {
+      id: "ai-quality-inspection",
+      title: "Custom AI Quality Inspection — Catch Defects Before Buyers Do",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "25–30% of shipments rejected over quality issues — ₹5–12L per rejected batch.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Computer vision detects stains, holes, uneven texture, and color variation",
+            "Deep learning color matching and shade analysis",
+            "98% defect detection accuracy, 2.5x faster than manual inspection",
+            "Result: 40% fewer defect rejections, 90% fewer color mismatches",
+          ],
+        },
+      ],
+    },
+    {
+      id: "ai-inventory-management",
+      title: "Custom AI Inventory Management — Stop Fabric Waste at the Source",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "₹15–30L/year wasted on expired fabric and overstocked yarn.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Predicts optimal reorder points using demand forecasting",
+            "Flags slow-moving inventory before it becomes waste",
+            "Recommends procurement timing based on production schedules",
+            "Result: 40% fabric waste reduction, ₹20L/year savings",
+          ],
+        },
+      ],
+    },
+    {
+      id: "predictive-maintenance",
+      title:
+        "Custom Predictive Maintenance — Prevent Breakdowns Before They Happen",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "Unplanned downtime is one of the biggest drags on production.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Real-time sensors monitor vibration, heat, and wear",
+            "ML models flag failure patterns 48–72 hours in advance",
+            "Automated maintenance-team alerts before breakdowns occur",
+            "Result: 45% less unplanned downtime, 90% of breakdowns prevented",
+          ],
+        },
+      ],
+    },
+    {
+      id: "demand-forecasting",
+      title: "Custom AI Demand Forecasting — Align Production with Real Demand",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "Fluctuating buyer demand leads to overproduction or stockouts.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Analyzes historical orders, seasonal trends, and market signals",
+            "Forecasts demand for specific fabric types and colors",
+            "Forecast accuracy improved from 68% to 89%",
+            "Result: 40% less overstock waste, 30% better order fulfillment",
+          ],
+        },
+      ],
+    },
+    {
+      id: "ai-analytics-reporting",
+      title: "Custom AI Analytics & Reporting — Decisions, Not Spreadsheets",
+      sections: [
+        {
+          heading: "Challenge",
+          details: [
+            "Managers lose 10–15 hours/week to manual Excel reporting.",
+          ],
+        },
+        {
+          heading: "AI Capabilities",
+          details: [
+            "Auto-generates real-time reports on production KPIs",
+            "Natural language queries — 'Which looms are underperforming?'",
+            "Predictive analytics and automated event alerts",
+            "Result: 60 hours/month saved across the organization",
+          ],
+        },
+      ],
+    },
+  ];
+
+  // 5. Industry Use Cases
+  const useCases = [
+    {
+      icon: FlaskConical,
+      title: "Fabric Inspection",
+      problem:
+        "Manual inspection misses 15–20% of defects across 50,000+ meters/day.",
+      workflow:
+        "Computer vision scans every meter in real time, flags defective batches, and documents defects with photos.",
+      result:
+        "40% fewer rejections, saving approximately US$5.8K–14K per rejected batch.",
+    },
+    {
+      icon: Wrench,
+      title: "Predictive Maintenance",
+      problem:
+        "3–4 unexpected breakdowns per week, costing approximately US$2,300–US$3,450 each in lost production.",
+      workflow:
+        "Sensors detect failure patterns 48–72 hours ahead; maintenance teams get automated alerts.",
+      result: "45% less unplanned downtime, 90% of breakdowns prevented.",
+    },
+    {
+      icon: Gauge,
+      title: "Production Planning",
+      problem: "Manual scheduling across 200 looms misses monthly targets.",
+      workflow:
+        "AI planning engine weighs 500+ data points — loom capability, priority, material, deadlines.",
+      result: "25% output increase, 95% loom uptime, zero missed deadlines.",
+    },
+    {
+      icon: Package,
+      title: "Color Matching",
+      problem:
+        "8–10 batches per month rejected due to color mismatches, resulting in losses of approximately US$3,500–US$5,800 per batch.",
+      workflow:
+        "AI color analysis compares batches to approved standards with 99% accuracy.",
+      result:
+        "90% fewer color mismatches, saving approximately US$20K–US$35K per month.",
+    },
+    {
+      icon: BarChart3,
+      title: "Cost Optimization",
+      problem: "30% of orders end up with lower-than-expected margins.",
+      workflow:
+        "AI costing engine calculates true cost per meter including material, labor, overhead, and waste.",
+      result: "15–20% improvement in profit margins.",
+    },
+    {
+      icon: Boxes,
+      title: "Supply Chain Optimization",
+      problem: "30% of supplier deliveries are late or below standard.",
+      workflow:
+        "AI tracks supplier quality, timeliness, and pricing, recommending the best source per order.",
+      result: "20% lower material costs, 50% fewer supplier-related delays.",
+    },
+  ];
+
+  // 6. Implementation Process — reuses existing timeline component
+  const processSteps = [
+    {
+      number: "1",
+      title: "Discovery & Analysis",
+      description:
+        "We assess your factory, map workflows, and gather requirements across production, quality, and inventory.",
+    },
+    {
+      number: "2",
+      title: "Solution Architecture",
+      description:
+        "Custom solution design, technology selection, and architecture planning around your specific processes.",
+    },
+    {
+      number: "3",
+      title: "Development",
+      description:
+        "Custom software development, AI/ML model building, and IoT integration tailored to your looms and systems.",
+    },
+    {
+      number: "4",
+      title: "Testing & QA",
+      description:
+        "Rigorous testing and user acceptance testing to ensure the system fits your real-world workflows.",
+    },
+    {
+      number: "5",
+      title: "Deployment",
+      description:
+        "System deployment, data migration from Excel, Tally, SAP, or Oracle, and go-live with minimal disruption.",
+    },
+    {
+      number: "6",
+      title: "Training & Support",
+      description:
+        "Onsite team training, 30+ video tutorials, and 24/7 ongoing support and maintenance.",
+    },
+  ];
+
+  // 7. Why Ascentia Labs — reuses accordion pattern
+  const reasons = [
+    {
+      id: 1,
+      title: "Custom Solutions, Not Off-the-Shelf",
+      content:
+        "We don't force you to adapt to our software. We build software that adapts to your unique textile manufacturing processes.",
+    },
+    {
+      id: 2,
+      title: "Textile Industry Expertise",
+      content:
+        "5+ years in textiles. We understand looms, yarn, dyeing, and finishing — our team speaks your language.",
+    },
+    {
+      id: 3,
+      title: "AI & ML Specialists",
+      content:
+        "Custom AI models for fabric inspection, predictive maintenance, production planning, and quality control — trained on your data.",
+    },
+    {
+      id: 4,
+      title: "Scalable Solutions",
+      content:
+        "From 50 to 1,000+ looms — start small and grow without switching systems.",
+    },
+    {
+      id: 5,
+      title: "Seamless Integration",
+      content:
+        "Works with Siemens, Toyota, Sumitomo, Murata, and Picanol looms. Data migration from Tally, SAP, and Oracle included.",
+    },
+    {
+      id: 6,
+      title: "24/7 Support",
+      content: "Your production can't wait. Neither can we.",
+    },
+  ];
+
+  // 8. Related AI Services — internal linking
+  const relatedServices = [
+    {
+      title: "AI & Machine Learning Solutions",
+      description:
+        "Improve textile production, automate quality inspection, reduce fabric waste, and make faster operational decisions with AI-powered solutions.",
+      href: "/ai-ml-services",
+    },
+    {
+      title: "Digital Transformation Services",
+      description:
+        "Modernize your textile factory with connected workflows, real-time production visibility, and smarter inventory management.",
+      href: "/digital-transformation",
+    },
+    {
+      title: "Software Engineering",
+      description:
+        "Build custom software for textile production, inventory management, quality control, and factory operations.",
+      href: "/software-engineering",
+    },
+  ];
+
+  // 9. Related Resources — internal linking
+  const relatedResources = [
+    {
+      title: "The Future of Textile Manufacturing: AI Trends in 2026",
+      topic: "Industry Trends",
+      href: "#",
+    },
+    {
+      title: "Custom vs. Off-the-Shelf Textile Software: A Comparison",
+      topic: "Selection Guide",
+      href: "#",
+    },
+    {
+      title: "AI Fabric Inspection vs. Manual Inspection: A Comparison",
+      topic: "ROI Analysis",
+      href: "#",
+    },
+  ];
+
+  // 10. FAQ — reuses accordion pattern
+  const faqs = [
+    {
+      question:
+        "What's the difference between custom textile software and off-the-shelf ERP?",
+      answer:
+        "Off-the-shelf ERP systems are built for general manufacturing and force you to adapt your workflows to the software. Custom textile software is built specifically for your unique processes — your loom types, your fabric categories, your quality standards, your supplier relationships.\n\nThis means:\n\nNo costly workarounds\n\nFaster implementation (8-12 weeks vs. 12-18 months)\n\nHigher ROI because you're not paying for unused features\n\nAbility to add exactly the AI/ML capabilities you need",
+    },
+    {
+      question: "How long does it take to develop custom textile software?",
+      answer:
+        "8-12 weeks for full development:\n\nWeek 1-2: Discovery & analysis\n\nWeek 3: Solution architecture\n\nWeek 4-8: Development & AI/ML model building\n\nWeek 9-10: Testing & QA\n\nWeek 11: Deployment\n\nWeek 12+: Training & support",
+    },
+    {
+      question: "What's the cost of custom textile software?",
+      answer:
+        "Costs vary based on complexity, features, and scope:\n\nBasic Production & Inventory: ₹10-25 lakhs\n\nFull Production + Quality + Analytics: ₹25-50 lakhs\n\nEnterprise + IoT + AI/ML: ₹50 lakhs - ₹2 crores\n\nROI: 180%+ in first year (average client saves ₹36 lakhs+ annually)",
+    },
+    {
+      question: "Can you integrate with our existing looms and systems?",
+      answer:
+        "Yes — we integrate with 95% of existing textile systems:\n\nLoom brands: Siemens, Toyota, Sumitomo, Murata, Picanol\n\nExisting software: Tally, SAP, Oracle (data migration included)\n\nHardware: QR scanners, IoT sensors, barcode printers",
+    },
+    {
+      question: "Do you provide training for our team?",
+      answer:
+        "Yes — complete training included:\n\n2-day onsite training at your factory for 5-10 staff members\n\nVideo tutorials for every feature (30+ videos)\n\n24/7 support — call us anytime for help\n\n1-month free support after launch",
+    },
+    {
+      question: "What if we need to add features later?",
+      answer:
+        "Yes — unlimited customization available:\n\nAdd new features as your business grows\n\nModify dashboards for different roles (manager vs. operator)\n\nIntegrate new suppliers/buyers\n\nAdd new AI/ML capabilities\n\nYour software grows with your business — no need to switch systems.",
+    },
+  ].map((f, i) => ({ id: i, title: f.question, content: f.answer }));
+
