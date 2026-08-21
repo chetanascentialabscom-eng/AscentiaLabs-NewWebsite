@@ -69,7 +69,7 @@ const SectionIntro = ({
 }) => (
   <div
     className={`mb-10 md:mb-12 ${
-      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-4xl text-center"
+      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
     }`}
   >
     <h2
@@ -857,14 +857,11 @@ const TextilesPage = () => {
             
 
               <h1 className="text-[25px] leading-tight md:text-4xl">
-                AI-Powered Custom Textile Manufacturing Software & Digital
-                Transformation Solutions
+                Custom Textile Manufacturing Software — AI Production & Quality
               </h1>
 
               <p className="text-lg leading-relaxed text-gray-300">
-                AI solutions that improve production efficiency, strengthen
-                quality control, optimize inventory, and streamline every stage
-                of textile manufacturing.
+                AI-powered textile software that boosts production efficiency, tightens quality control, and optimizes inventory.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -1027,8 +1024,8 @@ const TextilesPage = () => {
                       </h3>
                     </div>
                     <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
-                      <span className="text-gray-400">Impact: </span>
-                      {c.impact}. {c.pain}
+                      {/* <span className="text-gray-400">Impact: </span> */}
+                      {/* {c.impact}. {c.pain} */}
                     </p>
                     <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
                       <span className="font-medium text-amber-300">
@@ -1448,7 +1445,7 @@ const TextilesPage = () => {
 
       {/* ================= FAQ ================= */}
       <SectionShell labelledBy="faq-heading">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-5xl">
           <SectionIntro
             id="faq-heading"
             title="Frequently Asked Questions — Custom Textile Software Solutions"

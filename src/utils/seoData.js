@@ -33,7 +33,7 @@ export const seoData = {
 
   // Industry Pages
   fieldServiceCRM: {
-    title: "Field CRM Development Company – Custom Field Service CRM Solutions | Ascentia Labs",
+    title: "Field CRM Development Company –  Field Service CRM Solutions | Ascentia Labs",
     description:
       "Build a custom Field CRM that connects customers, technicians, scheduling, dispatch, job management, and billing. Offline-first mobile, AI voice notes, and deep integrations.",
     keywords:

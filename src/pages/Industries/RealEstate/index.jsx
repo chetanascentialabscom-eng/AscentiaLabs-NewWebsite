@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ChevronDown,
@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Building2,
   Building,
-  Home,
   GraduationCap,
   Stethoscope,
   Truck,
@@ -36,9 +35,12 @@ const SectionShell = ({
   className = "",
   gradient = false,
   labelledBy,
+  allowSticky = false,
 }) => (
   <section
-    className={`relative overflow-hidden py-16 md:py-20 ${
+    className={`relative py-16 md:py-20 ${
+      allowSticky ? "overflow-visible" : "overflow-hidden"
+    } ${
       gradient
         ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
         : "bg-black"
@@ -201,7 +203,211 @@ const challengeIcons = [
   BarChart3,
 ];
 
-const useCaseIcons = [Building2, BarChart3, Users, Home];
+/**
+ * Desktop pin-scroll: page scroll drives the right column while the left
+ * heading stays fixed. When right content finishes, the section unpins and
+ * normal page scroll continues. Mobile: stacked static layout.
+ */
+const ChallengesPinnedSection = ({ items }) => {
+  const sectionRef = useRef(null);
+  const stickyRef = useRef(null);
+  const trackRef = useRef(null);
+  const rafRef = useRef(0);
+  const [scrollSpan, setScrollSpan] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches,
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => setIsDesktop(mq.matches);
+    onChange();
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  const measure = useCallback(() => {
+    if (!isDesktop) {
+      setScrollSpan(0);
+      return;
+    }
+    const sticky = stickyRef.current;
+    const track = trackRef.current;
+    if (!sticky || !track) return;
+    const next = Math.max(0, track.scrollHeight - sticky.clientHeight);
+    setScrollSpan((prev) => (Math.abs(prev - next) > 1 ? next : prev));
+  }, [isDesktop]);
+
+  useEffect(() => {
+    measure();
+    const track = trackRef.current;
+    const sticky = stickyRef.current;
+    if (!track || !sticky) return undefined;
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(track);
+    ro.observe(sticky);
+    window.addEventListener("resize", measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [measure, items]);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    if (!isDesktop || scrollSpan <= 0) {
+      track.style.transform = "";
+      return undefined;
+    }
+
+    const STICKY_TOP = 112; // matches lg:top-28 (7rem)
+
+    const update = () => {
+      const section = sectionRef.current;
+      const trackEl = trackRef.current;
+      if (!section || !trackEl) return;
+
+      const scrolled = STICKY_TOP - section.getBoundingClientRect().top;
+      const progress = Math.min(1, Math.max(0, scrolled / scrollSpan));
+      trackEl.style.transform = `translate3d(0, ${-progress * scrollSpan}px, 0)`;
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(update);
+    };
+
+    update();
+
+    let detach = () => {};
+    const lenis = typeof window !== "undefined" ? window.lenis : null;
+
+    if (lenis?.on) {
+      lenis.on("scroll", onScroll);
+      detach = () => lenis.off("scroll", onScroll);
+    } else {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      detach = () => window.removeEventListener("scroll", onScroll);
+    }
+
+    // Lenis may init after this effect — rebind once if needed
+    const retry = window.setTimeout(() => {
+      if (window.lenis?.on && !lenis) {
+        detach();
+        window.lenis.on("scroll", onScroll);
+        detach = () => window.lenis?.off("scroll", onScroll);
+      }
+    }, 150);
+
+    return () => {
+      window.clearTimeout(retry);
+      cancelAnimationFrame(rafRef.current);
+      detach();
+    };
+  }, [isDesktop, scrollSpan]);
+
+  const sectionStyle =
+    isDesktop && scrollSpan > 0
+      ? { height: `calc(100vh - 7rem + ${scrollSpan}px)` }
+      : undefined;
+
+  const list = (
+    <ol
+      ref={trackRef}
+      className={
+        isDesktop
+          ? "list-none space-y-0 will-change-transform"
+          : "ml-3 list-none space-y-0 border-l border-white/10 md:ml-4"
+      }
+    >
+      {items.map((c, i) => {
+        const Icon = c.icon;
+        return (
+          <li key={i} className="relative pb-8 pl-8 last:pb-0 md:pl-10">
+            <span className="absolute -left-[9px] top-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-[10px] font-bold text-black ring-4 ring-black">
+              {i + 1}
+            </span>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-amber-400/35 md:p-6">
+              <div className="mb-3 flex items-start gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                  <Icon size={18} />
+                </div>
+                <h3 className="pt-1 text-lg font-semibold text-white">
+                  {c.title}
+                </h3>
+              </div>
+              <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
+                <span className="text-gray-400">Impact: </span>
+                {c.pain}
+              </p>
+              <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
+                <span className="font-medium text-amber-300">Solution: </span>
+                {c.solution}
+              </p>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  );
+
+  const heading = (
+    <>
+      <h2
+        id="challenges-heading"
+        className="mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl leading-tight text-transparent md:text-4xl font-medium "
+      >
+        Business Challenges We Solve
+      </h2>
+      <p className="text-base leading-relaxed text-white/95">
+        Real estate operations face a complex web of challenges. Here's how we
+        address each one.
+      </p>
+    </>
+  );
+
+  if (!isDesktop) {
+    return (
+      <section
+        className="relative bg-black py-16 md:py-20"
+        aria-labelledby="challenges-heading"
+      >
+        <div className="container relative z-10 mx-auto max-w-6xl px-4">
+          <div className="grid items-start gap-10">
+            <div>{heading}</div>
+            {list}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section
+      ref={sectionRef}
+      style={sectionStyle}
+      className="relative bg-black"
+      aria-labelledby="challenges-heading"
+    >
+      <div
+        ref={stickyRef}
+        className="sticky top-28 flex h-[calc(100vh-7rem)] items-stretch overflow-hidden"
+      >
+        <div className="container mx-auto grid h-full max-w-6xl grid-cols-12 gap-14 px-4 py-6">
+          <aside className="col-span-4 flex flex-col justify-center self-stretch">
+            {heading}
+          </aside>
+          <div className="col-span-8 h-full overflow-hidden border-l border-white/10 pl-4 md:pl-6">
+            {list}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /** FAQ source for UI + FAQPage JSON-LD (AEO lead sentences). */
 const REAL_ESTATE_FAQ_ITEMS = [
@@ -570,6 +776,7 @@ const RealEstatePage = () => {
 
   const useCases = [
     {
+      title: "Property Management",
       problem:
         "A property management company with 5,000+ units faced fragmented tools.",
       solution:
@@ -577,6 +784,7 @@ const RealEstatePage = () => {
       outcome: "40% reduction in admin overhead, 15% better retention.",
     },
     {
+      title: "Portfolio Analytics",
       problem:
         "A commercial real estate investor with $2B in assets lacked visibility.",
       solution:
@@ -584,21 +792,20 @@ const RealEstatePage = () => {
       outcome: "30% faster reporting, 12% increase in portfolio returns.",
     },
     {
+      title: "Brokerage CRM",
       problem: "A brokerage with 200+ agents needed better lead management.",
       solution: "AI-powered CRM with automated lead scoring and follow-up.",
       outcome:
         "45% increase in lead conversion, agents closing 30% more deals.",
     },
     {
+      title: "Developer Sales",
       problem:
         "A residential developer launching 500 units needed a sales platform.",
       solution: "Platform with listings, virtual tours and buyer portal.",
       outcome: "50% faster sales cycle, improved buyer satisfaction.",
     },
-  ].map((u, i) => ({
-    ...u,
-    icon: useCaseIcons[i % useCaseIcons.length],
-  }));
+  ];
 
   const processSteps = [
     {
@@ -964,18 +1171,15 @@ const RealEstatePage = () => {
         </div>
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
 
-        <div className="relative container mx-auto max-w-6xl px-4 py-4 2xl:py-15 ">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="relative container mx-auto max-w-6xl px-4 py-4 2xl:py-20 ">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 2xl:gap-20">
             <div className="max-w-3xl space-y-6 text-white">
               <h1 className="text-[25px] leading-tight md:text-4xl">
-                Real Estate Software Solutions — Custom Property Management &
-                CRM Development
+                Custom Real Estate Software — Property Management & CRM
               </h1>
 
               <p className="text-lg leading-relaxed text-gray-300">
-                Replace manual processes with intelligent real estate software
-                that simplifies property management, enhances tenant
-                experiences, and drives smarter business decisions.
+                Custom real estate software that streamlines property management, improves tenant experience, and powers smarter decisions.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
@@ -1105,53 +1309,7 @@ const RealEstatePage = () => {
       </section>
 
       {/* ================= BUSINESS CHALLENGES ================= */}
-      <SectionShell labelledBy="challenges-heading">
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:sticky lg:top-28 lg:col-span-4">
-            <h2
-              id="challenges-heading"
-              className="mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl leading-tight text-transparent md:text-4xl"
-            >
-              Business Challenges We Solve
-            </h2>
-            <p className="text-base leading-relaxed text-white/95">
-              Real estate operations face a complex web of challenges. Here's
-              how we address each one.
-            </p>
-          </div>
-
-          <ol className="ml-3 list-none space-y-0 border-l border-white/10 md:ml-4 lg:col-span-8">
-            {businessChallenges.map((c, i) => {
-              const Icon = c.icon;
-              return (
-                <li key={i} className="relative pb-8 pl-8 last:pb-0 md:pl-10">
-                  <span className="absolute -left-[9px] top-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-[10px] font-bold text-black ring-4 ring-black">
-                    {i + 1}
-                  </span>
-                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-amber-400/35 md:p-6">
-                    <div className="mb-3 flex items-start gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-                        <Icon size={18} />
-                      </div>
-                      <h3 className="pt-1 text-lg font-semibold text-white">
-                        {c.title}
-                      </h3>
-                    </div>
-                    <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
-                      <span className="text-gray-400">Impact: </span>
-                      {c.pain}
-                    </p>
-                    <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
-                      <span className="font-medium text-amber-300">Solution: </span>
-                      {c.solution}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </SectionShell>
+      <ChallengesPinnedSection items={businessChallenges} />
 
       {/* ================= BUSINESS OUTCOMES ================= */}
       <SectionShell gradient labelledBy="outcomes-heading">
@@ -1173,7 +1331,7 @@ const RealEstatePage = () => {
                   i >= 3 ? "md:border-t md:border-white/10" : ""
                 } ${i % 3 !== 0 ? "md:border-l md:border-white/10" : ""}`}
               >
-                <div className="mb-2 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent md:text-4xl">
+                <div className="mb-2 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-medium tracking-tight text-transparent md:text-4xl">
                   {o.value}
                 </div>
                 <div className="text-xs leading-snug text-white/90 sm:text-sm">
@@ -1194,9 +1352,9 @@ const RealEstatePage = () => {
         />
 
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
-          <div className="grid min-h-[420px] grid-cols-1 lg:grid-cols-5">
+          <div className="grid min-h-0 grid-cols-1 lg:min-h-[420px] lg:grid-cols-5">
             <nav
-              className="border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              className="min-w-0 border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
               aria-label="Real estate feature categories"
             >
               <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
@@ -1233,7 +1391,7 @@ const RealEstatePage = () => {
               </div>
             </nav>
 
-            <article className="bg-white p-6 md:p-8 lg:col-span-3">
+            <article className="min-w-0 bg-white p-4 sm:p-6 md:p-8 lg:col-span-3">
               <div className="mb-5 flex items-center gap-3">
                 <div className="rounded-xl bg-amber-100 p-2.5">
                   <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
@@ -1252,29 +1410,119 @@ const RealEstatePage = () => {
                 <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
               </div>
 
-              <h3 className="mb-6 text-xl leading-snug text-gray-900 md:text-2xl">
+              <h3 className="mb-5 text-lg leading-snug text-gray-900 sm:mb-6 sm:text-xl md:text-2xl">
                 {features[activeFeature].title}
               </h3>
 
-              <div className="space-y-7">
-                {features[activeFeature].sections.map(
-                  (section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-600">
-                        {section.heading}
-                      </h4>
-                      <ul className="space-y-2.5 text-sm text-gray-600 md:text-[15px]">
-                        {section.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5">
-                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500" />
-                            <span className="leading-relaxed">{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
+              {(() => {
+                const sections = features[activeFeature].sections;
+                const rowCount = Math.max(
+                  ...sections.map((s) => s.details.length),
+                  0,
+                );
+
+                return (
+                  <>
+                    {/* Mobile: stacked sections (avoids cramped 2-col table overflow) */}
+                    <div className="space-y-4 md:hidden">
+                      {sections.map((section, sectionIndex) => (
+                        <div
+                          key={sectionIndex}
+                          className="overflow-hidden rounded-xl border border-gray-200"
+                        >
+                          <div className="bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2.5 text-xs font-semibold uppercase tracking-wide text-black">
+                            {section.heading}
+                          </div>
+                          <ul className="divide-y divide-gray-100">
+                            {section.details.map((detail, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-start gap-2.5 px-3.5 py-3 text-sm leading-relaxed text-gray-700"
+                              >
+                                <span
+                                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                  aria-hidden="true"
+                                />
+                                <span className="min-w-0 break-words">
+                                  {detail}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
-                  ),
-                )}
-              </div>
+
+                    {/* Desktop / tablet: 2-column table */}
+                    <div className="hidden overflow-x-auto md:block">
+                      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table className="w-full table-fixed border-collapse text-left text-sm">
+                          <caption className="sr-only">
+                            {features[activeFeature].title} by audience
+                          </caption>
+                          <thead>
+                            <tr className="bg-gradient-to-r from-amber-400 to-orange-500">
+                              {sections.map((section, sectionIndex) => (
+                                <th
+                                  key={sectionIndex}
+                                  scope="col"
+                                  className={`w-1/2 px-3 py-3 text-xs font-semibold uppercase tracking-wide text-black lg:px-4 ${
+                                    sectionIndex > 0
+                                      ? "border-l border-black/10"
+                                      : ""
+                                  }`}
+                                >
+                                  {section.heading}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Array.from({ length: rowCount }).map(
+                              (_, rowIdx) => (
+                                <tr
+                                  key={rowIdx}
+                                  className="border-b border-gray-100 last:border-b-0 odd:bg-white even:bg-gray-50/70"
+                                >
+                                  {sections.map((section, sectionIndex) => {
+                                    const detail = section.details[rowIdx];
+                                    return (
+                                      <td
+                                        key={sectionIndex}
+                                        className={`px-3 py-3 align-top text-gray-700 lg:px-4 ${
+                                          sectionIndex > 0
+                                            ? "border-l border-gray-100"
+                                            : ""
+                                        }`}
+                                      >
+                                        {detail ? (
+                                          <span className="flex items-start gap-2.5">
+                                            <span
+                                              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                              aria-hidden="true"
+                                            />
+                                            <span className="min-w-0 break-words leading-relaxed">
+                                              {detail}
+                                            </span>
+                                          </span>
+                                        ) : (
+                                          <span className="text-gray-300">
+                                            —
+                                          </span>
+                                        )}
+                                      </td>
+                                    );
+                                  })}
+                                </tr>
+                              ),
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
             </article>
           </div>
         </div>
@@ -1284,38 +1532,66 @@ const RealEstatePage = () => {
       <SectionShell gradient labelledBy="use-cases-heading">
         <SectionIntro
           id="use-cases-heading"
-          title="Industry Use Cases"
+          title="Real Estate Use Cases — Real Business Scenarios"
+          subtitle="Not feature lists — real scenarios that solve your specific challenges with custom software."
           light
         />
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
-          {useCases.map((u, i) => {
-            const Icon = u.icon;
-            return (
-              <article
-                key={i}
-                className="group rounded-xl border border-white/10 bg-black/30 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:shadow-lg hover:shadow-black/20 md:p-6"
-              >
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-                  <Icon size={18} />
-                </div>
-                <div className="space-y-3 text-sm leading-relaxed">
-                  <p className="text-gray-300">
-                    <span className="text-gray-400">Problem: </span>
-                    {u.problem}
-                  </p>
-                  <p>
-                    <span className="text-white/90">Solution: </span>
-                    <span className="text-amber-400">{u.solution}</span>
-                  </p>
-                  <p className="text-gray-300">
-                    <span className="text-gray-400">Outcome: </span>
-                    {u.outcome}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/25">
+          <ul className="m-0 list-none divide-y divide-white/10 p-0">
+            {useCases.map((u, i) => (
+              <li key={i} className="min-w-0">
+                <article className="grid min-w-0 grid-cols-1 gap-5 px-4 py-7 sm:gap-6 sm:px-5 sm:py-8 md:px-6 md:py-9 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5 xl:grid-cols-12 xl:items-start xl:gap-x-8 xl:px-8 xl:py-10">
+                  {/* Title + index — full width until xl */}
+                  <div className="relative min-w-0 lg:col-span-2 xl:col-span-3">
+                    <span
+                      className="pointer-events-none absolute -left-0.5 -top-3 select-none text-5xl font-semibold leading-none text-white/[0.07] sm:-top-4 sm:text-6xl md:text-7xl xl:-top-5 xl:text-8xl"
+                      aria-hidden="true"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="relative max-w-full break-words pt-8 mt-1 lg:mt-8  text-lg  font-medium leading-snug text-white sm:pt-6 sm:text-xl md:text-2xl xl:pt-8">
+                      {u.title}
+                    </h3>
+                  </div>
+
+                  {/* Problem */}
+                  <div className="min-w-0 lg:col-span-1 xl:col-span-4"> 
+                    <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-orange-400 sm:mb-2.5 lg:text-[14px] sm:tracking-[0.14em]">
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400"
+                        aria-hidden="true"
+                      />
+                      The Problem
+                    </p>
+                    <p className="break-words text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                      {u.problem}
+                    </p>
+                  </div>
+
+                  {/* Solution / workflow */}
+                  <div className="min-w-0 lg:col-span-1 xl:col-span-5">
+                    <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-400 sm:mb-2.5 lg:text-[14px]  sm:tracking-[0.14em]">
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400"
+                        aria-hidden="true"
+                      />
+                      The Solution
+                    </p>
+                    <p className="break-words text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                      {u.solution}
+                    </p>
+                    <p className="mt-2.5 break-words text-sm leading-relaxed text-white/80 sm:mt-3 md:text-[15px]">
+                      <span className="font-medium text-amber-300">
+                        {/* Outcome:{" "} */}
+                      </span>
+                      {/* {u.outcome} */}
+                    </p>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
         </div>
       </SectionShell>
 
@@ -1369,75 +1645,7 @@ const RealEstatePage = () => {
       </SectionShell>
 
       {/* ================= WHY ASCENTIA LABS ================= */}
-      <section
-        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"
-        aria-labelledby="why-us-heading"
-      >
-        <div className="pointer-events-none absolute left-0 right-0 top-0 h-20 bg-gradient-to-b from-black to-transparent" />
-        <div
-          className="pointer-events-none absolute inset-0 opacity-15"
-          aria-hidden="true"
-        >
-          <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-yellow-400 blur-3xl" />
-          <div className="absolute bottom-40 right-20 h-24 w-24 rounded-full bg-yellow-300 blur-2xl" />
-        </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
-
-        <div className="relative container mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
-            <div className="space-y-6 text-white">
-              <div>
-                <h2
-                  id="why-us-heading"
-                  className="mb-4 text-3xl leading-tight md:text-4xl"
-                >
-                  Revolutionize Your Real Estate Operations with Our Expertise
-                </h2>
-                <p className="text-xl text-gray-100">
-                  Why Real Estate Companies Choose Us
-                </p>
-              </div>
-              <AccordionGroup
-                items={reasons}
-                activeId={activeIndex}
-                onToggle={setActiveIndex}
-                variant="light"
-              />
-            </div>
-
-            <div className="lg:sticky lg:top-28">
-              <div className="rounded-2xl border border-blue-400/25 bg-gradient-to-br from-blue-600/15 to-blue-900/30 p-8 text-center text-white backdrop-blur-md md:p-10">
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black/10 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 shadow-xl">
-                  <svg
-                    className="h-10 w-10 text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="mb-4 text-2xl leading-snug">
-                  Ready to Transform Your Real Estate Operations?
-                </h3>
-                <p className="mb-7 leading-relaxed text-blue-100">
-                  Join industry leaders who trust our real estate software
-                  solutions to optimize their portfolio operations and boost
-                  efficiency.
-                </p>
-                <button
-                  onClick={openConsultation}
-                  className="rounded-xl border-2 border-black/20 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 px-8 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:border-black/40 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
-                >
-                  Start Your Project Today
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* ================= RELATED AI SERVICES ================= */}
       <SectionShell labelledBy="related-services-heading">
@@ -1512,6 +1720,77 @@ const RealEstatePage = () => {
           })}
         </ul>
       </SectionShell>
+
+
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"
+        aria-labelledby="why-us-heading"
+      >
+        <div className="pointer-events-none absolute left-0 right-0 top-0 h-20 bg-gradient-to-b from-black to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-15"
+          aria-hidden="true"
+        >
+          <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-yellow-400 blur-3xl" />
+          <div className="absolute bottom-40 right-20 h-24 w-24 rounded-full bg-yellow-300 blur-2xl" />
+        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
+
+        <div className="relative container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="space-y-6 text-white">
+              <div>
+                <h2
+                  id="why-us-heading"
+                  className="mb-4 text-3xl leading-tight md:text-4xl"
+                >
+                  Revolutionize Your Real Estate Operations with Our Expertise
+                </h2>
+                <p className="text-xl text-gray-100">
+                  Why Real Estate Companies Choose Us
+                </p>
+              </div>
+              <AccordionGroup
+                items={reasons}
+                activeId={activeIndex}
+                onToggle={setActiveIndex}
+                variant="light"
+              />
+            </div>
+
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-blue-400/25 bg-gradient-to-br from-blue-600/15 to-blue-900/30 p-8 text-center text-white backdrop-blur-md md:p-10">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black/10 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 shadow-xl">
+                  <svg
+                    className="h-10 w-10 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="mb-4 text-2xl leading-snug">
+                  Ready to Transform Your Real Estate Operations?
+                </h3>
+                <p className="mb-7 leading-relaxed text-blue-100">
+                  Join industry leaders who trust our real estate software
+                  solutions to optimize their portfolio operations and boost
+                  efficiency.
+                </p>
+                <button
+                  onClick={openConsultation}
+                  className="rounded-xl border-2 border-black/20 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 px-8 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:border-black/40 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                >
+                  Start Your Project Today
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ================= RELATED RESOURCES ================= */}
       <SectionShell labelledBy="related-resources-heading">
