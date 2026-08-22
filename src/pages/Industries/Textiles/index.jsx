@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
+import ChallengesPinnedSection from "../../../components/industries/ChallengesPinnedSection";
 import { seoData } from "../../../utils/seoData";
 import { ROUTES, SITE_URL, absoluteUrl } from "../../../utils/routes";
 
@@ -869,7 +870,7 @@ const TextilesPage = () => {
                   onClick={openConsultation}
                   className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                  📞 Schedule a Consultation
+                   Schedule a  Consultation
                 </button>
                 <a
                   href="#ai-solutions-heading"
@@ -989,57 +990,12 @@ const TextilesPage = () => {
           </div>
         </div>
       </section>
-
       {/* ================= BUSINESS CHALLENGES ================= */}
-      <SectionShell labelledBy="challenges-heading">
-        <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:sticky lg:top-28 lg:col-span-4">
-            <h2
-              id="challenges-heading"
-              className="mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl leading-tight text-transparent md:text-4xl"
-            >
-              5 Critical Challenges Facing Textile Manufacturers Today
-            </h2>
-            <p className="text-base leading-relaxed text-white/95">
-              The problems costing you production hours, quality, and margin —
-              and how we solve them.
-            </p>
-          </div>
-
-          <ol className="ml-3 list-none space-y-0 border-l border-white/10 md:ml-4 lg:col-span-8">
-            {businessChallenges.map((c, i) => {
-              const Icon = c.icon;
-              return (
-                <li key={i} className="relative pb-8 pl-8 last:pb-0 md:pl-10">
-                  <span className="absolute -left-[9px] top-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-[10px] font-bold text-black ring-4 ring-black">
-                    {i + 1}
-                  </span>
-                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-amber-400/35 md:p-6">
-                    <div className="mb-3 flex items-start gap-3">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-                        <Icon size={18} />
-                      </div>
-                      <h3 className="pt-1 text-lg font-semibold text-white">
-                        {c.title}
-                      </h3>
-                    </div>
-                    <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
-                      {/* <span className="text-gray-400">Impact: </span> */}
-                      {/* {c.impact}. {c.pain} */}
-                    </p>
-                    <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
-                      <span className="font-medium text-amber-300">
-                        Solution:{" "}
-                      </span>
-                      {c.solution}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </SectionShell>
+      <ChallengesPinnedSection
+        items={businessChallenges}
+        title="5 Critical Textile Challenges"
+        subtitle="The problems costing you production hours, quality, and margin — and how we solve them."
+      />
 
       {/* ================= BUSINESS OUTCOMES ================= */}
       <SectionShell gradient labelledBy="outcomes-heading">

@@ -60,11 +60,12 @@ export const seoData = {
   },
 
   logistics: {
-    title: "Logistics Software Development | Ascentia Labs",
+    title:
+      "Custom Logistics Software — WMS, TMS & Fleet Management | Ascentia Labs",
     description:
-      "Advanced logistics software development for supply chain optimization. Features inventory management, route planning, shipment tracking & real-time analytics.",
+      "Custom logistics software development with warehouse management system (WMS), transportation management system (TMS), fleet management software, and supply chain management software. Cloud based WMS, GPS fleet tracking, 3PL WMS, freight management, and ERP integration for 3PLs, trucking companies, and distributors.",
     keywords:
-      "logistics software development, supply chain management, transportation software, warehouse management, logistics app",
+      "warehouse management system, wms, wms software, warehouse management software, transportation management system, tms software, fleet management software, fleet management system, logistics management software, supply chain management software, scm software, cloud based wms, cloud wms, inventory and warehouse management software, warehouse inventory management software, tms trucking software, fleet maintenance software, vehicle fleet management software, 3pl wms, freight management software, stock management system software, gps fleet tracking, supply chain erp, logistics software development, custom wms, custom tms",
     url: absoluteUrl(ROUTES.industry.logistics),
   },
 
@@ -114,29 +115,32 @@ export const seoData = {
   },
 
   education: {
-    title: "School Management System | Ascentia Labs",
+    title:
+      "Custom LMS & School Management Software — Learning Management System | Ascentia Labs",
     description:
-      "Complete school management system with CRM features. Streamline operations, engage students, improve educational outcomes with our school CRM solutions.",
+      "Build custom LMS software, cloud based learning management systems, and school management software for K-12 schools, colleges, and edtech. Online learning, student information, attendance, curriculum & virtual learning in one platform.",
     keywords:
-      "education app development, e-learning platform, educational software, LMS development, online learning",
+      "lms, learning management software, learning management system, school management system, school management software, cloud based lms, cloud lms, student management system, virtual learning environment, learning management platform, online learning management system, learning content management system, classroom management software, learning management systems for schools, student information management system, student attendance management system, edtech, lms software, lms platforms, corporate lms, lms for employee training, curriculum, K-12, online school",
     url: absoluteUrl(ROUTES.industry.education),
   },
 
   travelTourism: {
-    title: "Travel App Development | Ascentia Labs",
+    title:
+      "Custom Travel Software — Booking, Tours & Agency Management | Ascentia Labs",
     description:
-      "Advanced travel & tourism app development with booking management, itinerary planning, customer engagement & real-time updates for travel businesses.",
+      "Custom travel management software and online travel booking system for tour operators, travel agencies, and corporate travel teams. Tour operator software, CRM for tour operators, hotel reservation software, flight booking system with GDS integration (Amadeus, Galileo, Sabre), corporate travel management software, and travel and expense management — built for B2B travel companies.",
     keywords:
-      "travel app development, tourism software, booking platform, travel management, tourism app",
+      "travel management software, travel booking software, tour operator software, tourism management software, hotel reservation software, flight booking system, corporate travel management software, travel agency software, online travel booking system, booking engine for travel agents, crm for tour operators, travel and expense management software, gds booking system, amadeus booking system, galileo booking system, online hotel booking software, tour booking software, travel company management software, trip management software, custom travel software, travel software development",
     url: absoluteUrl(ROUTES.industry.travelTourism),
   },
 
   ticketingSolution: {
-    title: "Ticketing App Development | Ascentia Labs",
+    title:
+      "Enterprise Ticketing Software & Helpdesk System Development | Ascentia Labs",
     description:
-      "Custom ticketing system development for events, transport & entertainment. Features online booking, seat selection, payment integration & analytics.",
+      "Build custom enterprise ticketing software and helpdesk systems with AI routing, SLA tracking, omnichannel support, and real-time analytics. Automate ticket workflows from intake to resolution.",
     keywords:
-      "ticketing solution, digital ticketing, FINLO, parking ticketing, event ticketing, transport ticketing, QR ticketing",
+      "enterprise ticketing software, helpdesk software, ticketing system development, IT service desk software, omnichannel helpdesk, SLA management software, AI ticketing system, customer support ticketing, custom ticketing software",
     url: absoluteUrl(ROUTES.industry.ticketing),
   },
 
@@ -405,3 +409,4 @@ export const seoData = {
 };
 
 seoData.businessCRM = seoData.businessCrm;
+seoData.ticketingSoftware = seoData.ticketingSolution;

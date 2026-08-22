@@ -1,266 +1,258 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
-  Settings,
-  DollarSign,
   ChevronDown,
   ChevronUp,
-  Shield,
-  UserCheck,
   BarChart3,
-  Truck,
-  CheckCircle2,
-  Factory,
-  FlaskConical,
-  Wrench,
-  Shirt,
-  Cog,
-  Cpu,
-  Car,
-  HeartPulse,
-  Brain,
-  TrendingUp,
-  Eye,
-  Sparkles,
-  Network,
-  Cloud,
-  Server,
-  Database,
-  Boxes,
-  Lock,
-  KeyRound,
-  ClipboardCheck,
   ArrowRight,
-  Code,
+  Building2,
+  Building,
+  GraduationCap,
+  Stethoscope,
+  Truck,
+  Plane,
+  Ticket,
+  Star,
+  Wrench,
   Users,
-  UserCog,
-  FileText,
-  BookOpen,
-  Newspaper,
+  Package,
+  Home,
+  Settings,
+  Shield,
+  Factory,
+  Boxes,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
+import ChallengesPinnedSection from "../../../components/industries/ChallengesPinnedSection";
 import { seoData } from "../../../utils/seoData";
+import { ROUTES, SITE_URL, absoluteUrl } from "../../../utils/routes";
 
 /* ------------------------------------------------------------------ */
-/*  Reusable presentational components (shared styling only)          */
+/*  Presentational system — dark navy / amber identity preserved      */
 /* ------------------------------------------------------------------ */
 
-const SectionHeading = ({ eyebrow, title, subtitle, light = true }) => (
-  <div className="text-center mb-10 max-w-3xl lg:max-w-5xl mt-9 mx-auto">
+const SectionShell = ({
+  children,
+  className = "",
+  gradient = false,
+  labelledBy,
+  allowSticky = false,
+  fadeTop = true,
+  fadeBottom = true,
+}) => (
+  <section
+    className={`relative py-16 md:py-20 ${
+      allowSticky ? "overflow-visible" : "overflow-hidden"
+    } ${
+      gradient
+        ? fadeBottom
+          ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+          : "bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950"
+        : "bg-black"
+    } ${className}`}
+    aria-labelledby={labelledBy}
+  >
+    {gradient && fadeTop && (
+      <div className="pointer-events-none absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-0" />
+    )}
+    {gradient && fadeBottom && (
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/80 to-transparent z-0" />
+    )}
+    <div className="container relative z-10 mx-auto max-w-6xl px-4">
+      {children}
+    </div>
+  </section>
+);
+
+const SectionIntro = ({
+  id,
+  title,
+  subtitle,
+  align = "center",
+  light = false,
+}) => (
+  <div
+    className={`mb-10 md:mb-12 ${
+      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-4xl text-center"
+    }`}
+  >
     <h2
-      className={`text-3xl md:text-4xl bg-gradient-to-r from-blue-300  to-white bg-clip-text text-transparent mb-3 ${
-        light ? "" : ""
+      id={id}
+      className={`mb-3 text-3xl leading-tight md:text-4xl ${
+        light
+          ? "text-white"
+          : "bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent"
       }`}
     >
       {title}
     </h2>
-    {subtitle && <p className="text-base md:text-lg text-white">{subtitle}</p>}
+    {subtitle && (
+      <p
+        className={`text-base leading-relaxed md:text-lg ${
+          light ? "text-white/90" : "text-gray-300"
+        }`}
+      >
+        {subtitle}
+      </p>
+    )}
   </div>
 );
 
-const StatCard = ({ value, label }) => (
-  <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 text-center">
-    <div className="text-3xl  font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-2">
-      {value}
+const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
+  const isDark = variant === "dark";
+  return (
+    <div
+      className={
+        isDark
+          ? "divide-y divide-gray-800 border-y border-gray-800"
+          : "space-y-2"
+      }
+    >
+      {items.map((item) => {
+        const open = activeId === item.id;
+        const panelId = `accordion-panel-${variant}-${item.id}`;
+        const buttonId = `accordion-button-${variant}-${item.id}`;
+        return (
+          <div
+            key={item.id}
+            className={
+              isDark
+                ? "overflow-hidden"
+                : `rounded-xl border transition-colors duration-300 ${
+                    open
+                      ? "border-amber-400/40 bg-white/[0.04]"
+                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                  }`
+            }
+          >
+            <button
+              type="button"
+              id={buttonId}
+              aria-expanded={open}
+              aria-controls={panelId}
+              onClick={() => onToggle(open ? null : item.id)}
+              className={
+                isDark
+                  ? "group flex w-full items-center justify-between gap-4 px-1 py-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  : "flex w-full items-center justify-between gap-4 p-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              }
+            >
+              {isDark ? (
+                <h3 className="pr-2 text-base text-white transition-colors group-hover:text-amber-300 md:text-lg">
+                  {item.title}
+                </h3>
+              ) : (
+                <div className="flex min-w-0 items-center gap-3">
+                  <span
+                    className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide ${
+                      open
+                        ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                        : "bg-blue-600/80 text-white"
+                    }`}
+                  >
+                    {String(item.id).padStart(2, "0")}
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="truncate text-md font-medium text-gray-100 lg:text-lg">
+                      {item.title}
+                    </h3>
+                    <div
+                      className={`mt-1 h-0.5 transition-all duration-300 ${
+                        open ? "w-24 bg-amber-400" : "w-12 bg-blue-500/70"
+                      }`}
+                    />
+                  </div>
+                </div>
+              )}
+              <span className="flex-shrink-0 text-blue-400" aria-hidden="true">
+                {open ? (
+                  <ChevronUp className="h-5 w-5" />
+                ) : (
+                  <ChevronDown className="h-5 w-5" />
+                )}
+              </span>
+            </button>
+
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              hidden={!open}
+              className={`overflow-hidden transition-all duration-300 ease-out ${
+                open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className={isDark ? "pb-5 pr-8" : "px-4 pb-5 pl-[3.75rem]"}>
+                {typeof item.content === "string" ? (
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-gray-300 md:text-base">
+                    {item.content}
+                  </p>
+                ) : (
+                  item.content
+                )}
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
-    <div className="text-gray-100 text-sm">{label}</div>
-  </div>
-);
+  );
+};
 
-const IconCard = ({ icon: Icon, title, children }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
-    <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-11 h-11 rounded-lg flex items-center justify-center mb-4">
-      <Icon size={20} className="text-black" />
-    </div>
-    <h3 className="text-white text-lg font-semibold mb-2">{title}</h3>
-    <div className="text-gray-200 text-sm leading-relaxed">{children}</div>
-  </div>
-);
-
-const OutcomeCard = ({ value, label, icon: Icon }) => (
-  <div className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-    <Icon size={22} className="text-amber-400 mb-3" />
-    <div className="text-2xl md:text-3xl font-extrabold text-white mb-1">
-      {value}
-    </div>
-    <div className="text-gray-300 text-sm">{label}</div>
-  </div>
-);
-
-const ChallengeCard = ({ problem, impact, solution }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300">
-    <p className="text-md uppercase tracking-wide text-red-400 font-semibold mb-1">
-      Problem
-    </p>
-    <p className="text-white text-sm mb-4">{problem}</p>
-    <p className="text-md uppercase tracking-wide text-blue-400 font-semibold mb-1">
-      Business Impact
-    </p>
-    <p className="text-gray-100 text-sm mb-4">{impact}</p>
-    <p className="text-md uppercase tracking-wide text-amber-400 font-semibold mb-1">
-      Our Solution
-    </p>
-    <p className="text-gray-100 text-sm">{solution}</p>
-  </div>
-);
-
-const IndustryCard = ({ icon: Icon, title, line }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-5 text-center hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
-    <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3">
-      <Icon size={18} className="text-black" />
-    </div>
-    <h4 className="text-white font-semibold text-md mb-1">{title}</h4>
-    <p className="text-gray-100 text-sm">{line}</p>
-  </div>
-);
-
-const IntegrationCard = ({ icon: Icon, title }) => (
-  <div className="bg-white/5 border border-white/10 rounded-xl p-5 flex flex-col items-center justify-center text-center hover:bg-white/10 transition-all duration-300">
-    <Icon size={22} className="text-amber-400 mb-2" />
-    <p className="text-white text-sm font-medium">{title}</p>
-  </div>
-);
-
-const UseCaseCard = ({ problem, solution, outcome }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300">
-    <p className="text-md uppercase tracking-wide text-red-500 font-semibold mb-1">
-      Business Problem
-    </p>
-    <p className="text-white text-sm mb-3">{problem}</p>
-    <div className="text-amber-400 text-xs mb-3">↓</div>
-    <p className="text-md uppercase tracking-wide text-blue-500 font-semibold mb-1">
-      Solution
-    </p>
-    <p className="text-gray-300 text-sm mb-3">{solution}</p>
-    <div className="text-amber-400 text-xs mb-3">↓</div>
-    <p className="text-md uppercase tracking-wide text-green-500 font-semibold mb-1">
-      Outcome
-    </p>
-    <p className="text-lg font-bold text-white">{outcome}</p>
-  </div>
-);
-
-const SavingsCard = ({ label, value }) => (
-  <div className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-all duration-300">
-    <div className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-1">
-      {value}
-    </div>
-    <div className="text-gray-300 text-sm">{label}</div>
-  </div>
-);
-
-const ChecklistGroup = ({ title, items }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6">
-    <h4 className="text-white font-semibold text-base mb-4">{title}</h4>
-    <ul className="space-y-3">
-      {items.map((item, idx) => (
-        <li key={idx} className="flex items-start space-x-2">
-          <CheckCircle2
-            size={18}
-            className="text-amber-400 flex-shrink-0 mt-0.5"
-          />
-          <span className="text-gray-300 text-sm">{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const DeploymentCard = ({ icon: Icon, title, points, highlight }) => (
-  <div
-    className={`rounded-xl p-6 border transition-all duration-300 hover:-translate-y-1 ${
-      highlight
-        ? "bg-gradient-to-br from-amber-400/10 to-orange-500/10 border-amber-400/50"
-        : "bg-gray-900 border-gray-700 hover:border-amber-400/50"
-    }`}
-  >
-    <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-11 h-11 rounded-lg flex items-center justify-center mb-4">
-      <Icon size={20} className="text-black" />
-    </div>
-    <h3 className="text-white text-lg font-semibold mb-3">{title}</h3>
-    <ul className="space-y-2">
-      {points.map((p, idx) => (
-        <li
-          key={idx}
-          className="text-gray-300 text-sm flex items-start space-x-2"
-        >
-          <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-          <span>{p}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const CaseStudyCard = ({ metric, title, description }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
-    <div className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 mb-3">
-      {metric}
-    </div>
-    <h3 className="text-white text-base font-semibold mb-2">{title}</h3>
-    <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
-  </div>
-);
-
-const EngagementCard = ({ icon: Icon, title, points }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 transition-all duration-300">
-    <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-11 h-11 rounded-lg flex items-center justify-center mb-4">
-      <Icon size={20} className="text-black" />
-    </div>
-    <h3 className="text-white text-lg font-semibold mb-3">{title}</h3>
-    <ul className="space-y-2">
-      {points.map((p, idx) => (
-        <li
-          key={idx}
-          className="text-gray-300 text-sm flex items-start space-x-2"
-        >
-          <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-          <span>{p}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const ResourceCard = ({ icon: Icon, label, items }) => (
-  <div className="bg-gray-900 border border-gray-700 rounded-xl p-6">
-    <div className="flex items-center space-x-2 mb-4">
-      <Icon size={18} className="text-amber-400" />
-      <h4 className="text-white font-semibold text-sm">{label}</h4>
-    </div>
-    <ul className="space-y-2">
-      {items.map((item, idx) => (
-        <li
-          key={idx}
-          className="text-gray-300 text-sm hover:text-amber-400 transition-colors cursor-pointer"
-        >
-          {item}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const ServiceCard = ({ icon: Icon, title, description, to }) => (
-  <Link
-    to={to}
-    className="bg-gray-900 border border-gray-700 rounded-xl p-6 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300 group block"
-  >
-    <div className="bg-gradient-to-r from-amber-400 to-orange-500 w-11 h-11 rounded-lg flex items-center justify-center mb-4">
-      <Icon size={20} className="text-black" />
-    </div>
-    <h3 className="text-white text-base font-semibold mb-2">{title}</h3>
-    <p className="text-gray-300 text-sm mb-4">{description}</p>
-    <span className="inline-flex items-center text-amber-400 text-sm font-medium group-hover:translate-x-1 transition-transform">
-      Learn more <ArrowRight size={14} className="ml-1" />
-    </span>
-  </Link>
-);
-
-/* ------------------------------------------------------------------ */
-/*  Page                                                               */
-/* ------------------------------------------------------------------ */
+/** FAQ source for UI + FAQPage JSON-LD (AEO lead sentences). */
+const MANUFACTURING_FAQ_ITEMS = [
+  {
+    question: "What is manufacturing management software?",
+    answer:
+      "A digital platform that helps manufacturers plan, execute and monitor production. It typically includes production scheduling, inventory management, quality control and supply chain management in one place.",
+  },
+  {
+    question: "How does it improve production efficiency?",
+    answer:
+      "By automating scheduling, surfacing bottlenecks in real time, and connecting production with business systems for end-to-end efficiency.",
+  },
+  {
+    question: "What's the difference between MES and ERP?",
+    answer:
+      "MES focuses on shop-floor operations — scheduling, quality and machine monitoring. ERP handles broader business functions like finance and procurement. They work best integrated together.",
+  },
+  {
+    question: "How long does implementation take?",
+    answer:
+      "Typically 8–12 weeks for a single plant, depending on complexity and customization needs.",
+  },
+  {
+    question: "Can it integrate with my existing ERP?",
+    answer:
+      "Yes — we build integrations with SAP, Oracle, Microsoft Dynamics and other ERP systems.",
+  },
+  {
+    question: "Is it suitable for small manufacturers?",
+    answer:
+      "Absolutely. We offer manufacturing software for small business that scales as you grow.",
+  },
+  {
+    question: "What ROI can I expect?",
+    answer:
+      "Most clients see ROI within 6–12 months, with 15–25% lower operational costs and measurable gains in throughput and quality.",
+  },
+  {
+    question: "Do you offer cloud-based deployment?",
+    answer:
+      "Yes — our cloud manufacturing software offers flexibility, scalability and lower upfront costs.",
+  },
+  {
+    question: "How secure is the software?",
+    answer:
+      "Enterprise-grade security with encryption, role-based access controls and regular audits.",
+  },
+  {
+    question: "What support do you provide after go-live?",
+    answer:
+      "24/7 support, ongoing maintenance and continuous improvement to ensure lasting value.",
+  },
+];
 
 const ManufacturingPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -269,511 +261,71 @@ const ManufacturingPage = () => {
   const { openConsultation } = useConsultation();
 
   const scrollbarStyles = `
-    .custom-scrollbar::-webkit-scrollbar { width: 0px; background: transparent; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: transparent; }
-    .custom-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+    .custom-scrollbar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
   `;
 
-  /* ---------------------------- DATA ---------------------------- */
+  /* ===========================================================
+   * DATA — Manufacturing content mapped to Business CRM structure
+   * =========================================================== */
 
-  const adminFeatures = [
+  const businessChallenges = [
     {
       icon: Settings,
-      title: "Production Control System",
-      description:
-        "Plan, schedule and monitor every production run in real time, with automatic bottleneck detection.",
-    },
-    {
-      icon: Shield,
-      title: "Quality Assurance",
-      description:
-        "Automate inspections, compliance tracking and defect management at every stage of production.",
-    },
-    {
-      icon: BarChart3,
-      title: "Analytics & Reporting",
-      description:
-        "Live production dashboards that turn shop-floor data into decisions and cost savings.",
-    },
-    {
-      icon: Truck,
-      title: "Supply Chain Management",
-      description:
-        "Track suppliers, manage inventory and place orders on time to eliminate stockouts and delays.",
-    },
-  ];
-
-  const stats = [
-    { number: "7+", label: "Business Years" },
-    { number: "120+", label: "Projects Delivered" },
-    { number: "10+", label: "Industries Catered" },
-    { number: "4+", label: "Countries" },
-  ];
-
-  const marketStats = [
-    { value: "$15.2B", label: "Global Manufacturing Software Market (2026)" },
-    { value: "9.8%", label: "Projected CAGR (2026–2031)" },
-    { value: "47%", label: "Enterprises Adopting AI in Manufacturing" },
-    { value: "45%", label: "Reduction in Unplanned Downtime" },
-    { value: "15–25%", label: "Productivity Gain with MES" },
-    { value: "20–30%", label: "Inventory Cost Reduction" },
-  ];
-
-  const transformationCards = [
-    {
-      icon: TrendingUp,
-      title: "Rising Customer Expectations",
-      impact:
-        "Buyers demand faster delivery, higher quality and full traceability. Real-time visibility keeps you responsive.",
-    },
-    {
-      icon: Truck,
-      title: "Supply Chain Volatility",
-      impact:
-        "Disruptions are the new normal. Resilient sourcing and dynamic inventory planning protect production.",
-    },
-    {
-      icon: Users,
-      title: "Talent Shortages",
-      impact:
-        "Experienced workers are retiring. Guided workflows capture institutional knowledge for new hires.",
-    },
-    {
-      icon: DollarSign,
-      title: "Cost Pressures",
-      impact:
-        "Raw material costs fluctuate. Optimized usage and reduced waste protect your margins.",
-    },
-    {
-      icon: ClipboardCheck,
-      title: "Industry 4.0 Mandates",
-      impact:
-        "Digital traceability and compliance reporting are now expected by customers and regulators alike.",
-    },
-  ];
-
-  const challenges = [
-    {
-      problem: "Manual scheduling causes bottlenecks and idle machines.",
-      impact: "Lost throughput and missed delivery commitments.",
+      title: "Manual scheduling causes bottlenecks and idle machines.",
+      pain: "Lost throughput and missed delivery commitments.",
       solution:
         "Automated, real-time production scheduling across every stage.",
     },
     {
-      problem:
+      icon: Boxes,
+      title:
         "Stockouts halt production while excess inventory ties up capital.",
-      impact: "Cash locked in inventory that isn't moving.",
+      pain: "Cash locked in inventory that isn't moving.",
       solution: "Automated reorder points and live stock tracking.",
     },
     {
-      problem: "Defects reach customers and compliance records are fragmented.",
-      impact: "Reputational damage and costly rework.",
+      icon: Shield,
+      title: "Defects reach customers and compliance records are fragmented.",
+      pain: "Reputational damage and costly rework.",
       solution: "Quality checks embedded at every production stage.",
     },
     {
-      problem: "Supplier delays cascade through the production line.",
-      impact: "Unpredictable lead times and idle capacity.",
+      icon: Truck,
+      title: "Supplier delays cascade through the production line.",
+      pain: "Unpredictable lead times and idle capacity.",
       solution: "End-to-end supply chain visibility and tracking.",
     },
     {
-      problem: "Unplanned breakdowns cause costly downtime.",
-      impact: "Emergency repairs and missed output targets.",
+      icon: Wrench,
+      title: "Unplanned breakdowns cause costly downtime.",
+      pain: "Emergency repairs and missed output targets.",
       solution: "Maintenance scheduling with predictive alerts.",
     },
     {
-      problem: "Manual task assignment leads to uneven workloads.",
-      impact: "Lower productivity and inconsistent output.",
+      icon: Users,
+      title: "Manual task assignment leads to uneven workloads.",
+      pain: "Lower productivity and inconsistent output.",
       solution: "Workforce planning integrated with production schedules.",
     },
   ];
 
   const outcomes = [
-    { icon: Factory, value: "+15–25%", label: "Production Throughput" },
-    { icon: Boxes, value: "20–30%", label: "Inventory Cost Reduction" },
-    { icon: Shield, value: "40–60%", label: "Defect Rate Reduction" },
-    { icon: Wrench, value: "35–45%", label: "Unplanned Downtime Reduction" },
-    { icon: DollarSign, value: "10–20%", label: "Operational Cost Savings" },
-    { icon: BarChart3, value: "Real-time", label: "Decision Intelligence" },
-  ];
-
-  const kpiRows = [
-    ["Production Planning Time", "8–10 hrs/week", "1–2 hrs/week", "80% faster"],
-    ["Inventory Accuracy", "70–75%", "98–99%", "+25%"],
-    ["On-Time Delivery", "65–75%", "92–95%", "+20–25%"],
-    ["Quality Defect Rate", "3–5%", "0.5–1%", "-75%"],
-    ["Machine Uptime", "65–75%", "85–90%", "+15–20%"],
-    ["Order Fulfillment Time", "5–7 days", "2–3 days", "-50%"],
-    ["Labor Productivity", "Baseline", "+20–30%", "+20–30%"],
-  ];
-
-  const industries = [
-    {
-      icon: Cog,
-      title: "Discrete Manufacturing",
-      line: "Complex BOMs, routing & assembly.",
-    },
-    {
-      icon: FlaskConical,
-      title: "Process Manufacturing",
-      line: "Batch tracking & recipe management.",
-    },
-    {
-      icon: Wrench,
-      title: "Metal & Fabrication",
-      line: "Job tracking & CNC integration.",
-    },
-    {
-      icon: Shirt,
-      title: "Textile & Apparel",
-      line: "Dye-lot tracking & scheduling.",
-    },
-    {
-      icon: Factory,
-      title: "Heavy Engineering",
-      line: "Project & resource planning.",
-    },
-    {
-      icon: Cpu,
-      title: "Electronics",
-      line: "Component traceability & SMT lines.",
-    },
-    {
-      icon: Car,
-      title: "Auto Components",
-      line: "JIT delivery & quality compliance.",
-    },
-    {
-      icon: HeartPulse,
-      title: "Medical Devices",
-      line: "FDA compliance & sterility assurance.",
-    },
-  ];
-
-  const aiCards = [
-    {
-      icon: Wrench,
-      title: "Predictive Maintenance",
-      body: "ML models analyze machine data to predict failures before they occur, cutting unplanned downtime by up to 45%.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Demand Forecasting",
-      body: "AI algorithms predict demand with 90%+ accuracy, optimizing inventory and production schedules.",
-    },
-    {
-      icon: Eye,
-      title: "Quality Prediction",
-      body: "Computer vision detects defects in real time, catching issues before they reach customers.",
-    },
-    {
-      icon: Sparkles,
-      title: "Production Optimization",
-      body: "AI recommends optimal schedules and adjusts dynamically to real-time shop-floor conditions.",
-    },
-    {
-      icon: Network,
-      title: "Supply Chain Intelligence",
-      body: "AI monitors supplier performance and risk, automating selection and order optimization.",
-    },
-  ];
-
-  const techStack = [
-    {
-      icon: Brain,
-      title: "AI & Machine Learning",
-      body: "Python, TensorFlow, PyTorch, computer vision for inspection.",
-    },
-    {
-      icon: Cpu,
-      title: "Industrial IoT",
-      body: "Edge computing and sensor integration for real-time machine data.",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Infrastructure",
-      body: "AWS, Azure and Google Cloud with scalable microservices.",
-    },
-    {
-      icon: BarChart3,
-      title: "Data Analytics",
-      body: "Real-time dashboards and predictive business intelligence.",
-    },
-    {
-      icon: Network,
-      title: "Integration Layer",
-      body: "API-first architecture connecting ERP, MES, PLC and legacy systems.",
-    },
-  ];
-
-  const integrations = [
-    { icon: Server, title: "ERP (SAP, Oracle, Dynamics)" },
-    { icon: Factory, title: "Manufacturing Execution Systems" },
-    { icon: Cpu, title: "PLC & SCADA" },
-    { icon: Truck, title: "Supply Chain Systems" },
-    { icon: Shield, title: "Quality Management Systems" },
-    { icon: Database, title: "Legacy Systems" },
-  ];
-
-  const useCases = [
-    {
-      problem:
-        "An electronics manufacturer faced constant production bottlenecks.",
-      solution: "Automated scheduling with real-time adjustments.",
-      outcome: "+30% throughput, no added resources.",
-    },
-    {
-      problem: "An auto components supplier held $2M in excess inventory.",
-      solution: "Real-time visibility and automated reorder points.",
-      outcome: "40% inventory reduction at 99% service level.",
-    },
-    {
-      problem: "A food processor struggled with quality compliance.",
-      solution: "Quality checks integrated at every production stage.",
-      outcome: "Defects fell from 4% to 0.5%, saving $500K/year.",
-    },
-    {
-      problem:
-        "A heavy machinery manufacturer faced frequent unplanned downtime.",
-      solution: "Predictive maintenance across the production line.",
-      outcome: "50% less downtime, longer equipment life.",
-    },
-  ];
-
-  const savings = [
-    { label: "Inventory Reduction", value: "20–30%" },
-    { label: "Labor Efficiency", value: "15–25%" },
-    { label: "Quality Rework Reduction", value: "40–60%" },
-    { label: "Maintenance Cost Reduction", value: "20–30%" },
-    { label: "Energy Optimization", value: "10–15%" },
-    { label: "Total Operational Cost Reduction", value: "15–25%" },
-  ];
-
-  const readiness = [
-    {
-      title: "Operational Readiness",
-      items: [
-        "Documented production processes",
-        "Manually tracked production metrics",
-        "Recurring production bottlenecks",
-        "Inventory accuracy below 90%",
-      ],
-    },
-    {
-      title: "Technology Readiness",
-      items: [
-        "Basic IT infrastructure in place",
-        "Team comfortable with digital tools",
-        "Integration requirements identified",
-        "Budget allocated for transformation",
-      ],
-    },
-    {
-      title: "Organizational Readiness",
-      items: [
-        "Leadership supports digital transformation",
-        "A project champion is identified",
-        "Team is open to process change",
-        "Success metrics are defined",
-      ],
-    },
-    {
-      title: "Strategic Readiness",
-      items: [
-        "Business objectives are defined",
-        "Implementation timeline is set",
-        "Deployment options considered",
-        "Competitive urgency understood",
-      ],
-    },
-  ];
-
-  const journey = [
-    {
-      title: "Discovery",
-      body: "Understand processes, pain points and success metrics.",
-    },
-    {
-      title: "Solution Design",
-      body: "Architecture, integration planning and UX design.",
-    },
-    { title: "Development", body: "Agile sprints with continuous testing." },
-    {
-      title: "Deployment",
-      body: "Pilot rollout, data migration and training.",
-    },
-    {
-      title: "Optimization",
-      body: "Ongoing monitoring and continuous improvement.",
-    },
-  ];
-
-  const deploymentModels = [
-    {
-      icon: Cloud,
-      title: "Cloud",
-      points: [
-        "No infrastructure investment",
-        "Automatic updates and scaling",
-        "Access from anywhere",
-      ],
-    },
-    {
-      icon: Network,
-      title: "Hybrid",
-      points: [
-        "Mix of cloud and on-premise",
-        "Sensitive data stays on-site",
-        "Cloud for analytics and reporting",
-      ],
-      highlight: true,
-    },
-    {
-      icon: Server,
-      title: "On-Premise",
-      points: [
-        "Full control over data and security",
-        "Works in air-gapped environments",
-        "One-time capital investment",
-      ],
-    },
-  ];
-
-  const security = [
-    {
-      icon: Lock,
-      title: "Data Security",
-      body: "End-to-end encryption and regular security audits.",
-    },
-    {
-      icon: KeyRound,
-      title: "Access Control",
-      body: "Role-based access across every module.",
-    },
-    {
-      icon: ClipboardCheck,
-      title: "Audit Trail",
-      body: "Tamper-proof, complete activity logging.",
-    },
-    {
-      icon: Shield,
-      title: "Compliance",
-      body: "ISO 9001, IATF 16949, FDA 21 CFR Part 11, GDPR.",
-    },
-  ];
-
-  const caseStudies = [
-    {
-      metric: "$2M",
-      title: "Automotive Supplier Cuts Inventory 35%",
-      description:
-        "On-time delivery improved from 82% to 96% within six months across three plants.",
-    },
-    {
-      metric: "+40%",
-      title: "Electronics Manufacturer Boosts Throughput",
-      description:
-        "Eliminated production bottlenecks without adding new equipment.",
-    },
-    {
-      metric: "0.2%",
-      title: "Food Processor Reaches Near Zero Defects",
-      description:
-        "Defect rates dropped from 3.5% with AI-powered quality inspection.",
-    },
-  ];
-
-  const engagementModels = [
-    {
-      icon: FileText,
-      title: "Fixed Cost",
-      points: [
-        "Well-defined scope and timeline",
-        "Predictable budget",
-        "Ideal for specific projects",
-      ],
-    },
-    {
-      icon: Users,
-      title: "Dedicated Team",
-      points: [
-        "Full team assigned to your project",
-        "Complete control and transparency",
-        "Long-term partnership",
-      ],
-    },
-    {
-      icon: UserCog,
-      title: "Staff Augmentation",
-      points: [
-        "Supplement your existing team",
-        "Flexible scaling up or down",
-        "Access to specialized skills",
-      ],
-    },
-  ];
-
-  const resources = [
-    {
-      icon: Newspaper,
-      label: "Blogs",
-      items: [
-        "How Manufacturing Management Software Transforms Production",
-        "The ROI of Digital Transformation in Manufacturing",
-        "AI in Manufacturing: A Practical Guide",
-      ],
-    },
-    {
-      icon: FileText,
-      label: "Whitepapers",
-      items: [
-        "Industry 4.0: A Roadmap for Indian Manufacturers",
-        "MES: Implementation Best Practices",
-      ],
-    },
-    {
-      icon: BookOpen,
-      label: "Guides",
-      items: [
-        "Manufacturing Software Selection Guide",
-        "Inventory Optimization for Manufacturers",
-      ],
-    },
-  ];
-
-  const relatedServices = [
-    {
-      icon: Code,
-      title: "Custom Software Development",
-      description:
-        "Purpose-built systems that match your exact production workflow.",
-      to: "/custom-crm-development",
-    },
-    {
-      icon: Brain,
-      title: "AI/ML Development",
-      description:
-        "Predictive maintenance, quality inspection and demand forecasting.",
-      to: "/ai-ml-services",
-    },
-    {
-      icon: TrendingUp,
-      title: "Digital Transformation",
-      description:
-        "A clear roadmap from paper-based operations to a connected factory.",
-      to: "/digital-transformation",
-    },
-    {
-      icon: Sparkles,
-      title: "Application Modernization",
-      description: "Upgrade legacy systems without disrupting production.",
-      to: "/application-modernisation",
-    },
-    {
-      icon: UserCheck,
-      title: "Mobile App Development",
-      description: "Manage production, inventory and approvals from anywhere.",
-      to: "/mobile-application",
-    },
+    { value: "+15–25%", label: "Production Throughput" },
+    { value: "20–30%", label: "Inventory Cost Reduction" },
+    { value: "40–60%", label: "Defect Rate Reduction" },
+    { value: "35–45%", label: "Unplanned Downtime Reduction" },
+    { value: "10–20%", label: "Operational Cost Savings" },
+    { value: "Real-time", label: "Decision Intelligence" },
   ];
 
   const features = [
@@ -1012,6 +564,62 @@ const ManufacturingPage = () => {
     },
   ];
 
+  const useCases = [
+    {
+      title: "Electronics Manufacturer Throughput",
+      problem:
+        "An electronics manufacturer faced constant production bottlenecks.",
+      solution:
+        "Automated scheduling with real-time adjustments — +30% throughput, no added resources.",
+    },
+    {
+      title: "Auto Components Inventory Optimization",
+      problem: "An auto components supplier held $2M in excess inventory.",
+      solution:
+        "Real-time visibility and automated reorder points — 40% inventory reduction at 99% service level.",
+    },
+    {
+      title: "Food Processor Quality Compliance",
+      problem: "A food processor struggled with quality compliance.",
+      solution:
+        "Quality checks integrated at every production stage — defects fell from 4% to 0.5%, saving $500K/year.",
+    },
+    {
+      title: "Heavy Machinery Predictive Maintenance",
+      problem:
+        "A heavy machinery manufacturer faced frequent unplanned downtime.",
+      solution:
+        "Predictive maintenance across the production line — 50% less downtime, longer equipment life.",
+    },
+  ];
+
+  const processSteps = [
+    {
+      number: "1",
+      title: "Learn Your Factory",
+      description:
+        "We conduct comprehensive analysis of your manufacturing processes, identifying key challenges, operational requirements, and opportunities for digital transformation.",
+    },
+    {
+      number: "2",
+      title: "Custom Design",
+      description:
+        "We design a tailored manufacturing management platform that aligns with your production model, incorporating IoT integration, predictive analytics, and automated workflows.",
+    },
+    {
+      number: "3",
+      title: "Build + Test",
+      description:
+        "Our experts develop and deploy the solution with seamless integration to existing systems, ERP platforms, and manufacturing equipment, with minimal disruption.",
+    },
+    {
+      number: "4",
+      title: "Train + Start",
+      description:
+        "We provide comprehensive training and ongoing support, continuously monitoring system performance to maximize efficiency and ROI.",
+    },
+  ];
+
   const advantages = [
     {
       id: 1,
@@ -1045,501 +653,434 @@ const ManufacturingPage = () => {
     },
   ];
 
-  const processSteps = [
+  const reasons = advantages.map((a) => ({
+    id: a.id,
+    title: a.title,
+    content: a.description,
+  }));
+
+  const relatedServices = [
     {
-      number: "1",
-      title: "Learn Your Factory",
+      title: "Custom Software Development",
       description:
-        "We conduct comprehensive analysis of your manufacturing processes, identifying key challenges, operational requirements, and opportunities for digital transformation.",
+        "Purpose-built systems that match your exact production workflow.",
+      href: ROUTES.service.customCrm,
     },
     {
-      number: "2",
-      title: "Custom Design",
+      title: "AI/ML Development",
       description:
-        "We design a tailored manufacturing management platform that aligns with your production model, incorporating IoT integration, predictive analytics, and automated workflows.",
+        "Predictive maintenance, quality inspection and demand forecasting.",
+      href: ROUTES.service.aiMl,
     },
     {
-      number: "3",
-      title: "Build + Test",
+      title: "Digital Transformation",
       description:
-        "Our experts develop and deploy the solution with seamless integration to existing systems, ERP platforms, and manufacturing equipment, with minimal disruption.",
+        "A clear roadmap from paper-based operations to a connected factory.",
+      href: ROUTES.service.digitalTransformation,
     },
     {
-      number: "4",
-      title: "Train + Start",
-      description:
-        "We provide comprehensive training and ongoing support, continuously monitoring system performance to maximize efficiency and ROI.",
+      title: "Application Modernization",
+      description: "Upgrade legacy systems without disrupting production.",
+      href: ROUTES.service.applicationModernisation,
+    },
+    {
+      title: "Mobile App Development",
+      description: "Manage production, inventory and approvals from anywhere.",
+      href: ROUTES.service.mobileApplication,
     },
   ];
 
-  const faqs = [
+  const relatedIndustries = [
     {
-      question: "What is manufacturing management software?",
-      answer:
-        "A digital platform that helps manufacturers plan, execute and monitor production. It typically includes production scheduling, inventory management, quality control and supply chain management in one place.",
+      icon: Home,
+      title: "Real Estate",
+      line: "Property management, CRM & PropTech software solutions.",
+      link: ROUTES.industry.realEstate,
     },
     {
-      question: "How does it improve production efficiency?",
-      answer:
-        "By automating scheduling, surfacing bottlenecks in real time, and connecting production with business systems for end-to-end efficiency.",
+      icon: Wrench,
+      title: "Field Service CRM",
+      line: "Scheduling, dispatch & technician CRM for field teams.",
+      link: ROUTES.industry.fieldServiceCrm,
     },
     {
-      question: "What's the difference between MES and ERP?",
-      answer:
-        "MES focuses on shop-floor operations — scheduling, quality and machine monitoring. ERP handles broader business functions like finance and procurement. They work best integrated together.",
+      icon: GraduationCap,
+      title: "Education",
+      line: "Smart solutions for schools, colleges & e-learning platforms.",
+      link: ROUTES.industry.education,
     },
     {
-      question: "How long does implementation take?",
-      answer:
-        "Typically 8–12 weeks for a single plant, depending on complexity and customization needs.",
+      icon: Stethoscope,
+      title: "Healthcare",
+      line: "Digital healthcare, patient management & telemedicine solutions.",
+      link: ROUTES.industry.healthcare,
     },
     {
-      question: "Can it integrate with my existing ERP?",
-      answer:
-        "Yes — we build integrations with SAP, Oracle, Microsoft Dynamics and other ERP systems.",
+      icon: Building,
+      title: "Interior & Architecture",
+      line: "Project management, design collaboration & client portals.",
+      link: ROUTES.industry.interiorArchitecture,
     },
     {
-      question: "Is it suitable for small manufacturers?",
-      answer:
-        "Absolutely. We offer manufacturing software for small business that scales as you grow.",
+      icon: Star,
+      title: "Kindergarten",
+      line: "School management, admissions & parent communication.",
+      link: ROUTES.industry.kindergarten,
     },
     {
-      question: "What ROI can I expect?",
-      answer:
-        "Most clients see ROI within 6–12 months, with 15–25% lower operational costs and measurable gains in throughput and quality.",
+      icon: Ticket,
+      title: "Ticketing Solutions",
+      line: "Online booking, event management & digital ticketing systems.",
+      link: ROUTES.industry.ticketing,
     },
     {
-      question: "Do you offer cloud-based deployment?",
-      answer:
-        "Yes — our cloud manufacturing software offers flexibility, scalability and lower upfront costs.",
+      icon: Package,
+      title: "Textile Industry",
+      line: "ERP solutions for textile manufacturing & supply chains.",
+      link: ROUTES.industry.textiles,
     },
     {
-      question: "How secure is the software?",
-      answer:
-        "Enterprise-grade security with encryption, role-based access controls and regular audits.",
+      icon: Truck,
+      title: "Logistics",
+      line: "Fleet tracking, warehouse & transportation management.",
+      link: ROUTES.industry.logistics,
     },
     {
-      question: "What support do you provide after go-live?",
-      answer:
-        "24/7 support, ongoing maintenance and continuous improvement to ensure lasting value.",
+      icon: Plane,
+      title: "Travel & Tourism",
+      line: "Booking engines, itinerary & travel management platforms.",
+      link: ROUTES.industry.travelTourism,
+    },
+    {
+      icon: BarChart3,
+      title: "Business CRM",
+      line: "Custom business CRM for sales pipeline and client management.",
+      link: ROUTES.industry.businessCrm,
+    },
+    {
+      icon: Building2,
+      title: "Enterprise ERP",
+      line: "Integrate finance, operations, HR & business processes.",
+      link: ROUTES.industry.erp,
     },
   ];
 
-  const toggleFAQ = (index) => setOpenFAQ(openFAQ === index ? null : index);
+  const relatedResources = [
+    {
+      topic: "Blogs",
+      title: "How Manufacturing Management Software Transforms Production",
+      href: "#",
+    },
+    {
+      topic: "Whitepapers",
+      title: "Industry 4.0: A Roadmap for Indian Manufacturers",
+      href: "#",
+    },
+    {
+      topic: "Guides",
+      title: "Manufacturing Software Selection Guide",
+      href: "#",
+    },
+  ];
+
+  const faqs = MANUFACTURING_FAQ_ITEMS.map((f, i) => ({
+    id: i,
+    title: f.question,
+    content: f.answer,
+  }));
+
+  const pageUrl = absoluteUrl(ROUTES.industry.manufacturing);
+  const orgLogo = `${SITE_URL}/ascentialabslogopng.png`;
+
+  const jsonLdGraph = useMemo(() => {
+    const faqSchema = {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: MANUFACTURING_FAQ_ITEMS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    };
+
+    const organizationSchema = {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Ascentia Labs",
+      url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: orgLogo,
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/ascentialabs/",
+        "https://www.instagram.com/ascentialabs/",
+      ],
+      description:
+        "Ascentia Labs builds custom software, AI/ML solutions, and digital platforms for industry-specific operations including manufacturing management.",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        url: absoluteUrl(ROUTES.contact),
+      },
+    };
+
+    const serviceSchema = {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "Custom Manufacturing Management Software Development",
+      serviceType: "Manufacturing Software Development",
+      description: seoData.manufacturing.description,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      url: pageUrl,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Manufacturing Software Features",
+        itemListElement: features.map((feature, index) => ({
+          "@type": "Offer",
+          position: index + 1,
+          itemOffered: {
+            "@type": "Service",
+            name: feature.title,
+            description: feature.sections
+              .map(
+                (section) =>
+                  `${section.heading}: ${section.details.join("; ")}`,
+              )
+              .join(" | "),
+          },
+        })),
+      },
+    };
+
+    const breadcrumbSchema = {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Industries",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Manufacturing",
+          item: pageUrl,
+        },
+      ],
+    };
+
+    const webPageSchema = {
+      "@type": "WebPage",
+      "@id": pageUrl,
+      url: pageUrl,
+      name: seoData.manufacturing.title,
+      description: seoData.manufacturing.description,
+      about: { "@id": `${pageUrl}#service` },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      mainEntity: { "@id": `${pageUrl}#faq` },
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    };
+
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        organizationSchema,
+        webPageSchema,
+        serviceSchema,
+        breadcrumbSchema,
+        faqSchema,
+      ],
+    };
+  }, [pageUrl, orgLogo]);
+
+  useEffect(() => {
+    const scriptId = "manufacturing-jsonld";
+    let script = document.getElementById(scriptId);
+    if (!script) {
+      script = document.createElement("script");
+      script.id = scriptId;
+      script.type = "application/ld+json";
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(jsonLdGraph);
+
+    return () => {
+      const existing = document.getElementById(scriptId);
+      if (existing) existing.remove();
+    };
+  }, [jsonLdGraph]);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <SEO {...seoData.manufacturing} />
       <style dangerouslySetInnerHTML={{ __html: scrollbarStyles }} />
 
-      {/* ============================= HERO ============================= */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-black overflow-hidden py-20">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 left-20 w-24 h-24 bg-blue-400 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 right-1/3 w-16 h-16 bg-blue-300 rounded-full blur-xl"></div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+      <nav aria-label="Breadcrumb" className="sr-only">
+        <ol>
+          <li>
+            <Link to={ROUTES.home}>Home</Link>
+          </li>
+          <li>Industries</li>
+          <li>
+            <Link to={ROUTES.industry.manufacturing}>Manufacturing</Link>
+          </li>
+        </ol>
+      </nav>
 
-        <div className="relative container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="text-white space-y-6 py-8 lg:py-10 2xl:py-15">
-              <h1 className="text-[25px] md:text-4xl leading-tight">
-                Manufacturing Management Software – Production, Inventory,
-                Quality & Supply Chain Solutions
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-20 pb-16 md:pt-24 md:pb-20">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-10"
+          aria-hidden="true"
+        >
+          <div className="absolute top-20 right-20 h-32 w-32 rounded-full bg-blue-500 blur-3xl" />
+          <div className="absolute bottom-40 left-20 h-24 w-24 rounded-full bg-blue-400 blur-2xl" />
+          <div className="absolute top-1/2 right-1/3 h-16 w-16 rounded-full bg-blue-300 blur-xl" />
+        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
+
+        <div className="relative container mx-auto max-w-6xl px-4 py-4 2xl:py-20 ">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 2xl:gap-20">
+            <div className="max-w-3xl space-y-6 text-white">
+              <h1 className="text-[25px] leading-tight md:text-4xl">
+                 Manufacturing Management Software — Production &
+                Inventory
               </h1>
 
-              <p className="text-gray-300 leading-relaxed">
-                Manufacturing is rapidly shifting from manual, reactive
-                processes to data-driven operations. Modern manufacturing
-                software integrates production planning, inventory, quality
-                control, and supply chain management into a single digital
-                platform, enabling businesses to improve efficiency, visibility,
-                and decision-making.
+              <p className="text-lg leading-relaxed text-gray-300">
+                Manufacturing software that unifies production planning,
+                inventory, quality control, and supply chain management—boosting
+                efficiency and real-time visibility across your factory.
               </p>
-              <button
-                onClick={openConsultation}
-                className="bg-gradient-to-r from-amber-400 to-orange-500 text-black px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:from-amber-500 hover:to-orange-600"
-              >
-                Get a Free Consultation →
-              </button>
-            </div>
 
-            <div className="mt-8 lg:mt-0">
-              {/* Top Badge - Manufacturing Excellence */}
-              <div className="flex justify-center mb-6">
-                <div className="bg-white/15 backdrop-blur-lg rounded-xl border border-white/30 shadow-2xl px-5 py-2.5 hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-2">
-                    <Factory className="w-7 h-7 text-amber-400" />
-                    <h3 className="text-white font-semibold">
-                      Complete Manufacturing Suite
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                {/* Card 1 - Production Planning */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Settings className="w-12 h-12 text-amber-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Production Planning
-                  </h4>
-                  <p className="text-sm text-gray-100">
-                    Auto-schedule production and eliminate bottlenecks.
-                  </p>
-                </div>
-
-                {/* Card 2 - Inventory Management */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Boxes className="w-12 h-12 text-blue-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Inventory Management
-                  </h4>
-                  <p className="text-sm text-gray-100">
-                    Auto-reorder stock, eliminate stockouts.
-                  </p>
-                </div>
-
-                {/* Card 3 - Quality Control */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Shield className="w-12 h-12 text-green-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Quality Control
-                  </h4>
-                  <p className="text-sm text-gray-100">
-                    Auto-inspect defects, ship zero defects.
-                  </p>
-                </div>
-
-                {/* Card 4 - Supply Chain */}
-                <div className="bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 p-6 group hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                  <Truck className="w-12 h-12 text-purple-400 mb-4 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-semibold mb-2">
-                    Supply Chain Tracking
-                  </h4>
-                  <p className="text-sm text-gray-300">
-                    Track suppliers, deliveries, and delays live.
-                  </p>
-                </div>
-              </div>
-
-              {/* Bottom Stats Row - Manufacturing Metrics */}
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* ===================== INDUSTRY STATISTICS ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Market Snapshot"
-            title="The Manufacturing Software Market, By the Numbers"
-            subtitle="Manufacturing software is no longer optional — it's the backbone of competitive factory operations."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {marketStats.map((s, i) => (
-              <StatCard key={i} value={s.value} label={s.label} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== INDUSTRY OVERVIEW ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="text-white space-y-5">
-              <h2 className="mt-8 text-3xl md:text-4xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent">
-                The State of Manufacturing Today
-              </h2>
-              <p className="text-white leading-relaxed">
-                At Ascentia Labs, we design and build custom manufacturing
-                software that optimizes every stage of production. Our solutions
-                empower factory owners, production managers, and operations
-                leaders to streamline workflows, improve efficiency, and enhance
-                overall performance.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { label: "Faster Planning", value: "80%" },
-                { label: "Higher Inventory Accuracy", value: "98%+" },
-                { label: "Better On-Time Delivery", value: "92–95%" },
-                { label: "Lower Defect Rate", value: "0.5–1%" },
-              ].map((c, i) => (
-                <div
-                  key={i}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-5 border border-white/20 text-center"
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <button
+                  onClick={openConsultation}
+                  className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                  <div className="text-2xl font-bold text-white mb-1">
-                    {c.value}
-                  </div>
-                  <div className="text-blue-100 text-xs">{c.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                  Schedule a Consultation →
+                </button>
+                <a
+                  href="#ai-solutions-heading"
+                  className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Explore Solutions →
+                </a>
+              </div>
 
-      {/* ================= WHY DIGITAL TRANSFORMATION ================= */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Why Now"
-            title="Why Digital Transformation Matters Now"
-            subtitle="The urgency for digital transformation in manufacturing has never been greater."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
-            {transformationCards.map((c, i) => (
-              <IconCard key={i} icon={c.icon} title={c.title}>
-                {c.impact}
-              </IconCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== BUSINESS CHALLENGES ===================== */}
-      <section className="py-16 bg-gradient-to-br  from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto mt-8 px-4">
-          <SectionHeading
-            title="Business Challenges We Solve"
-            subtitle="Manufacturing operations face a complex web of challenges. Here's how we address each one."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {challenges.map((c, i) => (
-              <ChallengeCard
-                key={i}
-                problem={c.problem}
-                impact={c.impact}
-                solution={c.solution}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== BUSINESS OUTCOMES ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Measurable Impact"
-            title="Business Outcomes with Manufacturing Software"
-            subtitle="Tangible, transformative results across every part of the factory."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {outcomes.map((o, i) => (
-              <OutcomeCard
-                key={i}
-                icon={o.icon}
-                value={o.value}
-                label={o.label}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== KPI COMPARISON TABLE ===================== */}
-      <section className="py-16 bg-gradient-to-br  from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4 ">
-          <SectionHeading
-            eyebrow="Before vs. After"
-            title="KPI Dashboard: Manual vs. Manufacturing Software"
-          />
-          <div className="max-w-5xl mx-auto overflow-x-auto rounded-xl border border-white/20">
-            <table className="w-full text-left text-sm text-gray-200 bg-white/5 backdrop-blur-md">
-              <thead>
-                <tr className="bg-white/10 text-white">
-                  <th className="px-5 py-4 font-semibold">KPI</th>
-                  <th className="px-5 py-4 font-semibold">Before</th>
-                  <th className="px-5 py-4 font-semibold">After</th>
-                  <th className="px-5 py-4 font-semibold text-amber-400">
-                    Improvement
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {kpiRows.map((row, i) => (
-                  <tr
-                    key={i}
-                    className="border-t border-white/10 hover:bg-white/5 transition-colors"
+              <ul className="flex list-none flex-wrap gap-x-6 gap-y-3 pt-2">
+                {[
+                  "Production Planning",
+                  "Inventory Management",
+                  "Quality Control",
+                  "Supply Chain Tracking",
+                ].map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center gap-2 text-sm text-gray-200"
                   >
-                    {row.map((cell, j) => (
-                      <td
-                        key={j}
-                        className={`px-5 py-4 whitespace-nowrap ${j === 3 ? "text-amber-400 font-semibold" : ""}`}
-                      >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
+                    <span className="text-amber-400" aria-hidden="true">
+                      ✓
+                    </span>
+                    {item}
+                  </li>
                 ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+              </ul>
+            </div>
 
-      {/* ===================== INDUSTRIES WE SERVE ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading eyebrow="Who We Help" title="Industries We Serve" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {industries.map((ind, i) => (
-              <IndustryCard
-                key={i}
-                icon={ind.icon}
-                title={ind.title}
-                line={ind.line}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== AI & ML SOLUTIONS ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Intelligent Manufacturing"
-            title="AI & Machine Learning for Manufacturing"
-            subtitle="Capabilities that go beyond traditional automation."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
-            {aiCards.map((c, i) => (
-              <IconCard key={i} icon={c.icon} title={c.title}>
-                {c.body}
-              </IconCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== TECHNOLOGY STACK ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading eyebrow="Under the Hood" title="Technology Stack" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
-            {techStack.map((t, i) => (
-              <IconCard key={i} icon={t.icon} title={t.title}>
-                {t.body}
-              </IconCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== INTEGRATION ECOSYSTEM ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4 ">
-          <SectionHeading
-            eyebrow="Connected, Not Siloed"
-            title="Integration Ecosystem"
-            subtitle="Your manufacturing software works with the systems you already run."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {integrations.map((intg, i) => (
-              <IntegrationCard key={i} icon={intg.icon} title={intg.title} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================= FEATURES (existing) ============================= */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Platform"
-            title="Explore Top Features of Our Manufacturing Management Solutions"
-            subtitle="Comprehensive capabilities designed to optimize your production processes."
-          />
-
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="bg-gray-900 p-4">
-                  <div className="space-y-2">
-                    {features.map((feature, index) => (
-                      <div
-                        key={index}
-                        className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ${
-                          activeFeature === index
-                            ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                            : "text-gray-300 hover:bg-gray-800"
-                        }`}
-                        onClick={() => setActiveFeature(index)}
-                      >
-                        <div className="flex items-center space-x-2">
-                          <span
-                            className={`text-xs px-2 py-1 rounded ${
-                              activeFeature === index
-                                ? "bg-black text-amber-400"
-                                : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                            }`}
-                          >
-                            {index < 9 ? `0${index + 1}` : index + 1}
-                          </span>
-                          <span className="font-medium text-sm lg:text-base 2xl:text-lg">
-                            {feature.title}
-                          </span>
-                        </div>
-                      </div>
-                    ))}
+            <div className="mt-4 lg:mt-0">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-5 py-3.5">
+                  <div className="flex items-center gap-2.5">
+                    <Factory className="h-5 w-5 text-amber-400" />
+                    <p className="text-sm font-normal text-white md:text-base">
+                      Complete Manufacturing Suite
+                    </p>
+                  </div>
+                  <div
+                    className="flex items-center gap-1.5"
+                    aria-hidden="true"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[11px] font-light uppercase tracking-wider text-gray-400">
+                      Live
+                    </span>
                   </div>
                 </div>
 
-                <div className="p-6 flex items-center">
-                  <div className="space-y-4">
-                    <div className="bg-amber-100 p-3 rounded-xl w-fit">
-                      <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-2 rounded-lg">
-                        <svg
-                          className="w-6 h-6 text-black"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+                  <div className="p-5 transition-colors duration-300 hover:bg-white/[0.04]">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-amber-400/25 bg-amber-400/15">
+                        <Settings className="h-5 w-5 text-amber-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Production Control System
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Schedule production live and catch bottlenecks early.
+                        </p>
                       </div>
                     </div>
+                  </div>
 
-                    <div className="space-y-6">
-                      {features[activeFeature].sections.map(
-                        (section, sectionIndex) => (
-                          <div key={sectionIndex}>
-                            <h4 className="text-base lg:text-xl 2xl:text-2xl font-semibold text-gray-900 mb-3">
-                              {section.heading}
-                            </h4>
-                            <ul className="space-y-2 text-gray-600">
-                              {section.details.map((detail, idx) => (
-                                <li
-                                  key={idx}
-                                  className="flex items-start space-x-2"
-                                >
-                                  <span className="w-1.5 h-1.5 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-                                  <span className="text-sm lg:text-[15px] 2xl:text-lg">
-                                    {detail}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ),
-                      )}
+                  <div className="p-5 transition-colors duration-300 hover:bg-white/[0.04]">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-blue-400/25 bg-blue-400/15">
+                        <Shield className="h-5 w-5 text-blue-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Quality Assurance
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Auto-inspect every stage and track compliance live.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-white/10 p-5 transition-colors duration-300 hover:bg-white/[0.04] sm:border-t">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-emerald-400/25 bg-emerald-400/15">
+                        <BarChart3 className="h-5 w-5 text-green-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Analytics & Reporting
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Shop-floor dashboards for faster, smarter decisions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-white/10 p-5 transition-colors duration-300 hover:bg-white/[0.04] sm:border-t">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-violet-400/25 bg-violet-400/15">
+                        <Truck className="h-5 w-5 text-purple-400" />
+                      </div>
+                      <div>
+                        <p className="mb-1.5 text-sm font-normal text-white">
+                          Supply Chain Management
+                        </p>
+                        <p className="text-sm font-light leading-relaxed text-gray-300">
+                          Track suppliers and inventory—no stockouts or delays.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1549,440 +1090,528 @@ const ManufacturingPage = () => {
         </div>
       </section>
 
-      {/* ===================== INDUSTRY USE CASES ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Proof in Practice"
-            title="Industry Use Cases"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
-            {useCases.map((u, i) => (
-              <UseCaseCard
+      {/* ================= BUSINESS CHALLENGES ================= */}
+      <ChallengesPinnedSection
+        items={businessChallenges}
+        title="Business Challenges We Solve"
+        subtitle="Manufacturing operations face a complex web of challenges. Here's how we address each one."
+      />
+
+      {/* ================= BUSINESS OUTCOMES ================= */}
+      <SectionShell gradient labelledBy="outcomes-heading">
+        <SectionIntro
+          id="outcomes-heading"
+          title="Business Outcomes with Manufacturing Software"
+          subtitle="Tangible, transformative results across every part of the factory."
+          light
+        />
+
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/25 backdrop-blur-sm">
+          <div className="grid grid-cols-2 md:grid-cols-3">
+            {outcomes.map((o, i) => (
+              <div
                 key={i}
-                problem={u.problem}
-                solution={u.solution}
-                outcome={u.outcome}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== ROI ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Financial Case"
-            title="ROI & Business Value"
-            subtitle="Most clients see full ROI within 6–12 months and 2–3x return within 18 months."
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
-            {savings.map((s, i) => (
-              <SavingsCard key={i} label={s.label} value={s.value} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== BUYER READINESS CHECKLIST ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Are You Ready?"
-            title="Buyer Readiness Checklist"
-            subtitle="Check 6 or more items and you're ready to explore a manufacturing management platform."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {readiness.map((group, i) => (
-              <ChecklistGroup key={i} title={group.title} items={group.items} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== CUSTOMER JOURNEY ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="How We Work"
-            title="Customer Journey: Discovery to Deployment"
-          />
-          <div className="max-w-6xl mx-auto">
-            <div className="hidden md:flex justify-between items-start relative">
-              <div className="absolute top-6 left-0 right-0 h-0.5 bg-blue-300/40"></div>
-              {journey.map((step, i) => (
-                <div key={i} className="flex-1 text-center px-2 relative z-10">
-                  <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center font-bold mx-auto mb-3">
-                    {i + 1}
-                  </div>
-                  <h4 className="text-white font-semibold text-sm mb-1">
-                    {step.title}
-                  </h4>
-                  {/* <p className="text-gray-400 text-xs">{step.body}</p> */}
+                className={`px-4 py-7 text-center sm:px-5 sm:py-8 ${
+                  i % 2 === 1 ? "border-l border-white/10" : ""
+                } ${i >= 2 ? "border-t border-white/10 md:border-t-0" : ""} ${
+                  i >= 3 ? "md:border-t md:border-white/10" : ""
+                } ${i % 3 !== 0 ? "md:border-l md:border-white/10" : ""}`}
+              >
+                <div className="mb-2 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-medium tracking-tight text-transparent md:text-4xl">
+                  {o.value}
                 </div>
-              ))}
-            </div>
-            <div className="md:hidden space-y-4">
-              {journey.map((step, i) => (
-                <div key={i} className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold text-sm">
-                      {step.title}
-                    </h4>
-                    <p className="text-gray-400 text-xs">{step.body}</p>
-                  </div>
+                <div className="text-xs leading-snug text-white/90 sm:text-sm">
+                  {o.label}
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== DEPLOYMENT MODELS ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Flexible Delivery"
-            title="Deployment Models"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {deploymentModels.map((m, i) => (
-              <DeploymentCard
-                key={i}
-                icon={m.icon}
-                title={m.title}
-                points={m.points}
-                highlight={m.highlight}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== SECURITY & COMPLIANCE ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Enterprise Trust"
-            title="Security & Compliance"
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-            {security.map((s, i) => (
-              <IconCard key={i} icon={s.icon} title={s.title}>
-                {s.body}
-              </IconCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== CASE STUDY PREVIEW ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Real Results"
-            title="Case Studies from Real Manufacturers"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {caseStudies.map((c, i) => (
-              <CaseStudyCard
-                key={i}
-                metric={c.metric}
-                title={c.title}
-                description={c.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================= PROCESS (existing) ============================= */}
-      <section className="py-16 bg-black relative">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent mb-3">
-              Our Manufacturing Development Implementation Process
-            </h2>
-            <p className="text-lg text-gray-300">
-              How We Build Your Manufacturing Software — 8 Weeks Total
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="block md:hidden">
-              <div className="relative flex justify-between items-start gap-2 px-2">
-                <div className="absolute top-6 sm:top-7 left-8 right-8 h-0.5 bg-blue-300 z-0"></div>
-                {processSteps.map((step, index) => (
-                  <div key={index} className="flex-1 text-center relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-lg sm:text-xl font-extrabold mb-2 mx-auto border-2 border-white shadow-lg">
-                      {step.number}
-                    </div>
-                    <h3 className="font-medium text-white text-sm sm:text-base leading-tight px-1">
-                      {step.title}
-                    </h3>
-                  </div>
-                ))}
               </div>
-            </div>
-
-            <div className="hidden md:flex justify-center items-center gap-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="flex items-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-orange-500 text-black rounded-full flex items-center justify-center text-xl font-extrabold mb-3 mx-auto">
-                      {step.number}
-                    </div>
-                    <h3 className="font-medium text-white text-base mb-1">
-                      {step.title}
-                    </h3>
-                  </div>
-                  {index < processSteps.length - 1 && (
-                    <div className="w-12 h-0.5 bg-blue-300 mx-3 -mt-6"></div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== ENGAGEMENT MODELS ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Ways to Work With Us"
-            title="Engagement Models"
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {engagementModels.map((m, i) => (
-              <EngagementCard
-                key={i}
-                icon={m.icon}
-                title={m.title}
-                points={m.points}
-              />
             ))}
           </div>
         </div>
-      </section>
+      </SectionShell>
 
-      {/* ============================= WHY CHOOSE US (existing) ============================= */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent"></div>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-40 right-20 w-24 h-24 bg-yellow-300 rounded-full blur-2xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-yellow-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-1/2 w-20 h-20 bg-yellow-200 rounded-full blur-2xl"></div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black"></div>
+      {/* ================= FEATURES EXPLORER ================= */}
+      <SectionShell labelledBy="ai-solutions-heading">
+        <SectionIntro
+          id="ai-solutions-heading"
+          title="Explore Top Features of Our Manufacturing Management Solutions"
+          subtitle="Comprehensive capabilities designed to optimize your production processes."
+        />
 
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="text-white space-y-8">
-                <div>
-                  <h2 className="text-2xl md:text-4xl mb-4 leading-tight">
-                    Revolutionize Your Manufacturing Operations with Our
-                    Expertise
-                  </h2>
-                  <p className="text-xl text-gray-300 mb-8">
-                    Why Manufacturing Companies in India Choose Us
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  {advantages.map((item) => (
-                    <div key={item.id}>
-                      <div
-                        onClick={() =>
-                          setActiveIndex(
-                            activeIndex === item.id ? null : item.id,
-                          )
-                        }
-                        className="flex items-center justify-between cursor-pointer"
-                      >
-                        <div className="flex items-center space-x-4 group">
-                          <div className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">
-                            {String(item.id).padStart(2, "0")}
-                          </div>
-                          <div>
-                            <h3 className="lg:text-xl text-md group-hover:text-blue-300 transition-colors">
-                              {item.title}
-                            </h3>
-                            <div className="w-24 h-0.5 bg-blue-500 mt-1"></div>
-                          </div>
-                        </div>
-                        <div
-                          className={`text-blue-500 text-xl transition-transform duration-300 ${
-                            activeIndex === item.id ? "rotate-45" : ""
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
+          <div className="grid min-h-0 grid-cols-1 lg:min-h-[420px] lg:grid-cols-5">
+            <nav
+              className="min-w-0 border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              aria-label="Manufacturing feature categories"
+            >
+              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
+                {features.map((feature, index) => {
+                  const active = activeFeature === index;
+                  return (
+                    <button
+                      key={feature.id}
+                      type="button"
+                      onClick={() => setActiveFeature(index)}
+                      className={`w-full rounded-lg p-3 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
+                        active
+                          ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md"
+                          : "text-gray-300 hover:bg-white/5"
+                      }`}
+                    >
+                      <div className="flex items-start gap-2.5">
+                        <span
+                          className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[11px] font-semibold ${
+                            active
+                              ? "bg-black text-amber-400"
+                              : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
                           }`}
                         >
-                          +
-                        </div>
+                          {index < 9 ? `0${index + 1}` : index + 1}
+                        </span>
+                        <span className="text-sm font-medium leading-snug">
+                          {feature.title}
+                        </span>
                       </div>
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ${
-                          activeIndex === item.id
-                            ? "max-h-32 opacity-100 mt-3"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <p className="pl-16 text-gray-300 text-sm md:text-base">
-                          → {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-md rounded-3xl p-8 border border-blue-400/30">
-                  <div className="text-center text-white">
-                    <div className="relative w-32 h-32 mx-auto mb-6">
-                      <div className="w-32 h-32 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 rounded-full flex items-center justify-center relative overflow-hidden shadow-2xl border-4 border-black/20">
-                        <div className="absolute inset-0 bg-gradient-to-br from-amber-300/40 via-amber-400/30 to-orange-400/40 rounded-full animate-pulse"></div>
-                        <svg
-                          className="w-16 h-16 text-black relative z-10 drop-shadow-lg"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <div className="absolute inset-0 rounded-full border-2 border-black/10 animate-spin-slow opacity-60"></div>
-                      </div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-300/20 via-amber-400/20 to-orange-400/20 animate-ping"></div>
-                      <div className="absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-br from-amber-200/15 via-amber-300/15 to-orange-300/15 animate-pulse"></div>
-                    </div>
-                    <h3 className="text-2xl mb-4">
-                      Ready to Transform Your Manufacturing Operations?
-                    </h3>
-                    <p className="text-blue-100 mb-6">
-                      Join industry leaders who trust our manufacturing
-                      management solutions to optimize their production
-                      processes and boost efficiency.
-                    </p>
-                    <button
-                      onClick={openConsultation}
-                      className="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 text-black border-2 border-black/20 hover:border-black/40 px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                      Start Your Project Today
                     </button>
+                  );
+                })}
+              </div>
+            </nav>
+
+            <article className="min-w-0 bg-white p-4 sm:p-6 md:p-8 lg:col-span-3">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="rounded-xl bg-amber-100 p-2.5">
+                  <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
+                    <svg
+                      className="h-5 w-5 text-black"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                   </div>
                 </div>
+                <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
+              </div>
+
+              <h3 className="mb-5 text-lg leading-snug text-gray-900 sm:mb-6 sm:text-xl md:text-2xl">
+                {features[activeFeature].title}
+              </h3>
+
+              {(() => {
+                const sections = features[activeFeature].sections;
+                const rowCount = Math.max(
+                  ...sections.map((s) => s.details.length),
+                  0,
+                );
+                const colWidth =
+                  sections.length === 1 ? "w-full" : "w-1/2";
+
+                return (
+                  <>
+                    <div className="space-y-4 md:hidden">
+                      {sections.map((section, sectionIndex) => (
+                        <div
+                          key={sectionIndex}
+                          className="overflow-hidden rounded-xl border border-gray-200"
+                        >
+                          <div className="bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2.5 text-xs font-semibold uppercase tracking-wide text-black">
+                            {section.heading}
+                          </div>
+                          <ul className="divide-y divide-gray-100">
+                            {section.details.map((detail, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-start gap-2.5 px-3.5 py-3 text-sm leading-relaxed text-gray-700"
+                              >
+                                <span
+                                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                  aria-hidden="true"
+                                />
+                                <span className="min-w-0 break-words">
+                                  {detail}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="hidden overflow-x-auto md:block">
+                      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table className="w-full table-fixed border-collapse text-left text-sm">
+                          <caption className="sr-only">
+                            {features[activeFeature].title} details
+                          </caption>
+                          <thead>
+                            <tr className="bg-gradient-to-r from-amber-400 to-orange-500">
+                              {sections.map((section, sectionIndex) => (
+                                <th
+                                  key={sectionIndex}
+                                  scope="col"
+                                  className={`${colWidth} px-3 py-3 text-xs font-semibold uppercase tracking-wide text-black lg:px-4 ${
+                                    sectionIndex > 0
+                                      ? "border-l border-black/10"
+                                      : ""
+                                  }`}
+                                >
+                                  {section.heading}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Array.from({ length: rowCount }).map(
+                              (_, rowIdx) => (
+                                <tr
+                                  key={rowIdx}
+                                  className="border-b border-gray-100 last:border-b-0 odd:bg-white even:bg-gray-50/70"
+                                >
+                                  {sections.map((section, sectionIndex) => {
+                                    const detail = section.details[rowIdx];
+                                    return (
+                                      <td
+                                        key={sectionIndex}
+                                        className={`px-3 py-3 align-top text-gray-700 lg:px-4 ${
+                                          sectionIndex > 0
+                                            ? "border-l border-gray-100"
+                                            : ""
+                                        }`}
+                                      >
+                                        {detail ? (
+                                          <span className="flex items-start gap-2.5">
+                                            <span
+                                              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                              aria-hidden="true"
+                                            />
+                                            <span className="min-w-0 break-words leading-relaxed">
+                                              {detail}
+                                            </span>
+                                          </span>
+                                        ) : (
+                                          <span className="text-gray-300">
+                                            —
+                                          </span>
+                                        )}
+                                      </td>
+                                    );
+                                  })}
+                                </tr>
+                              ),
+                            )}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+            </article>
+          </div>
+        </div>
+      </SectionShell>
+
+      {/* ================= INDUSTRY USE CASES ================= */}
+      <SectionShell gradient labelledBy="use-cases-heading">
+        <SectionIntro
+          id="use-cases-heading"
+          title="Industry Use Cases"
+          subtitle="See how manufacturers have transformed their operations with our solutions."
+          light
+        />
+
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/25">
+          <ul className="m-0 list-none divide-y divide-white/10 p-0">
+            {useCases.map((u, i) => (
+              <li key={i} className="min-w-0">
+                <article className="grid min-w-0 grid-cols-1 gap-5 px-4 py-7 sm:gap-6 sm:px-5 sm:py-8 md:px-6 md:py-9 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5 xl:grid-cols-12 xl:items-start xl:gap-x-8 xl:px-8 xl:py-10">
+                  <div className="relative min-w-0 lg:col-span-2 xl:col-span-3">
+                    <span
+                      className="pointer-events-none absolute -left-0.5 -top-3 select-none text-5xl font-medium leading-none text-white/[0.07] sm:-top-4 sm:text-6xl md:text-7xl xl:-top-5 xl:text-8xl"
+                      aria-hidden="true"
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="relative max-w-full break-words pt-8 mt-1 lg:mt-8 text-lg font-medium leading-snug text-white sm:pt-6 sm:text-xl md:text-2xl xl:pt-8">
+                      {u.title}
+                    </h3>
+                  </div>
+
+                  <div className="min-w-0 lg:col-span-1 xl:col-span-4">
+                    <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-orange-400 sm:mb-2.5 lg:text-[14px] sm:tracking-[0.14em]">
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-400 2xl:text-[16px]"
+                        aria-hidden="true"
+                      />
+                      The Problem
+                    </p>
+                    <p className="break-words text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                      {u.problem}
+                    </p>
+                  </div>
+
+                  <div className="min-w-0 lg:col-span-1 xl:col-span-5">
+                    <p className="mb-2 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-amber-400 sm:mb-2.5 lg:text-[14px] sm:tracking-[0.14em]">
+                      <span
+                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400 2xl:text-[16px]"
+                        aria-hidden="true"
+                      />
+                      The Solution
+                    </p>
+                    <p className="break-words text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                      {u.solution}
+                    </p>
+                  </div>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionShell>
+
+      {/* ================= IMPLEMENTATION PROCESS ================= */}
+      <SectionShell labelledBy="process-heading">
+        <SectionIntro
+          id="process-heading"
+          title="Our Manufacturing Development Implementation Process"
+          subtitle="How We Build Your Manufacturing Software — 8 Weeks Total"
+        />
+
+        <ol className="relative ml-3 list-none space-y-0 border-l border-white/15 md:hidden">
+          {processSteps.map((step, index) => (
+            <li key={index} className="relative pb-8 pl-8 last:pb-0">
+              <span className="absolute -left-[14px] top-0 flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-xs font-bold text-black ring-4 ring-black">
+                {step.number}
+              </span>
+              <h3 className="mb-1.5 text-base font-semibold text-white">
+                {step.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-gray-400">
+                {/* {step.description} */}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="mx-auto hidden max-w-6xl md:block">
+          <div className="relative">
+            <div
+              className="absolute left-[8%] right-[8%] top-6 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent"
+              aria-hidden="true"
+            />
+            <ol className="relative grid list-none grid-cols-4 gap-3">
+              {processSteps.map((step, index) => (
+                <li key={index} className="px-1 text-center">
+                  <div className="relative z-10 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-base font-extrabold text-black shadow-lg ring-4 ring-black">
+                    {step.number}
+                  </div>
+                  <h3 className="mb-2 text-sm font-semibold leading-snug text-white">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-gray-400">
+                    {/* {step.description} */}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </SectionShell>
+
+      {/* ================= RELATED AI SERVICES ================= */}
+      <SectionShell labelledBy="related-services-heading">
+        <SectionIntro
+          id="related-services-heading"
+          title="Related AI Services"
+        />
+
+        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
+          {relatedServices.map((s, i) => (
+            <li key={i}>
+              <Link
+                to={s.href}
+                className="group block h-full rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-amber-400/40 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-6"
+              >
+                <h3 className="mb-2 text-lg font-medium text-white transition-colors group-hover:text-amber-300">
+                  {s.title}
+                </h3>
+                <p className="mb-5 text-sm leading-relaxed text-white/90">
+                  {s.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-amber-400">
+                  Learn more
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5"
+                  />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </SectionShell>
+
+      {/* ================= RELATED INDUSTRIES ================= */}
+      <SectionShell gradient labelledBy="related-industries-heading">
+        <SectionIntro
+          id="related-industries-heading"
+          title="Related Industry Software Solutions"
+          subtitle="Explore custom software development across logistics, CRM, healthcare, ERP, and more."
+          light
+        />
+
+        <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+          {relatedIndustries.map((industry, i) => {
+            const Icon = industry.icon;
+            return (
+              <li key={i}>
+                <Link
+                  to={industry.link}
+                  className="group flex h-full flex-col rounded-xl border border-white/10 bg-black/25 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-5"
+                >
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+                    <Icon size={18} />
+                  </div>
+                  <h3 className="mb-2 text-sm font-semibold leading-snug text-white transition-colors group-hover:text-amber-300 md:text-[15px]">
+                    {industry.title}
+                  </h3>
+                  <p className="mb-4 flex-1 text-xs leading-relaxed text-gray-300 md:text-sm">
+                    {industry.line}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-amber-400 md:text-sm">
+                    Explore
+                    <ArrowRight
+                      size={13}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </SectionShell>
+
+      {/* ================= RELATED RESOURCES ================= */}
+      <SectionShell labelledBy="related-resources-heading">
+        <SectionIntro
+          id="related-resources-heading"
+          title="Related Resources"
+        />
+
+        <ul className="grid list-none grid-cols-1 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-black/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+          {relatedResources.map((r, i) => (
+            <li key={i} className="flex">
+              <Link
+                to={r.href}
+                className="group flex w-full flex-col p-6 transition-colors duration-300 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-400"
+              >
+                <span className="mb-3 text-xs font-semibold uppercase tracking-wide text-amber-400">
+                  {r.topic}
+                </span>
+                <h3 className="flex-1 text-base font-medium leading-snug text-white transition-colors group-hover:text-amber-200">
+                  {r.title}
+                </h3>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors group-hover:text-amber-400">
+                  Read more
+                  <ArrowRight size={13} />
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </SectionShell>
+
+      {/* ================= WHY ASCENTIA LABS ================= */}
+      <section
+        className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"
+        aria-labelledby="why-us-heading"
+      >
+        <div className="pointer-events-none absolute left-0 right-0 top-0 h-20 bg-gradient-to-b from-black to-transparent" />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-15"
+          aria-hidden="true"
+        >
+          <div className="absolute left-20 top-20 h-32 w-32 rounded-full bg-yellow-400 blur-3xl" />
+          <div className="absolute bottom-40 right-20 h-24 w-24 rounded-full bg-yellow-300 blur-2xl" />
+        </div>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
+
+        <div className="relative container mx-auto max-w-6xl px-4">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="space-y-6 text-white">
+              <div>
+                <h2
+                  id="why-us-heading"
+                  className="mb-4 text-3xl leading-tight md:text-4xl"
+                >
+                  Ready to Transform Your Manufacturing Operations?
+                </h2>
+                <p className="text-xl text-gray-100">
+                  Why Manufacturing Companies Choose Ascentia Labs
+                </p>
+              </div>
+              <AccordionGroup
+                items={reasons}
+                activeId={activeIndex}
+                onToggle={setActiveIndex}
+                variant="light"
+              />
+            </div>
+
+            <div className="lg:sticky lg:top-28">
+              <div className="rounded-2xl border border-blue-400/25 bg-gradient-to-br from-blue-600/15 to-blue-900/30 p-8 text-center text-white backdrop-blur-md md:p-10">
+                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-black/10 bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 shadow-xl">
+                  <svg
+                    className="h-10 w-10 text-black"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="mb-4 text-2xl leading-snug">
+                  Schedule a Consultation
+                </h3>
+                <p className="mb-7 leading-relaxed text-blue-100">
+                  Join industry leaders who trust our manufacturing management
+                  solutions to optimize production processes and boost
+                  efficiency.
+                </p>
+                <button
+                  type="button"
+                  onClick={openConsultation}
+                  className="rounded-xl border-2 border-black/20 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 px-8 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:border-black/40 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                >
+                  Schedule a Consultation
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===================== RELATED RESOURCES ===================== */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading eyebrow="Learn More" title="Related Resources" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {resources.map((r, i) => (
-              <ResourceCard
-                key={i}
-                icon={r.icon}
-                label={r.label}
-                items={r.items}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== RELATED SERVICES ===================== */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            eyebrow="Related Services"
-            title="Related Services We Provide"
+      {/* ================= FAQ ================= */}
+      <SectionShell labelledBy="faq-heading">
+        <div className="mx-auto max-w-4xl">
+          <SectionIntro
+            id="faq-heading"
+            title="Frequently Asked Questions"
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
-            {relatedServices.map((s, i) => (
-              <ServiceCard
-                key={i}
-                icon={s.icon}
-                title={s.title}
-                description={s.description}
-                to={s.to}
-              />
-            ))}
-          </div>
+          <AccordionGroup
+            items={faqs}
+            activeId={openFAQ}
+            onToggle={setOpenFAQ}
+            variant="dark"
+          />
         </div>
-      </section>
-
-      {/* ============================= FAQ (existing) ============================= */}
-      <section className="py-16 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent md:text-4xl mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-lg text-gray-300">
-                Find answers to common questions about our manufacturing
-                management solutions
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-900 rounded-xl shadow-lg border border-gray-700 overflow-hidden"
-                >
-                  <button
-                    className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-800 transition-colors duration-200"
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <h3 className="text-lg text-white pr-4">{faq.question}</h3>
-                    <div className="flex-shrink-0">
-                      {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-blue-400" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-blue-400" />
-                      )}
-                    </div>
-                  </button>
-                  {openFAQ === index && (
-                    <div className="px-6 pb-5">
-                      <div className="border-t border-gray-700 pt-4">
-                        <p className="text-gray-300 whitespace-pre-line leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================= FINAL CTA ============================= */}
+      </SectionShell>
     </div>
   );
 };

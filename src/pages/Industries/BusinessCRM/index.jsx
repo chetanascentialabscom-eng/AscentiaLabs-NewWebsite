@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import {
   ChevronDown,
@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
+import ChallengesPinnedSection from "../../../components/industries/ChallengesPinnedSection";
 import { seoData } from "../../../utils/seoData";
 import { ROUTES, SITE_URL, absoluteUrl } from "../../../utils/routes";
 
@@ -201,211 +202,6 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
 };
 
 const challengeIcons = [ClipboardList, Calendar, Users];
-
-/**
- * Desktop pin-scroll: page scroll drives the right column while the left
- * heading stays fixed. When right content finishes, the section unpins and
- * normal page scroll continues. Mobile: stacked static layout.
- */
-const ChallengesPinnedSection = ({ items }) => {
-  const sectionRef = useRef(null);
-  const stickyRef = useRef(null);
-  const trackRef = useRef(null);
-  const rafRef = useRef(0);
-  const [scrollSpan, setScrollSpan] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches,
-  );
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const onChange = () => setIsDesktop(mq.matches);
-    onChange();
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-
-  const measure = useCallback(() => {
-    if (!isDesktop) {
-      setScrollSpan(0);
-      return;
-    }
-    const sticky = stickyRef.current;
-    const track = trackRef.current;
-    if (!sticky || !track) return;
-    const next = Math.max(0, track.scrollHeight - sticky.clientHeight);
-    setScrollSpan((prev) => (Math.abs(prev - next) > 1 ? next : prev));
-  }, [isDesktop]);
-
-  useEffect(() => {
-    measure();
-    const track = trackRef.current;
-    const sticky = stickyRef.current;
-    if (!track || !sticky) return undefined;
-
-    const ro = new ResizeObserver(measure);
-    ro.observe(track);
-    ro.observe(sticky);
-    window.addEventListener("resize", measure);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-    };
-  }, [measure, items]);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return undefined;
-
-    if (!isDesktop || scrollSpan <= 0) {
-      track.style.transform = "";
-      return undefined;
-    }
-
-    const STICKY_TOP = 112; // matches lg:top-28 (7rem)
-
-    const update = () => {
-      const section = sectionRef.current;
-      const trackEl = trackRef.current;
-      if (!section || !trackEl) return;
-
-      const scrolled = STICKY_TOP - section.getBoundingClientRect().top;
-      const progress = Math.min(1, Math.max(0, scrolled / scrollSpan));
-      trackEl.style.transform = `translate3d(0, ${-progress * scrollSpan}px, 0)`;
-    };
-
-    const onScroll = () => {
-      cancelAnimationFrame(rafRef.current);
-      rafRef.current = requestAnimationFrame(update);
-    };
-
-    update();
-
-    let detach = () => {};
-    const lenis = typeof window !== "undefined" ? window.lenis : null;
-
-    if (lenis?.on) {
-      lenis.on("scroll", onScroll);
-      detach = () => lenis.off("scroll", onScroll);
-    } else {
-      window.addEventListener("scroll", onScroll, { passive: true });
-      detach = () => window.removeEventListener("scroll", onScroll);
-    }
-
-    const retry = window.setTimeout(() => {
-      if (window.lenis?.on && !lenis) {
-        detach();
-        window.lenis.on("scroll", onScroll);
-        detach = () => window.lenis?.off("scroll", onScroll);
-      }
-    }, 150);
-
-    return () => {
-      window.clearTimeout(retry);
-      cancelAnimationFrame(rafRef.current);
-      detach();
-    };
-  }, [isDesktop, scrollSpan]);
-
-  const sectionStyle =
-    isDesktop && scrollSpan > 0
-      ? { height: `calc(100vh - 7rem + ${scrollSpan}px)` }
-      : undefined;
-
-  const list = (
-    <ol
-      ref={trackRef}
-      className={
-        isDesktop
-          ? "list-none space-y-0 will-change-transform"
-          : "ml-3 list-none space-y-0 border-l border-white/10 md:ml-4"
-      }
-    >
-      {items.map((c, i) => {
-        const Icon = c.icon;
-        return (
-          <li key={i} className="relative pb-8 pl-8 last:pb-0 md:pl-10">
-            <span className="absolute -left-[9px] top-1 flex h-[18px] w-[18px] items-center justify-center rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-[10px] font-bold text-black ring-4 ring-black">
-              {i + 1}
-            </span>
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-amber-400/35 md:p-6">
-              <div className="mb-3 flex items-start gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-                  <Icon size={18} />
-                </div>
-                <h3 className="pt-1 text-lg font-medium text-white">
-                  {c.title}
-                </h3>
-              </div>
-              <p className="mb-3 text-sm leading-relaxed text-white/95 md:text-[15px]">
-                {/* <span className="text-gray-400">Impact: </span>
-                {c.pain} */}
-              </p>
-              <p className="text-sm leading-relaxed text-amber-400 md:text-[15px]">
-                <span className="font-medium text-amber-300">Solution: </span>
-                {c.solution}
-              </p>
-            </div>
-          </li>
-        );
-      })}
-    </ol>
-  );
-
-  const heading = (
-    <>
-      <h2
-        id="challenges-heading"
-        className="mb-4 bg-gradient-to-r from-blue-400 to-white bg-clip-text text-3xl leading-tight text-transparent md:text-4xl font-medium "
-      >
-        Business Challenges We Solve
-      </h2>
-      <p className="text-base leading-relaxed text-white/95">
-        Business CRM operations face fragmented sales, support, and marketing
-        tools. Here&apos;s how we address each challenge.
-      </p>
-    </>
-  );
-
-  if (!isDesktop) {
-    return (
-      <section
-        className="relative bg-black py-16 md:py-20"
-        aria-labelledby="challenges-heading"
-      >
-        <div className="container relative z-10 mx-auto max-w-6xl px-4">
-          <div className="grid items-start gap-10">
-            <div>{heading}</div>
-            {list}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  return (
-    <section
-      ref={sectionRef}
-      style={sectionStyle}
-      className="relative bg-black"
-      aria-labelledby="challenges-heading"
-    >
-      <div
-        ref={stickyRef}
-        className="sticky top-28 flex h-[calc(100vh-7rem)] items-stretch overflow-hidden"
-      >
-        <div className="container mx-auto grid h-full max-w-6xl grid-cols-12 gap-14 px-4 py-6">
-          <aside className="col-span-4 flex flex-col justify-center self-stretch">
-            {heading}
-          </aside>
-          <div className="col-span-8 h-full overflow-hidden border-l border-white/10 pl-4 md:pl-6">
-            {list}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 /** FAQ source for UI + FAQPage JSON-LD (AEO lead sentences). */
 const BUSINESS_CRM_FAQ_ITEMS = [
@@ -1158,7 +954,7 @@ const BusinessCrmPage = () => {
                   onClick={openConsultation}
                   className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                  Get a Free Consultation →
+                   Schedule a  Consultation →
                 </button>
                 <a
                   href="#ai-solutions-heading"
@@ -1280,7 +1076,11 @@ const BusinessCrmPage = () => {
       </section>
 
       {/* ================= BUSINESS CHALLENGES ================= */}
-      <ChallengesPinnedSection items={businessChallenges} />
+      <ChallengesPinnedSection
+        items={businessChallenges}
+        title="Business Challenges We Solve"
+        subtitle="Business CRM operations face fragmented sales, support, and marketing tools. Here's how we address each challenge."
+      />
 
       {/* ================= BUSINESS OUTCOMES ================= */}
       <SectionShell gradient labelledBy="outcomes-heading">
@@ -1609,9 +1409,6 @@ const BusinessCrmPage = () => {
         </div>
       </SectionShell>
 
-      {/* ================= WHY ASCENTIA LABS ================= */}
-   
-
       {/* ================= RELATED AI SERVICES ================= */}
       <SectionShell labelledBy="related-services-heading">
         <SectionIntro
@@ -1646,11 +1443,7 @@ const BusinessCrmPage = () => {
       </SectionShell>
 
       {/* ================= RELATED INDUSTRIES ================= */}
-      <SectionShell
-        gradient
-        fadeBottom={false}
-        labelledBy="related-industries-heading"
-      >
+      <SectionShell gradient labelledBy="related-industries-heading">
         <SectionIntro
           id="related-industries-heading"
           title="Related Industry Software Solutions"
@@ -1665,7 +1458,7 @@ const BusinessCrmPage = () => {
               <li key={i}>
                 <Link
                   to={industry.link}
-                  className="group flex h-full flex-col rounded-xl border border-blue-400/25 bg-blue-950/35 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-blue-900/45 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-5"
+                  className="group flex h-full flex-col rounded-xl border border-white/10 bg-black/25 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:bg-black/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:p-5"
                 >
                   <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
                     <Icon size={18} />
@@ -1691,25 +1484,18 @@ const BusinessCrmPage = () => {
       </SectionShell>
 
       {/* ================= RELATED RESOURCES ================= */}
-      <SectionShell
-        gradient
-        fadeTop={false}
-        fadeBottom={false}
-        labelledBy="related-resources-heading"
-        className="pt-8 md:pt-10"
-      >
+      <SectionShell labelledBy="related-resources-heading">
         <SectionIntro
           id="related-resources-heading"
           title="Related Resources"
-          light
         />
 
-        <ul className="grid list-none grid-cols-1 divide-y divide-blue-400/25 overflow-hidden rounded-xl border border-blue-400/35 bg-blue-900/30 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <ul className="grid list-none grid-cols-1 divide-y divide-white/10 overflow-hidden rounded-xl border border-white/10 bg-black/20 md:grid-cols-3 md:divide-x md:divide-y-0">
           {relatedResources.map((r, i) => (
             <li key={i} className="flex">
               <Link
                 to={r.href}
-                className="group flex w-full flex-col p-6 transition-colors duration-300 hover:bg-blue-800/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-400"
+                className="group flex w-full flex-col p-6 transition-colors duration-300 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-amber-400"
               >
                 <span className="mb-3 text-xs font-semibold uppercase tracking-wide text-amber-400">
                   {r.topic}
@@ -1717,7 +1503,7 @@ const BusinessCrmPage = () => {
                 <h3 className="flex-1 text-base font-medium leading-snug text-white transition-colors group-hover:text-amber-200">
                   {r.title}
                 </h3>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-blue-100/80 transition-colors group-hover:text-amber-400">
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors group-hover:text-amber-400">
                   Read more
                   <ArrowRight size={13} />
                 </span>
@@ -1727,6 +1513,7 @@ const BusinessCrmPage = () => {
         </ul>
       </SectionShell>
 
+      {/* ================= WHY ASCENTIA LABS ================= */}
       <section
         className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"
         aria-labelledby="why-us-heading"
@@ -1785,10 +1572,11 @@ const BusinessCrmPage = () => {
                   platform built around your process.
                 </p>
                 <button
+                  type="button"
                   onClick={openConsultation}
                   className="rounded-xl border-2 border-black/20 bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 px-8 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:border-black/40 hover:from-amber-500 hover:via-orange-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                  Get a Business CRM Consultation
+                   Schedule a  Consultation
                 </button>
               </div>
             </div>
