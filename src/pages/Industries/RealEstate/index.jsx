@@ -1520,6 +1520,39 @@ const RealEstatePage = () => {
         </ul>
       </SectionShell>
 
+      {/* <SectionShell labelledBy="uae-real-estate-heading">
+        <SectionIntro
+          id="uae-real-estate-heading"
+          title="UAE Real Estate Software"
+          subtitle="Need UAE-specific PropTech — Ejari, Tawtheeq, PDC, and VAT-ready platforms for Dubai, Abu Dhabi, and Sharjah?"
+        />
+        <Link
+          to={ROUTES.industry.uaeRealEstate}
+          className="group flex flex-col gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-amber-400/40 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:flex-row sm:items-center sm:justify-between md:p-6"
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
+              <MapPinned size={18} />
+            </div>
+            <div>
+              <h3 className="mb-1 text-lg font-medium text-white transition-colors group-hover:text-amber-300">
+                Real Estate Software Development in UAE
+              </h3>
+              <p className="max-w-2xl text-sm leading-relaxed text-gray-300">
+                Custom property management, CRM, ERP, and PropTech software
+                built for UAE developers, brokerages, and property managers.
+              </p>
+            </div>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-amber-400">
+            Explore UAE Real Estate
+            <ArrowRight
+              size={14}
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+            />
+          </span>
+        </Link>
+      </SectionShell> */}
 
       <section
         className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"

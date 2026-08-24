@@ -97,7 +97,7 @@ export const seoData = {
   },
 
   uaeRealEstate: {
-    title: "Real Estate Software Development Company in UAE | Ascentia Labs",
+    title: "Real Estate Software Development  in UAE | Ascentia Labs",
     description:
       "Custom real estate software development in UAE — property management, CRM, ERP, PropTech, Ejari & Tawtheeq integrations, and AI-powered platforms for developers, brokers, and investors.",
     keywords:
