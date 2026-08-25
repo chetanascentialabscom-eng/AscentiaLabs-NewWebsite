@@ -105,6 +105,16 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.uaeRealEstate),
   },
 
+  usRealEstate: {
+    title:
+      "US Real Estate Software Development & Property Management Solutions | Ascentia Labs",
+    description:
+      "AI-powered real estate and property management software for US property managers, leasing teams, maintenance operations, investors, and enterprise real estate businesses.",
+    keywords:
+      "US real estate software, property management software USA, leasing CRM, AI property management, maintenance work order software, US PropTech, resident experience software",
+    url: absoluteUrl(ROUTES.industry.usRealEstate),
+  },
+
   kindergarten: {
     title: "Kindergarten Management Software | Ascentia Labs",
     description:

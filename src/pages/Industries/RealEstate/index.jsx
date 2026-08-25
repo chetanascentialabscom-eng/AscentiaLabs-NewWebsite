@@ -774,6 +774,41 @@ const RealEstatePage = () => {
     },
   ];
 
+  const countryMarkets = [
+    {
+      country: "India",
+      flagCode: "in",
+      line: "RERA-ready property management, CRM, and PropTech for Indian developers, brokers, and housing societies.",
+    },
+    {
+      country: "United States",
+      flagCode: "us",
+      line: "Custom real estate software for US property managers, brokerages, and portfolio operators.",
+      link: ROUTES.industry.usRealEstate,
+    },
+    {
+      country: "Australia",
+      flagCode: "au",
+      line: "PropTech for Australian agencies, strata managers, and property management companies.",
+    },
+    {
+      country: "United Kingdom",
+      flagCode: "gb",
+      line: "Real estate software for UK estate agents, lettings firms, and property portfolios.",
+    },
+    {
+      country: "UAE",
+      flagCode: "ae",
+      line: "Ejari, Tawtheeq, PDC, and VAT-ready platforms for Dubai, Abu Dhabi, and Sharjah.",
+      link: ROUTES.industry.uaeRealEstate,
+    },
+    {
+      country: "Canada",
+      flagCode: "ca",
+      line: "Custom PropTech for Canadian brokerages, property managers, and real estate investors.",
+    },
+  ];
+
   const relatedResources = [
     {
       topic: "Blogs",
@@ -1520,39 +1555,58 @@ const RealEstatePage = () => {
         </ul>
       </SectionShell>
 
-      {/* <SectionShell labelledBy="uae-real-estate-heading">
+      <SectionShell labelledBy="country-markets-heading">
         <SectionIntro
-          id="uae-real-estate-heading"
-          title="UAE Real Estate Software"
-          subtitle="Need UAE-specific PropTech — Ejari, Tawtheeq, PDC, and VAT-ready platforms for Dubai, Abu Dhabi, and Sharjah?"
+          id="country-markets-heading"
+          title="Real Estate Software by Country"
+          subtitle="PropTech and property platforms tailored for local markets — compliance, workflows, and buyer intent in each region."
         />
-        <Link
-          to={ROUTES.industry.uaeRealEstate}
-          className="group flex flex-col gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-amber-400/40 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:flex-row sm:items-center sm:justify-between md:p-6"
-        >
-          <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 text-black">
-              <MapPinned size={18} />
-            </div>
-            <div>
-              <h3 className="mb-1 text-lg font-medium text-white transition-colors group-hover:text-amber-300">
-                Real Estate Software Development in UAE
-              </h3>
-              <p className="max-w-2xl text-sm leading-relaxed text-gray-300">
-                Custom property management, CRM, ERP, and PropTech software
-                built for UAE developers, brokerages, and property managers.
-              </p>
-            </div>
-          </div>
-          <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-amber-400">
-            Explore UAE Real Estate
-            <ArrowRight
-              size={14}
-              className="transition-transform duration-300 group-hover:translate-x-0.5"
-            />
-          </span>
-        </Link>
-      </SectionShell> */}
+        <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+          {countryMarkets.map((market) => {
+            const cardClassName =
+              "group flex h-full flex-col rounded-2xl border border-white/15 bg-black p-5 transition-colors hover:border-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400";
+            const content = (
+              <>
+                <img
+                  src={`https://flagcdn.com/w80/${market.flagCode}.png`}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="mb-4 h-7 w-7 rounded-full object-cover ring-1 ring-white/20"
+                  loading="lazy"
+                />
+                <h3 className="mb-2 text-base font-semibold text-white transition-colors group-hover:text-amber-300">
+                  {market.country}
+                </h3>
+                <p className="text-sm leading-relaxed text-white/90">
+                  {market.line}
+                </p>
+                {market.link && (
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-amber-400">
+                    Explore
+                    <ArrowRight
+                      size={12}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
+                  </span>
+                )}
+              </>
+            );
+
+            return (
+              <li key={market.country}>
+                {market.link ? (
+                  <Link to={market.link} className={cardClassName}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={cardClassName}>{content}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </SectionShell>
 
       <section
         className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black py-16 md:py-20"

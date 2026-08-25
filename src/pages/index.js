@@ -11,6 +11,7 @@ export { default as ERPPage } from './Industries/ERP';
 export { default as HealthCarePage } from './Industries/HealthCare';
 export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as UAERealEstatePage } from './Industries/UAE_REALESTATE';
+export { default as USRealEstatePage } from './Industries/US_REALESTATE';
 export { default as KindergartenPage } from './Industries/Kindergarten';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';
