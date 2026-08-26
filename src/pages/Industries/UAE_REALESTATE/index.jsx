@@ -23,6 +23,9 @@ import {
   Users,
   FileText,
   DollarSign,
+  Layers,
+  FileCheck2,
+  RefreshCw,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -85,13 +88,6 @@ const UAERealEstatePage = () => {
   const { openConsultation } = useConsultation();
 
   /* ---------------------------- DATA (existing content) ---------------------------- */
-
-  const stats = [
-    { number: "7+", label: "Business Years" },
-    { number: "120+", label: "Projects Delivered" },
-    { number: "10+", label: "Industries Catered" },
-    { number: "4+", label: "Countries" },
-  ];
 
   const marketInsights = [
     { value: "AED 917B", label: "Dubai Full Year 2025 Transactions" },
@@ -359,18 +355,21 @@ const UAERealEstatePage = () => {
       title: "Radiant Real Estate — Unit Inventory",
       description:
         "Abu Dhabi developer of Radiant Square and Marina Towers aligned sales, finance, and management on live unit availability across towers, floors, and units.",
+      icon: Layers,
     },
     {
       metric: "PDC",
       title: "Controlled Cheque Lifecycle",
       description:
         "Replaced manual cheque registers with auditable PDC tracking reflected in cash flow forecasting.",
+      icon: FileCheck2,
     },
     {
       metric: "IFRS 15",
       title: "Developer Revenue Recognition",
       description:
         "Revenue on unit sales recognized over the project lifecycle with deferred revenue schedules auditors expect.",
+      icon: RefreshCw,
     },
   ];
 
@@ -477,20 +476,21 @@ const UAERealEstatePage = () => {
     <div className="min-h-screen bg-black">
       <SEO {...seoData.uaeRealEstate} />
 
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 pb-12 md:pt-20 md:pb-16">
+      {/* ================= HERO + MARKET (continuous blue) ================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-20">
         <div
           className="pointer-events-none absolute inset-0 opacity-10"
           aria-hidden="true"
         >
           <div className="absolute top-16 right-16 h-28 w-28 rounded-full bg-blue-500 blur-3xl" />
-          <div className="absolute bottom-24 left-16 h-20 w-20 rounded-full bg-blue-400 blur-2xl" />
+          <div className="absolute bottom-40 left-16 h-20 w-20 rounded-full bg-blue-400 blur-2xl" />
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
 
-        <div className="relative container mx-auto max-w-6xl px-4">
-          <div className="grid items-center gap-8 py-2 sm:gap-10 lg:grid-cols-2 lg:gap-16 lg:py-10 xl:gap-20 2xl:gap-24 2xl:py-22">
-            <div className="max-w-xl space-y-5 text-white">
+        {/* Hero */}
+        <div className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-16">
+          <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:gap-16 lg:py-10 xl:gap-20 2xl:gap-24 2xl:py-22">
+            {/* 1. Text — mobile first */}
+            <div className="order-1 max-w-xl space-y-5 text-white">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
                 UAE PropTech
               </p>
@@ -500,24 +500,10 @@ const UAERealEstatePage = () => {
               <p className="text-lg leading-relaxed text-gray-300">
                 Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai .
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <button
-                  type="button"
-                  onClick={openConsultation}
-                  className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
-                >
-                  Schedule a Consultation →
-                </button>
-                <a
-                  href="#capabilities"
-                  className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  Explore Capabilities
-                </a>
-              </div>
             </div>
 
-            <div className="relative mt-4 w-full lg:mt-0">
+            {/* 2. Image — after text on mobile; right column on desktop */}
+            <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0">
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
                 <img
                   src="/pics/uae-hero.png"
@@ -528,39 +514,58 @@ const UAERealEstatePage = () => {
                 />
               </div>
             </div>
+
+            {/* 3. CTAs — after image on mobile; under text on desktop */}
+            <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3">
+              <button
+                type="button"
+                onClick={openConsultation}
+                className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              >
+                Schedule a Consultation →
+              </button>
+              <a
+                href="#capabilities"
+                className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Explore Capabilities
+              </a>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* ================= TRUST METRICS ================= */}
-   
-
-      {/* ================= MARKET CONTEXT ================= */}
-      <Shell labelledBy="market-heading" alt>
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
-          <Heading
-            id="market-heading"
-            align="left"
-            eyebrow="Market Context"
-            title="Why UAE Real Estate Businesses Need Custom Software"
-            subtitle="Replace WhatsApp and spreadsheets with custom PropTech—unifying CRM, property management, inventory, and finance for UAE developers and brokers."
-          />
-          <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
-            {marketInsights.map((item) => (
-              <li
-                key={item.label}
-                className="rounded-xl border border-white/10 bg-black/30 p-4"
-              >
-                <TrendingUp className="mb-3 h-4 w-4 text-amber-400" />
-                <p className="text-lg  text-white">{item.value}</p>
-                <p className="mt-1 text-xs leading-relaxed text-gray-400">
-                  {item.label}
-                </p>
-              </li>
-            ))}
-          </ul>
+        {/* Market Context — same blue band */}
+        <div
+          className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-14 lg:pb-16"
+          aria-labelledby="market-heading"
+        >
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <Heading
+              id="market-heading"
+              align="left"
+              eyebrow="Market Context"
+              title="Why UAE Real Estate Businesses Need Custom Software"
+              subtitle="Replace WhatsApp and spreadsheets with custom PropTech—unifying CRM, property management, inventory, and finance for UAE developers and brokers."
+            />
+            <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
+              {marketInsights.map((item) => (
+                <li
+                  key={item.label}
+                  className="rounded-xl border border-white/10 bg-black/30 p-4"
+                >
+                  <TrendingUp className="mb-3 h-4 w-4 text-amber-400" />
+                  <p className="text-lg text-white">{item.value}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-200">
+                    {item.label}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </Shell>
+
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-black md:h-20" />
+      </section>
 
       {/* ================= CAPABILITIES ================= */}
       <Shell labelledBy="capabilities">
@@ -804,7 +809,7 @@ const UAERealEstatePage = () => {
           subtitle="Four clear phases from discovery to ongoing support."
         />
 
-        <ol className="relative space-y-8 border-l border-white/15 pl-6 md:hidden">
+        <ol className="relative space-y-8 border-l border-white/15 pl-6 ml-2 md:hidden">
           {processSteps.map((step) => (
             <li key={step.number}>
               <span className="absolute -left-[13px] flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
@@ -856,28 +861,71 @@ const UAERealEstatePage = () => {
           subtitle="Delivery outcomes from UAE real estate implementations."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
-          {caseStudies.map((item) => (
-            <li
-              key={item.title}
-              className="overflow-hidden rounded-xl border border-white/10 bg-gray-950"
-            >
-              <div
-                className="h-24 bg-gradient-to-br from-blue-950 via-gray-900 to-black md:h-28"
-                aria-hidden="true"
-              />
-              <div className="p-5 md:p-6">
-                <p className="mb-2 text-2xl font-semibold text-amber-400 md:text-3xl">
-                  {item.metric}
-                </p>
-                <h3 className="mb-2 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
-                  {item.title}
-                </h3>
-                <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
-                  {item.description}
-                </p>
-              </div>
-            </li>
-          ))}
+          {caseStudies.map((item, index) => {
+            const Icon = item.icon;
+            const gradientId = `uae-case-bg-${index}`;
+            return (
+              <li
+                key={item.title}
+                className="overflow-hidden rounded-xl border border-white/10 bg-gray-950"
+              >
+                <div className="relative flex h-24 items-center justify-center overflow-hidden md:h-28">
+                  <svg
+                    className="absolute inset-0 h-full w-full"
+                    viewBox="0 0 400 160"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    preserveAspectRatio="xMidYMid slice"
+                  >
+                    <defs>
+                      <linearGradient
+                        id={gradientId}
+                        x1="0"
+                        y1="0"
+                        x2="400"
+                        y2="160"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#172554" />
+                        <stop offset="0.55" stopColor="#111827" />
+                        <stop offset="1" stopColor="#000000" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="400" height="160" fill={`url(#${gradientId})`} />
+                    <circle cx="320" cy="20" r="70" fill="#F59E0B" fillOpacity="0.08" />
+                    <circle cx="60" cy="140" r="50" fill="#3B82F6" fillOpacity="0.1" />
+                    <path
+                      d="M0 110 C80 90 140 130 220 105 C300 80 340 95 400 85 L400 160 L0 160 Z"
+                      fill="#F59E0B"
+                      fillOpacity="0.06"
+                    />
+                    <path
+                      d="M40 40 H120 M40 60 H100 M40 80 H110"
+                      stroke="#F59E0B"
+                      strokeOpacity="0.25"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-amber-400/30 bg-amber-400/10 backdrop-blur-sm">
+                    <Icon className="h-6 w-6 text-amber-400" />
+                  </div>
+                </div>
+                <div className="p-5 md:p-6">
+                  <p className="mb-2 text-2xl font-semibold text-amber-400 md:text-3xl">
+                    {item.metric}
+                  </p>
+                  <h3 className="mb-2 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </Shell>
 

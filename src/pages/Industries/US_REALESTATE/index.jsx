@@ -22,6 +22,8 @@ import {
   Wrench,
   MessageSquare,
   Smartphone,
+  RefreshCw,
+  Layers,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -79,13 +81,6 @@ const USRealEstatePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
-
-  const stats = [
-    { number: "12.5 hrs", label: "Saved per week with AI communications" },
-    { number: "5.2 days", label: "Faster vacancy filling" },
-    { number: "20%", label: "Increase in renewal rates" },
-    { number: "95%", label: "See benefits within weeks" },
-  ];
 
   const marketInsights = [
     { value: "36%", label: "Of US housing units are rental housing" },
@@ -159,7 +154,7 @@ const USRealEstatePage = () => {
       title: "US Property Management Companies",
       description:
         "Operators running residential and commercial portfolios who need leasing, maintenance, accounting, and resident experience in one platform.",
-      image: "/pics/property-management-companies.webp",
+      image: "/pics/Property Management Office.png",
       bullets: [
         "Unified leasing, maintenance, and accounting workflows",
         "Owner and resident portals for self-service",
@@ -167,25 +162,13 @@ const USRealEstatePage = () => {
         "Cloud access for teams across properties and metros",
       ],
     },
-    {
-      tab: "Leasing Teams",
-      title: "Leasing & Sales Teams",
-      description:
-        "Agents who need faster lead response, prioritized tasks, and clearer attribution across listing channels.",
-      image: "/pics/property-management-companies1.webp",
-      bullets: [
-        "Leasing CRM with AI-powered lead prioritization",
-        "Listing and tour scheduling integrations",
-        "Online rental applications with document upload",
-        "Advanced lead attribution by channel",
-      ],
-    },
+  
     {
       tab: "Maintenance",
       title: "Maintenance & Operations Teams",
       description:
         "Teams coordinating vendors, work orders, unit turns, and facility work across large portfolios.",
-      image: "/pics/sood.jpg",
+      image: "/pics/Maintenance Operations.png",
       bullets: [
         "Smart maintenance with vendor network coverage",
         "Automated unit turn workflows",
@@ -198,7 +181,7 @@ const USRealEstatePage = () => {
       title: "Real Estate Investors & Funds",
       description:
         "Investment firms and syndications that need portfolio reporting, distributions, and tax withholding support.",
-      image: "/pics/sunview.jpeg",
+      image: "/pics/Investor Dashboard.png",
       bullets: [
         "Investment management for funds and syndications",
         "Secure investor distributions and tax withholdings",
@@ -211,7 +194,7 @@ const USRealEstatePage = () => {
       title: "Resident Experience",
       description:
         "Renters expect smooth move-in, clear communication, and easy renewal and payment support.",
-      image: "/pics/ndmc.jpg",
+      image: "/pics/Resident.png",
       bullets: [
         "Personalized onboarding guidance",
         "Unified resident messaging",
@@ -219,19 +202,7 @@ const USRealEstatePage = () => {
         "Mobile-first self-service access",
       ],
     },
-    {
-      tab: "Enterprise",
-      title: "Enterprise Operators",
-      description:
-        "Mid-market and large operators consolidating fragmented systems into one AI-native property platform.",
-      image: "/pics/ndmc.png",
-      bullets: [
-        "Replace multiple siloed tools with one platform",
-        "API access for units, tenants, leases, and finance",
-        "FCRA and HUD-ready compliance workflows",
-        "North American timezone support and training",
-      ],
-    },
+   
   ];
 
   const techStack = [
@@ -379,18 +350,21 @@ const USRealEstatePage = () => {
       title: "Advanced Management Company",
       description:
         "Consolidated nine separate systems into one AI-native platform, improving productivity and delivering a seamless resident experience.",
+      icon: Layers,
     },
     {
       metric: "180+",
       title: "Morton Realty — Maintenance",
       description:
         "Property management firm with 180+ units streamlined maintenance through an integrated vendor network with strong documentation and pricing.",
+      icon: Wrench,
     },
     {
       metric: "1.2 days",
       title: "Faster Unit Turns Nationwide",
       description:
         "Operators using automated unit turn workflows report a 1.2-day average reduction in turn time, plus faster vacancy fill and higher renewals.",
+      icon: RefreshCw,
     },
   ];
 
@@ -475,24 +449,25 @@ const USRealEstatePage = () => {
     <div className="min-h-screen bg-black">
       <SEO {...seoData.usRealEstate} />
 
-      {/* ================= HERO ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 pb-12 md:pt-20 md:pb-16">
+      {/* ================= HERO + MARKET (continuous blue) ================= */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-20">
         <div
           className="pointer-events-none absolute inset-0 opacity-10"
           aria-hidden="true"
         >
           <div className="absolute top-16 right-16 h-28 w-28 rounded-full bg-blue-500 blur-3xl" />
-          <div className="absolute bottom-24 left-16 h-20 w-20 rounded-full bg-blue-400 blur-2xl" />
+          <div className="absolute bottom-40 left-16 h-20 w-20 rounded-full bg-blue-400 blur-2xl" />
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
 
-        <div className="relative container mx-auto max-w-6xl px-4">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-            <div className="max-w-xl space-y-5 text-white">
+        {/* Hero */}
+        <div className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-16">
+          <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:gap-16 lg:py-10 xl:gap-20 2xl:gap-24 2xl:py-22">
+            {/* 1. Text — mobile first */}
+            <div className="order-1 max-w-xl space-y-5 text-white">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
                 US PropTech
               </p>
-              <h1 className="text-[25px] leading-tight md:text-4xl">
+              <h1 className="text-[25px] leading-tight md:text-[35px]">
                 Technology Partner for US Real Estate Businesses
               </h1>
               <p className="text-lg leading-relaxed text-gray-300">
@@ -500,76 +475,72 @@ const USRealEstatePage = () => {
                 managers, leasing teams, and investors—unifying leasing,
                 maintenance, accounting, and resident experience.
               </p>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <button
-                  type="button"
-                  onClick={openConsultation}
-                  className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
-                >
-                  Schedule a Consultation →
-                </button>
-                <a
-                  href="#capabilities"
-                  className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  Explore Capabilities
-                </a>
+            </div>
+
+            {/* 2. Image — after text on mobile; right column on desktop */}
+            <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
+                <img
+                  src="/pics/us-hero.png"
+                  alt="US property management software"
+                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="/pics/property-management-companies.webp"
-                alt="US property management software"
-                className="h-64 w-full object-cover md:h-[380px] lg:h-[420px]"
-              />
+            {/* 3. CTAs — after image on mobile; under text on desktop */}
+            <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3">
+              <button
+                type="button"
+                onClick={openConsultation}
+                className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              >
+                Schedule a Consultation →
+              </button>
+              <a
+                href="#capabilities"
+                className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Explore Capabilities
+              </a>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ================= TRUST METRICS ================= */}
-      <section className="bg-black py-10 md:py-12" aria-label="Proven outcomes">
-        <div className="container mx-auto max-w-6xl px-4">
-          <ul className="grid list-none grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
-            {stats.map((stat) => (
-              <li key={stat.label} className="text-center md:text-left">
-                <p className="text-3xl font-medium text-amber-400 md:text-4xl">
-                  {stat.number}
-                </p>
-                <p className="mt-1 text-sm text-white">{stat.label}</p>
-              </li>
-            ))}
-          </ul>
+        {/* Market Context — same blue band */}
+        <div
+          className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-14 lg:pb-16"
+          aria-labelledby="market-heading"
+        >
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <Heading
+              id="market-heading"
+              align="left"
+              eyebrow="Market Context"
+              title="Why US Real Estate Needs Modern Technology"
+              subtitle="With rental housing at 36% of US units and resident expectations rising—75% face move-in challenges—property managers need cloud platforms that improve efficiency and resident experience."
+            />
+            <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
+              {marketInsights.map((item) => (
+                <li
+                  key={item.label}
+                  className="rounded-xl border border-white/10 bg-black/30 p-4"
+                >
+                  <TrendingUp className="mb-3 h-4 w-4 text-amber-400" />
+                  <p className="text-lg text-white">{item.value}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-gray-200">
+                    {item.label}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </section>
 
-      {/* ================= MARKET CONTEXT ================= */}
-      <Shell labelledBy="market-heading" alt>
-        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
-          <Heading
-            id="market-heading"
-            align="left"
-            eyebrow="Market Context"
-            title="Why US Real Estate Needs Modern Technology"
-            subtitle="With rental housing at 36% of US units and resident expectations rising—75% face move-in challenges—property managers need cloud platforms that improve efficiency and resident experience."
-          />
-          <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
-            {marketInsights.map((item) => (
-              <li
-                key={item.label}
-                className="rounded-xl border border-white/10 bg-black/30 p-4"
-              >
-                <TrendingUp className="mb-3 h-4 w-4 text-amber-400" />
-                <p className="text-lg text-white">{item.value}</p>
-                <p className="mt-1 text-xs leading-relaxed text-gray-400">
-                  {item.label}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Shell>
+        <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-black md:h-20" />
+      </section>
 
       {/* ================= CAPABILITIES ================= */}
       <Shell labelledBy="capabilities">
@@ -590,10 +561,10 @@ const USRealEstatePage = () => {
                 <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-amber-400/15">
                   <Icon className="h-4 w-4 text-amber-400" />
                 </div>
-                <h3 className="mb-2 text-sm leading-snug text-white">
+                <h3 className="mb-2 text-sm font-semibold leading-snug text-white md:text-[15px]">
                   {service.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-300 md:text-sm">
                   {service.description}
                 </p>
               </li>
@@ -614,18 +585,18 @@ const USRealEstatePage = () => {
           {challenges.map((item, index) => (
             <li
               key={item.challenge}
-              className="rounded-xl border border-white/10 bg-black/30 p-5"
+              className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
             >
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 md:text-xs">
                 Challenge {String(index + 1).padStart(2, "0")}
               </p>
-              <p className="mb-4 text-sm leading-relaxed text-white">
+              <p className="mb-4 text-sm leading-relaxed text-white md:text-[15px]">
                 {item.challenge}
               </p>
-              <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-400">
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-400 md:text-xs">
                 Our Solution
               </p>
-              <p className="text-sm leading-relaxed text-gray-300">
+              <p className="text-sm leading-relaxed text-gray-300 md:text-[15px]">
                 {item.solution}
               </p>
             </li>
@@ -642,10 +613,37 @@ const USRealEstatePage = () => {
           subtitle="Software shaped around how US property managers, leasing teams, maintenance crews, investors, and residents operate."
         />
 
+        {/* Mobile: full-width selector */}
+        <div className="mb-8 md:hidden">
+          <label htmlFor="us-stakeholder-select" className="sr-only">
+            Select stakeholder type
+          </label>
+          <div className="relative">
+            <select
+              id="us-stakeholder-select"
+              value={activeStakeholder}
+              onChange={(e) => setActiveStakeholder(Number(e.target.value))}
+              aria-controls="us-stakeholder-panel"
+              className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+            >
+              {stakeholders.map((item, index) => (
+                <option key={item.tab} value={index} className="bg-gray-950 text-white">
+                  {item.tab}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-amber-400"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        {/* Desktop: centered pill tabs */}
         <div
           role="tablist"
           aria-label="Stakeholder types"
-          className="mb-8 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mb-8 hidden flex-wrap justify-center gap-2 md:flex"
         >
           {stakeholders.map((item, index) => {
             const selected = activeStakeholder === index;
@@ -658,7 +656,7 @@ const USRealEstatePage = () => {
                 id={`us-stakeholder-tab-${index}`}
                 aria-controls="us-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
-                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
+                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
                   selected
                     ? "bg-amber-400 text-black"
                     : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
@@ -674,23 +672,23 @@ const USRealEstatePage = () => {
           id="us-stakeholder-panel"
           role="tabpanel"
           aria-labelledby={`us-stakeholder-tab-${activeStakeholder}`}
-          className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2"
+          className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-400/15">
-              <ActiveStakeholderIcon className="h-5 w-5 text-amber-400" />
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-400/15 2xl:h-11 2xl:w-11">
+              <ActiveStakeholderIcon className="h-5 w-5 text-amber-400 2xl:h-6 2xl:w-6" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold text-white">
+            <h3 className="mb-2 text-xl font-semibold text-white 2xl:text-2xl">
               {active.title}
             </h3>
-            <p className="mb-5 text-sm leading-relaxed text-gray-300">
+            <p className="mb-5 text-sm leading-relaxed text-gray-300 2xl:text-base">
               {active.description}
             </p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 2xl:space-y-3">
               {active.bullets.map((bullet) => (
                 <li
                   key={bullet}
-                  className="flex items-start gap-2 text-sm text-gray-200"
+                  className="flex items-start gap-2 text-sm text-gray-200 2xl:text-base"
                 >
                   <span
                     className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400"
@@ -701,12 +699,12 @@ const USRealEstatePage = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden min-h-[220px] overflow-hidden rounded-xl border border-white/10 lg:block">
+          <div className="hidden min-h-[220px] overflow-hidden rounded-xl border border-white/10 lg:block 2xl:min-h-[260px]">
             <img
               key={active.image}
               src={active.image}
               alt={`${active.title} — US real estate software`}
-              className="h-full min-h-[220px] w-full object-cover"
+              className="h-full min-h-[220px] w-full object-cover 2xl:min-h-[260px]"
             />
           </div>
         </div>
@@ -726,25 +724,27 @@ const USRealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-black/30 p-4 text-center"
+                className="rounded-xl border border-white/10 bg-black/30 p-4 text-center md:p-5"
               >
-                <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400" />
-                <h3 className="text-sm font-medium text-white">{item.title}</h3>
-                <p className="mt-2 hidden text-xs leading-relaxed text-gray-200 md:block">
+                <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400 md:h-6 md:w-6" />
+                <h3 className="text-sm font-medium text-white md:text-[15px] 2xl:text-base">
+                  {item.title}
+                </h3>
+                <p className="mt-2 hidden text-xs leading-relaxed text-gray-200 md:block md:text-sm">
                   {item.body}
                 </p>
               </li>
             );
           })}
         </ul>
-        <p className="mb-3 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-gray-400">
+        <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
           Integrations & Ecosystem
         </p>
-        <ul className="flex list-none flex-wrap gap-2">
+        <ul className="flex list-none flex-wrap justify-center gap-2">
           {integrations.map((item) => (
             <li
               key={item.title}
-              className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200"
+              className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 md:px-3.5 md:py-2 md:text-[15px]"
             >
               {item.title}
             </li>
@@ -766,13 +766,13 @@ const USRealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-gray-950 p-5"
+                className="rounded-xl border border-white/10 bg-gray-950 p-5 md:p-6"
               >
-                <Icon className="mb-3 h-4 w-4 text-amber-400" />
-                <h3 className="mb-1 text-sm font-semibold text-white">
+                <Icon className="mb-3 h-4 w-4 text-amber-400 md:h-5 md:w-5" />
+                <h3 className="mb-1 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
                   {item.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-200">
+                <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
                   {item.body}
                 </p>
               </li>
@@ -792,13 +792,13 @@ const USRealEstatePage = () => {
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
             <li key={item.id}>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 md:text-xs">
                 {String(item.id).padStart(2, "0")}
               </p>
-              <h3 className="mb-2 text-base font-semibold text-white">
+              <h3 className="mb-2 text-base font-semibold text-white md:text-lg 2xl:text-xl">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-gray-200">
+              <p className="text-sm leading-relaxed text-gray-200 md:text-[15px] 2xl:text-base">
                 {item.description}
               </p>
             </li>
@@ -815,7 +815,7 @@ const USRealEstatePage = () => {
           subtitle="Four clear phases from discovery to ongoing support."
         />
 
-        <ol className="relative space-y-8 border-l border-white/15 pl-6 md:hidden">
+        <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
           {processSteps.map((step) => (
             <li key={step.number}>
               <span className="absolute -left-[13px] flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
@@ -838,7 +838,7 @@ const USRealEstatePage = () => {
             {processSteps.map((step, index) => (
               <li key={step.number} className="px-2 text-center">
                 <div
-                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold ${
+                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${
                     index === 0
                       ? "bg-amber-400 text-black"
                       : "border border-white/20 bg-black text-white"
@@ -846,10 +846,10 @@ const USRealEstatePage = () => {
                 >
                   {step.number}
                 </div>
-                <h3 className="mb-1.5 text-sm font-semibold text-white">
+                <h3 className="mb-1.5 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
                   {step.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-400 md:text-sm">
                   {/* {step.description} */}
                 </p>
               </li>
@@ -867,28 +867,71 @@ const USRealEstatePage = () => {
           subtitle="Measurable results from AI-native property management platforms."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
-          {caseStudies.map((item) => (
-            <li
-              key={item.title}
-              className="overflow-hidden rounded-xl border border-white/10 bg-black/30"
-            >
-              <div
-                className="h-24 bg-gradient-to-br from-blue-950 via-gray-900 to-black"
-                aria-hidden="true"
-              />
-              <div className="p-5">
-                <p className="mb-2 text-2xl font-semibold text-amber-400">
-                  {item.metric}
-                </p>
-                <h3 className="mb-2 text-sm font-semibold text-white">
-                  {item.title}
-                </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
-                  {item.description}
-                </p>
-              </div>
-            </li>
-          ))}
+          {caseStudies.map((item, index) => {
+            const Icon = item.icon;
+            const gradientId = `us-case-bg-${index}`;
+            return (
+              <li
+                key={item.title}
+                className="overflow-hidden rounded-xl border border-white/10 bg-black/30"
+              >
+                <div className="relative flex h-24 items-center justify-center overflow-hidden md:h-28">
+                  <svg
+                    className="absolute inset-0 h-full w-full"
+                    viewBox="0 0 400 160"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    preserveAspectRatio="xMidYMid slice"
+                  >
+                    <defs>
+                      <linearGradient
+                        id={gradientId}
+                        x1="0"
+                        y1="0"
+                        x2="400"
+                        y2="160"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stopColor="#172554" />
+                        <stop offset="0.55" stopColor="#111827" />
+                        <stop offset="1" stopColor="#000000" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="400" height="160" fill={`url(#${gradientId})`} />
+                    <circle cx="320" cy="20" r="70" fill="#F59E0B" fillOpacity="0.08" />
+                    <circle cx="60" cy="140" r="50" fill="#3B82F6" fillOpacity="0.1" />
+                    <path
+                      d="M0 110 C80 90 140 130 220 105 C300 80 340 95 400 85 L400 160 L0 160 Z"
+                      fill="#F59E0B"
+                      fillOpacity="0.06"
+                    />
+                    <path
+                      d="M40 40 H120 M40 60 H100 M40 80 H110"
+                      stroke="#F59E0B"
+                      strokeOpacity="0.25"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-amber-400/30 bg-amber-400/10 backdrop-blur-sm">
+                    <Icon className="h-6 w-6 text-amber-400" />
+                  </div>
+                </div>
+                <div className="p-5 md:p-6">
+                  <p className="mb-2 text-2xl font-semibold text-amber-400 md:text-3xl">
+                    {item.metric}
+                  </p>
+                  <h3 className="mb-2 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
+                    {item.description}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </Shell>
 
@@ -908,16 +951,16 @@ const USRealEstatePage = () => {
                   aria-expanded={open}
                   aria-controls={panelId}
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between gap-4 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  className="flex w-full items-center justify-between gap-4 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:py-5"
                 >
-                  <h3 className="pr-2 text-sm font-medium text-white md:text-base">
+                  <h3 className="pr-2 text-sm font-medium text-white md:text-base 2xl:text-lg">
                     {faq.question}
                   </h3>
                   <span className="shrink-0 text-amber-400" aria-hidden="true">
                     {open ? (
-                      <ChevronUp className="h-4 w-4" />
+                      <ChevronUp className="h-4 w-4 md:h-5 md:w-5" />
                     ) : (
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4 md:h-5 md:w-5" />
                     )}
                   </span>
                 </button>
@@ -926,10 +969,10 @@ const USRealEstatePage = () => {
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!open}
-                  className={open ? "pb-4" : ""}
+                  className={open ? "pb-4 md:pb-5" : ""}
                 >
                   {open && (
-                    <p className="text-sm leading-relaxed text-gray-400">
+                    <p className="text-sm leading-relaxed text-gray-400 md:text-[15px] 2xl:text-base">
                       {faq.answer}
                     </p>
                   )}
@@ -940,9 +983,6 @@ const USRealEstatePage = () => {
         </div>
       </Shell>
 
-      {/* ================= FINAL CTA ================= */}
-    
-
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
@@ -951,7 +991,7 @@ const USRealEstatePage = () => {
         <div className="container mx-auto max-w-6xl px-4">
           <h2
             id="related-industries-heading"
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400"
+            className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
           </h2>
@@ -960,10 +1000,10 @@ const USRealEstatePage = () => {
               <li key={item.title}>
                 <Link
                   to={item.link}
-                  className="inline-flex items-center gap-1 rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-amber-400/40 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  className="inline-flex items-center gap-1 rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-amber-400/40 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:px-3.5 md:py-2 md:text-sm"
                 >
                   {item.title}
-                  <ArrowRight size={11} />
+                  <ArrowRight size={11} className="md:h-3.5 md:w-3.5" />
                 </Link>
               </li>
             ))}
