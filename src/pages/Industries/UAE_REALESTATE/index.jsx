@@ -153,7 +153,7 @@ const UAERealEstatePage = () => {
 
   const stakeholders = [
     {
-      tab: "Developers",
+      tab: "UAE Property Developers",
       title: "Property Developers",
       description:
         "Managing multiple off-plan projects, unit inventory, and investor pipelines.",
@@ -489,24 +489,24 @@ const UAERealEstatePage = () => {
         <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-transparent to-black" />
 
         <div className="relative container mx-auto max-w-6xl px-4">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div className="grid items-center gap-8 py-2 sm:gap-10 lg:grid-cols-2 lg:gap-16 lg:py-10 xl:gap-20 2xl:gap-24 2xl:py-22">
             <div className="max-w-xl space-y-5 text-white">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
                 UAE PropTech
               </p>
-              <h1 className="text-[25px] leading-tight md:text-4xl">
-                Real Estate Software Development Company in UAE — PropTech Solutions
+              <h1 className="text-[25px] leading-tight md:text-[35px]">
+                Real Estate Software Development in UAE — PropTech
               </h1>
               <p className="text-lg leading-relaxed text-gray-300">
-                Custom real estate software for UAE  brokers, and property managers—automating lead management, tenant operations, and portfolio visibility across Dubai and Abu Dhabi.
+                Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai .
               </p>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <button 
+                <button
                   type="button"
                   onClick={openConsultation}
                   className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                   Schedule a  Consultation →
+                  Schedule a Consultation →
                 </button>
                 <a
                   href="#capabilities"
@@ -517,35 +517,23 @@ const UAERealEstatePage = () => {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src="/pics/sunview.jpeg"
-                alt="UAE real estate development"
-                className="h-64 w-full object-cover md:h-[380px] lg:h-[420px]"
-              />
+            <div className="relative mt-4 w-full lg:mt-0">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
+                <img
+                  src="/pics/uae-hero.png"
+                  alt="UAE real estate PropTech software"
+                  className="mx-auto block h-auto w-full object-contain object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ================= TRUST METRICS ================= */}
-      <section
-        className="bg-black py-10 md:py-12"
-        aria-label="Company metrics"
-      >
-        <div className="container mx-auto max-w-6xl px-4">
-          <ul className="grid list-none grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
-            {stats.map((stat) => (
-              <li key={stat.label} className="text-center md:text-left">
-                <p className="text-3xl font-medium text-amber-400 md:text-4xl">
-                  {stat.number}
-                </p>
-                <p className="mt-1 text-sm text-white">{stat.label}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+   
 
       {/* ================= MARKET CONTEXT ================= */}
       <Shell labelledBy="market-heading" alt>
@@ -555,7 +543,7 @@ const UAERealEstatePage = () => {
             align="left"
             eyebrow="Market Context"
             title="Why UAE Real Estate Businesses Need Custom Software"
-            subtitle="Despite significant market growth, many UAE operators still rely on WhatsApp, spreadsheets, and disconnected systems. Custom software unifies lead management, sales, property inventory, finance, and tenant communication into a single integrated platform."
+            subtitle="Replace WhatsApp and spreadsheets with custom PropTech—unifying CRM, property management, inventory, and finance for UAE developers and brokers."
           />
           <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
             {marketInsights.map((item) => (
@@ -593,10 +581,10 @@ const UAERealEstatePage = () => {
                 <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-amber-400/15">
                   <Icon className="h-4 w-4 text-amber-400" />
                 </div>
-                <h3 className="mb-2 text-sm  leading-snug text-white">
+                <h3 className="mb-2 text-sm font-semibold leading-snug text-white md:text-[15px]">
                   {service.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-200 md:text-[13px]">
                   {service.description}
                 </p>
               </li>
@@ -614,10 +602,37 @@ const UAERealEstatePage = () => {
           subtitle="Software shaped around how UAE developers, managers, brokerages, investors, and PropTech teams actually operate."
         />
 
+        {/* Mobile: full-width selector so every option stays visible */}
+        <div className="mb-8 md:hidden">
+          <label htmlFor="stakeholder-select" className="sr-only">
+            Select stakeholder type
+          </label>
+          <div className="relative">
+            <select
+              id="stakeholder-select"
+              value={activeStakeholder}
+              onChange={(e) => setActiveStakeholder(Number(e.target.value))}
+              aria-controls="stakeholder-panel"
+              className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+            >
+              {stakeholders.map((item, index) => (
+                <option key={item.tab} value={index} className="bg-gray-950 text-white">
+                  {item.tab}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-amber-400"
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+
+        {/* Desktop: centered pill tabs */}
         <div
           role="tablist"
           aria-label="Stakeholder types"
-          className="mb-8 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mb-8 hidden flex-wrap justify-center gap-2 md:flex"
         >
           {stakeholders.map((item, index) => {
             const selected = activeStakeholder === index;
@@ -630,7 +645,7 @@ const UAERealEstatePage = () => {
                 id={`stakeholder-tab-${index}`}
                 aria-controls="stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
-                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
+                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
                   selected
                     ? "bg-amber-400 text-black"
                     : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
@@ -646,23 +661,23 @@ const UAERealEstatePage = () => {
           id="stakeholder-panel"
           role="tabpanel"
           aria-labelledby={`stakeholder-tab-${activeStakeholder}`}
-          className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2"
+          className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-400/15">
-              <ActiveStakeholderIcon className="h-5 w-5 text-amber-400" />
+            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-amber-400/15 2xl:h-11 2xl:w-11">
+              <ActiveStakeholderIcon className="h-5 w-5 text-amber-400 2xl:h-6 2xl:w-6" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold text-white">
+            <h3 className="mb-2 text-xl font-semibold text-white 2xl:text-2xl">
               {active.title}
             </h3>
-            <p className="mb-5 text-sm leading-relaxed text-gray-300">
+            <p className="mb-5 text-sm leading-relaxed text-gray-300 2xl:text-base">
               {active.description}
             </p>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 2xl:space-y-3">
               {active.bullets.map((bullet) => (
                 <li
                   key={bullet}
-                  className="flex items-start gap-2 text-sm text-gray-200"
+                  className="flex items-start gap-2 text-sm text-gray-200 2xl:text-base"
                 >
                   <span
                     className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400"
@@ -673,12 +688,12 @@ const UAERealEstatePage = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden min-h-[220px] overflow-hidden rounded-xl border border-white/10 lg:block">
+          <div className="hidden min-h-[220px] overflow-hidden rounded-xl border border-white/10 lg:block 2xl:min-h-[260px]">
             <img
               key={active.image}
               src={active.image}
               alt={`${active.title} — UAE real estate software`}
-              className="h-full min-h-[220px] w-full object-cover"
+              className="h-full min-h-[220px] w-full object-cover 2xl:min-h-[260px]"
             />
           </div>
         </div>
@@ -698,27 +713,27 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-gray-950 p-4 text-center"
+                className="rounded-xl border border-white/10 bg-gray-950 p-4 text-center md:p-5"
               >
-                <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400" />
-                <h3 className="text-sm font-medium text-white">
+                <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400 md:h-6 md:w-6" />
+                <h3 className="text-sm font-medium text-white md:text-[15px] 2xl:text-base">
                   {item.title}
                 </h3>
-                <p className="mt-2 hidden text-xs leading-relaxed text-gray-200 md:block">
+                <p className="mt-2 hidden text-xs leading-relaxed text-gray-200 md:block md:text-sm">
                   {item.body}
                 </p>
               </li>
             );
           })}
         </ul>
-        <p className="mb-3 mt-8 text-xs font-semibold uppercase tracking-[0.14em] text-gray-400">
+        <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
           Integrates with
         </p>
-        <ul className="flex list-none flex-wrap gap-2">
+        <ul className="flex list-none flex-wrap justify-center gap-2">
           {integrations.map((item) => (
             <li
               key={item.title}
-              className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200"
+              className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 md:px-3.5 md:py-2 md:text-[15px]"
             >
               {item.title}
             </li>
@@ -740,13 +755,13 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-black/30 p-5"
+                className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
               >
-                <Icon className="mb-3 h-4 w-4 text-amber-400" />
-                <h3 className="mb-1 text-sm font-semibold text-white">
+                <Icon className="mb-3 h-4 w-4 text-amber-400 md:h-5 md:w-5" />
+                <h3 className="mb-1 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
                   {item.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-200">
+                <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
                   {item.body}
                 </p>
               </li>
@@ -766,13 +781,13 @@ const UAERealEstatePage = () => {
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
             <li key={item.id}>
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 md:text-xs">
                 {String(item.id).padStart(2, "0")}
               </p>
-              <h3 className="mb-2 text-base font-semibold text-white">
+              <h3 className="mb-2 text-base font-semibold text-white md:text-lg 2xl:text-xl">
                 {item.title}
               </h3>
-              <p className="text-sm leading-relaxed text-gray-200">
+              <p className="text-sm leading-relaxed text-gray-200 md:text-[15px] 2xl:text-base">
                 {item.description}
               </p>
             </li>
@@ -812,7 +827,7 @@ const UAERealEstatePage = () => {
             {processSteps.map((step, index) => (
               <li key={step.number} className="px-2 text-center">
                 <div
-                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold ${
+                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${
                     index === 0
                       ? "bg-amber-400 text-black"
                       : "border border-white/20 bg-black text-white"
@@ -820,10 +835,10 @@ const UAERealEstatePage = () => {
                 >
                   {step.number}
                 </div>
-                <h3 className="mb-1.5 text-sm font-semibold text-white">
+                <h3 className="mb-1.5 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
                   {step.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-400 md:text-sm">
                   {/* {step.description} */}
                 </p>
               </li>
@@ -847,17 +862,17 @@ const UAERealEstatePage = () => {
               className="overflow-hidden rounded-xl border border-white/10 bg-gray-950"
             >
               <div
-                className="h-24 bg-gradient-to-br from-blue-950 via-gray-900 to-black"
+                className="h-24 bg-gradient-to-br from-blue-950 via-gray-900 to-black md:h-28"
                 aria-hidden="true"
               />
-              <div className="p-5">
-                <p className="mb-2 text-2xl font-semibold text-amber-400">
+              <div className="p-5 md:p-6">
+                <p className="mb-2 text-2xl font-semibold text-amber-400 md:text-3xl">
                   {item.metric}
                 </p>
-                <h3 className="mb-2 text-sm font-semibold text-white">
+                <h3 className="mb-2 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
                   {item.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-200 md:text-sm">
                   {item.description}
                 </p>
               </div>
@@ -882,16 +897,16 @@ const UAERealEstatePage = () => {
                   aria-expanded={open}
                   aria-controls={panelId}
                   onClick={() => toggleFAQ(index)}
-                  className="flex w-full items-center justify-between gap-4 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  className="flex w-full items-center justify-between gap-4 py-4 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:py-5"
                 >
-                  <h3 className="pr-2 text-sm font-medium text-white md:text-base">
+                  <h3 className="pr-2 text-sm font-medium text-white md:text-base 2xl:text-lg">
                     {faq.question}
                   </h3>
                   <span className="shrink-0 text-amber-400" aria-hidden="true">
                     {open ? (
-                      <ChevronUp className="h-4 w-4" />
+                      <ChevronUp className="h-4 w-4 md:h-5 md:w-5" />
                     ) : (
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className="h-4 w-4 md:h-5 md:w-5" />
                     )}
                   </span>
                 </button>
@@ -900,10 +915,10 @@ const UAERealEstatePage = () => {
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!open}
-                  className={open ? "pb-4" : ""}
+                  className={open ? "pb-4 md:pb-5" : ""}
                 >
                   {open && (
-                    <p className="text-sm leading-relaxed text-gray-400">
+                    <p className="text-sm leading-relaxed text-gray-400 md:text-[15px] 2xl:text-base">
                       {faq.answer}
                     </p>
                   )}
@@ -925,7 +940,7 @@ const UAERealEstatePage = () => {
         <div className="container mx-auto max-w-6xl px-4">
           <h2
             id="related-industries-heading"
-            className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400"
+            className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
           </h2>
@@ -934,10 +949,10 @@ const UAERealEstatePage = () => {
               <li key={item.title}>
                 <Link
                   to={item.link}
-                  className="inline-flex items-center gap-1 rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-amber-400/40 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  className="inline-flex items-center gap-1 rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-amber-400/40 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:px-3.5 md:py-2 md:text-sm"
                 >
                   {item.title}
-                  <ArrowRight size={11} />
+                  <ArrowRight size={11} className="md:h-3.5 md:w-3.5" />
                 </Link>
               </li>
             ))}
