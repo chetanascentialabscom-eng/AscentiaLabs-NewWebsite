@@ -488,9 +488,9 @@ const UAERealEstatePage = () => {
 
         {/* Hero */}
         <div className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-16">
-          <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:gap-16 lg:py-10 xl:gap-20 2xl:gap-24 2xl:py-22">
+          <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-16 lg:gap-y-4 lg:py-10 xl:gap-x-20 2xl:gap-x-24 2xl:gap-y-5 2xl:py-22">
             {/* 1. Text — mobile first */}
-            <div className="order-1 max-w-xl space-y-5 text-white">
+            <div className="order-1 max-w-xl space-y-5 text-white lg:self-end">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
                 UAE PropTech
               </p>
@@ -503,7 +503,7 @@ const UAERealEstatePage = () => {
             </div>
 
             {/* 2. Image — after text on mobile; right column on desktop */}
-            <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0">
+            <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0 lg:self-center">
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
                 <img
                   src="/pics/uae-hero.png"
@@ -516,7 +516,7 @@ const UAERealEstatePage = () => {
             </div>
 
             {/* 3. CTAs — after image on mobile; under text on desktop */}
-            <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3">
+            <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3 lg:self-start">
               <button
                 type="button"
                 onClick={openConsultation}
