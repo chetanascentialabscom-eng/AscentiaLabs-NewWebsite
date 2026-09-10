@@ -166,7 +166,7 @@ const UAERealEstatePage = () => {
       title: "Property Management Companies",
       description:
         "Overseeing residential towers, commercial spaces, and mixed-use communities.",
-      image: "/pics/property-management-companies1.webp",
+      image: "/pics/uaepropmanagement.png",
       bullets: [
         "Lease management, rent invoicing, renewals, deposits",
         "Maintenance and work order SLAs",
@@ -192,7 +192,7 @@ const UAERealEstatePage = () => {
       title: "Real Estate Investment Firms",
       description:
         "Managing multi-billion dirham portfolios with real-time reporting.",
-      image: "/pics/uaeinvestor.jpg",
+      image: "/pics/uaeinvestor.png",
       bullets: [
         "Portfolio profitability and investment analytics",
         "Executive finance dashboards for cash flow",
