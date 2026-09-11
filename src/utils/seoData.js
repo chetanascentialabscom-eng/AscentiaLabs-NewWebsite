@@ -115,6 +115,26 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.usRealEstate),
   },
 
+  indiaRealEstate: {
+    title:
+      "India Real Estate Software & Property Management | Ascentia Labs",
+    description:
+      "AI property management software for India—leasing, maintenance, RERA, GST/TDS, 99acres & MagicBricks for managers, builders & NRI landlords.",
+    keywords:
+      "India real estate software, property management software India, PropTech India, RERA compliance, GST rental software, TDS Section 195, MagicBricks integration, 99acres integration",
+    url: absoluteUrl(ROUTES.industry.indiaRealEstate),
+  },
+
+  canadaRealEstate: {
+    title:
+      "Canada Real Estate Software & Property Management | Ascentia Labs",
+    description:
+      "AI property management software for Canada—leasing, maintenance, provincial rent control, renoviction licensing, Realtor.ca & Rentals.ca.",
+    keywords:
+      "Canada real estate software, property management software Canada, PropTech Canada, provincial rent control, renoviction licensing, Realtor.ca, Rentals.ca",
+    url: absoluteUrl(ROUTES.industry.canadaRealEstate),
+  },
+
   kindergarten: {
     title: "Kindergarten Management Software | Ascentia Labs",
     description:

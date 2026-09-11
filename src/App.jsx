@@ -20,6 +20,8 @@ import {
   RealEstatePage,
   UAERealEstatePage,
   USRealEstatePage,
+  IndiaRealEstatePage,
+  CanadaRealEstatePage,
   KindergartenPage,
   EducationPage,
   TravelTourismPage,
@@ -117,6 +119,14 @@ function App() {
             <Route
               path={ROUTES.industry.usRealEstate}
               element={<USRealEstatePage />}
+            />
+            <Route
+              path={ROUTES.industry.indiaRealEstate}
+              element={<IndiaRealEstatePage />}
+            />
+            <Route
+              path={ROUTES.industry.canadaRealEstate}
+              element={<CanadaRealEstatePage />}
             />
             <Route
               path={ROUTES.industry.kindergarten}

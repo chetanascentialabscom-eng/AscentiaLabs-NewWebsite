@@ -5,17 +5,13 @@ import {
   ChevronUp,
   Shield,
   BarChart3,
-  MapPinned,
   Building2,
   Home,
-  Cpu,
-  Landmark,
   Brain,
   TrendingUp,
   Sparkles,
   Network,
   Cloud,
-  Server,
   Database,
   KeyRound,
   ClipboardCheck,
@@ -23,9 +19,11 @@ import {
   Users,
   FileText,
   DollarSign,
-  Layers,
-  FileCheck2,
+  Wrench,
+  MessageSquare,
+  Smartphone,
   RefreshCw,
+  Layers,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -68,10 +66,7 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
         {eyebrow}
       </p>
     )}
-    <h2
-      id={id}
-      className="text-3xl leading-tight text-white md:text-4xl"
-    >
+    <h2 id={id} className="text-3xl leading-tight text-white md:text-4xl">
       {title}
     </h2>
     {subtitle && (
@@ -82,135 +77,129 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UAERealEstatePage = () => {
+const CanadaRealEstatePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
-  /* ---------------------------- DATA (existing content) ---------------------------- */
-
   const marketInsights = [
-    { value: "AED 917B", label: "Dubai Full Year 2025 Transactions" },
-    { value: "AED 252B", label: "Dubai Q1 2026 Transactions (+31% YoY)" },
-    { value: "AED 142B", label: "Abu Dhabi 2025 Transactions (+47% YoY)" },
-    { value: "AED 53B+", label: "PropTech Economic Impact (UAE)" },
+    { value: "USD 693.3M", label: "Canada real estate software market (2025)" },
+    { value: "12.3% CAGR", label: "Projected growth 2026–2033" },
+    { value: "$2,035", label: "Average national asking rent (Aug 2026)" },
+    { value: "C$450M", label: "PropTech funding raised in 2025" },
   ];
 
   const services = [
     {
       icon: Building2,
-      title: "Custom Real Estate Software Development",
+      title: "Property Management & Leasing",
       description:
-        "Platforms for developers, brokers, property managers, and investors.",
+        "Leasing CRM, Realtor.ca & Rentals.ca listings, digital leases, and provincial tenant screening.",
     },
     {
-      icon: Users,
-      title: "Real Estate CRM Development",
+      icon: Wrench,
+      title: "Maintenance & Operations",
       description:
-        "Capture leads from portals, WhatsApp, and walk-ins in one pipeline.",
+        "Smart dispatch, vendor networks, work orders, and unit-turn automation for rentals and condos.",
     },
     {
-      icon: Home,
-      title: "Property Management Software Development",
+      icon: DollarSign,
+      title: "Accounting & Financial Management",
       description:
-        "Automated lease management, rent invoicing, and tenant portals.",
-    },
-    {
-      icon: BarChart3,
-      title: "Real Estate ERP Development",
-      description:
-        "Integrated financials, IFRS 15, VAT compliance, and PDC management.",
-    },
-    {
-      icon: Cpu,
-      title: "Real Estate Mobile App Development",
-      description:
-        "iOS and Android apps for tenants, agents, managers, and investors.",
-    },
-    {
-      icon: Network,
-      title: "Marketplace & PropTech Platforms",
-      description:
-        "Connect buyers, sellers, landlords, and tenants with AI discovery.",
+        "Bill approvals, rent control tracking, owner–resident portals, and investment reporting.",
     },
     {
       icon: Sparkles,
-      title: "AI Real Estate Software Development",
+      title: "AI & Automation",
       description:
-        "Lead scoring, valuations, demand forecasting, and document automation.",
+        "Agentic AI for leasing, maintenance, renewals, and resident messaging with audit logs.",
     },
     {
-      icon: MapPinned,
-      title: "Portals & Data Analytics",
+      icon: MessageSquare,
+      title: "Resident Experience",
       description:
-        "Listing portals, UAE platform integrations, and executive dashboards.",
+        "Digital onboarding, rent reminders, renewals, and self-service portals across provinces.",
+    },
+  ];
+
+  const challenges = [
+    {
+      challenge:
+        "Rent control varies by province—Ontario 2.1%, BC 2.3%, Manitoba 1.8% for 2026—while Alberta and Saskatchewan have no caps.",
+      solution:
+        "Provincial rent increase tracking, notice reminders, and audit-ready documentation for each province.",
+    },
+    {
+      challenge:
+        "Rents have fallen for 23 months. Weaker markets and higher vacancy mean more incentives to attract tenants.",
+      solution:
+        "Dynamic pricing guidance, lead prioritization, and AI prospect engagement to cut vacancy time.",
+    },
+    {
+      challenge:
+        "Renoviction licensing is expanding—Toronto, Hamilton, and London enacted rules in 2025.",
+      solution:
+        "Renovation documentation, tenant communication tracking, and municipal licensing checklists.",
+    },
+    {
+      challenge:
+        "As new lease rates soften, renewals drive in-place growth—tenant retention is critical.",
+      solution:
+        "Automated renewals, resident engagement, and retention analytics to boost renewals and cut turnover.",
     },
   ];
 
   const stakeholders = [
     {
-      tab: "UAE Property Developers",
-      title: "Property Developers",
-      description:
-        "Managing multiple off-plan projects, unit inventory, and investor pipelines.",
-      image: "/pics/uaedeveloper.png",
-      bullets: [
-        "Project inventory from off-plan to handover",
-        "Off-plan sales: reservations, SPAs, payment plans",
-        "Automated broker commission tracking",
-        "Investor portals with real-time unit updates",
-      ],
-    },
-    {
       tab: "Property Managers",
-      title: "Property Management Companies",
+      title: "Property Managers",
       description:
-        "Overseeing residential towers, commercial spaces, and mixed-use communities.",
-      image: "/pics/uaepropmanagement.png",
+        "Operators of purpose-built rentals and condo portfolios needing leasing, maintenance, accounting, and resident tools in one platform.",
+      image: "/pics/Property Management Office.png",
       bullets: [
-        "Lease management, rent invoicing, renewals, deposits",
-        "Maintenance and work order SLAs",
-        "Tenant self-service portals",
-        "Ejari, Tawtheeq, and FTA VAT compliance",
+        "Unified leasing, maintenance & accounting",
+        "Owner and resident self-service portals",
+        "Real-time occupancy visibility",
+        "Cloud access across provinces",
       ],
     },
     {
-      tab: "Brokerages",
-      title: "Real Estate Brokerages",
+      tab: "Maintenance",
+      title: "Maintenance Teams",
       description:
-        "Handling high-volume leads, agent performance, and deal pipelines.",
-      image: "/pics/uaebrokerage.png",
+        "Teams coordinating vendors and work orders across multi-residential buildings.",
+      image: "/pics/Maintenance Operations.png",
       bullets: [
-        "Unified leads from portals, WhatsApp, and walk-ins",
-        "Agent KPIs, conversions, and commissions",
-        "Deal pipeline: viewings, offers, SPA stages",
-        "Duplicate lead detection",
+        "Smart maintenance & vendor networks",
+        "PO and approval routing",
+        "Work order tracking to resolution",
+        "Mobile-first field access",
       ],
     },
     {
-      tab: "Investors",
-      title: "Real Estate Investment Firms",
+      tab: "Landlords",
+      title: "Landlords & Investors",
       description:
-        "Managing multi-billion dirham portfolios with real-time reporting.",
-      image: "/pics/uaeinvestor.png",
+        "Landlords and investment firms managing residential and commercial assets across Canadian markets.",
+      image: "/pics/Investor Dashboard.png",
       bullets: [
-        "Portfolio profitability and investment analytics",
-        "Executive finance dashboards for cash flow",
-        "Live unit inventory across towers and projects",
-        "IFRS 15 revenue recognition for developers",
+        "Portfolio dashboards by province",
+        "Rent control compliance tracking",
+        "Documented tenant screening",
+        "Tax reporting support",
       ],
     },
     {
-      tab: "PropTech",
-      title: "PropTech Companies",
+      tab: "Residents",
+      title: "Residents",
       description:
-        "Building technology-driven real estate platforms for the UAE market.",
-      image: "/pics/uaeproptech1.png",
+        "Canadian renters who expect digital onboarding, online payments, and responsive maintenance.",
+      image: "/pics/Resident.png",
       bullets: [
-        "AI-native real estate marketplace platforms",
-        "API integration with portals and payment gateways",
-        "Government system connectivity",
-        "Cloud-native scalable architecture",
+        "Digital lease agreements & onboarding",
+        "Online payment options",
+        "Maintenance request tracking",
+        "Renewal and move-out workflows",
       ],
     },
   ];
@@ -218,263 +207,238 @@ const UAERealEstatePage = () => {
   const techStack = [
     {
       icon: Brain,
-      title: "AI & ML",
-      body: "Lead scoring, property valuation, demand forecasting, and document automation.",
+      title: "AI & Automation",
+      body: "Agentic AI for leasing, maintenance, and resident communications.",
     },
     {
       icon: Cloud,
-      title: "Cloud",
-      body: "Scalable, secure platforms accessible from anywhere across the UAE.",
+      title: "Cloud Platform",
+      body: "100% cloud property management with anytime provincial access.",
     },
     {
       icon: Network,
-      title: "API First",
-      body: "Seamless integration with CRMs, ERPs, portals, and government systems.",
+      title: "API Access",
+      body: "APIs for units, tenants, leases, maintenance, owners, and finance.",
     },
     {
-      icon: Cpu,
-      title: "Mobile & Web",
-      body: "iOS/Android apps and portals for tenants, agents, managers, and investors.",
+      icon: Smartphone,
+      title: "Mobile-First",
+      body: "Full mobile support for managers, field staff, and residents.",
     },
     {
-      icon: Database,
-      title: "Data Engineering",
-      body: "Real-time analytics, predictive modeling, and executive dashboards.",
+      icon: BarChart3,
+      title: "Data & Analytics",
+      body: "Real-time occupancy, renewals, yields, and portfolio insights.",
     },
   ];
 
   const integrations = [
-    { icon: Server, title: "CRM Systems" },
-    { icon: Building2, title: "ERP Systems" },
-    { icon: MapPinned, title: "Property Portals" },
-    { icon: DollarSign, title: "Payment Systems" },
-    { icon: Shield, title: "Government Systems" },
-    { icon: Database, title: "Accounting" },
+    { title: "Realtor.ca" },
+    { title: "Rentals.ca" },
+    { title: "Zillow" },
+    { title: "Tenant Pay" },
+    { title: "Custom APIs" },
   ];
 
   const security = [
     {
-      icon: ClipboardCheck,
-      title: "Ejari Integration",
-      body: "Automated registration and renewal with Dubai's rental regulation system.",
+      icon: Shield,
+      title: "Data Security & Privacy",
+      body: "Protects property, resident, and investor data with Canadian privacy in mind.",
     },
     {
-      icon: Landmark,
-      title: "Tawtheeq Integration",
-      body: "Compliance with Abu Dhabi's property registration system.",
+      icon: ClipboardCheck,
+      title: "Provincial Rent Control Support",
+      body: "Tracks rent caps—ON 2.1%, BC 2.3%, MB 1.8%, NS 5.0% temp, and no-cap provinces.",
     },
     {
       icon: FileText,
-      title: "VAT-Compliant Invoicing",
-      body: "Automated FTA-compliant tax calculations and reporting.",
+      title: "Renoviction Licensing Compliance",
+      body: "Workflows for Toronto, Hamilton, London, and expanding municipal by-laws.",
     },
     {
-      icon: DollarSign,
-      title: "Post-Dated Cheque Management",
-      body: "Track PDCs through full lifecycle with cash flow forecasting.",
+      icon: Users,
+      title: "Tenant Screening & Documentation",
+      body: "Background checks, digital leases, and inspections aligned with provincial RTAs.",
     },
     {
       icon: KeyRound,
-      title: "UAE Pass Integration",
-      body: "Secure digital identity verification for transactions.",
+      title: "Enterprise Readiness",
+      body: "Controls for property firms, REITs, and institutional investors.",
     },
     {
-      icon: Shield,
-      title: "IFRS 15 Revenue Recognition",
-      body: "Compliant revenue recognition for developers across the project lifecycle.",
+      icon: Database,
+      title: "Audit & Activity Logs",
+      body: "Transparent logs for AI, approvals, and operational actions.",
     },
   ];
 
   const advantages = [
     {
       id: 1,
-      title: "Custom Development",
+      title: "AI-Native Innovation",
       description:
-        "We build exactly what your real estate business needs—not a one-size-fits-all product.",
+        "Purpose-built AI for leasing, maintenance, and resident communications—not generic CRM.",
     },
     {
       id: 2,
-      title: "AI Capabilities",
+      title: "Unified Platform Experience",
       description:
-        "We integrate AI where it creates real value—lead scoring, valuation, and forecasting.",
+        "Leasing, maintenance, accounting, and messaging share one data model.",
     },
     {
       id: 3,
-      title: "UAE Industry Focus",
+      title: "Canada Market Understanding",
       description:
-        "We understand UAE real estate—from off-plan sales to tenant management, Ejari to IFRS 15.",
+        "Built for provincial rent control, renoviction licensing, and tenancy rules.",
     },
     {
       id: 4,
-      title: "Scalable Architecture",
-      description: "Our solutions grow with you—from 100 units to 10,000+.",
+      title: "Proven Outcomes",
+      description:
+        "Gains in rent collection, maintenance resolution, renewals, and hours saved.",
     },
     {
       id: 5,
-      title: "Integration Expertise",
+      title: "Global Delivery Capability",
       description:
-        "We connect property systems to CRMs, ERPs, portals, and government platforms.",
+        "North American timezone support, dedicated accounts, and remote training.",
     },
     {
       id: 6,
-      title: "Dedicated Development",
-      description: "You get a dedicated development team focused on your success.",
+      title: "Modern Interface & Adoption",
+      description:
+        "Designed so mid-market and enterprise teams actually adopt the tools.",
     },
   ];
 
   const processSteps = [
     {
       number: "01",
-      title: "Discovery",
-      description:
-        "Understand your business model, workflows, and UAE technology requirements.",
+      title: "Discovery & Onboarding",
+      description: "Assess portfolio, workflows, and compliance needs for quick value.",
     },
     {
       number: "02",
-      title: "Architecture & Design",
-      description:
-        "Design scalable, secure, compliant architecture and intuitive UI/UX.",
+      title: "Architecture & Configuration",
+      description: "Configure leasing, maintenance, provincial compliance, and integrations.",
     },
     {
       number: "03",
-      title: "Build + Integrate",
-      description:
-        "Agile development with AI capabilities and CRM/ERP/government integrations.",
+      title: "Implementation & Training",
+      description: "Migration, user training, and rollout sized to your portfolio.",
     },
     {
       number: "04",
-      title: "Deploy + Support",
-      description:
-        "Cloud deployment with training, documentation, and ongoing maintenance.",
+      title: "Ongoing Support",
+      description: "Responsive support and continuous improvement as you scale.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "Live",
-      title: "Radiant Real Estate — Unit Inventory",
+      metric: "9 → 1",
+      title: "Unified Platform Consolidation",
       description:
-        "Abu Dhabi developer of Radiant Square and Marina Towers aligned sales, finance, and management on live unit availability across towers, floors, and units.",
+        "Nine systems into one AI-native platform—higher productivity and a seamless resident experience.",
       icon: Layers,
     },
     {
-      metric: "PDC",
-      title: "Controlled Cheque Lifecycle",
+      metric: "180+",
+      title: "Maintenance at Scale",
       description:
-        "Replaced manual cheque registers with auditable PDC tracking reflected in cash flow forecasting.",
-      icon: FileCheck2,
+        "180+ units streamlined via an integrated vendor network with documented pricing and tracking.",
+      icon: Wrench,
     },
     {
-      metric: "IFRS 15",
-      title: "Developer Revenue Recognition",
+      metric: "1.2 Days",
+      title: "Faster Unit Turns",
       description:
-        "Revenue on unit sales recognized over the project lifecycle with deferred revenue schedules auditors expect.",
+        "Automated turn workflows cut turn time by 1.2 days on average, with faster fills and renewals.",
       icon: RefreshCw,
     },
   ];
 
   const faqs = [
     {
-      question: "What is a real estate software development company in UAE?",
+      question:
+        "What does property management software for Canadian operators include?",
       answer:
-        "A real estate software development company in UAE builds custom digital platforms for property developers, management firms, brokerages, and investors. These platforms range from CRM and ERP integration to AI-powered property management, tenant portals, and investor dashboards—all tailored to the UAE regulatory environment.",
+        "Leasing CRM, digital leases, maintenance & work orders, accounting, owner/resident portals, AI messaging, rent control tracking, and tenant screening.",
     },
     {
-      question: "How much does custom real estate software cost in UAE?",
+      question: "How does AI help Canadian property managers?",
       answer:
-        "Cost varies based on features, complexity, and integration requirements. A basic property management system starts at a lower range, while full ERP integration with AI capabilities requires a more significant investment. Contact us for a personalized quote based on your specific requirements.",
+        "AI engages prospects, prioritizes leasing, dispatches maintenance, handles renewals, and keeps audit logs—saving hours and filling vacancies faster.",
     },
     {
-      question: "What features should UAE real estate software include?",
+      question: "How does the platform handle provincial rent control?",
       answer:
-        "Essential features include property inventory management, lease and tenancy management, CRM and lead management, VAT-compliant accounting, maintenance tracking, tenant self-service portals, and UAE-specific compliance (Ejari, Tawtheeq, PDC tracking, IFRS 15).",
+        "It tracks caps—ON 2.1%, BC 2.3%, MB 1.8%, NS 5.0% temp, and no-cap provinces—with notice reminders and audit-ready docs.",
     },
     {
-      question: "Can real estate software integrate with existing ERP and CRM systems?",
+      question: "Does the platform support municipal renoviction licensing?",
       answer:
-        "Yes. Modern real estate platforms are built with API-first architecture and can integrate with existing CRMs, ERPs, payment gateways, property portals, and government systems. Ascentia Labs specializes in connecting fragmented systems into a unified platform.",
+        "Yes. Documentation and workflows support Toronto, Hamilton, London, and other cities with renoviction by-laws.",
     },
     {
-      question: "Can AI be used in UAE real estate software?",
+      question: "Does it support maintenance management?",
       answer:
-        "Absolutely. AI can power lead scoring, property valuation, demand forecasting, automated document processing, and tenant query management. The UAE is a global leader in AI adoption, making it a natural fit for real estate technology.",
+        "Yes. Smart maintenance, vendor networks, POs, and work orders track jobs from request to completion.",
     },
     {
-      question: "What software do UAE property developers need?",
+      question: "Can it integrate with existing systems?",
       answer:
-        "Property developers need project inventory management, off-plan sales tracking, payment plan management, commission calculations, investor portals, financial dashboards, and IFRS 15 revenue recognition.",
+        "Yes. APIs cover units, tenants, leases, maintenance, owners, and finance—plus listing and payment partners.",
     },
     {
-      question: "Can Ascentia Labs build mobile applications for real estate?",
+      question: "How long does implementation take?",
       answer:
-        "Yes. Ascentia Labs develops custom mobile applications for property managers, tenants, agents, and investors across iOS and Android platforms.",
+        "Depends on portfolio size. Most mid-market operators go live in weeks to months and see value quickly.",
     },
     {
-      question: "How long does custom real estate software development take?",
+      question: "What support is available?",
       answer:
-        "Timelines vary by project scope. A basic platform can take a few months, while complex ERP-integrated solutions with AI capabilities may require longer. Ascentia Labs follows agile development to deliver working software quickly.",
+        "North American timezone coverage, dedicated accounts, remote implementation, and ongoing training.",
     },
     {
-      question: "Do you integrate with Ejari, Tawtheeq, and UAE Pass?",
+      question: "Is the platform cloud-based?",
       answer:
-        "Yes. We build UAE-specific integrations for Ejari (Dubai), Tawtheeq (Abu Dhabi), UAE Pass for digital identity, and other government platforms required for property compliance.",
+        "Yes. Cloud property management enables anytime access for managers and residents.",
     },
     {
-      question: "What is PropTech software development?",
+      question: "Can it support enterprise property managers?",
       answer:
-        "PropTech (property technology) software development involves building digital platforms that transform real estate operations. This includes property marketplaces, investment platforms, AI-driven valuation tools, blockchain-based ownership models, and smart building management systems.",
+        "Yes. Enterprises get unified leasing, maintenance, accounting, provincial compliance, APIs, and audit logs.",
     },
   ];
 
   const relatedIndustries = [
-    {
-      title: "Real Estate",
-      link: ROUTES.industry.realEstate,
-    },
-    {
-      title: "Business CRM",
-      link: ROUTES.industry.businessCrm,
-    },
-    {
-      title: "Enterprise ERP",
-      link: ROUTES.industry.erp,
-    },
-    {
-      title: "Interior & Architecture",
-      link: ROUTES.industry.interiorArchitecture,
-    },
-    {
-      title: "Field Service CRM",
-      link: ROUTES.industry.fieldServiceCrm,
-    },
-    {
-      title: "Manufacturing",
-      link: ROUTES.industry.manufacturing,
-    },
-    {
-      title: "Logistics",
-      link: ROUTES.industry.logistics,
-    },
-    {
-      title: "Healthcare",
-      link: ROUTES.industry.healthcare,
-    },
+    { title: "Real Estate", link: ROUTES.industry.realEstate },
+    { title: "US Real Estate", link: ROUTES.industry.usRealEstate },
+    { title: "UAE Real Estate", link: ROUTES.industry.uaeRealEstate },
+    { title: "India Real Estate", link: ROUTES.industry.indiaRealEstate },
+    { title: "Business CRM", link: ROUTES.industry.businessCrm },
+    { title: "Enterprise ERP", link: ROUTES.industry.erp },
+    { title: "Field Service CRM", link: ROUTES.industry.fieldServiceCrm },
+    { title: "Interior & Architecture", link: ROUTES.industry.interiorArchitecture },
+    { title: "Manufacturing", link: ROUTES.industry.manufacturing },
+    { title: "Logistics", link: ROUTES.industry.logistics },
   ];
 
   const active = stakeholders[activeStakeholder];
   const ActiveStakeholderIcon = [
-    Building2,
     Home,
-    Users,
+    Wrench,
     DollarSign,
-    Cpu,
+    MessageSquare,
   ][activeStakeholder];
 
   const toggleFAQ = (index) => setOpenFAQ(openFAQ === index ? null : index);
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.uaeRealEstate} />
+      <SEO {...seoData.canadaRealEstate} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-20">
@@ -489,33 +453,32 @@ const UAERealEstatePage = () => {
         {/* Hero */}
         <div className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-16">
           <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-16 lg:gap-y-4 lg:py-10 xl:gap-x-20 2xl:gap-x-24 2xl:gap-y-5 2xl:py-22">
-            {/* 1. Text — mobile first */}
             <div className="order-1 max-w-xl space-y-5 text-white lg:self-end">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
-                UAE PropTech
+                Canada PropTech
               </p>
-              <h1 className="text-[25px] leading-tight md:text-[32px]">
-                Real Estate Software Development in UAE — PropTech
+              <h1 className="text-[25px] leading-tight md:text-[35px]">
+                Technology Partner for Canada Real Estate Businesses
               </h1>
               <p className="text-lg leading-relaxed text-gray-300">
-                Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai .
+                AI property management for Canadian managers, landlords, and
+                investors—leasing, maintenance, accounting, and residents in one
+                platform.
               </p>
             </div>
 
-            {/* 2. Image — after text on mobile; right column on desktop */}
             <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0 lg:self-center">
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
                 <img
-                  src="/pics/uae-hero.png"
-                  alt="UAE real estate PropTech software"
-                  className="mx-auto block h-auto w-full object-contain object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
+                  src="/pics/canada-real-estate.png"
+                  alt="Canada property management software"
+                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[520px]"
                   loading="eager"
                   decoding="async"
                 />
               </div>
             </div>
 
-            {/* 3. CTAs — after image on mobile; under text on desktop */}
             <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3 lg:self-start">
               <button
                 type="button"
@@ -534,7 +497,6 @@ const UAERealEstatePage = () => {
           </div>
         </div>
 
-        {/* Market Context — same blue band */}
         <div
           className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-14 lg:pb-16"
           aria-labelledby="market-heading"
@@ -544,8 +506,8 @@ const UAERealEstatePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why UAE Real Estate Businesses Need Custom Software"
-              subtitle="Replace WhatsApp and spreadsheets with custom PropTech—unifying CRM, property management, inventory, and finance for UAE developers and brokers."
+              title="Why Canada Real Estate Needs Modern Technology"
+              subtitle="Canada’s real estate software market hit USD 693.3M in 2025 (12.3% CAGR). With asking rents at $2,035 after 23 months of declines, managers need smarter digital ops."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -572,10 +534,10 @@ const UAERealEstatePage = () => {
         <Heading
           id="capabilities"
           eyebrow="Services"
-          title="Comprehensive Capabilities"
-          subtitle="Custom real estate software for UAE developers, brokers, property managers, and PropTech teams."
+          title="Services Built for Canadian Property Operations"
+          subtitle="Property management software for Canadian rentals and condo portfolios."
         />
-        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
@@ -589,7 +551,7 @@ const UAERealEstatePage = () => {
                 <h3 className="mb-2 text-sm font-semibold leading-snug text-white md:text-[15px]">
                   {service.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-200 md:text-[13px]">
+                <p className="text-xs leading-relaxed text-gray-300 md:text-sm">
                   {service.description}
                 </p>
               </li>
@@ -598,26 +560,56 @@ const UAERealEstatePage = () => {
         </ul>
       </Shell>
 
+      {/* ================= CHALLENGES ================= */}
+      <Shell labelledBy="challenges-heading" alt>
+        <Heading
+          id="challenges-heading"
+          eyebrow="Solutions"
+          title="Practical Solutions for Canadian Real Estate Challenges"
+          subtitle="Built for rent control, vacancy, renoviction licensing, and renewals."
+        />
+        <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
+          {challenges.map((item, index) => (
+            <li
+              key={item.challenge}
+              className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
+            >
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 md:text-xs">
+                Challenge {String(index + 1).padStart(2, "0")}
+              </p>
+              <p className="mb-4 text-sm leading-relaxed text-white md:text-[15px]">
+                {item.challenge}
+              </p>
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-400 md:text-xs">
+                Our Solution
+              </p>
+              <p className="text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                {item.solution}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Shell>
+
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="stakeholders-heading" alt>
+      <Shell labelledBy="stakeholders-heading">
         <Heading
           id="stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Stakeholder"
-          subtitle="Software shaped around how UAE developers, managers, brokerages, investors, and PropTech teams actually operate."
+          title="Software Shaped Around Canadian Real Estate "
+          subtitle="For property managers, maintenance teams, landlords, and residents."
         />
 
-        {/* Mobile: full-width selector so every option stays visible */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="stakeholder-select" className="sr-only">
+          <label htmlFor="canada-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="stakeholder-select"
+              id="canada-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="stakeholder-panel"
+              aria-controls="canada-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -633,7 +625,6 @@ const UAERealEstatePage = () => {
           </div>
         </div>
 
-        {/* Desktop: centered pill tabs */}
         <div
           role="tablist"
           aria-label="Stakeholder types"
@@ -647,8 +638,8 @@ const UAERealEstatePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`stakeholder-tab-${index}`}
-                aria-controls="stakeholder-panel"
+                id={`canada-stakeholder-tab-${index}`}
+                aria-controls="canada-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
                   selected
@@ -661,11 +652,11 @@ const UAERealEstatePage = () => {
             );
           })}
         </div>
-      
+
         <div
-          id="stakeholder-panel"
+          id="canada-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`canada-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -697,7 +688,7 @@ const UAERealEstatePage = () => {
             <img
               key={active.image}
               src={active.image}
-              alt={`${active.title} — UAE real estate software`}
+              alt={`${active.title} — Canada real estate software`}
               className="h-full min-h-[220px] w-full object-cover 2xl:min-h-[260px]"
             />
           </div>
@@ -705,12 +696,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="tech-heading">
+      <Shell labelledBy="tech-heading" alt>
         <Heading
           id="tech-heading"
           eyebrow="Capabilities"
-          title="Next-Gen Technology Stack"
-          subtitle="AI, cloud, APIs, and data engineering behind UAE-ready property platforms."
+          title="AI-Native Architecture for Canadian PropTech"
+          subtitle="Cloud property management with AI, APIs, and mobile access for Canadian teams."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -718,7 +709,7 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-gray-950 p-4 text-center md:p-5"
+                className="rounded-xl border border-white/10 bg-black/30 p-4 text-center md:p-5"
               >
                 <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400 md:h-6 md:w-6" />
                 <h3 className="text-sm font-medium text-white md:text-[15px] 2xl:text-base">
@@ -732,7 +723,7 @@ const UAERealEstatePage = () => {
           })}
         </ul>
         <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
-          Integrates with
+          Integrations & Ecosystem
         </p>
         <ul className="flex list-none flex-wrap justify-center gap-2">
           {integrations.map((item) => (
@@ -747,12 +738,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="compliance-heading" alt>
+      <Shell labelledBy="compliance-heading">
         <Heading
           id="compliance-heading"
           eyebrow="Compliance"
-          title="Built for UAE Standards"
-          subtitle="Integrations and workflows already supported for UAE property operations."
+          title="Canada-Ready Compliance & Security"
+          subtitle="Provincial rent control, renoviction licensing, screening, and enterprise controls."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -760,7 +751,7 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
+                className="rounded-xl border border-white/10 bg-gray-950 p-5 md:p-6"
               >
                 <Icon className="mb-3 h-4 w-4 text-amber-400 md:h-5 md:w-5" />
                 <h3 className="mb-1 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
@@ -776,12 +767,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="why-heading">
+      <Shell labelledBy="why-heading" alt>
         <Heading
           id="why-heading"
           eyebrow="Why Ascentia Labs"
-          title="The Luxe Advantage"
-          subtitle="A dedicated team that builds custom UAE real estate software—not a generic product."
+          title="Why Choose Us for Canada Real Estate"
+          subtitle="AI-native PropTech with Canada market depth and North American delivery."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -801,15 +792,15 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="process-heading" alt>
+      <Shell labelledBy="process-heading">
         <Heading
           id="process-heading"
           eyebrow="Delivery"
-          title="Proven Delivery Methodology"
+          title="How We Work with Canadian Property Managers"
           subtitle="Four clear phases from discovery to ongoing support."
         />
 
-        <ol className="relative space-y-8 border-l border-white/15 pl-6 ml-2 md:hidden">
+        <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
           {processSteps.map((step) => (
             <li key={step.number}>
               <span className="absolute -left-[13px] flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
@@ -853,21 +844,21 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="impact-heading">
+      <Shell labelledBy="impact-heading" alt>
         <Heading
           id="impact-heading"
           eyebrow="Results"
-          title="Proven Impact"
-          subtitle="Delivery outcomes from UAE real estate implementations."
+          title="Proven Outcomes Across Canadian Real Estate"
+          subtitle="Measurable results from AI-native property management."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `uae-case-bg-${index}`;
+            const gradientId = `canada-case-bg-${index}`;
             return (
               <li
                 key={item.title}
-                className="overflow-hidden rounded-xl border border-white/10 bg-gray-950"
+                className="overflow-hidden rounded-xl border border-white/10 bg-black/30"
               >
                 <div className="relative flex h-24 items-center justify-center overflow-hidden md:h-28">
                   <svg
@@ -935,8 +926,8 @@ const UAERealEstatePage = () => {
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `faq-panel-${index}`;
-            const buttonId = `faq-button-${index}`;
+            const panelId = `canada-faq-panel-${index}`;
+            const buttonId = `canada-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -977,9 +968,6 @@ const UAERealEstatePage = () => {
         </div>
       </Shell>
 
-      {/* ================= FINAL CTA ================= */}
-     
-
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
@@ -1011,4 +999,4 @@ const UAERealEstatePage = () => {
   );
 };
 
-export default UAERealEstatePage;
+export default CanadaRealEstatePage;

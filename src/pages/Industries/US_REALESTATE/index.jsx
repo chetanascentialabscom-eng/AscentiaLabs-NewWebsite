@@ -62,7 +62,7 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
     }`}
   >
     {eyebrow && (
-      <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-amber-400">
+      <p className="mb-3 text-[11px] 2xl:text-[15px] font-semibold uppercase tracking-[0.18em] text-amber-400">
         {eyebrow}
       </p>
     )}
@@ -483,9 +483,9 @@ const USRealEstatePage = () => {
                 <img
                   src="/pics/us-hero.png"
                   alt="US property management software"
-                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
+                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[520px]"
                   loading="eager"
-                  decoding="async"
+                  decoding="async"  
                 />
               </div>
             </div>

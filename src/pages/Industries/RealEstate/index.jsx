@@ -779,6 +779,7 @@ const RealEstatePage = () => {
       country: "India",
       flagCode: "in",
       line: "RERA-ready property management, CRM, and PropTech for Indian developers, brokers, and housing societies.",
+      link: ROUTES.industry.indiaRealEstate,
     },
     {
       country: "United States",
@@ -806,6 +807,7 @@ const RealEstatePage = () => {
       country: "Canada",
       flagCode: "ca",
       line: "Custom PropTech for Canadian brokerages, property managers, and real estate investors.",
+      link: ROUTES.industry.canadaRealEstate,
     },
   ];
 

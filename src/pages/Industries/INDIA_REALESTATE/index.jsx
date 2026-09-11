@@ -5,17 +5,13 @@ import {
   ChevronUp,
   Shield,
   BarChart3,
-  MapPinned,
   Building2,
   Home,
-  Cpu,
-  Landmark,
   Brain,
   TrendingUp,
   Sparkles,
   Network,
   Cloud,
-  Server,
   Database,
   KeyRound,
   ClipboardCheck,
@@ -23,9 +19,11 @@ import {
   Users,
   FileText,
   DollarSign,
-  Layers,
-  FileCheck2,
+  Wrench,
+  MessageSquare,
+  Smartphone,
   RefreshCw,
+  Layers,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -68,10 +66,7 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
         {eyebrow}
       </p>
     )}
-    <h2
-      id={id}
-      className="text-3xl leading-tight text-white md:text-4xl"
-    >
+    <h2 id={id} className="text-3xl leading-tight text-white md:text-4xl">
       {title}
     </h2>
     {subtitle && (
@@ -82,135 +77,129 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UAERealEstatePage = () => {
+const IndiaRealEstatePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
-  /* ---------------------------- DATA (existing content) ---------------------------- */
-
   const marketInsights = [
-    { value: "AED 917B", label: "Dubai Full Year 2025 Transactions" },
-    { value: "AED 252B", label: "Dubai Q1 2026 Transactions (+31% YoY)" },
-    { value: "AED 142B", label: "Abu Dhabi 2025 Transactions (+47% YoY)" },
-    { value: "AED 53B+", label: "PropTech Economic Impact (UAE)" },
+    { value: "USD 1.72B", label: "India PropTech market size (2025)" },
+    { value: "17% CAGR", label: "Projected growth 2026–2035" },
+    { value: "78%", label: "Rental demand for 500–1,500 sq ft units" },
+    { value: "18.1% YoY", label: "National average rent increase" },
   ];
 
   const services = [
     {
       icon: Building2,
-      title: "Custom Real Estate Software Development",
+      title: "Property Management & Leasing",
       description:
-        "Platforms for developers, brokers, property managers, and investors.",
+        "Leasing CRM, 99acres & MagicBricks listings, digital rent agreements, and police verification workflows.",
     },
     {
-      icon: Users,
-      title: "Real Estate CRM Development",
+      icon: Wrench,
+      title: "Maintenance & Operations",
       description:
-        "Capture leads from portals, WhatsApp, and walk-ins in one pipeline.",
+        "Smart dispatch, vendor networks, work orders, and unit-turn automation for gated communities.",
     },
     {
-      icon: Home,
-      title: "Property Management Software Development",
+      icon: DollarSign,
+      title: "Accounting & Financial Management",
       description:
-        "Automated lease management, rent invoicing, and tenant portals.",
-    },
-    {
-      icon: BarChart3,
-      title: "Real Estate ERP Development",
-      description:
-        "Integrated financials, IFRS 15, VAT compliance, and PDC management.",
-    },
-    {
-      icon: Cpu,
-      title: "Real Estate Mobile App Development",
-      description:
-        "iOS and Android apps for tenants, agents, managers, and investors.",
-    },
-    {
-      icon: Network,
-      title: "Marketplace & PropTech Platforms",
-      description:
-        "Connect buyers, sellers, landlords, and tenants with AI discovery.",
+        "GST-compliant billing, TDS under Section 195, bill approvals, and owner–resident portals.",
     },
     {
       icon: Sparkles,
-      title: "AI Real Estate Software Development",
+      title: "AI & Automation",
       description:
-        "Lead scoring, valuations, demand forecasting, and document automation.",
+        "Agentic AI for leasing, maintenance, and WhatsApp resident communications with audit logs.",
     },
     {
-      icon: MapPinned,
-      title: "Portals & Data Analytics",
+      icon: MessageSquare,
+      title: "Resident Experience",
       description:
-        "Listing portals, UAE platform integrations, and executive dashboards.",
+        "Digital onboarding, rent reminders, renewals, and self-service portals across metros.",
+    },
+  ];
+
+  const challenges = [
+    {
+      challenge:
+        "NRI landlords struggle with tenant verification, rent defaults, and remote property oversight.",
+      solution:
+        "Remote landlord portals with police verification, rent tracking, payment alerts, and maintenance logs.",
+    },
+    {
+      challenge:
+        "Tenants delay rent, resist indexation, or vacate without notice—leaving landlords without recourse.",
+      solution:
+        "Digital rent agreements, escalation workflows, deposit management, and legal documentation support.",
+    },
+    {
+      challenge:
+        "RWAs enforce stricter tenancy rules, verification, and community compliance requirements.",
+      solution:
+        "RWA-compliant documentation, background verification, and visitor management workflows.",
+    },
+    {
+      challenge:
+        "GST on commercial rent and TDS under Section 195 overload teams without dedicated finance staff.",
+      solution:
+        "Automated GST, RCM checks, TDS workflows, and invoice generation in the accounting module.",
     },
   ];
 
   const stakeholders = [
     {
-      tab: "UAE Property Developers",
-      title: "Property Developers",
-      description:
-        "Managing multiple off-plan projects, unit inventory, and investor pipelines.",
-      image: "/pics/uaedeveloper.png",
-      bullets: [
-        "Project inventory from off-plan to handover",
-        "Off-plan sales: reservations, SPAs, payment plans",
-        "Automated broker commission tracking",
-        "Investor portals with real-time unit updates",
-      ],
-    },
-    {
       tab: "Property Managers",
-      title: "Property Management Companies",
+      title: "Property Managers",
       description:
-        "Overseeing residential towers, commercial spaces, and mixed-use communities.",
-      image: "/pics/uaepropmanagement.png",
+        "Residential and commercial operators needing leasing, maintenance, accounting, and resident tools in one platform.",
+      image: "/pics/Property Management Office.png",
       bullets: [
-        "Lease management, rent invoicing, renewals, deposits",
-        "Maintenance and work order SLAs",
-        "Tenant self-service portals",
-        "Ejari, Tawtheeq, and FTA VAT compliance",
+        "Unified leasing, maintenance & accounting",
+        "Owner and resident self-service portals",
+        "Real-time occupancy visibility",
+        "Cloud access across cities",
       ],
     },
     {
-      tab: "Brokerages",
-      title: "Real Estate Brokerages",
+      tab: "Maintenance",
+      title: "Maintenance Teams",
       description:
-        "Handling high-volume leads, agent performance, and deal pipelines.",
-      image: "/pics/uaebrokerage.png",
+        "Teams coordinating vendors and work orders across gated communities and commercial buildings.",
+      image: "/pics/Maintenance Operations.png",
       bullets: [
-        "Unified leads from portals, WhatsApp, and walk-ins",
-        "Agent KPIs, conversions, and commissions",
-        "Deal pipeline: viewings, offers, SPA stages",
-        "Duplicate lead detection",
+        "Smart maintenance & vendor networks",
+        "PO and approval routing",
+        "Work order tracking to resolution",
+        "Mobile-first field access",
       ],
     },
     {
-      tab: "Investors",
-      title: "Real Estate Investment Firms",
+      tab: "NRI Landlords",
+      title: "NRI Landlords",
       description:
-        "Managing multi-billion dirham portfolios with real-time reporting.",
-      image: "/pics/uaeinvestor.png",
+        "Overseas owners who need documented control of Indian properties without burdening family.",
+      image: "/pics/Investor Dashboard.png",
       bullets: [
-        "Portfolio profitability and investment analytics",
-        "Executive finance dashboards for cash flow",
-        "Live unit inventory across towers and projects",
-        "IFRS 15 revenue recognition for developers",
+        "Remote portfolio dashboards",
+        "Documented tenant verification",
+        "Automated rent tracking & alerts",
+        "Legal documentation support",
       ],
     },
     {
-      tab: "PropTech",
-      title: "PropTech Companies",
+      tab: "Residents",
+      title: "Residents",
       description:
-        "Building technology-driven real estate platforms for the UAE market.",
-      image: "/pics/uaeproptech1.png",
+        "Metro renters who expect digital onboarding, UPI payments, and responsive maintenance.",
+      image: "/pics/Resident.png",
       bullets: [
-        "AI-native real estate marketplace platforms",
-        "API integration with portals and payment gateways",
-        "Government system connectivity",
-        "Cloud-native scalable architecture",
+        "Digital rent agreements & onboarding",
+        "UPI and auto-debit payments",
+        "Maintenance request tracking",
+        "Renewal and move-out workflows",
       ],
     },
   ];
@@ -218,263 +207,246 @@ const UAERealEstatePage = () => {
   const techStack = [
     {
       icon: Brain,
-      title: "AI & ML",
-      body: "Lead scoring, property valuation, demand forecasting, and document automation.",
+      title: "AI & Automation",
+      body: "Agentic AI for leasing, maintenance, and resident communications.",
     },
     {
       icon: Cloud,
-      title: "Cloud",
-      body: "Scalable, secure platforms accessible from anywhere across the UAE.",
+      title: "Cloud Platform",
+      body: "100% cloud property management with anytime metro access.",
     },
     {
       icon: Network,
-      title: "API First",
-      body: "Seamless integration with CRMs, ERPs, portals, and government systems.",
+      title: "API Access",
+      body: "APIs for units, tenants, leases, maintenance, owners, and finance.",
     },
     {
-      icon: Cpu,
-      title: "Mobile & Web",
-      body: "iOS/Android apps and portals for tenants, agents, managers, and investors.",
+      icon: Smartphone,
+      title: "Mobile-First",
+      body: "Mobile apps with Hindi and regional language support.",
     },
     {
-      icon: Database,
-      title: "Data Engineering",
-      body: "Real-time analytics, predictive modeling, and executive dashboards.",
+      icon: BarChart3,
+      title: "Data & Analytics",
+      body: "Real-time occupancy, renewals, yields, and portfolio insights.",
     },
   ];
 
   const integrations = [
-    { icon: Server, title: "CRM Systems" },
-    { icon: Building2, title: "ERP Systems" },
-    { icon: MapPinned, title: "Property Portals" },
-    { icon: DollarSign, title: "Payment Systems" },
-    { icon: Shield, title: "Government Systems" },
-    { icon: Database, title: "Accounting" },
+    { title: "99acres" },
+    { title: "MagicBricks" },
+    { title: "Housing.com" },
+    { title: "NoBroker" },
+    { title: "UPI Payment Gateways" },
+    { title: "WhatsApp Business API" },
+    { title: "Tally" },
+    { title: "Custom APIs" },
   ];
 
   const security = [
     {
+      icon: Shield,
+      title: "Data Security & Privacy",
+      body: "Protects property, resident, and investor data with India localisation in mind.",
+    },
+    {
       icon: ClipboardCheck,
-      title: "Ejari Integration",
-      body: "Automated registration and renewal with Dubai's rental regulation system.",
-    },
-    {
-      icon: Landmark,
-      title: "Tawtheeq Integration",
-      body: "Compliance with Abu Dhabi's property registration system.",
-    },
-    {
-      icon: FileText,
-      title: "VAT-Compliant Invoicing",
-      body: "Automated FTA-compliant tax calculations and reporting.",
+      title: "RERA Compliance Support",
+      body: "Audit trails and escrow tracking support for RERA-registered projects.",
     },
     {
       icon: DollarSign,
-      title: "Post-Dated Cheque Management",
-      body: "Track PDCs through full lifecycle with cash flow forecasting.",
+      title: "GST & TDS Workflows",
+      body: "18% commercial GST, RCM checks, and TDS under Section 195.",
+    },
+    {
+      icon: FileText,
+      title: "Tenant Verification",
+      body: "Police verification, background checks, and RWA-ready records.",
     },
     {
       icon: KeyRound,
-      title: "UAE Pass Integration",
-      body: "Secure digital identity verification for transactions.",
+      title: "Enterprise Readiness",
+      body: "Controls for Indian property firms, developers, and institutions.",
     },
     {
-      icon: Shield,
-      title: "IFRS 15 Revenue Recognition",
-      body: "Compliant revenue recognition for developers across the project lifecycle.",
+      icon: Database,
+      title: "Audit & Activity Logs",
+      body: "Transparent logs for AI, approvals, and operational actions.",
     },
   ];
 
   const advantages = [
     {
       id: 1,
-      title: "Custom Development",
+      title: "AI-Native Innovation",
       description:
-        "We build exactly what your real estate business needs—not a one-size-fits-all product.",
+        "Purpose-built AI for leasing, maintenance, and resident communications—not generic CRM.",
     },
     {
       id: 2,
-      title: "AI Capabilities",
+      title: "Unified Platform Experience",
       description:
-        "We integrate AI where it creates real value—lead scoring, valuation, and forecasting.",
+        "Leasing, maintenance, accounting, and messaging share one data model.",
     },
     {
       id: 3,
-      title: "UAE Industry Focus",
+      title: "India Market Understanding",
       description:
-        "We understand UAE real estate—from off-plan sales to tenant management, Ejari to IFRS 15.",
+        "Built for RERA, GST on commercial rent, TDS Section 195, and RWA rules.",
     },
     {
       id: 4,
-      title: "Scalable Architecture",
-      description: "Our solutions grow with you—from 100 units to 10,000+.",
+      title: "Proven Outcomes",
+      description:
+        "Gains in rent collection, maintenance resolution, renewals, and hours saved.",
     },
     {
       id: 5,
-      title: "Integration Expertise",
+      title: "Global Delivery Capability",
       description:
-        "We connect property systems to CRMs, ERPs, portals, and government platforms.",
+        "NRI support across time zones with IST-aligned domestic teams.",
     },
     {
       id: 6,
-      title: "Dedicated Development",
-      description: "You get a dedicated development team focused on your success.",
+      title: "Modern Interface & Adoption",
+      description:
+        "Designed so mid-market and enterprise teams actually adopt the tools.",
     },
   ];
 
   const processSteps = [
     {
       number: "01",
-      title: "Discovery",
-      description:
-        "Understand your business model, workflows, and UAE technology requirements.",
+      title: "Discovery & Onboarding",
+      description: "Assess portfolio, workflows, and compliance needs for quick value.",
     },
     {
       number: "02",
-      title: "Architecture & Design",
-      description:
-        "Design scalable, secure, compliant architecture and intuitive UI/UX.",
+      title: "Architecture & Configuration",
+      description: "Configure leasing, maintenance, GST/TDS, and integrations.",
     },
     {
       number: "03",
-      title: "Build + Integrate",
-      description:
-        "Agile development with AI capabilities and CRM/ERP/government integrations.",
+      title: "Implementation & Training",
+      description: "Migration plus English and Hindi training sized to your portfolio.",
     },
     {
       number: "04",
-      title: "Deploy + Support",
-      description:
-        "Cloud deployment with training, documentation, and ongoing maintenance.",
+      title: "Ongoing Support",
+      description: "IST-aligned support and continuous improvement as you scale.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "Live",
-      title: "Radiant Real Estate — Unit Inventory",
+      metric: "9 → 1",
+      title: "Unified Platform Consolidation",
       description:
-        "Abu Dhabi developer of Radiant Square and Marina Towers aligned sales, finance, and management on live unit availability across towers, floors, and units.",
+        "Nine systems into one AI-native platform—higher productivity and a seamless resident experience.",
       icon: Layers,
     },
     {
-      metric: "PDC",
-      title: "Controlled Cheque Lifecycle",
+      metric: "180+",
+      title: "Maintenance at Scale",
       description:
-        "Replaced manual cheque registers with auditable PDC tracking reflected in cash flow forecasting.",
-      icon: FileCheck2,
+        "180+ units streamlined via an integrated vendor network with documented pricing and tracking.",
+      icon: Wrench,
     },
     {
-      metric: "IFRS 15",
-      title: "Developer Revenue Recognition",
+      metric: "1.2 Days",
+      title: "Faster Unit Turns",
       description:
-        "Revenue on unit sales recognized over the project lifecycle with deferred revenue schedules auditors expect.",
+        "Automated turn workflows cut turn time by 1.2 days on average, with faster fills and renewals.",
       icon: RefreshCw,
     },
   ];
 
   const faqs = [
     {
-      question: "What is a real estate software development company in UAE?",
+      question:
+        "What does property management software for Indian operators include?",
       answer:
-        "A real estate software development company in UAE builds custom digital platforms for property developers, management firms, brokerages, and investors. These platforms range from CRM and ERP integration to AI-powered property management, tenant portals, and investor dashboards—all tailored to the UAE regulatory environment.",
+        "Leasing CRM, digital rent agreements, maintenance & work orders, GST accounting, owner/resident portals, AI communications, tenant verification, and TDS support.",
     },
     {
-      question: "How much does custom real estate software cost in UAE?",
+      question: "How does AI help Indian property managers?",
       answer:
-        "Cost varies based on features, complexity, and integration requirements. A basic property management system starts at a lower range, while full ERP integration with AI capabilities requires a more significant investment. Contact us for a personalized quote based on your specific requirements.",
+        "AI engages prospects on WhatsApp, prioritises leasing, dispatches maintenance, handles renewals, and keeps audit logs—saving hours and filling vacancies faster.",
     },
     {
-      question: "What features should UAE real estate software include?",
+      question: "Can the platform integrate with 99acres and MagicBricks?",
       answer:
-        "Essential features include property inventory management, lease and tenancy management, CRM and lead management, VAT-compliant accounting, maintenance tracking, tenant self-service portals, and UAE-specific compliance (Ejari, Tawtheeq, PDC tracking, IFRS 15).",
+        "Yes. Listing and tour workflows connect with 99acres, MagicBricks, Housing.com, and NoBroker, plus payments and messaging tools.",
     },
     {
-      question: "Can real estate software integrate with existing ERP and CRM systems?",
+      question: "Does the platform support maintenance management?",
       answer:
-        "Yes. Modern real estate platforms are built with API-first architecture and can integrate with existing CRMs, ERPs, payment gateways, property portals, and government systems. Ascentia Labs specializes in connecting fragmented systems into a unified platform.",
+        "Yes. Smart maintenance, vendor networks, POs, and work orders track jobs from request to completion.",
     },
     {
-      question: "Can AI be used in UAE real estate software?",
+      question: "How does the platform handle GST on commercial rent?",
       answer:
-        "Absolutely. AI can power lead scoring, property valuation, demand forecasting, automated document processing, and tenant query management. The UAE is a global leader in AI adoption, making it a natural fit for real estate technology.",
+        "It calculates 18% GST on commercial rent, supports RCM checks, and generates GST-compliant tax invoices.",
     },
     {
-      question: "What software do UAE property developers need?",
+      question: "Does it support TDS deduction for NRI landlords?",
       answer:
-        "Property developers need project inventory management, off-plan sales tracking, payment plan management, commission calculations, investor portals, financial dashboards, and IFRS 15 revenue recognition.",
+        "Yes. TDS under Section 195 is built into accounting, with NRI documentation and compliance reporting.",
     },
     {
-      question: "Can Ascentia Labs build mobile applications for real estate?",
+      question: "Can it integrate with existing systems?",
       answer:
-        "Yes. Ascentia Labs develops custom mobile applications for property managers, tenants, agents, and investors across iOS and Android platforms.",
+        "Yes. APIs cover units, tenants, leases, maintenance, owners, and finance—including Tally and ERP.",
     },
     {
-      question: "How long does custom real estate software development take?",
+      question: "How long does implementation take?",
       answer:
-        "Timelines vary by project scope. A basic platform can take a few months, while complex ERP-integrated solutions with AI capabilities may require longer. Ascentia Labs follows agile development to deliver working software quickly.",
+        "Depends on portfolio size. Most mid-market operators go live in weeks to months and see value quickly.",
     },
     {
-      question: "Do you integrate with Ejari, Tawtheeq, and UAE Pass?",
+      question: "What support is available?",
       answer:
-        "Yes. We build UAE-specific integrations for Ejari (Dubai), Tawtheeq (Abu Dhabi), UAE Pass for digital identity, and other government platforms required for property compliance.",
+        "IST-aligned teams, account management, remote implementation, and English/Hindi training.",
     },
     {
-      question: "What is PropTech software development?",
+      question: "Is the platform cloud-based?",
       answer:
-        "PropTech (property technology) software development involves building digital platforms that transform real estate operations. This includes property marketplaces, investment platforms, AI-driven valuation tools, blockchain-based ownership models, and smart building management systems.",
+        "Yes. Cloud property management enables anytime access for managers and residents.",
+    },
+    {
+      question: "Can it support enterprise property managers?",
+      answer:
+        "Yes. Enterprises get unified leasing, maintenance, accounting, GST/TDS, APIs, and audit logs.",
     },
   ];
 
   const relatedIndustries = [
-    {
-      title: "Real Estate",
-      link: ROUTES.industry.realEstate,
-    },
-    {
-      title: "Business CRM",
-      link: ROUTES.industry.businessCrm,
-    },
-    {
-      title: "Enterprise ERP",
-      link: ROUTES.industry.erp,
-    },
-    {
-      title: "Interior & Architecture",
-      link: ROUTES.industry.interiorArchitecture,
-    },
-    {
-      title: "Field Service CRM",
-      link: ROUTES.industry.fieldServiceCrm,
-    },
-    {
-      title: "Manufacturing",
-      link: ROUTES.industry.manufacturing,
-    },
-    {
-      title: "Logistics",
-      link: ROUTES.industry.logistics,
-    },
-    {
-      title: "Healthcare",
-      link: ROUTES.industry.healthcare,
-    },
+    { title: "Real Estate", link: ROUTES.industry.realEstate },
+    { title: "UAE Real Estate", link: ROUTES.industry.uaeRealEstate },
+    { title: "US Real Estate", link: ROUTES.industry.usRealEstate },
+    { title: "Canada Real Estate", link: ROUTES.industry.canadaRealEstate },
+    { title: "Business CRM", link: ROUTES.industry.businessCrm },
+    { title: "Enterprise ERP", link: ROUTES.industry.erp },
+    { title: "Field Service CRM", link: ROUTES.industry.fieldServiceCrm },
+    { title: "Interior & Architecture", link: ROUTES.industry.interiorArchitecture },
+    { title: "Manufacturing", link: ROUTES.industry.manufacturing },
+    { title: "Logistics", link: ROUTES.industry.logistics },
   ];
 
   const active = stakeholders[activeStakeholder];
   const ActiveStakeholderIcon = [
-    Building2,
     Home,
+    Wrench,
     Users,
-    DollarSign,
-    Cpu,
+    MessageSquare,
   ][activeStakeholder];
 
   const toggleFAQ = (index) => setOpenFAQ(openFAQ === index ? null : index);
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.uaeRealEstate} />
+      <SEO {...seoData.indiaRealEstate} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-20">
@@ -492,13 +464,15 @@ const UAERealEstatePage = () => {
             {/* 1. Text — mobile first */}
             <div className="order-1 max-w-xl space-y-5 text-white lg:self-end">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
-                UAE PropTech
+                India PropTech
               </p>
-              <h1 className="text-[25px] leading-tight md:text-[32px]">
-                Real Estate Software Development in UAE — PropTech
+              <h1 className="text-[25px] leading-tight md:text-[35px]">
+                Technology Partner for India Real Estate Businesses
               </h1>
               <p className="text-lg leading-relaxed text-gray-300">
-                Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai .
+                AI property management for Indian managers, builders, and
+                investors—leasing, maintenance, accounting, and residents in one
+                platform.
               </p>
             </div>
 
@@ -506,9 +480,9 @@ const UAERealEstatePage = () => {
             <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0 lg:self-center">
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
                 <img
-                  src="/pics/uae-hero.png"
-                  alt="UAE real estate PropTech software"
-                  className="mx-auto block h-auto w-full object-contain object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
+                  src="/pics/india-realstate-hero.jpeg"
+                  alt="India property management software"
+                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[520px]"
                   loading="eager"
                   decoding="async"
                 />
@@ -544,8 +518,8 @@ const UAERealEstatePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why UAE Real Estate Businesses Need Custom Software"
-              subtitle="Replace WhatsApp and spreadsheets with custom PropTech—unifying CRM, property management, inventory, and finance for UAE developers and brokers."
+              title="Why India Real Estate Needs Modern Technology"
+              subtitle="India’s PropTech market hit USD 1.72B in 2025 (17% CAGR). With 78% of rental demand in 500–1,500 sq ft homes and rents up 18.1% YoY, managers need smarter digital ops."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -572,10 +546,10 @@ const UAERealEstatePage = () => {
         <Heading
           id="capabilities"
           eyebrow="Services"
-          title="Comprehensive Capabilities"
-          subtitle="Custom real estate software for UAE developers, brokers, property managers, and PropTech teams."
+          title="Services Built for Indian Property Operations"
+          subtitle="Property management software for Indian residential and commercial portfolios."
         />
-        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
             const Icon = service.icon;
             return (
@@ -589,7 +563,7 @@ const UAERealEstatePage = () => {
                 <h3 className="mb-2 text-sm font-semibold leading-snug text-white md:text-[15px]">
                   {service.title}
                 </h3>
-                <p className="text-xs leading-relaxed text-gray-200 md:text-[13px]">
+                <p className="text-xs leading-relaxed text-gray-300 md:text-sm">
                   {service.description}
                 </p>
               </li>
@@ -598,26 +572,57 @@ const UAERealEstatePage = () => {
         </ul>
       </Shell>
 
+      {/* ================= CHALLENGES ================= */}
+      <Shell labelledBy="challenges-heading" alt>
+        <Heading
+          id="challenges-heading"
+          eyebrow="Solutions"
+          title="Practical Solutions for Indian Real Estate Challenges"
+          subtitle="Built for tenant verification, rent collection, RWA compliance, and GST/TDS."
+        />
+        <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
+          {challenges.map((item, index) => (
+            <li
+              key={item.challenge}
+              className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
+            >
+              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 md:text-xs">
+                Challenge {String(index + 1).padStart(2, "0")}
+              </p>
+              <p className="mb-4 text-sm leading-relaxed text-white md:text-[15px]">
+                {item.challenge}
+              </p>
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-gray-400 md:text-xs">
+                Our Solution
+              </p>
+              <p className="text-sm leading-relaxed text-gray-300 md:text-[15px]">
+                {item.solution}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </Shell>
+
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="stakeholders-heading" alt>
+      <Shell labelledBy="stakeholders-heading">
         <Heading
           id="stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Stakeholder"
-          subtitle="Software shaped around how UAE developers, managers, brokerages, investors, and PropTech teams actually operate."
+          title="Software Shaped Around Indian Real Estate Roles"
+          subtitle="For property managers, maintenance teams, NRI landlords, and residents."
         />
 
-        {/* Mobile: full-width selector so every option stays visible */}
+        {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="stakeholder-select" className="sr-only">
+          <label htmlFor="india-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="stakeholder-select"
+              id="india-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="stakeholder-panel"
+              aria-controls="india-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -647,8 +652,8 @@ const UAERealEstatePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`stakeholder-tab-${index}`}
-                aria-controls="stakeholder-panel"
+                id={`india-stakeholder-tab-${index}`}
+                aria-controls="india-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
                   selected
@@ -661,11 +666,11 @@ const UAERealEstatePage = () => {
             );
           })}
         </div>
-      
+
         <div
-          id="stakeholder-panel"
+          id="india-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`india-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -697,7 +702,7 @@ const UAERealEstatePage = () => {
             <img
               key={active.image}
               src={active.image}
-              alt={`${active.title} — UAE real estate software`}
+              alt={`${active.title} — India real estate software`}
               className="h-full min-h-[220px] w-full object-cover 2xl:min-h-[260px]"
             />
           </div>
@@ -705,12 +710,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="tech-heading">
+      <Shell labelledBy="tech-heading" alt>
         <Heading
           id="tech-heading"
           eyebrow="Capabilities"
-          title="Next-Gen Technology Stack"
-          subtitle="AI, cloud, APIs, and data engineering behind UAE-ready property platforms."
+          title="AI-Native Architecture for Indian PropTech"
+          subtitle="Cloud property management with AI, APIs, and mobile access for Indian teams."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -718,7 +723,7 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-gray-950 p-4 text-center md:p-5"
+                className="rounded-xl border border-white/10 bg-black/30 p-4 text-center md:p-5"
               >
                 <Icon className="mx-auto mb-3 h-5 w-5 text-amber-400 md:h-6 md:w-6" />
                 <h3 className="text-sm font-medium text-white md:text-[15px] 2xl:text-base">
@@ -732,7 +737,7 @@ const UAERealEstatePage = () => {
           })}
         </ul>
         <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
-          Integrates with
+          Integrations & Ecosystem
         </p>
         <ul className="flex list-none flex-wrap justify-center gap-2">
           {integrations.map((item) => (
@@ -747,12 +752,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="compliance-heading" alt>
+      <Shell labelledBy="compliance-heading">
         <Heading
           id="compliance-heading"
           eyebrow="Compliance"
-          title="Built for UAE Standards"
-          subtitle="Integrations and workflows already supported for UAE property operations."
+          title="India-Ready Compliance & Security"
+          subtitle="RERA, GST/TDS Section 195, tenant verification, and enterprise controls."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -760,7 +765,7 @@ const UAERealEstatePage = () => {
             return (
               <li
                 key={item.title}
-                className="rounded-xl border border-white/10 bg-black/30 p-5 md:p-6"
+                className="rounded-xl border border-white/10 bg-gray-950 p-5 md:p-6"
               >
                 <Icon className="mb-3 h-4 w-4 text-amber-400 md:h-5 md:w-5" />
                 <h3 className="mb-1 text-sm font-semibold text-white md:text-[15px] 2xl:text-base">
@@ -776,12 +781,12 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="why-heading">
+      <Shell labelledBy="why-heading" alt>
         <Heading
           id="why-heading"
           eyebrow="Why Ascentia Labs"
-          title="The Luxe Advantage"
-          subtitle="A dedicated team that builds custom UAE real estate software—not a generic product."
+          title="Why Choose Us for India Real Estate"
+          subtitle="AI-native PropTech with India market depth and IST-aligned delivery."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -801,15 +806,15 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="process-heading" alt>
+      <Shell labelledBy="process-heading">
         <Heading
           id="process-heading"
           eyebrow="Delivery"
-          title="Proven Delivery Methodology"
+          title="How We Work with Indian Property Managers"
           subtitle="Four clear phases from discovery to ongoing support."
         />
 
-        <ol className="relative space-y-8 border-l border-white/15 pl-6 ml-2 md:hidden">
+        <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
           {processSteps.map((step) => (
             <li key={step.number}>
               <span className="absolute -left-[13px] flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
@@ -853,21 +858,21 @@ const UAERealEstatePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="impact-heading">
+      <Shell labelledBy="impact-heading" alt>
         <Heading
           id="impact-heading"
           eyebrow="Results"
-          title="Proven Impact"
-          subtitle="Delivery outcomes from UAE real estate implementations."
+          title="Proven Outcomes Across Indian Real Estate"
+          subtitle="Measurable results from AI-native property management."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `uae-case-bg-${index}`;
+            const gradientId = `india-case-bg-${index}`;
             return (
               <li
                 key={item.title}
-                className="overflow-hidden rounded-xl border border-white/10 bg-gray-950"
+                className="overflow-hidden rounded-xl border border-white/10 bg-black/30"
               >
                 <div className="relative flex h-24 items-center justify-center overflow-hidden md:h-28">
                   <svg
@@ -935,8 +940,8 @@ const UAERealEstatePage = () => {
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `faq-panel-${index}`;
-            const buttonId = `faq-button-${index}`;
+            const panelId = `india-faq-panel-${index}`;
+            const buttonId = `india-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -977,9 +982,6 @@ const UAERealEstatePage = () => {
         </div>
       </Shell>
 
-      {/* ================= FINAL CTA ================= */}
-     
-
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
@@ -1011,4 +1013,4 @@ const UAERealEstatePage = () => {
   );
 };
 
-export default UAERealEstatePage;
+export default IndiaRealEstatePage;
