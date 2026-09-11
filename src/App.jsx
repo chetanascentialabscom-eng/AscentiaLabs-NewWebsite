@@ -63,7 +63,7 @@ import TravelandAiBlog26 from "./pages/Blogs/TravelandAiBlog2026";
 import TravelMargin2026 from "./pages/Blogs/TravelMargins2026";
 import Careers from "./pages/career-page";
 import ShopifyServicePage from "./pages/Services/ShopifyDevelompentSolution";
-import FabricShrinkagePredictionBlog from "./pages/Blogs/fabricShrinkagePrediction";
+import FabricShrinkagePredictionBlog from "./pages/Blogs/FabricShrinkagePrediction";
 import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrinkagePredictionBlog";
 import TextileColorMatchingBlog from "./pages/Blogs/Textilecolormatchingblog";
 
