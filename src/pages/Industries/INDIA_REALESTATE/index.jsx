@@ -482,7 +482,7 @@ const IndiaRealEstatePage = () => {
                 <img
                   src="/pics/india-realstate-hero.jpeg"
                   alt="India property management software"
-                  className="mx-auto block h-auto w-full object-cover object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[520px]"
+                  className="mx-auto block h-auto w-full object-contain object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
                   loading="eager"
                   decoding="async"
                 />
@@ -518,7 +518,7 @@ const IndiaRealEstatePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why India Real Estate Needs Modern Technology"
+              title="Why India Real Estate Needs Modern Tech"
               subtitle="India’s PropTech market hit USD 1.72B in 2025 (17% CAGR). With 78% of rental demand in 500–1,500 sq ft homes and rents up 18.1% YoY, managers need smarter digital ops."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
