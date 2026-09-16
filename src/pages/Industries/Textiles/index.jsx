@@ -325,6 +325,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "Manual scheduling causes loom idle time — ₹8–15L/month in lost production.",
+            "Bottlenecks show up only after looms are already idle.",
+            "Disruptions are fixed by hand, so schedules stay out of date.",
+            "Factories run at 65–70% efficiency from poor scheduling and tracking errors.",
           ],
         },
         {
@@ -346,6 +349,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "25–30% of shipments rejected over quality issues — ₹5–12L per rejected batch.",
+            "Stains, holes, and uneven texture slip past manual checks.",
+            "Color mismatches cause rejected batches before they reach buyers.",
+            "Manual inspection is slower and misses defects on the line.",
           ],
         },
         {
@@ -367,6 +373,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "₹15–30L/year wasted on expired fabric and overstocked yarn.",
+            "Spreadsheets miss reorder points until stock is already short.",
+            "Slow-moving fabric and yarn sit until they become waste.",
+            "Buying is not timed to production, so mills overstock or run short.",
           ],
         },
         {
@@ -389,6 +398,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "Unplanned downtime is one of the biggest drags on production.",
+            "Vibration, heat, and wear are noticed only after a breakdown.",
+            "Failures are found too late for the team to act ahead.",
+            "Emergency repairs cost 30–40% more than planned maintenance.",
           ],
         },
         {
@@ -410,6 +422,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "Fluctuating buyer demand leads to overproduction or stockouts.",
+            "Orders, seasons, and market shifts are tracked by hand.",
+            "Fabric type and color demand is guessed instead of forecast.",
+            "Forecast accuracy sits at 68% before AI planning.",
           ],
         },
         {
@@ -431,6 +446,9 @@ const TextilesPage = () => {
           heading: "Challenge",
           details: [
             "Managers lose 10–15 hours/week to manual Excel reporting.",
+            "There is no quick way to see which looms are underperforming.",
+            "Cost spikes and quality trends are missed in spreadsheets.",
+            "60+ hours a month go to reports instead of decisions.",
           ],
         },
         {
@@ -1043,17 +1061,17 @@ const TextilesPage = () => {
         />
 
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
-          <div className="grid min-h-[420px] grid-cols-1 lg:grid-cols-5">
+          <div className="grid grid-cols-1 items-stretch lg:grid-cols-5">
             <nav
-              className="border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              className="relative z-10 flex h-full min-w-0 flex-col border-b border-white/10 bg-black/40 p-3 sm:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
               aria-label="AI solution categories"
             >
-              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
+              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto sm:max-h-[380px] lg:max-h-none">
                 {features.map((feature, index) => {
                   const active = activeFeature === index;
                   return (
                     <button
-                      key={index}
+                      key={feature.id}
                       type="button"
                       onClick={() => setActiveFeature(index)}
                       className={`w-full rounded-lg p-3 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
@@ -1082,47 +1100,100 @@ const TextilesPage = () => {
               </div>
             </nav>
 
-            <article className="bg-white p-6 md:p-8 lg:col-span-3">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="rounded-xl bg-amber-100 p-2.5">
-                  <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
-                    <svg
-                      className="h-5 w-5 text-black"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
-              </div>
-
-              <h3 className="mb-6 text-xl leading-snug text-gray-900 md:text-2xl">
-                {features[activeFeature].title}
-              </h3>
-
-              <div className="space-y-7">
-                {features[activeFeature].sections.map(
-                  (section, sectionIndex) => (
-                    <div key={sectionIndex}>
-                      <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-600">
-                        {section.heading}
-                      </h4>
-                      <ul className="space-y-2.5 text-sm text-gray-600 md:text-[15px]">
-                        {section.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5">
-                            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500" />
-                            <span className="leading-relaxed">{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
+            <article className="relative min-h-0 min-w-0 bg-white lg:col-span-3">
+              <div className="flex flex-col p-4 sm:p-6 lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain lg:p-8">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="rounded-xl bg-amber-100 p-2.5">
+                    <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
+                      <svg
+                        className="h-5 w-5 text-black"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
-                  ),
-                )}
+                  </div>
+                  <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
+                </div>
+
+                <h3 className="mb-4 text-lg leading-snug text-gray-900 sm:mb-5 sm:text-xl md:text-2xl">
+                  {features[activeFeature].title}
+                </h3>
+
+                {(() => {
+                  const sections = features[activeFeature].sections;
+                  const rowCount = Math.max(
+                    ...sections.map((section) => section.details.length),
+                    0,
+                  );
+
+                  return (
+                    <div className="overflow-x-auto">
+                      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                        <table className="w-full table-fixed border-collapse text-left text-xs sm:text-sm">
+                          <caption className="sr-only">
+                            {features[activeFeature].title} by audience
+                          </caption>
+                          <thead>
+                            <tr className="bg-gradient-to-r from-amber-400 to-orange-500">
+                              {sections.map((section, sectionIndex) => (
+                                <th
+                                  key={section.heading}
+                                  scope="col"
+                                  className={`w-1/2 px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-black sm:px-4 sm:py-3 sm:text-xs ${
+                                    sectionIndex > 0
+                                      ? "border-l border-black/10"
+                                      : ""
+                                  }`}
+                                >
+                                  {section.heading}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {Array.from({ length: rowCount }).map((_, rowIdx) => (
+                              <tr
+                                key={rowIdx}
+                                className="border-b border-gray-100 last:border-b-0 odd:bg-white even:bg-gray-50/70"
+                              >
+                                {sections.map((section, sectionIndex) => {
+                                  const detail = section.details[rowIdx];
+                                  return (
+                                    <td
+                                      key={section.heading}
+                                      className={`px-2.5 py-2.5 align-top text-gray-700 sm:px-4 sm:py-3 ${
+                                        sectionIndex > 0
+                                          ? "border-l border-gray-100"
+                                          : ""
+                                      }`}
+                                    >
+                                      {detail ? (
+                                        <span className="flex items-start gap-2">
+                                          <span
+                                            className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                            aria-hidden="true"
+                                          />
+                                          <span className="min-w-0 break-words leading-snug">
+                                            {detail}
+                                          </span>
+                                        </span>
+                                      ) : null}
+                                    </td>
+                                  );
+                                })}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
             </article>
           </div>

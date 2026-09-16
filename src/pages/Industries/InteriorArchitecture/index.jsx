@@ -1058,12 +1058,12 @@ const InteriorArchitecturePage = () => {
         />
 
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
-          <div className="grid min-h-0 grid-cols-1 lg:min-h-[420px] lg:grid-cols-5">
+          <div className="grid grid-cols-1 items-stretch lg:grid-cols-5">
             <nav
-              className="min-w-0 border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              className="relative z-10 flex h-full min-w-0 flex-col border-b border-white/10 bg-black/40 p-3 sm:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
               aria-label="Interior design feature categories"
             >
-              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
+              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto sm:max-h-[380px] lg:max-h-none">
                 {features.map((feature, index) => {
                   const active = activeFeature === index;
                   return (
@@ -1097,7 +1097,8 @@ const InteriorArchitecturePage = () => {
               </div>
             </nav>
 
-            <article className="min-w-0 bg-white p-4 sm:p-6 md:p-8 lg:col-span-3">
+            <article className="relative min-h-0 min-w-0 bg-white lg:col-span-3">
+              <div className="flex flex-col p-4 sm:p-6 lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain lg:p-8">
               <div className="mb-5 flex items-center gap-3">
                 <div className="rounded-xl bg-amber-100 p-2.5">
                   <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
@@ -1130,39 +1131,9 @@ const InteriorArchitecturePage = () => {
                   sections.length === 1 ? "w-full" : "w-1/2";
 
                 return (
-                  <>
-                    <div className="space-y-4 md:hidden">
-                      {sections.map((section, sectionIndex) => (
-                        <div
-                          key={sectionIndex}
-                          className="overflow-hidden rounded-xl border border-gray-200"
-                        >
-                          <div className="bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2.5 text-xs font-semibold uppercase tracking-wide text-black">
-                            {section.heading}
-                          </div>
-                          <ul className="divide-y divide-gray-100">
-                            {section.details.map((detail, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-start gap-2.5 px-3.5 py-3 text-sm leading-relaxed text-gray-700"
-                              >
-                                <span
-                                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
-                                  aria-hidden="true"
-                                />
-                                <span className="min-w-0 break-words">
-                                  {detail}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="hidden overflow-x-auto md:block">
-                      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                        <table className="w-full table-fixed border-collapse text-left text-sm">
+                  <div className="overflow-x-auto">
+                    <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                      <table className="w-full table-fixed border-collapse text-left text-xs sm:text-sm">
                           <caption className="sr-only">
                             {features[activeFeature].title} details
                           </caption>
@@ -1172,7 +1143,7 @@ const InteriorArchitecturePage = () => {
                                 <th
                                   key={sectionIndex}
                                   scope="col"
-                                  className={`${colWidth} px-3 py-3 text-xs font-semibold uppercase tracking-wide text-black lg:px-4 ${
+                                  className={`${colWidth} px-2.5 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-black sm:px-4 sm:py-3 sm:text-xs ${
                                     sectionIndex > 0
                                       ? "border-l border-black/10"
                                       : ""
@@ -1195,7 +1166,7 @@ const InteriorArchitecturePage = () => {
                                     return (
                                       <td
                                         key={sectionIndex}
-                                        className={`px-3 py-3 align-top text-gray-700 lg:px-4 ${
+                                        className={`px-2.5 py-2.5 align-top text-gray-700 sm:px-4 sm:py-3 ${
                                           sectionIndex > 0
                                             ? "border-l border-gray-100"
                                             : ""
@@ -1211,11 +1182,7 @@ const InteriorArchitecturePage = () => {
                                               {detail}
                                             </span>
                                           </span>
-                                        ) : (
-                                          <span className="text-gray-300">
-                                            —
-                                          </span>
-                                        )}
+                                        ) : null}
                                       </td>
                                     );
                                   })}
@@ -1223,12 +1190,12 @@ const InteriorArchitecturePage = () => {
                               ),
                             )}
                           </tbody>
-                        </table>
-                      </div>
+                      </table>
                     </div>
-                  </>
+                  </div>
                 );
               })()}
+              </div>
             </article>
           </div>
         </div>

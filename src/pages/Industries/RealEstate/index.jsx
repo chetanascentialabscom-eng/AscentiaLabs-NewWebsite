@@ -346,9 +346,7 @@ const RealEstatePage = () => {
             "Rent collection automation (auto reminders)",
             "Real-time monitoring (live dashboard)",
             "Vacancy alerts (before it hurts occupancy)",
-            "Task assignment (auto assign to team)",
-            "Progress tracking (see status live)",
-            "Accounting integration (auto sync)",
+           
           ],
         },
         {
@@ -374,9 +372,7 @@ const RealEstatePage = () => {
             "Multi-property management (all locations)",
             "Auto rent escalations (no manual work)",
             "Document storage (auto-filed)",
-            "E-signature integration (1 click)",
-            "Compliance tracking (full traceability)",
-          ],
+            ],
         },
         {
           heading: "For Tenants",
@@ -400,9 +396,7 @@ const RealEstatePage = () => {
             "Real-time monitoring (live)",
             "Trend analysis (see patterns)",
             "Vendor dispatch tracking (alerts)",
-            "Predictive maintenance (auto assign)",
-            "Cost tracking (standards met)",
-            "Audit trail (auto documentation)",
+           
           ],
         },
         {
@@ -426,10 +420,7 @@ const RealEstatePage = () => {
             "Follow-up times (live tracking)",
             "Agent performance (KPIs)",
             "Listing automation (sync auto)",
-            "Transaction tracking (alerts)",
-            "Marketing automation (auto plan)",
-            "Client communication (live)",
-            "MLS integration (auto sync)",
+            
           ],
         },
         {
@@ -454,8 +445,7 @@ const RealEstatePage = () => {
             "Predictive risk analysis (alerts before issues)",
             "Performance monitoring (live KPIs)",
             "Cost tracking (budget management)",
-            "Scenario modeling (always available)",
-            "Investment reports (auto create)",
+           
           ],
         },
         {
@@ -479,8 +469,7 @@ const RealEstatePage = () => {
             "Communication optimization (efficient)",
             "Rent tracking (digital, 5 seconds)",
             "Satisfaction tracking (KPIs live)",
-            "Renewal management (terms tracked)",
-            "Retention analytics (live)",
+           
           ],
         },
         {
@@ -505,8 +494,7 @@ const RealEstatePage = () => {
             "Profitability analysis (see returns)",
             "Financial dashboards (KPIs live)",
             "Budget planning (auto)",
-            "Variance analysis (alerts)",
-            "ERP integration (sync auto)",
+           
           ],
         },
         {
@@ -1183,17 +1171,17 @@ const RealEstatePage = () => {
       <SectionShell labelledBy="ai-solutions-heading">
         <SectionIntro
           id="ai-solutions-heading"
-          title="Explore Top Features of Our Real Estate Software Solutions"
+          title="Explore Top Features of  Real Estate  Solutions"
           subtitle="Comprehensive capabilities designed to optimize your property operations."
         />
 
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-gray-950/80 shadow-xl">
-          <div className="grid min-h-0 grid-cols-1 lg:min-h-[420px] lg:grid-cols-5">
+          <div className="grid grid-cols-1 items-stretch lg:grid-cols-5">
             <nav
-              className="min-w-0 border-b border-white/10 bg-black/40 p-3 md:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
+              className="relative z-10 flex h-full min-w-0 flex-col border-b border-white/10 bg-black/40 p-3 sm:p-4 lg:col-span-2 lg:border-b-0 lg:border-r"
               aria-label="Real estate feature categories"
             >
-              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto lg:max-h-none">
+              <div className="custom-scrollbar max-h-[320px] space-y-1 overflow-y-auto sm:max-h-[380px] lg:max-h-none">
                 {features.map((feature, index) => {
                   const active = activeFeature === index;
                   return (
@@ -1227,7 +1215,8 @@ const RealEstatePage = () => {
               </div>
             </nav>
 
-            <article className="min-w-0 bg-white p-4 sm:p-6 md:p-8 lg:col-span-3">
+            <article className="relative min-h-0 min-w-0 bg-white lg:col-span-3">
+              <div className="flex flex-col p-4 sm:p-6 lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain lg:p-8">
               <div className="mb-5 flex items-center gap-3">
                 <div className="rounded-xl bg-amber-100 p-2.5">
                   <div className="rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 p-2">
@@ -1246,119 +1235,74 @@ const RealEstatePage = () => {
                 <div className="h-px flex-1 bg-gray-200" aria-hidden="true" />
               </div>
 
-              <h3 className="mb-5 text-lg leading-snug text-gray-900 sm:mb-6 sm:text-xl md:text-2xl">
+              <h3 className="mb-4 text-lg leading-snug text-gray-900 sm:mb-5 sm:text-xl md:text-2xl">
                 {features[activeFeature].title}
               </h3>
 
               {(() => {
                 const sections = features[activeFeature].sections;
-                const rowCount = Math.max(
-                  ...sections.map((s) => s.details.length),
-                  0,
-                );
+                const rowCount = sections[0]?.details.length ?? 0;
 
                 return (
-                  <>
-                    {/* Mobile: stacked sections (avoids cramped 2-col table overflow) */}
-                    <div className="space-y-4 md:hidden">
-                      {sections.map((section, sectionIndex) => (
-                        <div
-                          key={sectionIndex}
-                          className="overflow-hidden rounded-xl border border-gray-200"
-                        >
-                          <div className="bg-gradient-to-r from-amber-400 to-orange-500 px-3.5 py-2.5 text-xs font-semibold uppercase tracking-wide text-black">
-                            {section.heading}
-                          </div>
-                          <ul className="divide-y divide-gray-100">
-                            {section.details.map((detail, idx) => (
-                              <li
-                                key={idx}
-                                className="flex items-start gap-2.5 px-3.5 py-3 text-sm leading-relaxed text-gray-700"
-                              >
-                                <span
-                                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
-                                  aria-hidden="true"
-                                />
-                                <span className="min-w-0 break-words">
-                                  {detail}
-                                </span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Desktop / tablet: 2-column table */}
-                    <div className="hidden overflow-x-auto md:block">
-                      <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
-                        <table className="w-full table-fixed border-collapse text-left text-sm">
-                          <caption className="sr-only">
-                            {features[activeFeature].title} by audience
-                          </caption>
-                          <thead>
-                            <tr className="bg-gradient-to-r from-amber-400 to-orange-500">
-                              {sections.map((section, sectionIndex) => (
-                                <th
-                                  key={sectionIndex}
-                                  scope="col"
-                                  className={`w-1/2 px-3 py-3 text-xs font-semibold uppercase tracking-wide text-black lg:px-4 ${
-                                    sectionIndex > 0
-                                      ? "border-l border-black/10"
-                                      : ""
+                  <div className="overflow-x-auto">
+                    <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+                    <table className="w-full table-fixed border-collapse text-left text-xs sm:text-sm">
+                      <caption className="sr-only">
+                        {features[activeFeature].title} by audience
+                      </caption>
+                      <thead>
+                        <tr className="bg-gradient-to-r from-amber-400 to-orange-500">
+                          {sections.map((section, sectionIndex) => (
+                            <th
+                              key={section.heading}
+                              scope="col"
+                              className={`w-1/2 px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-black sm:px-4 sm:py-3 sm:text-xs ${
+                                sectionIndex > 0 ? "border-l border-black/10" : ""
+                              }`}
+                            >
+                              {section.heading}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {Array.from({ length: rowCount }).map((_, rowIdx) => (
+                          <tr
+                            key={rowIdx}
+                            className="border-b border-gray-100 last:border-b-0 odd:bg-white even:bg-gray-50/70"
+                          >
+                            {sections.map((section, sectionIndex) => {
+                              const detail = section.details[rowIdx];
+                              return (
+                                <td
+                                  key={section.heading}
+                                  className={`px-2.5 py-2.5 align-top text-gray-700 sm:px-4 sm:py-3 ${
+                                    sectionIndex > 0 ? "border-l border-gray-100" : ""
                                   }`}
                                 >
-                                  {section.heading}
-                                </th>
-                              ))}
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {Array.from({ length: rowCount }).map(
-                              (_, rowIdx) => (
-                                <tr
-                                  key={rowIdx}
-                                  className="border-b border-gray-100 last:border-b-0 odd:bg-white even:bg-gray-50/70"
-                                >
-                                  {sections.map((section, sectionIndex) => {
-                                    const detail = section.details[rowIdx];
-                                    return (
-                                      <td
-                                        key={sectionIndex}
-                                        className={`px-3 py-3 align-top text-gray-700 lg:px-4 ${
-                                          sectionIndex > 0
-                                            ? "border-l border-gray-100"
-                                            : ""
-                                        }`}
-                                      >
-                                        {detail ? (
-                                          <span className="flex items-start gap-2.5">
-                                            <span
-                                              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
-                                              aria-hidden="true"
-                                            />
-                                            <span className="min-w-0 break-words leading-relaxed">
-                                              {detail}
-                                            </span>
-                                          </span>
-                                        ) : (
-                                          <span className="text-gray-300">
-                                            —
-                                          </span>
-                                        )}
-                                      </td>
-                                    );
-                                  })}
-                                </tr>
-                              ),
-                            )}
-                          </tbody>
-                        </table>
-                      </div>
+                                  {detail ? (
+                                    <span className="flex items-start gap-2">
+                                      <span
+                                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                                        aria-hidden="true"
+                                      />
+                                      <span className="min-w-0 break-words leading-snug">
+                                        {detail}
+                                      </span>
+                                    </span>
+                                  ) : null}
+                                </td>
+                              );
+                            })}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                     </div>
-                  </>
+                  </div>
                 );
               })()}
+              </div>
             </article>
           </div>
         </div>

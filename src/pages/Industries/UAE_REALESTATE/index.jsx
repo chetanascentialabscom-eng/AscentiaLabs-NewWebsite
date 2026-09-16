@@ -13,9 +13,9 @@ import {
   Brain,
   TrendingUp,
   Sparkles,
+  Building,
   Network,
   Cloud,
-  Server,
   Database,
   KeyRound,
   ClipboardCheck,
@@ -243,15 +243,6 @@ const UAERealEstatePage = () => {
     },
   ];
 
-  const integrations = [
-    { icon: Server, title: "CRM Systems" },
-    { icon: Building2, title: "ERP Systems" },
-    { icon: MapPinned, title: "Property Portals" },
-    { icon: DollarSign, title: "Payment Systems" },
-    { icon: Shield, title: "Government Systems" },
-    { icon: Database, title: "Accounting" },
-  ];
-
   const security = [
     {
       icon: ClipboardCheck,
@@ -477,66 +468,134 @@ const UAERealEstatePage = () => {
       <SEO {...seoData.uaeRealEstate} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
         <div
           className="pointer-events-none absolute inset-0 opacity-10"
           aria-hidden="true"
         >
-          <div className="absolute top-16 right-16 h-28 w-28 rounded-full bg-blue-500 blur-3xl" />
+          <div className="absolute top-16 right-16 h-28 w-28 rounded-full bg-blue-500 blur-3xl 2xl:h-40 2xl:w-40" />
           <div className="absolute bottom-40 left-16 h-20 w-20 rounded-full bg-blue-400 blur-2xl" />
         </div>
 
-        {/* Hero */}
-        <div className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-16">
-          <div className="grid items-center gap-8 py-4 sm:gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-16 lg:gap-y-4 lg:py-10 xl:gap-x-20 2xl:gap-x-24 2xl:gap-y-5 2xl:py-22">
-            {/* 1. Text — mobile first */}
-            <div className="order-1 max-w-xl space-y-5 text-white lg:self-end">
-              <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400">
+        {/* Hero — scales with viewport height and 2xl width */}
+        <div className="relative container mx-auto max-w-6xl px-4 pb-8 sm:pb-10 md:pb-12 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-16">
+          <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
+            <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
+              <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
                 UAE PropTech
               </p>
-              <h1 className="text-[25px] leading-tight md:text-[32px]">
+              <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
                 Real Estate Software Development in UAE — PropTech
               </h1>
-              <p className="text-lg leading-relaxed text-gray-300">
-                Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai .
+              <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
+                Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai.
               </p>
-            </div>
-
-            {/* 2. Image — after text on mobile; right column on desktop */}
-            <div className="relative order-2 mt-2 w-full sm:mt-4 lg:order-2 lg:row-span-2 lg:mt-0 lg:self-center">
-              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md">
-                <img
-                  src="/pics/uae-hero.png"
-                  alt="UAE real estate PropTech software"
-                  className="mx-auto block h-auto w-full object-contain object-center max-h-[260px] sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] xl:max-h-[460px] 2xl:max-h-[500px]"
-                  loading="eager"
-                  decoding="async"
-                />
+              <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
+                <button
+                  type="button"
+                  onClick={openConsultation}
+                  className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-5 py-2.5 text-sm text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
+                >
+                  Schedule a Consultation →
+                </button>
+                <a
+                  href="#capabilities"
+                  className="rounded-xl border border-white/30 px-5 py-2.5 text-center text-sm text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
+                >
+                  Explore Capabilities
+                </a>
               </div>
             </div>
 
-            {/* 3. CTAs — after image on mobile; under text on desktop */}
-            <div className="order-3 flex flex-col gap-3 sm:flex-row lg:order-3 lg:self-start">
-              <button
-                type="button"
-                onClick={openConsultation}
-                className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
-              >
-                Schedule a Consultation →
-              </button>
-              <a
-                href="#capabilities"
-                className="rounded-xl border border-white/30 px-6 py-3 text-center text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
-                Explore Capabilities
-              </a>
+            <div className="relative order-2 w-full lg:self-center">
+              <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md 2xl:rounded-3xl">
+                <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-4 py-3 sm:px-5 sm:py-3.5 2xl:px-6 2xl:py-4">
+                  <div className="flex min-w-0 items-center gap-2.5">
+                    <Building2 className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
+                    <p className="truncate text-sm font-normal text-white sm:text-base 2xl:text-lg">
+                      Complete UAE PropTech Suite
+                    </p>
+                  </div>
+                  <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400/80" />
+                    <span className="text-[11px] font-light uppercase tracking-wider text-gray-400 2xl:text-xs">
+                      Live
+                    </span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
+                  {[
+                    {
+                      title: "Property Management",
+                      body: "Automated leases, rent invoicing, and tenant portals.",
+                      icon: Building,
+                      iconClass: "text-amber-400",
+                      boxClass: "border-amber-400/25 bg-amber-400/15",
+                      topBorder: false,
+                    },
+                    {
+                      title: "Ejari & Compliance",
+                      body: "Ejari, Tawtheeq, VAT, and PDC workflows in one place.",
+                      icon: FileText,
+                      iconClass: "text-blue-400",
+                      boxClass: "border-blue-400/25 bg-blue-400/15",
+                      topBorder: false,
+                    },
+                    {
+                      title: "Real Estate CRM",
+                      body: "Capture portal, WhatsApp, and walk-in leads in one pipeline.",
+                      icon: Users,
+                      iconClass: "text-green-400",
+                      boxClass: "border-emerald-400/25 bg-emerald-400/15",
+                      topBorder: true,
+                    },
+                    {
+                      title: "Portals & Analytics",
+                      body: "Listing portals and live portfolio dashboards.",
+                      icon: MapPinned,
+                      iconClass: "text-purple-400",
+                      boxClass: "border-violet-400/25 bg-violet-400/15",
+                      topBorder: true,
+                    },
+                  ].map((card) => {
+                    const Icon = card.icon;
+                    return (
+                      <div
+                        key={card.title}
+                        className={`p-3.5 transition-colors duration-300 hover:bg-white/[0.04] sm:p-4 lg:p-5 2xl:p-6 [@media(max-height:780px)]:p-3 ${
+                          card.topBorder
+                            ? "border-white/10 min-[520px]:border-t"
+                            : ""
+                        }`}
+                      >
+                        <div className="flex items-start gap-2.5 sm:gap-3 2xl:gap-4">
+                          <div
+                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border sm:h-9 sm:w-9 lg:h-10 lg:w-10 2xl:h-12 2xl:w-12 ${card.boxClass}`}
+                          >
+                            <Icon className={`h-4 w-4 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6 ${card.iconClass}`} />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="mb-1 text-sm font-normal text-white 2xl:text-base">
+                              {card.title}
+                            </p>
+                            <p className="text-xs font-light leading-snug text-gray-300 sm:text-sm sm:leading-relaxed 2xl:text-base">
+                              {card.body}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Market Context — same blue band */}
         <div
-          className="relative container mx-auto max-w-6xl px-4 pb-12 md:pb-14 lg:pb-16"
+          className="relative container mx-auto max-w-6xl px-4 pb-10 sm:pb-12 md:pb-14 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-20"
           aria-labelledby="market-heading"
         >
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
@@ -730,19 +789,6 @@ const UAERealEstatePage = () => {
               </li>
             );
           })}
-        </ul>
-        <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
-          Integrates with
-        </p>
-        <ul className="flex list-none flex-wrap justify-center gap-2">
-          {integrations.map((item) => (
-            <li
-              key={item.title}
-              className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 md:px-3.5 md:py-2 md:text-[15px]"
-            >
-              {item.title}
-            </li>
-          ))}
         </ul>
       </Shell>
 
