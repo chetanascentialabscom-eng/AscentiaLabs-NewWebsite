@@ -235,19 +235,6 @@ const UKRealEstatePage = () => {
     },
   ];
 
-  const integrations = [
-    { title: "Rightmove", href: "https://www.rightmove.co.uk" },
-    { title: "Zoopla", href: "https://www.zoopla.co.uk" },
-    { title: "OnTheMarket", href: "https://www.onthemarket.com" },
-    { title: "TDS (Tenancy Deposit Scheme)", href: "https://www.tenancydepositscheme.com" },
-    { title: "HomeLet", href: "https://www.homelet.co.uk" },
-    { title: "Let Alliance", href: "https://www.letalliance.co.uk" },
-    { title: "Jupix" },
-    { title: "Keyflo (ID/AML checks)" },
-    { title: "Tapi" },
-    { title: "Custom APIs" },
-  ];
-
   const security = [
     {
       icon: Shield,
@@ -727,30 +714,6 @@ const UKRealEstatePage = () => {
               </li>
             );
           })}
-        </ul>
-        <p className="mb-3 mt-8 text-center text-xs font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-sm">
-          Integrations Ecosystem
-        </p>
-        <ul className="flex list-none flex-wrap justify-center gap-2">
-          {integrations.map((item) => (
-            <li key={item.title}>
-              {item.href ? (
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 transition-colors hover:border-amber-400/40 hover:text-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:px-3.5 md:py-2 md:text-[15px]"
-                >
-                  {item.title}
-                  <span className="sr-only"> (opens in a new tab)</span>
-                </a>
-              ) : (
-                <span className="inline-flex rounded-full border border-white/10 px-3 py-1.5 text-xs text-gray-200 md:px-3.5 md:py-2 md:text-[15px]">
-                  {item.title}
-                </span>
-              )}
-            </li>
-          ))}
         </ul>
       </Shell>
 
