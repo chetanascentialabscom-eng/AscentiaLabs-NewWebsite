@@ -135,6 +135,25 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.canadaRealEstate),
   },
 
+  australiaRealEstate: {
+    title:
+      "Australia Real Estate Software & Property Management | Ascentia Labs",
+    description:
+      "AI-powered property management software for Australian property managers, landlords, and investors—leasing, maintenance, accounting, and resident experience.",
+    keywords:
+      "Australia real estate software, property management software Australia, PropTech Australia, realestate.com.au, Domain.com.au, GST commercial rent, negative gearing, Residential Tenancy Act",
+    url: absoluteUrl(ROUTES.industry.australiaRealEstate),
+  },
+
+  ukRealEstate: {
+    title: "UK Real Estate Software & Property Management | Ascentia Labs",
+    description:
+      "AI-powered property management software for UK letting agents, landlords, and property managers—unifying lettings, compliance, maintenance, and tenant experience.",
+    keywords:
+      "UK real estate software, property management software UK, lettings CRM, Rightmove, Zoopla, Renters' Rights Act, Making Tax Digital, UK GDPR, TDS deposit protection, Right to Rent",
+    url: absoluteUrl(ROUTES.industry.ukRealEstate),
+  },
+
   kindergarten: {
     title: "Kindergarten Management Software | Ascentia Labs",
     description:

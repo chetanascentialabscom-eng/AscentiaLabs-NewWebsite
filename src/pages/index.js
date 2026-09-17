@@ -14,6 +14,8 @@ export { default as UAERealEstatePage } from './Industries/UAE_REALESTATE';
 export { default as USRealEstatePage } from './Industries/US_REALESTATE';
 export { default as IndiaRealEstatePage } from './Industries/INDIA_REALESTATE';
 export { default as CanadaRealEstatePage } from './Industries/CANADA_REALESTATE';
+export { default as AustraliaRealEstatePage } from './Industries/AUSTRALIA_REALESTATE';
+export { default as UKRealEstatePage } from './Industries/UK_REALESTATE';
 export { default as KindergartenPage } from './Industries/Kindergarten';
 export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';

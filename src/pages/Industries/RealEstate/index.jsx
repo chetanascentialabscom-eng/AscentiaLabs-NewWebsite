@@ -778,12 +778,14 @@ const RealEstatePage = () => {
     {
       country: "Australia",
       flagCode: "au",
-      line: "PropTech for Australian agencies, strata managers, and property management companies.",
+      line: "AI property management for Australian property managers, landlords, and investors.",
+      link: ROUTES.industry.australiaRealEstate,
     },
     {
       country: "United Kingdom",
       flagCode: "gb",
-      line: "Real estate software for UK estate agents, lettings firms, and property portfolios.",
+      line: "AI property management for UK letting agents, landlords, and property managers.",
+      link: ROUTES.industry.ukRealEstate,
     },
     {
       country: "UAE",
