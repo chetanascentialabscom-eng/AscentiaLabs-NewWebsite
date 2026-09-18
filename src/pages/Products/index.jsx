@@ -199,39 +199,76 @@ const ProductsPage = () => {
       {/* Product grid */}
       <Shell labelledBy="product-grid-heading">
         <div id="product-grid">
-          <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-5 md:mb-10 md:flex-row md:items-end md:justify-between">
-            <div className="w-full max-w-md">
-              <h2 id="product-grid-heading" className="mb-3 text-sm font-semibold text-white md:text-base">
+          <div className="mb-8 flex flex-col gap-4 border-b border-white/10 pb-5 md:mb-10 md:flex-row md:items-end md:justify-between md:gap-6">
+            <div className="w-full min-w-0 flex-1 md:max-w-none">
+              <h2 id="product-grid-heading" className="sr-only">
                 Enterprise Products
               </h2>
-              <label htmlFor="product-category-select" className="sr-only">
-                Select product category
-              </label>
-              <div className="relative">
-                <select
-                  id="product-category-select"
-                  value={activeCategory}
-                  onChange={(e) => setActiveCategory(e.target.value)}
-                  aria-controls="product-grid-results"
-                  className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm font-medium text-amber-400 [color-scheme:dark] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:text-[15px] md:text-base"
-                >
-                  {PRODUCT_CATEGORIES.map((category) => (
-                    <option
+
+              {/* Mobile: category dropdown */}
+              <div className="md:hidden">
+                <label htmlFor="product-category-select" className="sr-only">
+                  Select product category
+                </label>
+                <div className="relative max-w-md">
+                  <select
+                    id="product-category-select"
+                    value={activeCategory}
+                    onChange={(e) => setActiveCategory(e.target.value)}
+                    aria-controls="product-grid-results"
+                    className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm font-medium text-amber-400 [color-scheme:dark] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+                  >
+                    {PRODUCT_CATEGORIES.map((category) => (
+                      <option
+                        key={category.id}
+                        value={category.id}
+                        className="bg-gray-950 font-normal text-gray-100"
+                      >
+                        {category.label}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown
+                    className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-amber-400"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+
+              {/* Desktop: category tabs */}
+              <div
+                role="tablist"
+                aria-label="Product categories"
+                className="hidden flex-wrap gap-x-5 gap-y-2 md:flex 2xl:flex-nowrap 2xl:gap-x-6"
+              >
+                {PRODUCT_CATEGORIES.map((category) => {
+                  const selected = activeCategory === category.id;
+                  return (
+                    <button
                       key={category.id}
-                      value={category.id}
-                      className="bg-gray-950 font-normal text-gray-100"
+                      type="button"
+                      role="tab"
+                      aria-selected={selected}
+                      onClick={() => setActiveCategory(category.id)}
+                      className={`relative whitespace-nowrap pb-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 md:text-[15px] ${
+                        selected
+                          ? "font-medium text-amber-400"
+                          : "text-gray-400 hover:text-gray-200"
+                      }`}
                     >
                       {category.label}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown
-                  className="pointer-events-none absolute right-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-amber-400 sm:h-[1.125rem] sm:w-[1.125rem]"
-                  aria-hidden="true"
-                />
+                      {selected && (
+                        <span
+                          className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-amber-400"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <p className="text-xs text-gray-400 md:text-sm">
+            <p className="shrink-0 text-xs text-gray-400 md:text-sm 2xl:whitespace-nowrap">
               Showing {filteredProducts.length} Enterprise Product
               {filteredProducts.length === 1 ? "" : "s"}
             </p>
