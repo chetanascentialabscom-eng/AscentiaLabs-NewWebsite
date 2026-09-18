@@ -336,7 +336,7 @@ const ProductsPage = () => {
       </Shell>
 
       {/* Final CTA */}
-      <Shell labelledBy="products-cta-heading" alt>
+      {/* <Shell labelledBy="products-cta-heading" alt>
         <Heading
           id="products-cta-heading"
           title="Have a Product Idea or Enterprise Requirement?"
@@ -358,7 +358,7 @@ const ProductsPage = () => {
             Schedule Architectural Review
           </button>
         </div>
-      </Shell>
+      </Shell> */}
     </div>
   );
 };
