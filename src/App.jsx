@@ -30,6 +30,8 @@ import {
   TicketingSolutionPage,
   TextilesPage,
   ManufacturingPage,
+  ProductsPage,
+  ProductDetailPage,
   CustomCRMDevelopment,
   TechnologyConsultationAndMIS,
   SoftwareEngineering,
@@ -87,6 +89,8 @@ function App() {
             <Route path={ROUTES.home} element={<Home />} />
             <Route path={ROUTES.about} element={<About />} />
             <Route path={ROUTES.contact} element={<Contact />} />
+            <Route path={ROUTES.products} element={<ProductsPage />} />
+            <Route path="/products/:slug" element={<ProductDetailPage />} />
 
             {/* Industry Routes — /industry/{slug} */}
             <Route

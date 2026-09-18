@@ -22,6 +22,8 @@ export { default as TravelTourismPage } from './Industries/TravelTourism';
 export { default as TicketingSolutionPage } from './Industries/TicketingSolution';
 export { default as TextilesPage } from './Industries/Textiles';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
+export { default as ProductsPage } from './Products';
+export { default as ProductDetailPage } from './Products/ProductDetail';
 
 // Services Pages
 export { default as CustomCRMDevelopment } from './Services/CustomCRM';

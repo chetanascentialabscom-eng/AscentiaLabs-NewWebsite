@@ -98,6 +98,8 @@ export const ROUTES = {
   caseStudySSood: "/case-study-s-sood-co-task-management",
   caseStudyPumpkins: "/case-study-pumpkins-kindergarten-management",
   caseStudySunview: "/case-study-sunview-enclave-real-estate",
+  products: "/products",
+  product: (slug) => `/products/${slug}`,
 
   blog: {
     index: "/blog",

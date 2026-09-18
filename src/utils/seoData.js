@@ -31,6 +31,15 @@ export const seoData = {
     url: absoluteUrl(ROUTES.contact),
   },
 
+  products: {
+    title: "Technology Products | Ascentia Labs",
+    description:
+      "Explore Ascentia Labs' enterprise technology products across AI, automation, SaaS, travel, manufacturing, security, fintech, and other business-critical domains.",
+    keywords:
+      "Ascentia Labs products, RouteMaestro, SynapseFlow, DocuMatrix AI, AetherEstate OS, Greige Issuance Advisor, AuraAuth Biometric, enterprise software products",
+    url: absoluteUrl(ROUTES.products),
+  },
+
   // Industry Pages
   fieldServiceCRM: {
     title: "Field CRM Development Company –  Field Service CRM Solutions | Ascentia Labs",

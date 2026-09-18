@@ -16,6 +16,7 @@ const Footer = () => {
 
   const aboutLinks = [
     { name: "About Us", route: ROUTES.about },
+    { name: "Products ", route: ROUTES.products },
     { name: "Send A Message", route: ROUTES.contact },
     { name: "Our Blogs", route: ROUTES.blog.index },
     { name: "Sitemap", route: "/sitemap_index.xml", external: true }
