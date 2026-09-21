@@ -21,6 +21,8 @@ export { default as EducationPage } from './Industries/Education';
 export { default as TravelTourismPage } from './Industries/TravelTourism';
 export { default as TicketingSolutionPage } from './Industries/TicketingSolution';
 export { default as TextilesPage } from './Industries/Textiles';
+export { default as IndiaTextilePage } from './Industries/INDIA_TEXTILE';
+export { default as UAETextilePage } from './Industries/UAE_TEXTILE';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
 export { default as ProductsPage } from './Products';
 export { default as ProductDetailPage } from './Products/ProductDetail';

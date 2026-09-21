@@ -34,6 +34,8 @@ export const SLUGS = {
     travelTourism: "travel-app-development",
     ticketing: "ticketing-solution",
     textiles: "textile-manufacturing-software",
+    indiaTextile: "india-textile-apparel-software-development",
+    uaeTextile: "uae-textile-software-development",
     manufacturing: "manufacturing-management-software",
   },
   service: {
@@ -135,6 +137,8 @@ export const ROUTES = {
     travelTourism: industryPath(SLUGS.industry.travelTourism),
     ticketing: industryPath(SLUGS.industry.ticketing),
     textiles: industryPath(SLUGS.industry.textiles),
+    indiaTextile: industryPath(SLUGS.industry.indiaTextile),
+    uaeTextile: industryPath(SLUGS.industry.uaeTextile),
     manufacturing: industryPath(SLUGS.industry.manufacturing),
   },
 
@@ -182,6 +186,14 @@ export const LEGACY_REDIRECTS = [
   ["/ticketing-solution", ROUTES.industry.ticketing],
   ["/textile-manufacturing-software", ROUTES.industry.textiles],
   ["/textiles", ROUTES.industry.textiles],
+  [
+    "/india-textile-apparel-software-development",
+    ROUTES.industry.indiaTextile,
+  ],
+  [
+    "/uae-textile-software-development",
+    ROUTES.industry.uaeTextile,
+  ],
   ["/manufacturing-management-software", ROUTES.industry.manufacturing],
   ["/manufacturing", ROUTES.industry.manufacturing],
 

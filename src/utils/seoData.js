@@ -212,6 +212,25 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.textiles),
   },
 
+  indiaTextile: {
+    title:
+      "India Textile Software — Garment, Mills & GST Compliance | Ascentia Labs",
+    description:
+      "AI-powered textile software development for Indian garment manufacturers and mills. Production planning, fabric management, quality control, GST textile compliance, and job work—get a free consultation.",
+    keywords:
+      "India textile software, textile software development, textile industry solutions, fabric management, textile manufacturing, production planning, garment manufacturing software India, textile mill software, textile export software, GST textile compliance, job work management, size-color matrix, Tiruppur textile software, quality control software",
+    url: absoluteUrl(ROUTES.industry.indiaTextile),
+  },
+
+  uaeTextile: {
+    title: "UAE Textile Software | Ascentia Labs",
+    description:
+      "AI-powered textile software for UAE garment manufacturers, fabric traders, textile mills, and apparel brands—production, inventory, VAT compliance, and omni-channel operations.",
+    keywords:
+      "UAE textile software, Dubai textile software, garment manufacturing software UAE, fabric inventory UAE, VAT textile compliance, Shopify textile software, Sharjah textile software, Ajman garment software, multi-currency textile accounting, fashion brand software UAE",
+    url: absoluteUrl(ROUTES.industry.uaeTextile),
+  },
+
   manufacturing: {
     title: "Manufacturing Software Development | Ascentia Labs",
     description:

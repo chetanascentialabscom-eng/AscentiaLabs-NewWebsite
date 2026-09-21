@@ -601,6 +601,45 @@ const TextilesPage = () => {
     },
   ];
 
+  const countryMarkets = [
+    {
+      country: "India",
+      flagCode: "in",
+      line: "Textile software for garment manufacturing, fabric inventory, and GST compliance.",
+      link: ROUTES.industry.indiaTextile,
+    },
+    {
+      country: "United States",
+      flagCode: "us",
+      line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
+      link: null,
+    },
+    {
+      country: "Australia",
+      flagCode: "au",
+      line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
+      link: null,
+    },
+    {
+      country: "United Kingdom",
+      flagCode: "gb",
+      line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
+      link: null,
+    },
+    {
+      country: "UAE",
+      flagCode: "ae",
+      line: "Textile software for garment manufacturing, fabric inventory, and trade operations.",
+      link: ROUTES.industry.uaeTextile,
+    },
+    {
+      country: "Canada",
+      flagCode: "ca",
+      line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
+      link: null,
+    },
+  ];
+
   // Related Industries — SEO internal linking (exclude current Textiles page)
   const relatedIndustries = [
     {
@@ -1433,6 +1472,70 @@ const TextilesPage = () => {
                     />
                   </span>
                 </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </SectionShell>
+
+      {/* ================= COUNTRY / REGIONAL MARKETS ================= */}
+      <SectionShell labelledBy="country-markets-heading">
+        <SectionIntro
+          id="country-markets-heading"
+          title="Textile Software by Country"
+          subtitle="Market-specific textile platforms tailored for local operations, compliance, and manufacturing workflows."
+        />
+        <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+          {countryMarkets.map((market) => {
+            const isLinked = Boolean(market.link);
+            const cardClassName = isLinked
+              ? "group flex h-full flex-col rounded-2xl border border-white/15 bg-black p-5 transition-colors hover:border-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              : "flex h-full flex-col rounded-2xl border border-white/10 bg-black/80 p-5";
+            const content = (
+              <>
+                <img
+                  src={`https://flagcdn.com/w80/${market.flagCode}.png`}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="mb-4 h-7 w-7 rounded-full object-cover ring-1 ring-white/20"
+                  loading="lazy"
+                />
+                <h3
+                  className={`mb-2 text-base font-semibold text-white ${
+                    isLinked ? "transition-colors group-hover:text-amber-300" : ""
+                  }`}
+                >
+                  {market.country}
+                </h3>
+                <p className="flex-1 text-sm leading-relaxed text-white/90">
+                  {market.line}
+                </p>
+                {isLinked ? (
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-amber-400">
+                    Explore
+                    <ArrowRight
+                      size={12}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
+                  </span>
+                ) : (
+                  <span className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-gray-500">
+                    Coming soon
+                  </span>
+                )}
+              </>
+            );
+
+            return (
+              <li key={market.country}>
+                {isLinked ? (
+                  <Link to={market.link} className={cardClassName}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={cardClassName}>{content}</div>
+                )}
               </li>
             );
           })}

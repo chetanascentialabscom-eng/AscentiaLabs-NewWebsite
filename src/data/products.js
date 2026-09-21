@@ -24,7 +24,7 @@ export const PRODUCT_CATEGORIES = [
 
 export const products = [
   {
-    slug: "routemaestro",
+    slug: "/",
     name: "RouteMaestro",
     categoryLabel: "AI / TRAVEL & HOSPITALITY",
     previewLabel: "TRAVEL AI",
@@ -39,7 +39,7 @@ export const products = [
     accent: "amber",
   },
   {
-    slug: "greige-issuance-advisor",
+    slug: "/",
     name: "Greige Issuance Advisor",
     categoryLabel: "MANUFACTURING / TEXTILE AI",
     previewLabel: "TEXTILE AI",
@@ -54,7 +54,7 @@ export const products = [
     accent: "blue",
   },
   {
-    slug: "auraauth-biometric",
+    slug: "/",
     name: "AuraAuth Biometric",
     categoryLabel: "SECURITY / COMPUTER VISION",
     previewLabel: "IDENTITY",
