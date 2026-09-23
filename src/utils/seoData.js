@@ -231,6 +231,14 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.uaeTextile),
   },
 
+  usaTextile: {
+    title: "USA Textile Software | Ascentia Labs",
+    description:
+      "AI-powered textile software for USA garment manufacturers, fabric traders, textile mills, and apparel brands—production planning, inventory, U.S. trade compliance, and omni-channel operations.",
+    keywords:
+      "USA textile software, American textile software, garment manufacturing software USA, apparel manufacturing software USA, textile ERP software USA, fabric inventory software USA, garment production planning software, U.S. trade compliance software, textile manufacturing ERP, clothing manufacturing software USA, USMCA textile compliance, fashion brand software USA, textile management software USA, apparel ERP USA, North Carolina textile software, California garment software, New York fashion software",
+    url: absoluteUrl(ROUTES.industry.usaTextile),
+  },
   manufacturing: {
     title: "Manufacturing Software Development | Ascentia Labs",
     description:

@@ -23,7 +23,6 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
-  DollarSign,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -36,11 +35,10 @@ import { ROUTES } from "../../../utils/routes";
 
 const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
   <section
-    className={`relative overflow-hidden py-12 md:py-14 lg:py-16 ${
-      alt
-        ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        : "bg-black"
-    } ${className}`}
+    className={`relative overflow-hidden py-12 md:py-14 lg:py-16 ${alt
+      ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+      : "bg-black"
+      } ${className}`}
     aria-labelledby={labelledBy}
   >
     {alt && (
@@ -57,9 +55,8 @@ const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
 
 const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   <div
-    className={`mb-8 md:mb-10 ${
-      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
-    }`}
+    className={`mb-8 md:mb-10 ${align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
+      }`}
   >
     {eyebrow && (
       <p className="mb-3 text-[11px] 2xl:text-[15px] font-semibold uppercase tracking-[0.18em] text-amber-400">
@@ -77,140 +74,113 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UAETextilePage = () => {
+const UsaTextilePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "USD 10.88B", label: "UAE apparel market size (2025)" },
-    { value: "USD 198.8M", label: "UAE contract textile market by 2030" },
-    { value: "AED 3.06B", label: "UAE textile exports (Q4 2025, quarterly)" },
-    { value: "AED 55B", label: "Projected UAE fashion & apparel revenue" },
+    { value: "$60.9B", label: "U.S. textile & apparel shipments (2025)" },
+    { value: "453K+", label: "U.S. textile supply chain employment" },
+    { value: "$27B", label: "U.S. textile & apparel exports (2025)" },
+    { value: "96.9%", label: "Apparel & footwear sold in U.S. is imported" },
   ];
 
   const services = [
     {
       icon: Shirt,
-      title: "Garment Manufacturing & Production",
+      title: "Garment Manufacturing Software",
       description:
-        "Production planning, cutting, stitching line tracking, and finishing for Dubai, Sharjah, and Ajman zones.",
+        "Production planning, cutting, sewing, and finishing for U.S. apparel brands.",
+    },
+    {
+      icon: Factory,
+      title: "Textile Mill Software",
+      description:
+        "Spinning, weaving, fabric, and yarn tracking workflows for U.S. mills.",
     },
     {
       icon: Boxes,
       title: "Fabric Inventory Management",
       description:
-        "Fabric roll tracking, meter-based stock, size-color matrix, and multi-warehouse visibility.",
-    },
-    {
-      icon: Factory,
-      title: "Textile Mill Operations",
-      description:
-        "Spinning, weaving, dyeing, and finishing with yarn tracking, inspection, and batch control.",
+        "Real-time fabric, size-color matrix, trim tracking, and multi-location stock control.",
     },
     {
       icon: ClipboardCheck,
-      title: "VAT & Compliance Management",
+      title: "U.S. Trade Compliance",
       description:
-        "FTA-compliant billing, VAT calculation, multi-currency invoicing, and e-invoicing workflows.",
+        "HTS codes, duty calculation, customs docs, and trade agreement support.",
     },
     {
       icon: Globe,
-      title: "Omni-Channel & E-Commerce Integration",
+      title: "Textile Export Software",
       description:
-        "Sync stores, exhibitions, and online channels—including Shopify for D2C fashion brands.",
+        "Export invoicing, USMCA/CAFTA docs, and trade compliance for shipments.",
     },
     {
       icon: Wrench,
-      title: "Job Work & Subcontracting Management",
+      title: "Job Work Management",
       description:
-        "Track outsourced embroidery and fabric processing with accountability and quality docs.",
+        "Track outsourced processing with quality docs and subcontractor visibility.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "International brands hold ~65% market share—price pressure squeezes margins for local textile manufacturers.",
+        "High labor costs and low R&D budgets limit automation across U.S. mills and factories.",
       solution:
-        "Textile software with batch cost visibility, margin analysis, and wastage tracking for competitive pricing.",
+        "A cloud textile platform standardizes workflows with real-time visibility—no large upfront IT spend.",
     },
     {
       challenge:
-        "Cotton and fiber prices swing up to 20%, complicating budgets and production planning.",
+        "40 U.S. textile mills closed in 2.5 years due to import pressure and falling utilization.",
       solution:
-        "Supplier price comparison, reorder suggestions, and real-time material cost tracking in planning.",
+        "Flexible production planning, batch tracking, and demand-led inventory boost efficiency and turnaround.",
     },
     {
       challenge:
-        "Complex size-color variants and bulk institutional orders need precise fabric inventory control.",
+        "U.S. apparel output fell 17% in 2025, with sourcing shifting to Asia instead of reshoring.",
       solution:
-        "Variant matrix generation, barcode inventory, and job-order routing through cutting to finishing.",
+        "AI-powered order and material forecasting help U.S. manufacturers capture reshoring opportunities faster.",
     },
     {
       challenge:
-        "Multi-currency trade (USD/INR in, AED out) creates FX risk and accounting complexity.",
+        "Manual HTS, duty, and trade compliance raises the risk of penalties, delays, and errors.",
       solution:
-        "Multi-currency accounting with gain/loss processing and VAT-compliant invoicing across currencies.",
+        "Automate U.S. trade compliance with HTS mapping, e-invoicing, and return-ready workflows.",
     },
   ];
-
   const stakeholders = [
     {
-      tab: "Garment Manufacturers",
-      title: "Garment Manufacturers",
+      tab: "Apparel Brands",
+      title: "Apparel & Garment Manufacturing",
       description:
-        "Apparel producers managing cutting, stitching, finishing, and dispatch who need production visibility and order tracking.",
+        "U.S. brands managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
       panel: {
         eyebrow: "Floor workflow",
         stages: [
-          { step: "01", name: "Production Planning", status: "In progress" },
-          { step: "02", name: "Cutting", status: "Queued" },
-          { step: "03", name: "Stitching", status: "Next" },
-          { step: "04", name: "Finishing / Dispatch", status: "Planned" },
+          { step: "01", name: "Cutting", status: "In progress" },
+          { step: "02", name: "Sewing", status: "Queued" },
+          { step: "03", name: "Finishing", status: "Next" },
+          { step: "04", name: "Dispatch", status: "Planned" },
         ],
         kpis: [
-          { value: "Prod", label: "Production" },
+          { value: "Live", label: "Line status" },
           { value: "QC", label: "Stage checks" },
           { value: "SCM", label: "Size-color" },
         ],
       },
       bullets: [
         "Production planning and scheduling",
-        "Cutting room and stitching line tracking",
+        "Cutting room and sewing line tracking",
         "Multi-stage quality control",
         "Size-color matrix management",
       ],
     },
     {
-      tab: "Fabric Traders",
-      title: "Fabric Traders & Wholesalers",
-      description:
-        "Businesses managing fabric procurement, stock, and B2B orders across warehouses and retail locations.",
-      panel: {
-        eyebrow: "Trade workflow",
-        stages: [
-          { step: "01", name: "Procurement", status: "Open" },
-          { step: "02", name: "Warehousing", status: "Updated" },
-          { step: "03", name: "Sales Order", status: "In transit" },
-          { step: "04", name: "Dispatch / Settlement", status: "Due" },
-        ],
-        kpis: [
-          { value: "WH", label: "Warehouses" },
-          { value: "SO", label: "Orders" },
-          { value: "Inv", label: "Inventory" },
-        ],
-      },
-      bullets: [
-        "Meter-based fabric inventory tracking",
-        "Multi-supplier management and price comparison",
-        "Sales order tracking and status",
-        "Daily business reporting",
-      ],
-    },
-    {
       tab: "Textile Mills",
-      title: "Textile Mills",
+      title: "Textile Mill Operations",
       description:
         "Spinning, weaving, and processing units that need yarn-to-fabric visibility and capacity planning.",
       panel: {
@@ -235,29 +205,55 @@ const UAETextilePage = () => {
       ],
     },
     {
-      tab: "Fashion Brands",
-      title: "Fashion Brands & Retailers",
+      tab: "Traders & Wholesalers",
+      title: "Textile Traders & Wholesalers",
       description:
-        "Brands managing private label manufacturing, retail stores, and e-commerce channels.",
+        "Businesses managing fabric procurement, stock, and orders across U.S. warehouses.",
       panel: {
-        eyebrow: "Retail workflow",
+        eyebrow: "Trade workflow",
         stages: [
-          { step: "01", name: "Manufacturing", status: "Active" },
-          { step: "02", name: "Inventory", status: "Synced" },
-          { step: "03", name: "Retail", status: "Open" },
-          { step: "04", name: "E-Commerce", status: "Live" },
+          { step: "01", name: "Procurement", status: "Open" },
+          { step: "02", name: "Warehousing", status: "Updated" },
+          { step: "03", name: "Sales order", status: "In transit" },
+          { step: "04", name: "Settlement", status: "Due" },
         ],
         kpis: [
-          { value: "POS", label: "Retail POS" },
-          { value: "Shop", label: "Shopify" },
-          { value: "Omni", label: "Omni-channel" },
+          { value: "3+", label: "Warehouses" },
+          { value: "SO", label: "Order track" },
+          { value: "JW", label: "Job work" },
         ],
       },
       bullets: [
-        "Omni-channel stock synchronization",
-        "E-commerce integration (Shopify, etc.)",
-        "Retail POS with multi-currency support",
-        "Brand-specific production tracking",
+        "Multi-warehouse inventory visibility",
+        "Sales order tracking",
+        "Job work / subcontractor management",
+        "Daily business reporting",
+      ],
+    },
+    {
+      tab: "Exporters",
+      title: "Textile Export Operations",
+      description:
+        "Export-focused manufacturers managing international orders, compliance, and documentation.",
+      panel: {
+        eyebrow: "Export workflow",
+        stages: [
+          { step: "01", name: "Order confirm", status: "Done" },
+          { step: "02", name: "Docs pack", status: "In review" },
+          { step: "03", name: "Scheme claim", status: "Pending" },
+          { step: "04", name: "Shipment", status: "Booked" },
+        ],
+        kpis: [
+          { value: "INV", label: "Export docs" },
+          { value: "FX", label: "Multi-currency" },
+          { value: "QC", label: "Standards" },
+        ],
+      },
+      bullets: [
+        "Export invoicing and documentation",
+        "USMCA/CAFTA scheme support",
+        "Multi-currency operations",
+        "Quality standards compliance",
       ],
     },
   ];
@@ -266,55 +262,60 @@ const UAETextilePage = () => {
     {
       icon: Brain,
       title: "AI & Automation",
-      body: "Order forecasting, purchase recommendations, and production insights for textile manufacturing.",
+      body: "Order and material forecasting, automated order reading, and production insights.",
     },
     {
       icon: Cloud,
-      title: "Cloud Platform",
-      body: "100% cloud textile software—access from factory floor to office with no on-premise servers.",
+      title: "Cloud Textile Platform",
+      body: "100% cloud software—factory floor to office, no on-premise servers.",
     },
     {
       icon: Network,
       title: "API Access",
-      body: "APIs for inventory, production, orders, and finance—plus Shopify, payments, and FTA e-invoicing.",
+      body: "APIs for inventory, production, orders, and finance—plus QuickBooks, NetSuite, EDI, and payments.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First",
-      body: "Mobile tools for supervisors, QC, and field teams—including job work and dispatch tracking.",
+      body: "Mobile tools for supervisors, QC, and field teams—with job work and dispatch tracking.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for production efficiency, defect rates, inventory turnover, and order profitability.",
+      body: "Dashboards for production efficiency, defect rates, inventory turnover, and profitability.",
     },
   ];
 
   const security = [
     {
       icon: ClipboardCheck,
-      title: "UAE VAT Compliance",
-      body: "FTA-compliant billing, VAT calculation, e-invoicing, and return-ready reporting aligned with Federal Tax Authority standards.",
+      title: "U.S. Trade Compliance",
+      body: "HTS mapping, duty drawback, customs docs, and automated return prep.",
     },
     {
-      icon: DollarSign,
-      title: "Multi-Currency Accounting",
-      body: "Automatic gain/loss processing for USD, INR, and AED transactions—essential for textile trade with international suppliers and customers.",
+      icon: Globe,
+      title: "Export Scheme Support",
+      body: "USMCA, CAFTA-DR, and trade agreement docs for textile shipments.",
     },
     {
       icon: FileText,
-      title: "Corporate Tax Readiness",
-      body: "Financial records and reporting structured for UAE Corporate Tax compliance requirements.",
+      title: "E-Invoicing & EDI",
+      body: "Integration with U.S. retail and brand EDI systems for e-invoices.",
+    },
+    {
+      icon: Wrench,
+      title: "Job Work Compliance",
+      body: "Track goods to subcontractors with audit-ready documentation.",
     },
     {
       icon: Shield,
       title: "Data Security",
-      body: "Role-based access controls protecting business data, customer information, and financial records.",
+      body: "Role-based access protecting business and financial records.",
     },
     {
       icon: Database,
       title: "Audit & Activity Logs",
-      body: "Transparent logs for production activities, quality checks, and compliance actions—supporting internal audits and FTA reviews.",
+      body: "Logs for production, quality, and compliance—ready for review.",
     },
   ];
 
@@ -323,37 +324,37 @@ const UAETextilePage = () => {
       id: 1,
       title: "Textile-Specific Software",
       description:
-        "Purpose-built for garment manufacturing and textile operations—not generic software adapted with textile terminology.",
+        "Purpose-built for U.S. garment and mill operations—not generic software rebranded.",
     },
     {
       id: 2,
-      title: "Unified Platform Experience",
+      title: "Unified Platform",
       description:
-        "Production, inventory, accounting, VAT compliance, and omni-channel sales share one data model—no fragmented systems requiring manual reconciliation.",
+        "Production, fabric, accounting, trade compliance, and export docs on one data model.",
     },
     {
       id: 3,
-      title: "UAE Market Understanding",
+      title: "U.S. Market Fit",
       description:
-        "Built around UAE textile workflows—VAT compliance, multi-currency operations, re-export documentation, and Dubai, Sharjah, and Ajman industrial clusters.",
+        "Built for American workflows—USMCA, EDI, brand compliance, and reshoring.",
     },
     {
       id: 4,
       title: "Proven Outcomes",
       description:
-        "Measurable gains in production efficiency, inventory accuracy, VAT compliance, and weekly hours saved.",
+        "Gains in production efficiency, inventory accuracy, compliance, and hours saved.",
     },
     {
       id: 5,
       title: "Scalable for Growth",
       description:
-        "From small garment units to large integrated mills—the same platform supports growth without disruptive system changes.",
+        "Same platform from small garment units to large mills—no rip-and-replace.",
     },
     {
       id: 6,
-      title: "Modern Interface & Adoption",
+      title: "Modern Adoption",
       description:
-        "Designed for usability so production teams, warehouse staff, and management actually use the system.",
+        "Usable UI so production, warehouse, and management teams run on the system.",
     },
   ];
 
@@ -362,114 +363,109 @@ const UAETextilePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Assess production workflows, inventory challenges, and VAT compliance requirements so teams see value quickly.",
+        "Map production, inventory, and compliance needs so teams see value quickly.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure production planning, fabric inventory, VAT workflows, and omni-channel integrations around your operating model.",
+        "Configure production planning, inventory, trade compliance, and export workflows to your model.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Data migration, user training in English and Arabic, and guided rollout sized to business complexity.",
+        "Migration, English training, and rollout sized to business complexity.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "UAE-aligned support, knowledge resources, and continuous improvement as your business grows.",
+        "U.S. timezone-aligned support and continuous improvement as textile operations scale.",
     },
   ];
 
   const caseStudies = [
     {
       metric: "9 → 1",
-      title: "Unified Platform",
+      title: "Unified Textile Platform",
       description:
-        "Consolidated nine separate systems into one unified platform, improving production visibility and eliminating manual data entry across order management.",
+        "Nine systems consolidated into one platform—better production visibility and less manual order entry.",
       icon: Layers,
     },
     {
       metric: "Visibility",
-      title: "Production Visibility",
+      title: "Production Planning",
       description:
-        "Manufacturers using real-time production tracking report faster identification of bottlenecks and improved on-time delivery performance.",
+        "Real-time production tracking helps spot bottlenecks faster and improve on-time delivery.",
       icon: RefreshCw,
     },
     {
       metric: "Accuracy",
-      title: "Inventory Accuracy",
+      title: "Fabric Inventory",
       description:
-        "Textile businesses using integrated inventory management report reduced stock discrepancies and improved material planning accuracy.",
+        "Integrated inventory management reduces stock discrepancies and improves material planning.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What does textile software for UAE manufacturers include?",
+      question: "What does U.S. textile software include?",
       answer:
-        "Core capabilities typically include production planning, fabric inventory management, order tracking, quality control, VAT compliance, multi-currency accounting, and omni-channel integration for textile and garment operations.",
+        "Production planning, fabric inventory, order tracking, quality control, trade compliance, accounting, and export documentation for textile manufacturing.",
     },
     {
-      question: "How does textile software help garment manufacturers in UAE?",
+      question: "How does garment manufacturing software help in the U.S.?",
       answer:
-        "The platform provides centralized visibility across production stages, reduces manual record-keeping, accelerates workflows, and improves inventory and cost accuracy—enabling faster, more informed decision-making for UAE manufacturers.",
+        "It centralizes cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
     },
     {
-      question: "Can the platform handle UAE VAT compliance for textiles?",
+      question: "Does it support U.S. trade compliance?",
       answer:
-        "Yes. UAE FTA-compliant billing, VAT calculation, e-invoicing, and return-ready workflows are built into the platform, with multi-currency support for international transactions.",
+        "Yes—HTS tracking, duty drawback, customs documentation, and return preparation aligned with U.S. trade rules.",
     },
     {
-      question: "Does it support size-color variant management?",
+      question: "Can it handle textile export documentation?",
       answer:
-        "Yes. Automated variant matrix generation for size and color combinations enables precise tracking through cutting, stitching, and finishing stages.",
+        "Yes—export invoicing, USMCA/CAFTA docs, and trade compliance reporting are built in.",
     },
     {
-      question: "Can it manage multi-currency operations?",
+      question: "Does it support job work management?",
       answer:
-        "Yes. Multi-currency accounting with automatic gain/loss processing supports USD, INR, and AED transactions—standard for UAE textile trade.",
+        "Yes—subcontractor tracking, outsourced process monitoring, and accountability documentation are core features.",
     },
     {
-      question: "Does it support e-commerce integration?",
+      question: "Is size-color matrix tracking included?",
       answer:
-        "Yes. Real-time synchronization with Shopify and other e-commerce platforms keeps physical store, exhibition, and online channel inventory aligned.",
+        "Yes—size-color matrices keep production planning and inventory accurate across product variants.",
     },
     {
-      question: "Can it manage job work operations?",
+      question: "Can textile software integrate with QuickBooks?",
       answer:
-        "Yes. Job work tracking, subcontractor management, and outsourced process monitoring with accountability documentation are core capabilities.",
+        "Yes—QuickBooks sync keeps financial data aligned between your platform and existing accounting.",
     },
     {
-      question: "How long does implementation take?",
+      question: "How long does textile software implementation take?",
       answer:
-        "Timelines depend on business size and complexity. For most mid-market manufacturers, deployment typically takes weeks to months, with many teams seeing benefits within weeks.",
-    },
-    {
-      question: "What support is available?",
-      answer:
-        "UAE textile businesses are supported through aligned timezone teams, dedicated account management, remote implementation guidance, training, and ongoing support resources.",
+        "Most mid-market manufacturers deploy in weeks to months, with many teams seeing value within weeks.",
     },
     {
       question: "Is the platform cloud-based?",
       answer:
-        "Yes. Modern textile platforms are cloud-based, enabling anytime access for production teams, management, and stakeholders across locations.",
+        "Yes—cloud textile software gives anytime access for factory, management, and multi-location teams.",
     },
     {
       question: "Can it support large integrated mills?",
       answer:
-        "Yes. Enterprise textile operations can use unified production planning, inventory management, VAT compliance workflows, API integrations, and audit-ready activity logs.",
+        "Yes—unified production planning, inventory, compliance, APIs, and audit logs for enterprise mills.",
     },
   ];
 
   const relatedIndustries = [
     { title: "Textiles", link: ROUTES.industry.textiles },
     { title: "India Textile", link: ROUTES.industry.indiaTextile },
-    { title: "USA Textile", link: ROUTES.industry.usaTextile },
+    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
@@ -478,7 +474,7 @@ const UAETextilePage = () => {
   ];
 
   const active = stakeholders[activeStakeholder];
-  const ActiveStakeholderIcon = [Shirt, Boxes, Factory, Globe][
+  const ActiveStakeholderIcon = [Shirt, Factory, Boxes, Globe][
     activeStakeholder
   ];
 
@@ -486,7 +482,7 @@ const UAETextilePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.uaeTextile} />
+      <SEO {...seoData.usaTextile} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -502,15 +498,15 @@ const UAETextilePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                UAE Textile
+                USA Textile
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                AI-Powered Textile Software for UAE Businesses
+                USA Textile Software for Manufacturers & Mills
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                Unify production, fabric inventory, VAT compliance, and
-                omni-channel operations with modern textile software built for UAE
-                garment manufacturers, traders, and apparel brands.
+                AI-powered textile software for garment manufacturing, fabric
+                management, U.S. trade compliance, and export workflows—built for
+                American textile industry operations.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -549,32 +545,32 @@ const UAETextilePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "Garment Production",
-                      body: "Cutting, stitching, and finishing workflows.",
+                      title: "Apparel Production",
+                      body: "Cutting, sewing, and finishing workflows.",
                       icon: Shirt,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Fabric Trading",
-                      body: "Roll tracking and multi-warehouse stock.",
-                      icon: Boxes,
+                      title: "Textile Mills",
+                      body: "Yarn, fabric, dyeing, and loom planning.",
+                      icon: Factory,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Inventory & VAT",
-                      body: "Size-color matrix and FTA compliance.",
+                      title: "Inventory & Trade",
+                      body: "Size-color matrix and U.S. compliance.",
                       icon: Warehouse,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
-                      title: "Omni-Channel",
-                      body: "Stores, Shopify, and job work sync.",
+                      title: "Export & Job Work",
+                      body: "Documentation and subcontracting.",
                       icon: Globe,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
@@ -585,19 +581,16 @@ const UAETextilePage = () => {
                     return (
                       <div
                         key={card.title}
-                        className={`p-3.5 transition-colors duration-300 hover:bg-white/[0.04] sm:p-4 lg:p-5 2xl:p-6 [@media(max-height:780px)]:p-3 ${
-                          card.topBorder
-                            ? "border-white/10 min-[520px]:border-t"
-                            : ""
-                        }`}
+                        className={`p-3.5 transition-colors duration-300 hover:bg-white/[0.04] sm:p-4 lg:p-5 2xl:p-6 [@media(max-height:780px)]:p-3 ${card.topBorder
+                          ? "border-white/10 min-[520px]:border-t"
+                          : ""
+                          }`}
                       >
                         <div className="flex items-start gap-2.5 sm:gap-3 2xl:gap-4">
                           <div
                             className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border sm:h-9 sm:w-9 lg:h-10 lg:w-10 2xl:h-12 2xl:w-12 ${card.boxClass}`}
                           >
-                            <Icon
-                              className={`h-4 w-4 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6 ${card.iconClass}`}
-                            />
+                            <Icon className={`h-4 w-4 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6 ${card.iconClass}`} />
                           </div>
                           <div className="min-w-0">
                             <p className="mb-1 text-sm font-normal text-white 2xl:text-base">
@@ -626,8 +619,8 @@ const UAETextilePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why UAE Textile Needs Modern Technology"
-              subtitle="With a USD 10.88B apparel market and Dubai–Sharjah–Ajman re-export trade under international pressure, textile businesses need cloud software for fabric inventory, production tracking, and VAT-ready accounting."
+              title="Why U.S. Textile Needs Modern Technology"
+              subtitle="With $60.9B shipments and 453K+ workers—yet 96.9% of apparel imported—U.S. manufacturers need cloud software for planning, inventory, and compliance."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -654,8 +647,8 @@ const UAETextilePage = () => {
         <Heading
           id="capabilities"
           eyebrow="Services"
-          title="Services Built for UAE Textile Operations"
-          subtitle="Textile software for garment manufacturing, fabric trading, mills, and fashion brands—production planning to VAT."
+          title="Textile Industry Solutions for the U.S."
+          subtitle="Textile software for garment manufacturing, mills and exporters—production planning to U.S. trade compliance."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -685,8 +678,8 @@ const UAETextilePage = () => {
         <Heading
           id="challenges-heading"
           eyebrow="Solutions"
-          title="Practical Solutions for UAE Textile Challenges"
-          subtitle="Margin pressure, material costs, size-color variants, and multi-currency trade that matter most in UAE markets."
+          title="Practical Solutions for U.S. Textile Challenges"
+          subtitle="Clear answers for production reliability, fabric inventory, trade compliance, and faster order turnaround."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -717,27 +710,24 @@ const UAETextilePage = () => {
           id="stakeholders-heading"
           eyebrow="Use Cases"
           title="Built for Every Textile Stakeholder"
-          subtitle="Software shaped for garment manufacturers, fabric traders, mills, and fashion brands across the UAE."
+          subtitle="Software shaped for apparel brands, textile mills, traders, and exporters across the U.S."
         />
 
+        {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="uae-textile-stakeholder-select" className="sr-only">
+          <label htmlFor="usa-textile-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="uae-textile-stakeholder-select"
+              id="usa-textile-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="uae-textile-stakeholder-panel"
+              aria-controls="usa-textile-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
-                <option
-                  key={item.tab}
-                  value={index}
-                  className="bg-gray-950 text-white"
-                >
+                <option key={item.tab} value={index} className="bg-gray-950 text-white">
                   {item.tab}
                 </option>
               ))}
@@ -749,6 +739,7 @@ const UAETextilePage = () => {
           </div>
         </div>
 
+        {/* Desktop: centered pill tabs */}
         <div
           role="tablist"
           aria-label="Stakeholder types"
@@ -762,14 +753,13 @@ const UAETextilePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`uae-textile-stakeholder-tab-${index}`}
-                aria-controls="uae-textile-stakeholder-panel"
+                id={`usa-textile-stakeholder-tab-${index}`}
+                aria-controls="usa-textile-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
-                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
-                  selected
-                    ? "bg-amber-400 text-black"
-                    : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
-                }`}
+                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
+                  ? "bg-amber-400 text-black"
+                  : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
+                  }`}
               >
                 {item.tab}
               </button>
@@ -778,9 +768,9 @@ const UAETextilePage = () => {
         </div>
 
         <div
-          id="uae-textile-stakeholder-panel"
+          id="usa-textile-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`uae-textile-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`usa-textile-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -809,6 +799,7 @@ const UAETextilePage = () => {
             </ul>
           </div>
 
+          {/* Desktop ops snapshot — workflow UI, not a feature list repeat */}
           <div
             key={active.tab}
             className="hidden h-full min-h-[280px] flex-col overflow-hidden rounded-xl border border-white/12 bg-gray-950 lg:flex 2xl:min-h-[320px]"
@@ -819,10 +810,7 @@ const UAETextilePage = () => {
                 {active.panel.eyebrow}
               </p>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-medium uppercase tracking-wide text-emerald-300">
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-emerald-400"
-                  aria-hidden="true"
-                />
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
                 Live
               </span>
             </div>
@@ -836,11 +824,10 @@ const UAETextilePage = () => {
                     className="flex items-center gap-3 border-b border-white/[0.06] py-3 last:border-b-0 2xl:py-3.5"
                   >
                     <span
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tabular-nums ${
-                        isActive
-                          ? "bg-amber-400 text-black"
-                          : "border border-white/10 bg-white/[0.03] text-gray-400"
-                      }`}
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tabular-nums ${isActive
+                        ? "bg-amber-400 text-black"
+                        : "border border-white/10 bg-white/[0.03] text-gray-400"
+                        }`}
                     >
                       {stage.step}
                     </span>
@@ -848,11 +835,10 @@ const UAETextilePage = () => {
                       {stage.name}
                     </span>
                     <span
-                      className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium ${
-                        isActive
-                          ? "bg-amber-400/15 text-amber-300"
-                          : "bg-white/[0.04] text-gray-400"
-                      }`}
+                      className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium ${isActive
+                        ? "bg-amber-400/15 text-amber-300"
+                        : "bg-white/[0.04] text-gray-400"
+                        }`}
                     >
                       {stage.status}
                     </span>
@@ -885,8 +871,8 @@ const UAETextilePage = () => {
         <Heading
           id="tech-heading"
           eyebrow="Capabilities"
-          title="AI-Native Architecture for UAE Textile Software"
-          subtitle="AI, cloud textile software, APIs, and mobile—with Shopify, Stripe, barcode, and UAE FTA e-invoicing integrations."
+          title="AI-Native Textile Software Architecture"
+          subtitle="AI, cloud textile software, APIs, and mobile—with QuickBooks, NetSuite, EDI, and payment integrations."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -914,8 +900,8 @@ const UAETextilePage = () => {
         <Heading
           id="compliance-heading"
           eyebrow="Compliance"
-          title="UAE-Ready Compliance & Security"
-          subtitle="UAE VAT, multi-currency accounting, corporate tax readiness, and enterprise data controls."
+          title="U.S.-Ready Compliance & Security"
+          subtitle="U.S. trade compliance, export schemes, e-invoicing, EDI, and job work controls."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -943,8 +929,8 @@ const UAETextilePage = () => {
         <Heading
           id="why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for UAE Textile"
-          subtitle="Purpose-built textile software with UAE market fit and fast team adoption."
+          title="Why Choose Us for U.S. Textile"
+          subtitle="Purpose-built textile software with U.S. market fit and fast team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -968,11 +954,11 @@ const UAETextilePage = () => {
         <Heading
           id="process-heading"
           eyebrow="Delivery"
-          title="How We Work with UAE Textile Businesses"
-          subtitle="Four clear phases—from discovery to UAE-aligned ongoing support."
+          title="How We Deliver Textile Software"
+          subtitle="Four clear phases—from discovery to U.S. timezone-aligned ongoing support."
         />
 
-        <ol className="relative ml-2 space-y-8 border-l border-white/15 pl-8 md:hidden">
+        <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
           {processSteps.map((step) => (
             <li key={step.number}>
               <span className="absolute -left-[13px] flex h-6 w-6 items-center justify-center rounded-full bg-amber-400 text-[10px] font-bold text-black">
@@ -995,11 +981,10 @@ const UAETextilePage = () => {
             {processSteps.map((step, index) => (
               <li key={step.number} className="px-2 text-center">
                 <div
-                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${
-                    index === 0
-                      ? "bg-amber-400 text-black"
-                      : "border border-white/20 bg-black text-white"
-                  }`}
+                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${index === 0
+                    ? "bg-amber-400 text-black"
+                    : "border border-white/20 bg-black text-white"
+                    }`}
                 >
                   {step.number}
                 </div>
@@ -1019,14 +1004,14 @@ const UAETextilePage = () => {
       <Shell labelledBy="impact-heading" alt>
         <Heading
           id="impact-heading"
-          eyebrow="Outcomes"
-          title="Proven Outcomes Across UAE Textile"
+          eyebrow="Results"
+          title="Proven Outcomes in U.S. Textile Manufacturing"
           subtitle="Results from a unified textile platform—visibility, accuracy, and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `uae-textile-case-bg-${index}`;
+            const gradientId = `usa-textile-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1056,20 +1041,8 @@ const UAETextilePage = () => {
                       </linearGradient>
                     </defs>
                     <rect width="400" height="160" fill={`url(#${gradientId})`} />
-                    <circle
-                      cx="320"
-                      cy="20"
-                      r="70"
-                      fill="#F59E0B"
-                      fillOpacity="0.08"
-                    />
-                    <circle
-                      cx="60"
-                      cy="140"
-                      r="50"
-                      fill="#3B82F6"
-                      fillOpacity="0.1"
-                    />
+                    <circle cx="320" cy="20" r="70" fill="#F59E0B" fillOpacity="0.08" />
+                    <circle cx="60" cy="140" r="50" fill="#3B82F6" fillOpacity="0.1" />
                     <path
                       d="M0 110 C80 90 140 130 220 105 C300 80 340 95 400 85 L400 160 L0 160 Z"
                       fill="#F59E0B"
@@ -1110,8 +1083,8 @@ const UAETextilePage = () => {
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `uae-textile-faq-panel-${index}`;
-            const buttonId = `uae-textile-faq-button-${index}`;
+            const panelId = `usa-textile-faq-panel-${index}`;
+            const buttonId = `usa-textile-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1153,7 +1126,7 @@ const UAETextilePage = () => {
       </Shell>
 
       {/* ================= FINAL CTA ================= */}
-  
+
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
@@ -1185,4 +1158,4 @@ const UAETextilePage = () => {
   );
 };
 
-export default UAETextilePage;
+export default UsaTextilePage;

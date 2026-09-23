@@ -42,11 +42,10 @@ const SectionShell = ({
   labelledBy,
 }) => (
   <section
-    className={`relative overflow-hidden py-16 md:py-20 ${
-      gradient
-        ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        : "bg-black"
-    } ${className}`}
+    className={`relative overflow-hidden py-16 md:py-20 ${gradient
+      ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+      : "bg-black"
+      } ${className}`}
     aria-labelledby={labelledBy}
   >
     {gradient && (
@@ -69,25 +68,22 @@ const SectionIntro = ({
   light = false,
 }) => (
   <div
-    className={`mb-10 md:mb-12 ${
-      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
-    }`}
+    className={`mb-10 md:mb-12 ${align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
+      }`}
   >
     <h2
       id={id}
-      className={`mb-3 text-3xl leading-tight md:text-4xl ${
-        light
-          ? "text-white"
-          : "bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent"
-      }`}
+      className={`mb-3 text-3xl leading-tight md:text-4xl ${light
+        ? "text-white"
+        : "bg-gradient-to-r from-blue-400 to-white bg-clip-text text-transparent"
+        }`}
     >
       {title}
     </h2>
     {subtitle && (
       <p
-        className={`text-base leading-relaxed md:text-lg ${
-          light ? "text-white/90" : "text-gray-300"
-        }`}
+        className={`text-base leading-relaxed md:text-lg ${light ? "text-white/90" : "text-gray-300"
+          }`}
       >
         {subtitle}
       </p>
@@ -115,11 +111,10 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
             className={
               isDark
                 ? "overflow-hidden"
-                : `rounded-xl border transition-colors duration-300 ${
-                    open
-                      ? "border-amber-400/40 bg-white/[0.04]"
-                      : "border-white/10 bg-white/[0.02] hover:border-white/20"
-                  }`
+                : `rounded-xl border transition-colors duration-300 ${open
+                  ? "border-amber-400/40 bg-white/[0.04]"
+                  : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                }`
             }
           >
             <button
@@ -141,11 +136,10 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
               ) : (
                 <div className="flex min-w-0 items-center gap-3">
                   <span
-                    className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide ${
-                      open
-                        ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                        : "bg-blue-600/80 text-white"
-                    }`}
+                    className={`shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold tracking-wide ${open
+                      ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                      : "bg-blue-600/80 text-white"
+                      }`}
                   >
                     {String(item.id).padStart(2, "0")}
                   </span>
@@ -154,9 +148,8 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
                       {item.title}
                     </h3>
                     <div
-                      className={`mt-1 h-0.5 transition-all duration-300 ${
-                        open ? "w-24 bg-amber-400" : "w-12 bg-blue-500/70"
-                      }`}
+                      className={`mt-1 h-0.5 transition-all duration-300 ${open ? "w-24 bg-amber-400" : "w-12 bg-blue-500/70"
+                        }`}
                     />
                   </div>
                 </div>
@@ -175,9 +168,8 @@ const AccordionGroup = ({ items, activeId, onToggle, variant = "light" }) => {
               role="region"
               aria-labelledby={buttonId}
               hidden={!open}
-              className={`overflow-hidden transition-all duration-300 ease-out ${
-                open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-out ${open ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                }`}
             >
               <div className={isDark ? "pb-5 pr-8" : "px-4 pb-5 pl-[3.75rem]"}>
                 {typeof item.content === "string" ? (
@@ -485,7 +477,7 @@ const TextilesPage = () => {
         "Sensors detect failure patterns 48–72 hours ahead; maintenance teams get automated alerts.",
       result: "45% less unplanned downtime, 90% of breakdowns prevented.",
     },
-   
+
     {
       icon: Package,
       title: "Color Matching",
@@ -496,8 +488,8 @@ const TextilesPage = () => {
       result:
         "90% fewer color mismatches, saving approximately US$20K–US$35K per month.",
     },
-   
-  
+
+
   ];
 
   // 6. Implementation Process — reuses existing timeline component
@@ -612,7 +604,7 @@ const TextilesPage = () => {
       country: "United States",
       flagCode: "us",
       line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
-      link: null,
+      link: ROUTES.industry.usaTextile,
     },
     {
       country: "Australia",
@@ -912,7 +904,7 @@ const TextilesPage = () => {
         <div className="relative container mx-auto max-w-6xl px-4 py-4 2xl:py-15 ">
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="max-w-3xl space-y-6 text-white">
-            
+
 
               <h1 className="text-[25px] leading-tight md:text-4xl">
                 Custom Textile Manufacturing Software — AI Production & Quality
@@ -927,7 +919,7 @@ const TextilesPage = () => {
                   onClick={openConsultation}
                   className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
                 >
-                   Schedule a  Consultation
+                  Schedule a  Consultation
                 </button>
                 <a
                   href="#ai-solutions-heading"
@@ -1068,11 +1060,9 @@ const TextilesPage = () => {
             {businessOutcomes.map((o, i) => (
               <div
                 key={i}
-                className={`px-4 py-7 text-center sm:px-5 sm:py-8 ${
-                  i % 2 === 1 ? "border-l border-white/10" : ""
-                } ${i >= 2 ? "border-t border-white/10 md:border-t-0" : ""} ${
-                  i >= 4 ? "border-t border-white/10 md:border-t" : ""
-                } ${i % 4 !== 0 ? "md:border-l md:border-white/10" : ""}`}
+                className={`px-4 py-7 text-center sm:px-5 sm:py-8 ${i % 2 === 1 ? "border-l border-white/10" : ""
+                  } ${i >= 2 ? "border-t border-white/10 md:border-t-0" : ""} ${i >= 4 ? "border-t border-white/10 md:border-t" : ""
+                  } ${i % 4 !== 0 ? "md:border-l md:border-white/10" : ""}`}
               >
                 <div className="mb-2 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent md:text-4xl">
                   {o.number}
@@ -1113,19 +1103,17 @@ const TextilesPage = () => {
                       key={feature.id}
                       type="button"
                       onClick={() => setActiveFeature(index)}
-                      className={`w-full rounded-lg p-3 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${
-                        active
-                          ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md"
-                          : "text-gray-300 hover:bg-white/5"
-                      }`}
+                      className={`w-full rounded-lg p-3 text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ${active
+                        ? "bg-gradient-to-r from-amber-400 to-orange-500 text-black shadow-md"
+                        : "text-gray-300 hover:bg-white/5"
+                        }`}
                     >
                       <div className="flex items-start gap-2.5">
                         <span
-                          className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[11px] font-semibold ${
-                            active
-                              ? "bg-black text-amber-400"
-                              : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
-                          }`}
+                          className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-[11px] font-semibold ${active
+                            ? "bg-black text-amber-400"
+                            : "bg-gradient-to-r from-amber-400 to-orange-500 text-black"
+                            }`}
                         >
                           {index < 9 ? `0${index + 1}` : index + 1}
                         </span>
@@ -1183,11 +1171,10 @@ const TextilesPage = () => {
                                 <th
                                   key={section.heading}
                                   scope="col"
-                                  className={`w-1/2 px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-black sm:px-4 sm:py-3 sm:text-xs ${
-                                    sectionIndex > 0
-                                      ? "border-l border-black/10"
-                                      : ""
-                                  }`}
+                                  className={`w-1/2 px-3 py-2.5 text-[11px] font-semibold uppercase tracking-wide text-black sm:px-4 sm:py-3 sm:text-xs ${sectionIndex > 0
+                                    ? "border-l border-black/10"
+                                    : ""
+                                    }`}
                                 >
                                   {section.heading}
                                 </th>
@@ -1205,11 +1192,10 @@ const TextilesPage = () => {
                                   return (
                                     <td
                                       key={section.heading}
-                                      className={`px-2.5 py-2.5 align-top text-gray-700 sm:px-4 sm:py-3 ${
-                                        sectionIndex > 0
-                                          ? "border-l border-gray-100"
-                                          : ""
-                                      }`}
+                                      className={`px-2.5 py-2.5 align-top text-gray-700 sm:px-4 sm:py-3 ${sectionIndex > 0
+                                        ? "border-l border-gray-100"
+                                        : ""
+                                        }`}
                                     >
                                       {detail ? (
                                         <span className="flex items-start gap-2">
@@ -1502,9 +1488,8 @@ const TextilesPage = () => {
                   loading="lazy"
                 />
                 <h3
-                  className={`mb-2 text-base font-semibold text-white ${
-                    isLinked ? "transition-colors group-hover:text-amber-300" : ""
-                  }`}
+                  className={`mb-2 text-base font-semibold text-white ${isLinked ? "transition-colors group-hover:text-amber-300" : ""
+                    }`}
                 >
                   {market.country}
                 </h3>
