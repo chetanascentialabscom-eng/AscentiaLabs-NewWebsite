@@ -470,6 +470,7 @@ const UAETextilePage = () => {
     { title: "Textiles", link: ROUTES.industry.textiles },
     { title: "India Textile", link: ROUTES.industry.indiaTextile },
     { title: "USA Textile", link: ROUTES.industry.usaTextile },
+    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },

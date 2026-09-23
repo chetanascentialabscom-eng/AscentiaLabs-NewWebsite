@@ -8,8 +8,6 @@ import {
   Shirt,
   Factory,
   Boxes,
-  Warehouse,
-  ClipboardCheck,
   Globe,
   Wrench,
   Brain,
@@ -23,6 +21,8 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
+  Leaf,
+  Recycle,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -76,17 +76,16 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const IndiaTextilePage = () => {
+const AustraliaTextilePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "USD 188B", label: "India textile market size (FY26)" },
-    { value: "USD 350B", label: "Projected market size by FY30" },
-    { value: "₹3.25L Cr", label: "Textile exports incl. handicrafts (FY26)" },
-    { value: "5.3 Cr", label: "Direct employment in textile manufacturing" },
-    // { value: "3,376+", label: "Spinning mills across India" },
+    { value: "$27.2B", label: "Australian TCF industry value (annual)" },
+    { value: "489K+", label: "Jobs across fashion supply chain" },
+    { value: "97%", label: "TCF production currently offshored" },
+    { value: "58%", label: "Women in TCF manufacturing workforce" },
   ];
 
   const services = [
@@ -94,73 +93,73 @@ const IndiaTextilePage = () => {
       icon: Shirt,
       title: "Garment Manufacturing Software",
       description:
-        "Production planning, cutting, sewing line tracking, and finishing for Tiruppur, Bengaluru, Gurugram, and other clusters.",
+        "Production planning, cutting, sewing, and finishing for Australian apparel brands and makers.",
     },
     {
       icon: Factory,
       title: "Textile Mill Software",
       description:
-        "Spinning, weaving, fabric management, yarn tracking, inspection, and dyeing/finishing workflows for mills.",
+        "Spinning, weaving, fabric, and yarn tracking workflows for Australian mills.",
     },
     {
       icon: Boxes,
       title: "Fabric Inventory Management",
       description:
-        "Real-time fabric inventory, size-color matrix, trim tracking, and multi-location stock to cut waste and stockouts.",
+        "Real-time fabric, size-color matrix, trim tracking, and multi-location stock control.",
     },
     {
-      icon: ClipboardCheck,
-      title: "GST Textile Compliance",
+      icon: Leaf,
+      title: "Circular Economy Tools",
       description:
-        "HSN tracking, tax calculation, e-invoicing, and e-way bill generation built for Indian textile GST rules.",
+        "Track materials, reduce waste, and support Seamless stewardship reporting.",
     },
     {
       icon: Globe,
-      title: "Textile Export Software",
+      title: "Export & Import Software",
       description:
-        "Export invoicing, RoDTEP/RoSCTL documentation, and trade compliance for international textile shipments.",
+        "Export invoicing, trade docs, and multi-currency operations for global shipments.",
     },
     {
       icon: Wrench,
       title: "Job Work Management",
       description:
-        "Track outsourced processing and embellishment with accountability, quality docs, and karigar visibility.",
+        "Track outsourced processing with quality docs and subcontractor visibility.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "Most Indian textile units still run on spreadsheets and outdated tools, so growth and global competitiveness stay limited.",
+        "97% of Australian TCF production is offshore, leaving brands exposed to supply chain disruptions.",
       solution:
-        "A cloud textile platform standardizes workflows and gives real-time visibility—without a large upfront IT investment.",
+        "Cloud textile software gives real-time visibility across offshore and local production.",
     },
     {
       challenge:
-        "Labor absenteeism near 20% makes production unreliable and delays deliveries for garment manufacturers.",
+        "TCF manufacturing employment declined from 115K (1989) to 29K (2026) as tariffs were removed.",
       solution:
-        "Track daily output, see operator performance, and manage job work so you can plan ahead despite workforce gaps.",
+        "Flexible production planning and batch tracking help local makers compete on quality and speed.",
     },
     {
       challenge:
-        "Shorter fashion cycles and smaller, frequent runs make excess fabric inventory expensive and hard to control.",
+        "85% of Australian wool is processed offshore, with limited local value capture.",
       solution:
-        "Flexible production planning, batch tracking, and demand-led inventory help you turn orders around faster.",
+        "AI-powered forecasting and material tracking help manufacturers capture more local processing.",
     },
     {
       challenge:
-        "Manual GST, HSN, and job work compliance increases the risk of penalties, delays, and filing errors.",
+        "Manual inventory and sustainability reporting increases compliance risk and costs.",
       solution:
-        "Automate GST textile compliance with HSN mapping, e-invoicing, and return-ready workflows for Indian regulations.",
+        "Automate circular economy tracking with material sourcing and waste reduction workflows.",
     },
   ];
 
   const stakeholders = [
     {
-      tab: "Garment Manufacturers",
-      title: "Garment Manufacturing Software India",
+      tab: "Apparel Brands",
+      title: "Apparel & Garment Manufacturing",
       description:
-        "Producers managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
+        "Australian brands managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
       panel: {
         eyebrow: "Floor workflow",
         stages: [
@@ -212,7 +211,7 @@ const IndiaTextilePage = () => {
       tab: "Traders & Wholesalers",
       title: "Textile Traders & Wholesalers",
       description:
-        "Businesses managing fabric procurement, stock, and orders across warehouses.",
+        "Businesses managing fabric procurement, stock, and orders across Australian warehouses.",
       panel: {
         eyebrow: "Trade workflow",
         stages: [
@@ -224,13 +223,13 @@ const IndiaTextilePage = () => {
         kpis: [
           { value: "3+", label: "Warehouses" },
           { value: "SO", label: "Order track" },
-          { value: "JW", label: "Karigar jobs" },
+          { value: "JW", label: "Job work" },
         ],
       },
       bullets: [
         "Multi-warehouse inventory visibility",
         "Sales order tracking",
-        "Karigar / job work management",
+        "Job work / subcontractor management",
         "Daily business reporting",
       ],
     },
@@ -255,7 +254,7 @@ const IndiaTextilePage = () => {
       },
       bullets: [
         "Export invoicing and documentation",
-        "RoDTEP/RoSCTL scheme support",
+        "Free trade agreement support",
         "Multi-currency operations",
         "Quality standards compliance",
       ],
@@ -266,60 +265,60 @@ const IndiaTextilePage = () => {
     {
       icon: Brain,
       title: "AI & Automation",
-      body: "Order and material forecasting, automated order reading, and production insights for textile manufacturing.",
+      body: "Order and material forecasting, automated order reading, and production insights.",
     },
     {
       icon: Cloud,
       title: "Cloud Textile Platform",
-      body: "100% cloud textile software—access from factory floor to office with no on-premise servers.",
+      body: "100% cloud software—factory floor to office, no on-premise servers.",
     },
     {
       icon: Network,
       title: "API Access",
-      body: "APIs for inventory, production, orders, and finance—plus Tally, GSP, e-way bill, and payment gateways.",
+      body: "APIs for inventory, production, orders, and finance—plus NetSuite, Shopify, and payments.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First",
-      body: "Mobile tools for supervisors, QC, and field teams—including job work and dispatch tracking.",
+      body: "Mobile tools for supervisors, QC, and field teams—with job work and dispatch tracking.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for production efficiency, defect rates, inventory turnover, and order profitability.",
+      body: "Dashboards for production efficiency, defect rates, inventory turnover, and profitability.",
     },
   ];
 
   const security = [
     {
-      icon: ClipboardCheck,
-      title: "GST Textile Compliance",
-      body: "HSN mapping, job work GST, e-invoicing, and automated return preparation for textiles.",
+      icon: Leaf,
+      title: "Circular Economy Compliance",
+      body: "Track material sourcing, recycled content, and waste diversion for Seamless reporting.",
     },
     {
       icon: Globe,
-      title: "Export Scheme Support",
-      body: "RoDTEP, RoSCTL, and export incentive documentation for textile shipments.",
+      title: "Trade Agreement Support",
+      body: "ChAFTA, AANZFTA, and free trade agreement docs for textile shipments.",
     },
     {
       icon: FileText,
-      title: "E-Way Bill & E-Invoice",
-      body: "Government-system integration for e-way bills and e-invoices on interstate textile movement.",
+      title: "E-Invoicing & EDI",
+      body: "Integration with Australian retail and brand EDI systems for e-invoices.",
     },
     {
       icon: Wrench,
       title: "Job Work Compliance",
-      body: "Track goods sent to job workers with GST-aligned documentation and accountability.",
+      body: "Track goods to subcontractors with audit-ready documentation.",
     },
     {
       icon: Shield,
       title: "Data Security",
-      body: "Role-based access protecting business, customer, and financial records.",
+      body: "Role-based access protecting business and financial records.",
     },
     {
       icon: Database,
       title: "Audit & Activity Logs",
-      body: "Logs for production, quality, and compliance actions—ready for internal and statutory review.",
+      body: "Logs for production, quality, and compliance—ready for review.",
     },
   ];
 
@@ -328,37 +327,37 @@ const IndiaTextilePage = () => {
       id: 1,
       title: "Textile-Specific Software",
       description:
-        "Purpose-built textile software for garment and mill operations—not generic manufacturing software rebranded.",
+        "Purpose-built for Australian garment and mill operations—not generic software rebranded.",
     },
     {
       id: 2,
       title: "Unified Platform",
       description:
-        "Production, fabric management, accounting, GST, and export docs share one data model.",
+        "Production, fabric, accounting, trade compliance, and export docs on one data model.",
     },
     {
       id: 3,
-      title: "India Market Fit",
+      title: "Australian Market Fit",
       description:
-        "Built for Indian textile workflows—GST, job work, export schemes, and cluster operations.",
+        "Built for local workflows—ChAFTA, Seamless, EDI, and circular economy reporting.",
     },
     {
       id: 4,
       title: "Proven Outcomes",
       description:
-        "Gains in production efficiency, inventory accuracy, compliance, and hours saved each week.",
+        "Gains in production efficiency, inventory accuracy, compliance, and hours saved.",
     },
     {
       id: 5,
       title: "Scalable for Growth",
       description:
-        "Same platform from small garment units to large integrated mills—without rip-and-replace.",
+        "Same platform from small garment units to large mills—no rip-and-replace.",
     },
     {
       id: 6,
       title: "Modern Adoption",
       description:
-        "Usable UI so production, warehouse, and management teams actually run on the system.",
+        "Usable UI so production, warehouse, and management teams run on the system.",
     },
   ];
 
@@ -373,19 +372,19 @@ const IndiaTextilePage = () => {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure production planning, inventory, GST, and export workflows to your model.",
+        "Configure production planning, inventory, trade compliance, and export workflows to your model.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Migration, English/regional training, and rollout sized to business complexity.",
+        "Migration, English training, and rollout sized to business complexity.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "IST-aligned support and continuous improvement as textile operations scale.",
+        "AEST-aligned support and continuous improvement as textile operations scale.",
     },
   ];
 
@@ -415,29 +414,29 @@ const IndiaTextilePage = () => {
 
   const faqs = [
     {
-      question: "What does India textile software include?",
+      question: "What does Australian textile software include?",
       answer:
-        "Production planning, fabric inventory, order tracking, quality control, GST compliance, accounting, and export documentation for textile manufacturing.",
+        "Production planning, fabric inventory, order tracking, quality control, circular economy reporting, accounting, and export documentation.",
     },
     {
-      question: "How does garment manufacturing software help in India?",
+      question: "How does garment manufacturing software help in Australia?",
       answer:
         "It centralizes cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
     },
     {
-      question: "Does it support GST textile compliance?",
+      question: "Does it support circular economy compliance?",
       answer:
-        "Yes—HSN tracking, job work provisions, e-invoicing, and return preparation aligned with Indian textile GST rules.",
+        "Yes—material sourcing, recycled content tracking, and waste diversion reporting for Seamless stewardship.",
     },
     {
       question: "Can it handle textile export documentation?",
       answer:
-        "Yes—export invoicing, RoDTEP/RoSCTL docs, and trade compliance reporting are built in.",
+        "Yes—export invoicing, ChAFTA/AANZFTA docs, and trade compliance reporting are built in.",
     },
     {
       question: "Does it support job work management?",
       answer:
-        "Yes—karigar tracking, outsourced process monitoring, and accountability documentation are core features.",
+        "Yes—subcontractor tracking, outsourced process monitoring, and accountability documentation are core features.",
     },
     {
       question: "Is size-color matrix tracking included?",
@@ -445,9 +444,9 @@ const IndiaTextilePage = () => {
         "Yes—size-color matrices keep production planning and inventory accurate across product variants.",
     },
     {
-      question: "Can textile software integrate with Tally?",
+      question: "Can textile software integrate with NetSuite?",
       answer:
-        "Yes—Tally sync keeps financial data aligned between your platform and existing accounting.",
+        "Yes—NetSuite sync keeps financial data aligned between your platform and existing accounting.",
     },
     {
       question: "How long does textile software implementation take?",
@@ -468,14 +467,13 @@ const IndiaTextilePage = () => {
 
   const relatedIndustries = [
     { title: "Textiles", link: ROUTES.industry.textiles },
+    { title: "India Textile", link: ROUTES.industry.indiaTextile },
     { title: "USA Textile", link: ROUTES.industry.usaTextile },
-    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
     { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
     { title: "Logistics", link: ROUTES.industry.logistics },
-    { title: "Real Estate", link: ROUTES.industry.realEstate },
   ];
 
   const active = stakeholders[activeStakeholder];
@@ -487,7 +485,7 @@ const IndiaTextilePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.indiaTextile} />
+      <SEO {...seoData.australiaTextile} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -503,15 +501,15 @@ const IndiaTextilePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                India Textile
+                Australia Textile
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                India Textile Software for Manufacturers & Mills
+                Australia Textile Software for Manufacturers & Mills
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI-powered textile software for garment manufacturing, fabric
-                management, GST compliance, and export workflows—built for
-                Indian textile industry operations.
+                management, circular economy reporting, and export workflows—built for
+                Australian textile industry operations.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -550,7 +548,7 @@ const IndiaTextilePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "Garment Production",
+                      title: "Apparel Production",
                       body: "Cutting, sewing, and finishing workflows.",
                       icon: Shirt,
                       iconClass: "text-amber-400",
@@ -566,9 +564,9 @@ const IndiaTextilePage = () => {
                       topBorder: false,
                     },
                     {
-                      title: "Inventory & GST",
-                      body: "Size-color matrix and compliance.",
-                      icon: Warehouse,
+                      title: "Inventory & Sustainability",
+                      body: "Size-color matrix and circular economy reporting.",
+                      icon: Recycle,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
@@ -625,8 +623,8 @@ const IndiaTextilePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why India Textile Needs Modern Technology"
-              subtitle="With a USD 188B market heading toward USD 350B by FY30—and ~20% labor absenteeism—textile manufacturers need cloud software for production planning, fabric inventory, and GST compliance."
+              title="Why Australian Textile Needs Modern Technology"
+              subtitle="With $27.2B industry value and 489K+ jobs—yet 97% of production offshored—Australian makers need cloud software for planning, inventory, and compliance."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -653,8 +651,8 @@ const IndiaTextilePage = () => {
         <Heading
           id="capabilities"
           eyebrow="Services"
-          title="Textile Industry Solutions for India"
-          subtitle="Textile software development for garment manufacturing, mills, traders, and exporters—production planning to GST."
+          title="Textile Industry Solutions for Australia"
+          subtitle="Textile software for garment manufacturing, mills and exporters—production planning to circular economy compliance."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -684,8 +682,8 @@ const IndiaTextilePage = () => {
         <Heading
           id="challenges-heading"
           eyebrow="Solutions"
-          title="Practical Solutions for Indian Textile Challenges"
-          subtitle="Clear answers for production reliability, fabric inventory, GST compliance, and faster order turnaround."
+          title="Practical Solutions for Australian Textile Challenges"
+          subtitle="Clear answers for production reliability, fabric inventory, circular compliance, and faster order turnaround."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -716,20 +714,20 @@ const IndiaTextilePage = () => {
           id="stakeholders-heading"
           eyebrow="Use Cases"
           title="Built for Every Textile Stakeholder"
-          subtitle="Software shaped for garment manufacturers, textile mills, traders, and exporters across India."
+          subtitle="Software shaped for apparel brands, textile mills, traders, and exporters across Australia."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="india-textile-stakeholder-select" className="sr-only">
+          <label htmlFor="australia-textile-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="india-textile-stakeholder-select"
+              id="australia-textile-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="india-textile-stakeholder-panel"
+              aria-controls="australia-textile-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -759,8 +757,8 @@ const IndiaTextilePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`india-textile-stakeholder-tab-${index}`}
-                aria-controls="india-textile-stakeholder-panel"
+                id={`australia-textile-stakeholder-tab-${index}`}
+                aria-controls="australia-textile-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
                   selected
@@ -775,9 +773,9 @@ const IndiaTextilePage = () => {
         </div>
 
         <div
-          id="india-textile-stakeholder-panel"
+          id="australia-textile-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`india-textile-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`australia-textile-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -881,7 +879,7 @@ const IndiaTextilePage = () => {
           id="tech-heading"
           eyebrow="Capabilities"
           title="AI-Native Textile Software Architecture"
-          subtitle="AI, cloud textile software, APIs, and mobile—with Tally, GSP, e-way bill, and payment integrations."
+          subtitle="AI, cloud textile software, APIs, and mobile—with NetSuite, Shopify, EDI, and payment integrations."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -909,8 +907,8 @@ const IndiaTextilePage = () => {
         <Heading
           id="compliance-heading"
           eyebrow="Compliance"
-          title="India-Ready Compliance & Security"
-          subtitle="GST textile compliance, export schemes, e-way bill, e-invoice, and job work controls."
+          title="Australia-Ready Compliance & Security"
+          subtitle="Circular economy reporting, trade agreements, e-invoicing, EDI, and job work controls."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -938,8 +936,8 @@ const IndiaTextilePage = () => {
         <Heading
           id="why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for India Textile"
-          subtitle="Purpose-built textile software with India market fit and fast team adoption."
+          title="Why Choose Us for Australian Textile"
+          subtitle="Purpose-built textile software with Australian market fit and fast team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -964,7 +962,7 @@ const IndiaTextilePage = () => {
           id="process-heading"
           eyebrow="Delivery"
           title="How We Deliver Textile Software"
-          subtitle="Four clear phases—from discovery to IST-aligned ongoing support."
+          subtitle="Four clear phases—from discovery to AEST-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -1015,13 +1013,13 @@ const IndiaTextilePage = () => {
         <Heading
           id="impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes in Textile Manufacturing"
+          title="Proven Outcomes in Australian Textile Manufacturing"
           subtitle="Results from a unified textile platform—visibility, accuracy, and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `india-textile-case-bg-${index}`;
+            const gradientId = `australia-textile-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1093,8 +1091,8 @@ const IndiaTextilePage = () => {
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `india-textile-faq-panel-${index}`;
-            const buttonId = `india-textile-faq-button-${index}`;
+            const panelId = `australia-textile-faq-panel-${index}`;
+            const buttonId = `australia-textile-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1136,7 +1134,7 @@ const IndiaTextilePage = () => {
       </Shell>
 
       {/* ================= FINAL CTA ================= */}
-   
+
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
@@ -1168,4 +1166,4 @@ const IndiaTextilePage = () => {
   );
 };
 
-export default IndiaTextilePage;
+export default AustraliaTextilePage;

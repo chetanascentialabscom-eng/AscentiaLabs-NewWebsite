@@ -239,6 +239,16 @@ export const seoData = {
       "USA textile software, American textile software, garment manufacturing software USA, apparel manufacturing software USA, textile ERP software USA, fabric inventory software USA, garment production planning software, U.S. trade compliance software, textile manufacturing ERP, clothing manufacturing software USA, USMCA textile compliance, fashion brand software USA, textile management software USA, apparel ERP USA, North Carolina textile software, California garment software, New York fashion software",
     url: absoluteUrl(ROUTES.industry.usaTextile),
   },
+
+  australiaTextile: {
+    title: "Australia Textile Software | Ascentia Labs",
+    description:
+      "AI-powered textile software for Australian garment manufacturers, mills, and exporters—production planning, fabric inventory, circular economy reporting, and export workflows.",
+    keywords:
+      "Australia textile software, Australian textile software, garment manufacturing software Australia, textile mill software Australia, fabric inventory Australia, circular economy textile software, Seamless textile reporting, ChAFTA textile compliance, apparel manufacturing software Australia, production planning textile Australia",
+    url: absoluteUrl(ROUTES.industry.australiaTextile),
+  },
+
   manufacturing: {
     title: "Manufacturing Software Development | Ascentia Labs",
     description:

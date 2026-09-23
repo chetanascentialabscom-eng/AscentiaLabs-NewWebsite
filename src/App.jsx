@@ -32,6 +32,7 @@ import {
   IndiaTextilePage,
   UAETextilePage,
   UsaTextilePage,
+  AustraliaTextilePage,
   ManufacturingPage,
   ProductsPage,
   ProductDetailPage,
@@ -176,6 +177,10 @@ function App() {
             <Route
               path={ROUTES.industry.usaTextile}
               element={<UsaTextilePage />}
+            />
+            <Route
+              path={ROUTES.industry.australiaTextile}
+              element={<AustraliaTextilePage />}
             />
             <Route
               path={ROUTES.industry.manufacturing}

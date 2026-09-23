@@ -610,7 +610,7 @@ const TextilesPage = () => {
       country: "Australia",
       flagCode: "au",
       line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
-      link: null,
+      link: ROUTES.industry.australiaTextile,
     },
     {
       country: "United Kingdom",

@@ -465,6 +465,7 @@ const UsaTextilePage = () => {
   const relatedIndustries = [
     { title: "Textiles", link: ROUTES.industry.textiles },
     { title: "India Textile", link: ROUTES.industry.indiaTextile },
+    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
     { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
