@@ -616,7 +616,7 @@ const TextilesPage = () => {
       country: "United Kingdom",
       flagCode: "gb",
       line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
-      link: null,
+      link: ROUTES.industry.ukTextile,
     },
     {
       country: "UAE",
@@ -628,7 +628,7 @@ const TextilesPage = () => {
       country: "Canada",
       flagCode: "ca",
       line: "Textile software for garment manufacturing, fabric inventory, and production planning.",
-      link: null,
+      link: ROUTES.industry.canadaTextile,
     },
   ];
 

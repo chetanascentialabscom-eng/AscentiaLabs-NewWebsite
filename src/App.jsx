@@ -33,6 +33,7 @@ import {
   UAETextilePage,
   UsaTextilePage,
   AustraliaTextilePage,
+  UkTextilePage,
   ManufacturingPage,
   ProductsPage,
   ProductDetailPage,
@@ -76,6 +77,7 @@ import ShopifyServicePage from "./pages/Services/ShopifyDevelompentSolution";
 import FabricShrinkagePredictionBlog from "./pages/Blogs/FabricShrinkagePrediction";
 import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrinkagePredictionBlog";
 import TextileColorMatchingBlog from "./pages/Blogs/Textilecolormatchingblog";
+import CanadaTextilePage from "./pages/Industries/CANADA_TEXTILE";
 
 function App() {
   useLenis();
@@ -179,8 +181,16 @@ function App() {
               element={<UsaTextilePage />}
             />
             <Route
+              path={ROUTES.industry.canadaTextile}
+              element={<CanadaTextilePage />}
+            />
+            <Route
               path={ROUTES.industry.australiaTextile}
               element={<AustraliaTextilePage />}
+            />
+            <Route
+              path={ROUTES.industry.ukTextile}
+              element={<UkTextilePage />}
             />
             <Route
               path={ROUTES.industry.manufacturing}

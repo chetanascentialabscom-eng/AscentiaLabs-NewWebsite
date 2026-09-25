@@ -249,6 +249,24 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.australiaTextile),
   },
 
+  ukTextile: {
+    title: "UK Textile Software | Ascentia Labs",
+    description:
+      "AI-powered textile software for UK garment manufacturers, mills, and exporters—production planning, fabric inventory, UK trade compliance, and export workflows.",
+    keywords:
+      "UK textile software, United Kingdom textile software, garment manufacturing software UK, textile mill software UK, fabric inventory UK, UK trade compliance textile, CETA textile documentation, apparel manufacturing software UK, production planning textile UK, Xero Sage textile software",
+    url: absoluteUrl(ROUTES.industry.ukTextile),
+  },
+
+  canadaTextile: {
+    title: "Canada Textile Software | Ascentia Labs",
+    description:
+      "AI-powered textile software for Canadian garment manufacturers, mills, and exporters—production planning, fabric inventory, CUSMA trade compliance, and cross-border export workflows.",
+    keywords:
+      "Canada textile software, Canadian textile software, garment manufacturing software Canada, textile mill software Canada, fabric inventory Canada, CUSMA textile compliance, Canada U.S. trade compliance textile, apparel manufacturing software Canada, production planning textile Canada, QuickBooks Sage textile software Canada",
+    url: absoluteUrl(ROUTES.industry.canadaTextile),
+  },
+
   manufacturing: {
     title: "Manufacturing Software Development | Ascentia Labs",
     description:

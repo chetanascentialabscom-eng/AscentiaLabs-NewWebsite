@@ -8,6 +8,8 @@ import {
   Shirt,
   Factory,
   Boxes,
+  Warehouse,
+  ClipboardCheck,
   Globe,
   Wrench,
   Brain,
@@ -21,8 +23,6 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
-  Leaf,
-  Recycle,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -35,11 +35,10 @@ import { ROUTES } from "../../../utils/routes";
 
 const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
   <section
-    className={`relative overflow-hidden py-12 md:py-14 lg:py-16 ${
-      alt
-        ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
-        : "bg-black"
-    } ${className}`}
+    className={`relative overflow-hidden py-12 md:py-14 lg:py-16 ${alt
+      ? "bg-gradient-to-br from-gray-900 via-blue-900 to-black"
+      : "bg-black"
+      } ${className}`}
     aria-labelledby={labelledBy}
   >
     {alt && (
@@ -56,9 +55,8 @@ const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
 
 const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   <div
-    className={`mb-8 md:mb-10 ${
-      align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
-    }`}
+    className={`mb-8 md:mb-10 ${align === "left" ? "max-w-xl text-left" : "mx-auto max-w-5xl text-center"
+      }`}
   >
     {eyebrow && (
       <p className="mb-3 text-[11px] 2xl:text-[15px] font-semibold uppercase tracking-[0.18em] text-amber-400">
@@ -76,16 +74,16 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const AustraliaTextilePage = () => {
+const CanadaTextilePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "$27.2B", label: "Australian TCF industry value (annual)" },
-    { value: "489K+", label: "Jobs across fashion supply chain" },
-    { value: "97%", label: "TCF production currently offshored" },
-    { value: "58%", label: "Women in TCF manufacturing workforce" },
+    { value: "C$10.8B", label: "Canadian textile & apparel manufacturing shipments" },
+    { value: "27K+", label: "People employed in Canada's textile supply chain" },
+    { value: "C$1.6B", label: "Canadian textile & apparel exports" },
+    { value: "90%+", label: "Apparel sold in Canada sourced from imports" },
   ];
 
   const services = [
@@ -93,104 +91,104 @@ const AustraliaTextilePage = () => {
       icon: Shirt,
       title: "Garment Manufacturing Software",
       description:
-        "Production planning, cutting, sewing, and finishing for Australian apparel brands and makers.",
+        "Production planning, cutting, sewing and finishing built for Canadian apparel makers.",
     },
     {
       icon: Factory,
-      title: "Textile Mill Software",
+      title: "Textile Manufacturing Software",
       description:
-        "Spinning, weaving, fabric, and yarn tracking workflows for Australian mills.",
+        "Spinning, weaving and knitting workflows suited to Canadian mill operations.",
     },
     {
       icon: Boxes,
-      title: "Fabric Inventory Management",
+      title: "Fabric Inventory Software",
       description:
-        "Real-time fabric, size-color matrix, trim tracking, and multi-location stock control.",
+        "Roll, batch and size-colour stock tracking across every plant and warehouse.",
     },
     {
-      icon: Leaf,
-      title: "Circular Economy Tools",
+      icon: ClipboardCheck,
+      title: "Canada-U.S. Trade Compliance",
       description:
-        "Track materials, reduce waste, and support Seamless stewardship reporting.",
+        "HS codes, GST/HST, CUSMA origin rules and customs paperwork on one screen.",
     },
     {
       icon: Globe,
-      title: "Export & Import Software",
+      title: "Textile Export Software",
       description:
-        "Export invoicing, trade docs, and multi-currency operations for global shipments.",
+        "Export invoicing and cross-border shipping documentation for growing manufacturers.",
     },
     {
       icon: Wrench,
-      title: "Job Work Management",
+      title: "Job Work & Sub-Contracting",
       description:
-        "Track outsourced processing with quality docs and subcontractor visibility.",
+        "Track fabric and CMT work sent to outside units, with full traceability to the order.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "97% of Australian TCF production is offshore, leaving brands exposed to supply chain disruptions.",
+        "Higher input and labour costs make it hard for Canadian mills to compete with offshore pricing.",
       solution:
-        "Cloud textile software gives real-time visibility across offshore and local production.",
+        "A cloud textile management software cuts manual overhead and tightens production planning without adding headcount.",
     },
     {
       challenge:
-        "TCF manufacturing employment declined from 115K (1989) to 29K (2026) as tariffs were removed.",
+        "Cross-border shipping between Canada and the U.S. gets tangled in HS codes and CUSMA paperwork.",
       solution:
-        "Flexible production planning and batch tracking help local makers compete on quality and speed.",
+        "Built-in HS mapping and document generation keep cross-border shipments moving and audit-ready.",
     },
     {
       challenge:
-        "85% of Australian wool is processed offshore, with limited local value capture.",
+        "Spreadsheets across plants make fabric and trim stock levels unreliable.",
       solution:
-        "AI-powered forecasting and material tracking help manufacturers capture more local processing.",
+        "A single textile inventory management software gives real-time stock visibility across every site.",
     },
     {
       challenge:
-        "Manual inventory and sustainability reporting increases compliance risk and costs.",
+        "Smaller Canadian manufacturers can't justify a large, complex legacy software rollout.",
       solution:
-        "Automate circular economy tracking with material sourcing and waste reduction workflows.",
+        "A modular, cloud-first textile software platform scales from a single workshop to a multi-plant group.",
     },
   ];
 
   const stakeholders = [
     {
       tab: "Apparel Brands",
-      title: "Apparel & Garment Manufacturing",
+      title: "Garment & Apparel Manufacturing",
       description:
-        "Australian brands managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
+        "Canadian clothing manufacturers needing a garment manufacturing software solution from cutting to dispatch.",
       panel: {
         eyebrow: "Floor workflow",
         stages: [
           { step: "01", name: "Cutting", status: "In progress" },
-          { step: "02", name: "Sewing", status: "Queued" },
+          { step: "02", name: "Sewing line", status: "Queued" },
           { step: "03", name: "Finishing", status: "Next" },
           { step: "04", name: "Dispatch", status: "Planned" },
         ],
         kpis: [
           { value: "Live", label: "Line status" },
           { value: "QC", label: "Stage checks" },
-          { value: "SCM", label: "Size-color" },
+          { value: "SCM", label: "Size-colour" },
         ],
       },
       bullets: [
-        "Production planning and scheduling",
+        "Production planning and line scheduling",
         "Cutting room and sewing line tracking",
-        "Multi-stage quality control",
-        "Size-color matrix management",
+        "Multi-stage quality checks",
+        "Size-colour matrix and style tracking",
       ],
     },
     {
       tab: "Textile Mills",
-      title: "Textile Mill Operations",
+      title: "Spinning, Weaving & Knitting Mills",
       description:
-        "Spinning, weaving, and processing units that need yarn-to-fabric visibility and capacity planning.",
+        "Canadian mills needing production planning software from raw yarn through to finished fabric.",
       panel: {
         eyebrow: "Mill workflow",
         stages: [
           { step: "01", name: "Spinning", status: "Active" },
-          { step: "02", name: "Weaving", status: "Running" },
+          { step: "02", name: "Weaving/Knitting", status: "Running" },
           { step: "03", name: "Dyeing", status: "Scheduled" },
           { step: "04", name: "Finishing", status: "Ready" },
         ],
@@ -201,17 +199,17 @@ const AustraliaTextilePage = () => {
         ],
       },
       bullets: [
-        "Yarn production tracking",
-        "Fabric inventory management",
-        "Dyeing and finishing workflows",
-        "Loom capacity planning",
+        "Yarn and greige fabric tracking",
+        "Fabric inventory management software",
+        "Dyeing and finishing batch records",
+        "Loom and knitting capacity planning",
       ],
     },
     {
-      tab: "Traders & Wholesalers",
-      title: "Textile Traders & Wholesalers",
+      tab: "Traders & Distributors",
+      title: "Fabric Traders & Distributors",
       description:
-        "Businesses managing fabric procurement, stock, and orders across Australian warehouses.",
+        "Canadian trading firms managing fabric procurement, multi-warehouse stock and customer orders.",
       panel: {
         eyebrow: "Trade workflow",
         stages: [
@@ -227,23 +225,23 @@ const AustraliaTextilePage = () => {
         ],
       },
       bullets: [
-        "Multi-warehouse inventory visibility",
-        "Sales order tracking",
-        "Job work / subcontractor management",
-        "Daily business reporting",
+        "Multi-warehouse fabric inventory software",
+        "Sales order and dispatch tracking",
+        "Sub-contractor and job work visibility",
+        "Daily stock and sales reporting",
       ],
     },
     {
       tab: "Exporters",
       title: "Textile Export Operations",
       description:
-        "Export-focused manufacturers managing international orders, compliance, and documentation.",
+        "Exporters shipping into the U.S. and overseas, needing textile software with trade documentation built in.",
       panel: {
         eyebrow: "Export workflow",
         stages: [
           { step: "01", name: "Order confirm", status: "Done" },
           { step: "02", name: "Docs pack", status: "In review" },
-          { step: "03", name: "Scheme claim", status: "Pending" },
+          { step: "03", name: "CUSMA claim", status: "Pending" },
           { step: "04", name: "Shipment", status: "Booked" },
         ],
         kpis: [
@@ -253,10 +251,10 @@ const AustraliaTextilePage = () => {
         ],
       },
       bullets: [
-        "Export invoicing and documentation",
-        "Free trade agreement support",
-        "Multi-currency operations",
-        "Quality standards compliance",
+        "Export invoicing and shipping documentation",
+        "CUSMA origin and customs support",
+        "Multi-currency order management",
+        "Retailer and buyer compliance standards",
       ],
     },
   ];
@@ -264,61 +262,61 @@ const AustraliaTextilePage = () => {
   const techStack = [
     {
       icon: Brain,
-      title: "AI & Automation",
-      body: "Order and material forecasting, automated order reading, and production insights.",
+      title: "AI & Forecasting",
+      body: "Demand forecasting, automated order capture, and production alerts.",
     },
     {
       icon: Cloud,
       title: "Cloud Textile Platform",
-      body: "100% cloud software—factory floor to office, no on-premise servers.",
+      body: "Fully cloud-based — plant floor to head office, no local servers.",
     },
     {
       icon: Network,
-      title: "API Access",
-      body: "APIs for inventory, production, orders, and finance—plus NetSuite, Shopify, and payments.",
+      title: "Open API Access",
+      body: "APIs for inventory, production and finance, plus QuickBooks, Sage and EDI.",
     },
     {
       icon: Smartphone,
-      title: "Mobile-First",
-      body: "Mobile tools for supervisors, QC, and field teams—with job work and dispatch tracking.",
+      title: "Mobile-First Tools",
+      body: "Mobile apps for supervisors, QC teams and warehouse staff.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for production efficiency, defect rates, inventory turnover, and profitability.",
+      body: "Dashboards for production efficiency, defect rates and profitability.",
     },
   ];
 
   const security = [
     {
-      icon: Leaf,
-      title: "Circular Economy Compliance",
-      body: "Track material sourcing, recycled content, and waste diversion for Seamless reporting.",
+      icon: ClipboardCheck,
+      title: "Canada-U.S. Trade Compliance",
+      body: "HS codes, GST/HST handling and customs paperwork, in one place.",
     },
     {
       icon: Globe,
-      title: "Trade Agreement Support",
-      body: "ChAFTA, AANZFTA, and free trade agreement docs for textile shipments.",
+      title: "CUSMA Origin Support",
+      body: "Documentation for duty-free qualifying cross-border shipments.",
     },
     {
       icon: FileText,
       title: "E-Invoicing & EDI",
-      body: "Integration with Australian retail and brand EDI systems for e-invoices.",
+      body: "Connects with Canadian and U.S. retailer EDI systems.",
     },
     {
       icon: Wrench,
       title: "Job Work Compliance",
-      body: "Track goods to subcontractors with audit-ready documentation.",
+      body: "Traceable records for fabric sent to sub-contracted units.",
     },
     {
       icon: Shield,
       title: "Data Security",
-      body: "Role-based access protecting business and financial records.",
+      body: "Role-based access across production and financial records.",
     },
     {
       icon: Database,
       title: "Audit & Activity Logs",
-      body: "Logs for production, quality, and compliance—ready for review.",
+      body: "Full activity logs, ready for review at any time.",
     },
   ];
 
@@ -327,37 +325,37 @@ const AustraliaTextilePage = () => {
       id: 1,
       title: "Textile-Specific Software",
       description:
-        "Purpose-built for Australian garment and mill operations—not generic software rebranded.",
+        "Built for garment and mill operations — not generic software rebranded.",
     },
     {
       id: 2,
-      title: "Unified Platform",
+      title: "One Connected Platform",
       description:
-        "Production, fabric, accounting, trade compliance, and export docs on one data model.",
+        "Production, stock, accounting and compliance in one data model.",
     },
     {
       id: 3,
-      title: "Australian Market Fit",
+      title: "Built for the Canadian Market",
       description:
-        "Built for local workflows—ChAFTA, Seamless, EDI, and circular economy reporting.",
+        "Configured for GST/HST, CUSMA trade rules and cross-border shipping.",
     },
     {
       id: 4,
-      title: "Proven Outcomes",
+      title: "Measurable Results",
       description:
-        "Gains in production efficiency, inventory accuracy, compliance, and hours saved.",
+        "Gains in efficiency, stock accuracy, compliance and time saved.",
     },
     {
       id: 5,
-      title: "Scalable for Growth",
+      title: "Scales As You Grow",
       description:
-        "Same platform from small garment units to large mills—no rip-and-replace.",
+        "One system, from a single workshop to a multi-plant group.",
     },
     {
       id: 6,
-      title: "Modern Adoption",
+      title: "Easy to Adopt",
       description:
-        "Usable UI so production, warehouse, and management teams run on the system.",
+        "A clean interface teams actually use, from day one.",
     },
   ];
 
@@ -366,112 +364,112 @@ const AustraliaTextilePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Map production, inventory, and compliance needs so teams see value quickly.",
+        "Map production, inventory and compliance needs so your team sees value from week one.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure production planning, inventory, trade compliance, and export workflows to your model.",
+        "Configure production planning, fabric inventory, trade compliance and export workflows to your business.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Migration, English training, and rollout sized to business complexity.",
+        "Data migration and hands-on training, scaled to the complexity of your operation.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "AEST-aligned support and continuous improvement as textile operations scale.",
+        "Canadian timezone-aligned support and continuous improvement as your business scales.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "9 → 1",
-      title: "Unified Textile Platform",
+      metric: "8 → 1",
+      title: "One Unified Textile System",
       description:
-        "Nine systems consolidated into one platform—better production visibility and less manual order entry.",
+        "Eight disconnected spreadsheets and tools replaced by one unified textile platform.",
       icon: Layers,
     },
     {
       metric: "Visibility",
-      title: "Production Planning",
+      title: "Real-Time Production Planning",
       description:
-        "Real-time production tracking helps spot bottlenecks faster and improve on-time delivery.",
+        "Live production tracking helps spot bottlenecks early and improve on-time delivery.",
       icon: RefreshCw,
     },
     {
       metric: "Accuracy",
-      title: "Fabric Inventory",
+      title: "Reliable Fabric Inventory",
       description:
-        "Integrated inventory management reduces stock discrepancies and improves material planning.",
+        "A dedicated fabric inventory management software cuts stock discrepancies and improves planning.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What does Australian textile software include?",
+      question: "What does Canada textile software include?",
       answer:
-        "Production planning, fabric inventory, order tracking, quality control, circular economy reporting, accounting, and export documentation.",
+        "Production planning, fabric inventory, order tracking, quality control, Canada-U.S. trade compliance, accounting and export documentation for textile manufacturing.",
     },
     {
-      question: "How does garment manufacturing software help in Australia?",
+      question: "How does garment manufacturing software help in Canada?",
       answer:
-        "It centralizes cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
+        "It centralises cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
     },
     {
-      question: "Does it support circular economy compliance?",
+      question: "Does the platform handle CUSMA and cross-border customs?",
       answer:
-        "Yes—material sourcing, recycled content tracking, and waste diversion reporting for Seamless stewardship.",
+        "Yes — HS code mapping, GST/HST handling and CUSMA origin documentation are built in.",
     },
     {
-      question: "Can it handle textile export documentation?",
+      question: "Can it manage job work and sub-contracted CMT units?",
       answer:
-        "Yes—export invoicing, ChAFTA/AANZFTA docs, and trade compliance reporting are built in.",
+        "Yes — fabric and work sent to third-party units is tracked with full traceability back to the original order.",
     },
     {
-      question: "Does it support job work management?",
+      question: "Is size-colour matrix tracking supported?",
       answer:
-        "Yes—subcontractor tracking, outsourced process monitoring, and accountability documentation are core features.",
+        "Yes — size-colour matrices keep production planning and inventory accurate across every style and variant.",
     },
     {
-      question: "Is size-color matrix tracking included?",
+      question: "Does the textile software integrate with QuickBooks and Sage?",
       answer:
-        "Yes—size-color matrices keep production planning and inventory accurate across product variants.",
+        "Yes — QuickBooks and Sage integrations keep financial records aligned automatically.",
     },
     {
-      question: "Can textile software integrate with NetSuite?",
+      question: "How long does implementation take for a mid-sized manufacturer?",
       answer:
-        "Yes—NetSuite sync keeps financial data aligned between your platform and existing accounting.",
+        "Most Canadian manufacturers go live within weeks, with core teams seeing value from the first production cycle.",
     },
     {
-      question: "How long does textile software implementation take?",
+      question: "Is this a cloud-based textile management software?",
       answer:
-        "Most mid-market manufacturers deploy in weeks to months, with many teams seeing value within weeks.",
+        "Yes — it's fully cloud-hosted, giving plant, warehouse and head-office teams access from anywhere.",
     },
     {
-      question: "Is the platform cloud-based?",
+      question: "Can the system support larger, multi-plant textile groups?",
       answer:
-        "Yes—cloud textile software gives anytime access for factory, management, and multi-location teams.",
+        "Yes — production, inventory, compliance, open APIs and audit logs all scale to enterprise manufacturers.",
     },
     {
-      question: "Can it support large integrated mills?",
+      question: "Is there a free version for smaller garment manufacturing companies?",
       answer:
-        "Yes—unified production planning, inventory, compliance, APIs, and audit logs for enterprise mills.",
+        "Free tools usually cover only basic stock lists. Growing manufacturers need production planning, compliance and reporting together, which is why a purpose-built textile platform pays for itself quickly.",
     },
   ];
 
   const relatedIndustries = [
     { title: "Textiles", link: ROUTES.industry.textiles },
-    { title: "India Textile", link: ROUTES.industry.indiaTextile },
     { title: "USA Textile", link: ROUTES.industry.usaTextile },
-    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "UK Textile", link: ROUTES.industry.ukTextile },
-    { title: "Canada Textile", link: ROUTES.industry.canadaTextile },
+    { title: "India Textile", link: ROUTES.industry.indiaTextile },
+    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
+    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
@@ -487,7 +485,7 @@ const AustraliaTextilePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.australiaTextile} />
+      <SEO {...seoData.canadaTextile} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -503,15 +501,15 @@ const AustraliaTextilePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                Australia Textile
+                Canada Textile
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Australia Textile Software for Manufacturers & Mills
+                Canada Textile Software for Manufacturers & Mills
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                AI-powered textile software for garment manufacturing, fabric
-                management, circular economy reporting, and export workflows—built for
-                Australian textile industry operations.
+                AI-powered textile software for Canadian garment manufacturing,
+                fabric management, production planning, and Canada-U.S. trade
+                compliance.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -536,7 +534,7 @@ const AustraliaTextilePage = () => {
                   <div className="flex min-w-0 items-center gap-2.5">
                     <Factory className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
                     <p className="truncate text-sm font-normal text-white sm:text-base 2xl:text-lg">
-                      Complete Textile Software Suite
+                      Complete Textile Management System
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true">
@@ -550,8 +548,8 @@ const AustraliaTextilePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "Apparel Production",
-                      body: "Cutting, sewing, and finishing workflows.",
+                      title: "Garment Production",
+                      body: "Cutting, sewing and finishing on one screen.",
                       icon: Shirt,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
@@ -559,23 +557,23 @@ const AustraliaTextilePage = () => {
                     },
                     {
                       title: "Textile Mills",
-                      body: "Yarn, fabric, dyeing, and loom planning.",
+                      body: "Yarn, fabric, dyeing and loom planning.",
                       icon: Factory,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Inventory & Sustainability",
-                      body: "Size-color matrix and circular economy reporting.",
-                      icon: Recycle,
+                      title: "Inventory & Trade",
+                      body: "Size-colour matrix and Canada-U.S. compliance.",
+                      icon: Warehouse,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
                       title: "Export & Job Work",
-                      body: "Documentation and subcontracting.",
+                      body: "Documentation and sub-contracting, tracked.",
                       icon: Globe,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
@@ -586,11 +584,10 @@ const AustraliaTextilePage = () => {
                     return (
                       <div
                         key={card.title}
-                        className={`p-3.5 transition-colors duration-300 hover:bg-white/[0.04] sm:p-4 lg:p-5 2xl:p-6 [@media(max-height:780px)]:p-3 ${
-                          card.topBorder
-                            ? "border-white/10 min-[520px]:border-t"
-                            : ""
-                        }`}
+                        className={`p-3.5 transition-colors duration-300 hover:bg-white/[0.04] sm:p-4 lg:p-5 2xl:p-6 [@media(max-height:780px)]:p-3 ${card.topBorder
+                          ? "border-white/10 min-[520px]:border-t"
+                          : ""
+                          }`}
                       >
                         <div className="flex items-start gap-2.5 sm:gap-3 2xl:gap-4">
                           <div
@@ -625,8 +622,8 @@ const AustraliaTextilePage = () => {
               id="market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why Australian Textile Needs Modern Technology"
-              subtitle="With $27.2B industry value and 489K+ jobs—yet 97% of production offshored—Australian makers need cloud software for planning, inventory, and compliance."
+              title="Why Canadian Textile Needs Modern Technology"
+              subtitle="With C$10.8B in shipments and 27K+ jobs, Canadian textile and apparel manufacturers need cloud software for planning, inventory and cross-border trade."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -653,8 +650,8 @@ const AustraliaTextilePage = () => {
         <Heading
           id="capabilities"
           eyebrow="Services"
-          title="Textile Industry Solutions for Australia"
-          subtitle="Textile software for garment manufacturing, mills and exporters—production planning to circular economy compliance."
+          title="Textile Industry Solutions for Canada"
+          subtitle="Textile software solutions for garment  and exporters — from production planning to Canada-U.S. trade compliance."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -684,8 +681,8 @@ const AustraliaTextilePage = () => {
         <Heading
           id="challenges-heading"
           eyebrow="Solutions"
-          title="Practical Solutions for Australian Textile Challenges"
-          subtitle="Clear answers for production reliability, fabric inventory, circular compliance, and faster order turnaround."
+          title="Practical Fixes for Canadian Textile Challenges"
+          subtitle="Straightforward answers for rising costs, cross-border friction, fabric stock accuracy and slow order turnaround."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -715,21 +712,21 @@ const AustraliaTextilePage = () => {
         <Heading
           id="stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Textile Stakeholder"
-          subtitle="Software shaped for apparel brands, textile mills, traders, and exporters across Australia."
+          title="Built for Every Part of the Canadian Textile Chain"
+          subtitle="Software shaped for apparel brands, textile mills, traders and exporters across Canada."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="australia-textile-stakeholder-select" className="sr-only">
+          <label htmlFor="canada-textile-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="australia-textile-stakeholder-select"
+              id="canada-textile-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="australia-textile-stakeholder-panel"
+              aria-controls="canada-textile-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -759,14 +756,13 @@ const AustraliaTextilePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`australia-textile-stakeholder-tab-${index}`}
-                aria-controls="australia-textile-stakeholder-panel"
+                id={`canada-textile-stakeholder-tab-${index}`}
+                aria-controls="canada-textile-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
-                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${
-                  selected
-                    ? "bg-amber-400 text-black"
-                    : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
-                }`}
+                className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
+                  ? "bg-amber-400 text-black"
+                  : "border border-white/15 bg-black/20 text-gray-200 hover:border-white/30"
+                  }`}
               >
                 {item.tab}
               </button>
@@ -775,9 +771,9 @@ const AustraliaTextilePage = () => {
         </div>
 
         <div
-          id="australia-textile-stakeholder-panel"
+          id="canada-textile-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`australia-textile-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`canada-textile-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -831,11 +827,10 @@ const AustraliaTextilePage = () => {
                     className="flex items-center gap-3 border-b border-white/[0.06] py-3 last:border-b-0 2xl:py-3.5"
                   >
                     <span
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tabular-nums ${
-                        isActive
-                          ? "bg-amber-400 text-black"
-                          : "border border-white/10 bg-white/[0.03] text-gray-400"
-                      }`}
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-[11px] font-semibold tabular-nums ${isActive
+                        ? "bg-amber-400 text-black"
+                        : "border border-white/10 bg-white/[0.03] text-gray-400"
+                        }`}
                     >
                       {stage.step}
                     </span>
@@ -843,11 +838,10 @@ const AustraliaTextilePage = () => {
                       {stage.name}
                     </span>
                     <span
-                      className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium ${
-                        isActive
-                          ? "bg-amber-400/15 text-amber-300"
-                          : "bg-white/[0.04] text-gray-400"
-                      }`}
+                      className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-medium ${isActive
+                        ? "bg-amber-400/15 text-amber-300"
+                        : "bg-white/[0.04] text-gray-400"
+                        }`}
                     >
                       {stage.status}
                     </span>
@@ -881,7 +875,7 @@ const AustraliaTextilePage = () => {
           id="tech-heading"
           eyebrow="Capabilities"
           title="AI-Native Textile Software Architecture"
-          subtitle="AI, cloud textile software, APIs, and mobile—with NetSuite, Shopify, EDI, and payment integrations."
+          subtitle="AI forecasting, a cloud textile platform, open APIs and mobile tools — plus QuickBooks, Sage and EDI integrations."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -909,8 +903,8 @@ const AustraliaTextilePage = () => {
         <Heading
           id="compliance-heading"
           eyebrow="Compliance"
-          title="Australia-Ready Compliance & Security"
-          subtitle="Circular economy reporting, trade agreements, e-invoicing, EDI, and job work controls."
+          title="Canada-Ready Compliance & Security"
+          subtitle="Canada-U.S. trade compliance, CUSMA origin rules, e-invoicing, EDI and job work controls, built into the platform."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -938,8 +932,8 @@ const AustraliaTextilePage = () => {
         <Heading
           id="why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for Australian Textile"
-          subtitle="Purpose-built textile software with Australian market fit and fast team adoption."
+          title="Why Choose Us for Canada Textile"
+          subtitle="A purpose-built textile management system with Canadian market fit and fast team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -964,7 +958,7 @@ const AustraliaTextilePage = () => {
           id="process-heading"
           eyebrow="Delivery"
           title="How We Deliver Textile Software"
-          subtitle="Four clear phases—from discovery to AEST-aligned ongoing support."
+          subtitle="Four clear phases — from discovery to Canadian timezone-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -990,11 +984,10 @@ const AustraliaTextilePage = () => {
             {processSteps.map((step, index) => (
               <li key={step.number} className="px-2 text-center">
                 <div
-                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${
-                    index === 0
-                      ? "bg-amber-400 text-black"
-                      : "border border-white/20 bg-black text-white"
-                  }`}
+                  className={`relative z-10 mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full text-xs font-bold md:h-11 md:w-11 md:text-sm 2xl:h-12 2xl:w-12 ${index === 0
+                    ? "bg-amber-400 text-black"
+                    : "border border-white/20 bg-black text-white"
+                    }`}
                 >
                   {step.number}
                 </div>
@@ -1015,13 +1008,13 @@ const AustraliaTextilePage = () => {
         <Heading
           id="impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes in Australian Textile Manufacturing"
-          subtitle="Results from a unified textile platform—visibility, accuracy, and less manual work."
+          title="Proven Outcomes for Canadian Textile Manufacturers"
+          subtitle="Results from one unified textile platform — better visibility, greater accuracy and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `australia-textile-case-bg-${index}`;
+            const gradientId = `canada-textile-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1093,8 +1086,8 @@ const AustraliaTextilePage = () => {
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `australia-textile-faq-panel-${index}`;
-            const buttonId = `australia-textile-faq-button-${index}`;
+            const panelId = `canada-textile-faq-panel-${index}`;
+            const buttonId = `canada-textile-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1168,4 +1161,4 @@ const AustraliaTextilePage = () => {
   );
 };
 
-export default AustraliaTextilePage;
+export default CanadaTextilePage;

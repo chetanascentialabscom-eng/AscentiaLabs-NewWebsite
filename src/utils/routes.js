@@ -37,7 +37,9 @@ export const SLUGS = {
     indiaTextile: "india-textile-apparel-software-development",
     uaeTextile: "uae-textile-software-development",
     usaTextile: "usa-textile-software-development",
+    canadaTextile: "canada-textile-software-development",
     australiaTextile: "australia-textile-software-development",
+    ukTextile: "uk-textile-software-development",
     manufacturing: "manufacturing-management-software",
   },
   service: {
@@ -142,7 +144,9 @@ export const ROUTES = {
     indiaTextile: industryPath(SLUGS.industry.indiaTextile),
     uaeTextile: industryPath(SLUGS.industry.uaeTextile),
     usaTextile: industryPath(SLUGS.industry.usaTextile),
+    canadaTextile: industryPath(SLUGS.industry.canadaTextile),
     australiaTextile: industryPath(SLUGS.industry.australiaTextile),
+    ukTextile: industryPath(SLUGS.industry.ukTextile),
     manufacturing: industryPath(SLUGS.industry.manufacturing),
   },
 
@@ -203,8 +207,16 @@ export const LEGACY_REDIRECTS = [
     ROUTES.industry.usaTextile,
   ],
   [
+    "/canada-textile-software-development",
+    ROUTES.industry.canadaTextile,
+  ],
+  [
     "/australia-textile-software-development",
     ROUTES.industry.australiaTextile,
+  ],
+  [
+    "/uk-textile-software-development",
+    ROUTES.industry.ukTextile,
   ],
   ["/manufacturing-management-software", ROUTES.industry.manufacturing],
   ["/manufacturing", ROUTES.industry.manufacturing],

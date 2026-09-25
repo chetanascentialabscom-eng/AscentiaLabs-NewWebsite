@@ -25,6 +25,8 @@ export { default as IndiaTextilePage } from './Industries/INDIA_TEXTILE';
 export { default as UAETextilePage } from './Industries/UAE_TEXTILE';
 export { default as UsaTextilePage } from './Industries/USA_TEXTILE';
 export { default as AustraliaTextilePage } from './Industries/AUSTRALIA_TEXTILE';
+export { default as UkTextilePage } from './Industries/UK_TEXTILE';
+export { default as CanadaTextilePage } from './Industries/CANADA_TEXTILE';
 export { default as ManufacturingPage } from './Industries/Manufacturing';
 export { default as ProductsPage } from './Products';
 export { default as ProductDetailPage } from './Products/ProductDetail';

@@ -470,6 +470,8 @@ const IndiaTextilePage = () => {
     { title: "Textiles", link: ROUTES.industry.textiles },
     { title: "USA Textile", link: ROUTES.industry.usaTextile },
     { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
+    { title: "UK Textile", link: ROUTES.industry.ukTextile },
+    { title: "Canada Textile", link: ROUTES.industry.canadaTextile },
     { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
