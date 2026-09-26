@@ -78,6 +78,10 @@ import FabricShrinkagePredictionBlog from "./pages/Blogs/FabricShrinkagePredicti
 import FutureFabricShrinkagePredictionBlog from "./pages/Blogs/FutureFabricShrinkagePredictionBlog";
 import TextileColorMatchingBlog from "./pages/Blogs/Textilecolormatchingblog";
 import CanadaTextilePage from "./pages/Industries/CANADA_TEXTILE";
+import UsaHealthcareSoftwarePage from "./pages/Industries/USA_HEALTHCARE";
+import IndiaHealthcareSoftwarePage from "./pages/Industries/INDIA_HEALTHCARE";
+import UkHealthcareSoftwarePage from "./pages/Industries/UK_HEALTHCARE";
+import AustraliaHealthcareSoftwarePage from "./pages/Industries/AUSTRALIA_HEALTHCARE";
 
 function App() {
   useLenis();
@@ -119,6 +123,22 @@ function App() {
             <Route
               path={ROUTES.industry.healthcare}
               element={<HealthCarePage />}
+            />
+            <Route
+              path={ROUTES.industry.usaHealthcare}
+              element={<UsaHealthcareSoftwarePage />}
+            />
+            <Route
+              path={ROUTES.industry.indiaHealthcare}
+              element={<IndiaHealthcareSoftwarePage />}
+            />
+            <Route
+              path={ROUTES.industry.ukHealthcare}
+              element={<UkHealthcareSoftwarePage />}
+            />
+            <Route
+              path={ROUTES.industry.australiaHealthcare}
+              element={<AustraliaHealthcareSoftwarePage />}
             />
             <Route
               path={ROUTES.industry.realEstate}

@@ -694,7 +694,70 @@ const HealthcarePage = () => {
     },
   ];
 
+  const countryMarkets = [
+    {
+      country: "United States",
+      flagCode: "us",
+      line: "EHR, practice management, medical billing, and HIPAA-compliant care software.",
+      link: ROUTES.industry.usaHealthcare,
+    },
+    {
+      country: "India",
+      flagCode: "in",
+      line: "Hospital management, telemedicine, and clinical workflow software.",
+      link: ROUTES.industry.indiaHealthcare,
+    },
+    {
+      country: "United Kingdom",
+      flagCode: "gb",
+      line: "NHS-aligned digital health, patient records, and care coordination.",
+      link: ROUTES.industry.ukHealthcare,
+    },
+    {
+      country: "Canada",
+      flagCode: "ca",
+      line: "Provincial compliance, clinic operations, and integrated care platforms.",
+      link: null,
+    },
+    {
+      country: "UAE",
+      flagCode: "ae",
+      line: "Healthcare IT for hospitals, clinics, and insurance workflows.",
+      link: null,
+    },
+    {
+      country: "Australia",
+      flagCode: "au",
+      line: "Practice software, patient engagement, and clinical documentation.",
+      link: ROUTES.industry.australiaHealthcare,
+    },
+  ];
+
   const relatedIndustries = [
+    {
+      icon: HeartPulse,
+      title: "USA Healthcare Software",
+      line: "EHR, practice management, and HIPAA-ready billing for U.S. providers.",
+      link: ROUTES.industry.usaHealthcare,
+    },
+    {
+      icon: HeartPulse,
+      title: "India Healthcare Software",
+      line: "HMS, clinic OPD, pharmacy billing, and ABDM-ready workflows for India.",
+      link: ROUTES.industry.indiaHealthcare,
+    },
+    {
+      icon: HeartPulse,
+      title: "UK Healthcare Software",
+      line: "GP, care home and NHS DSPT-aligned practice software for the UK.",
+      link: ROUTES.industry.ukHealthcare,
+    },
+    {
+      icon: HeartPulse,
+      title: "Australia Healthcare Software",
+      line: "Medicare/PBS billing and My Health Record-ready practice software for Australia.",
+      link: ROUTES.industry.australiaHealthcare,
+    },
     {
       icon: Home,
       title: "Real Estate",
@@ -1417,6 +1480,69 @@ const HealthcarePage = () => {
               </Link>
             </li>
           ))}
+        </ul>
+      </SectionShell>
+
+      {/* ================= COUNTRY / REGIONAL MARKETS ================= */}
+      <SectionShell labelledBy="country-markets-heading">
+        <SectionIntro
+          id="country-markets-heading"
+          title="Healthcare Software by Country"
+          subtitle="Market-specific healthcare platforms tailored for local compliance, clinical workflows, and payer rules."
+        />
+        <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+          {countryMarkets.map((market) => {
+            const isLinked = Boolean(market.link);
+            const cardClassName = isLinked
+              ? "group flex h-full flex-col rounded-2xl border border-white/15 bg-black p-5 transition-colors hover:border-white/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
+              : "flex h-full flex-col rounded-2xl border border-white/10 bg-black/80 p-5";
+            const content = (
+              <>
+                <img
+                  src={`https://flagcdn.com/w80/${market.flagCode}.png`}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="mb-4 h-7 w-7 rounded-full object-cover ring-1 ring-white/20"
+                  loading="lazy"
+                />
+                <h3
+                  className={`mb-2 text-base font-semibold text-white ${isLinked ? "transition-colors group-hover:text-amber-300" : ""
+                    }`}
+                >
+                  {market.country}
+                </h3>
+                <p className="flex-1 text-sm leading-relaxed text-white/90">
+                  {market.line}
+                </p>
+                {isLinked ? (
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-amber-400">
+                    Explore
+                    <ArrowRight
+                      size={12}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5"
+                    />
+                  </span>
+                ) : (
+                  <span className="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-gray-500">
+                    Coming soon
+                  </span>
+                )}
+              </>
+            );
+
+            return (
+              <li key={market.country}>
+                {isLinked ? (
+                  <Link to={market.link} className={cardClassName}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={cardClassName}>{content}</div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </SectionShell>
 

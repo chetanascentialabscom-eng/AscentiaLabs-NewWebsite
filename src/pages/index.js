@@ -9,6 +9,10 @@ export { default as InteriorArchitecture } from './Industries/InteriorArchitectu
 export { default as LogisticsPage } from './Industries/LogisticsPage';
 export { default as ERPPage } from './Industries/ERP';
 export { default as HealthCarePage } from './Industries/HealthCare';
+export { default as UsaHealthcareSoftwarePage } from './Industries/USA_HEALTHCARE';
+export { default as IndiaHealthcareSoftwarePage } from './Industries/INDIA_HEALTHCARE';
+export { default as UkHealthcareSoftwarePage } from './Industries/UK_HEALTHCARE';
+export { default as AustraliaHealthcareSoftwarePage } from './Industries/AUSTRALIA_HEALTHCARE';
 export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as UAERealEstatePage } from './Industries/UAE_REALESTATE';
 export { default as USRealEstatePage } from './Industries/US_REALESTATE';

@@ -5,10 +5,8 @@ import {
   ChevronUp,
   Shield,
   BarChart3,
-  Shirt,
-  Factory,
-  Boxes,
-  Warehouse,
+  Stethoscope,
+  Building2,
   ClipboardCheck,
   Globe,
   Wrench,
@@ -23,6 +21,9 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
+  Activity,
+  Users,
+  Home,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -74,287 +75,288 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UsaTextilePage = () => {
+const UsaHealthcareSoftwarePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "$60.9B", label: "U.S. textile & apparel shipments (2025)" },
-    { value: "453K+", label: "U.S. textile supply chain employment" },
-    { value: "$27B", label: "U.S. textile & apparel exports (2025)" },
-    { value: "96.9%", label: "Apparel & footwear sold in U.S. is imported" },
+    { value: "96%", label: "U.S. hospitals using certified EHR technology" },
+    { value: "78%+", label: "Office-based physicians using EHR software" },
+    { value: "$39.7B", label: "U.S. healthcare IT software market size" },
+    { value: "5,000+", label: "Hospitals running on EMR & practice management systems" },
   ];
 
   const services = [
     {
-      icon: Shirt,
-      title: "Garment Manufacturing Software",
+      icon: Stethoscope,
+      title: "EHR & EMR Software Development",
       description:
-        "Production planning, cutting, sewing, and finishing for U.S. apparel brands.",
-    },
-    {
-      icon: Factory,
-      title: "Textile Mill Software",
-      description:
-        "Spinning, weaving, fabric, and yarn tracking workflows for U.S. mills.",
-    },
-    {
-      icon: Boxes,
-      title: "Fabric Inventory Management",
-      description:
-        "Real-time fabric, size-color matrix, trim tracking, and multi-location stock control.",
+        "Custom electronic health record systems built around real clinical documentation workflows.",
     },
     {
       icon: ClipboardCheck,
-      title: "U.S. Trade Compliance",
+      title: "Medical Practice Management Software",
       description:
-        "HTS codes, duty calculation, customs docs, and trade agreement support.",
+        "Scheduling, patient intake, charting and front-desk operations on one connected system.",
     },
     {
-      icon: Globe,
-      title: "Textile Export Software",
+      icon: FileText,
+      title: "Healthcare Billing & RCM Software",
       description:
-        "Export invoicing, USMCA/CAFTA docs, and trade compliance for shipments.",
+        "Claims, coding, denials tracking and revenue cycle management built for U.S. payers.",
     },
     {
-      icon: Wrench,
-      title: "Job Work Management",
+      icon: Activity,
+      title: "Clinical Trial Management Software",
       description:
-        "Track outsourced processing with quality docs and subcontractor visibility.",
+        "CTMS workflows for protocol tracking, patient enrollment and regulatory documentation.",
+    },
+    {
+      icon: Users,
+      title: "Healthcare CRM Software",
+      description:
+        "Patient relationship tracking, referral management and care-team communication in one place.",
+    },
+    {
+      icon: Home,
+      title: "Home Health & Care Management Software",
+      description:
+        "Visit scheduling, caregiver dispatch and care plan tracking for home health agencies.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "High labor costs and low R&D budgets limit automation across U.S. mills and factories.",
+        "Clunky legacy EMR systems slow down documentation and drive physician burnout.",
       solution:
-        "A cloud textile platform standardizes workflows with real-time visibility—no large upfront IT spend.",
+        "A modern, cloud-based EHR software solution cuts click-fatigue with faster, clinician-friendly charting.",
     },
     {
       challenge:
-        "40 U.S. textile mills closed in 2.5 years due to import pressure and falling utilization.",
+        "Fragmented scheduling, billing and clinical systems create manual re-entry and denied claims.",
       solution:
-        "Flexible production planning, batch tracking, and demand-led inventory boost efficiency and turnaround.",
+        "A unified practice management and billing platform keeps patient, claim and payment data in sync.",
     },
     {
       challenge:
-        "U.S. apparel output fell 17% in 2025, with sourcing shifting to Asia instead of reshoring.",
+        "HIPAA compliance gaps in patchwork software expose practices to audit and breach risk.",
       solution:
-        "AI-powered order and material forecasting help U.S. manufacturers capture reshoring opportunities faster.",
+        "Built-in HIPAA compliant software architecture, access controls and audit logging reduce that risk.",
     },
     {
       challenge:
-        "Manual HTS, duty, and trade compliance raises the risk of penalties, delays, and errors.",
+        "Specialty providers—behavioral health, dental, home health—are underserved by one-size-fits-all EMRs.",
       solution:
-        "Automate U.S. trade compliance with HTS mapping, e-invoicing, and return-ready workflows.",
+        "Configurable specialty workflows adapt the same core platform to each care setting's documentation needs.",
     },
   ];
+
   const stakeholders = [
     {
-      tab: "Apparel Brands",
-      title: "Apparel & Garment Manufacturing",
+      tab: "Medical Practices",
+      title: "Medical Practice & Clinic Software",
       description:
-        "U.S. brands managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
+        "Independent practices and multi-provider clinics needing an EHR and practice management system in one.",
       panel: {
-        eyebrow: "Floor workflow",
+        eyebrow: "Clinic workflow",
         stages: [
-          { step: "01", name: "Cutting", status: "In progress" },
-          { step: "02", name: "Sewing", status: "Queued" },
-          { step: "03", name: "Finishing", status: "Next" },
-          { step: "04", name: "Dispatch", status: "Planned" },
+          { step: "01", name: "Patient intake", status: "In progress" },
+          { step: "02", name: "Charting", status: "Queued" },
+          { step: "03", name: "Coding & billing", status: "Next" },
+          { step: "04", name: "Follow-up", status: "Planned" },
         ],
         kpis: [
-          { value: "Live", label: "Line status" },
-          { value: "QC", label: "Stage checks" },
-          { value: "SCM", label: "Size-color" },
+          { value: "Live", label: "Schedule view" },
+          { value: "EHR", label: "Chart access" },
+          { value: "RCM", label: "Claims status" },
         ],
       },
       bullets: [
-        "Production planning and scheduling",
-        "Cutting room and sewing line tracking",
-        "Multi-stage quality control",
-        "Size-color matrix management",
+        "Appointment scheduling and patient intake",
+        "Clinical charting and e-prescribing",
+        "Medical billing and claims tracking",
+        "Patient portal and reminders",
       ],
     },
     {
-      tab: "Textile Mills",
-      title: "Textile Mill Operations",
+      tab: "Hospitals & Health Systems",
+      title: "Hospital & Health System Software",
       description:
-        "Spinning, weaving, and processing units that need yarn-to-fabric visibility and capacity planning.",
+        "Multi-department hospitals needing interoperable EMR systems across inpatient and outpatient care.",
       panel: {
-        eyebrow: "Mill workflow",
+        eyebrow: "Hospital workflow",
         stages: [
-          { step: "01", name: "Spinning", status: "Active" },
-          { step: "02", name: "Weaving", status: "Running" },
-          { step: "03", name: "Dyeing", status: "Scheduled" },
-          { step: "04", name: "Finishing", status: "Ready" },
+          { step: "01", name: "Admission", status: "Active" },
+          { step: "02", name: "Care documentation", status: "Running" },
+          { step: "03", name: "Orders & labs", status: "Scheduled" },
+          { step: "04", name: "Discharge", status: "Ready" },
         ],
         kpis: [
-          { value: "Yarn", label: "Stock view" },
-          { value: "Loom", label: "Capacity" },
-          { value: "QC", label: "Fabric insp." },
+          { value: "HL7", label: "Data exchange" },
+          { value: "24/7", label: "Uptime target" },
+          { value: "QC", label: "Care review" },
         ],
       },
       bullets: [
-        "Yarn production tracking",
-        "Fabric inventory management",
-        "Dyeing and finishing workflows",
-        "Loom capacity planning",
+        "Inpatient and outpatient EMR workflows",
+        "HL7/FHIR interoperability across departments",
+        "Order sets, labs and medication tracking",
+        "Hospital-wide reporting and analytics",
       ],
     },
     {
-      tab: "Traders & Wholesalers",
-      title: "Textile Traders & Wholesalers",
+      tab: "Behavioral Health",
+      title: "Behavioral & Mental Health Software",
       description:
-        "Businesses managing fabric procurement, stock, and orders across U.S. warehouses.",
+        "Behavioral health and psychiatry providers needing documentation built for therapy and mental health care.",
       panel: {
-        eyebrow: "Trade workflow",
+        eyebrow: "Care workflow",
         stages: [
-          { step: "01", name: "Procurement", status: "Open" },
-          { step: "02", name: "Warehousing", status: "Updated" },
-          { step: "03", name: "Sales order", status: "In transit" },
-          { step: "04", name: "Settlement", status: "Due" },
+          { step: "01", name: "Intake assessment", status: "Open" },
+          { step: "02", name: "Treatment plan", status: "Updated" },
+          { step: "03", name: "Session notes", status: "In progress" },
+          { step: "04", name: "Outcome review", status: "Due" },
         ],
         kpis: [
-          { value: "3+", label: "Warehouses" },
-          { value: "SO", label: "Order track" },
-          { value: "JW", label: "Job work" },
+          { value: "Notes", label: "Session tracking" },
+          { value: "Plan", label: "Care goals" },
+          { value: "Secure", label: "Records access" },
         ],
       },
       bullets: [
-        "Multi-warehouse inventory visibility",
-        "Sales order tracking",
-        "Job work / subcontractor management",
-        "Daily business reporting",
+        "Behavioral health electronic health records",
+        "Therapy session notes and treatment plans",
+        "Outcome measures and progress tracking",
+        "Confidential, role-based record access",
       ],
     },
     {
-      tab: "Exporters",
-      title: "Textile Export Operations",
+      tab: "Home Health Agencies",
+      title: "Home Health & Care Agency Software",
       description:
-        "Export-focused manufacturers managing international orders, compliance, and documentation.",
+        "Home health and care management agencies coordinating visits, caregivers and patient documentation.",
       panel: {
-        eyebrow: "Export workflow",
+        eyebrow: "Field workflow",
         stages: [
-          { step: "01", name: "Order confirm", status: "Done" },
-          { step: "02", name: "Docs pack", status: "In review" },
-          { step: "03", name: "Scheme claim", status: "Pending" },
-          { step: "04", name: "Shipment", status: "Booked" },
+          { step: "01", name: "Visit scheduling", status: "Done" },
+          { step: "02", name: "Caregiver dispatch", status: "In review" },
+          { step: "03", name: "Visit documentation", status: "Pending" },
+          { step: "04", name: "Care plan update", status: "Booked" },
         ],
         kpis: [
-          { value: "INV", label: "Export docs" },
-          { value: "FX", label: "Multi-currency" },
-          { value: "QC", label: "Standards" },
+          { value: "GPS", label: "Visit verification" },
+          { value: "Care", label: "Plan tracking" },
+          { value: "Docs", label: "Compliance" },
         ],
       },
       bullets: [
-        "Export invoicing and documentation",
-        "USMCA/CAFTA scheme support",
-        "Multi-currency operations",
-        "Quality standards compliance",
+        "Caregiver scheduling and dispatch",
+        "Point-of-care visit documentation",
+        "Care plan and medication tracking",
+        "Compliance-ready visit records",
       ],
     },
   ];
 
   const techStack = [
     {
-      icon: Brain,
-      title: "AI & Automation",
-      body: "Order and material forecasting, automated order reading, and production insights.",
+      icon: Activity,
+      title: "AI & Clinical Insights",
+      body: "Documentation assistance, risk flagging and clinical decision support.",
     },
     {
       icon: Cloud,
-      title: "Cloud Textile Platform",
-      body: "100% cloud software—factory floor to office, no on-premise servers.",
+      title: "Cloud-Based EHR Platform",
+      body: "Fully cloud-hosted — front desk to exam room, no local servers.",
     },
     {
       icon: Network,
-      title: "API Access",
-      body: "APIs for inventory, production, orders, and finance—plus QuickBooks, NetSuite, EDI, and payments.",
+      title: "HL7/FHIR Interoperability",
+      body: "Open APIs for labs, imaging, pharmacies and health information exchanges.",
     },
     {
       icon: Smartphone,
-      title: "Mobile-First",
-      body: "Mobile tools for supervisors, QC, and field teams—with job work and dispatch tracking.",
+      title: "Mobile-First Tools",
+      body: "Mobile apps for clinicians, care teams and field-based caregivers.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for production efficiency, defect rates, inventory turnover, and profitability.",
+      body: "Dashboards for claim denials, patient volume and care outcomes.",
     },
   ];
 
   const security = [
     {
       icon: ClipboardCheck,
-      title: "U.S. Trade Compliance",
-      body: "HTS mapping, duty drawback, customs docs, and automated return prep.",
+      title: "HIPAA Compliance",
+      body: "Built-in safeguards for protected health information, end to end.",
     },
     {
       icon: Globe,
-      title: "Export Scheme Support",
-      body: "USMCA, CAFTA-DR, and trade agreement docs for textile shipments.",
+      title: "HL7/FHIR Data Exchange",
+      body: "Standards-based interoperability across labs, pharmacies and payers.",
     },
     {
       icon: FileText,
-      title: "E-Invoicing & EDI",
-      body: "Integration with U.S. retail and brand EDI systems for e-invoices.",
+      title: "e-Prescribing & EPCS",
+      body: "Electronic prescribing, including controlled substances, built in.",
     },
     {
       icon: Wrench,
-      title: "Job Work Compliance",
-      body: "Track goods to subcontractors with audit-ready documentation.",
+      title: "Third-Party Integrations",
+      body: "Connects with major EHR systems, Dragon Medical and lab networks.",
     },
     {
       icon: Shield,
-      title: "Data Security",
-      body: "Role-based access protecting business and financial records.",
+      title: "Data Security & Encryption",
+      body: "Role-based access and encryption for every patient record.",
     },
     {
       icon: Database,
-      title: "Audit & Activity Logs",
-      body: "Logs for production, quality, and compliance—ready for review.",
+      title: "Audit & Access Logs",
+      body: "Full access logs, ready for compliance review at any time.",
     },
   ];
 
   const advantages = [
     {
       id: 1,
-      title: "Textile-Specific Software",
+      title: "Healthcare-Specific Software",
       description:
-        "Purpose-built for U.S. garment and mill operations—not generic software rebranded.",
+        "Built for clinical and administrative workflows — not generic software rebranded.",
     },
     {
       id: 2,
-      title: "Unified Platform",
+      title: "One Connected Platform",
       description:
-        "Production, fabric, accounting, trade compliance, and export docs on one data model.",
+        "EHR, scheduling, billing and compliance in one shared patient record.",
     },
     {
       id: 3,
-      title: "U.S. Market Fit",
+      title: "Built for U.S. Healthcare",
       description:
-        "Built for American workflows—USMCA, EDI, brand compliance, and reshoring.",
+        "Configured for HIPAA, HL7/FHIR standards and U.S. payer billing rules.",
     },
     {
       id: 4,
-      title: "Proven Outcomes",
+      title: "Measurable Results",
       description:
-        "Gains in production efficiency, inventory accuracy, compliance, and hours saved.",
+        "Gains in documentation speed, claims accuracy and staff time saved.",
     },
     {
       id: 5,
-      title: "Scalable for Growth",
+      title: "Scales As You Grow",
       description:
-        "Same platform from small garment units to large mills—no rip-and-replace.",
+        "One system, from a single practice to a multi-site health system.",
     },
     {
       id: 6,
-      title: "Modern Adoption",
+      title: "Easy to Adopt",
       description:
-        "Usable UI so production, warehouse, and management teams run on the system.",
+        "A clean interface clinicians and front-desk staff actually use.",
     },
   ];
 
@@ -363,122 +365,121 @@ const UsaTextilePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Map production, inventory, and compliance needs so teams see value quickly.",
+        "Map clinical, billing and compliance needs so your team sees value from week one.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure production planning, inventory, trade compliance, and export workflows to your model.",
+        "Configure charting, scheduling, billing and compliance workflows to your specialty.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Migration, English training, and rollout sized to business complexity.",
+        "Data migration and hands-on clinician training, scaled to practice complexity.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "U.S. timezone-aligned support and continuous improvement as textile operations scale.",
+        "U.S. timezone-aligned support and continuous improvement as your practice scales.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "9 → 1",
-      title: "Unified Textile Platform",
+      metric: "10 → 1",
+      title: "One Unified Care Platform",
       description:
-        "Nine systems consolidated into one platform—better production visibility and less manual order entry.",
+        "Ten disconnected scheduling, charting and billing tools replaced by one EHR system.",
       icon: Layers,
     },
     {
-      metric: "Visibility",
-      title: "Production Planning",
+      metric: "Fewer Denials",
+      title: "Cleaner Claims Submission",
       description:
-        "Real-time production tracking helps spot bottlenecks faster and improve on-time delivery.",
+        "Automated coding checks and eligibility verification cut claim denials before submission.",
       icon: RefreshCw,
     },
     {
-      metric: "Accuracy",
-      title: "Fabric Inventory",
+      metric: "Faster Charting",
+      title: "Lower Documentation Time",
       description:
-        "Integrated inventory management reduces stock discrepancies and improves material planning.",
+        "Streamlined templates and voice-assisted notes cut time spent on documentation per visit.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What does U.S. textile software include?",
+      question: "What's the difference between EMR software and EHR software?",
       answer:
-        "Production planning, fabric inventory, order tracking, quality control, trade compliance, accounting, and export documentation for textile manufacturing.",
+        "EMR systems hold one practice's patient chart; EHR software is built to share that record securely across providers and care settings.",
     },
     {
-      question: "How does garment manufacturing software help in the U.S.?",
+      question: "Is cloud-based EHR software HIPAA compliant?",
       answer:
-        "It centralizes cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
+        "Yes — encryption, role-based access and audit logging are built in so patient data stays protected end to end.",
     },
     {
-      question: "Does it support U.S. trade compliance?",
+      question: "Can this integrate with Epic or other major EHR systems?",
       answer:
-        "Yes—HTS tracking, duty drawback, customs documentation, and return preparation aligned with U.S. trade rules.",
+        "Yes — HL7/FHIR-based interoperability lets this platform exchange records with Epic and other major EHR systems.",
     },
     {
-      question: "Can it handle textile export documentation?",
+      question: "Does it support behavioral and mental health EHR needs?",
       answer:
-        "Yes—export invoicing, USMCA/CAFTA docs, and trade compliance reporting are built in.",
+        "Yes — behavioral health electronic health records, treatment plans and session notes are core, purpose-built workflows.",
     },
     {
-      question: "Does it support job work management?",
+      question: "Is there a free EHR software option for small practices?",
       answer:
-        "Yes—subcontractor tracking, outsourced process monitoring, and accountability documentation are core features.",
+        "Free tools usually cover only basic charting. Practices billing insurance need scheduling, coding and compliance together, which is why a connected platform pays for itself quickly.",
     },
     {
-      question: "Is size-color matrix tracking included?",
+      question: "Does it include medical billing and revenue cycle management?",
       answer:
-        "Yes—size-color matrices keep production planning and inventory accurate across product variants.",
+        "Yes — coding, claims submission, denial tracking and payment posting are built into the same platform as your charting.",
     },
     {
-      question: "Can textile software integrate with QuickBooks?",
+      question: "Can it support dental practice management specifically?",
       answer:
-        "Yes—QuickBooks sync keeps financial data aligned between your platform and existing accounting.",
+        "Yes — dental-specific charting, imaging links and treatment plan tracking run on the same configurable platform.",
     },
     {
-      question: "How long does textile software implementation take?",
+      question: "Does it integrate with Dragon Medical dictation software?",
       answer:
-        "Most mid-market manufacturers deploy in weeks to months, with many teams seeing value within weeks.",
+        "Yes — voice-to-text dictation integrates directly into clinical notes to speed up documentation.",
     },
     {
-      question: "Is the platform cloud-based?",
+      question: "How long does healthcare software implementation take?",
       answer:
-        "Yes—cloud textile software gives anytime access for factory, management, and multi-location teams.",
+        "Most practices go live within weeks, with staff seeing value from the first week of scheduling and charting.",
     },
     {
-      question: "Can it support large integrated mills?",
+      question: "Can the platform scale from a single clinic to a hospital system?",
       answer:
-        "Yes—unified production planning, inventory, compliance, APIs, and audit logs for enterprise mills.",
+        "Yes — the same EHR, billing and compliance foundation scales from one clinic to a multi-site health system.",
     },
   ];
 
   const relatedIndustries = [
-    { title: "Textiles", link: ROUTES.industry.textiles },
-    { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
-    { title: "India Textile", link: ROUTES.industry.indiaTextile },
-    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
-    { title: "UK Textile", link: ROUTES.industry.ukTextile },
-    { title: "Canada Textile", link: ROUTES.industry.canadaTextile },
-    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
+    { title: "Healthcare", link: ROUTES.industry.healthcare },
+    { title: "India Healthcare", link: ROUTES.industry.indiaHealthcare },
+    { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
+    { title: "Australia Healthcare", link: ROUTES.industry.australiaHealthcare },
+    { title: "USA Textile", link: ROUTES.industry.usaTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
     { title: "Logistics", link: ROUTES.industry.logistics },
     { title: "Real Estate", link: ROUTES.industry.realEstate },
+    { title: "Education", link: ROUTES.industry.education },
   ];
 
   const active = stakeholders[activeStakeholder];
-  const ActiveStakeholderIcon = [Shirt, Factory, Boxes, Globe][
+  const ActiveStakeholderIcon = [Stethoscope, Building2, Brain, Home][
     activeStakeholder
   ];
 
@@ -486,7 +487,7 @@ const UsaTextilePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.usaTextile} />
+      <SEO {...seoData.usaHealthcare} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -502,15 +503,15 @@ const UsaTextilePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                USA Textile
+                USA Healthcare Software
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                USA Textile Software for Manufacturers & Mills
+                Healthcare Software Development for U.S. Practices & Hospitals
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                AI-powered textile software for garment manufacturing, fabric
-                management, U.S. trade compliance, and export workflows—built for
-                American textile industry operations.
+                Custom EHR, practice management, medical billing and care
+                coordination software — built for U.S. healthcare providers,
+                from single clinics to multi-site health systems.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -521,7 +522,7 @@ const UsaTextilePage = () => {
                   Schedule a Consultation →
                 </button>
                 <a
-                  href="#capabilities"
+                  href="#usa-healthcare-capabilities"
                   className="rounded-xl border border-white/30 px-5 py-2.5 text-center text-sm text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
                 >
                   Explore Capabilities
@@ -533,9 +534,9 @@ const UsaTextilePage = () => {
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md 2xl:rounded-3xl">
                 <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-4 py-3 sm:px-5 sm:py-3.5 2xl:px-6 2xl:py-4">
                   <div className="flex min-w-0 items-center gap-2.5">
-                    <Factory className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
+                    <Stethoscope className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
                     <p className="truncate text-sm font-normal text-white sm:text-base 2xl:text-lg">
-                      Complete Textile Software Suite
+                      Complete Healthcare Software Suite
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true">
@@ -549,33 +550,33 @@ const UsaTextilePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "Apparel Production",
-                      body: "Cutting, sewing, and finishing workflows.",
-                      icon: Shirt,
+                      title: "EHR & Charting",
+                      body: "Clinical documentation and e-prescribing.",
+                      icon: Stethoscope,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Textile Mills",
-                      body: "Yarn, fabric, dyeing, and loom planning.",
-                      icon: Factory,
+                      title: "Hospitals & Systems",
+                      body: "Interoperable, multi-department EMR.",
+                      icon: Building2,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Inventory & Trade",
-                      body: "Size-color matrix and U.S. compliance.",
-                      icon: Warehouse,
+                      title: "Billing & Compliance",
+                      body: "RCM workflows and HIPAA safeguards.",
+                      icon: ClipboardCheck,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
-                      title: "Export & Job Work",
-                      body: "Documentation and subcontracting.",
-                      icon: Globe,
+                      title: "Care Coordination",
+                      body: "Behavioral health and home health tools.",
+                      icon: Home,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
                       topBorder: true,
@@ -616,15 +617,15 @@ const UsaTextilePage = () => {
 
         <div
           className="relative container mx-auto max-w-6xl px-4 pb-10 sm:pb-12 md:pb-14 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-20"
-          aria-labelledby="market-heading"
+          aria-labelledby="usa-healthcare-market-heading"
         >
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
             <Heading
-              id="market-heading"
+              id="usa-healthcare-market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why U.S. Textile Needs Modern Technology"
-              subtitle="With $60.9B shipments and 453K+ workers—yet 96.9% of apparel imported—U.S. manufacturers need cloud software for planning, inventory, and compliance."
+              title="Why U.S. Healthcare Providers Need Modern Software"
+              subtitle="A $39.7B U.S. healthcare IT market and 96% EHR-adopting hospitals set the bar — outdated systems now mean compliance risk, billing errors, and slower patient care."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -647,12 +648,12 @@ const UsaTextilePage = () => {
       </section>
 
       {/* ================= CAPABILITIES ================= */}
-      <Shell labelledBy="capabilities">
+      <Shell labelledBy="usa-healthcare-capabilities">
         <Heading
-          id="capabilities"
+          id="usa-healthcare-capabilities"
           eyebrow="Services"
-          title="Textile Industry Solutions for the U.S."
-          subtitle="Textile software for garment manufacturing, mills and exporters—production planning to U.S. trade compliance."
+          title="Healthcare Software Solutions for the U.S."
+          subtitle="EHR and EMR software, practice management, medical billing and care coordination — built for U.S. healthcare providers."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -678,12 +679,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= CHALLENGES ================= */}
-      <Shell labelledBy="challenges-heading" alt>
+      <Shell labelledBy="usa-healthcare-challenges-heading" alt>
         <Heading
-          id="challenges-heading"
+          id="usa-healthcare-challenges-heading"
           eyebrow="Solutions"
-          title="Practical Solutions for U.S. Textile Challenges"
-          subtitle="Clear answers for production reliability, fabric inventory, trade compliance, and faster order turnaround."
+          title="Practical Fixes for U.S. Healthcare Challenges"
+          subtitle="Straightforward answers for clinician burnout, billing leakage, compliance risk and specialty care gaps."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -709,25 +710,25 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="stakeholders-heading">
+      <Shell labelledBy="usa-healthcare-stakeholders-heading">
         <Heading
-          id="stakeholders-heading"
+          id="usa-healthcare-stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Textile Stakeholder"
-          subtitle="Software shaped for apparel brands, textile mills, traders, and exporters across the U.S."
+          title="Built for Every Part of U.S. Healthcare"
+          subtitle="Software shaped for medical practices, hospitals, behavioral health providers and home health agencies."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="usa-textile-stakeholder-select" className="sr-only">
+          <label htmlFor="usa-healthcare-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="usa-textile-stakeholder-select"
+              id="usa-healthcare-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="usa-textile-stakeholder-panel"
+              aria-controls="usa-healthcare-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -757,8 +758,8 @@ const UsaTextilePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`usa-textile-stakeholder-tab-${index}`}
-                aria-controls="usa-textile-stakeholder-panel"
+                id={`usa-healthcare-stakeholder-tab-${index}`}
+                aria-controls="usa-healthcare-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
                   ? "bg-amber-400 text-black"
@@ -772,9 +773,9 @@ const UsaTextilePage = () => {
         </div>
 
         <div
-          id="usa-textile-stakeholder-panel"
+          id="usa-healthcare-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`usa-textile-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`usa-healthcare-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -871,12 +872,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="tech-heading" alt>
+      <Shell labelledBy="usa-healthcare-tech-heading" alt>
         <Heading
-          id="tech-heading"
+          id="usa-healthcare-tech-heading"
           eyebrow="Capabilities"
-          title="AI-Native Textile Software Architecture"
-          subtitle="AI, cloud textile software, APIs, and mobile—with QuickBooks, NetSuite, EDI, and payment integrations."
+          title="Modern Healthcare Software Architecture"
+          subtitle="AI-assisted charting, a cloud EHR platform, HL7/FHIR APIs and mobile tools for every care team."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -900,12 +901,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="compliance-heading">
+      <Shell labelledBy="usa-healthcare-compliance-heading">
         <Heading
-          id="compliance-heading"
+          id="usa-healthcare-compliance-heading"
           eyebrow="Compliance"
-          title="U.S.-Ready Compliance & Security"
-          subtitle="U.S. trade compliance, export schemes, e-invoicing, EDI, and job work controls."
+          title="HIPAA-Ready Compliance & Security"
+          subtitle="HIPAA compliance, HL7/FHIR interoperability, e-prescribing and audit-ready controls, built into the platform."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -929,12 +930,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="why-heading" alt>
+      <Shell labelledBy="usa-healthcare-why-heading" alt>
         <Heading
-          id="why-heading"
+          id="usa-healthcare-why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for U.S. Textile"
-          subtitle="Purpose-built textile software with U.S. market fit and fast team adoption."
+          title="Why Choose Us for U.S. Healthcare Software"
+          subtitle="A purpose-built healthcare software platform with U.S. compliance fit and fast clinical team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -954,12 +955,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="process-heading">
+      <Shell labelledBy="usa-healthcare-process-heading">
         <Heading
-          id="process-heading"
+          id="usa-healthcare-process-heading"
           eyebrow="Delivery"
-          title="How We Deliver Textile Software"
-          subtitle="Four clear phases—from discovery to U.S. timezone-aligned ongoing support."
+          title="How We Deliver Healthcare Software"
+          subtitle="Four clear phases — from discovery to U.S. timezone-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -1005,17 +1006,17 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="impact-heading" alt>
+      <Shell labelledBy="usa-healthcare-impact-heading" alt>
         <Heading
-          id="impact-heading"
+          id="usa-healthcare-impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes in U.S. Textile Manufacturing"
-          subtitle="Results from a unified textile platform—visibility, accuracy, and less manual work."
+          title="Proven Outcomes for U.S. Healthcare Providers"
+          subtitle="Results from one unified healthcare platform — better documentation, cleaner claims and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `usa-textile-case-bg-${index}`;
+            const gradientId = `usa-healthcare-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1082,13 +1083,13 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= FAQ ================= */}
-      <Shell labelledBy="faq-heading">
-        <Heading id="faq-heading" title="Common Questions" />
+      <Shell labelledBy="usa-healthcare-faq-heading">
+        <Heading id="usa-healthcare-faq-heading" title="Common Questions" />
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `usa-textile-faq-panel-${index}`;
-            const buttonId = `usa-textile-faq-button-${index}`;
+            const panelId = `usa-healthcare-faq-panel-${index}`;
+            const buttonId = `usa-healthcare-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1134,11 +1135,11 @@ const UsaTextilePage = () => {
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
-        aria-labelledby="related-industries-heading"
+        aria-labelledby="usa-healthcare-related-industries-heading"
       >
         <div className="container mx-auto max-w-6xl px-4">
           <h2
-            id="related-industries-heading"
+            id="usa-healthcare-related-industries-heading"
             className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
@@ -1162,4 +1163,4 @@ const UsaTextilePage = () => {
   );
 };
 
-export default UsaTextilePage;
+export default UsaHealthcareSoftwarePage;

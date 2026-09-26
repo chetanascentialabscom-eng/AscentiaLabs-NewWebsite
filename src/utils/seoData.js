@@ -96,6 +96,42 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.healthcare),
   },
 
+  usaHealthcare: {
+    title: "USA Healthcare Software | Ascentia Labs",
+    description:
+      "Custom EHR, EMR, practice management, and medical billing software for U.S. practices and hospitals—HIPAA-ready, HL7/FHIR interoperability, and revenue cycle workflows.",
+    keywords:
+      "USA healthcare software, U.S. healthcare software development, EHR software USA, EMR software USA, medical practice management software, HIPAA compliant EHR, healthcare billing software USA, hospital management software USA, behavioral health EHR, home health software USA, HL7 FHIR healthcare software",
+    url: absoluteUrl(ROUTES.industry.usaHealthcare),
+  },
+
+  indiaHealthcare: {
+    title: "India Healthcare Software | Ascentia Labs",
+    description:
+      "Hospital management system (HMS), clinic and OPD software, pharmacy billing, and diagnostic workflows for Indian providers—GST billing, ABDM/ABHA compliance, and PM-JAY claim support.",
+    keywords:
+      "India healthcare software, hospital management system India, HMS software India, clinic management software India, pharmacy billing software India, GST medical billing, ABDM ABHA software, PM-JAY hospital software, OPD queue management software, diagnostic lab software India, medical store billing software",
+    url: absoluteUrl(ROUTES.industry.indiaHealthcare),
+  },
+
+  ukHealthcare: {
+    title: "UK Healthcare Software | Ascentia Labs",
+    description:
+      "GP, clinic, care home and diagnostic software for UK providers—NHS DSPT-aligned security, UK GDPR compliance, CQC-ready care records, and PMI billing workflows.",
+    keywords:
+      "UK healthcare software, NHS practice management software, GP software UK, care home software UK, CQC compliant care software, NHS DSPT healthcare software, UK GDPR medical software, PMI billing software UK, domiciliary care software, pathology lab software UK, hospital PAS software UK",
+    url: absoluteUrl(ROUTES.industry.ukHealthcare),
+  },
+
+  australiaHealthcare: {
+    title: "Australia Healthcare Software | Ascentia Labs",
+    description:
+      "GP, specialist, aged care and diagnostic software for Australian providers—Medicare/PBS billing, My Health Record-ready integration, and Privacy Act (APP) aligned security.",
+    keywords:
+      "Australia healthcare software, practice management software Australia, GP software Australia, Medicare billing software, PBS e-script software, aged care software Australia, NDIS provider software, My Health Record integration, Australian Privacy Principles healthcare, pathology lab software Australia",
+    url: absoluteUrl(ROUTES.industry.australiaHealthcare),
+  },
+
   realEstate: {
     title: "Real Estate App Development | Ascentia Labs",
     description:

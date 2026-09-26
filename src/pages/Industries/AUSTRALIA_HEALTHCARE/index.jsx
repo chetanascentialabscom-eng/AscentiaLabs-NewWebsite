@@ -5,14 +5,11 @@ import {
   ChevronUp,
   Shield,
   BarChart3,
-  Shirt,
-  Factory,
-  Boxes,
-  Warehouse,
+  Stethoscope,
+  Building2,
   ClipboardCheck,
   Globe,
   Wrench,
-  Brain,
   Cloud,
   Network,
   Smartphone,
@@ -23,6 +20,11 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
+  Activity,
+  Users,
+  HeartPulse,
+  ShieldCheck,
+  Microscope,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -30,7 +32,7 @@ import { seoData } from "../../../utils/seoData";
 import { ROUTES } from "../../../utils/routes";
 
 /* ------------------------------------------------------------------ */
-/*  Compact design system — dark navy / amber                         */
+/*  Compact design system — dark navy / amber (shared shell/heading)  */
 /* ------------------------------------------------------------------ */
 
 const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
@@ -74,287 +76,288 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UsaTextilePage = () => {
+const AustraliaHealthcareSoftwarePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "$60.9B", label: "U.S. textile & apparel shipments (2025)" },
-    { value: "453K+", label: "U.S. textile supply chain employment" },
-    { value: "$27B", label: "U.S. textile & apparel exports (2025)" },
-    { value: "96.9%", label: "Apparel & footwear sold in U.S. is imported" },
+    { value: "7,000+", label: "General practices across Australia running clinical software" },
+    { value: "23M+", label: "My Health Record profiles linked to Medicare and PBS data" },
+    { value: "AU$2.8B+", label: "Australia healthcare IT & digital health software market" },
+    { value: "3,100+", label: "Aged care and NDIS providers needing compliant systems" },
   ];
 
   const services = [
     {
-      icon: Shirt,
-      title: "Garment Manufacturing Software",
+      icon: Building2,
+      title: "Hospital & Practice Management Software",
       description:
-        "Production planning, cutting, sewing, and finishing for U.S. apparel brands.",
+        "Registration, bed management and billing for private hospitals and multi-doctor practices.",
     },
     {
-      icon: Factory,
-      title: "Textile Mill Software",
+      icon: Stethoscope,
+      title: "GP & Specialist Clinic Software",
       description:
-        "Spinning, weaving, fabric, and yarn tracking workflows for U.S. mills.",
+        "Appointments, Medicare/PBS-ready billing and e-scripts for GP and specialist clinics.",
     },
     {
-      icon: Boxes,
-      title: "Fabric Inventory Management",
+      icon: HeartPulse,
+      title: "Aged Care & NDIS Provider Software",
       description:
-        "Real-time fabric, size-color matrix, trim tracking, and multi-location stock control.",
+        "Care plans, medication charts and rostering for aged care and NDIS service providers.",
     },
     {
-      icon: ClipboardCheck,
-      title: "U.S. Trade Compliance",
+      icon: FileText,
+      title: "Medicare, PBS & Private Health Billing Software",
       description:
-        "HTS codes, duty calculation, customs docs, and trade agreement support.",
+        "Bulk billing, Medicare claiming, PBS scripts and private health fund invoicing in one flow.",
     },
     {
-      icon: Globe,
-      title: "Textile Export Software",
+      icon: Users,
+      title: "Healthcare CRM & Patient Engagement Software",
       description:
-        "Export invoicing, USMCA/CAFTA docs, and trade compliance for shipments.",
+        "Recall reminders, referral tracking and patient communication for growing practices.",
     },
     {
-      icon: Wrench,
-      title: "Job Work Management",
+      icon: Package,
+      title: "Clinical Inventory & Equipment Management",
       description:
-        "Track outsourced processing with quality docs and subcontractor visibility.",
+        "Stock, consumables and equipment tracking across wards, theatres and clinics.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "High labor costs and low R&D budgets limit automation across U.S. mills and factories.",
+        "GP and specialist clinics running separate booking, billing and records tools lose time and duplicate patient data.",
       solution:
-        "A cloud textile platform standardizes workflows with real-time visibility—no large upfront IT spend.",
+        "A single practice management platform brings booking, clinical notes and Medicare billing into one connected system.",
     },
     {
       challenge:
-        "40 U.S. textile mills closed in 2.5 years due to import pressure and falling utilization.",
+        "Aged care and NDIS providers preparing for Aged Care Quality Standards audits struggle with paper-based care records.",
       solution:
-        "Flexible production planning, batch tracking, and demand-led inventory boost efficiency and turnaround.",
+        "Digital care planning and medication charting keeps records audit-ready for Aged Care Quality Standards reviews.",
     },
     {
       challenge:
-        "U.S. apparel output fell 17% in 2025, with sourcing shifting to Asia instead of reshoring.",
+        "Meeting Privacy Act (APP) obligations and My Health Record connection requirements is a recurring burden for smaller providers.",
       solution:
-        "AI-powered order and material forecasting help U.S. manufacturers capture reshoring opportunities faster.",
+        "Software built with Australian Privacy Principles-aligned data handling and My Health Record-ready integration from day one.",
     },
     {
       challenge:
-        "Manual HTS, duty, and trade compliance raises the risk of penalties, delays, and errors.",
+        "Clinics processing Medicare, PBS and private health fund claims manually face rejected claims and payment delays.",
       solution:
-        "Automate U.S. trade compliance with HTS mapping, e-invoicing, and return-ready workflows.",
+        "Automated Medicare, PBS and health fund billing workflows speed up claims and cut rejection rates.",
     },
   ];
+
   const stakeholders = [
     {
-      tab: "Apparel Brands",
-      title: "Apparel & Garment Manufacturing",
+      tab: "Hospitals",
+      title: "Hospital & Multi-Specialty Practice Software",
       description:
-        "U.S. brands managing cutting, sewing, finishing, and dispatch who need production planning and order tracking.",
+        "Private hospitals and multi-specialty practices needing a connected admission and billing system.",
       panel: {
-        eyebrow: "Floor workflow",
+        eyebrow: "Hospital workflow",
         stages: [
-          { step: "01", name: "Cutting", status: "In progress" },
-          { step: "02", name: "Sewing", status: "Queued" },
-          { step: "03", name: "Finishing", status: "Next" },
-          { step: "04", name: "Dispatch", status: "Planned" },
+          { step: "01", name: "Patient registration", status: "In progress" },
+          { step: "02", name: "Ward & bed allocation", status: "Queued" },
+          { step: "03", name: "Treatment & coding", status: "Next" },
+          { step: "04", name: "Discharge & billing", status: "Planned" },
         ],
         kpis: [
-          { value: "Live", label: "Line status" },
-          { value: "QC", label: "Stage checks" },
-          { value: "SCM", label: "Size-color" },
+          { value: "Live", label: "Bed occupancy" },
+          { value: "Sync", label: "Department sync" },
+          { value: "Medicare", label: "Claim linking" },
         ],
       },
       bullets: [
-        "Production planning and scheduling",
-        "Cutting room and sewing line tracking",
-        "Multi-stage quality control",
-        "Size-color matrix management",
+        "Registration, admission and bed management",
+        "Department-wise billing and discharge summary",
+        "Medicare and private health fund claim integration",
+        "Pharmacy and pathology integration",
       ],
     },
     {
-      tab: "Textile Mills",
-      title: "Textile Mill Operations",
+      tab: "GP & Specialist Clinics",
+      title: "GP & Specialist Clinic Software",
       description:
-        "Spinning, weaving, and processing units that need yarn-to-fabric visibility and capacity planning.",
+        "GP practices and specialist clinics needing appointment, records and e-script workflows.",
       panel: {
-        eyebrow: "Mill workflow",
+        eyebrow: "Clinic workflow",
         stages: [
-          { step: "01", name: "Spinning", status: "Active" },
-          { step: "02", name: "Weaving", status: "Running" },
-          { step: "03", name: "Dyeing", status: "Scheduled" },
-          { step: "04", name: "Finishing", status: "Ready" },
+          { step: "01", name: "Online booking", status: "Active" },
+          { step: "02", name: "Consultation", status: "Running" },
+          { step: "03", name: "e-Script", status: "Scheduled" },
+          { step: "04", name: "Medicare billing", status: "Ready" },
         ],
         kpis: [
-          { value: "Yarn", label: "Stock view" },
-          { value: "Loom", label: "Capacity" },
-          { value: "QC", label: "Fabric insp." },
+          { value: "Book", label: "Online appointments" },
+          { value: "eRx", label: "Electronic scripts" },
+          { value: "Bulk", label: "Bulk billing" },
         ],
       },
       bullets: [
-        "Yarn production tracking",
-        "Fabric inventory management",
-        "Dyeing and finishing workflows",
-        "Loom capacity planning",
+        "Online appointment booking and reminders",
+        "Structured clinical notes and e-scripts",
+        "Medicare bulk billing and private billing",
+        "Patient recall and follow-up automation",
       ],
     },
     {
-      tab: "Traders & Wholesalers",
-      title: "Textile Traders & Wholesalers",
+      tab: "Aged Care & NDIS",
+      title: "Aged Care & NDIS Provider Software",
       description:
-        "Businesses managing fabric procurement, stock, and orders across U.S. warehouses.",
+        "Residential aged care and NDIS providers needing digital care plans and audit-ready records.",
       panel: {
-        eyebrow: "Trade workflow",
+        eyebrow: "Care workflow",
         stages: [
-          { step: "01", name: "Procurement", status: "Open" },
-          { step: "02", name: "Warehousing", status: "Updated" },
-          { step: "03", name: "Sales order", status: "In transit" },
-          { step: "04", name: "Settlement", status: "Due" },
+          { step: "01", name: "Care plan setup", status: "Open" },
+          { step: "02", name: "Medication chart", status: "Updated" },
+          { step: "03", name: "Visit / shift logging", status: "In progress" },
+          { step: "04", name: "Quality Standards reporting", status: "Due" },
         ],
         kpis: [
-          { value: "3+", label: "Warehouses" },
-          { value: "SO", label: "Order track" },
-          { value: "JW", label: "Job work" },
+          { value: "Chart", label: "Digital medication" },
+          { value: "ACQS", label: "Audit-ready" },
+          { value: "Roster", label: "Staff scheduling" },
         ],
       },
       bullets: [
-        "Multi-warehouse inventory visibility",
-        "Sales order tracking",
-        "Job work / subcontractor management",
-        "Daily business reporting",
+        "Digital care plans and daily progress notes",
+        "Electronic medication charting",
+        "Staff rostering and NDIS visit scheduling",
+        "Aged Care Quality Standards audit trails",
       ],
     },
     {
-      tab: "Exporters",
-      title: "Textile Export Operations",
+      tab: "Diagnostic Centres",
+      title: "Diagnostic & Pathology Centre Software",
       description:
-        "Export-focused manufacturers managing international orders, compliance, and documentation.",
+        "Pathology labs and imaging centres needing sample tracking and report delivery.",
       panel: {
-        eyebrow: "Export workflow",
+        eyebrow: "Lab workflow",
         stages: [
-          { step: "01", name: "Order confirm", status: "Done" },
-          { step: "02", name: "Docs pack", status: "In review" },
-          { step: "03", name: "Scheme claim", status: "Pending" },
-          { step: "04", name: "Shipment", status: "Booked" },
+          { step: "01", name: "Sample collection", status: "Done" },
+          { step: "02", name: "Test processing", status: "In review" },
+          { step: "03", name: "Report generation", status: "Pending" },
+          { step: "04", name: "Report delivery", status: "Booked" },
         ],
         kpis: [
-          { value: "INV", label: "Export docs" },
-          { value: "FX", label: "Multi-currency" },
-          { value: "QC", label: "Standards" },
+          { value: "LIS", label: "Lab workflow" },
+          { value: "Digital", label: "Report delivery" },
+          { value: "QC", label: "Result review" },
         ],
       },
       bullets: [
-        "Export invoicing and documentation",
-        "USMCA/CAFTA scheme support",
-        "Multi-currency operations",
-        "Quality standards compliance",
+        "Sample tracking and test workflows",
+        "Digital report generation and delivery",
+        "Referring GP and home-collection tracking",
+        "Integration with clinic and hospital systems",
       ],
     },
   ];
 
   const techStack = [
     {
-      icon: Brain,
-      title: "AI & Automation",
-      body: "Order and material forecasting, automated order reading, and production insights.",
+      icon: Activity,
+      title: "AI & Smart Alerts",
+      body: "Appointment no-show prediction, stock alerts and abnormal-result flagging.",
     },
     {
       icon: Cloud,
-      title: "Cloud Textile Platform",
-      body: "100% cloud software—factory floor to office, no on-premise servers.",
+      title: "Cloud-Based Practice Platform",
+      body: "Fully cloud-hosted — front desk to billing, accessible across sites.",
     },
     {
       icon: Network,
-      title: "API Access",
-      body: "APIs for inventory, production, orders, and finance—plus QuickBooks, NetSuite, EDI, and payments.",
+      title: "My Health Record & API Integration",
+      body: "My Health Record connection, Medicare/PBS APIs and lab/pharmacy links.",
     },
     {
       icon: Smartphone,
-      title: "Mobile-First",
-      body: "Mobile tools for supervisors, QC, and field teams—with job work and dispatch tracking.",
+      title: "Mobile-First Tools",
+      body: "Mobile apps for clinicians, carers and admin staff on the move.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for production efficiency, defect rates, inventory turnover, and profitability.",
+      body: "Dashboards for occupancy, billing collection and clinic utilisation.",
     },
   ];
 
   const security = [
     {
       icon: ClipboardCheck,
-      title: "U.S. Trade Compliance",
-      body: "HTS mapping, duty drawback, customs docs, and automated return prep.",
+      title: "NSQHS Standards Alignment",
+      body: "Built with workflows mapped to the National Safety and Quality Health Service Standards.",
     },
     {
       icon: Globe,
-      title: "Export Scheme Support",
-      body: "USMCA, CAFTA-DR, and trade agreement docs for textile shipments.",
+      title: "Medicare, PBS & Health Fund Billing",
+      body: "Built-in workflows to manage Medicare claiming, PBS scripts and private health fund billing.",
     },
     {
-      icon: FileText,
-      title: "E-Invoicing & EDI",
-      body: "Integration with U.S. retail and brand EDI systems for e-invoices.",
+      icon: ShieldCheck,
+      title: "Privacy Act (APP) Compliant",
+      body: "Data handling and consent workflows aligned with the Australian Privacy Principles.",
     },
     {
       icon: Wrench,
-      title: "Job Work Compliance",
-      body: "Track goods to subcontractors with audit-ready documentation.",
+      title: "Lab & Pharmacy Integrations",
+      body: "Connects with diagnostic labs, pharmacy suppliers and imaging systems.",
     },
     {
       icon: Shield,
-      title: "Data Security",
-      body: "Role-based access protecting business and financial records.",
+      title: "My Health Record-Ready Security",
+      body: "Role-based access and controls in line with My Health Record connection requirements.",
     },
     {
       icon: Database,
       title: "Audit & Activity Logs",
-      body: "Logs for production, quality, and compliance—ready for review.",
+      body: "Full activity logs, ready for Aged Care Quality Standards or internal audit at any time.",
     },
   ];
 
   const advantages = [
     {
       id: 1,
-      title: "Textile-Specific Software",
+      title: "Healthcare-Specific Software",
       description:
-        "Purpose-built for U.S. garment and mill operations—not generic software rebranded.",
+        "Built for hospital, GP, aged care and NDIS workflows — not generic software rebranded.",
     },
     {
       id: 2,
-      title: "Unified Platform",
+      title: "One Connected Platform",
       description:
-        "Production, fabric, accounting, trade compliance, and export docs on one data model.",
+        "Registration, records, billing and care plans in one shared patient record.",
     },
     {
       id: 3,
-      title: "U.S. Market Fit",
+      title: "Built for Australian Healthcare",
       description:
-        "Built for American workflows—USMCA, EDI, brand compliance, and reshoring.",
+        "Configured for Medicare/PBS billing, My Health Record and NSQHS reporting requirements.",
     },
     {
       id: 4,
-      title: "Proven Outcomes",
+      title: "Measurable Results",
       description:
-        "Gains in production efficiency, inventory accuracy, compliance, and hours saved.",
+        "Gains in appointment turnaround, billing accuracy and staff time saved.",
     },
     {
       id: 5,
-      title: "Scalable for Growth",
+      title: "Scales As You Grow",
       description:
-        "Same platform from small garment units to large mills—no rip-and-replace.",
+        "One system, from a single clinic to a multi-site practice or aged care group.",
     },
     {
       id: 6,
-      title: "Modern Adoption",
+      title: "Easy to Adopt",
       description:
-        "Usable UI so production, warehouse, and management teams run on the system.",
+        "A clean interface clinicians, carers and front-desk staff actually use.",
     },
   ];
 
@@ -363,122 +366,118 @@ const UsaTextilePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Map production, inventory, and compliance needs so teams see value quickly.",
+        "Map registration, billing and compliance needs so your team sees value from week one.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure production planning, inventory, trade compliance, and export workflows to your model.",
+        "Configure records, billing and Privacy Act-aligned workflows to your service.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Migration, English training, and rollout sized to business complexity.",
+        "Data migration and hands-on staff training, scaled to service size.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "U.S. timezone-aligned support and continuous improvement as textile operations scale.",
+        "Australia timezone-aligned support and continuous improvement as you scale.",
     },
   ];
 
   const caseStudies = [
     {
       metric: "9 → 1",
-      title: "Unified Textile Platform",
+      title: "One Unified Practice System",
       description:
-        "Nine systems consolidated into one platform—better production visibility and less manual order entry.",
+        "Nine disconnected registers and billing tools replaced by one practice management system.",
       icon: Layers,
     },
     {
-      metric: "Visibility",
-      title: "Production Planning",
+      metric: "Faster Booking",
+      title: "Shorter Appointment Waits",
       description:
-        "Real-time production tracking helps spot bottlenecks faster and improve on-time delivery.",
+        "Online booking and automated reminders cut no-shows and admin workload.",
       icon: RefreshCw,
     },
     {
       metric: "Accuracy",
-      title: "Fabric Inventory",
+      title: "Reliable Care Records",
       description:
-        "Integrated inventory management reduces stock discrepancies and improves material planning.",
+        "Digital medication charts and care plans cut record-keeping errors across aged care.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What does U.S. textile software include?",
+      question: "What is the difference between practice management software and an EHR?",
       answer:
-        "Production planning, fabric inventory, order tracking, quality control, trade compliance, accounting, and export documentation for textile manufacturing.",
+        "Practice management software runs registration, scheduling and billing; an EHR focuses on the clinical patient record. Most Australian providers need both working together.",
     },
     {
-      question: "How does garment manufacturing software help in the U.S.?",
+      question: "Does the software support Medicare and PBS claiming?",
       answer:
-        "It centralizes cutting-to-dispatch visibility, cuts manual records, and improves inventory accuracy for faster decisions.",
+        "Yes — Medicare bulk billing, PBS scripts and claim submission are built into the billing module.",
     },
     {
-      question: "Does it support U.S. trade compliance?",
+      question: "Is the platform aligned with the Australian Privacy Principles?",
       answer:
-        "Yes—HTS tracking, duty drawback, customs documentation, and return preparation aligned with U.S. trade rules.",
+        "Yes — data handling, consent and retention workflows are built around the Privacy Act and the Australian Privacy Principles.",
     },
     {
-      question: "Can it handle textile export documentation?",
+      question: "Is there a free or open source practice management system?",
       answer:
-        "Yes—export invoicing, USMCA/CAFTA docs, and trade compliance reporting are built in.",
+        "Open source tools often lack Medicare/PBS integration, My Health Record connection and ongoing support. A supported platform pays for itself through fewer billing errors and faster patient turnaround.",
     },
     {
-      question: "Does it support job work management?",
+      question: "Can it connect to My Health Record?",
       answer:
-        "Yes—subcontractor tracking, outsourced process monitoring, and accountability documentation are core features.",
+        "Yes — the platform is built to support My Health Record connection for shared patient records.",
     },
     {
-      question: "Is size-color matrix tracking included?",
+      question: "Does it support Aged Care Quality Standards reporting?",
       answer:
-        "Yes—size-color matrices keep production planning and inventory accurate across product variants.",
+        "Yes — digital care plans, medication charts and audit trails are designed to support Aged Care Quality Standards reviews.",
     },
     {
-      question: "Can textile software integrate with QuickBooks?",
+      question: "Can diagnostic and pathology labs use the same platform?",
       answer:
-        "Yes—QuickBooks sync keeps financial data aligned between your platform and existing accounting.",
+        "Yes — sample tracking, test workflows and digital report delivery are built for labs and imaging centres.",
     },
     {
-      question: "How long does textile software implementation take?",
+      question: "Is this a cloud-based or on-premise system?",
       answer:
-        "Most mid-market manufacturers deploy in weeks to months, with many teams seeing value within weeks.",
+        "It's fully cloud-based by default, with on-premise deployment available for providers that require it.",
     },
     {
-      question: "Is the platform cloud-based?",
+      question: "How long does implementation take for a mid-sized practice?",
       answer:
-        "Yes—cloud textile software gives anytime access for factory, management, and multi-location teams.",
+        "Most practices and clinics go live within weeks, with front-desk and billing teams seeing value from day one.",
     },
     {
-      question: "Can it support large integrated mills?",
+      question: "Can the system scale from a single clinic to a multi-site group?",
       answer:
-        "Yes—unified production planning, inventory, compliance, APIs, and audit logs for enterprise mills.",
+        "Yes — the same records, billing and compliance foundation scales from one clinic to a multi-site practice or aged care group.",
     },
   ];
 
   const relatedIndustries = [
-    { title: "Textiles", link: ROUTES.industry.textiles },
+    { title: "Healthcare", link: ROUTES.industry.healthcare },
     { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
-    { title: "India Textile", link: ROUTES.industry.indiaTextile },
-    { title: "Australia Textile", link: ROUTES.industry.australiaTextile },
-    { title: "UK Textile", link: ROUTES.industry.ukTextile },
-    { title: "Canada Textile", link: ROUTES.industry.canadaTextile },
-    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
+    { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
+    { title: "India Healthcare", link: ROUTES.industry.indiaHealthcare },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
     { title: "Logistics", link: ROUTES.industry.logistics },
-    { title: "Real Estate", link: ROUTES.industry.realEstate },
   ];
 
   const active = stakeholders[activeStakeholder];
-  const ActiveStakeholderIcon = [Shirt, Factory, Boxes, Globe][
+  const ActiveStakeholderIcon = [Building2, Stethoscope, HeartPulse, Microscope][
     activeStakeholder
   ];
 
@@ -486,7 +485,7 @@ const UsaTextilePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.usaTextile} />
+      <SEO {...seoData.australiaHealthcare} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -502,15 +501,13 @@ const UsaTextilePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                USA Textile
+                Australia Healthcare Software
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                USA Textile Software for Manufacturers & Mills
+                 Specialist & Aged Care Management Software for Australian Healthcare
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                AI-powered textile software for garment manufacturing, fabric
-                management, U.S. trade compliance, and export workflows—built for
-                American textile industry operations.
+                Practice, clinic, aged care and diagnostic software for Australian providers — with Medicare/PBS billing and Privacy Act-aligned security built in.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -521,7 +518,7 @@ const UsaTextilePage = () => {
                   Schedule a Consultation →
                 </button>
                 <a
-                  href="#capabilities"
+                  href="#australia-healthcare-capabilities"
                   className="rounded-xl border border-white/30 px-5 py-2.5 text-center text-sm text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
                 >
                   Explore Capabilities
@@ -533,9 +530,9 @@ const UsaTextilePage = () => {
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md 2xl:rounded-3xl">
                 <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-4 py-3 sm:px-5 sm:py-3.5 2xl:px-6 2xl:py-4">
                   <div className="flex min-w-0 items-center gap-2.5">
-                    <Factory className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
+                    <Building2 className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
                     <p className="truncate text-sm font-normal text-white sm:text-base 2xl:text-lg">
-                      Complete Textile Software Suite
+                      Complete Healthcare Software Suite
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true">
@@ -549,33 +546,33 @@ const UsaTextilePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "Apparel Production",
-                      body: "Cutting, sewing, and finishing workflows.",
-                      icon: Shirt,
+                      title: "Hospitals & Practices",
+                      body: "Registration, beds and billing in one system.",
+                      icon: Building2,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Textile Mills",
-                      body: "Yarn, fabric, dyeing, and loom planning.",
-                      icon: Factory,
+                      title: "GP & Specialist Clinics",
+                      body: "Booking, records and e-scripts.",
+                      icon: Stethoscope,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Inventory & Trade",
-                      body: "Size-color matrix and U.S. compliance.",
-                      icon: Warehouse,
+                      title: "Aged Care & NDIS",
+                      body: "Digital care plans and medication charts.",
+                      icon: HeartPulse,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
-                      title: "Export & Job Work",
-                      body: "Documentation and subcontracting.",
-                      icon: Globe,
+                      title: "Diagnostics & Labs",
+                      body: "Sample tracking and digital reports.",
+                      icon: Microscope,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
                       topBorder: true,
@@ -616,15 +613,15 @@ const UsaTextilePage = () => {
 
         <div
           className="relative container mx-auto max-w-6xl px-4 pb-10 sm:pb-12 md:pb-14 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-20"
-          aria-labelledby="market-heading"
+          aria-labelledby="australia-healthcare-market-heading"
         >
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
             <Heading
-              id="market-heading"
+              id="australia-healthcare-market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why U.S. Textile Needs Modern Technology"
-              subtitle="With $60.9B shipments and 453K+ workers—yet 96.9% of apparel imported—U.S. manufacturers need cloud software for planning, inventory, and compliance."
+              title="Why Australian Healthcare Providers Need Modern Practice Software"
+              subtitle="7,000+ general practices and 3,100+ aged care and NDIS providers now run on digital records — paper-based or disconnected systems mean billing errors, compliance gaps, and slower patient care."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -647,12 +644,12 @@ const UsaTextilePage = () => {
       </section>
 
       {/* ================= CAPABILITIES ================= */}
-      <Shell labelledBy="capabilities">
+      <Shell labelledBy="australia-healthcare-capabilities">
         <Heading
-          id="capabilities"
+          id="australia-healthcare-capabilities"
           eyebrow="Services"
-          title="Textile Industry Solutions for the U.S."
-          subtitle="Textile software for garment manufacturing, mills and exporters—production planning to U.S. trade compliance."
+          title="Healthcare Software Solutions for Australia"
+          subtitle="GP, specialist, aged care and diagnostic software — built for Australian healthcare providers."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -678,12 +675,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= CHALLENGES ================= */}
-      <Shell labelledBy="challenges-heading" alt>
+      <Shell labelledBy="australia-healthcare-challenges-heading" alt>
         <Heading
-          id="challenges-heading"
+          id="australia-healthcare-challenges-heading"
           eyebrow="Solutions"
-          title="Practical Solutions for U.S. Textile Challenges"
-          subtitle="Clear answers for production reliability, fabric inventory, trade compliance, and faster order turnaround."
+          title="Practical Fixes for Australian Healthcare Challenges"
+          subtitle="Straightforward answers for fragmented records, Aged Care Quality Standards readiness, Privacy Act compliance and Medicare/PBS billing."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -709,25 +706,25 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="stakeholders-heading">
+      <Shell labelledBy="australia-healthcare-stakeholders-heading">
         <Heading
-          id="stakeholders-heading"
+          id="australia-healthcare-stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Textile Stakeholder"
-          subtitle="Software shaped for apparel brands, textile mills, traders, and exporters across the U.S."
+          title="Built for Every Part of Australian Healthcare"
+          subtitle="Software shaped for hospitals, GP and specialist clinics, aged care/NDIS providers and diagnostic centres across Australia."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="usa-textile-stakeholder-select" className="sr-only">
+          <label htmlFor="australia-healthcare-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="usa-textile-stakeholder-select"
+              id="australia-healthcare-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="usa-textile-stakeholder-panel"
+              aria-controls="australia-healthcare-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -757,8 +754,8 @@ const UsaTextilePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`usa-textile-stakeholder-tab-${index}`}
-                aria-controls="usa-textile-stakeholder-panel"
+                id={`australia-healthcare-stakeholder-tab-${index}`}
+                aria-controls="australia-healthcare-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
                   ? "bg-amber-400 text-black"
@@ -772,9 +769,9 @@ const UsaTextilePage = () => {
         </div>
 
         <div
-          id="usa-textile-stakeholder-panel"
+          id="australia-healthcare-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`usa-textile-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`australia-healthcare-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -871,12 +868,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="tech-heading" alt>
+      <Shell labelledBy="australia-healthcare-tech-heading" alt>
         <Heading
-          id="tech-heading"
+          id="australia-healthcare-tech-heading"
           eyebrow="Capabilities"
-          title="AI-Native Textile Software Architecture"
-          subtitle="AI, cloud textile software, APIs, and mobile—with QuickBooks, NetSuite, EDI, and payment integrations."
+          title="Modern Healthcare Software Architecture"
+          subtitle="AI-assisted alerts, a cloud practice platform, My Health Record interoperability and mobile tools for every care team."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -900,12 +897,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="compliance-heading">
+      <Shell labelledBy="australia-healthcare-compliance-heading">
         <Heading
-          id="compliance-heading"
+          id="australia-healthcare-compliance-heading"
           eyebrow="Compliance"
-          title="U.S.-Ready Compliance & Security"
-          subtitle="U.S. trade compliance, export schemes, e-invoicing, EDI, and job work controls."
+          title="Australia-Ready Compliance & Security"
+          subtitle="NSQHS Standards alignment, Privacy Act compliance, My Health Record-ready security and Aged Care Quality Standards reporting, built into the platform."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -929,12 +926,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="why-heading" alt>
+      <Shell labelledBy="australia-healthcare-why-heading" alt>
         <Heading
-          id="why-heading"
+          id="australia-healthcare-why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for U.S. Textile"
-          subtitle="Purpose-built textile software with U.S. market fit and fast team adoption."
+          title="Why Choose Us for Australia Healthcare Software"
+          subtitle="A purpose-built practice platform with Australian compliance fit and fast staff adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -954,12 +951,12 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="process-heading">
+      <Shell labelledBy="australia-healthcare-process-heading">
         <Heading
-          id="process-heading"
+          id="australia-healthcare-process-heading"
           eyebrow="Delivery"
-          title="How We Deliver Textile Software"
-          subtitle="Four clear phases—from discovery to U.S. timezone-aligned ongoing support."
+          title="How We Deliver Healthcare Software"
+          subtitle="Four clear phases — from discovery to Australia timezone-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -1005,17 +1002,17 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="impact-heading" alt>
+      <Shell labelledBy="australia-healthcare-impact-heading" alt>
         <Heading
-          id="impact-heading"
+          id="australia-healthcare-impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes in U.S. Textile Manufacturing"
-          subtitle="Results from a unified textile platform—visibility, accuracy, and less manual work."
+          title="Proven Outcomes for Australian Healthcare Providers"
+          subtitle="Results from one unified practice platform — faster booking, cleaner billing and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `usa-textile-case-bg-${index}`;
+            const gradientId = `australia-healthcare-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1082,13 +1079,13 @@ const UsaTextilePage = () => {
       </Shell>
 
       {/* ================= FAQ ================= */}
-      <Shell labelledBy="faq-heading">
-        <Heading id="faq-heading" title="Common Questions" />
+      <Shell labelledBy="australia-healthcare-faq-heading">
+        <Heading id="australia-healthcare-faq-heading" title="Common Questions" />
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `usa-textile-faq-panel-${index}`;
-            const buttonId = `usa-textile-faq-button-${index}`;
+            const panelId = `australia-healthcare-faq-panel-${index}`;
+            const buttonId = `australia-healthcare-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1134,11 +1131,11 @@ const UsaTextilePage = () => {
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
-        aria-labelledby="related-industries-heading"
+        aria-labelledby="australia-healthcare-related-industries-heading"
       >
         <div className="container mx-auto max-w-6xl px-4">
           <h2
-            id="related-industries-heading"
+            id="australia-healthcare-related-industries-heading"
             className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
@@ -1162,4 +1159,4 @@ const UsaTextilePage = () => {
   );
 };
 
-export default UsaTextilePage;
+export default AustraliaHealthcareSoftwarePage;
