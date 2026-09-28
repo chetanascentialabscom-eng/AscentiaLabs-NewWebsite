@@ -470,6 +470,8 @@ const AustraliaHealthcareSoftwarePage = () => {
     { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
     { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
     { title: "India Healthcare", link: ROUTES.industry.indiaHealthcare },
+    { title: "Canada Healthcare", link: ROUTES.industry.canadaHealthcare },
+    { title: "UAE Healthcare", link: ROUTES.industry.uaeHealthcare },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },

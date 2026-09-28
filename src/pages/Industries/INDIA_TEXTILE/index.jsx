@@ -94,37 +94,37 @@ const IndiaTextilePage = () => {
       icon: Shirt,
       title: "Garment Manufacturing Software",
       description:
-        "Production planning, cutting, sewing line tracking, and finishing for Tiruppur, Bengaluru, Gurugram, and other clusters.",
+        "Planning, cutting, sewing lines, and finishing for Tiruppur, Bengaluru, Gurugram, and major clusters.",
     },
     {
       icon: Factory,
       title: "Textile Mill Software",
       description:
-        "Spinning, weaving, fabric management, yarn tracking, inspection, and dyeing/finishing workflows for mills.",
+        "Spinning, weaving, yarn tracking, inspection, and dyeing/finishing for textile mills.",
     },
     {
       icon: Boxes,
       title: "Fabric Inventory Management",
       description:
-        "Real-time fabric inventory, size-color matrix, trim tracking, and multi-location stock to cut waste and stockouts.",
+        "Live fabric stock, size-color matrix, trims, and multi-site inventory—less waste and stockouts.",
     },
     {
       icon: ClipboardCheck,
       title: "GST Textile Compliance",
       description:
-        "HSN tracking, tax calculation, e-invoicing, and e-way bill generation built for Indian textile GST rules.",
+        "HSN codes, GST calculation, e-invoicing, and e-way bills built for textile rules.",
     },
     {
       icon: Globe,
       title: "Textile Export Software",
       description:
-        "Export invoicing, RoDTEP/RoSCTL documentation, and trade compliance for international textile shipments.",
+        "Export invoicing, RoDTEP/RoSCTL docs, and compliance for global textile shipments.",
     },
     {
       icon: Wrench,
       title: "Job Work Management",
       description:
-        "Track outsourced processing and embellishment with accountability, quality docs, and karigar visibility.",
+        "Outsourced processing and embellishment—quality docs, accountability, and karigar visibility.",
     },
   ];
 

@@ -20,11 +20,12 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
-  Activity,
   Users,
+  Mic,
+  Video,
+  CalendarClock,
   HeartPulse,
-  ShieldCheck,
-  Microscope,
+  Brain,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -76,249 +77,249 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UKHealthcareSoftwarePage = () => {
+const CanadaHealthcareSoftwarePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "1.3M+", label: "NHS staff relying on connected patient record systems" },
-    { value: "6,500+", label: "GP practices across England running clinical software" },
-    { value: "£3.4B+", label: "UK healthcare IT & digital health software market" },
-    { value: "40,000+", label: "CQC-regulated care providers needing compliant systems" },
+    { value: "85%+", label: "Canadian primary care physicians using EMR systems" },
+    { value: "13", label: "Provincial & territorial health plans, each with its own rules" },
+    { value: "100,000+", label: "Practising physicians across Canada" },
+    { value: "C$370B+", label: "Total annual health spending in Canada" },
   ];
 
   const services = [
     {
-      icon: Building2,
-      title: "Hospital & Trust Management Software",
+      icon: Stethoscope,
+      title: "EMR & EHR Software Development",
       description:
-        "Registration, ward/bed management and billing for NHS trusts and private hospitals.",
+        "Custom electronic medical records built around Canadian clinic and hospital workflows.",
     },
     {
-      icon: Stethoscope,
-      title: "GP & Clinic Practice Management Software",
+      icon: ClipboardCheck,
+      title: "Practice Management & Provincial Billing",
       description:
-        "Appointments, patient records & e-prescribing for GP surgeries & private clinics.",
+        "Scheduling, charting and billing workflows configurable for each provincial health plan.",
+    },
+    {
+      icon: Video,
+      title: "Telemedicine & Virtual Care Platforms",
+      description:
+        "Secure video visits, e-consults and remote patient follow-up for urban and rural care.",
     },
     {
       icon: HeartPulse,
-      title: "Care Home & Domiciliary Care Software",
+      title: "Dental, Eye Care & Allied Health Software",
       description:
-        "Care plans, MAR & rota management for residential & home care.",
-    },
-    {
-      icon: FileText,
-      title: "Medical Billing & Private Insurance Software",
-      description:
-        "Invoicing, private medical insurance (PMI) claims and self-pay billing in one workflow.",
+        "Charting and scheduling for dental, optometry, physiotherapy and chiropractic clinics.",
     },
     {
       icon: Users,
-      title: "Healthcare CRM & Patient Engagement Software",
+      title: "Healthcare CRM & Patient Engagement",
       description:
-        "Recall reminders, referral tracking and patient communication for growing private practices.",
+        "Recall reminders, referral tracking and patient communication in one place.",
     },
     {
-      icon: Package,
-      title: "Clinical Inventory & Equipment Management",
+      icon: CalendarClock,
+      title: "Healthcare Staffing & Scheduling Software",
       description:
-        "Stock, consumables and equipment tracking across wards, theatres and clinics.",
+        "Shift planning, locum coverage and credential tracking for clinics and care teams.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "GP surgeries and clinics juggling multiple disconnected systems for booking, records and billing lose time and create data errors.",
+        "Thirteen provincial and territorial health plans mean billing rules change the moment a clinic crosses a border.",
       solution:
-        "A single practice management platform brings booking, clinical notes and billing into one connected system.",
+        "Configurable billing workflows adapt one platform to each province's claim requirements.",
     },
     {
       challenge:
-        "Care providers preparing for CQC inspections struggle to show consistent digital care records and audit trails.",
+        "Privacy obligations under PIPEDA and provincial health laws leave small clinics unsure what they must document.",
       solution:
-        "Digital care planning and MAR software keeps records audit-ready and CQC inspection-friendly at all times.",
+        "Built-in consent tracking, access controls and audit trails simplify privacy compliance.",
     },
     {
       challenge:
-        "Meeting NHS DSPT, GDPR and Cyber Essentials requirements is a recurring burden for smaller healthcare providers.",
+        "Physician shortages and long wait times push clinics to do more with fewer admin hours.",
       solution:
-        "Software built with DSPT-aligned security, GDPR-compliant data handling and Cyber Essentials controls from day one.",
+        "Automated scheduling, recall reminders and virtual visits free up clinical time.",
     },
     {
       challenge:
-        "Private clinics processing PMI claims manually face delayed payments and reconciliation errors.",
+        "Bilingual patients and remote communities are poorly served by English-only, office-bound systems.",
       solution:
-        "Automated PMI and insurer billing workflows speed up claims and reduce reconciliation work.",
+        "Bilingual patient-facing tools and secure virtual care extend access to every community.",
     },
   ];
 
   const stakeholders = [
     {
-      tab: "NHS Trusts",
-      title: "NHS Trust & Hospital Software",
+      tab: "Family & Group Practices",
+      title: "Family Practice & Group Clinic Software",
       description:
-        "NHS trusts and private hospitals needing a connected patient administration and ward management system.",
-      panel: {
-        eyebrow: "Trust workflow",
-        stages: [
-          { step: "01", name: "Patient registration", status: "In progress" },
-          { step: "02", name: "Ward & bed allocation", status: "Queued" },
-          { step: "03", name: "Treatment & coding", status: "Next" },
-          { step: "04", name: "Discharge & billing", status: "Planned" },
-        ],
-        kpis: [
-          { value: "Live", label: "Bed occupancy" },
-          { value: "PAS", label: "System sync" },
-          { value: "NHS #", label: "Patient ID linking" },
-        ],
-      },
-      bullets: [
-        "Patient administration system (PAS) style registration",
-        "Ward, theatre and bed management",
-        "NHS number linking and interoperability",
-        "Pharmacy and pathology integration",
-      ],
-    },
-    {
-      tab: "GP Practices & Clinics",
-      title: "GP & Private Clinic Software",
-      description:
-        "GP surgeries and private clinics needing appointment, records and e-prescribing workflows.",
+        "Family physicians and multi-provider clinics needing an EMR and practice management in one system.",
       panel: {
         eyebrow: "Clinic workflow",
         stages: [
-          { step: "01", name: "Online booking", status: "Active" },
-          { step: "02", name: "Consultation", status: "Running" },
-          { step: "03", name: "e-Prescription", status: "Scheduled" },
-          { step: "04", name: "Billing / claim", status: "Ready" },
+          { step: "01", name: "Online booking", status: "In progress" },
+          { step: "02", name: "Consultation & notes", status: "Queued" },
+          { step: "03", name: "Billing submission", status: "Next" },
+          { step: "04", name: "Recall & follow-up", status: "Planned" },
         ],
         kpis: [
-          { value: "Book", label: "Online appointments" },
-          { value: "Rx", label: "e-Prescribing" },
-          { value: "PMI", label: "Insurer billing" },
+          { value: "Live", label: "Schedule view" },
+          { value: "EMR", label: "Patient chart" },
+          { value: "Bill", label: "Claim status" },
         ],
       },
       bullets: [
         "Online appointment booking and reminders",
-        "Structured clinical notes and e-prescribing",
-        "Private medical insurance (PMI) billing",
-        "Patient recall and follow-up automation",
+        "Clinical notes with voice dictation support",
+        "Provincial plan billing and claim tracking",
+        "Patient recall and preventive care alerts",
       ],
     },
     {
-      tab: "Care Homes",
-      title: "Care Home & Domiciliary Care Software",
+      tab: "Hospitals & Health Authorities",
+      title: "Hospital & Regional Health Authority Software",
       description:
-        "Residential care homes and home care agencies needing digital care plans and CQC-ready records.",
+        "Hospitals and regional health authorities needing connected records across sites and departments.",
+      panel: {
+        eyebrow: "Hospital workflow",
+        stages: [
+          { step: "01", name: "Admission", status: "Active" },
+          { step: "02", name: "Care documentation", status: "Running" },
+          { step: "03", name: "Orders & referrals", status: "Scheduled" },
+          { step: "04", name: "Discharge planning", status: "Ready" },
+        ],
+        kpis: [
+          { value: "Multi", label: "Site records" },
+          { value: "HL7", label: "Data exchange" },
+          { value: "QC", label: "Care review" },
+        ],
+      },
+      bullets: [
+        "Inpatient and outpatient record management",
+        "Cross-site interoperability for health regions",
+        "Orders, referrals and discharge coordination",
+        "Region-wide reporting and audit trails",
+      ],
+    },
+    {
+      tab: "Mental Health & Counselling",
+      title: "Mental Health & Counselling Practice Software",
+      description:
+        "Psychiatrists, psychologists and counsellors needing documentation built for therapy-based care.",
       panel: {
         eyebrow: "Care workflow",
         stages: [
-          { step: "01", name: "Care plan setup", status: "Open" },
-          { step: "02", name: "Medication (MAR)", status: "Updated" },
-          { step: "03", name: "Visit / shift logging", status: "In progress" },
-          { step: "04", name: "CQC reporting", status: "Due" },
+          { step: "01", name: "Intake assessment", status: "Open" },
+          { step: "02", name: "Treatment plan", status: "Updated" },
+          { step: "03", name: "Session notes", status: "In progress" },
+          { step: "04", name: "Outcome review", status: "Due" },
         ],
         kpis: [
-          { value: "MAR", label: "Digital medication" },
-          { value: "CQC", label: "Audit-ready" },
-          { value: "Rota", label: "Staff scheduling" },
+          { value: "Notes", label: "Session tracking" },
+          { value: "Plan", label: "Care goals" },
+          { value: "Secure", label: "Records access" },
         ],
       },
       bullets: [
-        "Digital care plans and daily logs",
-        "Electronic medication administration records",
-        "Staff rota and domiciliary visit scheduling",
-        "CQC-ready audit trails and reporting",
+        "Counselling and psychiatry electronic records",
+        "Therapy session notes and treatment plans",
+        "Secure video sessions for remote clients",
+        "Confidential, role-based record access",
       ],
     },
     {
-      tab: "Diagnostic Centres",
-      title: "Diagnostic & Pathology Centre Software",
+      tab: "Allied Health & Specialty",
+      title: "Dental, Eye Care & Allied Health Software",
       description:
-        "Private pathology labs and imaging centres needing sample tracking and report delivery.",
+        "Dental, optometry, physiotherapy and chiropractic clinics needing specialty charting and scheduling.",
       panel: {
-        eyebrow: "Lab workflow",
+        eyebrow: "Specialty workflow",
         stages: [
-          { step: "01", name: "Sample collection", status: "Done" },
-          { step: "02", name: "Test processing", status: "In review" },
-          { step: "03", name: "Report generation", status: "Pending" },
-          { step: "04", name: "Report delivery", status: "Booked" },
+          { step: "01", name: "Appointment", status: "Done" },
+          { step: "02", name: "Specialty charting", status: "In review" },
+          { step: "03", name: "Treatment plan", status: "Pending" },
+          { step: "04", name: "Invoice & insurance", status: "Booked" },
         ],
         kpis: [
-          { value: "LIS", label: "Lab workflow" },
-          { value: "Digital", label: "Report delivery" },
-          { value: "QC", label: "Result review" },
+          { value: "Chart", label: "Specialty forms" },
+          { value: "Plan", label: "Treatment tracking" },
+          { value: "Inv", label: "Direct billing" },
         ],
       },
       bullets: [
-        "Sample tracking and test workflows",
-        "Digital report generation and delivery",
-        "Referring GP and home-collection tracking",
-        "Integration with clinic and hospital systems",
+        "Dental, eye care and physio charting templates",
+        "Treatment plan and progress tracking",
+        "Insurance and direct billing support",
+        "Multi-location scheduling for clinic groups",
       ],
     },
   ];
 
   const techStack = [
     {
-      icon: Activity,
-      title: "AI & Smart Alerts",
-      body: "Appointment no-show prediction, stock alerts and abnormal-result flagging.",
+      icon: Mic,
+      title: "Voice & Dictation Support",
+      body: "Speech-to-text built into clinical note-taking.",
     },
     {
       icon: Cloud,
-      title: "Cloud-Based Practice Platform",
-      body: "Fully cloud-hosted — front desk to billing, accessible across sites.",
+      title: "Cloud-Based Clinic Platform",
+      body: "Hosted to meet provincial data-residency requirements, no local servers.",
     },
     {
       icon: Network,
-      title: "NHS & Third-Party API Integration",
-      body: "NHS number lookup, GP Connect style interoperability and lab/pharmacy links.",
+      title: "Interoperability APIs",
+      body: "Open APIs for labs, pharmacies, imaging and provincial systems.",
     },
     {
       icon: Smartphone,
-      title: "Mobile-First Tools",
-      body: "Mobile apps for clinicians, carers and admin staff on the move.",
+      title: "Mobile & Virtual Care",
+      body: "Mobile access and secure video visits for clinicians and patients.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for occupancy, billing collection and clinic utilisation.",
+      body: "Dashboards for wait times, billing and patient outcomes.",
     },
   ];
 
   const security = [
     {
       icon: ClipboardCheck,
-      title: "NHS DSPT Alignment",
-      body: "Built with controls mapped to the NHS Data Security and Protection Toolkit.",
+      title: "PIPEDA & Provincial Privacy",
+      body: "Consent, access and retention controls built around Canadian privacy law.",
     },
     {
       icon: Globe,
-      title: "PMI & Insurer Billing Support",
-      body: "Built-in workflows to manage private medical insurance and self-pay billing.",
+      title: "Provincial Plan Billing Support",
+      body: "Workflows to help clinics prepare and track claims for each provincial plan.",
     },
     {
-      icon: ShieldCheck,
-      title: "UK GDPR-Compliant",
-      body: "Data handling and consent workflows aligned with UK GDPR and the Data Protection Act.",
+      icon: FileText,
+      title: "e-Prescribing & Documentation",
+      body: "Electronic prescribing and structured clinical documentation, built in.",
     },
     {
       icon: Wrench,
-      title: "Lab & Pharmacy Integrations",
-      body: "Connects with diagnostic labs, pharmacy suppliers and imaging systems.",
+      title: "Third-Party Integrations",
+      body: "Connects with labs, pharmacies and Dragon Medical dictation software.",
     },
     {
       icon: Shield,
-      title: "Cyber Essentials-Ready Security",
-      body: "Role-based access and controls in line with Cyber Essentials expectations.",
+      title: "Data Security & Encryption",
+      body: "Role-based access and encryption for every patient record.",
     },
     {
       icon: Database,
-      title: "Audit & Activity Logs",
-      body: "Full activity logs, ready for CQC inspection or internal audit at any time.",
+      title: "Audit & Access Logs",
+      body: "Full access logs, ready for privacy review at any time.",
     },
   ];
 
@@ -327,37 +328,37 @@ const UKHealthcareSoftwarePage = () => {
       id: 1,
       title: "Healthcare-Specific Software",
       description:
-        "Built for NHS, GP, clinic and care home workflows — not generic software rebranded.",
+        "Built for clinical and administrative workflows — not generic software rebranded.",
     },
     {
       id: 2,
       title: "One Connected Platform",
       description:
-        "Registration, records, billing and care plans in one shared patient record.",
+        "Charting, scheduling, billing and virtual care in one shared patient record.",
     },
     {
       id: 3,
-      title: "Built for UK Healthcare",
+      title: "Built for Canadian Healthcare",
       description:
-        "Configured for NHS DSPT, UK GDPR and CQC reporting requirements.",
+        "Configured for provincial billing differences and Canadian privacy requirements.",
     },
     {
       id: 4,
       title: "Measurable Results",
       description:
-        "Gains in appointment turnaround, billing accuracy and staff time saved.",
+        "Gains in admin time, billing accuracy and patient access.",
     },
     {
       id: 5,
       title: "Scales As You Grow",
       description:
-        "One system, from a single GP surgery to a multi-site trust or care group.",
+        "One system, from a solo practice to a multi-province clinic group.",
     },
     {
       id: 6,
       title: "Easy to Adopt",
       description:
-        "A clean interface clinicians, carers and front-desk staff actually use.",
+        "A clean, bilingual-ready interface clinicians and staff actually use.",
     },
   ];
 
@@ -366,121 +367,121 @@ const UKHealthcareSoftwarePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Map registration, billing and compliance needs so your team sees value from week one.",
+        "Map clinical, billing and privacy needs so your team sees value from week one.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure records, billing and DSPT/GDPR-aligned workflows to your service.",
+        "Configure charting, provincial billing and virtual care workflows to your practice.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Data migration and hands-on staff training, scaled to service size.",
+        "Data migration and hands-on staff training, scaled to practice complexity.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "UK timezone-aligned support and continuous improvement as you scale.",
+        "Canadian timezone-aligned support and continuous improvement as you scale.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "9 → 1",
-      title: "One Unified Practice System",
+      metric: "7 → 1",
+      title: "One Unified Clinic Platform",
       description:
-        "Nine disconnected registers and billing tools replaced by one practice management system.",
+        "Seven disconnected booking, charting and billing tools replaced by one EMR system.",
       icon: Layers,
     },
     {
-      metric: "Faster Booking",
-      title: "Shorter Appointment Waits",
+      metric: "Fewer No-Shows",
+      title: "Smarter Appointment Reminders",
       description:
-        "Online booking and automated reminders cut no-shows and admin workload.",
+        "Automated reminders and easy rebooking cut missed appointments and idle clinic time.",
       icon: RefreshCw,
     },
     {
-      metric: "Accuracy",
-      title: "Reliable Care Records",
+      metric: "Faster Billing",
+      title: "Cleaner Claim Preparation",
       description:
-        "Digital MAR and care plans cut record-keeping errors across care homes.",
+        "Built-in checks catch coding and eligibility issues before claims are submitted.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What is the difference between a PAS and an EHR system?",
+      question: "What's the difference between EMR software and EHR software?",
       answer:
-        "A patient administration system (PAS) runs registration, scheduling and billing; an EHR focuses on the clinical patient record. Most UK providers need both working together.",
+        "An EMR holds one clinic's patient chart; an EHR is built to share that record securely across clinics, hospitals and other care settings.",
     },
     {
-      question: "Does the software align with NHS DSPT requirements?",
+      question: "How does the software handle PIPEDA and provincial privacy laws?",
       answer:
-        "Yes — security controls are mapped to the NHS Data Security and Protection Toolkit standards.",
+        "Consent tracking, role-based access, encryption and audit logs are built in to support PIPEDA and provincial health privacy requirements.",
     },
     {
-      question: "Is the platform UK GDPR compliant?",
+      question: "Can it handle billing for different provincial health plans?",
       answer:
-        "Yes — data handling, consent and retention workflows are built around UK GDPR and the Data Protection Act 2018.",
+        "Yes — billing workflows are configurable so one platform can support the claim rules of each province and territory.",
     },
     {
-      question: "Is there a free or open source practice management system?",
+      question: "Does it integrate with Dragon Medical dictation software?",
       answer:
-        "Open source tools often lack DSPT alignment, CQC-ready reporting and ongoing support. A supported platform pays for itself through fewer billing errors and faster patient turnaround.",
+        "Yes — voice-to-text dictation integrates directly into clinical notes to speed up documentation.",
     },
     {
-      question: "Can it handle private medical insurance (PMI) claims?",
+      question: "Is there a free or open source EMR option for small clinics?",
       answer:
-        "Yes — PMI and insurer billing workflows are built into the billing module.",
+        "Open source EMRs exist, but they often need in-house IT, custom billing setup and ongoing support. A supported platform typically saves more in admin time than it costs.",
     },
     {
-      question: "Does it support CQC-ready care home reporting?",
+      question: "Does it support telemedicine and virtual care?",
       answer:
-        "Yes — digital care plans, MAR and audit trails are designed to support CQC inspections.",
+        "Yes — secure video visits, e-consults and remote follow-up are built into the same platform as your charting.",
     },
     {
-      question: "Can diagnostic and pathology labs use the same platform?",
+      question: "Can the system work in both English and French?",
       answer:
-        "Yes — sample tracking, test workflows and digital report delivery are built for labs and imaging centres.",
+        "Yes — patient-facing tools like booking, reminders and forms can be configured in English and French.",
     },
     {
-      question: "Is this a cloud-based or on-premise system?",
+      question: "Does it support counselling and mental health practices?",
       answer:
-        "It's fully cloud-based by default, with on-premise deployment available for providers that require it.",
+        "Yes — session notes, treatment plans and confidential records are purpose-built for counselling and psychiatry workflows.",
     },
     {
-      question: "How long does implementation take for a mid-sized practice?",
+      question: "Can dental, eye care or physiotherapy clinics use it?",
       answer:
-        "Most practices and clinics go live within weeks, with front-desk and billing teams seeing value from day one.",
+        "Yes — specialty charting, treatment plans and direct billing support adapt to dental, optometry, physio and chiropractic clinics.",
     },
     {
-      question: "Can the system scale from a single surgery to a multi-site group?",
+      question: "How long does implementation take?",
       answer:
-        "Yes — the same records, billing and compliance foundation scales from one surgery to a multi-site trust or care group.",
+        "Most clinics go live within weeks, with staff seeing value from the first week of scheduling and charting.",
     },
   ];
 
   const relatedIndustries = [
     { title: "Healthcare", link: ROUTES.industry.healthcare },
     { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
+    { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
     { title: "India Healthcare", link: ROUTES.industry.indiaHealthcare },
     { title: "Australia Healthcare", link: ROUTES.industry.australiaHealthcare },
-    { title: "Canada Healthcare", link: ROUTES.industry.canadaHealthcare },
     { title: "UAE Healthcare", link: ROUTES.industry.uaeHealthcare },
+    { title: "Canada Textile", link: ROUTES.industry.canadaTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
-    { title: "Logistics", link: ROUTES.industry.logistics },
-    { title: "Education", link: ROUTES.industry.education },
+    { title: "Real Estate", link: ROUTES.industry.realEstate },
   ];
 
   const active = stakeholders[activeStakeholder];
-  const ActiveStakeholderIcon = [Building2, Stethoscope, HeartPulse, Microscope][
+  const ActiveStakeholderIcon = [Stethoscope, Building2, Brain, HeartPulse][
     activeStakeholder
   ];
 
@@ -488,7 +489,7 @@ const UKHealthcareSoftwarePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.ukHealthcare} />
+      <SEO {...seoData.canadaHealthcare} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -504,13 +505,15 @@ const UKHealthcareSoftwarePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                UK Healthcare Software
+                Canada Healthcare Software
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                GP, Clinic & Care Home Management Software for UK Healthcare system
+                Hospital & Pharma Management Software for the Canada Healthcare
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                Practice, clinic, care home and diagnostic software for UK providers — with GDPR compliance and NHS DSPT-aligned security built in.
+                Custom EMR, practice management, billing and virtual care
+                software for Canadian clinics, hospitals and allied health
+                providers — built around provincial and privacy requirements.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -521,7 +524,7 @@ const UKHealthcareSoftwarePage = () => {
                   Schedule a Consultation →
                 </button>
                 <a
-                  href="#uk-healthcare-capabilities"
+                  href="#canada-healthcare-capabilities"
                   className="rounded-xl border border-white/30 px-5 py-2.5 text-center text-sm text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
                 >
                   Explore Capabilities
@@ -533,9 +536,9 @@ const UKHealthcareSoftwarePage = () => {
               <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl backdrop-blur-md 2xl:rounded-3xl">
                 <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-white/[0.04] px-4 py-3 sm:px-5 sm:py-3.5 2xl:px-6 2xl:py-4">
                   <div className="flex min-w-0 items-center gap-2.5">
-                    <Building2 className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
+                    <Stethoscope className="h-4 w-4 shrink-0 text-amber-400 sm:h-5 sm:w-5 2xl:h-6 2xl:w-6" />
                     <p className="truncate text-sm font-normal text-white sm:text-base 2xl:text-lg">
-                      Complete Healthcare Software Suite
+                      Complete Clinic Software Suite
                     </p>
                   </div>
                   <div className="flex shrink-0 items-center gap-1.5" aria-hidden="true">
@@ -549,33 +552,33 @@ const UKHealthcareSoftwarePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "NHS Trust & Hospital",
-                      body: "Registration, wards and billing in one PAS.",
-                      icon: Building2,
+                      title: "EMR & Charting",
+                      body: "Clinical notes, dictation and e-prescribing.",
+                      icon: Stethoscope,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "GP & Clinics",
-                      body: "Booking, records and e-prescribing.",
-                      icon: Stethoscope,
+                      title: "Hospitals & Regions",
+                      body: "Connected records across sites.",
+                      icon: Building2,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Care Homes",
-                      body: "Digital care plans and MAR tracking.",
-                      icon: HeartPulse,
+                      title: "Billing & Privacy",
+                      body: "Provincial billing and PIPEDA safeguards.",
+                      icon: ClipboardCheck,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
-                      title: "Diagnostics & Labs",
-                      body: "Sample tracking and digital reports.",
-                      icon: Microscope,
+                      title: "Virtual Care",
+                      body: "Secure video visits and remote follow-up.",
+                      icon: Video,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
                       topBorder: true,
@@ -616,15 +619,15 @@ const UKHealthcareSoftwarePage = () => {
 
         <div
           className="relative container mx-auto max-w-6xl px-4 pb-10 sm:pb-12 md:pb-14 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-20"
-          aria-labelledby="uk-healthcare-market-heading"
+          aria-labelledby="canada-healthcare-market-heading"
         >
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
             <Heading
-              id="uk-healthcare-market-heading"
+              id="canada-healthcare-market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why UK Healthcare Providers Need Modern Practice Software"
-              subtitle="6,500+ GP practices and 40,000+ CQC-regulated providers now run on digital records — paper-based or disconnected systems mean billing errors, compliance gaps, and slower patient care."
+              title="Why Canadian Healthcare Providers Need Modern Software"
+              subtitle="With 13 provincial health plans and 100,000+ physicians, disconnected systems mean billing errors, privacy risk, and longer patient wait times."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -647,12 +650,12 @@ const UKHealthcareSoftwarePage = () => {
       </section>
 
       {/* ================= CAPABILITIES ================= */}
-      <Shell labelledBy="uk-healthcare-capabilities">
+      <Shell labelledBy="canada-healthcare-capabilities">
         <Heading
-          id="uk-healthcare-capabilities"
+          id="canada-healthcare-capabilities"
           eyebrow="Services"
-          title="Healthcare Software Solutions for the UK"
-          subtitle="GP, clinic, care home and diagnostic software — built for UK healthcare providers."
+          title="Healthcare Software Solutions for Canada"
+          subtitle="EMR and EHR software, practice management, virtual care and specialty clinic tools — built for Canadian providers."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -678,12 +681,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= CHALLENGES ================= */}
-      <Shell labelledBy="uk-healthcare-challenges-heading" alt>
+      <Shell labelledBy="canada-healthcare-challenges-heading" alt>
         <Heading
-          id="uk-healthcare-challenges-heading"
+          id="canada-healthcare-challenges-heading"
           eyebrow="Solutions"
-          title="Practical Fixes for UK Healthcare Challenges"
-          subtitle="Straightforward answers for fragmented records, CQC readiness, DSPT/GDPR compliance and PMI billing."
+          title="Practical Fixes for Canadian Healthcare Challenges"
+          subtitle="Straightforward answers for provincial billing, privacy compliance, wait times and access to care."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -709,25 +712,25 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="uk-healthcare-stakeholders-heading">
+      <Shell labelledBy="canada-healthcare-stakeholders-heading">
         <Heading
-          id="uk-healthcare-stakeholders-heading"
+          id="canada-healthcare-stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Part of UK Healthcare"
-          subtitle="Software shaped for NHS trusts, GP practices, care homes and diagnostic centres across the UK."
+          title="Built for Every Part of Canadian Healthcare"
+          subtitle="Software shaped for family practices, hospitals, mental health providers and allied health clinics."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="uk-healthcare-stakeholder-select" className="sr-only">
+          <label htmlFor="canada-healthcare-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="uk-healthcare-stakeholder-select"
+              id="canada-healthcare-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="uk-healthcare-stakeholder-panel"
+              aria-controls="canada-healthcare-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -757,8 +760,8 @@ const UKHealthcareSoftwarePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`uk-healthcare-stakeholder-tab-${index}`}
-                aria-controls="uk-healthcare-stakeholder-panel"
+                id={`canada-healthcare-stakeholder-tab-${index}`}
+                aria-controls="canada-healthcare-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
                   ? "bg-amber-400 text-black"
@@ -772,9 +775,9 @@ const UKHealthcareSoftwarePage = () => {
         </div>
 
         <div
-          id="uk-healthcare-stakeholder-panel"
+          id="canada-healthcare-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`uk-healthcare-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`canada-healthcare-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -871,12 +874,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="uk-healthcare-tech-heading" alt>
+      <Shell labelledBy="canada-healthcare-tech-heading" alt>
         <Heading
-          id="uk-healthcare-tech-heading"
+          id="canada-healthcare-tech-heading"
           eyebrow="Capabilities"
           title="Modern Healthcare Software Architecture"
-          subtitle="AI-assisted alerts, a cloud practice platform, NHS-aligned interoperability and mobile tools for every care team."
+          subtitle="Voice dictation, a cloud clinic platform, interoperability APIs and virtual care tools for every care team."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -900,12 +903,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="uk-healthcare-compliance-heading">
+      <Shell labelledBy="canada-healthcare-compliance-heading">
         <Heading
-          id="uk-healthcare-compliance-heading"
+          id="canada-healthcare-compliance-heading"
           eyebrow="Compliance"
-          title="UK-Ready Compliance & Security"
-          subtitle="NHS DSPT alignment, UK GDPR, Cyber Essentials-ready controls and CQC audit-ready reporting."
+          title="Canada-Ready Privacy & Security"
+          subtitle="PIPEDA and provincial privacy controls, billing support, e-prescribing and audit-ready logs, built into the platform."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -929,12 +932,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="uk-healthcare-why-heading" alt>
+      <Shell labelledBy="canada-healthcare-why-heading" alt>
         <Heading
-          id="uk-healthcare-why-heading"
+          id="canada-healthcare-why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for UK Healthcare Software"
-          subtitle="A purpose-built practice platform with UK compliance fit and fast staff adoption."
+          title="Why Choose Us for Canada Healthcare Software"
+          subtitle="A purpose-built healthcare platform with Canadian billing and privacy fit, and fast clinical team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -954,12 +957,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="uk-healthcare-process-heading">
+      <Shell labelledBy="canada-healthcare-process-heading">
         <Heading
-          id="uk-healthcare-process-heading"
+          id="canada-healthcare-process-heading"
           eyebrow="Delivery"
           title="How We Deliver Healthcare Software"
-          subtitle="Four clear phases — from discovery to UK timezone-aligned ongoing support."
+          subtitle="Four clear phases — from discovery to Canadian timezone-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -1005,17 +1008,17 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="uk-healthcare-impact-heading" alt>
+      <Shell labelledBy="canada-healthcare-impact-heading" alt>
         <Heading
-          id="uk-healthcare-impact-heading"
+          id="canada-healthcare-impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes for UK Healthcare Providers"
-          subtitle="Results from one unified practice platform — faster booking, cleaner billing and less manual work."
+          title="Proven Outcomes for Canadian Healthcare Providers"
+          subtitle="Results from one unified clinic platform — fewer no-shows, cleaner billing and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `uk-healthcare-case-bg-${index}`;
+            const gradientId = `canada-healthcare-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1082,13 +1085,13 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= FAQ ================= */}
-      <Shell labelledBy="uk-healthcare-faq-heading">
-        <Heading id="uk-healthcare-faq-heading" title="Common Questions" />
+      <Shell labelledBy="canada-healthcare-faq-heading">
+        <Heading id="canada-healthcare-faq-heading" title="Common Questions" />
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `uk-healthcare-faq-panel-${index}`;
-            const buttonId = `uk-healthcare-faq-button-${index}`;
+            const panelId = `canada-healthcare-faq-panel-${index}`;
+            const buttonId = `canada-healthcare-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1134,11 +1137,11 @@ const UKHealthcareSoftwarePage = () => {
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
-        aria-labelledby="uk-healthcare-related-industries-heading"
+        aria-labelledby="canada-healthcare-related-industries-heading"
       >
         <div className="container mx-auto max-w-6xl px-4">
           <h2
-            id="uk-healthcare-related-industries-heading"
+            id="canada-healthcare-related-industries-heading"
             className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
@@ -1154,6 +1157,7 @@ const UKHealthcareSoftwarePage = () => {
                   <ArrowRight size={11} className="md:h-3.5 md:w-3.5" />
                 </Link>
               </li>
+              
             ))}
           </ul>
         </div>
@@ -1162,4 +1166,4 @@ const UKHealthcareSoftwarePage = () => {
   );
 };
 
-export default UKHealthcareSoftwarePage;
+export default CanadaHealthcareSoftwarePage;

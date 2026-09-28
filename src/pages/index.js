@@ -13,6 +13,8 @@ export { default as UsaHealthcareSoftwarePage } from './Industries/USA_HEALTHCAR
 export { default as IndiaHealthcareSoftwarePage } from './Industries/INDIA_HEALTHCARE';
 export { default as UkHealthcareSoftwarePage } from './Industries/UK_HEALTHCARE';
 export { default as AustraliaHealthcareSoftwarePage } from './Industries/AUSTRALIA_HEALTHCARE';
+export { default as CanadaHealthcareSoftwarePage } from './Industries/CANADA_HEALTHCARE';
+export { default as UaeHealthcareSoftwarePage } from './Industries/UAE_HEALTHCARE';
 export { default as RealEstatePage } from './Industries/RealEstate';
 export { default as UAERealEstatePage } from './Industries/UAE_REALESTATE';
 export { default as USRealEstatePage } from './Industries/US_REALESTATE';

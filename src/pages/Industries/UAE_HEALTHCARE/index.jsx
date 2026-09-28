@@ -20,11 +20,11 @@ import {
   TrendingUp,
   ArrowRight,
   RefreshCw,
-  Activity,
   Users,
-  HeartPulse,
-  ShieldCheck,
-  Microscope,
+  Mic,
+  Home,
+  Sparkles,
+  ReceiptText,
 } from "lucide-react";
 import { useConsultation } from "../../../contexts/ConsultationContext";
 import SEO from "../../../components/SEO";
@@ -32,7 +32,7 @@ import { seoData } from "../../../utils/seoData";
 import { ROUTES } from "../../../utils/routes";
 
 /* ------------------------------------------------------------------ */
-/*  Compact design system — dark navy / amber (shared shell/heading)  */
+/*  Compact design system — dark navy / amber                         */
 /* ------------------------------------------------------------------ */
 
 const Shell = ({ children, labelledBy, alt = false, className = "" }) => (
@@ -76,249 +76,249 @@ const Heading = ({ id, eyebrow, title, subtitle, align = "center" }) => (
   </div>
 );
 
-const UKHealthcareSoftwarePage = () => {
+const UaeHealthcareSoftwarePage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [activeStakeholder, setActiveStakeholder] = useState(0);
   const { openConsultation } = useConsultation();
 
   const marketInsights = [
-    { value: "1.3M+", label: "NHS staff relying on connected patient record systems" },
-    { value: "6,500+", label: "GP practices across England running clinical software" },
-    { value: "£3.4B+", label: "UK healthcare IT & digital health software market" },
-    { value: "40,000+", label: "CQC-regulated care providers needing compliant systems" },
+    { value: "10M+", label: "Residents served by UAE healthcare providers" },
+    { value: "$25B+", label: "UAE healthcare market size" },
+    { value: "3", label: "Health regulators: DHA, DoH Abu Dhabi and MOHAP" },
+    { value: "2", label: "Emirate-level health information exchanges: Malaffi and NABIDH" },
   ];
 
   const services = [
     {
-      icon: Building2,
-      title: "Hospital & Trust Management Software",
-      description:
-        "Registration, ward/bed management and billing for NHS trusts and private hospitals.",
-    },
-    {
       icon: Stethoscope,
-      title: "GP & Clinic Practice Management Software",
+      title: "EMR & EHR Software Development",
       description:
-        "Appointments, patient records & e-prescribing for GP surgeries & private clinics.",
+        "Custom electronic medical records built around UAE clinic and hospital workflows.",
     },
     {
-      icon: HeartPulse,
-      title: "Care Home & Domiciliary Care Software",
+      icon: Building2,
+      title: "Hospital & Clinic Management System",
       description:
-        "Care plans, MAR & rota management for residential & home care.",
+        "Registration, appointments, pharmacy and billing across hospitals and polyclinics.",
     },
     {
-      icon: FileText,
-      title: "Medical Billing & Private Insurance Software",
+      icon: ReceiptText,
+      title: "Insurance E-Claims & Medical Billing",
       description:
-        "Invoicing, private medical insurance (PMI) claims and self-pay billing in one workflow.",
+        "Eligibility checks, coding and e-claim submission built for UAE insurers.",
+    },
+    {
+      icon: Sparkles,
+      title: "Medical Spa & Aesthetic Clinic Software",
+      description:
+        "Treatment packages, before-and-after records and memberships for aesthetic clinics.",
     },
     {
       icon: Users,
-      title: "Healthcare CRM & Patient Engagement Software",
+      title: "Healthcare CRM & Patient Engagement",
       description:
-        "Recall reminders, referral tracking and patient communication for growing private practices.",
+        "Multilingual reminders, lead tracking and follow-ups for local and international patients.",
     },
     {
-      icon: Package,
-      title: "Clinical Inventory & Equipment Management",
+      icon: Home,
+      title: "Home Healthcare & Care Management",
       description:
-        "Stock, consumables and equipment tracking across wards, theatres and clinics.",
+        "Nurse dispatch, visit records and care plan tracking for home healthcare providers.",
     },
   ];
 
   const challenges = [
     {
       challenge:
-        "GP surgeries and clinics juggling multiple disconnected systems for booking, records and billing lose time and create data errors.",
+        "Dubai, Abu Dhabi and the Northern Emirates each follow different regulator and reporting requirements.",
       solution:
-        "A single practice management platform brings booking, clinical notes and billing into one connected system.",
+        "Configurable workflows adapt one platform to each emirate's regulator and reporting rules.",
     },
     {
       challenge:
-        "Care providers preparing for CQC inspections struggle to show consistent digital care records and audit trails.",
+        "Manual coding and missed eligibility checks lead to insurance claim rejections and delayed payments.",
       solution:
-        "Digital care planning and MAR software keeps records audit-ready and CQC inspection-friendly at all times.",
+        "Automated eligibility and coding checks catch errors before claims reach the insurer.",
     },
     {
       challenge:
-        "Meeting NHS DSPT, GDPR and Cyber Essentials requirements is a recurring burden for smaller healthcare providers.",
+        "Health data rules under the UAE's ICT health law raise questions about where patient records can be stored.",
       solution:
-        "Software built with DSPT-aligned security, GDPR-compliant data handling and Cyber Essentials controls from day one.",
+        "Deployment options and access controls are planned around in-country data requirements.",
     },
     {
       challenge:
-        "Private clinics processing PMI claims manually face delayed payments and reconciliation errors.",
+        "A diverse, international patient base and growing medical tourism demand more than English-only systems.",
       solution:
-        "Automated PMI and insurer billing workflows speed up claims and reduce reconciliation work.",
+        "Arabic and English patient tools, plus multilingual messaging, make every visit easier.",
     },
   ];
 
   const stakeholders = [
     {
-      tab: "NHS Trusts",
-      title: "NHS Trust & Hospital Software",
+      tab: "Hospitals & Multi-Specialty",
+      title: "Hospital & Multi-Specialty Center Software",
       description:
-        "NHS trusts and private hospitals needing a connected patient administration and ward management system.",
+        "Hospitals and large centers needing connected records across departments, pharmacy and billing.",
       panel: {
-        eyebrow: "Trust workflow",
+        eyebrow: "Hospital workflow",
         stages: [
-          { step: "01", name: "Patient registration", status: "In progress" },
-          { step: "02", name: "Ward & bed allocation", status: "Queued" },
-          { step: "03", name: "Treatment & coding", status: "Next" },
-          { step: "04", name: "Discharge & billing", status: "Planned" },
+          { step: "01", name: "Emirates ID registration", status: "In progress" },
+          { step: "02", name: "Consultation & orders", status: "Queued" },
+          { step: "03", name: "Pharmacy & lab", status: "Next" },
+          { step: "04", name: "Insurance billing", status: "Planned" },
         ],
         kpis: [
-          { value: "Live", label: "Bed occupancy" },
-          { value: "PAS", label: "System sync" },
-          { value: "NHS #", label: "Patient ID linking" },
+          { value: "Live", label: "Bed & OPD view" },
+          { value: "HIE", label: "Record sharing" },
+          { value: "Claims", label: "Insurer status" },
         ],
       },
       bullets: [
-        "Patient administration system (PAS) style registration",
-        "Ward, theatre and bed management",
-        "NHS number linking and interoperability",
-        "Pharmacy and pathology integration",
+        "Registration and patient identification",
+        "Inpatient, outpatient and pharmacy modules",
+        "Lab, radiology and order tracking",
+        "Insurance approvals and e-claims in one flow",
       ],
     },
     {
-      tab: "GP Practices & Clinics",
-      title: "GP & Private Clinic Software",
+      tab: "Clinics & Polyclinics",
+      title: "Clinic & Polyclinic Management Software",
       description:
-        "GP surgeries and private clinics needing appointment, records and e-prescribing workflows.",
+        "GP, dental, dermatology and mental health clinics needing scheduling, charting and billing together.",
       panel: {
         eyebrow: "Clinic workflow",
         stages: [
           { step: "01", name: "Online booking", status: "Active" },
-          { step: "02", name: "Consultation", status: "Running" },
+          { step: "02", name: "Consultation notes", status: "Running" },
           { step: "03", name: "e-Prescription", status: "Scheduled" },
-          { step: "04", name: "Billing / claim", status: "Ready" },
+          { step: "04", name: "Billing & claims", status: "Ready" },
         ],
         kpis: [
-          { value: "Book", label: "Online appointments" },
+          { value: "Slots", label: "Doctor calendar" },
           { value: "Rx", label: "e-Prescribing" },
-          { value: "PMI", label: "Insurer billing" },
+          { value: "Ins", label: "Insurance check" },
         ],
       },
       bullets: [
-        "Online appointment booking and reminders",
-        "Structured clinical notes and e-prescribing",
-        "Private medical insurance (PMI) billing",
-        "Patient recall and follow-up automation",
+        "Doctor scheduling and online booking",
+        "Specialty charting for dental and mental health",
+        "Voice dictation for faster notes",
+        "Insurance eligibility and direct billing",
       ],
     },
     {
-      tab: "Care Homes",
-      title: "Care Home & Domiciliary Care Software",
+      tab: "Medical Spas & Aesthetics",
+      title: "Medical Spa & Aesthetic Clinic Software",
       description:
-        "Residential care homes and home care agencies needing digital care plans and CQC-ready records.",
+        "Medical spas, dermatology and cosmetic clinics managing treatment plans, packages and repeat clients.",
       panel: {
-        eyebrow: "Care workflow",
+        eyebrow: "Aesthetic workflow",
         stages: [
-          { step: "01", name: "Care plan setup", status: "Open" },
-          { step: "02", name: "Medication (MAR)", status: "Updated" },
-          { step: "03", name: "Visit / shift logging", status: "In progress" },
-          { step: "04", name: "CQC reporting", status: "Due" },
+          { step: "01", name: "Consultation", status: "Open" },
+          { step: "02", name: "Treatment plan", status: "Updated" },
+          { step: "03", name: "Session & photos", status: "In progress" },
+          { step: "04", name: "Package renewal", status: "Due" },
         ],
         kpis: [
-          { value: "MAR", label: "Digital medication" },
-          { value: "CQC", label: "Audit-ready" },
-          { value: "Rota", label: "Staff scheduling" },
+          { value: "Pkg", label: "Session balance" },
+          { value: "Photo", label: "Progress records" },
+          { value: "CRM", label: "Client retention" },
         ],
       },
       bullets: [
-        "Digital care plans and daily logs",
-        "Electronic medication administration records",
-        "Staff rota and domiciliary visit scheduling",
-        "CQC-ready audit trails and reporting",
+        "Treatment plans and consent forms",
+        "Before-and-after photo records",
+        "Packages, memberships and loyalty offers",
+        "Automated rebooking and client reminders",
       ],
     },
     {
-      tab: "Diagnostic Centres",
-      title: "Diagnostic & Pathology Centre Software",
+      tab: "Home Healthcare",
+      title: "Home Healthcare & Care Provider Software",
       description:
-        "Private pathology labs and imaging centres needing sample tracking and report delivery.",
+        "Home healthcare providers coordinating nurses, visits and patient documentation across the emirates.",
       panel: {
-        eyebrow: "Lab workflow",
+        eyebrow: "Field workflow",
         stages: [
-          { step: "01", name: "Sample collection", status: "Done" },
-          { step: "02", name: "Test processing", status: "In review" },
-          { step: "03", name: "Report generation", status: "Pending" },
-          { step: "04", name: "Report delivery", status: "Booked" },
+          { step: "01", name: "Visit request", status: "Done" },
+          { step: "02", name: "Nurse dispatch", status: "In review" },
+          { step: "03", name: "Visit documentation", status: "Pending" },
+          { step: "04", name: "Care plan update", status: "Booked" },
         ],
         kpis: [
-          { value: "LIS", label: "Lab workflow" },
-          { value: "Digital", label: "Report delivery" },
-          { value: "QC", label: "Result review" },
+          { value: "GPS", label: "Visit tracking" },
+          { value: "Care", label: "Plan status" },
+          { value: "Docs", label: "Visit records" },
         ],
       },
       bullets: [
-        "Sample tracking and test workflows",
-        "Digital report generation and delivery",
-        "Referring GP and home-collection tracking",
-        "Integration with clinic and hospital systems",
+        "Nurse and caregiver scheduling",
+        "Point-of-care visit documentation",
+        "Care plan and medication tracking",
+        "Family updates and visit summaries",
       ],
     },
   ];
 
   const techStack = [
     {
-      icon: Activity,
-      title: "AI & Smart Alerts",
-      body: "Appointment no-show prediction, stock alerts and abnormal-result flagging.",
+      icon: Mic,
+      title: "Voice & Dictation Support",
+      body: "Speech-to-text built into clinical note-taking.",
     },
     {
       icon: Cloud,
-      title: "Cloud-Based Practice Platform",
-      body: "Fully cloud-hosted — front desk to billing, accessible across sites.",
+      title: "Cloud-Based Clinic Platform",
+      body: "Fully cloud-hosted, with deployment options planned around UAE requirements.",
     },
     {
       icon: Network,
-      title: "NHS & Third-Party API Integration",
-      body: "NHS number lookup, GP Connect style interoperability and lab/pharmacy links.",
+      title: "Integration APIs",
+      body: "Open APIs for labs, pharmacies, insurers and health information exchanges.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First Tools",
-      body: "Mobile apps for clinicians, carers and admin staff on the move.",
+      body: "Mobile apps for doctors, nurses and patient self-service.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Dashboards for occupancy, billing collection and clinic utilisation.",
+      body: "Dashboards for claim rejections, patient volume and revenue.",
     },
   ];
 
   const security = [
     {
       icon: ClipboardCheck,
-      title: "NHS DSPT Alignment",
-      body: "Built with controls mapped to the NHS Data Security and Protection Toolkit.",
+      title: "Regulator-Aligned Workflows",
+      body: "Configurable to DHA, DoH Abu Dhabi and MOHAP requirements.",
     },
     {
       icon: Globe,
-      title: "PMI & Insurer Billing Support",
-      body: "Built-in workflows to manage private medical insurance and self-pay billing.",
+      title: "Health Information Exchange",
+      body: "Built to support record sharing with emirate-level exchanges.",
     },
     {
-      icon: ShieldCheck,
-      title: "UK GDPR-Compliant",
-      body: "Data handling and consent workflows aligned with UK GDPR and the Data Protection Act.",
+      icon: FileText,
+      title: "E-Claims & Insurance Billing",
+      body: "Eligibility, coding and e-claim workflows for UAE insurers.",
     },
     {
       icon: Wrench,
-      title: "Lab & Pharmacy Integrations",
-      body: "Connects with diagnostic labs, pharmacy suppliers and imaging systems.",
+      title: "Third-Party Integrations",
+      body: "Connects with labs, pharmacies and Dragon Medical dictation software.",
     },
     {
       icon: Shield,
-      title: "Cyber Essentials-Ready Security",
-      body: "Role-based access and controls in line with Cyber Essentials expectations.",
+      title: "Data Security & Encryption",
+      body: "Role-based access and encryption for every patient record.",
     },
     {
       icon: Database,
-      title: "Audit & Activity Logs",
-      body: "Full activity logs, ready for CQC inspection or internal audit at any time.",
+      title: "Audit & Access Logs",
+      body: "Full access logs, ready for review at any time.",
     },
   ];
 
@@ -327,37 +327,37 @@ const UKHealthcareSoftwarePage = () => {
       id: 1,
       title: "Healthcare-Specific Software",
       description:
-        "Built for NHS, GP, clinic and care home workflows — not generic software rebranded.",
+        "Built for clinical and administrative workflows — not generic software rebranded.",
     },
     {
       id: 2,
       title: "One Connected Platform",
       description:
-        "Registration, records, billing and care plans in one shared patient record.",
+        "Registration, charting, pharmacy and billing in one shared patient record.",
     },
     {
       id: 3,
-      title: "Built for UK Healthcare",
+      title: "Built for the UAE Market",
       description:
-        "Configured for NHS DSPT, UK GDPR and CQC reporting requirements.",
+        "Configured for multi-emirate regulators, insurer e-claims and Arabic/English use.",
     },
     {
       id: 4,
       title: "Measurable Results",
       description:
-        "Gains in appointment turnaround, billing accuracy and staff time saved.",
+        "Gains in claim acceptance, registration speed and staff time saved.",
     },
     {
       id: 5,
       title: "Scales As You Grow",
       description:
-        "One system, from a single GP surgery to a multi-site trust or care group.",
+        "One system, from a single clinic to a multi-branch healthcare group.",
     },
     {
       id: 6,
       title: "Easy to Adopt",
       description:
-        "A clean interface clinicians, carers and front-desk staff actually use.",
+        "A clean interface doctors, nurses and front-desk staff actually use.",
     },
   ];
 
@@ -366,121 +366,121 @@ const UKHealthcareSoftwarePage = () => {
       number: "01",
       title: "Discovery & Onboarding",
       description:
-        "Map registration, billing and compliance needs so your team sees value from week one.",
+        "Map clinical, billing and regulatory needs so your team sees value from week one.",
     },
     {
       number: "02",
       title: "Architecture & Configuration",
       description:
-        "Configure records, billing and DSPT/GDPR-aligned workflows to your service.",
+        "Configure charting, e-claims and reporting workflows to your emirate and specialty.",
     },
     {
       number: "03",
       title: "Implementation & Training",
       description:
-        "Data migration and hands-on staff training, scaled to service size.",
+        "Data migration and hands-on training in English and Arabic, scaled to your facility.",
     },
     {
       number: "04",
       title: "Ongoing Support",
       description:
-        "UK timezone-aligned support and continuous improvement as you scale.",
+        "Gulf timezone-aligned support and continuous improvement as you scale.",
     },
   ];
 
   const caseStudies = [
     {
-      metric: "9 → 1",
-      title: "One Unified Practice System",
+      metric: "6 → 1",
+      title: "One Unified Clinic Platform",
       description:
-        "Nine disconnected registers and billing tools replaced by one practice management system.",
+        "Six disconnected booking, charting and billing tools replaced by one clinic system.",
       icon: Layers,
     },
     {
-      metric: "Faster Booking",
-      title: "Shorter Appointment Waits",
+      metric: "Fewer Rejections",
+      title: "Cleaner Insurance Claims",
       description:
-        "Online booking and automated reminders cut no-shows and admin workload.",
+        "Automated eligibility and coding checks cut claim rejections before submission.",
       icon: RefreshCw,
     },
     {
-      metric: "Accuracy",
-      title: "Reliable Care Records",
+      metric: "Faster Check-In",
+      title: "Quicker Patient Registration",
       description:
-        "Digital MAR and care plans cut record-keeping errors across care homes.",
+        "Streamlined registration and pre-filled records shorten reception wait times.",
       icon: Package,
     },
   ];
 
   const faqs = [
     {
-      question: "What is the difference between a PAS and an EHR system?",
+      question: "What's the difference between EMR software and EHR software?",
       answer:
-        "A patient administration system (PAS) runs registration, scheduling and billing; an EHR focuses on the clinical patient record. Most UK providers need both working together.",
+        "An EMR holds one clinic's patient chart; an EHR is built to share that record securely across clinics, hospitals and other care providers.",
     },
     {
-      question: "Does the software align with NHS DSPT requirements?",
+      question: "Does the software support DHA, DoH and MOHAP requirements?",
       answer:
-        "Yes — security controls are mapped to the NHS Data Security and Protection Toolkit standards.",
+        "Workflows are configurable to the reporting and documentation requirements of each regulator, so one platform can serve facilities in different emirates.",
     },
     {
-      question: "Is the platform UK GDPR compliant?",
+      question: "Can it handle insurance e-claims and eligibility checks?",
       answer:
-        "Yes — data handling, consent and retention workflows are built around UK GDPR and the Data Protection Act 2018.",
+        "Yes — eligibility verification, coding checks and e-claim preparation are built into the billing module.",
     },
     {
-      question: "Is there a free or open source practice management system?",
+      question: "Does it integrate with Dragon Medical dictation software?",
       answer:
-        "Open source tools often lack DSPT alignment, CQC-ready reporting and ongoing support. A supported platform pays for itself through fewer billing errors and faster patient turnaround.",
+        "Yes — voice-to-text dictation integrates directly into clinical notes to speed up documentation.",
     },
     {
-      question: "Can it handle private medical insurance (PMI) claims?",
+      question: "Is there a free or cheap EMR option for small clinics?",
       answer:
-        "Yes — PMI and insurer billing workflows are built into the billing module.",
+        "Free tools usually cover only basic charting. Clinics billing insurers need scheduling, coding and reporting together, which is why a connected platform pays for itself quickly.",
     },
     {
-      question: "Does it support CQC-ready care home reporting?",
+      question: "Can medical spas and aesthetic clinics use the same platform?",
       answer:
-        "Yes — digital care plans, MAR and audit trails are designed to support CQC inspections.",
+        "Yes — treatment plans, consent forms, photo records and package tracking are built for aesthetic and dermatology clinics.",
     },
     {
-      question: "Can diagnostic and pathology labs use the same platform?",
+      question: "Does it support Arabic and English?",
       answer:
-        "Yes — sample tracking, test workflows and digital report delivery are built for labs and imaging centres.",
+        "Yes — patient-facing tools like booking, reminders and forms can be configured in Arabic and English.",
     },
     {
-      question: "Is this a cloud-based or on-premise system?",
+      question: "Where is patient data stored?",
       answer:
-        "It's fully cloud-based by default, with on-premise deployment available for providers that require it.",
+        "Deployment options are planned around UAE data requirements and agreed with you during onboarding.",
     },
     {
-      question: "How long does implementation take for a mid-sized practice?",
+      question: "Does it support dental and mental health practices?",
       answer:
-        "Most practices and clinics go live within weeks, with front-desk and billing teams seeing value from day one.",
+        "Yes — dental charting, therapy notes and confidential records run on the same configurable platform.",
     },
     {
-      question: "Can the system scale from a single surgery to a multi-site group?",
+      question: "How long does implementation take?",
       answer:
-        "Yes — the same records, billing and compliance foundation scales from one surgery to a multi-site trust or care group.",
+        "Most clinics go live within weeks, with staff seeing value from the first week of booking and charting.",
     },
   ];
 
   const relatedIndustries = [
     { title: "Healthcare", link: ROUTES.industry.healthcare },
     { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
+    { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
     { title: "India Healthcare", link: ROUTES.industry.indiaHealthcare },
-    { title: "Australia Healthcare", link: ROUTES.industry.australiaHealthcare },
     { title: "Canada Healthcare", link: ROUTES.industry.canadaHealthcare },
-    { title: "UAE Healthcare", link: ROUTES.industry.uaeHealthcare },
+    { title: "Australia Healthcare", link: ROUTES.industry.australiaHealthcare },
+    { title: "UAE Textile", link: ROUTES.industry.uaeTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },
     { title: "Business CRM", link: ROUTES.industry.businessCrm },
-    { title: "Logistics", link: ROUTES.industry.logistics },
-    { title: "Education", link: ROUTES.industry.education },
+    { title: "Real Estate", link: ROUTES.industry.realEstate },
   ];
 
   const active = stakeholders[activeStakeholder];
-  const ActiveStakeholderIcon = [Building2, Stethoscope, HeartPulse, Microscope][
+  const ActiveStakeholderIcon = [Building2, Stethoscope, Sparkles, Home][
     activeStakeholder
   ];
 
@@ -488,7 +488,7 @@ const UKHealthcareSoftwarePage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <SEO {...seoData.ukHealthcare} />
+      <SEO {...seoData.uaeHealthcare} />
 
       {/* ================= HERO + MARKET (continuous blue) ================= */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-black pt-16 md:pt-24 lg:pt-28 2xl:pt-32">
@@ -504,13 +504,15 @@ const UKHealthcareSoftwarePage = () => {
           <div className="grid items-center gap-6 py-3 sm:gap-8 sm:py-4 lg:min-h-[min(42rem,calc(100svh-12rem))] lg:grid-cols-2 lg:items-center lg:gap-x-12 lg:py-6 xl:min-h-[min(46rem,calc(100svh-13rem))] xl:gap-x-16 2xl:min-h-[min(52rem,calc(100svh-14rem))] 2xl:gap-x-20 2xl:py-10 [@media(max-height:780px)]:gap-5 [@media(max-height:780px)]:py-2">
             <div className="order-1 max-w-xl space-y-4 text-white sm:space-y-5 lg:max-w-none lg:self-center 2xl:space-y-7">
               <p className="inline-flex rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-400 2xl:px-4 2xl:py-1.5 2xl:text-sm">
-                UK Healthcare Software
+                UAE Healthcare Software
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                GP, Clinic & Care Home Management Software for UK Healthcare system
+                Hospital & Pharma Management Software for UAE Healthcare
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
-                Practice, clinic, care home and diagnostic software for UK providers — with GDPR compliance and NHS DSPT-aligned security built in.
+                Custom EMR, insurance e-claims, medical spa and patient
+                engagement software for UAE hospitals, clinics and home
+                healthcare providers — in Arabic and English.
               </p>
               <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:pt-0 2xl:gap-4 2xl:pt-2">
                 <button
@@ -521,7 +523,7 @@ const UKHealthcareSoftwarePage = () => {
                   Schedule a Consultation →
                 </button>
                 <a
-                  href="#uk-healthcare-capabilities"
+                  href="#uae-healthcare-capabilities"
                   className="rounded-xl border border-white/30 px-5 py-2.5 text-center text-sm text-white transition-all duration-300 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-6 sm:py-3 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
                 >
                   Explore Capabilities
@@ -549,33 +551,33 @@ const UKHealthcareSoftwarePage = () => {
                 <div className="grid grid-cols-1 divide-y divide-white/10 min-[520px]:grid-cols-2 min-[520px]:divide-x min-[520px]:divide-y-0">
                   {[
                     {
-                      title: "NHS Trust & Hospital",
-                      body: "Registration, wards and billing in one PAS.",
-                      icon: Building2,
+                      title: "EMR & Charting",
+                      body: "Clinical notes, dictation and e-prescribing.",
+                      icon: Stethoscope,
                       iconClass: "text-amber-400",
                       boxClass: "border-amber-400/25 bg-amber-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "GP & Clinics",
-                      body: "Booking, records and e-prescribing.",
-                      icon: Stethoscope,
+                      title: "Hospitals & Clinics",
+                      body: "Registration, pharmacy and billing in one system.",
+                      icon: Building2,
                       iconClass: "text-blue-400",
                       boxClass: "border-blue-400/25 bg-blue-400/15",
                       topBorder: false,
                     },
                     {
-                      title: "Care Homes",
-                      body: "Digital care plans and MAR tracking.",
-                      icon: HeartPulse,
+                      title: "Insurance E-Claims",
+                      body: "Eligibility checks and claim submission.",
+                      icon: ReceiptText,
                       iconClass: "text-green-400",
                       boxClass: "border-emerald-400/25 bg-emerald-400/15",
                       topBorder: true,
                     },
                     {
-                      title: "Diagnostics & Labs",
-                      body: "Sample tracking and digital reports.",
-                      icon: Microscope,
+                      title: "Medical Spa & CRM",
+                      body: "Packages, reminders and client retention.",
+                      icon: Sparkles,
                       iconClass: "text-purple-400",
                       boxClass: "border-violet-400/25 bg-violet-400/15",
                       topBorder: true,
@@ -616,15 +618,15 @@ const UKHealthcareSoftwarePage = () => {
 
         <div
           className="relative container mx-auto max-w-6xl px-4 pb-10 sm:pb-12 md:pb-14 xl:max-w-7xl 2xl:max-w-[90rem] 2xl:px-8 2xl:pb-20"
-          aria-labelledby="uk-healthcare-market-heading"
+          aria-labelledby="uae-healthcare-market-heading"
         >
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
             <Heading
-              id="uk-healthcare-market-heading"
+              id="uae-healthcare-market-heading"
               align="left"
               eyebrow="Market Context"
-              title="Why UK Healthcare Providers Need Modern Practice Software"
-              subtitle="6,500+ GP practices and 40,000+ CQC-regulated providers now run on digital records — paper-based or disconnected systems mean billing errors, compliance gaps, and slower patient care."
+              title="Why UAE Healthcare Providers Need Modern Software"
+              subtitle="With a $25B+ healthcare market and three regulators to satisfy, disconnected systems mean rejected claims, reporting gaps, and slower patient care."
             />
             <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2">
               {marketInsights.map((item) => (
@@ -647,12 +649,12 @@ const UKHealthcareSoftwarePage = () => {
       </section>
 
       {/* ================= CAPABILITIES ================= */}
-      <Shell labelledBy="uk-healthcare-capabilities">
+      <Shell labelledBy="uae-healthcare-capabilities">
         <Heading
-          id="uk-healthcare-capabilities"
+          id="uae-healthcare-capabilities"
           eyebrow="Services"
-          title="Healthcare Software Solutions for the UK"
-          subtitle="GP, clinic, care home and diagnostic software — built for UK healthcare providers."
+          title="Healthcare Software Solutions for the UAE"
+          subtitle="EMR and EHR software, hospital management, insurance e-claims and medical spa tools — built for UAE providers."
         />
         <ul className="grid list-none grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => {
@@ -678,12 +680,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= CHALLENGES ================= */}
-      <Shell labelledBy="uk-healthcare-challenges-heading" alt>
+      <Shell labelledBy="uae-healthcare-challenges-heading" alt>
         <Heading
-          id="uk-healthcare-challenges-heading"
+          id="uae-healthcare-challenges-heading"
           eyebrow="Solutions"
-          title="Practical Fixes for UK Healthcare Challenges"
-          subtitle="Straightforward answers for fragmented records, CQC readiness, DSPT/GDPR compliance and PMI billing."
+          title="Practical Fixes for UAE Healthcare Challenges"
+          subtitle="Straightforward answers for multi-emirate rules, claim rejections, data requirements and multilingual patients."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -709,25 +711,25 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= STAKEHOLDERS ================= */}
-      <Shell labelledBy="uk-healthcare-stakeholders-heading">
+      <Shell labelledBy="uae-healthcare-stakeholders-heading">
         <Heading
-          id="uk-healthcare-stakeholders-heading"
+          id="uae-healthcare-stakeholders-heading"
           eyebrow="Use Cases"
-          title="Built for Every Part of UK Healthcare"
-          subtitle="Software shaped for NHS trusts, GP practices, care homes and diagnostic centres across the UK."
+          title="Built for Every Part of UAE Healthcare"
+          subtitle="Software shaped for hospitals, clinics, medical spas and home healthcare providers across the emirates."
         />
 
         {/* Mobile: full-width selector */}
         <div className="mb-8 md:hidden">
-          <label htmlFor="uk-healthcare-stakeholder-select" className="sr-only">
+          <label htmlFor="uae-healthcare-stakeholder-select" className="sr-only">
             Select stakeholder type
           </label>
           <div className="relative">
             <select
-              id="uk-healthcare-stakeholder-select"
+              id="uae-healthcare-stakeholder-select"
               value={activeStakeholder}
               onChange={(e) => setActiveStakeholder(Number(e.target.value))}
-              aria-controls="uk-healthcare-stakeholder-panel"
+              aria-controls="uae-healthcare-stakeholder-panel"
               className="w-full appearance-none rounded-xl border border-amber-400/40 bg-black/40 px-4 py-3 pr-11 text-sm text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400"
             >
               {stakeholders.map((item, index) => (
@@ -757,8 +759,8 @@ const UKHealthcareSoftwarePage = () => {
                 type="button"
                 role="tab"
                 aria-selected={selected}
-                id={`uk-healthcare-stakeholder-tab-${index}`}
-                aria-controls="uk-healthcare-stakeholder-panel"
+                id={`uae-healthcare-stakeholder-tab-${index}`}
+                aria-controls="uae-healthcare-stakeholder-panel"
                 onClick={() => setActiveStakeholder(index)}
                 className={`shrink-0 rounded-full px-4 py-2 text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 2xl:px-5 2xl:py-2.5 2xl:text-base ${selected
                   ? "bg-amber-400 text-black"
@@ -772,9 +774,9 @@ const UKHealthcareSoftwarePage = () => {
         </div>
 
         <div
-          id="uk-healthcare-stakeholder-panel"
+          id="uae-healthcare-stakeholder-panel"
           role="tabpanel"
-          aria-labelledby={`uk-healthcare-stakeholder-tab-${activeStakeholder}`}
+          aria-labelledby={`uae-healthcare-stakeholder-tab-${activeStakeholder}`}
           className="grid items-stretch gap-8 rounded-2xl border border-white/10 bg-black/25 p-6 md:p-8 lg:grid-cols-2 2xl:gap-10 2xl:p-10"
         >
           <div>
@@ -871,12 +873,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= TECHNOLOGY ================= */}
-      <Shell labelledBy="uk-healthcare-tech-heading" alt>
+      <Shell labelledBy="uae-healthcare-tech-heading" alt>
         <Heading
-          id="uk-healthcare-tech-heading"
+          id="uae-healthcare-tech-heading"
           eyebrow="Capabilities"
           title="Modern Healthcare Software Architecture"
-          subtitle="AI-assisted alerts, a cloud practice platform, NHS-aligned interoperability and mobile tools for every care team."
+          subtitle="Voice dictation, a cloud clinic platform, integration APIs and mobile tools for every care team."
         />
         <ul className="grid list-none grid-cols-2 gap-3 md:grid-cols-5">
           {techStack.map((item) => {
@@ -900,12 +902,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= COMPLIANCE ================= */}
-      <Shell labelledBy="uk-healthcare-compliance-heading">
+      <Shell labelledBy="uae-healthcare-compliance-heading">
         <Heading
-          id="uk-healthcare-compliance-heading"
+          id="uae-healthcare-compliance-heading"
           eyebrow="Compliance"
-          title="UK-Ready Compliance & Security"
-          subtitle="NHS DSPT alignment, UK GDPR, Cyber Essentials-ready controls and CQC audit-ready reporting."
+          title="UAE-Ready Compliance & Security"
+          subtitle="Regulator-aligned workflows, e-claims, health data exchange support and audit-ready logs, built into the platform."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
@@ -929,12 +931,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <Shell labelledBy="uk-healthcare-why-heading" alt>
+      <Shell labelledBy="uae-healthcare-why-heading" alt>
         <Heading
-          id="uk-healthcare-why-heading"
+          id="uae-healthcare-why-heading"
           eyebrow="Why Ascentia Labs"
-          title="Why Choose Us for UK Healthcare Software"
-          subtitle="A purpose-built practice platform with UK compliance fit and fast staff adoption."
+          title="Why Choose Us for UAE Healthcare Software"
+          subtitle="A purpose-built healthcare platform with UAE market fit and fast clinical team adoption."
         />
         <ul className="grid list-none grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {advantages.map((item) => (
@@ -954,12 +956,12 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= DELIVERY ================= */}
-      <Shell labelledBy="uk-healthcare-process-heading">
+      <Shell labelledBy="uae-healthcare-process-heading">
         <Heading
-          id="uk-healthcare-process-heading"
+          id="uae-healthcare-process-heading"
           eyebrow="Delivery"
           title="How We Deliver Healthcare Software"
-          subtitle="Four clear phases — from discovery to UK timezone-aligned ongoing support."
+          subtitle="Four clear phases — from discovery to Gulf timezone-aligned ongoing support."
         />
 
         <ol className="relative space-y-8 border-l border-white/15 pl-8 ml-2 md:hidden">
@@ -1005,17 +1007,17 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= PROVEN IMPACT ================= */}
-      <Shell labelledBy="uk-healthcare-impact-heading" alt>
+      <Shell labelledBy="uae-healthcare-impact-heading" alt>
         <Heading
-          id="uk-healthcare-impact-heading"
+          id="uae-healthcare-impact-heading"
           eyebrow="Results"
-          title="Proven Outcomes for UK Healthcare Providers"
-          subtitle="Results from one unified practice platform — faster booking, cleaner billing and less manual work."
+          title="Proven Outcomes for UAE Healthcare Providers"
+          subtitle="Results from one unified clinic platform — fewer rejections, faster check-in and less manual work."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-3">
           {caseStudies.map((item, index) => {
             const Icon = item.icon;
-            const gradientId = `uk-healthcare-case-bg-${index}`;
+            const gradientId = `uae-healthcare-case-bg-${index}`;
             return (
               <li
                 key={item.title}
@@ -1082,13 +1084,13 @@ const UKHealthcareSoftwarePage = () => {
       </Shell>
 
       {/* ================= FAQ ================= */}
-      <Shell labelledBy="uk-healthcare-faq-heading">
-        <Heading id="uk-healthcare-faq-heading" title="Common Questions" />
+      <Shell labelledBy="uae-healthcare-faq-heading">
+        <Heading id="uae-healthcare-faq-heading" title="Common Questions" />
         <div className="mx-auto max-w-3xl divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, index) => {
             const open = openFAQ === index;
-            const panelId = `uk-healthcare-faq-panel-${index}`;
-            const buttonId = `uk-healthcare-faq-button-${index}`;
+            const panelId = `uae-healthcare-faq-panel-${index}`;
+            const buttonId = `uae-healthcare-faq-button-${index}`;
             return (
               <div key={faq.question}>
                 <button
@@ -1134,11 +1136,11 @@ const UKHealthcareSoftwarePage = () => {
       {/* ================= RELATED INDUSTRIES ================= */}
       <section
         className="bg-black py-10 md:py-12"
-        aria-labelledby="uk-healthcare-related-industries-heading"
+        aria-labelledby="uae-healthcare-related-industries-heading"
       >
         <div className="container mx-auto max-w-6xl px-4">
           <h2
-            id="uk-healthcare-related-industries-heading"
+            id="uae-healthcare-related-industries-heading"
             className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base"
           >
             Related Industries
@@ -1162,4 +1164,4 @@ const UKHealthcareSoftwarePage = () => {
   );
 };
 
-export default UKHealthcareSoftwarePage;
+export default UaeHealthcareSoftwarePage;

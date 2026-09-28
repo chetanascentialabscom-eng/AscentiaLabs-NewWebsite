@@ -82,6 +82,8 @@ import UsaHealthcareSoftwarePage from "./pages/Industries/USA_HEALTHCARE";
 import IndiaHealthcareSoftwarePage from "./pages/Industries/INDIA_HEALTHCARE";
 import UkHealthcareSoftwarePage from "./pages/Industries/UK_HEALTHCARE";
 import AustraliaHealthcareSoftwarePage from "./pages/Industries/AUSTRALIA_HEALTHCARE";
+import CanadaHealthcareSoftwarePage from "./pages/Industries/CANADA_HEALTHCARE";
+import UaeHealthcareSoftwarePage from "./pages/Industries/UAE_HEALTHCARE";
 
 function App() {
   useLenis();
@@ -139,6 +141,14 @@ function App() {
             <Route
               path={ROUTES.industry.australiaHealthcare}
               element={<AustraliaHealthcareSoftwarePage />}
+            />
+            <Route
+              path={ROUTES.industry.canadaHealthcare}
+              element={<CanadaHealthcareSoftwarePage />}
+            />
+            <Route
+              path={ROUTES.industry.uaeHealthcare}
+              element={<UaeHealthcareSoftwarePage />}
             />
             <Route
               path={ROUTES.industry.realEstate}

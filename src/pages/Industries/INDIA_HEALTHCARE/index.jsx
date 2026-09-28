@@ -471,6 +471,8 @@ const IndiaHealthcareSoftwarePage = () => {
     { title: "USA Healthcare", link: ROUTES.industry.usaHealthcare },
     { title: "UK Healthcare", link: ROUTES.industry.ukHealthcare },
     { title: "Australia Healthcare", link: ROUTES.industry.australiaHealthcare },
+    { title: "Canada Healthcare", link: ROUTES.industry.canadaHealthcare },
+    { title: "UAE Healthcare", link: ROUTES.industry.uaeHealthcare },
     { title: "India Textile", link: ROUTES.industry.indiaTextile },
     { title: "Manufacturing", link: ROUTES.industry.manufacturing },
     { title: "Enterprise Software", link: ROUTES.industry.erp },

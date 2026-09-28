@@ -508,7 +508,7 @@ const UAETextilePage = () => {
                 UAE Textile
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                AI-Powered Textile Software for UAE Businesses
+                UAE Textile Software for Manufacturers & Mills
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 Unify production, fabric inventory, VAT compliance, and

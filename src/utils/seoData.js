@@ -132,6 +132,24 @@ export const seoData = {
     url: absoluteUrl(ROUTES.industry.australiaHealthcare),
   },
 
+  canadaHealthcare: {
+    title: "Canada Healthcare Software | Ascentia Labs",
+    description:
+      "Custom EMR, practice management, provincial billing, telemedicine and allied health software for Canadian clinics, hospitals and health authorities—PIPEDA-aligned privacy built in.",
+    keywords:
+      "Canada healthcare software, EMR software Canada, EHR Canada, practice management software Canada, provincial health billing, PIPEDA healthcare software, telemedicine Canada, Dragon Medical integration, bilingual healthcare software Canada, mental health EMR Canada",
+    url: absoluteUrl(ROUTES.industry.canadaHealthcare),
+  },
+
+  uaeHealthcare: {
+    title: "UAE Healthcare Software | Ascentia Labs",
+    description:
+      "Custom EMR, hospital and clinic management, insurance e-claims, medical spa and home healthcare software for UAE providers—DHA, DoH and MOHAP-aligned workflows in Arabic and English.",
+    keywords:
+      "UAE healthcare software, EMR software UAE, hospital management software Dubai, DHA compliant software, insurance e-claims UAE, medical spa software UAE, Malaffi NABIDH integration, Arabic English healthcare software, clinic management UAE, home healthcare software UAE",
+    url: absoluteUrl(ROUTES.industry.uaeHealthcare),
+  },
+
   realEstate: {
     title: "Real Estate App Development | Ascentia Labs",
     description:
@@ -236,7 +254,7 @@ export const seoData = {
 
   textiles: {
     title:
-      "Textile Manufacturing Software — AI Manufacturing, Inventory & Quality Control | Ascentia Labs",
+      "Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "Reduce downtime by 35% with our textile ERP software. AI-powered production planning, inventory management, and quality control for textile manufacturers. Get a free consultation.",
     keywords:
@@ -246,7 +264,7 @@ export const seoData = {
 
   indiaTextile: {
     title:
-      "India Textile Software — Garment, Mills & GST Compliance | Ascentia Labs",
+      "India Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software development for Indian garment manufacturers and mills. Production planning, fabric management, quality control, GST textile compliance, and job work—get a free consultation.",
     keywords:
@@ -255,7 +273,8 @@ export const seoData = {
   },
 
   uaeTextile: {
-    title: "UAE Textile Software | Ascentia Labs",
+    title:
+      "UAE Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software for UAE garment manufacturers, fabric traders, textile mills, and apparel brands—production, inventory, VAT compliance, and omni-channel operations.",
     keywords:
@@ -264,7 +283,8 @@ export const seoData = {
   },
 
   usaTextile: {
-    title: "USA Textile Software | Ascentia Labs",
+    title:
+      "USA Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software for USA garment manufacturers, fabric traders, textile mills, and apparel brands—production planning, inventory, U.S. trade compliance, and omni-channel operations.",
     keywords:
@@ -273,7 +293,8 @@ export const seoData = {
   },
 
   australiaTextile: {
-    title: "Australia Textile Software | Ascentia Labs",
+    title:
+      "Australia Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software for Australian garment manufacturers, mills, and exporters—production planning, fabric inventory, circular economy reporting, and export workflows.",
     keywords:
@@ -282,7 +303,8 @@ export const seoData = {
   },
 
   ukTextile: {
-    title: "UK Textile Software | Ascentia Labs",
+    title:
+      "UK Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software for UK garment manufacturers, mills, and exporters—production planning, fabric inventory, UK trade compliance, and export workflows.",
     keywords:
@@ -291,7 +313,8 @@ export const seoData = {
   },
 
   canadaTextile: {
-    title: "Canada Textile Software | Ascentia Labs",
+    title:
+      "Canada Textile Manufacturing Software — AI Manufacturing, Inventory management | Ascentia Labs",
     description:
       "AI-powered textile software for Canadian garment manufacturers, mills, and exporters—production planning, fabric inventory, CUSMA trade compliance, and cross-border export workflows.",
     keywords:

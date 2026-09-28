@@ -26,6 +26,8 @@ export const SLUGS = {
     indiaHealthcare: "india-healthcare-software-development",
     ukHealthcare: "uk-healthcare-software-development",
     australiaHealthcare: "australia-healthcare-software-development",
+    canadaHealthcare: "canada-healthcare-software-development",
+    uaeHealthcare: "uae-healthcare-software-development",
     realEstate: "real-estate-app-development",
     uaeRealEstate: "uae-real-estate-software-development",
     usRealEstate: "us-real-estate-software-development",
@@ -137,6 +139,8 @@ export const ROUTES = {
     indiaHealthcare: industryPath(SLUGS.industry.indiaHealthcare),
     ukHealthcare: industryPath(SLUGS.industry.ukHealthcare),
     australiaHealthcare: industryPath(SLUGS.industry.australiaHealthcare),
+    canadaHealthcare: industryPath(SLUGS.industry.canadaHealthcare),
+    uaeHealthcare: industryPath(SLUGS.industry.uaeHealthcare),
     realEstate: industryPath(SLUGS.industry.realEstate),
     uaeRealEstate: industryPath(SLUGS.industry.uaeRealEstate),
     usRealEstate: industryPath(SLUGS.industry.usRealEstate),
@@ -204,6 +208,14 @@ export const LEGACY_REDIRECTS = [
   [
     "/australia-healthcare-software-development",
     ROUTES.industry.australiaHealthcare,
+  ],
+  [
+    "/canada-healthcare-software-development",
+    ROUTES.industry.canadaHealthcare,
+  ],
+  [
+    "/uae-healthcare-software-development",
+    ROUTES.industry.uaeHealthcare,
   ],
   ["/real-estate-app-development", ROUTES.industry.realEstate],
   ["/uae-real-estate-software-development", ROUTES.industry.uaeRealEstate],

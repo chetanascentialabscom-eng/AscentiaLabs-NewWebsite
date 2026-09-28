@@ -717,13 +717,13 @@ const HealthcarePage = () => {
       country: "Canada",
       flagCode: "ca",
       line: "Provincial compliance, clinic operations, and integrated care platforms.",
-      link: null,
+      link: ROUTES.industry.canadaHealthcare,
     },
     {
       country: "UAE",
       flagCode: "ae",
       line: "Healthcare IT for hospitals, clinics, and insurance workflows.",
-      link: null,
+      link: ROUTES.industry.uaeHealthcare,
     },
     {
       country: "Australia",
@@ -757,6 +757,18 @@ const HealthcarePage = () => {
       title: "Australia Healthcare Software",
       line: "Medicare/PBS billing and My Health Record-ready practice software for Australia.",
       link: ROUTES.industry.australiaHealthcare,
+    },
+    {
+      icon: HeartPulse,
+      title: "Canada Healthcare Software",
+      line: "EMR, provincial billing, telemedicine and PIPEDA-aligned software for Canada.",
+      link: ROUTES.industry.canadaHealthcare,
+    },
+    {
+      icon: HeartPulse,
+      title: "UAE Healthcare Software",
+      line: "EMR, insurance e-claims and DHA-aligned software for UAE hospitals and clinics.",
+      link: ROUTES.industry.uaeHealthcare,
     },
     {
       icon: Home,
