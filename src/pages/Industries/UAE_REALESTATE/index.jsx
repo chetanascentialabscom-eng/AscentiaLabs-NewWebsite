@@ -345,21 +345,21 @@ const UAERealEstatePage = () => {
       metric: "Live",
       title: "Radiant Real Estate — Unit Inventory",
       description:
-        "Abu Dhabi developer of Radiant Square and Marina Towers aligned sales, finance, and management on live unit availability across towers, floors, and units.",
+        "Radiant Square and Marina Towers: sales, finance, and ops share live unit stock by tower, floor, and unit.",
       icon: Layers,
     },
     {
       metric: "PDC",
       title: "Controlled Cheque Lifecycle",
       description:
-        "Replaced manual cheque registers with auditable PDC tracking reflected in cash flow forecasting.",
+        "Manual cheque books replaced with auditable PDC tracking tied to cash-flow forecasts.",
       icon: FileCheck2,
     },
     {
       metric: "IFRS 15",
       title: "Developer Revenue Recognition",
       description:
-        "Revenue on unit sales recognized over the project lifecycle with deferred revenue schedules auditors expect.",
+        "IFRS 15 revenue recognition and deferred schedules auditors expect on unit sales.",
       icon: RefreshCw,
     },
   ];
@@ -485,7 +485,7 @@ const UAERealEstatePage = () => {
                 UAE PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Real Estate Software Development in UAE — PropTech
+                Real Estate Management Software for UAE Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 Custom PropTech for UAE brokers and property managers—automating leads, tenants, and portfolios across Dubai.

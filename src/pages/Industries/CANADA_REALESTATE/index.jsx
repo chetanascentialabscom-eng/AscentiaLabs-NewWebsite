@@ -333,21 +333,21 @@ const CanadaRealEstatePage = () => {
       metric: "9 → 1",
       title: "Unified Platform Consolidation",
       description:
-        "Nine systems into one AI-native platform—higher productivity and a seamless resident experience.",
+        "Nine tools merged into one AI-native platform—higher productivity, smoother resident experience.",
       icon: Layers,
     },
     {
       metric: "180+",
       title: "Maintenance at Scale",
       description:
-        "180+ units streamlined via an integrated vendor network with documented pricing and tracking.",
+        "180+ units: integrated vendors cut maintenance friction with clear pricing and tracking.",
       icon: Wrench,
     },
     {
       metric: "1.2 Days",
       title: "Faster Unit Turns",
       description:
-        "Automated turn workflows cut turn time by 1.2 days on average, with faster fills and renewals.",
+        "Automated turns saved 1.2 days on average—faster fills and more renewals.",
       icon: RefreshCw,
     },
   ];
@@ -450,7 +450,7 @@ const CanadaRealEstatePage = () => {
                 Canada PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Technology Partner for Canada Real Estate 
+                Real Estate Management Software for Canada Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI property management for Canadian managers, landlords, and

@@ -142,7 +142,7 @@ export const seoData = {
   },
 
   uaeRealEstate: {
-    title: "Real Estate Software Development  in UAE | Ascentia Labs",
+    title: "Real Estate Management Software UAE | Ascentia Labs",
     description:
       "Custom real estate software development in UAE — property management, CRM, ERP, PropTech, Ejari & Tawtheeq integrations, and AI-powered platforms for developers, brokers, and investors.",
     keywords:
@@ -151,8 +151,7 @@ export const seoData = {
   },
 
   usRealEstate: {
-    title:
-      "US Real Estate Software Development & Property Management Solutions | Ascentia Labs",
+    title: "Real Estate Management Software US | Ascentia Labs",
     description:
       "AI-powered real estate and property management software for US property managers, leasing teams, maintenance operations, investors, and enterprise real estate businesses.",
     keywords:
@@ -161,8 +160,7 @@ export const seoData = {
   },
 
   indiaRealEstate: {
-    title:
-      "India Real Estate Software & Property Management | Ascentia Labs",
+    title: "Real Estate Management Software India | Ascentia Labs",
     description:
       "AI property management software for India—leasing, maintenance, RERA, GST/TDS, 99acres & MagicBricks for managers, builders & NRI landlords.",
     keywords:
@@ -171,8 +169,7 @@ export const seoData = {
   },
 
   canadaRealEstate: {
-    title:
-      "Canada Real Estate Software & Property Management | Ascentia Labs",
+    title: "Real Estate Management Software Canada | Ascentia Labs",
     description:
       "AI property management software for Canada—leasing, maintenance, provincial rent control, renoviction licensing, Realtor.ca & Rentals.ca.",
     keywords:
@@ -181,8 +178,7 @@ export const seoData = {
   },
 
   australiaRealEstate: {
-    title:
-      "Australia Real Estate Software & Property Management | Ascentia Labs",
+    title: "Real Estate Management Software Australia | Ascentia Labs",
     description:
       "AI-powered property management software for Australian property managers, landlords, and investors—leasing, maintenance, accounting, and resident experience.",
     keywords:
@@ -191,7 +187,7 @@ export const seoData = {
   },
 
   ukRealEstate: {
-    title: "UK Real Estate Software & Property Management | Ascentia Labs",
+    title: "Real Estate Management Software UK | Ascentia Labs",
     description:
       "AI-powered property management software for UK letting agents, landlords, and property managers—unifying lettings, compliance, maintenance, and tenant experience.",
     keywords:

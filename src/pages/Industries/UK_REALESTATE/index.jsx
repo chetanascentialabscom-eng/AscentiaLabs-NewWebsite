@@ -93,7 +93,7 @@ const UKRealEstatePage = () => {
       icon: Building2,
       title: "Lettings & Property Management",
       description:
-        "Leasing CRM and AI lead scoring, with Rightmove and Zoopla listings, digital tenancies, and referencing under the Renters' Rights Act.",
+        "Leasing CRM, AI lead scoring, Rightmove and Zoopla listings, digital tenancies, and Renters' Rights Act referencing.",
     },
     {
       icon: Wrench,
@@ -105,19 +105,19 @@ const UKRealEstatePage = () => {
       icon: DollarSign,
       title: "Accounting & Financial Management",
       description:
-        "Rent tracking, deposit protection, Making Tax Digital reporting, and owner and tenant portals.",
+        "Rent tracking, deposit protection, MTD reporting, and owner and tenant portals.",
     },
     {
       icon: ClipboardCheck,
       title: "Compliance & Regulatory Support",
       description:
-        "Renters' Rights Act workflows, Section 21 tracking, Section 13 rent increases, and council-ready records.",
+        "Renters' Rights Act workflows, Section 21 and 13 tracking, and audit-ready records.",
     },
     {
       icon: Sparkles,
       title: "AI & Automation",
       description:
-        "AI for lettings inquiries, maintenance triage, and renewals, with activity logs for compliance evidence.",
+        "AI for lettings, maintenance triage, and renewals—with full activity logs.",
     },
   ];
 
@@ -211,27 +211,27 @@ const UKRealEstatePage = () => {
     {
       icon: Brain,
       title: "AI & Automation",
-      body: "AI for lettings, maintenance, and tenant messages, saving 40+ hours per user monthly.",
+      body: "AI for lettings, maintenance, and tenant messaging—save 40+ hours per user monthly.",
     },
     {
       icon: Cloud,
       title: "Cloud Platform",
-      body: "Cloud access for agents, landlords, and tenants across UK regions.",
+      body: "Cloud PMS with secure access for agents, landlords, and tenants UK-wide.",
     },
     {
       icon: Network,
       title: "API Access",
-      body: "APIs for tenancies, properties, maintenance, certificates, and finance.",
+      body: "APIs for tenancies, properties, maintenance, certificates, and transactions.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First",
-      body: "Mobile access for managers, negotiators, and tenants.",
+      body: "Mobile tools for managers, negotiators, and tenants on the go.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Rental growth, compliance status, tenant performance, and efficiency.",
+      body: "Live dashboards for rent growth, compliance, tenant KPIs, and team efficiency.",
     },
   ];
 
@@ -273,37 +273,37 @@ const UKRealEstatePage = () => {
       id: 1,
       title: "AI-Native Innovation",
       description:
-        "AI for lettings, maintenance, and tenant messages—saving 40+ hours per user monthly.",
+        "AI for lettings, maintenance, and tenant messaging—40+ hours saved per user monthly.",
     },
     {
       id: 2,
       title: "Unified Platform Experience",
       description:
-        "Lettings, maintenance, accounting, and compliance in one platform.",
+        "Lettings, maintenance, accounting, and compliance on one shared platform.",
     },
     {
       id: 3,
       title: "UK Market Understanding",
       description:
-        "Renters' Rights Act, Making Tax Digital, deposit protection, and council enforcement.",
+        "Built for Renters' Rights Act, MTD, deposit protection, and council rules.",
     },
     {
       id: 4,
       title: "Proven Outcomes",
       description:
-        "Faster compliance, maintenance, and lettings—trusted by 6,000+ agencies and 25,000 users.",
+        "Faster compliance, maintenance, and lettings—6,000+ agencies, 25,000+ users.",
     },
     {
       id: 5,
       title: "Rapid Onboarding",
       description:
-        "Go live in 2 weeks on average—3x faster, with free setup and migration.",
+        "Average 2-week go-live—3x faster, with free setup and data migration.",
     },
     {
       id: 6,
       title: "Modern Interface & Adoption",
       description:
-        "A clear interface letting agents and property managers will actually use.",
+        "Clean UX agents and property managers adopt quickly.",
     },
   ];
 
@@ -446,7 +446,7 @@ const UKRealEstatePage = () => {
                 UK PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Technology Partner for UK Real Estate Businesses
+                Real Estate Management Software for the UK Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI property management for UK letting agents, landlords, and
@@ -864,23 +864,7 @@ const UKRealEstatePage = () => {
         </div>
       </Shell>
 
-      <Shell labelledBy="cta-heading" alt>
-        <Heading
-          id="cta-heading"
-          title="Discuss Your UK Real Estate Project"
-          subtitle="Book a consultation on lettings, compliance, and operations across UK markets."
-        />
-        <div className="flex justify-center">
-          <button
-            type="button"
-            onClick={openConsultation}
-            className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-sm text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
-          >
-            Schedule a Consultation →
-          </button>
-        </div>
-      </Shell>
-
+   
       <section className="bg-black py-10 md:py-12" aria-labelledby="related-industries-heading">
         <div className="container mx-auto max-w-6xl px-4">
           <h2 id="related-industries-heading" className="mb-5 text-sm font-semibold uppercase tracking-[0.14em] text-gray-400 md:text-base">

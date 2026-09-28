@@ -94,31 +94,31 @@ const AustraliaRealEstatePage = () => {
       icon: Building2,
       title: "Property Management & Leasing",
       description:
-        "Leasing CRM and AI lead scoring, with listings on realestate.com.au and Domain.com.au, digital leases, and screening under state Residential Tenancy Acts.",
+        "Leasing CRM, AI lead scoring, realestate.com.au and Domain listings, digital leases, and tenancy-act screening.",
     },
     {
       icon: Wrench,
       title: "Maintenance & Operations",
       description:
-        "Smart dispatch, vendor networks, and work orders for residential and commercial portfolios across Australian capital cities.",
+        "Smart dispatch, vendor networks, and work orders for residential and commercial portfolios nationwide.",
     },
     {
       icon: DollarSign,
       title: "Accounting & Financial Management",
       description:
-        "Bill approvals, GST on commercial rent, owner and resident portals, and ATO-aligned reporting.",
+        "Bill approvals, commercial GST, owner and tenant portals, and ATO-ready reporting.",
     },
     {
       icon: Sparkles,
       title: "AI & Automation",
       description:
-        "AI for leasing inquiries, maintenance triage, and renewals, with activity logs for audit readiness.",
+        "AI for leasing, maintenance triage, and renewals—with full activity logs.",
     },
     {
       icon: MessageSquare,
       title: "Resident Experience",
       description:
-        "Digital onboarding, rent reminders, renewals, and self-service portals for tenants across states and territories.",
+        "Digital onboarding, rent reminders, renewals, and self-service tenant portals.",
     },
   ];
 
@@ -212,27 +212,27 @@ const AustraliaRealEstatePage = () => {
     {
       icon: Brain,
       title: "AI & Automation",
-      body: "AI for leasing, maintenance, and resident messages across Australia's major portals.",
+      body: "AI for leasing, maintenance, and tenant messaging—works with major listing portals.",
     },
     {
       icon: Cloud,
       title: "Cloud Platform",
-      body: "Cloud property management for managers and residents across Australian time zones.",
+      body: "Cloud PMS with secure access for managers and residents nationwide.",
     },
     {
       icon: Network,
       title: "API Access",
-      body: "APIs for units, tenants, leases, maintenance, owners, and finance.",
+      body: "APIs for units, tenants, leases, maintenance, owners, and transactions.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First",
-      body: "Mobile access for managers, field staff, and residents.",
+      body: "Mobile tools for managers, field staff, and tenants on the go.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Occupancy, capital-city vacancy, leads, renewals, and portfolio performance.",
+      body: "Live dashboards for occupancy, vacancy, leads, renewals, and portfolio KPIs.",
     },
   ];
 
@@ -340,21 +340,21 @@ const AustraliaRealEstatePage = () => {
       metric: "9 → 1",
       title: "One AI-Native Platform",
       description:
-        "Nine systems consolidated into one AI-native platform for residential and commercial portfolios.",
+        "Nine tools merged into one AI-native platform for residential and commercial portfolios.",
       icon: Layers,
     },
     {
       metric: "180+ Units",
       title: "Streamlined Maintenance",
       description:
-        "A 180+ unit firm streamlined maintenance with a vendor network and resolution tracking.",
+        "180+ units: vendor network and tracking sped up maintenance resolution.",
       icon: Wrench,
     },
     {
       metric: "1.2 Days",
       title: "Faster Unit Turns",
       description:
-        "Automated turns cut average turn time by 1.2 days, with faster vacancy fill and higher renewals.",
+        "Automated turns saved 1.2 days on average—faster fills and more renewals.",
       icon: RefreshCw,
     },
   ];
@@ -461,7 +461,7 @@ const AustraliaRealEstatePage = () => {
                 Australia PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Technology Partner for Australia Real Estate Businesses
+                Real Estate Management Software for Australia Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI property management for Australian managers, landlords, and
@@ -1019,23 +1019,7 @@ const AustraliaRealEstatePage = () => {
         </div>
       </Shell>
 
-      <Shell labelledBy="cta-heading" alt>
-        <Heading
-          id="cta-heading"
-          title="Discuss Your Australia Real Estate Project"
-          subtitle="Book a consultation on leasing, maintenance, and compliance across Australian markets."
-        />
-        <div className="flex justify-center">
-          <button
-            type="button"
-            onClick={openConsultation}
-            className="rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 px-6 py-3 text-sm text-black shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-500 hover:to-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 sm:text-base 2xl:px-8 2xl:py-3.5 2xl:text-lg"
-          >
-            Schedule a Consultation →
-          </button>
-        </div>
-      </Shell>
-
+   
       <section
         className="bg-black py-10 md:py-12"
         aria-labelledby="related-industries-heading"

@@ -95,31 +95,31 @@ const USRealEstatePage = () => {
       icon: Building2,
       title: "Property Management & Leasing",
       description:
-        "Leasing CRM, AI lead prioritization, Zillow-ready listing workflows, online applications, dynamic pricing, and native inspections.",
+        "Leasing CRM, AI lead scoring, Zillow-ready listings, online applications, dynamic pricing, and built-in inspections.",
     },
     {
       icon: Wrench,
       title: "Maintenance & Operations",
       description:
-        "Smart maintenance, vendor networks, unit turn automation, purchase orders, work orders, and facility management.",
+        "Smart maintenance, vendor coordination, unit turns, work orders, purchase orders, and facility ops in one place.",
     },
     {
       icon: DollarSign,
       title: "Accounting & Financial Management",
       description:
-        "Bill approval flows, bulk payables, tax withholding, owner and resident portals, and investment management.",
+        "Bill approvals, bulk payables, tax withholding, owner and resident portals, and investment management.",
     },
     {
       icon: Sparkles,
       title: "AI & Automation",
       description:
-        "Agentic AI for leasing, maintenance, and resident communications—with unified messaging and full activity logs.",
+        "AI for leasing, maintenance, and resident messaging—with a unified inbox and activity logs.",
     },
     {
       icon: MessageSquare,
       title: "Resident Experience",
       description:
-        "Personalized onboarding, resident messaging, renewal communications, and inquiry management.",
+        "Guided onboarding, resident messaging, renewal outreach, and inquiry tracking.",
     },
   ];
 
@@ -210,27 +210,27 @@ const USRealEstatePage = () => {
     {
       icon: Brain,
       title: "AI & Automation",
-      body: "Agentic AI for leasing, maintenance, and resident communications—not bolt-on automation.",
+      body: "Built-in AI for leasing, maintenance, and resident messaging—not bolt-on automation.",
     },
     {
       icon: Cloud,
       title: "Cloud Platform",
-      body: "100% cloud-based property management software with anytime, anywhere access.",
+      body: "Fully cloud-based PMS with secure access from any device.",
     },
     {
       icon: Network,
       title: "API Access",
-      body: "APIs covering units, tenants, leases, maintenance, owners, and financial transactions.",
+      body: "APIs for units, tenants, leases, maintenance, owners, and transactions.",
     },
     {
       icon: Smartphone,
       title: "Mobile-First",
-      body: "Full mobile support for property managers and residents across leasing and maintenance.",
+      body: "Mobile tools for managers and residents—leasing and maintenance on the go.",
     },
     {
       icon: BarChart3,
       title: "Data & Analytics",
-      body: "Real-time insights for occupancy, lead sources, renewals, and operational performance.",
+      body: "Live dashboards for occupancy, leads, renewals, and ops performance.",
     },
   ];
 
@@ -272,37 +272,37 @@ const USRealEstatePage = () => {
       id: 1,
       title: "AI-Native Innovation",
       description:
-        "Purpose-built AI agents for leasing, maintenance, and resident communications—not generic CRM with limited real estate depth.",
+        "AI built for leasing, maintenance, and residents—not a generic CRM.",
     },
     {
       id: 2,
       title: "Unified Platform Experience",
       description:
-        "Leasing, maintenance, accounting, and resident communications share one data model—no fragmented acquisition stack.",
+        "Leasing, maintenance, accounting, and messaging on one shared data model.",
     },
     {
       id: 3,
       title: "Modern Interface & Adoption",
       description:
-        "Designed for usability so mid-market and enterprise teams actually adopt the tools that drive results.",
+        "Clean UX so mid-market and enterprise teams adopt tools fast.",
     },
     {
       id: 4,
       title: "Proven Outcomes",
       description:
-        "Measurable gains in vacancy fill time, renewals, unit turns, and weekly hours saved.",
+        "Faster fills, stronger renewals, quicker unit turns, and hours saved weekly.",
     },
     {
       id: 5,
       title: "US Market Understanding",
       description:
-        "Built around US property workflows—leasing channels, maintenance networks, FCRA screening, and HUD needs.",
+        "US workflows: leasing channels, vendors, FCRA screening, and HUD compliance.",
     },
     {
       id: 6,
       title: "Global Delivery Capability",
       description:
-        "North American timezone support, dedicated account teams, remote implementation, and ongoing training.",
+        "US timezone support, dedicated accounts, remote rollout, and training.",
     },
   ];
 
@@ -338,21 +338,21 @@ const USRealEstatePage = () => {
       metric: "9 → 1",
       title: "Advanced Management Company",
       description:
-        "Consolidated nine separate systems into one AI-native platform, improving productivity and delivering a seamless resident experience.",
+        "Nine systems merged into one AI-native platform—higher productivity and smoother resident experience.",
       icon: Layers,
     },
     {
       metric: "180+",
       title: "Morton Realty — Maintenance",
       description:
-        "Property management firm with 180+ units streamlined maintenance through an integrated vendor network with strong documentation and pricing.",
+        "180+ units: integrated vendor network cut maintenance friction with clear docs and pricing.",
       icon: Wrench,
     },
     {
       metric: "1.2 days",
       title: "Faster Unit Turns Nationwide",
       description:
-        "Operators using automated unit turn workflows report a 1.2-day average reduction in turn time, plus faster vacancy fill and higher renewals.",
+        "Automated unit turns cut average turn time by 1.2 days—faster fills and more renewals.",
       icon: RefreshCw,
     },
   ];
@@ -455,7 +455,7 @@ const USRealEstatePage = () => {
                 US PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Technology Partner for US Real Estate Businesses
+                Real Estate Management Software for US Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI property management for US managers, leasing teams, and

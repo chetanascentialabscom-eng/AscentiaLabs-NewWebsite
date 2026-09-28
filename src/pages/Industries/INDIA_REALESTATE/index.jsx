@@ -95,31 +95,31 @@ const IndiaRealEstatePage = () => {
       icon: Building2,
       title: "Property Management & Leasing",
       description:
-        "Leasing CRM, 99acres & MagicBricks listings, digital rent agreements, and police verification workflows.",
+        "Leasing CRM, 99acres and MagicBricks listings, digital rent agreements, and police verification.",
     },
     {
       icon: Wrench,
       title: "Maintenance & Operations",
       description:
-        "Smart dispatch, vendor networks, work orders, and unit-turn automation for gated communities.",
+        "Smart dispatch, vendors, work orders, and automated unit turns for gated communities.",
     },
     {
       icon: DollarSign,
       title: "Accounting & Financial Management",
       description:
-        "GST-compliant billing, TDS under Section 195, bill approvals, and owner–resident portals.",
+        "GST billing, Section 195 TDS, bill approvals, and owner and resident portals.",
     },
     {
       icon: Sparkles,
       title: "AI & Automation",
       description:
-        "Agentic AI for leasing, maintenance, and WhatsApp resident communications with audit logs.",
+        "AI for leasing, maintenance, and WhatsApp resident messaging—with audit logs.",
     },
     {
       icon: MessageSquare,
       title: "Resident Experience",
       description:
-        "Digital onboarding, rent reminders, renewals, and self-service portals across metros.",
+        "Digital onboarding, rent reminders, renewals, and self-service resident portals.",
     },
   ];
 
@@ -333,21 +333,21 @@ const IndiaRealEstatePage = () => {
       metric: "9 → 1",
       title: "Unified Platform Consolidation",
       description:
-        "Nine systems into one AI-native platform—higher productivity and a seamless resident experience.",
+        "Nine tools merged into one AI-native platform—higher productivity, smoother resident experience.",
       icon: Layers,
     },
     {
       metric: "180+",
       title: "Maintenance at Scale",
       description:
-        "180+ units streamlined via an integrated vendor network with documented pricing and tracking.",
+        "180+ units: integrated vendors cut maintenance friction with clear pricing and tracking.",
       icon: Wrench,
     },
     {
       metric: "1.2 Days",
       title: "Faster Unit Turns",
       description:
-        "Automated turn workflows cut turn time by 1.2 days on average, with faster fills and renewals.",
+        "Automated turns saved 1.2 days on average—faster fills and more renewals.",
       icon: RefreshCw,
     },
   ];
@@ -455,7 +455,7 @@ const IndiaRealEstatePage = () => {
                 India PropTech
               </p>
               <h1 className="text-2xl leading-tight sm:text-[1.7rem] md:text-4xl xl:text-[2.65rem] 2xl:text-5xl 2xl:leading-[1.15]">
-                Technology Partner for India Real Estate Businesses
+                Real Estate Management Software for India Real Estate Businesses
               </h1>
               <p className="text-base leading-relaxed text-gray-300 sm:text-lg 2xl:text-xl 2xl:leading-relaxed">
                 AI property management for Indian managers, builders, and
