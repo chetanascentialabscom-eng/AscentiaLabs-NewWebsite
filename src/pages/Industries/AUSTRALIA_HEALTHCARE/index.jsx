@@ -682,7 +682,7 @@ const AustraliaHealthcareSoftwarePage = () => {
           id="australia-healthcare-challenges-heading"
           eyebrow="Solutions"
           title="Practical Fixes for Australian Healthcare Challenges"
-          subtitle="Straightforward answers for fragmented records, Aged Care Quality Standards readiness, Privacy Act compliance and Medicare/PBS billing."
+          subtitle="Straightforward answers for record management, Aged Care standards and Medicare/PBS billing."
         />
         <ul className="grid list-none grid-cols-1 gap-4 md:grid-cols-2">
           {challenges.map((item, index) => (
@@ -713,7 +713,7 @@ const AustraliaHealthcareSoftwarePage = () => {
           id="australia-healthcare-stakeholders-heading"
           eyebrow="Use Cases"
           title="Built for Every Part of Australian Healthcare"
-          subtitle="Software shaped for hospitals, GP and specialist clinics, aged care/NDIS providers and diagnostic centres across Australia."
+          subtitle="Software shaped for hospitals, GP and specialist clinics and diagnostic centres across Australia."
         />
 
         {/* Mobile: full-width selector */}
@@ -904,7 +904,7 @@ const AustraliaHealthcareSoftwarePage = () => {
           id="australia-healthcare-compliance-heading"
           eyebrow="Compliance"
           title="Australia-Ready Compliance & Security"
-          subtitle="NSQHS Standards alignment, Privacy Act compliance, My Health Record-ready security and Aged Care Quality Standards reporting, built into the platform."
+          subtitle="NSQHS Standards alignment,  My Health Record-ready security and Aged Care Quality Standards reporting."
         />
         <ul className="grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item) => {
